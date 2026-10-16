@@ -150,6 +150,15 @@ Esta revisão formaliza:
 - fechamento explícito dos comportamentos de tentativa de login, filtros de clientes e consulta de CEP;
 - definição dos comportamentos dos componentes de seleção sem criação de rotas artificiais;
 - remoção de conceito técnico de implementação que não pertence à Documentação Mestre.
+- correção semântica da classificação entre estados de processamento, sucesso, erro e resultado vazio nas Fichas funcionais;
+- alinhamento dos filtros de clientes entre lista de campos e textframe;
+- explicitação determinística da obrigatoriedade de campos nas Fichas restantes;
+- consolidação do ciclo completo de sincronização T17.2 → E17.7 → E17.8/E17.9.
+- aplicação explícita da elegibilidade `CLIENTE + ATIVO` em todos os pontos de entrada de pedido;
+- fechamento do modo de edição das informações comerciais do Prospect em T05.2;
+- definição do contexto do catálogo/produto exclusivamente dentro do pedido em edição nesta baseline;
+- definição funcional dos estados globais de sessão expirada e acesso não autorizado;
+- preservação de dados pendentes diante de falha, rejeição ou conflito de sincronização.
 
 ---
 
@@ -285,6 +294,8 @@ Situação operacional    = ATIVO
 ```
 
 Caso uma dessas condições não seja atendida, a interface deverá impedir a emissão do pedido e apresentar uma mensagem textual explicando a restrição. A cor nunca será o único indicador do bloqueio.
+
+Esta regra é transversal e vale para **todos os pontos de entrada do Pedido de Venda**. Quando o fluxo iniciar sem Cliente pré-selecionado, T09 poderá ser aberta para seleção, mas somente permitirá avanço com `CLIENTE + ATIVO`. Quando uma ação partir de um Cadastro Comercial já conhecido, como T04/T04.1 ou T06, a ação de iniciar pedido deverá permanecer indisponível se o cadastro não for `CLIENTE + ATIVO`, com explicação textual do motivo.
 
 ### Aprovação cadastral
 
@@ -613,7 +624,7 @@ Antes do login, sua finalidade principal será permitir a configuração inicial
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Retorna à interface de origem; antes do login, normalmente T01/E00.9; após login, T17.3. |
-| Relação com outras interfaces | T00.1, T00.2, T00.3, M00.5 |
+| Relação com outras interfaces | T01, E00.9, T17.3, T00.1, T00.2, T00.3, M00.5 |
 
 ### Objetivo
 
@@ -673,7 +684,7 @@ Centralizar configurações técnicas e visuais da aplicação.
 | Campos obrigatórios | URL da API é obrigatória; credencial depende do contrato da API. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: E00.6, E00.7, E00.8, T01, M00.4. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
-| Estados de erro relevantes | Estados específicos relacionados: E00.6, E00.7, E00.8. Estados globais aplicam-se quando pertinentes. |
+| Estados de erro relevantes | E00.8 — Falha de conexão. E00.6 representa processamento e E00.7 representa sucesso; estados globais aplicam-se quando pertinentes. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta à interface de origem sem salvar alterações não confirmadas; alteração autorizada salva e retorna a T01 conforme regra. |
 | Relação com outras interfaces | E00.6, E00.7, E00.8, T01, M00.4 |
@@ -747,7 +758,7 @@ Os demais parâmetros dependerão do contrato definitivo da API e serão formali
 | Objetivo | Selecionar, pré-visualizar e aplicar o tema Claro ou Escuro. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Seleção de tema: Claro ou Escuro. |
-| Campos obrigatórios | A obrigatoriedade é indicada por `*`, tabelas ou regras desta seção; campos sem indicação são opcionais nesta baseline. |
+| Campos obrigatórios | Uma opção de tema deve permanecer selecionada: Claro ou Escuro. |
 | Ações e destinos | Selecionar Claro/Escuro atualiza apenas a prévia; `APLICAR TEMA` persiste a escolha e retorna à origem. O `NOVO PEDIDO` exibido na prévia é somente ilustrativo. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
@@ -919,7 +930,7 @@ Alterar → salva a nova configuração, encerra a sessão quando houver usuári
 | Campos obrigatórios | Não se aplica. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: T00, E00.9. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
-| Estados de erro relevantes | Estados específicos relacionados: E00.9. Estados globais aplicam-se quando pertinentes. |
+| Estados de erro relevantes | Não há estado de erro específico deste modal nesta baseline. E00.9 representa o estado funcional resultante quando a API deixa de estar configurada após a restauração. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Cancelar/fechar retorna à interface que abriu o modal, preservando o contexto anterior. |
 | Relação com outras interfaces | T00, E00.9 |
@@ -1231,7 +1242,7 @@ Autenticar o vendedor.
 | Campos obrigatórios | Usuário ou e-mail é obrigatório. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: E01.4, E01.5, T01. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
-| Estados de erro relevantes | Estados específicos relacionados: E01.4, E01.5. Estados globais aplicam-se quando pertinentes. |
+| Estados de erro relevantes | E01.5 — Falha ao solicitar recuperação. E01.4 representa a confirmação de sucesso da solicitação; estados globais aplicam-se quando pertinentes. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T01. |
 | Relação com outras interfaces | E01.4, E01.5, T01 |
@@ -1285,7 +1296,7 @@ Solicitar recuperação da senha.
 | Objetivo | Informar falha de autenticação por credenciais inválidas e permitir nova tentativa. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Senha no contexto do formulário de login; demais dados permanecem em T01. |
-| Campos obrigatórios | A obrigatoriedade é indicada por `*`, tabelas ou regras desta seção; campos sem indicação são opcionais nesta baseline. |
+| Campos obrigatórios | Mantêm-se obrigatórios Usuário/e-mail e Senha, conforme T01. |
 | Ações e destinos | `ENTRAR` repete a autenticação; sucesso → T02; credencial inválida → E01.2; falha de rede/API → E01.3/E00.10. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Este registro é um estado específico; aplica também as regras globais de acessibilidade, retorno e mensagens. |
@@ -1540,7 +1551,7 @@ Responder rapidamente:
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | C27 EmptyState deverá ser utilizado quando não houver registros a exibir. |
 | Comportamento de retorno | Volta para T02. |
-| Relação com outras interfaces | T15, T16.2 |
+| Relação com outras interfaces | T02, T15, T16.2 |
 
 ## Destinos
 
@@ -1584,7 +1595,7 @@ Responder rapidamente:
 | Objetivo | Consultar e alternar entre Clientes e Prospects do mesmo Cadastro Comercial. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Busca por nome/CNPJ/código; abas Clientes/Prospects; filtros via M03.1. |
-| Campos obrigatórios | A obrigatoriedade é indicada por `*`, tabelas ou regras desta seção; campos sem indicação são opcionais nesta baseline. |
+| Campos obrigatórios | Nenhum campo de busca ou filtro é obrigatório nesta interface. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: M03.1, T04, T05.3, T05. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
@@ -1629,11 +1640,13 @@ A situação operacional deverá ser apresentada de forma independente da classi
 │ Mercado Central                >   │
 │ #001245                            │
 │ Rio de Janeiro - RJ                │
+│ ✓ Ativo                            │
 │ Última compra: 10/10/2026          │
 │────────────────────────────────────│
 │ Supermercado Vitória           >   │
 │ #001280                            │
 │ Niterói - RJ                       │
+│ ✓ Ativo                            │
 │ Última compra: 02/10/2026          │
 │                                    │
 │                   (+) Novo Prospect│
@@ -1654,11 +1667,11 @@ A situação operacional deverá ser apresentada de forma independente da classi
 | Nome | Filtros de clientes |
 | Objetivo | Refinar a consulta de Clientes e Prospects por critérios comerciais e cadastrais. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
-| Campos | Cidade, região, segmento, classificação comercial, situação operacional, período de última compra e opções booleanas. |
-| Campos obrigatórios | A obrigatoriedade é indicada por `*`, tabelas ou regras desta seção; campos sem indicação são opcionais nesta baseline. |
+| Campos | Cidade, estado, região, segmento, classificação comercial, situação operacional, última compra, última visita, clientes sem compra e somente clientes ativos. |
+| Campos obrigatórios | Nenhum — todos os filtros são opcionais nesta baseline. |
 | Ações e destinos | `LIMPAR` redefine os filtros e mantém o modal aberto; `APLICAR FILTRO` → T03; sem resultados → E03.2; `✕` descarta alterações não aplicadas. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
-| Estados de erro relevantes | Estados específicos relacionados: E03.2. Estados globais aplicam-se quando pertinentes. |
+| Estados de erro relevantes | Não há estado de erro específico do filtro nesta baseline. E03.2 representa resultado vazio após busca/filtro, não erro técnico; estados globais aplicam-se quando pertinentes. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Cancelar/fechar retorna à interface que abriu o modal, preservando o contexto anterior. |
 | Relação com outras interfaces | T03, E03.2 |
@@ -1685,6 +1698,9 @@ A situação operacional deverá ser apresentada de forma independente da classi
 │ Cidade                             │
 │ [ Todas                        ▼ ] │
 │                                    │
+│ Estado                             │
+│ [ Todos                        ▼ ] │
+│                                    │
 │ Região                             │
 │ [ Todas                        ▼ ] │
 │                                    │
@@ -1700,7 +1716,10 @@ A situação operacional deverá ser apresentada de forma independente da classi
 │ Última compra                      │
 │ [ Qualquer período             ▼ ] │
 │                                    │
-│ □ Sem compras recentes             │
+│ Última visita                      │
+│ [ Qualquer período             ▼ ] │
+│                                    │
+│ □ Clientes sem compra              │
 │ □ Somente ativos                   │
 │                                    │
 │ [ LIMPAR ]       [ APLICAR FILTRO ]│
@@ -1771,7 +1790,7 @@ Novo Prospect → **T05**.
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T03 preservando o contexto do Cliente. |
-| Relação com outras interfaces | T09, T06, T04.1, T04.2, T04.3, T04.4, T04.5 |
+| Relação com outras interfaces | T03, T09, T06, T04.1, T04.2, T04.3, T04.4, T04.5 |
 
 ## Destinos
 
@@ -1839,12 +1858,12 @@ Novo Prospect → **T05**.
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Não se aplica — lista de pedidos do Cliente. |
 | Campos obrigatórios | Não se aplica. |
-| Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: T15, T09. |
+| Ações e destinos | Selecionar pedido → T15; `+ NOVO PEDIDO` → T09 somente quando o Cliente atual estiver `ATIVO`; Cliente Bloqueado/Inativo mantém a ação indisponível. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | C27 EmptyState deverá ser utilizado quando não houver registros a exibir. |
 | Comportamento de retorno | Volta para T04 preservando o Cliente. |
-| Relação com outras interfaces | T15, T09 |
+| Relação com outras interfaces | T04, T15, T09 |
 
 ```text
 ┌────────────────────────────────────┐
@@ -1870,6 +1889,12 @@ Novo Prospect → **T05**.
 Pedido selecionado → **T15**.  
 Novo pedido → **T09**, com o Cliente atual pré-selecionado.
 
+### Regra de elegibilidade
+
+- `+ NOVO PEDIDO` somente ficará habilitado para `CLIENTE + ATIVO`;
+- para Cliente `BLOQUEADO` ou `INATIVO`, a consulta aos pedidos existentes continuará disponível, mas a criação de novo pedido ficará indisponível;
+- quando indisponível, a interface deverá exibir texto explicando que o Cliente não está apto a emitir novo pedido, sem depender somente de cor.
+
 ---
 
 # T04.2 — Cliente / Visitas
@@ -1889,7 +1914,7 @@ Novo pedido → **T09**, com o Cliente atual pré-selecionado.
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | C27 EmptyState deverá ser utilizado quando não houver registros a exibir. |
 | Comportamento de retorno | Volta para T04 preservando o Cliente. |
-| Relação com outras interfaces | T06.2, T06 |
+| Relação com outras interfaces | T04, T06.2, T06 |
 
 ```text
 ┌────────────────────────────────────┐
@@ -2148,7 +2173,7 @@ A conversão para Cliente não deverá duplicar o cadastro nem apagar o históri
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T03 sem perder contexto já salvo; enquanto em cadastro, dados em edição seguem a regra do fluxo. |
-| Relação com outras interfaces | T05.1 |
+| Relação com outras interfaces | T03, T05.1 |
 
 ## Campos
 
@@ -2290,12 +2315,12 @@ Continuar → **T05.1**.
 | Objetivo | Cadastrar e revisar as informações comerciais do Prospect. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Origem, potencial, interesse, concorrente atual, frequência de compra, próximo contato e observações. |
-| Campos obrigatórios | Conforme regras da seção; campos sem marcador de obrigatoriedade permanecem opcionais nesta baseline. |
+| Campos obrigatórios | Origem é obrigatória; Potencial, Interesse principal, Concorrente atual, Frequência de compra, Próximo contato e Observações são opcionais nesta baseline. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: T05.1, T05.3. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
-| Comportamento de retorno | Volta para T05.1 preservando dados preenchidos. |
+| Comportamento de retorno | No cadastro novo, volta para T05.1 preservando dados preenchidos; ao editar Prospect existente, volta para T05.3 sem aplicar alterações não salvas. |
 | Relação com outras interfaces | T05.1, T05.3 |
 
 ## Objetivo
@@ -2314,7 +2339,16 @@ Registrar potencial e contexto comercial da oportunidade.
 | Próximo contato | Não |
 | Observações | Não |
 
-## Textframe
+## Modos de uso
+
+T05.2 possui dois modos funcionais sob o mesmo ID:
+
+- **Cadastro novo:** aberta a partir de T05.1 durante o wizard de criação do Prospect; `VOLTAR` retorna a T05.1 preservando os dados e `SALVAR` conclui a etapa comercial e abre T05.3.
+- **Edição de Prospect existente:** aberta a partir de T05.3 com os dados comerciais atuais carregados; os mesmos campos ficam disponíveis para edição; `VOLTAR` retorna a T05.3 sem aplicar alterações não salvas e `SALVAR` persiste as alterações e retorna a T05.3.
+
+O modo de edição reutiliza a mesma interface e os mesmos componentes; não cria uma nova rota ou novo cadastro.
+
+## Textframe — cadastro novo
 
 ```text
 ┌────────────────────────────────────┐
@@ -2354,6 +2388,43 @@ Registrar potencial e contexto comercial da oportunidade.
 Voltar → **T05.1** preservando os dados preenchidos.  
 Salvar → **T05.3**.
 
+### Textframe — edição de Prospect existente
+
+```text
+┌────────────────────────────────────┐
+│ ‹    Informações comerciais        │
+│                                    │
+│ Loja Nova Esperança                │
+│                                    │
+│ Origem do prospect *               │
+│ [ Visita espontânea            ▼ ] │
+│                                    │
+│ Potencial estimado                 │
+│ [ Alto                         ▼ ] │
+│                                    │
+│ Interesse principal               │
+│ [______________________________]   │
+│                                    │
+│ Concorrente atual                  │
+│ [______________________________]   │
+│                                    │
+│ Frequência de compra               │
+│ [ Mensal                       ▼ ] │
+│                                    │
+│ Próximo contato                    │
+│ [ 20/10/2026                   📅 ]│
+│                                    │
+│ Observações                        │
+│ ┌────────────────────────────────┐ │
+│ │                                │ │
+│ └────────────────────────────────┘ │
+│                                    │
+│ [ VOLTAR ]        [ SALVAR ]       │
+└────────────────────────────────────┘
+```
+
+No modo de edição, `VOLTAR` → **T05.3** sem salvar e `SALVAR` → **T05.3** com os dados atualizados.
+
 ---
 
 # T05.3 — Prospect / Resumo
@@ -2373,7 +2444,7 @@ Salvar → **T05.3**.
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T03 na aba Prospects, preservando o Prospect. |
-| Relação com outras interfaces | T04.4, T05.2, T05.4, T06 |
+| Relação com outras interfaces | T03, T04.4, T05.2, T05.4, T06 |
 
 ```text
 ┌────────────────────────────────────┐
@@ -2432,7 +2503,7 @@ Neste contexto:
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | C27 EmptyState deverá ser utilizado quando não houver registros a exibir. |
 | Comportamento de retorno | Volta para T05.3 preservando o Prospect. |
-| Relação com outras interfaces | T06.2, T06 |
+| Relação com outras interfaces | T05.3, T06.2, T06 |
 
 ## Destinos
 
@@ -2474,13 +2545,13 @@ Neste contexto:
 | Objetivo | Registrar uma visita comercial vinculada a Cliente ou Prospect. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Cliente/Prospect, data/hora, tipo, objetivo, observações, resultado, próxima ação e próximo contato. |
-| Campos obrigatórios | Cliente/Prospect e dados mínimos necessários ao registro da visita; demais obrigatoriedades conforme regras desta seção. |
-| Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: T09, M06.1. |
+| Campos obrigatórios | Cliente/Prospect é obrigatório. Data/hora são registradas no contexto da visita. Os demais campos de T06 são opcionais nesta baseline; para finalizar, M06.1 exige Resultado. |
+| Ações e destinos | `INICIAR PEDIDO` → T09 somente para `CLIENTE + ATIVO`; `FINALIZAR VISITA` → M06.1. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para a interface de origem preservando Cliente/Prospect pré-selecionado. |
-| Relação com outras interfaces | T09, M06.1 |
+| Relação com outras interfaces | T04.2, T05.3, T05.4, T16.2, T09, M06.1 |
 
 ## Campos
 
@@ -2542,9 +2613,15 @@ Outro
 └────────────────────────────────────┘
 ```
 
-Iniciar Pedido → **T09**
+Iniciar Pedido → **T09** somente quando o Cadastro Comercial da visita for `CLIENTE + ATIVO`, mantendo-o pré-selecionado.  
+Finalizar → **M06.1**.
 
-Finalizar → **M06.1**
+### Regra de elegibilidade para iniciar pedido
+
+- visita vinculada a `CLIENTE + ATIVO` → `INICIAR PEDIDO` habilitado;
+- visita vinculada a `PROSPECT + BLOQUEADO`, `CLIENTE + BLOQUEADO` ou `CLIENTE + INATIVO` → ação indisponível;
+- quando indisponível, a interface deverá apresentar texto explicando a restrição;
+- bloquear ou inativar o Cliente durante a visita não altera sua classificação, apenas impede iniciar o pedido.
 
 ---
 
@@ -2559,7 +2636,7 @@ Finalizar → **M06.1**
 | Objetivo | Confirmar a finalização da visita e registrar seu resultado e próxima ação. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Resultado e próxima ação para encerramento da visita. |
-| Campos obrigatórios | Resultado é necessário para concluir a visita; próxima ação conforme preenchimento aplicável. |
+| Campos obrigatórios | Resultado é obrigatório para concluir a visita; Próxima ação é opcional nesta baseline. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: T06, T04.2, T05.4, T16, E06.3. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Estados específicos relacionados: E06.3. Estados globais aplicam-se quando pertinentes. |
@@ -2694,12 +2771,12 @@ Pedido relacionado → **T15**.
 | Objetivo | Consultar o catálogo de produtos, aplicar filtros e adicionar itens ao pedido em edição. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Busca de produto, filtros e ações de quantidade/adição ao pedido. |
-| Campos obrigatórios | A obrigatoriedade é indicada por `*`, tabelas ou regras desta seção; campos sem indicação são opcionais nesta baseline. |
+| Campos obrigatórios | Nenhum campo de busca ou filtro é obrigatório nesta interface. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: M07.1, T08, T10. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | C27 EmptyState deverá ser utilizado quando não houver registros a exibir. |
-| Comportamento de retorno | Volta para T10 quando aberto a partir de um pedido em edição; em consulta isolada, retorna à origem. |
+| Comportamento de retorno | Volta para T10 preservando o pedido em edição. Nesta baseline, T07 é acessada pelo fluxo de itens do pedido. |
 | Relação com outras interfaces | M07.1, T08, T10 |
 
 ## Destinos
@@ -2708,8 +2785,12 @@ Pedido relacionado → **T15**.
 |---|---|
 | Filtros | M07.1 |
 | Produto | T08 |
-| Adicionar | Adiciona ao pedido |
+| Adicionar | Adiciona/atualiza o item no pedido em edição |
 | Ver pedido | T10 |
+
+## Regra de contexto
+
+Nesta baseline, **T07 é aberta a partir de T10 e opera no contexto de um pedido em edição**. As ações `Adicionar` e `Ver pedido` utilizam esse pedido corrente; não existe fluxo independente de inclusão de produto fora de um pedido.
 
 ## Textframe
 
@@ -2755,7 +2836,7 @@ Pedido relacionado → **T15**.
 | Objetivo | Refinar o catálogo de produtos por critérios de consulta. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Categoria, disponibilidade, promoção e demais filtros definidos na seção. |
-| Campos obrigatórios | A obrigatoriedade é indicada por `*`, tabelas ou regras desta seção; campos sem indicação são opcionais nesta baseline. |
+| Campos obrigatórios | Nenhum — todos os filtros são opcionais nesta baseline. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: T07. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
@@ -2845,7 +2926,7 @@ Limpar filtros → retorna para **T07** sem filtros aplicados.
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T07; ao adicionar ao pedido, retorna para T10. |
-| Relação com outras interfaces | T10 |
+| Relação com outras interfaces | T07, T10 |
 
 ```text
 ┌────────────────────────────────────┐
@@ -2879,6 +2960,8 @@ Limpar filtros → retorna para **T07** sem filtros aplicados.
 ```
 
 Adicionar ao pedido → adiciona/atualiza o item no pedido em edição e retorna para **T10**.
+
+T08 é acessada a partir de **T07** no contexto do pedido em edição. Voltar sem adicionar retorna para **T07**, preservando o contexto do pedido.
 
 ---
 
@@ -3138,7 +3221,7 @@ Selecionar → retorna para **T09** com a tabela de preço escolhida.
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T09 preservando o pedido em edição. |
-| Relação com outras interfaces | T07, M10.1, T11 |
+| Relação com outras interfaces | T09, T07, M10.1, T11 |
 
 ```text
 ┌────────────────────────────────────┐
@@ -3239,13 +3322,13 @@ Salvar alterações → aplica quantidade/desconto válidos e retorna para **T10
 | Objetivo | Definir as condições comerciais do Pedido de Venda. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Forma de pagamento, condição, desconto geral, frete, previsão de entrega, pedido do cliente e observação. |
-| Campos obrigatórios | Forma de pagamento e condição são obrigatórias; demais campos conforme regra comercial. |
+| Campos obrigatórios | Forma de pagamento e Condição são obrigatórias; Desconto geral, Modalidade de frete, Previsão de entrega, Pedido do cliente e Observação são opcionais nesta baseline, respeitando validações comerciais aplicáveis quando informados. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: T12. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T10 preservando o pedido em edição. |
-| Relação com outras interfaces | T12 |
+| Relação com outras interfaces | T10, T12 |
 
 ## Campos
 
@@ -3471,7 +3554,7 @@ Voltar → **T02**
 | Objetivo | Consultar pedidos por busca, filtros e status. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Busca por número/Cliente e filtros via M14.1. |
-| Campos obrigatórios | A obrigatoriedade é indicada por `*`, tabelas ou regras desta seção; campos sem indicação são opcionais nesta baseline. |
+| Campos obrigatórios | Nenhum campo de busca ou filtro é obrigatório nesta interface. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: M14.1, T15. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
@@ -3749,7 +3832,7 @@ Endereço → **T15.2**
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | C27 EmptyState deverá ser utilizado quando não houver registros a exibir. |
 | Comportamento de retorno | É acessível por T17 e por atalhos; retorno preserva o período/posição da agenda quando possível. |
-| Relação com outras interfaces | T16.1, T16.2 |
+| Relação com outras interfaces | T17, T16.1, T16.2 |
 
 ```text
 ┌────────────────────────────────────┐
@@ -3795,7 +3878,7 @@ Compromisso → **T16.2**
 | Objetivo | Criar ou reagendar um compromisso de visita. |
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Cliente/Prospect, data, hora, tipo, objetivo, lembrete e observação. |
-| Campos obrigatórios | Cliente/Prospect, data e hora são obrigatórios; demais campos conforme seção. |
+| Campos obrigatórios | Cliente/Prospect, Data e Hora são obrigatórios; Tipo, Objetivo, Lembrete e Observação são opcionais nesta baseline. |
 | Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: T16.2. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
@@ -3866,7 +3949,7 @@ Quando T16.1 for aberta por `Reagendar`, o mesmo botão salva as alterações e 
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T16. |
-| Relação com outras interfaces | T06, T04.4, T16.1, M16.3 |
+| Relação com outras interfaces | T16, T06, T04.4, T16.1, M16.3 |
 
 ```text
 ┌────────────────────────────────────┐
@@ -4089,12 +4172,12 @@ Voltar → **T16.2**.
 | Informações exibidas | O conteúdo visual e os dados apresentados no textframe e nas subseções desta interface são normativos para esta baseline. |
 | Campos | Não se aplica — consulta de sincronização e ação manual. |
 | Campos obrigatórios | Não se aplica. |
-| Ações e destinos | Ações e destinos estão documentados nesta seção; relações de navegação/estado: E17.7. |
+| Ações e destinos | `SINCRONIZAR AGORA` → E17.7; sucesso → E17.8; falha → E17.9. |
 | Textframe | Presente nesta seção e integrante do aceite funcional. |
-| Estados de erro relevantes | Estados específicos relacionados: E17.7. Estados globais aplicam-se quando pertinentes. |
+| Estados de erro relevantes | E17.9 — Falha na sincronização. E17.7 representa processamento e E17.8 representa sucesso; estados globais aplicam-se quando pertinentes. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T17. |
-| Relação com outras interfaces | E17.7 |
+| Relação com outras interfaces | T17, E17.7, E17.8, E17.9 |
 
 Especialmente importante para vendedor externo.
 
@@ -4257,7 +4340,7 @@ Voltar → **T17.2**.
 | Estados de erro relevantes | Aplicam-se somente os estados globais pertinentes à natureza da interface, quando houver operação assíncrona ou consulta de dados. |
 | Estado vazio | Não se aplica — esta interface não depende de uma lista vazia nesta baseline. |
 | Comportamento de retorno | Volta para T17. |
-| Relação com outras interfaces | T00.1, T00.2, T00.3 |
+| Relação com outras interfaces | T17, T00.1, T00.2, T00.3 |
 
 ## Objetivo
 
@@ -4663,6 +4746,43 @@ Todas as áreas que consultam dados deverão prever estados padrão.
 └────────────────────────────────────┘
 ```
 
+## Sessão expirada ou inválida
+
+Quando uma área autenticada detectar que a sessão deixou de ser válida, a operação protegida deverá ser interrompida e o usuário deverá ser informado antes do retorno ao login. A opção `Lembrar-me` não elimina essa regra.
+
+```text
+┌────────────────────────────────────┐
+│               ⚠                    │
+│                                    │
+│        Sua sessão expirou.         │
+│                                    │
+│ Entre novamente para continuar.    │
+│                                    │
+│ [         IR PARA LOGIN        ]   │
+└────────────────────────────────────┘
+```
+
+`IR PARA LOGIN` → **T01**. Dados locais já preservados para sincronização não deverão ser descartados exclusivamente pela expiração da sessão.
+
+## Acesso não autorizado
+
+Quando o usuário tentar executar uma ação para a qual não possui autorização:
+
+- se a restrição já for conhecida pela aplicação, a ação deverá permanecer indisponível com explicação textual;
+- se a negativa ocorrer durante a operação, a interface atual deverá ser preservada e deverá informar que o usuário não possui autorização;
+- a aplicação não deverá simular sucesso nem perder dados de edição por causa da negativa.
+
+```text
+┌────────────────────────────────────┐
+│               ⚠                    │
+│                                    │
+│ Você não possui autorização para   │
+│ executar esta ação.                │
+│                                    │
+│ [              OK              ]   │
+└────────────────────────────────────┘
+```
+
 ## Salvando
 
 ```text
@@ -4857,6 +4977,13 @@ PEDIDO CRIADO
 ```
 
 A implementação técnica será definida no Documento Técnico. Para esta etapa, ficam aprovados os estados funcionais **Online**, **Offline** e **Pendente de sincronização**, bem como a preservação do pedido até que seja possível sincronizá-lo.
+
+Regras funcionais adicionais:
+
+- falha ou rejeição durante a sincronização não deverá apagar o pedido local pendente;
+- o item deverá permanecer identificável como pendente e a falha deverá ser apresentada por **E17.9** ou mensagem equivalente no contexto de sincronização;
+- se for detectado conflito entre dados locais e remotos, a aplicação **não deverá sobrescrever silenciosamente** nenhum dos lados; o registro local deverá ser preservado e o motivo deverá ser informado ao usuário;
+- a estratégia técnica de detecção, versionamento e resolução assistida de conflitos será definida no Documento Técnico sem alterar essas garantias funcionais.
 
 ---
 

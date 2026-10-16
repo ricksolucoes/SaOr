@@ -77,6 +77,6 @@ O **SaOr - Sales Order** é um software proprietário da **RickSoluções**, dis
 
 O uso, estudo, teste, modificação, distribuição e exploração comercial do software estão sujeitos às condições estabelecidas na licença.
 
-Consulte [`LICENSE.md`](LICENSE) para conhecer os termos completos.
+Consulte [`LICENSE`](LICENSE) para conhecer os termos completos.
 
 **Copyright © 2026 RickSoluções. Todos os direitos reservados.**
