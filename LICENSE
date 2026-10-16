@@ -1,315 +1,493 @@
-SaOr - Sales Order Proprietary License
-Version 1.0, 2026
+SaOr - Sales Order
+
+LICENÇA PROPRIETÁRIA DE USO LIMITADO E REVOGÁVEL
+Versão 1.0 — 2026
 
 Copyright © 2026 RickSoluções.
-All rights reserved.
+Todos os direitos reservados.
 
 
-1. OWNERSHIP
+1. TITULARIDADE
 
-SaOr - Sales Order ("Software"), including its source code, compiled
-code, documentation, architecture, interfaces, components, scripts,
-configuration files, visual assets and associated materials, is
-proprietary software owned by RickSoluções, except for third-party
-components expressly identified as such.
+O software denominado SaOr - Sales Order, doravante denominado
+"Software", incluindo, sem limitação, seu código-fonte, código
+compilado, documentação, arquitetura, interfaces, componentes,
+bibliotecas próprias, scripts, arquivos de configuração, recursos
+visuais, modelos, estruturas de dados e demais materiais associados,
+é de propriedade da RickSoluções, salvo quando expressamente indicado
+de outra forma.
 
-No ownership, copyright, trademark or other intellectual property
-right is transferred under this License.
+A disponibilização pública ou privada do Software, inclusive de seu
+código-fonte por meio de plataformas de hospedagem e versionamento
+como o GitHub, não implica transferência de propriedade intelectual,
+cessão de direitos autorais ou concessão automática de quaisquer
+direitos além daqueles expressamente previstos nesta Licença.
 
-All rights not expressly granted by this License are reserved by
-RickSoluções.
+Nenhum direito de propriedade sobre o Software é transferido ao
+usuário.
 
+Todos os direitos não expressamente concedidos por esta Licença
+permanecem reservados à RickSoluções.
 
-2. LIMITED LICENSE GRANT
 
-Subject to compliance with this License, RickSoluções grants the
-licensee a limited, non-exclusive, non-transferable, non-sublicensable
-and revocable right to:
+2. NATUREZA DA LICENÇA
 
-(a) use the Software for authorized purposes;
+O SaOr - Sales Order é software proprietário.
 
-(b) study and inspect the Software and its source code when source code
-    has been made available;
+Esta Licença não constitui licença de software livre ou de código
+aberto e não concede autorização irrestrita para utilização,
+distribuição, redistribuição, sublicenciamento, comercialização ou
+exploração econômica do Software.
 
-(c) test the Software;
+A eventual disponibilização do código-fonte ocorre exclusivamente
+dentro das condições estabelecidas nesta Licença.
 
-(d) modify the Software exclusively for authorized internal,
-    evaluation, development or testing purposes.
+A disponibilização do Software em repositório público não deverá ser
+interpretada, por si só, como autorização para uso, distribuição ou
+exploração além dos direitos expressamente concedidos neste documento.
 
-This License does not grant ownership of the Software or any unrestricted
-right to use, distribute, commercialize or sublicense it.
+Quando o Software estiver hospedado em plataforma de terceiros, os
+direitos estritamente necessários ao funcionamento dessa plataforma
+permanecerão sujeitos aos respectivos termos de serviço.
 
 
-3. PROPRIETARY SOFTWARE
+3. CONCESSÃO LIMITADA DE USO
 
-SaOr - Sales Order is proprietary software.
+Mediante o cumprimento integral desta Licença, a RickSoluções concede
+ao usuário uma autorização limitada, não exclusiva, não transferível,
+não sublicenciável e revogável para utilizar o Software nos termos
+aqui estabelecidos.
 
-Availability of the Software or its source code in a public or private
-repository does not make the Software free software or open-source
-software and does not grant any rights other than those expressly
-provided by this License.
+Essa autorização permite:
 
-Where the Software is hosted on a third-party platform, rights that
-must necessarily be granted to that platform or its users under the
-platform's applicable terms remain subject to those terms.
+(a) utilizar o Software para finalidades autorizadas;
 
+(b) executar o Software para avaliação, desenvolvimento, estudo ou
+    utilização devidamente autorizada;
 
-4. RESTRICTIONS
+(c) estudar e analisar o funcionamento do Software;
 
-Except where expressly authorized in writing by RickSoluções or required
-by applicable law, the licensee may not:
+(d) examinar seu código-fonte quando este estiver disponível;
 
-(a) distribute or redistribute the Software;
+(e) realizar testes;
 
-(b) publish or provide copies of the Software to third parties;
+(f) realizar modificações para uso próprio, avaliação, desenvolvimento
+    ou testes autorizados.
 
-(c) sublicense, sell, rent, lease, assign or otherwise transfer the
-    Software;
+A autorização para modificar o Software não concede automaticamente
+direito de distribuir, publicar, comercializar, sublicenciar ou
+disponibilizar essas modificações a terceiros.
 
-(d) host or provide the Software for use by third parties;
+Nenhum direito além dos expressamente estabelecidos nesta Licença é
+concedido ao usuário.
 
-(e) offer the Software as SaaS, hosted software, API, platform or other
-    service;
 
-(f) incorporate the Software into a product or service distributed or
-    provided to third parties;
+4. RESTRIÇÕES
 
-(g) commercially exploit the Software or any unauthorized derivative
-    work;
+Salvo mediante autorização prévia e expressa, por escrito, da
+RickSoluções, ou quando a legislação aplicável determinar de forma
+diferente, o usuário não poderá:
 
-(h) remove, alter or obscure copyright, ownership, licensing or other
-    proprietary notices;
+(a) distribuir ou redistribuir o Software;
 
-(i) use RickSoluções or SaOr names, trademarks, logos or visual identity
-    except as expressly authorized.
+(b) publicar ou fornecer cópias do Software a terceiros;
 
+(c) sublicenciar o Software;
 
-5. COMMERCIAL USE
+(d) vender, alugar, arrendar, ceder ou transferir o Software;
 
-Commercial use of the Software is not granted by this License.
+(e) disponibilizar o Software a terceiros;
 
-Commercial use requires prior express written authorization from
-RickSoluções or a separate commercial license agreement.
+(f) hospedar o Software para utilização por terceiros;
 
-Commercial use includes, without limitation:
+(g) disponibilizar o Software como SaaS, API, plataforma, serviço
+    hospedado ou modalidade equivalente;
 
-(a) paid services performed using the Software;
+(h) incorporar o Software a produtos ou serviços destinados à
+    distribuição ou disponibilização a terceiros;
 
-(b) direct or indirect sale of the Software;
+(i) explorar comercialmente o Software sem autorização;
 
-(c) inclusion of the Software in commercial products or services;
+(j) comercializar modificações ou trabalhos derivados sem autorização;
 
-(d) providing the Software as SaaS or another hosted service;
+(k) remover, ocultar ou alterar avisos de copyright, propriedade,
+    autoria ou licenciamento;
 
-(e) paid redistribution;
+(l) utilizar nomes, marcas, logotipos ou identidade visual da
+    RickSoluções sem autorização específica.
 
-(f) commercial exploitation of modifications or derivative works;
+Nenhuma disposição desta Licença deverá ser interpretada como
+concessão implícita de direitos.
 
-(g) use under a commercial licensing model established by RickSoluções.
 
+5. USO COMERCIAL
 
-6. COMMERCIAL LICENSING
+O uso comercial do SaOr - Sales Order não é autorizado por esta
+Licença, salvo mediante autorização expressa e por escrito da
+RickSoluções ou mediante contrato comercial específico.
 
-RickSoluções may offer separate commercial licensing arrangements,
-including, without limitation:
+Para fins desta Licença, poderá ser considerado uso comercial, entre
+outros:
 
-- per-user licensing;
-- per-installation licensing;
-- per-device licensing;
-- per-server licensing;
-- per-environment licensing;
-- enterprise licensing;
-- OEM licensing;
-- SaaS licensing;
-- transaction-based licensing;
-- redistribution licensing;
-- royalties;
-- periodic fees;
-- customized commercial agreements.
+(a) utilização do Software para prestação de serviços remunerados;
 
-Commercial rights arise only from the applicable written agreement and
-are not granted by this License.
+(b) comercialização direta ou indireta do Software;
 
+(c) inclusão do Software em produto ou serviço comercial;
 
-7. MODIFICATIONS AND DERIVATIVE WORKS
+(d) disponibilização do Software como SaaS ou serviço hospedado;
 
-Permission to modify the Software does not include permission to
-distribute, publish, sublicense, sell, commercialize or provide those
-modifications or derivative works to third parties.
+(e) disponibilização mediante assinatura ou cobrança recorrente;
 
-Modifications made under this License remain subject to the restrictions
-applicable to the original Software to the extent permitted by applicable
-law.
+(f) redistribuição mediante pagamento;
 
-Contributions intended for incorporation into an official release may
-be subject to separate contribution terms.
+(g) exploração econômica de modificações ou trabalhos derivados;
 
+(h) utilização do Software como parte de solução comercial destinada
+    a terceiros.
 
-8. DISTRIBUTION
+A utilização empresarial, corporativa ou institucional poderá estar
+sujeita a modalidade específica de licenciamento, conforme as
+condições estabelecidas pela RickSoluções.
 
-No general right to distribute or redistribute the Software is granted.
 
-Distribution requires prior express written authorization from
-RickSoluções.
+6. LICENCIAMENTO COMERCIAL
 
-An authorization to distribute may define specific conditions,
-including:
+A RickSoluções poderá disponibilizar modalidades específicas de
+licenciamento comercial para o SaOr - Sales Order.
 
-- authorized versions;
-- purpose;
-- territory;
-- duration;
-- number of copies;
-- authorized recipients;
-- commercial conditions;
-- termination conditions.
+Essas modalidades poderão contemplar, entre outras possibilidades,
+licenciamento por usuário, instalação, dispositivo, servidor,
+ambiente, unidade operacional, transação, empresa, OEM, SaaS,
+integração, redistribuição, royalties, taxas periódicas ou contratos
+personalizados.
 
-When an authorization to distribute expires or is revoked, no new copies
-may be distributed after the effective termination date, except where
-otherwise required by applicable law or a separate agreement.
+Direitos comerciais somente serão concedidos por meio da autorização
+ou do instrumento contratual correspondente.
 
+Valores, condições, limites, prazos, suporte, manutenção e demais
+direitos ou obrigações serão definidos no respectivo contrato.
 
-9. REVOCATION AND TERMINATION
+Nenhuma obrigação de pagamento será criada retroativamente apenas
+pela publicação unilateral de novos termos quando tal efeito não for
+permitido pela legislação aplicável.
 
-The rights granted under this License are revocable.
 
-RickSoluções may terminate or revoke the authorization granted by this
-License, in whole or in part, by notice to the licensee, to the extent
-permitted by applicable law.
+7. MODIFICAÇÕES E TRABALHOS DERIVADOS
 
-Authorization may also terminate upon violation of this License,
-including unauthorized:
+A autorização concedida para modificar o Software não inclui, por si
+só, autorização para distribuir, redistribuir, publicar, sublicenciar,
+vender, comercializar ou disponibilizar tais modificações ou trabalhos
+derivados a terceiros.
 
-- distribution;
-- commercial use;
-- sublicensing;
-- transfer;
-- publication;
-- exploitation of the Software;
-- use of RickSoluções intellectual property.
+Modificações realizadas sob esta Licença permanecerão sujeitas às
+restrições aplicáveis ao Software original, na extensão permitida pela
+legislação aplicável.
 
-Upon termination or revocation, the licensee must cease activities that
-depend upon the authorization granted by this License, subject to
-applicable law and any separate written agreement.
+Contribuições destinadas à incorporação oficial ao projeto poderão
+estar sujeitas a termos adicionais de contribuição, cessão ou
+licenciamento.
 
-Termination or revocation does not create retroactive obligations where
-such obligations are not permitted by applicable law.
 
+8. DISTRIBUIÇÃO E REDISTRIBUIÇÃO
 
-10. FUTURE VERSIONS AND LICENSING TERMS
+Esta Licença não concede direito geral de distribuição ou
+redistribuição do SaOr - Sales Order.
 
-RickSoluções may establish different licensing terms for future versions,
-releases, updates, editions or distributions of the Software.
+A distribuição do Software dependerá de autorização prévia e expressa
+da RickSoluções.
 
-Use of a future version may be conditioned upon acceptance of the license
-terms applicable to that version.
+Uma eventual autorização poderá estabelecer condições específicas,
+incluindo versão autorizada, finalidade, território, período,
+quantidade de cópias, destinatários, condições comerciais e regras
+de encerramento.
 
-Publication of new licensing terms does not, by itself, retroactively
-modify rights that cannot legally be modified retroactively.
+Quando uma autorização de distribuição expirar ou for revogada,
+nenhuma nova cópia poderá ser distribuída após a data de encerramento,
+salvo quando houver autorização contratual específica ou determinação
+legal em sentido diverso.
 
+Cópias disponibilizadas em desacordo com esta Licença serão
+consideradas não autorizadas.
 
-11. THIRD-PARTY SOFTWARE
 
-The Software may include or depend upon libraries, frameworks,
-components, tools or other materials owned by third parties.
+9. REVOGAÇÃO E ENCERRAMENTO
 
-Third-party materials remain subject to their respective licenses and
-copyright notices.
+Os direitos concedidos por esta Licença são limitados e revogáveis.
 
-This License does not modify, replace or override rights or obligations
-arising from applicable third-party licenses.
+A RickSoluções poderá, nos limites permitidos pela legislação
+aplicável, encerrar ou revogar total ou parcialmente a autorização
+concedida por esta Licença.
 
+A autorização também poderá ser encerrada em razão de descumprimento
+dos termos aqui estabelecidos, incluindo, sem limitação:
 
-12. TRADEMARKS AND BRANDING
+(a) distribuição não autorizada;
 
-This License does not grant any right to use:
+(b) uso comercial não autorizado;
 
-- RickSoluções;
-- SaOr;
-- SaOr - Sales Order;
-- trademarks;
-- logos;
-- product names;
-- trade names;
-- domains;
-- visual identity;
-- other distinctive signs owned by RickSoluções.
+(c) sublicenciamento não autorizado;
 
-Any use of these elements outside ordinary authorized use of the Software
-requires separate authorization.
+(d) transferência não autorizada;
 
+(e) publicação não autorizada;
 
-13. NO WARRANTY
+(f) exploração econômica não autorizada;
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
+(g) violação de direitos de propriedade intelectual;
 
-RICKSOLUÇÕES DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE,
-UNINTERRUPTED, SECURE, PERMANENTLY AVAILABLE, COMPATIBLE WITH ANY
-PARTICULAR SYSTEM OR ENVIRONMENT, OR SUITABLE FOR ANY PARTICULAR PURPOSE.
+(h) utilização não autorizada das marcas ou identidade da RickSoluções.
 
-NOTHING IN THIS LICENSE EXCLUDES WARRANTIES OR RIGHTS THAT CANNOT
-LAWFULLY BE EXCLUDED.
+Quando aplicável, a RickSoluções poderá comunicar ao usuário a data,
+as condições e eventuais procedimentos relacionados ao encerramento
+ou à revogação.
 
+Após o encerramento ou revogação, o usuário deverá cessar as atividades
+que dependam da autorização concedida por esta Licença, observadas a
+legislação aplicável e eventuais contratos específicos.
 
-14. LIMITATION OF LIABILITY
+A revogação não deverá ser interpretada como criação retroativa de
+obrigações ou retirada retroativa de direitos quando tal efeito não
+for permitido pela legislação aplicável.
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, RICKSOLUÇÕES SHALL NOT
-BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR
-OTHER DAMAGES ARISING FROM THE USE OF OR INABILITY TO USE THE SOFTWARE,
-INCLUDING, WHERE LEGALLY PERMITTED:
 
-- LOSS OF DATA;
-- LOSS OF REVENUE;
-- LOSS OF PROFITS;
-- LOSS OF BUSINESS OPPORTUNITIES;
-- BUSINESS INTERRUPTION;
-- LOSS OF PRODUCTIVITY.
+10. VERSÕES FUTURAS E ALTERAÇÃO DOS TERMOS
 
-NOTHING IN THIS LICENSE EXCLUDES OR LIMITS LIABILITY THAT CANNOT
-LAWFULLY BE EXCLUDED OR LIMITED.
+A RickSoluções poderá estabelecer termos de licenciamento diferentes
+para novas versões, atualizações, edições, distribuições ou lançamentos
+futuros do Software.
 
+Cada nova versão poderá estar sujeita aos termos vigentes no momento
+de sua disponibilização.
 
-15. ADDITIONAL LICENSES AND AGREEMENTS
+O acesso ou utilização de versões futuras poderá ser condicionado à
+aceitação dos respectivos termos de licenciamento.
 
-RickSoluções may grant additional rights under separate written
-agreements, including rights relating to:
+A publicação de nova Licença não deverá ser interpretada
+automaticamente como alteração retroativa de direitos que não possam
+ser legalmente modificados.
 
-- commercial use;
-- enterprise use;
-- redistribution;
-- SaaS;
-- OEM distribution;
-- sublicensing;
-- integration;
-- hosting;
-- support;
-- maintenance;
-- branding.
 
-Where a valid separate agreement conflicts with this License, the
-specific agreement prevails solely with respect to the rights and subject
-matter covered by that agreement.
+11. SOFTWARE E COMPONENTES DE TERCEIROS
 
+O SaOr - Sales Order poderá utilizar bibliotecas, frameworks,
+componentes, ferramentas, recursos ou outros materiais pertencentes
+a terceiros.
 
-16. SEVERABILITY
+Esses componentes permanecem sujeitos às respectivas licenças e
+direitos de seus titulares.
 
-If any provision of this License is held to be invalid, illegal or
-unenforceable, the remaining provisions shall remain effective to the
-maximum extent permitted by applicable law.
+Esta Licença não substitui, modifica ou elimina direitos e obrigações
+decorrentes de licenças de terceiros.
 
+Avisos de copyright, licenciamento ou atribuição de terceiros deverão
+ser preservados quando exigidos pelas respectivas licenças.
 
-17. RESERVATION OF RIGHTS
+A RickSoluções não reivindica propriedade sobre componentes de
+terceiros utilizados de acordo com suas respectivas licenças.
 
-No rights are granted by implication, estoppel or otherwise.
 
-All rights not expressly granted under this License are reserved by
-RickSoluções and, where applicable, by the respective owners of
-third-party components.
+12. MARCAS E IDENTIDADE VISUAL
 
+Esta Licença não concede qualquer direito de utilização independente
+sobre:
+
+RickSoluções;
+
+SaOr;
+
+SaOr - Sales Order;
+
+nomes empresariais;
+
+marcas;
+
+logotipos;
+
+símbolos;
+
+domínios;
+
+elementos gráficos;
+
+identidade visual;
+
+ou quaisquer outros sinais distintivos pertencentes à RickSoluções.
+
+A utilização desses elementos fora da utilização normal e autorizada
+do Software dependerá de autorização específica.
+
+A autorização para utilização do Software não implica concessão de
+licença de marca.
+
+
+13. PROPRIEDADE INTELECTUAL
+
+Todos os direitos de propriedade intelectual relacionados ao Software
+permanecem reservados aos respectivos titulares.
+
+Nenhuma disposição desta Licença deverá ser interpretada como cessão
+de direitos autorais, direitos patrimoniais, marcas, patentes, segredos
+comerciais, know-how, desenhos, identidade visual ou qualquer outro
+direito de propriedade intelectual, salvo quando expressamente
+estabelecido em instrumento específico.
+
+
+14. AUSÊNCIA DE VÍNCULO COM TERCEIROS
+
+O SaOr - Sales Order é um produto independente da RickSoluções.
+
+A eventual utilização, integração ou interoperabilidade com produtos,
+bibliotecas, APIs, plataformas, serviços ou tecnologias de terceiros
+não implica afiliação, parceria, representação, patrocínio, aprovação,
+certificação ou endosso por parte dos respectivos titulares, salvo
+quando expressamente informado.
+
+
+15. AUSÊNCIA DE GARANTIA
+
+O SOFTWARE É FORNECIDO "NO ESTADO EM QUE SE ENCONTRA", SEM GARANTIAS
+DE QUALQUER NATUREZA, EXPRESSAS OU IMPLÍCITAS, NA EXTENSÃO MÁXIMA
+PERMITIDA PELA LEGISLAÇÃO APLICÁVEL.
+
+NA EXTENSÃO PERMITIDA PELA LEGISLAÇÃO, A RICKSOLUÇÕES NÃO GARANTE QUE
+O SOFTWARE:
+
+(a) FUNCIONARÁ DE FORMA ININTERRUPTA;
+
+(b) SERÁ LIVRE DE ERROS;
+
+(c) ESTARÁ PERMANENTEMENTE DISPONÍVEL;
+
+(d) SERÁ COMPATÍVEL COM QUALQUER SISTEMA, DISPOSITIVO OU AMBIENTE;
+
+(e) ATENDERÁ A TODAS AS NECESSIDADES DO USUÁRIO;
+
+(f) SERÁ ADEQUADO A DETERMINADA FINALIDADE ESPECÍFICA;
+
+(g) SERÁ TOTALMENTE ISENTO DE FALHAS OU VULNERABILIDADES.
+
+O USO DO SOFTWARE É REALIZADO SOB RESPONSABILIDADE DO USUÁRIO,
+OBSERVADOS OS DIREITOS E GARANTIAS QUE NÃO POSSAM SER LEGALMENTE
+EXCLUÍDOS.
+
+
+16. LIMITAÇÃO DE RESPONSABILIDADE
+
+NA EXTENSÃO MÁXIMA PERMITIDA PELA LEGISLAÇÃO APLICÁVEL, A
+RICKSOLUÇÕES NÃO SERÁ RESPONSÁVEL POR DANOS DECORRENTES DO USO OU DA
+IMPOSSIBILIDADE DE USO DO SOFTWARE, INCLUINDO, QUANDO LEGALMENTE
+ADMISSÍVEL:
+
+(a) PERDA DE DADOS;
+
+(b) PERDA DE RECEITA;
+
+(c) PERDA DE LUCROS;
+
+(d) PERDA DE OPORTUNIDADES;
+
+(e) INTERRUPÇÃO DE NEGÓCIOS;
+
+(f) PERDA DE PRODUTIVIDADE;
+
+(g) DANOS INCIDENTAIS;
+
+(h) DANOS INDIRETOS;
+
+(i) DANOS ESPECIAIS;
+
+(j) DANOS CONSEQUENCIAIS.
+
+NENHUMA DISPOSIÇÃO DESTA LICENÇA PRETENDE EXCLUIR OU LIMITAR
+RESPONSABILIDADE QUE NÃO POSSA SER LEGALMENTE EXCLUÍDA OU LIMITADA.
+
+
+17. LICENCIAMENTO ADICIONAL
+
+A RickSoluções poderá conceder direitos adicionais por meio de
+instrumentos específicos.
+
+Tais instrumentos poderão abranger, entre outros, direitos relacionados
+a uso comercial, uso empresarial, redistribuição, SaaS, OEM,
+sublicenciamento, integração, hospedagem, suporte, manutenção e
+utilização de marcas.
+
+Quando existir contrato específico válido entre a RickSoluções e o
+usuário, seus termos prevalecerão sobre esta Licença exclusivamente
+em relação às matérias expressamente abrangidas pelo contrato.
+
+
+18. ENCERRAMENTO POR DESCUMPRIMENTO
+
+O descumprimento das condições estabelecidas nesta Licença poderá
+resultar no encerramento da autorização concedida ao usuário.
+
+Encerrada a autorização, o usuário deverá interromper as atividades
+que dependam desta Licença, respeitando eventuais obrigações legais,
+contratuais ou condições específicas estabelecidas pela RickSoluções.
+
+O encerramento não prejudicará direitos ou obrigações que, por sua
+natureza, devam permanecer válidos após o término da autorização.
+
+
+19. DIVISIBILIDADE
+
+Caso qualquer disposição desta Licença seja considerada inválida,
+ilegal ou inexequível, no todo ou em parte, as demais disposições
+permanecerão válidas e eficazes na extensão permitida pela legislação
+aplicável.
+
+Sempre que possível, a disposição afetada deverá ser interpretada de
+forma a preservar, na maior medida legalmente permitida, sua finalidade
+original.
+
+
+20. NÃO RENÚNCIA
+
+A eventual ausência de exercício ou demora no exercício de qualquer
+direito previsto nesta Licença não deverá ser interpretada como
+renúncia definitiva a esse direito.
+
+A renúncia a qualquer direito somente produzirá efeitos quando
+expressamente formalizada pela parte legitimada, quando exigido pela
+legislação aplicável.
+
+
+21. RESERVA DE DIREITOS
+
+Nenhum direito é concedido por implicação, presunção, tolerância ou
+qualquer outro meio além daqueles expressamente estabelecidos nesta
+Licença.
+
+Todos os direitos não expressamente concedidos permanecem reservados
+à RickSoluções e, quando aplicável, aos respectivos titulares de
+componentes de terceiros.
+
+
+22. DISPOSIÇÕES GERAIS
+
+Esta Licença deverá ser interpretada em conjunto com eventuais
+contratos específicos celebrados entre a RickSoluções e o usuário.
+
+Quando existir conflito entre esta Licença geral e contrato específico
+devidamente celebrado, prevalecerão os termos do contrato específico
+exclusivamente em relação ao objeto nele abrangido.
+
+Nenhuma disposição desta Licença deverá ser interpretada de forma a
+afastar direitos, garantias ou responsabilidades cuja exclusão seja
+proibida pela legislação aplicável.
+
+
+23. AVISO DE COPYRIGHT
 
 Copyright © 2026 RickSoluções.
-All rights reserved.
+Todos os direitos reservados.
 
-SaOr - Sales Order is proprietary software made available under a
-limited and revocable license.
+SaOr - Sales Order é software proprietário disponibilizado sob uma
+Licença Proprietária de Uso Limitado e Revogável.
+
+A disponibilização do código-fonte em repositório público ou privado
+não transforma o Software em software livre ou de código aberto e não
+concede direitos além daqueles expressamente estabelecidos nesta
+Licença.
