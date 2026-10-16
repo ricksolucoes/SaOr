@@ -1,9 +1,9 @@
 # SaOr - Sales Order
 ## Documento Mestre de UX, Telas e Navegação
 
-**Versão:** 0.6  
-**Status:** Em definição  
-**Etapa:** Arquitetura funcional + UX + Textframes + Planejamento de Prototipação  
+**Versão:** 0.7  
+**Status:** Candidata à aprovação  
+**Etapa:** Fechamento da Documentação Mestre / Validação funcional final  
 **Projeto:** SaOr - Sales Order — Sistema de Pedido de Venda / Força de Vendas Externa
 
 ---
@@ -129,7 +129,7 @@ A validação deverá verificar o objeto específico de cada fase:
 | MVP HTML | comportamento, responsividade, navegação, acessibilidade e aderência ao Figma |
 | Documento Técnico | arquitetura, segurança, integrações, contratos e viabilidade técnica |
 
-## 1.3 Alterações consolidadas na versão 0.5
+## 1.3 Consolidações desta revisão — versão 0.7
 
 Esta revisão formaliza:
 
@@ -140,7 +140,12 @@ Esta revisão formaliza:
 - a paleta cromática inicial oficial dos temas Claro e Escuro com valores HEX;
 - WCAG 2.2 nível AA como mínimo obrigatório e AAA como objetivo padrão;
 - a proibição de utilizar cor como único meio de transmitir informação;
-- validação obrigatória em todas as etapas do processo de construção.
+- validação obrigatória em todas as etapas do processo de construção;
+- fechamento dos destinos e comportamentos de ações anteriormente implícitas;
+- suporte ao usuário por WhatsApp;
+- estados explícitos de recuperação de senha, finalização de visita, cancelamento de visita e sincronização;
+- critérios funcionais de acesso à configuração da API;
+- preparação do documento para aprovação como baseline funcional.
 
 ---
 
@@ -279,9 +284,11 @@ Caso uma dessas condições não seja atendida, a interface deverá impedir a em
 
 ### Aprovação cadastral
 
-A origem operacional da aprovação — por exemplo, sistema integrado, backoffice ou futuro perfil administrativo — ainda não está definida neste documento e **não deverá ser inventada nesta etapa**.
+A origem operacional da aprovação cadastral é considerada **externa ao fluxo principal do vendedor nesta etapa**. Ela poderá ocorrer por integração, backoffice ou outro processo autorizado, sem alterar a regra funcional aqui definida.
 
-O Documento Mestre registra apenas a regra de negócio confirmada:
+A definição técnica e operacional de quem executa a aprovação será tratada no Documento Técnico ou em especificação administrativa futura e **não bloqueia a aprovação deste Documento Mestre**, pois o comportamento do SaOr após receber o resultado da aprovação já está definido.
+
+O Documento Mestre registra a seguinte regra de negócio:
 
 ```text
 PROSPECT + BLOQUEADO
@@ -321,7 +328,7 @@ Por isso, a versão mobile será usada como referência para os primeiros textfr
 
 Antes da implementação definitiva, será construído um MVP em HTML, CSS e JavaScript para validar layout, responsividade e navegação.
 
-O React permanece como referência prevista para a futura implementação do frontend, porém a arquitetura definitiva do frontend e a linguagem oficial do backend serão formalizadas somente no Documento Técnico, após a validação do MVP HTML.
+A arquitetura definitiva do frontend, a linguagem oficial do backend e os respectivos frameworks serão formalizados somente no Documento Técnico, após a validação do MVP HTML.
 
 ---
 
@@ -397,6 +404,8 @@ O botão central `+` representa a ação principal de iniciar uma venda.
 | T01.1 | Recuperar senha |
 | E01.2 | Login inválido |
 | E01.3 | Sem conexão |
+| E01.4 | Recuperação solicitada |
+| E01.5 | Falha ao solicitar recuperação |
 
 ## Operação
 
@@ -436,6 +445,7 @@ O botão central `+` representa a ação principal de iniciar uma venda.
 | T06 | Registrar visita |
 | M06.1 | Finalizar visita |
 | T06.2 | Detalhes da visita |
+| E06.3 | Falha ao finalizar visita |
 
 ## Produtos
 
@@ -478,6 +488,8 @@ O botão central `+` representa a ação principal de iniciar uma venda.
 | T16 | Agenda |
 | T16.1 | Agendar visita |
 | T16.2 | Compromisso / Visita |
+| M16.3 | Confirmar cancelamento da visita |
+| E16.4 | Falha ao cancelar visita |
 
 ## Configurações
 
@@ -490,6 +502,9 @@ O botão central `+` representa a ação principal de iniciar uma venda.
 | T17.4 | Ajuda |
 | T17.5 | Sobre |
 | M17.6 | Confirmar saída |
+| E17.7 | Sincronização em andamento |
+| E17.8 | Sincronização concluída |
+| E17.9 | Falha na sincronização |
 
 ---
 
@@ -565,9 +580,17 @@ T13 Pedido confirmado
 
 # 9.1 CONFIGURAÇÃO INICIAL E APLICAÇÃO
 
-A configuração da aplicação é transversal e deverá estar acessível antes e depois da autenticação.
+A configuração da aplicação é transversal e deverá estar acessível antes e depois da autenticação, respeitando as regras de autorização abaixo.
 
-Antes do login, sua finalidade principal será permitir configurar ou corrigir o acesso à API. Depois do login, as mesmas configurações poderão ser acessadas pela área **Mais / Configurações**.
+Antes do login, sua finalidade principal será permitir a configuração inicial da API quando ainda não existir servidor configurado. Depois do login, as configurações poderão ser acessadas pela área **Mais / Configurações**.
+
+### Regra de acesso à configuração da API
+
+- quando nenhuma API estiver configurada, a configuração inicial poderá ser realizada antes do login;
+- quando a API já estiver configurada, qualquer alteração de URL ou credencial deverá exigir autorização específica para **Alterar configuração da API**;
+- sem essa autorização, T00.1 permanecerá disponível apenas para consulta do endereço configurado, status e teste de conexão;
+- após uma alteração autorizada da API, a aplicação deverá invalidar a sessão atual e retornar para **T01 — Login** após salvar a nova configuração;
+- o mecanismo técnico utilizado para conceder e validar essa autorização será definido no Documento Técnico, sem alterar este comportamento funcional.
 
 ## T00 — Configuração da aplicação
 
@@ -655,11 +678,22 @@ Os demais parâmetros dependerão do contrato definitivo da API e serão formali
 └────────────────────────────────────┘
 ```
 
+### Ações
+
+| Ação | Destino / comportamento |
+|---|---|
+| Testar conexão | E00.6; sucesso → E00.7; falha → E00.8 |
+| Salvar configuração inicial | Persiste a configuração validada e segue para T01 |
+| Salvar alteração de configuração existente | M00.4 |
+| Voltar | Retorna à interface de origem sem salvar alterações não confirmadas |
+
 ### Regras
 
 - credenciais não deverão ser exibidas abertas por padrão;
 - valores sensíveis não deverão aparecer em mensagens de erro, logs ou telas de diagnóstico;
-- uma alteração de servidor deverá solicitar confirmação;
+- uma alteração de servidor deverá solicitar confirmação em **M00.4**;
+- após confirmar e salvar uma alteração de servidor, a sessão atual deverá ser encerrada e o fluxo retornará para **T01**;
+- usuários sem autorização para alterar a API poderão apenas consultar a configuração e executar o teste de conexão;
 - o formato definitivo de autenticação será definido posteriormente no Documento Técnico.
 
 ---
@@ -669,6 +703,11 @@ Os demais parâmetros dependerão do contrato definitivo da API e serão formali
 ### Objetivo
 
 Permitir escolher entre os temas **Claro** e **Escuro**.
+
+### Ações
+
+- `APLICAR TEMA` persiste a preferência e retorna para a interface de origem com o novo tema já aplicado;
+- alternar entre Claro e Escuro atualiza a pré-visualização sem alterar a preferência salva até a confirmação.
 
 ### Regras
 
@@ -695,7 +734,7 @@ Permitir escolher entre os temas **Claro** e **Escuro**.
 │ Pré-visualização                   │
 │                                    │
 │ ┌────────────────────────────────┐ │
-│ │ SaOr                     │ │
+│ │ SaOr                           │ │
 │ │                                │ │
 │ │ Olá, Carlos                    │ │
 │ │                                │ │
@@ -717,6 +756,11 @@ Permitir escolher entre os temas **Claro** e **Escuro**.
 ### Objetivo
 
 Permitir diferenciar problemas de internet, API, autenticação e sincronização.
+
+### Ações
+
+- `TESTAR NOVAMENTE` repete os testes e atualiza os resultados na própria T00.3;
+- a tela deverá identificar textualmente qual verificação falhou, sem depender apenas de cor.
 
 ### Textframe
 
@@ -766,6 +810,9 @@ Permitir diferenciar problemas de internet, API, autenticação e sincronizaçã
 └────────────────────────────────────┘
 ```
 
+Cancelar → **T00.1**, preservando a configuração atual.  
+Alterar → salva a nova configuração, encerra a sessão quando houver usuário autenticado e segue para **T01**.
+
 ---
 
 ## M00.5 — Restaurar configuração
@@ -790,6 +837,9 @@ Permitir diferenciar problemas de internet, API, autenticação e sincronizaçã
 └────────────────────────────────────┘
 ```
 
+Cancelar → retorna para **T00** sem alterações.  
+Restaurar → remove preferências locais restauráveis; se a API for removida, segue para **E00.9**. Dados operacionais somente poderão ser removidos por fluxo próprio e confirmação específica.
+
 ---
 
 ## E00.6 — Testando conexão
@@ -806,6 +856,9 @@ Permitir diferenciar problemas de internet, API, autenticação e sincronizaçã
 │                                    │
 └────────────────────────────────────┘
 ```
+
+Conexão válida → **E00.7**.  
+Falha de conexão → **E00.8**.
 
 ---
 
@@ -826,6 +879,8 @@ Permitir diferenciar problemas de internet, API, autenticação e sincronizaçã
 └────────────────────────────────────┘
 ```
 
+OK → retorna para **T00.1** mantendo a configuração em edição.
+
 ---
 
 ## E00.8 — Falha de conexão
@@ -844,6 +899,9 @@ Permitir diferenciar problemas de internet, API, autenticação e sincronizaçã
 │ [        EDITAR API           ]    │
 └────────────────────────────────────┘
 ```
+
+Testar novamente → **E00.6**.  
+Editar API → **T00.1**.
 
 ---
 
@@ -882,7 +940,8 @@ Configurar agora → **T00.1**
 └────────────────────────────────────┘
 ```
 
-Ver configuração da API → **T00.1**
+Tentar novamente → repete a tentativa de conexão permanecendo em **T01**; em sucesso, o login volta ao estado normal.  
+Ver configuração da API → **T00.1**.
 
 ---
 
@@ -900,14 +959,14 @@ Autenticar o vendedor.
 |---|---:|---|
 | Usuário/e-mail | Sim | Identificação do usuário |
 | Senha | Sim | Campo protegido |
-| Lembrar-me | Não | Preservar sessão conforme regra futura |
+| Lembrar-me | Não | Quando marcado, permite restaurar a sessão em uma nova abertura do aplicativo até logout, expiração, revogação da sessão ou alteração da API; quando desmarcado, uma nova abertura exige autenticação |
 
 ## Ações
 
 | Ação | Destino |
 |---|---|
 | Configurações | T00 |
-| Entrar | T02 |
+| Entrar | T02 em sucesso; E01.2 para credenciais inválidas; E01.3/E00.10 para falha de conectividade conforme origem |
 | Esqueci minha senha | T01.1 |
 | Exibir senha | Permanece T01 |
 | Status da API | T00.3 |
@@ -920,7 +979,7 @@ Autenticar o vendedor.
 │                                    │
 │              [ LOGO ]              │
 │                                    │
-│            SaOr              │
+│               SaOr                 │
 │     Força de vendas em campo       │
 │                                    │
 │ Usuário / E-mail                   │
@@ -961,8 +1020,10 @@ Solicitar recuperação da senha.
 
 ## Ações
 
-- Enviar recuperação.
-- Voltar ao login.
+| Ação | Destino / comportamento |
+|---|---|
+| Enviar recuperação | E01.4 em caso de aceite da solicitação; E01.5 em caso de falha |
+| Voltar ao login | T01 |
 
 ## Textframe
 
@@ -1017,6 +1078,48 @@ Solicitar recuperação da senha.
 │ [        TENTAR NOVAMENTE        ] │
 └────────────────────────────────────┘
 ```
+
+---
+
+# E01.4 — Recuperação solicitada
+
+```text
+┌────────────────────────────────────┐
+│               ✓                    │
+│                                    │
+│ Solicitação recebida               │
+│                                    │
+│ Se o usuário informado estiver     │
+│ habilitado para recuperação, as    │
+│ instruções serão enviadas pelo     │
+│ canal cadastrado.                  │
+│                                    │
+│ [        VOLTAR AO LOGIN        ]  │
+└────────────────────────────────────┘
+```
+
+Voltar ao login → **T01**.
+
+A mensagem não deverá confirmar a existência ou inexistência de uma conta específica.
+
+---
+
+# E01.5 — Falha ao solicitar recuperação
+
+```text
+┌────────────────────────────────────┐
+│               ⚠                    │
+│                                    │
+│ Não foi possível enviar a          │
+│ solicitação de recuperação.        │
+│                                    │
+│ [        TENTAR NOVAMENTE       ]  │
+│ [         VOLTAR AO LOGIN       ]  │
+└────────────────────────────────────┘
+```
+
+Tentar novamente → **T01.1**.  
+Voltar ao login → **T01**.
 
 ---
 
@@ -1096,6 +1199,13 @@ Responder rapidamente:
 ---
 
 # T02.1 — Notificações
+
+## Destinos
+
+| Tipo de notificação | Destino |
+|---|---|
+| Pedido | T15 — Detalhes do pedido correspondente |
+| Visita / compromisso | T16.2 — Compromisso / Visita correspondente |
 
 ```text
 ┌────────────────────────────────────┐
@@ -1240,6 +1350,8 @@ A situação operacional deverá ser apresentada de forma independente da classi
 └────────────────────────────────────┘
 ```
 
+Novo Prospect → **T05**.
+
 ---
 
 # T04 — Cliente / Resumo
@@ -1321,7 +1433,8 @@ A situação operacional deverá ser apresentada de forma independente da classi
 └────────────────────────────────────┘
 ```
 
-Pedido selecionado → **T15**.
+Pedido selecionado → **T15**.  
+Novo pedido → **T09**, com o Cliente atual pré-selecionado.
 
 ---
 
@@ -1346,7 +1459,8 @@ Pedido selecionado → **T15**.
 └────────────────────────────────────┘
 ```
 
-Visita selecionada → **T06.2**.
+Visita selecionada → **T06.2**.  
+Registrar visita → **T06**, com o Cliente atual pré-selecionado.
 
 ---
 
@@ -1433,6 +1547,10 @@ Visita selecionada → **T06.2**.
 │ [       ABRIR NO MAPA         ]    │
 └────────────────────────────────────┘
 ```
+
+### Ação externa — Abrir no mapa
+
+`ABRIR NO MAPA` deverá abrir o aplicativo de mapas padrão do dispositivo com o endereço exibido. Se o sistema operacional solicitar escolha de aplicativo, será utilizado o seletor nativo. Caso nenhum aplicativo ou serviço de mapas esteja disponível, a tela permanecerá aberta e exibirá mensagem textual de indisponibilidade.
 
 ---
 
@@ -1559,7 +1677,7 @@ A conversão para Cliente não deverá duplicar o cadastro nem apagar o históri
 └────────────────────────────────────┘
 ```
 
-Continuar → **T05.1**
+Continuar → **T05.1**.
 
 ---
 
@@ -1615,7 +1733,8 @@ Continuar → **T05.1**
 └────────────────────────────────────┘
 ```
 
-Continuar → **T05.2**
+Voltar → **T05** preservando os dados preenchidos.  
+Continuar → **T05.2**.
 
 ---
 
@@ -1674,7 +1793,8 @@ Registrar potencial e contexto comercial da oportunidade.
 └────────────────────────────────────┘
 ```
 
-Salvar → **T05.3**
+Voltar → **T05.1** preservando os dados preenchidos.  
+Salvar → **T05.3**.
 
 ---
 
@@ -1715,11 +1835,19 @@ Neste contexto:
 
 - Endereço → reutiliza estrutura de **T04.4**;
 - Informações comerciais → **T05.2 em modo visualização/edição**;
-- Histórico → **T05.4**.
+- Histórico → **T05.4**;
+- Registrar visita → **T06**, com o Prospect pré-selecionado.
 
 ---
 
 # T05.4 — Prospect / Histórico de visitas
+
+## Destinos
+
+| Ação | Destino |
+|---|---|
+| Selecionar visita | T06.2 — Detalhes da visita correspondente |
+| Nova visita | T06 — Registrar visita, com o Prospect pré-selecionado |
 
 ```text
 ┌────────────────────────────────────┐
@@ -1813,6 +1941,13 @@ Finalizar → **M06.1**
 
 # M06.1 — Confirmar finalização da visita
 
+## Comportamento
+
+- `CANCELAR` fecha o modal e retorna para T06 sem salvar a finalização;
+- `FINALIZAR` salva a visita como **Concluída**;
+- após sucesso, o sistema retorna para a interface de origem mantendo o contexto: T04.2 para Cliente, T05.4 para Prospect ou T16 quando iniciado pela Agenda;
+- em caso de falha, permanece no contexto da visita e apresenta **E06.3**.
+
 ```text
 ┌────────────────────────────────────┐
 │       Finalizar visita?            │
@@ -1829,6 +1964,26 @@ Finalizar → **M06.1**
 │ [ CANCELAR ]      [ FINALIZAR ]    │
 └────────────────────────────────────┘
 ```
+
+---
+
+# E06.3 — Falha ao finalizar visita
+
+```text
+┌────────────────────────────────────┐
+│               ⚠                    │
+│                                    │
+│ Não foi possível finalizar a       │
+│ visita. Os dados preenchidos foram │
+│ preservados.                       │
+│                                    │
+│ [        TENTAR NOVAMENTE       ]  │
+│ [             VOLTAR           ]  │
+└────────────────────────────────────┘
+```
+
+Tentar novamente → **M06.1**.  
+Voltar → **T06**, preservando os dados preenchidos.
 
 ---
 
@@ -1861,6 +2016,8 @@ Finalizar → **M06.1**
 │ #10549                         >   │
 └────────────────────────────────────┘
 ```
+
+Pedido relacionado → **T15**.
 
 ---
 
@@ -1936,6 +2093,9 @@ Finalizar → **M06.1**
 └────────────────────────────────────┘
 ```
 
+Limpar → redefine os filtros no próprio modal.  
+Aplicar → fecha M07.1 e atualiza **T07**.
+
 ---
 
 # E07.2 — Produto não encontrado
@@ -1952,6 +2112,8 @@ Finalizar → **M06.1**
 │ [       LIMPAR FILTROS       ]     │
 └────────────────────────────────────┘
 ```
+
+Limpar filtros → retorna para **T07** sem filtros aplicados.
 
 ---
 
@@ -1987,6 +2149,8 @@ Finalizar → **M06.1**
 │ [     ADICIONAR AO PEDIDO      ]   │
 └────────────────────────────────────┘
 ```
+
+Adicionar ao pedido → adiciona/atualiza o item no pedido em edição e retorna para **T10**.
 
 ---
 
@@ -2091,7 +2255,8 @@ Continuar              → T10
 └────────────────────────────────────┘
 ```
 
-A ação **SELECIONAR** somente ficará habilitada quando um Cliente Ativo estiver marcado.
+A ação **SELECIONAR** somente ficará habilitada quando um Cliente Ativo estiver marcado.  
+Selecionar → retorna para **T09** com o Cliente escolhido.
 
 ---
 
@@ -2133,6 +2298,8 @@ Exemplos:
 └────────────────────────────────────┘
 ```
 
+Usar este endereço → retorna para **T09** com o endereço selecionado.
+
 ---
 
 # M09.3 — Selecionar tabela de preço
@@ -2153,6 +2320,8 @@ Exemplos:
 │ [          SELECIONAR          ]   │
 └────────────────────────────────────┘
 ```
+
+Selecionar → retorna para **T09** com a tabela de preço escolhida.
 
 ---
 
@@ -2224,6 +2393,9 @@ Continuar → **T11**
 └────────────────────────────────────┘
 ```
 
+Remover item → remove o item e retorna para **T10**.  
+Salvar alterações → aplica quantidade/desconto válidos e retorna para **T10**.
+
 ---
 
 # T11 — Pedido / Condições comerciais
@@ -2273,6 +2445,8 @@ Continuar → **T11**
 │ [          CONTINUAR           ]   │
 └────────────────────────────────────┘
 ```
+
+Continuar → **T12**.
 
 ---
 
@@ -2343,7 +2517,8 @@ Confirmar  → M12.1
 └────────────────────────────────────┘
 ```
 
-Confirmar → **T13**
+Voltar → **T12**.  
+Confirmar → **T13**.
 
 ---
 
@@ -2378,11 +2553,23 @@ Visualizar → **T15**
 
 Voltar → **T02**
 
+### Ação externa — Compartilhar pedido
+
+`COMPARTILHAR` deverá abrir o compartilhamento nativo do sistema operacional. O conteúdo compartilhado deverá conter, no mínimo: número do pedido, cliente, valor total e status atual. O sistema deverá permitir que o usuário escolha qualquer aplicativo compatível disponível no dispositivo. Se não houver destino de compartilhamento disponível, a tela deverá permanecer aberta e informar a indisponibilidade.
+
+
 ---
 
 # 17. CONSULTA DE PEDIDOS
 
 # T14 — Pedidos
+
+## Destinos
+
+| Ação | Destino |
+|---|---|
+| Filtros | M14.1 |
+| Selecionar pedido | T15 |
 
 ```text
 ┌────────────────────────────────────┐
@@ -2443,6 +2630,9 @@ Voltar → **T02**
 └────────────────────────────────────┘
 ```
 
+Limpar → redefine os filtros no próprio modal.  
+Aplicar → fecha M14.1 e atualiza **T14**.
+
 ---
 
 # T15 — Detalhes do pedido
@@ -2483,6 +2673,11 @@ Voltar → **T02**
 Condições → **T15.1**
 
 Endereço → **T15.2**
+
+### Ação externa — Compartilhar pedido
+
+`COMPARTILHAR` deverá abrir o compartilhamento nativo do sistema operacional. O conteúdo compartilhado deverá conter, no mínimo: número do pedido, cliente, valor total e status atual. O sistema deverá permitir que o usuário escolha qualquer aplicativo compatível disponível no dispositivo. Se não houver destino de compartilhamento disponível, a tela deverá permanecer aberta e informar a indisponibilidade.
+
 
 ---
 
@@ -2545,6 +2740,10 @@ Endereço → **T15.2**
 │ [        ABRIR NO MAPA        ]    │
 └────────────────────────────────────┘
 ```
+
+### Ação externa — Abrir no mapa
+
+`ABRIR NO MAPA` deverá abrir o aplicativo de mapas padrão do dispositivo com o endereço exibido. Se o sistema operacional solicitar escolha de aplicativo, será utilizado o seletor nativo. Caso nenhum aplicativo ou serviço de mapas esteja disponível, a tela permanecerá aberta e exibirá mensagem textual de indisponibilidade.
 
 ---
 
@@ -2628,6 +2827,9 @@ Compromisso → **T16.2**
 └────────────────────────────────────┘
 ```
 
+Agendar → salva o compromisso e abre **T16.2**.  
+Quando T16.1 for aberta por `Reagendar`, o mesmo botão salva as alterações e retorna para **T16.2** com os dados atualizados.
+
 ---
 
 # T16.2 — Compromisso / Visita agendada
@@ -2658,9 +2860,51 @@ Compromisso → **T16.2**
 └────────────────────────────────────┘
 ```
 
-Iniciar → **T06**
+Iniciar → **T06**, com o Cliente/Prospect e o compromisso pré-selecionados.
 
-Endereço → **T04.4**
+Endereço → **T04.4**.
+
+Reagendar → **T16.1 em modo de edição**, carregando os dados atuais do compromisso.
+
+Cancelar visita → **M16.3**.
+
+---
+
+# M16.3 — Confirmar cancelamento da visita
+
+```text
+┌────────────────────────────────────┐
+│       Cancelar esta visita?        │
+│                                    │
+│ A visita será mantida no histórico │
+│ com status Cancelada.              │
+│                                    │
+│ [ NÃO CANCELAR ]   [ CANCELAR ]    │
+└────────────────────────────────────┘
+```
+
+Não cancelar → retorna para **T16.2**.  
+Cancelar → altera o status para **Cancelada** e retorna para **T16**.  
+Falha ao cancelar → **E16.4**.
+
+---
+
+# E16.4 — Falha ao cancelar visita
+
+```text
+┌────────────────────────────────────┐
+│               ⚠                    │
+│                                    │
+│ Não foi possível cancelar a visita.│
+│ Nenhuma alteração foi aplicada.    │
+│                                    │
+│ [        TENTAR NOVAMENTE       ]  │
+│ [             VOLTAR           ]  │
+└────────────────────────────────────┘
+```
+
+Tentar novamente → **M16.3**.  
+Voltar → **T16.2**.
 
 ---
 
@@ -2749,6 +2993,69 @@ Especialmente importante para vendedor externo.
 └────────────────────────────────────┘
 ```
 
+Sincronizar agora → **E17.7**.
+
+---
+
+# E17.7 — Sincronização em andamento
+
+```text
+┌────────────────────────────────────┐
+│ ‹        Sincronização             │
+│                                    │
+│               ◌                    │
+│                                    │
+│       Sincronizando dados...       │
+│                                    │
+│ Clientes              Em andamento │
+│ Produtos              Aguardando   │
+│ Preços                Aguardando   │
+│ Pedidos pendentes     Aguardando   │
+└────────────────────────────────────┘
+```
+
+Sucesso → **E17.8**.  
+Falha → **E17.9**.
+
+---
+
+# E17.8 — Sincronização concluída
+
+```text
+┌────────────────────────────────────┐
+│               ✓                    │
+│                                    │
+│      Sincronização concluída       │
+│                                    │
+│ Todos os dados disponíveis foram   │
+│ atualizados com sucesso.            │
+│                                    │
+│ [              OK              ]   │
+└────────────────────────────────────┘
+```
+
+OK → **T17.2** com data/hora da última sincronização atualizadas.
+
+---
+
+# E17.9 — Falha na sincronização
+
+```text
+┌────────────────────────────────────┐
+│               ⚠                    │
+│                                    │
+│ A sincronização não foi concluída. │
+│ Os dados já existentes foram       │
+│ preservados.                       │
+│                                    │
+│ [        TENTAR NOVAMENTE       ]  │
+│ [             VOLTAR           ]  │
+└────────────────────────────────────┘
+```
+
+Tentar novamente → **E17.7**.  
+Voltar → **T17.2**.
+
 ---
 
 # T17.3 — Configurações
@@ -2764,6 +3071,10 @@ Centralizar preferências operacionais do usuário e fornecer acesso às configu
 | API de acesso | T00.1 |
 | Tema / Aparência | T00.2 |
 | Diagnóstico | T00.3 |
+
+## Preferências
+
+Os switches de Notificações, Lembretes de visitas, Sincronização automática e Uso de dados móveis alteram a preferência na própria T17.3 e devem persistir localmente. Quando uma preferência depender de permissão do sistema operacional, a interface deverá informar essa dependência e direcionar o usuário para a configuração do sistema somente quando necessário.
 
 ## Textframe
 
@@ -2821,7 +3132,13 @@ Centralizar preferências operacionais do usuário e fornecer acesso às configu
 └────────────────────────────────────┘
 ```
 
-Os itens poderão inicialmente abrir conteúdo interno expansível, sem criar nova rota.
+### Comportamento
+
+- os cinco tópicos de ajuda deverão abrir e recolher conteúdo **inline** na própria T17.4, em padrão expansível/accordion, sem criar nova rota;
+- apenas um tópico poderá permanecer expandido por vez no mobile para reduzir rolagem excessiva;
+- `Contatar suporte` deverá abrir uma conversa no **WhatsApp** com o canal oficial de suporte configurado para o ambiente;
+- a mensagem inicial poderá ser pré-preenchida com identificação do aplicativo e versão, sem incluir credenciais, tokens ou dados sensíveis;
+- se o aplicativo WhatsApp não estiver instalado, deverá ser tentada a versão web; se nenhum canal estiver disponível, T17.4 permanecerá aberta e exibirá mensagem textual de indisponibilidade.
 
 ---
 
@@ -2833,7 +3150,7 @@ Os itens poderão inicialmente abrir conteúdo interno expansível, sem criar no
 │                                    │
 │             [ LOGO ]               │
 │                                    │
-│           SaOr               │
+│               SaOr                 │
 │                                    │
 │ Versão                             │
 │ 1.0.0                              │
@@ -2841,12 +3158,19 @@ Os itens poderão inicialmente abrir conteúdo interno expansível, sem criar no
 │ Ambiente                           │
 │ Produção                           │
 │                                    │
-│ © Empresa                          │
+│ © 2026 RickSoluções                │
 │                                    │
 │ Política de privacidade        >   │
 │ Termos de uso                  >   │
 └────────────────────────────────────┘
 ```
+
+### Documentos legais
+
+- `Política de privacidade` abrirá a URL oficial de privacidade configurada para o ambiente no navegador padrão;
+- `Termos de uso` abrirá a URL oficial de termos configurada para o ambiente no navegador padrão;
+- os endereços e o conteúdo jurídico não fazem parte da especificação UX deste Documento Mestre e deverão ser fornecidos antes da publicação em produção;
+- se uma URL não estiver configurada, a ação deverá permanecer indisponível e informar claramente o motivo, sem navegação para uma página vazia.
 
 ---
 
@@ -2857,19 +3181,20 @@ Os itens poderão inicialmente abrir conteúdo interno expansível, sem criar no
 │            Sair?                   │
 │                                    │
 │ Deseja realmente encerrar sua      │
-│ sessão no SaOr?               │
+│ sessão no SaOr?                    │
 │                                    │
 │ [ CANCELAR ]           [ SAIR ]    │
 └────────────────────────────────────┘
 ```
 
-Sair → **T01**
+Cancelar → retorna para **T17**.  
+Sair → encerra a sessão e segue para **T01**.
 
 ---
 
 # 20. COMPONENTES REUTILIZÁVEIS
 
-O Figma e posteriormente o React deverão priorizar componentes compartilhados.
+O Figma e a implementação definitiva deverão priorizar componentes compartilhados.
 
 ```text
 C01  AppHeader
@@ -3021,7 +3346,7 @@ status.error
 status.info
 ```
 
-Os valores acima são os **tokens cromáticos iniciais oficiais da versão 0.5**. Qualquer alteração futura deverá manter, no mínimo, os critérios AA estabelecidos neste documento e deverá ser validada novamente antes de aprovação.
+Os valores acima são os **tokens cromáticos oficiais vigentes nesta versão do Documento Mestre**. Qualquer alteração futura deverá manter, no mínimo, os critérios AA estabelecidos neste documento e deverá ser validada novamente antes de aprovação.
 
 Nenhuma funcionalidade, módulo ou fluxo poderá ser adicionado ou removido em razão de uma decisão puramente visual.
 
@@ -3252,7 +3577,7 @@ A implementação deverá permitir um estado de pedido em edição.
 
 Como o usuário estará em campo, o produto deverá ser projetado visualmente considerando perda de conectividade.
 
-Exemplo de comportamento futuro:
+Comportamento funcional previsto:
 
 ```text
 PEDIDO CRIADO
@@ -3270,7 +3595,7 @@ PEDIDO CRIADO
                    Enviado
 ```
 
-A definição técnica será feita posteriormente, mas os estados de UX já precisam existir.
+A implementação técnica será definida no Documento Técnico. Para esta etapa, ficam aprovados os estados funcionais **Online**, **Offline** e **Pendente de sincronização**, bem como a preservação do pedido até que seja possível sincronizá-lo.
 
 ---
 
@@ -3313,10 +3638,14 @@ T00 Configurações
 T01 Login
  ├── T00 Configurações
  ├── T01.1 Recuperar senha
+ │     ├── E01.4 Recuperação solicitada
+ │     └── E01.5 Falha na recuperação
  └── T02 Home
 
 T02 Home
  ├── T02.1 Notificações
+ │     ├── T15 Pedido
+ │     └── T16.2 Compromisso / Visita
  ├── T03 Clientes
  ├── T05 Novo Prospect
  ├── T09 Novo Pedido
@@ -3348,15 +3677,22 @@ T05.3 Prospect
  ├── T04.4 Endereço
  ├── T05.2 Comercial
  ├── T05.4 Histórico
+ │     ├── T06.2 Detalhes da visita
+ │     └── T06 Nova visita
  └── T06 Registrar Visita
 
 T06 Registrar Visita
  ├── M06.1 Finalizar
+ │     └── E06.3 Falha ao finalizar
  └── T09 Pedido
+
+T06.2 Detalhes da Visita
+ └── T15 Pedido relacionado
 
 T07 Produtos
  ├── M07.1 Filtros
  ├── T08 Produto
+ │     └── T10 Pedido
  └── T10 Pedido
 
 T09 Pedido / Cliente
@@ -3385,6 +3721,7 @@ M12.1
 
 T13
  ├── T15 Pedido
+ ├── Compartilhamento nativo do sistema
  └── T02 Início
 
 T14 Pedidos
@@ -3393,7 +3730,8 @@ T14 Pedidos
 
 T15 Pedido
  ├── T15.1 Condições
- └── T15.2 Endereço
+ ├── T15.2 Endereço
+ └── Compartilhamento nativo do sistema
 
 T16 Agenda
  ├── T16.1 Agendar
@@ -3401,18 +3739,27 @@ T16 Agenda
 
 T16.2
  ├── T04.4 Endereço
- └── T06 Iniciar visita
+ ├── T06 Iniciar visita
+ ├── T16.1 Reagendar em modo de edição
+ └── M16.3 Cancelar visita
+       └── E16.4 Falha ao cancelar
 
 T17 Mais
  ├── T17.1 Perfil
  ├── T16 Agenda
  ├── T17.2 Sincronização
+ │     ├── E17.7 Em andamento
+ │     ├── E17.8 Concluída
+ │     └── E17.9 Falha
  ├── T17.3 Configurações
  │     ├── T00.1 API
  │     ├── T00.2 Aparência
  │     └── T00.3 Diagnóstico
  ├── T17.4 Ajuda
+ │     └── WhatsApp (ação externa de suporte)
  ├── T17.5 Sobre
+ │     ├── Política de privacidade (navegador externo)
+ │     └── Termos de uso (navegador externo)
  └── M17.6 Sair
 ```
 
@@ -3484,7 +3831,7 @@ Isso facilitará posteriormente:
 - organização dos componentes;
 - documentação;
 - testes;
-- implementação React.
+- implementação definitiva do frontend.
 
 ---
 
@@ -3750,9 +4097,76 @@ Modelo resumido de acompanhamento:
 | ID | Interface | Textframe | Wireframe | Design | Figma | Protótipo | HTML |
 |---|---|---|---|---|---|---|---|
 | T00 | Configuração da aplicação | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T00.1 | Configuração da API | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T00.2 | Aparência / Tema | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T00.3 | Diagnóstico de conexão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M00.4 | Confirmar alteração da API | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M00.5 | Restaurar configuração | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.6 | Testando conexão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.7 | Conexão realizada | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.8 | Falha de conexão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.9 | API não configurada | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.10 | API indisponível no login | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
 | T01 | Login | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
 | T01.1 | Recuperar senha | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.2 | Login inválido | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.3 | Sem conexão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.4 | Recuperação solicitada | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.5 | Falha ao solicitar recuperação | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
 | T02 | Início / Dashboard | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T02.1 | Notificações | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T03 | Clientes e Prospects | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M03.1 | Filtros de clientes | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E03.2 | Busca sem resultado | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04 | Cliente — Resumo | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.1 | Cliente — Pedidos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.2 | Cliente — Visitas | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.3 | Cliente — Financeiro | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.4 | Cliente — Endereço | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.5 | Cliente — Dados cadastrais | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05 | Novo Prospect — Dados básicos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05.1 | Novo Prospect — Endereço | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05.2 | Novo Prospect — Informações comerciais | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05.3 | Prospect — Resumo | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05.4 | Prospect — Histórico de visitas | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T06 | Registrar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M06.1 | Finalizar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T06.2 | Detalhes da visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E06.3 | Falha ao finalizar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T07 | Catálogo de produtos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M07.1 | Filtros de produtos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E07.2 | Produto não encontrado | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T08 | Detalhes do produto | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T09 | Pedido — Cliente | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M09.1 | Selecionar cliente | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T09.2 | Selecionar endereço | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M09.3 | Selecionar tabela de preço | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T10 | Pedido — Itens | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M10.1 | Editar item | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T11 | Pedido — Condições comerciais | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T12 | Pedido — Revisão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M12.1 | Confirmar pedido | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T13 | Pedido confirmado | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T14 | Pedidos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M14.1 | Filtros de pedidos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T15 | Detalhes do pedido | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T15.1 | Condições do pedido | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T15.2 | Endereço de entrega | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T16 | Agenda | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T16.1 | Agendar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T16.2 | Compromisso / Visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M16.3 | Confirmar cancelamento da visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E16.4 | Falha ao cancelar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17 | Mais | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.1 | Meu perfil | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.2 | Sincronização | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.3 | Configurações | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.4 | Ajuda | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.5 | Sobre | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M17.6 | Confirmar saída | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E17.7 | Sincronização em andamento | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E17.8 | Sincronização concluída | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E17.9 | Falha na sincronização | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
 
 A matriz completa deverá ser atualizada conforme os wireframes, designs, frames no Figma, protótipos e páginas HTML forem concluídos.
 
@@ -3761,6 +4175,21 @@ Uma etapa somente poderá assumir **APROVADO** depois de sua validação obrigat
 A aprovação de uma etapa libera a execução da etapa imediatamente seguinte. Estados **PENDENTE**, **EM VALIDAÇÃO** ou **AJUSTES NECESSÁRIOS** não liberam avanço.
 
 Nenhuma tela já documentada será removida desse controle sem uma decisão explícita registrada neste Documento Mestre.
+
+## 32.1 Condição para encerramento da etapa Documento Mestre
+
+Esta versão está preparada como **candidata à aprovação**. O fechamento formal desta etapa ocorrerá quando:
+
+```text
+[ ] todas as interfaces da matriz forem revisadas pelo responsável do projeto
+[ ] todos os Textframes forem marcados como APROVADO
+[ ] não existirem ações visíveis sem destino ou comportamento documentado
+[ ] as regras de negócio transversais forem aceitas
+[ ] a revisão editorial e de nomenclatura estiver concluída
+[ ] o responsável declarar explicitamente a aprovação da baseline funcional
+```
+
+Após essa aprovação, a próxima versão deverá ser promovida para **v1.0 — APROVADO / BASELINE FUNCIONAL**, mantendo Wireframe, Design, Figma, Protótipo e HTML como **PENDENTE** até suas respectivas etapas.
 
 ---
 
