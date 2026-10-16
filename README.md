@@ -30,8 +30,6 @@ Entre os principais módulos previstos estão:
 - configurações e preferências do usuário.
 
 
-Sugestão mais clara e madura para o README:
-
 ## Status do projeto
 
 **Em definição**
