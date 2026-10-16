@@ -3,22 +3,22 @@
 
 **Finalidade:** manter um registro canônico dos problemas já identificados, decisões já fechadas, correções realizadas e critérios de promoção da Documentação Mestre, evitando reabrir decisões concluídas ou introduzir requisitos sem base documental.
 
-**Base utilizada:** `docs/Documento_Mestre.md` do branch `main` antes desta rodada de ajustes.  
-**Versão funcional em revisão:** `0.7 — Candidata final à aprovação`.  
-**Arquivo candidato revisado:** `SaOr_Documento_Mestre_v0.7_Candidata_Final_Rev3.md`.
+**Documento canônico:** `docs/Documento_Mestre.md`  
+**Branch de referência:** `main`  
+**Versão atual em validação:** `0.7 — Candidata final à aprovação`
 
-> Antes de propor qualquer alteração funcional futura, este registro deve ser consultado. Um item marcado como **RESOLVIDO** somente deve ser reaberto por decisão explícita do responsável do projeto ou por nova contradição comprovada no Documento Mestre.
+> Antes de propor qualquer alteração funcional futura, este registro deve ser consultado. Um item marcado como **RESOLVIDO** somente deve ser reaberto por decisão explícita do responsável do projeto ou por nova contradição comprovada no Documento Mestre canônico.
 
 ---
 
 # 1. Regras permanentes para evitar regressões
 
 1. Não inventar telas, fluxos, permissões, tecnologias ou regras de negócio sem base no Documento Mestre ou decisão explícita do responsável.
-2. Não remover telas, módulos ou regras já aprovadas sem decisão explícita registrada.
+2. Não remover telas, módulos ou regras já documentadas sem decisão explícita registrada.
 3. Toda ação visível deve possuir destino ou comportamento documentado.
 4. Toda interface T/M/E deve manter Ficha funcional de aceite com os 12 critérios definidos na seção 28.
 5. Prospect e Cliente continuam classificações do mesmo Cadastro Comercial.
-6. Somente `CLIENTE + ATIVO` pode iniciar/avançar/confirmar Pedido de Venda.
+6. Somente `CLIENTE + ATIVO` pode iniciar, avançar ou confirmar Pedido de Venda.
 7. Cliente Bloqueado ou Inativo continua sendo Cliente.
 8. `PROSPECT + ATIVO` não é combinação prevista na baseline atual.
 9. Aprovação cadastral é externa ao fluxo funcional do vendedor nesta baseline; o SaOr recebe o resultado e aplica a transição definida.
@@ -27,10 +27,12 @@
 12. Tecnologias definitivas pertencem ao Documento Técnico de Arquitetura, não à Documentação Mestre.
 13. GitHub permanece somente para leitura por esta assistência; nenhuma alteração deve ser feita diretamente no repositório.
 14. O Documento Mestre só passa para v1.0 após aprovação explícita do responsável.
+15. O arquivo `docs/Documento_Mestre.md` é a referência canônica. Nomes temporários de arquivos de revisão, cópias locais ou sufixos de rodada não devem ser tratados como fontes oficiais.
+16. O processo de evolução descrito no README deve permanecer alinhado ao processo oficial do Documento Mestre, inclusive a etapa de Slides de Navegação / Apresentação e suas validações.
 
 ---
 
-# 2. Problemas históricos — situação atual na candidata Rev3
+# 2. Problemas históricos — situação atual no Documento Mestre canônico
 
 | Problema | Situação |
 |---|---|
@@ -73,50 +75,68 @@
 
 ---
 
-# 3. Auditoria estrutural da candidata Rev3
+# 3. Auditoria estrutural do Documento Mestre canônico
 
-- **71** interfaces T/M/E.
-- **71** IDs únicos.
-- **0** referências T/M/E sem definição correspondente.
-- **71/71** interfaces com Ficha funcional de aceite.
-- **0** Fichas faltando qualquer um dos 12 critérios estruturais.
+Na auditoria realizada sobre `docs/Documento_Mestre.md`:
+
+- **71** interfaces T/M/E foram encontradas.
+- **71** IDs são únicos.
+- **0** referências T/M/E apontam para interface inexistente.
+- **71/71** interfaces possuem Ficha funcional de aceite.
+- **0** Fichas estão sem qualquer um dos 12 critérios estruturais.
 - **0** ocorrências dos nomes antigos do projeto.
 - **0** referências às versões 0.5 ou 0.6.
 - **0** ocorrências de `React`, `ThemeProvider` ou `C45`.
-- **0** fórmulas genéricas remanescentes de obrigatoriedade do tipo “a obrigatoriedade é indicada...” ou “conforme regras da seção” nas Fichas revisadas.
-- Matriz de evolução com **71** linhas.
-- Textframes permanecem **Em validação**.
+- **0** fórmulas genéricas remanescentes de obrigatoriedade do tipo “a obrigatoriedade é indicada...” nas Fichas revisadas.
+- A matriz de evolução possui **71** linhas.
+- Os Textframes permanecem **Em validação** enquanto a aprovação humana não for declarada.
 - Wireframe, Design, Figma, Protótipo e HTML permanecem **Pendente**.
 
 ---
 
-# 4. Pendência atual para fechar a Documentação Mestre
+# 4. Situação atual para fechar a Documentação Mestre
 
-Não existe, nesta auditoria, bloqueador funcional conhecido que exija nova tela ou nova regra de negócio antes da revisão humana.
+Não existe, nesta auditoria, bloqueador funcional conhecido que exija nova tela ou nova regra de negócio antes da aprovação humana.
 
-Falta somente o processo de aprovação:
+O fechamento formal exige:
 
-1. revisar a candidata Rev3;
+1. revisar o Documento Mestre canônico `docs/Documento_Mestre.md`;
 2. registrar eventuais correções encontradas pelo responsável;
 3. declarar explicitamente a aprovação da baseline funcional;
 4. promover o Documento Mestre para `v1.0 — APROVADO / BASELINE FUNCIONAL`;
 5. alterar as 71 linhas de Textframe de `Em validação` para `Aprovado`;
 6. manter Wireframe, Design, Figma, Protótipo e HTML como `Pendente`;
-7. somente então iniciar a etapa de Wireframe.
+7. atualizar este Registro Permanente para apontar a v1.0 como baseline oficial;
+8. atualizar o README para refletir a aprovação da Documentação Mestre e a próxima etapa;
+9. somente então iniciar a etapa de Wireframe.
 
 ---
 
 # 5. README
 
-Foi preparada uma versão corrigida do README para conferência com os dois problemas editoriais conhecidos resolvidos:
+O README deve permanecer sincronizado com o Documento Mestre.
 
-- removida a frase `Sugestão mais clara e madura para o README:`;
-- texto visível do link da licença alterado de `LICENSE.md` para `LICENSE`, mantendo o destino `LICENSE`.
+Na revisão de consistência realizada antes da aprovação:
 
-Esses ajustes são editoriais e não alteram a baseline funcional do Documento Mestre.
+- a frase editorial temporária foi removida;
+- o link visível da licença está alinhado ao arquivo `LICENSE`;
+- o fluxo do projeto foi alinhado ao processo oficial do Documento Mestre, incluindo **Slides de Navegação / Apresentação** e as validações obrigatórias;
+- foi incluído link para este `Registro_Fechamento_Documento_Mestre.md`;
+- o status permanece **Em definição** enquanto a baseline funcional não estiver formalmente aprovada.
+
+Após a aprovação da v1.0, o README deverá ser atualizado novamente para indicar que a Documentação Mestre foi aprovada e que a etapa seguinte está pendente/iniciando.
 
 ---
 
 # 6. Controle de alterações futuras
 
 Depois da aprovação da v1.0, qualquer requisito novo deve ser tratado como **mudança posterior à baseline**, seguindo a seção 31 do Documento Mestre. Não deve ser apresentado como se estivesse faltando na baseline aprovada, salvo quando houver contradição comprovada, defeito documental ou decisão explícita do responsável para reabrir o tema.
+
+Toda proposta de alteração futura deve verificar primeiro:
+
+1. o Documento Mestre canônico;
+2. este Registro Permanente;
+3. a existência de decisão já registrada sobre o tema;
+4. se a mudança é correção de contradição, evolução posterior à baseline ou nova decisão de negócio.
+
+Isso evita regressões documentais e a reinvenção de requisitos já decididos.

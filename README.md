@@ -29,24 +29,25 @@ Entre os principais módulos previstos estão:
 - sincronização;
 - configurações e preferências do usuário.
 
-
 ## Status do projeto
 
 **Em definição**
 
-O **SaOr - Sales Order** encontra-se atualmente na fase de definição funcional e de experiência do usuário, com foco na arquitetura funcional, UX, textframes e planejamento das próximas etapas de prototipação.
+O **SaOr - Sales Order** encontra-se atualmente na fase de definição funcional e de experiência do usuário, com o Documento Mestre em candidata final à aprovação da baseline funcional.
 
-A evolução do projeto seguirá um processo incremental, no qual cada etapa deverá ser validada antes do avanço para a seguinte:
+A evolução do projeto seguirá o processo oficial definido no Documento Mestre, com validação obrigatória entre as etapas:
 
-**Documento Mestre / Textframes → Wireframes → Design Visual → Figma → Protótipo Navegável → MVP em HTML/CSS/JavaScript → Documento Técnico de Arquitetura → Implementação Definitiva**
+**Documento Mestre / Textframes → Validação Funcional → Wireframes → Validação dos Wireframes → Design Visual → Validação Visual + WCAG → Figma → Validação do Figma → Protótipo Navegável → Validação de Fluxos e Jornadas → Slides de Navegação / Apresentação → Validação da Apresentação → MVP em HTML/CSS/JavaScript → Validação Funcional + Responsiva + Acessibilidade → Documento Técnico de Arquitetura → Validação Técnica → Definição das Tecnologias Oficiais → Implementação Definitiva**
 
-Esse processo busca garantir que regras de negócio, fluxos, navegação, experiência visual e decisões técnicas sejam consolidados progressivamente antes da implementação definitiva.
+Somente uma etapa com status **APROVADO** libera a etapa seguinte. Esse processo busca garantir que regras de negócio, fluxos, navegação, experiência visual e decisões técnicas sejam consolidados progressivamente antes da implementação definitiva.
 
 ## Documentação
 
 A documentação funcional e visual do **SaOr - Sales Order** está centralizada no Documento Mestre do projeto, que reúne o escopo, as regras de negócio, os fluxos, as interfaces, os estados, os componentes, a navegação, o Design System, os requisitos de acessibilidade e os critérios de validação.
 
 O [`Documento Mestre`](docs/Documento_Mestre.md) é a referência oficial para a definição e evolução funcional e visual do projeto. Toda nova funcionalidade, regra ou alteração de comportamento deverá ser incorporada e validada nesse documento antes de avançar para as etapas seguintes de prototipação e implementação.
+
+O [`Registro Permanente de Fechamento da Documentação Mestre`](docs/Registro_Fechamento_Documento_Mestre.md) mantém o histórico canônico dos problemas já identificados, decisões já consolidadas, correções realizadas e critérios de promoção da baseline. Itens registrados como resolvidos somente deverão ser reabertos por decisão explícita ou por nova contradição comprovada no Documento Mestre.
 
 As definições técnicas definitivas, como arquitetura, frontend, backend, API, autenticação, banco de dados, segurança, infraestrutura e integrações, serão consolidadas posteriormente em um Documento Técnico de Arquitetura.
 
@@ -59,7 +60,6 @@ O **MVP em HTML, CSS e JavaScript** será a primeira implementação executável
 Após a validação do MVP, o **Documento Técnico de Arquitetura** consolidará as diretrizes técnicas do sistema, abrangendo frontend, backend, APIs, autenticação e autorização, persistência de dados, segurança, integrações, infraestrutura, ambientes, deploy, monitoramento, testes e padrões de desenvolvimento.
 
 Esse documento estabelecerá a arquitetura e o conjunto tecnológico oficial que orientarão a implementação definitiva do **SaOr - Sales Order**.
-
 
 ## Projeto
 
