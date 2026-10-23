@@ -5,7 +5,8 @@
 
 **Documento canônico:** `docs/Documento_Mestre.md`  
 **Branch de referência:** `main`  
-**Versão atual em validação:** `0.7 — Candidata final à aprovação`
+**Baseline oficial:** `1.0 — APROVADO / BASELINE FUNCIONAL`  
+**Data de aprovação:** `16/10/2026`
 
 > Antes de propor qualquer alteração funcional futura, este registro deve ser consultado. Um item marcado como **RESOLVIDO** somente deve ser reaberto por decisão explícita do responsável do projeto ou por nova contradição comprovada no Documento Mestre canônico.
 
@@ -26,7 +27,7 @@
 11. WCAG 2.2 AA é o mínimo obrigatório; AAA é o alvo quando viável; cor nunca é o único indicador.
 12. Tecnologias definitivas pertencem ao Documento Técnico de Arquitetura, não à Documentação Mestre.
 13. GitHub permanece somente para leitura por esta assistência; nenhuma alteração deve ser feita diretamente no repositório.
-14. O Documento Mestre só passa para v1.0 após aprovação explícita do responsável.
+14. A versão `1.0 — APROVADO / BASELINE FUNCIONAL` é a baseline oficial; alterações posteriores devem seguir o processo formal da seção 31 do Documento Mestre.
 15. O arquivo `docs/Documento_Mestre.md` é a referência canônica. Nomes temporários de arquivos de revisão, cópias locais ou sufixos de rodada não devem ser tratados como fontes oficiais.
 16. O processo de evolução descrito no README deve permanecer alinhado ao processo oficial do Documento Mestre, inclusive a etapa de Slides de Navegação / Apresentação e suas validações.
 
@@ -89,26 +90,30 @@ Na auditoria realizada sobre `docs/Documento_Mestre.md`:
 - **0** ocorrências de `React`, `ThemeProvider` ou `C45`.
 - **0** fórmulas genéricas remanescentes de obrigatoriedade do tipo “a obrigatoriedade é indicada...” nas Fichas revisadas.
 - A matriz de evolução possui **71** linhas.
-- Os Textframes permanecem **Em validação** enquanto a aprovação humana não for declarada.
+- Os **71 Textframes estão Aprovados** na baseline v1.0.
 - Wireframe, Design, Figma, Protótipo e HTML permanecem **Pendente**.
 
 ---
 
-# 4. Situação atual para fechar a Documentação Mestre
+# 4. Fechamento formal da Documentação Mestre
 
-Não existe, nesta auditoria, bloqueador funcional conhecido que exija nova tela ou nova regra de negócio antes da aprovação humana.
+A etapa de Documentação Mestre foi **ENCERRADA E APROVADA** na versão **1.0 — APROVADO / BASELINE FUNCIONAL** em **16/10/2026**.
 
-O fechamento formal exige:
+Foram concluídas as seguintes ações de fechamento:
 
-1. revisar o Documento Mestre canônico `docs/Documento_Mestre.md`;
-2. registrar eventuais correções encontradas pelo responsável;
-3. declarar explicitamente a aprovação da baseline funcional;
-4. promover o Documento Mestre para `v1.0 — APROVADO / BASELINE FUNCIONAL`;
-5. alterar as 71 linhas de Textframe de `Em validação` para `Aprovado`;
-6. manter Wireframe, Design, Figma, Protótipo e HTML como `Pendente`;
-7. atualizar este Registro Permanente para apontar a v1.0 como baseline oficial;
-8. atualizar o README para refletir a aprovação da Documentação Mestre e a próxima etapa;
-9. somente então iniciar a etapa de Wireframe.
+```text
+[x] Documento Mestre canônico revisado
+[x] baseline funcional aprovada explicitamente pelo responsável
+[x] versão promovida para 1.0
+[x] 71 Textframes marcados como Aprovado
+[x] Wireframe, Design, Figma, Protótipo e HTML mantidos como Pendente
+[x] Registro Permanente atualizado para a baseline v1.0
+[x] README atualizado para refletir a aprovação da Documentação Mestre
+```
+
+A próxima etapa liberada é **Wireframe Conceitual em Imagem**.
+
+Nenhum requisito novo deverá ser tratado como pendência retroativa da baseline v1.0, salvo quando houver contradição comprovada, defeito documental ou decisão explícita do responsável para reabrir o tema.
 
 ---
 
@@ -116,15 +121,15 @@ O fechamento formal exige:
 
 O README deve permanecer sincronizado com o Documento Mestre.
 
-Na revisão de consistência realizada antes da aprovação:
+Na revisão de consistência concluída com a aprovação da v1.0:
 
 - a frase editorial temporária foi removida;
 - o link visível da licença está alinhado ao arquivo `LICENSE`;
 - o fluxo do projeto foi alinhado ao processo oficial do Documento Mestre, incluindo **Slides de Navegação / Apresentação** e as validações obrigatórias;
 - foi incluído link para este `Registro_Fechamento_Documento_Mestre.md`;
-- o status permanece **Em definição** enquanto a baseline funcional não estiver formalmente aprovada.
+- o status do projeto foi atualizado para indicar **Documentação Mestre aprovada — Wireframes pendentes**.
 
-Após a aprovação da v1.0, o README deverá ser atualizado novamente para indicar que a Documentação Mestre foi aprovada e que a etapa seguinte está pendente/iniciando.
+O README passa a registrar a Documentação Mestre como aprovada e a etapa de Wireframes como próxima etapa pendente/liberada para execução.
 
 ---
 

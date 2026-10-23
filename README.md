@@ -31,9 +31,9 @@ Entre os principais módulos previstos estão:
 
 ## Status do projeto
 
-**Em definição**
+**Documentação Mestre aprovada — Wireframes pendentes**
 
-O **SaOr - Sales Order** encontra-se atualmente na fase de definição funcional e de experiência do usuário, com o Documento Mestre em candidata final à aprovação da baseline funcional.
+O **SaOr - Sales Order** concluiu a etapa de Documentação Mestre. A versão **1.0** do Documento Mestre está **APROVADA / BASELINE FUNCIONAL**, e a próxima etapa do processo é a criação e validação dos **Wireframes Conceituais em Imagem**.
 
 A evolução do projeto seguirá o processo oficial definido no Documento Mestre, com validação obrigatória entre as etapas:
 
@@ -45,7 +45,7 @@ Somente uma etapa com status **APROVADO** libera a etapa seguinte. Esse processo
 
 A documentação funcional e visual do **SaOr - Sales Order** está centralizada no Documento Mestre do projeto, que reúne o escopo, as regras de negócio, os fluxos, as interfaces, os estados, os componentes, a navegação, o Design System, os requisitos de acessibilidade e os critérios de validação.
 
-O [`Documento Mestre`](docs/Documento_Mestre.md) é a referência oficial para a definição e evolução funcional e visual do projeto. Toda nova funcionalidade, regra ou alteração de comportamento deverá ser incorporada e validada nesse documento antes de avançar para as etapas seguintes de prototipação e implementação.
+O [`Documento Mestre`](docs/Documento_Mestre.md) é a referência oficial para a definição e evolução funcional e visual do projeto. Sua versão **1.0** constitui a baseline funcional aprovada. Toda nova funcionalidade, regra ou alteração de comportamento posterior à baseline deverá seguir o processo formal de alteração definido no próprio documento antes de avançar para as etapas seguintes.
 
 O [`Registro Permanente de Fechamento da Documentação Mestre`](docs/Registro_Fechamento_Documento_Mestre.md) mantém o histórico canônico dos problemas já identificados, decisões já consolidadas, correções realizadas e critérios de promoção da baseline. Itens registrados como resolvidos somente deverão ser reabertos por decisão explícita ou por nova contradição comprovada no Documento Mestre.
 

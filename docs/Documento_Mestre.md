@@ -1,9 +1,9 @@
 # SaOr - Sales Order
 ## Documento Mestre de UX, Telas e Navegação
 
-**Versão:** 0.7  
-**Status:** Candidata final à aprovação  
-**Etapa:** Fechamento da Documentação Mestre / Validação funcional final  
+**Versão:** 1.0  
+**Status:** APROVADO / BASELINE FUNCIONAL  
+**Etapa:** Documentação Mestre concluída / Baseline funcional aprovada  
 **Projeto:** SaOr - Sales Order — Sistema de Pedido de Venda / Força de Vendas Externa
 
 ---
@@ -129,7 +129,7 @@ A validação deverá verificar o objeto específico de cada fase:
 | MVP HTML | comportamento, responsividade, navegação, acessibilidade e aderência ao Figma |
 | Documento Técnico | arquitetura, segurança, integrações, contratos e viabilidade técnica |
 
-## 1.3 Consolidações desta revisão — versão 0.7
+## 1.3 Consolidações desta revisão — versão 1.0
 
 Esta revisão formaliza:
 
@@ -145,7 +145,7 @@ Esta revisão formaliza:
 - suporte ao usuário por WhatsApp;
 - estados explícitos de recuperação de senha, finalização de visita, cancelamento de visita e sincronização;
 - critérios funcionais de acesso à configuração da API;
-- preparação do documento para aprovação como baseline funcional;
+- consolidação do documento como baseline funcional aprovada;
 - normalização das 71 interfaces com Ficha funcional de aceite;
 - fechamento explícito dos comportamentos de tentativa de login, filtros de clientes e consulta de CEP;
 - definição dos comportamentos dos componentes de seleção sem criação de rotas artificiais;
@@ -5499,77 +5499,77 @@ Modelo resumido de acompanhamento:
 
 | ID | Interface | Textframe | Wireframe | Design | Figma | Protótipo | HTML |
 |---|---|---|---|---|---|---|---|
-| T00 | Configuração da aplicação | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T00.1 | Configuração da API | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T00.2 | Aparência / Tema | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T00.3 | Diagnóstico de conexão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M00.4 | Confirmar alteração da API | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M00.5 | Restaurar configuração | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.6 | Testando conexão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.7 | Conexão realizada | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.8 | Falha de conexão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.9 | API não configurada | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.10 | API indisponível no login | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T01 | Login | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T01.1 | Recuperar senha | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E01.2 | Login inválido | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E01.3 | Sem conexão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E01.4 | Recuperação solicitada | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E01.5 | Falha ao solicitar recuperação | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T02 | Início / Dashboard | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T02.1 | Notificações | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T03 | Clientes e Prospects | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M03.1 | Filtros de clientes | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E03.2 | Busca sem resultado | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T04 | Cliente — Resumo | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T04.1 | Cliente — Pedidos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T04.2 | Cliente — Visitas | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T04.3 | Cliente — Financeiro | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T04.4 | Cliente — Endereço | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T04.5 | Cliente — Dados cadastrais | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T05 | Novo Prospect — Dados básicos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T05.1 | Novo Prospect — Endereço | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T05.2 | Novo Prospect — Informações comerciais | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T05.3 | Prospect — Resumo | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T05.4 | Prospect — Histórico de visitas | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T06 | Registrar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M06.1 | Finalizar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T06.2 | Detalhes da visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E06.3 | Falha ao finalizar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T07 | Catálogo de produtos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M07.1 | Filtros de produtos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E07.2 | Produto não encontrado | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T08 | Detalhes do produto | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T09 | Pedido — Cliente | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M09.1 | Selecionar cliente | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T09.2 | Selecionar endereço | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M09.3 | Selecionar tabela de preço | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T10 | Pedido — Itens | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M10.1 | Editar item | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T11 | Pedido — Condições comerciais | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T12 | Pedido — Revisão | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M12.1 | Confirmar pedido | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T13 | Pedido confirmado | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T14 | Pedidos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M14.1 | Filtros de pedidos | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T15 | Detalhes do pedido | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T15.1 | Condições do pedido | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T15.2 | Endereço de entrega | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T16 | Agenda | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T16.1 | Agendar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T16.2 | Compromisso / Visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M16.3 | Confirmar cancelamento da visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E16.4 | Falha ao cancelar visita | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T17 | Mais | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T17.1 | Meu perfil | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T17.2 | Sincronização | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T17.3 | Configurações | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T17.4 | Ajuda | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T17.5 | Sobre | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M17.6 | Confirmar saída | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E17.7 | Sincronização em andamento | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E17.8 | Sincronização concluída | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E17.9 | Falha na sincronização | Em validação | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T00 | Configuração da aplicação | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T00.1 | Configuração da API | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T00.2 | Aparência / Tema | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T00.3 | Diagnóstico de conexão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M00.4 | Confirmar alteração da API | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M00.5 | Restaurar configuração | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.6 | Testando conexão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.7 | Conexão realizada | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.8 | Falha de conexão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.9 | API não configurada | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E00.10 | API indisponível no login | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T01 | Login | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T01.1 | Recuperar senha | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.2 | Login inválido | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.3 | Sem conexão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.4 | Recuperação solicitada | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.5 | Falha ao solicitar recuperação | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T02 | Início / Dashboard | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T02.1 | Notificações | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T03 | Clientes e Prospects | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M03.1 | Filtros de clientes | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E03.2 | Busca sem resultado | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04 | Cliente — Resumo | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.1 | Cliente — Pedidos | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.2 | Cliente — Visitas | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.3 | Cliente — Financeiro | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.4 | Cliente — Endereço | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T04.5 | Cliente — Dados cadastrais | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05 | Novo Prospect — Dados básicos | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05.1 | Novo Prospect — Endereço | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05.2 | Novo Prospect — Informações comerciais | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05.3 | Prospect — Resumo | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T05.4 | Prospect — Histórico de visitas | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T06 | Registrar visita | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M06.1 | Finalizar visita | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T06.2 | Detalhes da visita | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E06.3 | Falha ao finalizar visita | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T07 | Catálogo de produtos | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M07.1 | Filtros de produtos | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E07.2 | Produto não encontrado | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T08 | Detalhes do produto | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T09 | Pedido — Cliente | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M09.1 | Selecionar cliente | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T09.2 | Selecionar endereço | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M09.3 | Selecionar tabela de preço | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T10 | Pedido — Itens | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M10.1 | Editar item | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T11 | Pedido — Condições comerciais | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T12 | Pedido — Revisão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M12.1 | Confirmar pedido | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T13 | Pedido confirmado | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T14 | Pedidos | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M14.1 | Filtros de pedidos | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T15 | Detalhes do pedido | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T15.1 | Condições do pedido | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T15.2 | Endereço de entrega | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T16 | Agenda | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T16.1 | Agendar visita | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T16.2 | Compromisso / Visita | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M16.3 | Confirmar cancelamento da visita | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E16.4 | Falha ao cancelar visita | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17 | Mais | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.1 | Meu perfil | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.2 | Sincronização | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.3 | Configurações | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.4 | Ajuda | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T17.5 | Sobre | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| M17.6 | Confirmar saída | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E17.7 | Sincronização em andamento | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E17.8 | Sincronização concluída | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E17.9 | Falha na sincronização | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
 
 A matriz completa deverá ser atualizada conforme os wireframes, designs, frames no Figma, protótipos e páginas HTML forem concluídos.
 
@@ -5579,20 +5579,28 @@ A aprovação de uma etapa libera a execução da etapa imediatamente seguinte. 
 
 Nenhuma tela já documentada será removida desse controle sem uma decisão explícita registrada neste Documento Mestre.
 
-## 32.1 Condição para encerramento da etapa Documento Mestre
 
-Esta versão está preparada como **candidata à aprovação**. O fechamento formal desta etapa ocorrerá quando:
+## 32.1 Encerramento da etapa Documento Mestre
+
+A versão **1.0 — APROVADO / BASELINE FUNCIONAL** encerra formalmente a etapa de Documentação Mestre.
+
+A validação funcional foi concluída pelo responsável do projeto em **16/10/2026**, com os seguintes critérios atendidos:
 
 ```text
-[ ] todas as interfaces da matriz forem revisadas pelo responsável do projeto
-[ ] todos os Textframes forem marcados como APROVADO
-[ ] não existirem ações visíveis sem destino ou comportamento documentado
-[ ] as regras de negócio transversais forem aceitas
-[ ] a revisão editorial e de nomenclatura estiver concluída
-[ ] o responsável declarar explicitamente a aprovação da baseline funcional
+[x] todas as interfaces da matriz foram revisadas pelo responsável do projeto
+[x] todos os Textframes foram marcados como APROVADO
+[x] não existem ações visíveis sem destino ou comportamento documentado
+[x] as regras de negócio transversais foram aceitas
+[x] a revisão editorial e de nomenclatura foi concluída
+[x] o responsável declarou explicitamente a aprovação da baseline funcional
 ```
 
-Após essa aprovação, a próxima versão deverá ser promovida para **v1.0 — APROVADO / BASELINE FUNCIONAL**, mantendo Wireframe, Design, Figma, Protótipo e HTML como **PENDENTE** até suas respectivas etapas.
+A partir desta baseline:
+
+- a **Documentação Mestre / Textframes** está **APROVADA**;
+- **Wireframe, Design, Figma, Protótipo e HTML** permanecem **PENDENTE** até suas respectivas etapas;
+- a próxima etapa liberada é **Wireframe Conceitual em Imagem**, que também exigirá validação obrigatória antes de qualquer avanço posterior;
+- qualquer mudança funcional posterior à baseline deverá seguir o processo formal definido na seção 31 deste documento e no Registro Permanente de Fechamento da Documentação Mestre.
 
 ---
 
