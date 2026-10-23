@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 833 748"
+     role="img"
+     aria-labelledby="saor-title saor-desc"
+     shape-rendering="geometricPrecision">
+  <title id="saor-title">SaOr icon</title>
+  <desc id="saor-desc">Geometric SaOr S monogram with forward arrow accent.</desc>
+
+  <g transform="translate(16 16)">
+    <path
+      fill="#0F172A"
+      d="M733 0H226L0 216V313L150 459H457L524 398L404 282H150L270 167L559 168L733 0Z
+         M801 398H607L456 539H203L15 716H464L801 398Z"/>
+    <path
+      fill="#2563EB"
+      d="M405 204L606 397H800L601 204H405Z"/>
+  </g>
+</svg>

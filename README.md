@@ -49,6 +49,12 @@ O [`Documento Mestre`](docs/Documento_Mestre.md) é a referência oficial para a
 
 O [`Registro Permanente de Fechamento da Documentação Mestre`](docs/Registro_Fechamento_Documento_Mestre.md) mantém o histórico canônico dos problemas já identificados, decisões já consolidadas, correções realizadas e critérios de promoção da baseline. Itens registrados como resolvidos somente deverão ser reabertos por decisão explícita ou por nova contradição comprovada no Documento Mestre.
 
+### Controle dos Wireframes
+
+A etapa de **Wireframe Conceitual em Imagem** possui controle operacional próprio em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md).
+
+Esse documento registra o padrão técnico adotado, as variantes Claro e Escuro, o checklist das 71 interfaces e seus respectivos estados de validação e aprovação. O `README.md` principal mantém apenas o estado macro do projeto; o acompanhamento detalhado dos wireframes deve ser realizado no documento de controle da etapa, evitando duplicidade e divergência de informações.
+
 As definições técnicas definitivas, como arquitetura, frontend, backend, API, autenticação, banco de dados, segurança, infraestrutura e integrações, serão consolidadas posteriormente em um Documento Técnico de Arquitetura.
 
 ## Arquitetura e tecnologias
