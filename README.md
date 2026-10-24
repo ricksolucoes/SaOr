@@ -55,9 +55,22 @@ A etapa de **Wireframe Conceitual em Imagem** possui controle operacional própr
 
 Esse documento registra o padrão técnico adotado, as variantes Claro e Escuro, o checklist das 71 interfaces e seus respectivos estados de validação e aprovação. O `README.md` principal mantém apenas o estado macro do projeto; o acompanhamento detalhado dos wireframes deve ser realizado no documento de controle da etapa, evitando duplicidade e divergência de informações.
 
+### Ativos do projeto
+
+Os ativos visuais, tipográficos, audiovisuais e de personagem do **SaOr - Sales Order** estão organizados em [`assets/`](assets/README.md).
+
+O índice de ativos documenta a finalidade de cada conjunto e direciona para suas respectivas especificações locais, incluindo:
+
+- identidade visual, logo e ícone;
+- fontes associadas à identidade;
+- vídeos de introdução;
+- atendente virtual **Apozeu** e suas referências canônicas.
+
+O `README.md` principal não replica o catálogo técnico desses arquivos. Regras de uso, preservação, nomenclatura e aplicação devem ser consultadas nos documentos mantidos junto aos respectivos ativos.
+
 ### Identidade visual
 
-Os arquivos oficiais de logo e ícone estão catalogados em [`assets/logo/README.md`](assets/logo/README.md), que define a função dos artefatos disponíveis, identifica o arquivo vetorial mestre e registra as informações cromáticas comprovadas da identidade.
+Os arquivos oficiais de logo e ícone estão catalogados em [`assets/logo/README.md`](assets/logo/README.md), que define a função dos artefatos disponíveis, identifica o arquivo vetorial mestre e registra as informações cromáticas e tipográficas da identidade.
 
 As definições técnicas definitivas, como arquitetura, frontend, backend, API, autenticação, banco de dados, segurança, infraestrutura e integrações, serão consolidadas posteriormente em um Documento Técnico de Arquitetura.
 
