@@ -281,10 +281,13 @@ Cada alternativa deve ser medida quanto aos seguintes critérios:
 Também devem ser observados:
 
 - consistência com canvas `1024 × 1536 px`;
-- respeito às safe areas `24 / 32 px`;
+- respeito, na prancha-modelo, às safe areas de referência do wireframe (`24 px` superior / `32 px` inferior);
+- ausência de interpretação dessas safe areas como paddings ou constantes obrigatórias da implementação;
 - ausência de redução do viewport;
 - ausência de fonte documental ilegível;
 - capacidade de congelar coordenadas para reprodução posterior.
+
+As safe areas avaliadas nas pranchas são **referências documentais desta etapa**. Elas não determinam os insets finais do produto. Na implementação futura, superfícies visuais poderão ocupar a tela edge-to-edge, enquanto conteúdos sensíveis deverão respeitar os insets reais fornecidos pela plataforma/dispositivo.
 
 ---
 

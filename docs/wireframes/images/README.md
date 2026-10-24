@@ -86,13 +86,37 @@ Regras:
 ## 3.2 Safe areas técnicas
 
 ```text
-Safe area superior: 24 px
-Safe area inferior: 32 px
+Safe area superior de referência do wireframe: 24 px
+Safe area inferior de referência do wireframe: 32 px
 ```
 
-São reservas neutras em relação ao sistema operacional.
+Esses valores são **reservas técnicas exclusivas da etapa de wireframe** e são neutros em relação ao sistema operacional.
 
-Não representar notch, Dynamic Island, barra Android ou outro chrome específico.
+Sua finalidade é garantir que, nas pranchas desta etapa, textos, controles e outros conteúdos sensíveis não sejam posicionados em regiões que podem ser ocupadas por elementos do sistema operacional.
+
+Regras:
+
+- os `24 px` superiores e `32 px` inferiores **não constituem paddings fixos do produto**;
+- esses valores **não constituem constantes obrigatórias de implementação**;
+- na implementação, background, superfícies e elementos visuais que admitam desenho edge-to-edge podem ocupar **100% da superfície disponível da tela**;
+- textos, controles, ações e demais conteúdos sensíveis devem respeitar os **insets reais fornecidos pela plataforma/dispositivo em tempo de execução**;
+- os insets reais de implementação podem ser diferentes de `24 px` e `32 px`;
+- não deve existir dupla compensação de safe area quando a plataforma ou o framework já fornecer tratamento dos insets;
+- a implementação futura deverá seguir o comportamento real da plataforma adotada, sem transformar a reserva técnica do wireframe em regra rígida de layout;
+- não representar notch, Dynamic Island, barra Android ou outro chrome específico nas pranchas desta etapa.
+
+Em síntese:
+
+```text
+WIREFRAME
+24 px superior / 32 px inferior
+= referência padronizada de segurança visual
+
+IMPLEMENTAÇÃO
+superfície visual pode ocupar 100% da tela
++
+conteúdo sensível respeita os insets reais da plataforma/dispositivo
+```
 
 ## 3.3 Prancha técnica
 
