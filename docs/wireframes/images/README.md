@@ -84,7 +84,8 @@ A prancha deve conter obrigatoriamente:
 - viewport lógico `390 × 844 px`;
 - canvas da prancha `1024 × 1536 px`;
 - wireframe da interface;
-- legenda dos tokens cromáticos efetivamente utilizados.
+- legenda dos tokens cromáticos efetivamente utilizados;
+- referência tipográfica efetivamente utilizada.
 
 ---
 
@@ -175,11 +176,12 @@ As variantes `white` e `black` da mesma interface devem possuir exatamente:
 - mesma navegação;
 - mesmos estados;
 - mesma ordem de leitura;
-- mesmos componentes funcionais.
+- mesmos componentes funcionais;
+- mesma escala tipográfica técnica.
 
 A única diferença permitida é a aplicação da paleta técnica correspondente à variante.
 
-Uma variante não poderá possuir funcionalidade, ação, campo ou estado que não exista na outra.
+Uma variante não poderá possuir funcionalidade, ação, campo, estado ou hierarquia tipográfica diferente da outra.
 
 ---
 
@@ -238,7 +240,86 @@ Nenhum elemento visível deve receber uma cor arbitrária fora da paleta técnic
 
 ---
 
-# 9. Acessibilidade estrutural
+# 9. Tipografia técnica do Wireframe
+
+A tipografia utilizada nos wireframes deve ser **catalogada com o mesmo rigor das cores**, porque fará parte da referência para reconstrução posterior no Figma.
+
+A tipografia desta etapa é técnica e temporária. Ela **não constitui automaticamente a tipografia oficial do SaOr nem do futuro Design System**.
+
+## 9.1 Família tipográfica técnica
+
+```text
+WF-FONT-FAMILY: A DEFINIR ANTES DA GERAÇÃO DO PRIMEIRO WIREFRAME
+```
+
+A família não deve ser escolhida ou inferida automaticamente.
+
+Antes de gerar `T00_v01`, deve existir decisão explícita sobre a família tipográfica técnica utilizada nesta etapa. Depois de definida, a mesma família deve ser aplicada às 71 interfaces, salvo exceção explicitamente documentada.
+
+## 9.2 Catálogo tipográfico obrigatório
+
+A escala técnica deverá utilizar identificadores consistentes. A referência inicial é:
+
+| Token | Finalidade estrutural |
+|---|---|
+| `WF-TITLE` | título principal da interface |
+| `WF-SECTION` | título ou rótulo de agrupamento/seção |
+| `WF-BODY` | conteúdo textual principal |
+| `WF-LABEL` | rótulos de campos e controles |
+| `WF-ACTION-TEXT` | texto de ações, botões ou itens navegáveis |
+| `WF-CAPTION` | texto auxiliar, metadado ou informação secundária |
+
+Para cada token efetivamente utilizado na imagem, a prancha deve registrar:
+
+```text
+Família
+Peso
+Tamanho em px
+Line-height em px
+Letter-spacing, quando diferente do padrão da família
+```
+
+Exemplo estrutural, sem definir valores nesta etapa:
+
+```text
+WF-BODY
+Família: <família técnica aprovada>
+Peso: <valor utilizado>
+Tamanho: <valor utilizado> px
+Line-height: <valor utilizado> px
+Letter-spacing: <valor, se aplicável>
+```
+
+## 9.3 Regra de equivalência tipográfica
+
+As variantes Claro e Escuro da mesma interface devem utilizar exatamente:
+
+- mesma família;
+- mesmos pesos;
+- mesmos tamanhos;
+- mesmos line-heights;
+- mesmos letter-spacings;
+- mesma hierarquia tipográfica.
+
+A troca de tema não pode alterar a estrutura tipográfica.
+
+## 9.4 Fonte da verdade tipográfica
+
+Em uma imagem gerada, não se deve tentar identificar visualmente a fonte depois da geração.
+
+A fonte da verdade é a **especificação registrada na prancha técnica**.
+
+Se a ferramenta de geração não reproduzir visualmente a família com fidelidade suficiente, a prancha ainda deverá registrar a especificação correta; essa diferença deve ser considerada limitação do artefato raster e não autorização para alterar o padrão.
+
+## 9.5 Relação futura com o Design System
+
+Os tokens `WF-*` de tipografia servem como referência de transição.
+
+Na etapa de Design Visual/Figma, eles poderão ser mapeados para tokens definitivos do Design System, mas não deverão ser promovidos automaticamente.
+
+---
+
+# 10. Acessibilidade estrutural
 
 Mesmo nesta etapa:
 
@@ -249,13 +330,14 @@ Mesmo nesta etapa:
 - erros devem permanecer próximos ao contexto;
 - controles interativos devem ser distinguíveis;
 - a estrutura deve permitir alvos adequados;
-- foco e seleção devem poder ser representados sem depender somente da cor.
+- foco e seleção devem poder ser representados sem depender somente da cor;
+- escala tipográfica deve preservar hierarquia, legibilidade e associação entre rótulos e controles.
 
-A validação cromática definitiva de WCAG pertence à etapa de Design Visual. O wireframe, entretanto, não deve criar uma estrutura incompatível com WCAG 2.2 AA.
+A validação cromática e tipográfica definitiva de WCAG pertence à etapa de Design Visual. O wireframe, entretanto, não deve criar uma estrutura incompatível com WCAG 2.2 AA.
 
 ---
 
-# 10. Conteúdo obrigatório de cada prancha
+# 11. Conteúdo obrigatório de cada prancha
 
 Cada arquivo deve apresentar:
 
@@ -269,13 +351,17 @@ Status: EM VALIDAÇÃO | AJUSTES NECESSÁRIOS | APROVADO
 Versão: vNN
 Viewport lógico: 390 × 844 px
 Canvas da prancha: 1024 × 1536 px
+Fonte técnica: <família aprovada>
 ```
 
-Além desses dados, deve existir a legenda cromática prevista na seção 8.3.
+Além desses dados, devem existir:
+
+- legenda dos tokens cromáticos realmente utilizados;
+- legenda dos tokens tipográficos realmente utilizados, com família, peso, tamanho e line-height.
 
 ---
 
-# 11. Regra de produção
+# 12. Regra de produção
 
 Antes de produzir qualquer interface, devem ser lidos no `docs/Documento_Mestre.md`:
 
@@ -304,11 +390,30 @@ A imagem deve ser uma tradução visual do conteúdo aprovado.
 - transformar informação estática em interação;
 - alterar o Textframe por conveniência visual;
 - introduzir arquitetura ou componentes de framework;
-- transformar o wireframe em Design Visual final.
+- transformar o wireframe em Design Visual final;
+- escolher tipografia diferente por tela sem justificativa e autorização;
+- promover a tipografia técnica do wireframe a tipografia oficial do produto sem a etapa correspondente.
 
 ---
 
-# 12. Fluxo por interface
+# 13. Gate obrigatório antes do primeiro wireframe
+
+Antes da geração de `T00_v01`, devem estar fechados e registrados neste documento:
+
+```text
+[x] viewport lógico: 390 × 844 px
+[x] canvas da prancha: 1024 × 1536 px
+[x] paleta técnica Claro
+[x] paleta técnica Escuro
+[ ] família tipográfica técnica do Wireframe
+[ ] escala tipográfica técnica inicial
+```
+
+Enquanto os dois itens tipográficos permanecerem pendentes, nenhum wireframe deverá ser tratado como artefato definitivo de validação.
+
+---
+
+# 14. Fluxo por interface
 
 ```text
 PENDENTE
@@ -334,7 +439,7 @@ Por padrão, a próxima interface somente deve ser iniciada depois da decisão d
 
 ---
 
-# 13. Classificação de ocorrências
+# 15. Classificação de ocorrências
 
 Durante a elaboração de uma interface:
 
@@ -354,7 +459,7 @@ Tratamento:
 
 ---
 
-# 14. Checklist mestre
+# 16. Checklist mestre
 
 **Estados possíveis:** `PENDENTE`, `EM VALIDAÇÃO`, `AJUSTES NECESSÁRIOS`, `APROVADO`.
 
@@ -434,7 +539,7 @@ Tratamento:
 
 ---
 
-# 15. Contadores
+# 17. Contadores
 
 Estado inicial deste documento:
 
@@ -453,7 +558,7 @@ Os contadores somente podem ser alterados após aprovação explícita.
 
 ---
 
-# 16. Registro de aprovação e reabertura
+# 18. Registro de aprovação e reabertura
 
 Modelo de aprovação:
 
@@ -488,7 +593,7 @@ Nova versão iniciada:
 
 ---
 
-# 17. Preservação documental
+# 19. Preservação documental
 
 A autoridade documental permanece:
 

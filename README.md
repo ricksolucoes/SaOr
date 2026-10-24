@@ -55,6 +55,10 @@ A etapa de **Wireframe Conceitual em Imagem** possui controle operacional própr
 
 Esse documento registra o padrão técnico adotado, as variantes Claro e Escuro, o checklist das 71 interfaces e seus respectivos estados de validação e aprovação. O `README.md` principal mantém apenas o estado macro do projeto; o acompanhamento detalhado dos wireframes deve ser realizado no documento de controle da etapa, evitando duplicidade e divergência de informações.
 
+### Identidade visual
+
+Os arquivos oficiais de logo e ícone estão catalogados em [`assets/logo/README.md`](assets/logo/README.md), que define a função dos artefatos disponíveis, identifica o arquivo vetorial mestre e registra as informações cromáticas comprovadas da identidade.
+
 As definições técnicas definitivas, como arquitetura, frontend, backend, API, autenticação, banco de dados, segurança, infraestrutura e integrações, serão consolidadas posteriormente em um Documento Técnico de Arquitetura.
 
 ## Arquitetura e tecnologias
