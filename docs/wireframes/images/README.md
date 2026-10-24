@@ -1,174 +1,138 @@
 # SaOr - Sales Order
-## Controle da etapa — Wireframes Conceituais em Imagem
+## Wireframes Conceituais em Imagem — Especificação técnica e controle
 
-**Baseline funcional:** v1.0 — APROVADO / BASELINE FUNCIONAL  
-**Etapa atual:** Wireframe Conceitual em Imagem  
-**Status deste documento:** EM VALIDAÇÃO — especificação técnica em fechamento  
-**Interfaces documentadas:** 71  
-**Variações obrigatórias:** Claro (`white`) e Escuro (`black`)  
-**Quantidade mínima de imagens funcionais:** 142  
-**Quantidade final de imagens funcionais:** variável conforme paginação necessária por interface  
-**Fonte funcional:** `docs/Documento_Mestre.md`  
-**Registro de não regressão:** `docs/Registro_Fechamento_Documento_Mestre.md`  
-**Canvas técnico vigente para novas pranchas:** `1280 × 1920 px`
+**Baseline funcional:** `v1.0 — APROVADO / BASELINE FUNCIONAL`  
+**Etapa atual:** `Wireframe Conceitual em Imagem`  
+**Fonte funcional:** [`docs/Documento_Mestre.md`](../../Documento_Mestre.md)  
+**Não regressão funcional:** [`docs/Registro_Fechamento_Documento_Mestre.md`](../../Registro_Fechamento_Documento_Mestre.md)  
+**Interfaces:** `71`  
+**Variações funcionais obrigatórias:** Claro (`white`) e Escuro (`black`)  
+**Viewport lógico oficial:** `360 × 800 px`  
+**Canvas técnico das pranchas:** `1280 × 1920 px`
 
 ---
 
-# 1. Finalidade
+# 1. Responsabilidade deste documento
 
-Este documento controla a produção, validação, aprovação e preservação dos wireframes conceituais em imagem do **SaOr - Sales Order**, incluindo a especificação técnica da prancha e o processo de seleção do template documental.
+Este README é a **fonte normativa técnica da etapa de wireframes**.
 
-Cada interface `T`, `M` ou `E` da baseline funcional deve possuir, no mínimo:
+Ele define somente:
 
-- uma representação **Claro**, em `docs/wireframes/images/white`;
-- uma representação **Escuro**, em `docs/wireframes/images/black`.
+- geometria e referências técnicas da prancha;
+- tokens técnicos usados para documentar wireframes;
+- componentes e estados necessários para a representação;
+- regras de paginação, nomenclatura e equivalência Claro/Escuro;
+- critérios de produção e aprovação das imagens funcionais;
+- controle operacional das 71 interfaces.
 
-Quando todo o conteúdo funcional não puder ser representado em um único viewport de `360 × 800 px`, a interface será documentada em páginas sequenciais. Por isso, **142 é a quantidade mínima de imagens funcionais**, não um total rígido.
-
-As pranchas-modelo armazenadas em `templates/` são artefatos de calibração e governança e **não entram na contagem das imagens funcionais das 71 interfaces**.
+Ele **não redefine** regras de negócio, conteúdo funcional, Textframes, tokens visuais oficiais do produto ou arquitetura. Esses assuntos permanecem em seus documentos canônicos.
 
 ---
 
-# 2. Estrutura oficial
+# 2. Estrutura da etapa
 
 ```text
-docs/
-└── wireframes/
-    └── images/
-        ├── README.md
-        ├── templates/
-        │   ├── README.md
-        │   ├── alternatives/
-        │   │   ├── .gitkeep
-        │   │   ├── WF-TEMPLATE-A_v01.png
-        │   │   ├── WF-TEMPLATE-A_v02.png
-        │   │   ├── WF-TEMPLATE-B_v01.png
-        │   │   └── WF-TEMPLATE-C_v01.png
-        │   └── official/
-        │       ├── .gitkeep
-        │       └── WF-TEMPLATE-OFFICIAL_v01.png
-        ├── white/
-        │   ├── .gitkeep
-        │   └── T00-01-01_v01.png
-        └── black/
-            ├── .gitkeep
-            └── T00-01-01_v01.png
+docs/wireframes/images/
+├── README.md
+├── templates/
+│   ├── README.md
+│   ├── references/
+│   │   ├── Especificação Técnica - Prancha de Trabalho.png
+│   │   ├── Especificação Técnica do Viewport Mobile.png
+│   │   └── WF-VIEWPORT-360x800-clean.png
+│   ├── alternatives/
+│   │   ├── <pranchas em avaliação>.png
+│   │   └── wiframetext/
+│   │       └── <mesmo-nome-base>.md
+│   └── aprovados/
+│       ├── <pranchas aprovadas>.png
+│       └── wiframetext/
+│           └── <mesmo-nome-base>.md
+├── white/
+└── black/
 ```
 
-Os `.gitkeep` existem somente para preservar no Git diretórios ainda vazios.
-
-Regras de separação:
-
-- `templates/alternatives/`: propostas de prancha técnica avaliadas;
-- `templates/official/`: somente o template formalmente aprovado;
-- `white/`: somente wireframes funcionais Claro;
-- `black/`: somente wireframes funcionais Escuro.
-
-Alternativas de template nunca devem ser armazenadas em `white/` ou `black/`.
+A organização e o ciclo de vida das pranchas-modelo são definidos exclusivamente em [`templates/README.md`](templates/README.md).
 
 ---
 
-# 3. Referência dimensional aprovada
+# 3. Referências técnicas compartilhadas
 
-## 3.1 Viewport mobile oficial
+Os arquivos de `templates/references/` têm funções distintas e não são alternativas de template.
 
-**Viewport lógico oficial: `360 × 800 px`.**
+| Arquivo | Função normativa |
+|---|---|
+| `Especificação Técnica - Prancha de Trabalho.png` | referência física do canvas `1280 × 1920 px` |
+| `Especificação Técnica do Viewport Mobile.png` | referência visual das linhas e cotas dimensionais do viewport |
+| `WF-VIEWPORT-360x800-clean.png` | bitmap mestre do viewport de demonstração, fisicamente `360 × 800 px` |
 
 Regras:
 
 - orientação: **retrato**;
 - representa a **tela lógica completa do celular**;
-- elementos que ocupem ou sobreponham a tela devem ser considerados dentro dos `360 × 800 px`;
+- canvas final: `1280 × 1920 px`;
+- viewport na prancha: `360 × 800 px`;
+- uma legenda declarando `360 × 800 px` não substitui a verificação física da área representada.
 - não acrescentar barras ou áreas por fora dos `800 px`;
-- não desenhar moldura física de aparelho;
+- escala do viewport: `1:1`;
+- bitmap mestre em `100%`, sem resize, deformação ou reconstrução por aproximação;
+- linhas de dimensão seguem a referência técnica sem alterar o bitmap mestre;
+- texto declarando uma dimensão não substitui a verificação física do PNG.
 - não criar versão específica para iOS ou Android;
 - paisagem será estudada posteriormente;
+- não desenhar moldura física de aparelho;
 - tablet e desktop não serão produzidos automaticamente nesta etapa;
-- a representação do viewport na prancha deve medir **fisicamente `360 × 800 px` no PNG final**;
 - o viewport não pode ser redimensionado, esticado, comprimido ou reproporcionado para caber na prancha;
-- uma legenda declarando `360 × 800 px` não substitui a verificação física da área representada.
 
-## 3.2 Safe areas técnicas
+---
 
-```text
-Safe area superior de referência do wireframe: 24 px
-Safe area inferior de referência do wireframe: 32 px
-```
+# 4. Viewport, safe areas e geometria
 
-Esses valores são **reservas técnicas exclusivas da etapa de wireframe** e são neutros em relação ao sistema operacional.
-
-Sua finalidade é garantir que, nas pranchas desta etapa, textos, controles e outros conteúdos sensíveis não sejam posicionados em regiões que podem ser ocupadas por elementos do sistema operacional.
-
-Regras:
-
-- os `24 px` superiores e `32 px` inferiores **não constituem paddings fixos do produto**;
-- esses valores **não constituem constantes obrigatórias de implementação**;
-- na implementação, background, superfícies e elementos visuais que admitam desenho edge-to-edge podem ocupar **100% da superfície disponível da tela**;
-- textos, controles, ações e demais conteúdos sensíveis devem respeitar os **insets reais fornecidos pela plataforma/dispositivo em tempo de execução**;
-- os insets reais de implementação podem ser diferentes de `24 px` e `32 px`;
-- não deve existir dupla compensação de safe area quando a plataforma ou o framework já fornecer tratamento dos insets;
-- a implementação futura deverá seguir o comportamento real da plataforma adotada, sem transformar a reserva técnica do wireframe em regra rígida de layout;
-- não representar notch, Dynamic Island, barra Android ou outro chrome específico nas pranchas desta etapa.
-
-Em síntese:
+## 4.1 Viewport
 
 ```text
-WIREFRAME
-24 px superior / 32 px inferior
-= referência padronizada de segurança visual
-
-IMPLEMENTAÇÃO
-superfície visual pode ocupar 100% da tela
-+
-conteúdo sensível respeita os insets reais da plataforma/dispositivo
-```
-
-## 3.3 Prancha técnica
-
-```text
-Canvas vigente: 1280 × 1920 px
+Viewport lógico: 360 × 800 px
 Orientação: retrato
-Escala do viewport: 1:1
+Escala na prancha: 1:1
 ```
 
-Consequência:
+Não adicionar moldura física, áreas fora dos `800 px`, variação específica de sistema operacional ou redução do viewport para acomodar documentação.
+
+## 4.2 Safe areas de referência
 
 ```text
-1 px lógico do wireframe = 1 px na representação do viewport na prancha
+Superior: 24 px
+Inferior: 32 px
 ```
 
-A ampliação do canvas documental de `1024 × 1536 px` para `1280 × 1920 px` aumenta somente a área disponível para documentação técnica. Ela **não altera** o viewport oficial `360 × 800 px`, sua escala `1:1`, suas proporções ou a geometria dos componentes.
+Esses valores são referências da etapa de wireframe. Não são paddings fixos do produto nem constantes obrigatórias de implementação. Superfícies podem ser edge-to-edge e conteúdo sensível deve respeitar os insets reais da plataforma/dispositivo na implementação.
 
-Artefatos históricos já produzidos no canvas anterior permanecem preservados como registro e **não devem ser regenerados somente por causa desta mudança de canvas**. Novas produções e revisões posteriores a esta decisão devem utilizar `1280 × 1920 px`, salvo nova decisão explícita registrada.
+Não representar notch, Dynamic Island, barra Android ou outro chrome específico.
 
-A prancha deve conter:
-
-- metadados;
-- viewport `360 × 800 px`;
-- wireframe;
-- legenda cromática usada;
-- legenda tipográfica usada;
-- observações técnicas quando aplicáveis.
-
-As coordenadas exatas dessas áreas serão congeladas somente após aprovação do template oficial.
-
-## 3.4 Ordem obrigatória de construção da prancha
-
-Para impedir redução do viewport, compressão documental e regressões por reaproveitamento de composição antiga, a prancha deve ser construída nesta ordem:
+## 4.3 Canvas técnico
 
 ```text
-1. criar canvas vazio exatamente 1280 × 1920 px
-        ↓
-2. criar o cabeçalho técnico
-        ↓
-3. inserir/construir o viewport exatamente 360 × 800 px em escala 1:1
-        ↓
-4. validar fisicamente o viewport
-        ↓
-5. somente após PASS, distribuir todo o restante da documentação
+Canvas: 1280 × 1920 px
+Orientação: retrato
+Viewport: 360 × 800 px
+Escala: 1:1
 ```
 
-Gate obrigatório após o passo 3:
+## 4.4 Ordem obrigatória de montagem
+
+```text
+canvas 1280 × 1920
+        ↓
+cabeçalho técnico
+        ↓
+viewport 360 × 800 / 1:1
+        ↓
+validação física
+        ↓
+restante da documentação
+```
+
+O restante da prancha só deve ser montado depois de confirmado:
 
 ```text
 canvas = 1280 × 1920 px
@@ -176,21 +140,9 @@ viewport = 360 × 800 px
 escala = 1:1
 ```
 
-Se o viewport não medir fisicamente `360 × 800 px`, a composição é inválida e **não deve prosseguir** para os demais blocos.
-
-Regras de construção:
-
-- o canvas se adapta à documentação; o viewport não se adapta ao canvas;
-- é proibido reduzir o viewport para ganhar espaço;
-- é proibido reconstruir o viewport por aproximação visual quando houver referência mestre aprovada;
-- uma nova composição deve ser montada a partir da **especificação documental vigente**, e não pela cópia ou escala de uma prancha raster anterior;
-- decisões técnicas já aprovadas continuam obrigatórias, mas sua geometria documental deve ser recriada de acordo com a especificação vigente;
-- textos, ícones, medidas e componentes devem ser conferidos contra a documentação antes da exportação;
-- informações redundantes de processo, conversa ou validação interna não devem ser incorporadas à prancha quando não fizerem parte da especificação técnica.
-
 ---
 
-# 4. Margens, grid e espaçamento
+# 5. Grid e espaçamento
 
 ```text
 Margem horizontal estrutural: 12 px
@@ -200,99 +152,13 @@ Padding-base horizontal: 16 px
 Padding-base vertical: 12 px
 ```
 
-Espaçamentos fora da escala exigem justificativa registrada.
-
 ---
 
-# 5. Convenção de arquivos funcionais
+# 6. Tokens técnicos do wireframe
 
-Formato oficial:
+Os tokens desta seção servem **somente à representação técnica do wireframe**. Eles não substituem os tokens visuais oficiais do produto definidos no Documento Mestre.
 
-```text
-<ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>.png
-```
-
-Exemplos:
-
-```text
-T00-01-01_v01.png
-T00-01-02_v01.png
-T00-02-02_v01.png
-```
-
-Significado:
-
-- `<ID>`: interface;
-- `<PÁGINA>`: página atual;
-- `<TOTAL>`: total de páginas daquela representação;
-- `<VERSÃO>`: versão da página.
-
-Uma correção pode incrementar somente a página afetada. Se a alteração mudar o total de páginas, a nova sequência deve refletir o novo total de forma consistente.
-
----
-
-# 6. Paginação e continuidade vertical
-
-Quando o conteúdo ultrapassar `360 × 800 px`:
-
-- o viewport permanece fixo;
-- o conteúdo não deve ser comprimido artificialmente;
-- criar páginas documentais sequenciais;
-- repetir somente elementos realmente persistentes;
-- continuar o conteúdo não persistente a partir do ponto correspondente;
-- não criar paginação funcional inexistente na baseline;
-- utilizar indicador vertical de rolagem somente quando necessário.
-
-A interface somente pode ser aprovada quando **todas as páginas Claro e Escuro** estiverem aprovadas.
-
----
-
-# 7. Estados de controle documental
-
-```text
-PENDENTE
-EM VALIDAÇÃO
-AJUSTES NECESSÁRIOS
-APROVADO
-```
-
-Silêncio não constitui aprovação.
-
-Artefato aprovado:
-
-```text
-APROVADO → CONGELADO NESTA ETAPA
-```
-
-Não pode ser sobrescrito, regenerado ou substituído silenciosamente.
-
----
-
-# 8. Equivalência Claro / Escuro
-
-Para a mesma interface e página, Claro e Escuro devem possuir as mesmas:
-
-- informações;
-- ações;
-- destinos;
-- campos;
-- estados;
-- hierarquia;
-- agrupamentos;
-- proporções;
-- navegação;
-- ordem de leitura;
-- componentes;
-- tipografia;
-- paginação.
-
-A diferença permitida é a paleta técnica.
-
----
-
-# 9. Paletas técnicas
-
-## 9.1 Claro
+## 6.1 Claro
 
 | Token | Aplicação | HEX |
 |---|---|---|
@@ -307,7 +173,7 @@ A diferença permitida é a paleta técnica.
 | `WF-W-FOCUS` | foco/seleção | `#4A4A4A` |
 | `WF-W-STATUS` | status | `#626262` |
 
-## 9.2 Escuro
+## 6.2 Escuro
 
 | Token | Aplicação | HEX |
 |---|---|---|
@@ -324,102 +190,54 @@ A diferença permitida é a paleta técnica.
 
 Cor nunca pode ser o único indicador de estado.
 
----
-
-# 10. Tipografia técnica
+## 6.3 Tipografia técnica
 
 ```text
 WF-FONT-FAMILY: Inter
 ```
 
-| Token | Peso | Tamanho | Line-height | Letter-spacing |
-|---|---:|---:|---:|---|
-| `WF-TITLE` | 600 | 20 px | 28 px | `normal` |
-| `WF-SECTION` | 600 | 14 px | 20 px | `normal` |
-| `WF-BODY` | 400 | 16 px | 24 px | `normal` |
-| `WF-LABEL` | 500 | 14 px | 20 px | `normal` |
-| `WF-ACTION-TEXT` | 500 | 16 px | 24 px | `normal` |
-| `WF-CAPTION` | 400 | 12 px | 16 px | `normal` |
+| Token | Peso | Tamanho | Line-height |
+|---|---:|---:|---:|
+| `WF-TITLE` | 600 | 20 px | 28 px |
+| `WF-SECTION` | 600 | 14 px | 20 px |
+| `WF-BODY` | 400 | 16 px | 24 px |
+| `WF-LABEL` | 500 | 14 px | 20 px |
+| `WF-ACTION-TEXT` | 500 | 16 px | 24 px |
+| `WF-CAPTION` | 400 | 12 px | 16 px |
 
-Inter é tipografia técnica do wireframe e não se torna automaticamente tipografia oficial do produto.
-
----
-
-# 11. Componentes aprovados
-
-MUI / Material UI é referência conceitual de componentes, estados e iconografia, **não escolha tecnológica definitiva**.
-
-## 11.1 App Bar
-
-```text
-Altura: 56 px
-```
-
-## 11.2 Touch target
-
-```text
-Mínimo: 48 × 48 px
-```
-
-## 11.3 Campos
-
-```text
-Variante: Outlined
-Altura: 56 px
-Radius: 12 px
-Borda: 1 px quando aplicável
-Padding-base: 16 px horizontal / 12 px vertical
-```
-
-## 11.4 Botões
-
-Categorias:
-
-```text
-Primary
-Secondary
-Text
-Icon Button
-```
-
-```text
-Altura mínima textual: 48 px
-Touch target mínimo: 48 × 48 px
-Radius: 12 px
-```
-
-## 11.5 Listas/configurações
-
-```text
-Item simples: mínimo 56 px
-Item com secundário/status: mínimo 64 px
-```
-
-## 11.6 Cards
-
-```text
-Radius: 16 px
-Borda: 1 px quando necessária
-```
-
-## 11.7 Modal/Dialog
-
-```text
-Margem lateral: 24 px
-Radius: 16 px
-```
-
-## 11.8 Bottom Navigation
-
-Quando prevista pela baseline:
-
-```text
-Altura: 64 px
-```
+Inter é tipografia técnica da etapa e não define automaticamente a tipografia oficial do produto ou da marca.
 
 ---
 
-# 12. Bordas, divisores, radius e elevação
+# 7. Componentes técnicos de representação
+
+MUI / Material UI é referência conceitual, não escolha tecnológica definitiva.
+
+| Elemento | Especificação |
+|---|---|
+| App Bar | altura `56 px` |
+| Touch target | mínimo `48 × 48 px` |
+| Campo Outlined | altura `56 px`, radius `12 px`, borda `1 px` quando aplicável |
+| Botão textual | altura mínima `48 px`, radius `12 px` |
+| Icon Button | touch target mínimo `48 × 48 px` |
+| Item simples | mínimo `56 px` |
+| Item com secundário/status | mínimo `64 px` |
+| Card | radius `16 px`, borda `1 px` quando necessária |
+| Modal/Dialog | margem lateral `24 px`, radius `16 px` |
+| Bottom Navigation | `64 px` quando prevista na baseline |
+
+Padding-base:
+
+```text
+16 px horizontal
+12 px vertical
+```
+
+Componente ainda não catalogado deve primeiro ter necessidade funcional no Documento Mestre; depois sua geometria/estado técnico é registrada aqui. É proibido introduzi-lo silenciosamente.
+
+---
+
+# 8. Bordas, radius, elevação e iconografia
 
 ```text
 Bordas: 1 px quando necessárias
@@ -431,51 +249,20 @@ Cards/modais: radius 16 px
 Elevação:
 
 ```text
-WF-ELEVATION-0
-offset-x: 0 px
-offset-y: 0 px
-blur: 0 px
-opacidade: 0%
-
-WF-ELEVATION-1
-offset-x: 0 px
-offset-y: 1 px
-blur: 2 px
-cor-base: preto neutro
-opacidade: 12%
-
-WF-ELEVATION-2
-offset-x: 0 px
-offset-y: 2 px
-blur: 6 px
-cor-base: preto neutro
-opacidade: 16%
-
-WF-ELEVATION-3
-offset-x: 0 px
-offset-y: 4 px
-blur: 12 px
-cor-base: preto neutro
-opacidade: 20%
+WF-ELEVATION-0: 0 / 0 / 0 / 0%
+WF-ELEVATION-1: 0 / 1 / 2 / 12%
+WF-ELEVATION-2: 0 / 2 / 6 / 16%
+WF-ELEVATION-3: 0 / 4 / 12 / 20%
 ```
 
-Referência de uso: E0 conteúdo integrado; E1 card destacado; E2 menu/dropdown; E3 modal/dialog.
+Cor-base: preto neutro.
 
----
-
-# 13. Iconografia
-
-Referência:
+Iconografia:
 
 ```text
-Material Icons Outlined
-```
-
-Não obriga a implementação futura a utilizar MUI ou Material Icons.
-
-```text
-Ícone auxiliar: 20 px
-Ícone de ação/navegação: 24 px
+Referência: Material Icons Outlined
+Auxiliar: 20 px
+Ação/navegação: 24 px
 Touch target: mínimo 48 × 48 px
 ```
 
@@ -483,9 +270,7 @@ Touch target: mínimo 48 × 48 px
 
 ---
 
-# 14. Estados de componentes
-
-Estados previstos:
+# 9. Estados técnicos
 
 ```text
 default
@@ -496,44 +281,74 @@ error
 hover
 ```
 
-`hover` fica documentado, mas não precisa ser exibido nas pranchas mobile salvo necessidade específica.
+`hover` fica documentado, mas não precisa ser exibido em prancha mobile sem necessidade específica.
 
 ---
 
-# 15. Componentes ainda não catalogados
+# 10. Acessibilidade estrutural
 
-Se uma interface exigir componente ainda não especificado:
-
-```text
-necessidade no Documento Mestre
-        ↓
-definir geometria e estados
-        ↓
-registrar neste README
-        ↓
-usar na primeira imagem
-```
-
-É proibido introduzir componente novo silenciosamente.
-
----
-
-# 16. Acessibilidade estrutural
+A representação deve preservar condições para futura conformidade WCAG 2.2 AA:
 
 - cor nunca como único indicador;
-- touch target mínimo respeitado;
+- touch target mínimo;
 - ordem de leitura clara;
 - campos com rótulos;
 - erros próximos ao contexto;
 - foco e seleção distinguíveis;
 - hierarquia tipográfica consistente;
-- componentes sem compactação que prejudique operação.
+- ausência de compactação prejudicial.
 
-A estrutura não pode impedir futura conformidade WCAG 2.2 AA.
+Os critérios funcionais e visuais oficiais permanecem no Documento Mestre.
 
 ---
 
-# 17. Conteúdo obrigatório de uma prancha funcional
+# 11. Imagens funcionais
+
+Cada uma das 71 interfaces deve possuir, no mínimo, uma representação Claro em `white/` e uma representação Escuro em `black/`.
+
+```text
+Mínimo Claro: 71
+Mínimo Escuro: 71
+Mínimo funcional: 142
+```
+
+O total final pode aumentar por paginação.
+
+## 11.1 Nomenclatura
+
+```text
+<ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>.png
+```
+
+Exemplos:
+
+```text
+T00-01-01_v01.png
+T00-01-02_v01.png
+T00-02-02_v01.png
+```
+
+## 11.2 Paginação
+
+Quando o conteúdo exceder `360 × 800 px`:
+
+- manter o viewport;
+- não comprimir artificialmente;
+- criar páginas sequenciais;
+- repetir somente elementos persistentes;
+- continuar o conteúdo no ponto correspondente;
+- não inventar paginação funcional;
+- usar indicador de rolagem somente quando necessário.
+
+A interface só é aprovada quando todas as páginas Claro e Escuro estiverem aprovadas.
+
+## 11.3 Equivalência Claro / Escuro
+
+Devem permanecer iguais: informações, ações/destinos, campos, estados, hierarquia, agrupamentos, proporções, navegação, ordem de leitura, componentes, tipografia e paginação. A diferença permitida é a paleta técnica da representação.
+
+---
+
+# 12. Conteúdo obrigatório da prancha funcional
 
 ```text
 Projeto: SaOr - Sales Order
@@ -541,25 +356,25 @@ Interface: <ID> — <Nome>
 Baseline: v1.0
 Etapa: Wireframe Conceitual em Imagem
 Variação: Claro | Escuro
-Status: EM VALIDAÇÃO | AJUSTES NECESSÁRIOS | APROVADO
+Status: PENDENTE | EM VALIDAÇÃO | AJUSTES NECESSÁRIOS | APROVADO
 Página: <XX>/<YY>
 Versão: vNN
-Viewport lógico: 360 × 800 px
+Viewport: 360 × 800 px
 Orientação: Retrato
 Canvas: 1280 × 1920 px
 Escala: 1:1
 Fonte técnica: Inter
 ```
 
-Também devem constar tokens cromáticos e tipográficos realmente usados e observações necessárias.
+Mostrar somente tokens e observações realmente usados naquela representação.
 
 ---
 
-# 18. Regra de produção funcional
+# 13. Regra de produção funcional
 
-Antes de produzir qualquer interface, consultar no Documento Mestre:
+Antes de produzir uma interface, consultar no Documento Mestre:
 
-- ficha funcional de aceite;
+- Ficha funcional de aceite;
 - objetivo;
 - informações exibidas;
 - campos e obrigatoriedade;
@@ -568,359 +383,126 @@ Antes de produzir qualquer interface, consultar no Documento Mestre:
 - estados;
 - retorno;
 - interfaces relacionadas;
-- regras transversais.
+- regras transversais aplicáveis.
 
-É proibido inventar funcionalidade, remover ação, criar destino inexistente, fundir IDs, alterar Textframe por conveniência visual, adotar tecnologia definitiva ou introduzir componente não documentado.
-
----
-
-# 19. Governança das pranchas-modelo
-
-A especificação completa das alternativas e do histórico de decisão está em:
-
-[`templates/README.md`](templates/README.md)
-
-As pranchas-modelo:
-
-- são produzidas separadamente;
-- não representam T00 nem outra interface funcional;
-- não contam para o mínimo de 142 imagens;
-- devem permanecer no repositório após a escolha;
-- não devem ser apagadas porque foram rejeitadas;
-- servem como histórico de decisão e referência de auditoria.
-
-## 19.1 Estado das alternativas
-
-```text
-WF-TEMPLATE-A_v01.png — HISTÓRICO / PRESERVADA
-WF-TEMPLATE-A_v02.png — CANDIDATA
-WF-TEMPLATE-B_v01.png — PRÓXIMA PRODUÇÃO
-WF-TEMPLATE-C_v01.png — PENDENTE
-```
-
-Produção sequencial atual:
-
-```text
-A_v01 → histórico preservado
-  ↓
-A_v02 → validada / CANDIDATA
-  ↓
-B_v01 → próxima produção
-  ↓
-avaliação de B
-  ↓
-C_v01
-  ↓
-avaliação de C
-  ↓
-comparação técnica A × B × C
-```
-
-A produção sequencial não autoriza alterar silenciosamente o conceito de cada alternativa.
-
-## 19.2 Conceitos
-
-**A — viewport central dominante**  
-Viewport como elemento principal; metadados no topo; especificações nas áreas restantes.
-
-**B — viewport à esquerda + painel técnico à direita**  
-Viewport à esquerda em escala 1:1 e documentação em coluna técnica lateral.
-
-**C — viewport superior + documentação inferior**  
-Viewport na região superior/central e documentação em blocos inferiores.
-
-## 19.3 Critérios obrigatórios de comparação
-
-Cada alternativa deve ser verificada quanto a:
-
-1. viewport exatamente `360 × 800 px`;
-2. escala `1:1`;
-3. ausência de invasão do viewport por legendas;
-4. legibilidade dos metadados;
-5. espaço suficiente para tokens cromáticos;
-6. especificação tipográfica cabe integralmente;
-7. área utilizável de observações;
-8. identificação clara de `XX/YY`;
-9. identificação clara de `vNN`;
-10. capacidade de indicar scroll/continuidade;
-11. mesmas coordenadas possíveis em Claro/Escuro;
-12. funcionamento para interface de uma ou várias páginas;
-13. canvas físico exatamente `1280 × 1920 px` nas novas produções posteriores a esta decisão.
-
-## 19.4 Seleção
-
-Após avaliação de A/B/C, o responsável pode:
-
-- aprovar A;
-- aprovar B;
-- aprovar C;
-- solicitar ajustes em uma alternativa;
-- solicitar combinação explícita de partes das alternativas.
-
-Nenhuma combinação pode ser inferida automaticamente.
+É proibido inventar funcionalidade, remover ação, criar destino inexistente, fundir IDs, alterar Textframe por conveniência visual, introduzir componente funcional não documentado ou transformar referência conceitual em tecnologia definitiva.
 
 ---
 
-# 20. Template oficial
-
-Após escolha explícita:
+# 14. Estados de controle
 
 ```text
-templates/official/WF-TEMPLATE-OFFICIAL_v01.png
-```
-
-O registro deve indicar se sua origem foi A, B, C ou combinação autorizada.
-
-A aprovação do template oficial:
-
-- não apaga alternativas;
-- congela o arquivo aprovado;
-- não autoriza sobrescrita;
-- exige nova versão para qualquer alteração posterior.
-
-Exemplo:
-
-```text
-WF-TEMPLATE-OFFICIAL_v01.png
-WF-TEMPLATE-OFFICIAL_v02.png
-```
-
-A versão anterior permanece preservada.
-
----
-
-# 21. Gate antes de T00
-
-## 21.1 Especificação já aprovada
-
-```text
-[x] viewport 360 × 800 px
-[x] retrato
-[x] safe area 24 / 32 px
-[x] canvas 1280 × 1920 px
-[x] escala 1:1
-[x] margem 12 px
-[x] spacing e padding
-[x] paletas Claro/Escuro
-[x] Inter e escala tipográfica
-[x] componentes-base
-[x] bordas/radius/elevação
-[x] iconografia
-[x] estados
-[x] scroll e paginação
-[x] nomenclatura e versionamento
-[x] governança e preservação das pranchas-modelo
-```
-
-## 21.2 Estado do gate das alternativas
-
-```text
-[x] WF-TEMPLATE-A_v01 produzido e preservado como histórico
-[x] WF-TEMPLATE-A_v02 produzido e validado como CANDIDATA
-[ ] WF-TEMPLATE-B_v01 produzido e avaliado
-[ ] WF-TEMPLATE-C_v01 produzido e avaliado
-[ ] comparação técnica registrada
-[ ] alternativa/combinação escolhida explicitamente
-[ ] WF-TEMPLATE-OFFICIAL_v01 produzido
-[ ] coordenadas exatas aprovadas
-[ ] cabeçalho técnico aprovado
-[ ] legendas aprovadas
-[ ] área de observações aprovada
-[ ] safe areas visualmente aprovadas
-[ ] scroll/continuidade visualmente aprovado
-[ ] template oficial aprovado e congelado
-```
-
-Enquanto esses itens permanecerem pendentes, `T00` não está liberada para produção definitiva.
-
----
-
-# 22. Fluxo operacional
-
-```text
-ESPECIFICAÇÃO DOCUMENTADA
-        ↓
-WF-TEMPLATE-A_v01
-        ↓
-ajustes
-        ↓
-WF-TEMPLATE-A_v02
-        ↓
-CANDIDATA
-        ↓
-WF-TEMPLATE-B_v01
-        ↓
-avaliação
-        ↓
-WF-TEMPLATE-C_v01
-        ↓
-avaliação
-        ↓
-COMPARAÇÃO TÉCNICA
-        ↓
-ESCOLHA EXPLÍCITA
-        ↓
-WF-TEMPLATE-OFFICIAL_v01
-        ↓
-APROVAÇÃO EXPLÍCITA
-        ↓
-TEMPLATE CONGELADO
-        ↓
-T00 Claro
-        ↓
-T00 Escuro
-        ↓
+PENDENTE
 EM VALIDAÇÃO
+AJUSTES NECESSÁRIOS
+APROVADO
 ```
+
+Silêncio não constitui aprovação. Artefato aprovado fica congelado naquela versão; alteração posterior exige nova versão.
 
 ---
 
-# 23. Classificação de ocorrências
+# 15. Controle das 71 interfaces
+
+O nome e a especificação funcional de cada ID permanecem exclusivamente no Documento Mestre. Este checklist controla apenas o estado da etapa.
+
+| # | ID | Claro | Escuro | Status geral |
+|---:|---|---|---|---|
+| 01 | `T00` | PENDENTE | PENDENTE | PENDENTE |
+| 02 | `T00.1` | PENDENTE | PENDENTE | PENDENTE |
+| 03 | `T00.2` | PENDENTE | PENDENTE | PENDENTE |
+| 04 | `T00.3` | PENDENTE | PENDENTE | PENDENTE |
+| 05 | `M00.4` | PENDENTE | PENDENTE | PENDENTE |
+| 06 | `M00.5` | PENDENTE | PENDENTE | PENDENTE |
+| 07 | `E00.6` | PENDENTE | PENDENTE | PENDENTE |
+| 08 | `E00.7` | PENDENTE | PENDENTE | PENDENTE |
+| 09 | `E00.8` | PENDENTE | PENDENTE | PENDENTE |
+| 10 | `E00.9` | PENDENTE | PENDENTE | PENDENTE |
+| 11 | `E00.10` | PENDENTE | PENDENTE | PENDENTE |
+| 12 | `T01` | PENDENTE | PENDENTE | PENDENTE |
+| 13 | `T01.1` | PENDENTE | PENDENTE | PENDENTE |
+| 14 | `E01.2` | PENDENTE | PENDENTE | PENDENTE |
+| 15 | `E01.3` | PENDENTE | PENDENTE | PENDENTE |
+| 16 | `E01.4` | PENDENTE | PENDENTE | PENDENTE |
+| 17 | `E01.5` | PENDENTE | PENDENTE | PENDENTE |
+| 18 | `T02` | PENDENTE | PENDENTE | PENDENTE |
+| 19 | `T02.1` | PENDENTE | PENDENTE | PENDENTE |
+| 20 | `T03` | PENDENTE | PENDENTE | PENDENTE |
+| 21 | `M03.1` | PENDENTE | PENDENTE | PENDENTE |
+| 22 | `E03.2` | PENDENTE | PENDENTE | PENDENTE |
+| 23 | `T04` | PENDENTE | PENDENTE | PENDENTE |
+| 24 | `T04.1` | PENDENTE | PENDENTE | PENDENTE |
+| 25 | `T04.2` | PENDENTE | PENDENTE | PENDENTE |
+| 26 | `T04.3` | PENDENTE | PENDENTE | PENDENTE |
+| 27 | `T04.4` | PENDENTE | PENDENTE | PENDENTE |
+| 28 | `T04.5` | PENDENTE | PENDENTE | PENDENTE |
+| 29 | `T05` | PENDENTE | PENDENTE | PENDENTE |
+| 30 | `T05.1` | PENDENTE | PENDENTE | PENDENTE |
+| 31 | `T05.2` | PENDENTE | PENDENTE | PENDENTE |
+| 32 | `T05.3` | PENDENTE | PENDENTE | PENDENTE |
+| 33 | `T05.4` | PENDENTE | PENDENTE | PENDENTE |
+| 34 | `T06` | PENDENTE | PENDENTE | PENDENTE |
+| 35 | `M06.1` | PENDENTE | PENDENTE | PENDENTE |
+| 36 | `T06.2` | PENDENTE | PENDENTE | PENDENTE |
+| 37 | `E06.3` | PENDENTE | PENDENTE | PENDENTE |
+| 38 | `T07` | PENDENTE | PENDENTE | PENDENTE |
+| 39 | `M07.1` | PENDENTE | PENDENTE | PENDENTE |
+| 40 | `E07.2` | PENDENTE | PENDENTE | PENDENTE |
+| 41 | `T08` | PENDENTE | PENDENTE | PENDENTE |
+| 42 | `T09` | PENDENTE | PENDENTE | PENDENTE |
+| 43 | `M09.1` | PENDENTE | PENDENTE | PENDENTE |
+| 44 | `T09.2` | PENDENTE | PENDENTE | PENDENTE |
+| 45 | `M09.3` | PENDENTE | PENDENTE | PENDENTE |
+| 46 | `T10` | PENDENTE | PENDENTE | PENDENTE |
+| 47 | `M10.1` | PENDENTE | PENDENTE | PENDENTE |
+| 48 | `T11` | PENDENTE | PENDENTE | PENDENTE |
+| 49 | `T12` | PENDENTE | PENDENTE | PENDENTE |
+| 50 | `M12.1` | PENDENTE | PENDENTE | PENDENTE |
+| 51 | `T13` | PENDENTE | PENDENTE | PENDENTE |
+| 52 | `T14` | PENDENTE | PENDENTE | PENDENTE |
+| 53 | `M14.1` | PENDENTE | PENDENTE | PENDENTE |
+| 54 | `T15` | PENDENTE | PENDENTE | PENDENTE |
+| 55 | `T15.1` | PENDENTE | PENDENTE | PENDENTE |
+| 56 | `T15.2` | PENDENTE | PENDENTE | PENDENTE |
+| 57 | `T16` | PENDENTE | PENDENTE | PENDENTE |
+| 58 | `T16.1` | PENDENTE | PENDENTE | PENDENTE |
+| 59 | `T16.2` | PENDENTE | PENDENTE | PENDENTE |
+| 60 | `M16.3` | PENDENTE | PENDENTE | PENDENTE |
+| 61 | `E16.4` | PENDENTE | PENDENTE | PENDENTE |
+| 62 | `T17` | PENDENTE | PENDENTE | PENDENTE |
+| 63 | `T17.1` | PENDENTE | PENDENTE | PENDENTE |
+| 64 | `T17.2` | PENDENTE | PENDENTE | PENDENTE |
+| 65 | `T17.3` | PENDENTE | PENDENTE | PENDENTE |
+| 66 | `T17.4` | PENDENTE | PENDENTE | PENDENTE |
+| 67 | `T17.5` | PENDENTE | PENDENTE | PENDENTE |
+| 68 | `M17.6` | PENDENTE | PENDENTE | PENDENTE |
+| 69 | `E17.7` | PENDENTE | PENDENTE | PENDENTE |
+| 70 | `E17.8` | PENDENTE | PENDENTE | PENDENTE |
+| 71 | `E17.9` | PENDENTE | PENDENTE | PENDENTE |
+
+---
+
+# 16. Contadores
 
 ```text
-A — baseline representável exatamente
-B — ambiguidade de representação sem mudança funcional
-C — contradição documental objetiva
-D — requisito novo posterior à baseline
+Interfaces previstas:              71
+Mínimo de imagens Claro:           71
+Mínimo de imagens Escuro:          71
+Mínimo de imagens funcionais:     142
+Total final: variável por paginação
 ```
 
-Tratamento:
-
-- A: produzir normalmente;
-- B: representação conservadora + registro;
-- C: apresentar contradição;
-- D: não alterar baseline.
+Pranchas-modelo de `templates/` não entram nessa contagem.
 
 ---
 
-# 24. Checklist mestre
+# 17. Autoridade documental
 
-| # | ID | Interface | Claro | Versão/Páginas | Escuro | Versão/Páginas | Interface |
-|---:|---|---|---|---|---|---|---|
-| 01 | `T00` | Configuração da aplicação | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 02 | `T00.1` | Configuração da API | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 03 | `T00.2` | Aparência / Tema | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 04 | `T00.3` | Diagnóstico de conexão | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 05 | `M00.4` | Confirmar alteração da API | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 06 | `M00.5` | Restaurar configuração | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 07 | `E00.6` | Testando conexão | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 08 | `E00.7` | Conexão realizada | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 09 | `E00.8` | Falha de conexão | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 10 | `E00.9` | API não configurada | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 11 | `E00.10` | API indisponível no login | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 12 | `T01` | Login | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 13 | `T01.1` | Recuperar senha | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 14 | `E01.2` | Login inválido | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 15 | `E01.3` | Sem conexão | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 16 | `E01.4` | Recuperação solicitada | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 17 | `E01.5` | Falha ao solicitar recuperação | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 18 | `T02` | Início / Dashboard | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 19 | `T02.1` | Notificações | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 20 | `T03` | Clientes e Prospects | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 21 | `M03.1` | Filtros de clientes | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 22 | `E03.2` | Busca sem resultado | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 23 | `T04` | Cliente — Resumo | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 24 | `T04.1` | Cliente — Pedidos | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 25 | `T04.2` | Cliente — Visitas | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 26 | `T04.3` | Cliente — Financeiro | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 27 | `T04.4` | Cliente — Endereço | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 28 | `T04.5` | Cliente — Dados cadastrais | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 29 | `T05` | Novo Prospect — Dados básicos | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 30 | `T05.1` | Novo Prospect — Endereço | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 31 | `T05.2` | Novo Prospect — Informações comerciais | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 32 | `T05.3` | Prospect — Resumo | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 33 | `T05.4` | Prospect — Histórico de visitas | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 34 | `T06` | Registrar visita | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 35 | `M06.1` | Finalizar visita | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 36 | `T06.2` | Detalhes da visita | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 37 | `E06.3` | Falha ao finalizar visita | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 38 | `T07` | Catálogo de produtos | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 39 | `M07.1` | Filtros de produtos | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 40 | `E07.2` | Produto não encontrado | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 41 | `T08` | Detalhes do produto | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 42 | `T09` | Pedido — Cliente | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 43 | `M09.1` | Selecionar cliente | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 44 | `T09.2` | Selecionar endereço | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 45 | `M09.3` | Selecionar tabela de preço | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 46 | `T10` | Pedido — Itens | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 47 | `M10.1` | Editar item | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 48 | `T11` | Pedido — Condições comerciais | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 49 | `T12` | Pedido — Revisão | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 50 | `M12.1` | Confirmar pedido | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 51 | `T13` | Pedido confirmado | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 52 | `T14` | Pedidos | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 53 | `M14.1` | Filtros de pedidos | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 54 | `T15` | Detalhes do pedido | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 55 | `T15.1` | Condições do pedido | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 56 | `T15.2` | Endereço de entrega | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 57 | `T16` | Agenda | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 58 | `T16.1` | Agendar visita | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 59 | `T16.2` | Compromisso / Visita | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 60 | `M16.3` | Confirmar cancelamento da visita | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 61 | `E16.4` | Falha ao cancelar visita | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 62 | `T17` | Mais | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 63 | `T17.1` | Meu perfil | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 64 | `T17.2` | Sincronização | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 65 | `T17.3` | Configurações | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 66 | `T17.4` | Ajuda | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 67 | `T17.5` | Sobre | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 68 | `M17.6` | Confirmar saída | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 69 | `E17.7` | Sincronização em andamento | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 70 | `E17.8` | Sincronização concluída | PENDENTE | — | PENDENTE | — | PENDENTE |
-| 71 | `E17.9` | Falha na sincronização | PENDENTE | — | PENDENTE | — | PENDENTE |
+1. `docs/Documento_Mestre.md` — conteúdo e comportamento funcional;
+2. `docs/Registro_Fechamento_Documento_Mestre.md` — proteção da baseline;
+3. este README — especificação técnica e controle dos wireframes;
+4. `templates/README.md` — organização/ciclo de vida das pranchas-modelo;
+5. Wireframe Text específico — composição reproduzível da prancha-modelo;
+6. PNG correspondente — representação visual resultante.
 
----
-
-# 25. Contadores
-
-```text
-Interfaces previstas:                    71
-Mínimo de imagens Claro:                 71
-Mínimo de imagens Escuro:                71
-Mínimo de imagens funcionais:           142
-
-Total funcional final:          VARIÁVEL POR PAGINAÇÃO
-
-Pranchas-modelo alternativas:             3 planejadas
-Template oficial:                         1 após aprovação
-
-Páginas Claro aprovadas:                  0
-Páginas Escuro aprovadas:                 0
-Interfaces totalmente aprovadas:        0 / 71
-```
-
-Pranchas-modelo não entram na contagem de imagens funcionais.
-
----
-
-# 26. Registro de aprovação e reabertura
-
-Página funcional:
-
-```text
-Data:
-Interface:
-Variação:
-Página:
-Arquivo:
-Versão:
-Status anterior:
-Status novo:
-Observação:
-```
-
-Interface completa somente é aprovada quando todas as páginas Claro/Escuro estiverem aprovadas.
-
----
-
-# 27. Preservação documental
-
-Autoridade documental:
-
-1. `docs/Documento_Mestre.md`;
-2. `docs/Registro_Fechamento_Documento_Mestre.md`;
-3. `README.md`;
-4. este documento;
-5. `templates/README.md` para histórico específico das pranchas-modelo.
-
-Este documento não altera baseline funcional, não define arquitetura definitiva, não transforma MUI em tecnologia oficial e não autoriza Figma, protótipo ou implementação antes das etapas correspondentes.
+Artefato inferior não altera silenciosamente uma regra de nível superior.

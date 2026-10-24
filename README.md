@@ -31,29 +31,20 @@ Entre os principais módulos previstos estão:
 
 ## Status do projeto
 
-**Documentação Mestre aprovada — Wireframes pendentes**
+**Documentação Mestre aprovada — Wireframes em execução**
 
-O **SaOr - Sales Order** concluiu a etapa de Documentação Mestre. A versão **1.0** do Documento Mestre está **APROVADA / BASELINE FUNCIONAL**, e a próxima etapa do processo é a criação e validação dos **Wireframes Conceituais em Imagem**.
+A baseline funcional vigente é a versão **1.0 — APROVADO / BASELINE FUNCIONAL**.
 
-A evolução do projeto seguirá o processo oficial definido no Documento Mestre, com validação obrigatória entre as etapas:
-
-**Documento Mestre / Textframes → Validação Funcional → Wireframes → Validação dos Wireframes → Design Visual → Validação Visual + WCAG → Figma → Validação do Figma → Protótipo Navegável → Validação de Fluxos e Jornadas → Slides de Navegação / Apresentação → Validação da Apresentação → MVP em HTML/CSS/JavaScript → Validação Funcional + Responsiva + Acessibilidade → Documento Técnico de Arquitetura → Validação Técnica → Definição das Tecnologias Oficiais → Implementação Definitiva**
-
-Somente uma etapa com status **APROVADO** libera a etapa seguinte. Esse processo busca garantir que regras de negócio, fluxos, navegação, experiência visual e decisões técnicas sejam consolidados progressivamente antes da implementação definitiva.
+A etapa atual é **Wireframe Conceitual em Imagem**. O processo oficial de evolução, os gates entre etapas e os critérios de alteração da baseline são definidos no [`Documento Mestre`](docs/Documento_Mestre.md).
 
 ## Documentação
 
-A documentação funcional e visual do **SaOr - Sales Order** está centralizada no Documento Mestre do projeto, que reúne o escopo, as regras de negócio, os fluxos, as interfaces, os estados, os componentes, a navegação, o Design System, os requisitos de acessibilidade e os critérios de validação.
+- [`docs/Documento_Mestre.md`](docs/Documento_Mestre.md) — fonte canônica funcional do projeto: escopo, regras de negócio, interfaces, Textframes, navegação, componentes funcionais, estados globais e critérios de evolução.
+- [`docs/Registro_Fechamento_Documento_Mestre.md`](docs/Registro_Fechamento_Documento_Mestre.md) — registro canônico de fechamento e proteção contra regressões da baseline funcional v1.0.
+- [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md) — especificação técnica e controle operacional da etapa de Wireframe Conceitual em Imagem.
+- [`docs/wireframes/images/templates/README.md`](docs/wireframes/images/templates/README.md) — organização e ciclo de vida das pranchas-modelo, seus Wireframe Text e referências compartilhadas.
 
-O [`Documento Mestre`](docs/Documento_Mestre.md) é a referência oficial para a definição e evolução funcional e visual do projeto. Sua versão **1.0** constitui a baseline funcional aprovada. Toda nova funcionalidade, regra ou alteração de comportamento posterior à baseline deverá seguir o processo formal de alteração definido no próprio documento antes de avançar para as etapas seguintes.
-
-O [`Registro Permanente de Fechamento da Documentação Mestre`](docs/Registro_Fechamento_Documento_Mestre.md) mantém o histórico canônico dos problemas já identificados, decisões já consolidadas, correções realizadas e critérios de promoção da baseline. Itens registrados como resolvidos somente deverão ser reabertos por decisão explícita ou por nova contradição comprovada no Documento Mestre.
-
-### Controle dos Wireframes
-
-A etapa de **Wireframe Conceitual em Imagem** possui controle operacional próprio em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md).
-
-Esse documento registra o padrão técnico adotado, as variantes Claro e Escuro, o checklist das 71 interfaces e seus respectivos estados de validação e aprovação. O `README.md` principal mantém apenas o estado macro do projeto; o acompanhamento detalhado dos wireframes deve ser realizado no documento de controle da etapa, evitando duplicidade e divergência de informações.
+O README principal mantém apenas a visão macro do projeto. Regras funcionais e técnicas devem ser consultadas em seus documentos canônicos para evitar duplicidade e divergência.
 
 ### Ativos do projeto
 
@@ -72,17 +63,9 @@ O `README.md` principal não replica o catálogo técnico desses arquivos. Regra
 
 Os arquivos oficiais de logo e ícone estão catalogados em [`assets/logo/README.md`](assets/logo/README.md), que define a função dos artefatos disponíveis, identifica o arquivo vetorial mestre e registra as informações cromáticas e tipográficas da identidade.
 
-As definições técnicas definitivas, como arquitetura, frontend, backend, API, autenticação, banco de dados, segurança, infraestrutura e integrações, serão consolidadas posteriormente em um Documento Técnico de Arquitetura.
-
 ## Arquitetura e tecnologias
 
-A evolução técnica do **SaOr - Sales Order** segue um processo estruturado, no qual a validação funcional e da experiência de uso precede a consolidação da arquitetura definitiva.
-
-O **MVP em HTML, CSS e JavaScript** será a primeira implementação executável do projeto e terá como finalidade validar a interface, a responsividade, a navegação, os principais comportamentos, os estados da aplicação e os requisitos de acessibilidade.
-
-Após a validação do MVP, o **Documento Técnico de Arquitetura** consolidará as diretrizes técnicas do sistema, abrangendo frontend, backend, APIs, autenticação e autorização, persistência de dados, segurança, integrações, infraestrutura, ambientes, deploy, monitoramento, testes e padrões de desenvolvimento.
-
-Esse documento estabelecerá a arquitetura e o conjunto tecnológico oficial que orientarão a implementação definitiva do **SaOr - Sales Order**.
+As definições técnicas definitivas, como arquitetura, frontend, backend, API, autenticação, banco de dados, segurança, infraestrutura e integrações, serão consolidadas posteriormente no Documento Técnico de Arquitetura, conforme o processo oficial definido no Documento Mestre.
 
 ## Projeto
 

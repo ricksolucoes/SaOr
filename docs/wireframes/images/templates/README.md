@@ -1,31 +1,22 @@
 # SaOr - Sales Order
-## Registro das pranchas técnicas-modelo
+## Pranchas-modelo — organização e ciclo de vida
 
 **Diretório:** `docs/wireframes/images/templates/`  
-**Finalidade:** preservar, comparar, selecionar, versionar e auditar as alternativas de prancha técnica utilizadas na etapa de Wireframe Conceitual em Imagem.  
-**Documento superior:** `../README.md`
+**Especificação técnica superior:** [`../README.md`](../README.md)
 
 ---
 
-# 1. Regra de preservação
+# 1. Finalidade
 
-As pranchas-modelo são artefatos de decisão.
+Este documento define somente:
 
-Elas devem permanecer no repositório mesmo quando:
+- estrutura das referências compartilhadas;
+- armazenamento das pranchas em avaliação;
+- armazenamento das pranchas aprovadas;
+- vínculo entre PNG e Wireframe Text;
+- versionamento, preservação e promoção dos artefatos.
 
-- forem rejeitadas;
-- forem superadas;
-- outra alternativa for aprovada;
-- partes de mais de uma alternativa forem combinadas no modelo oficial.
-
-A finalidade é permitir consulta futura sobre:
-
-- quais opções foram consideradas;
-- quais problemas foram encontrados;
-- por que determinada composição foi escolhida;
-- de qual alternativa surgiu o modelo oficial.
-
-A aprovação de um template **não autoriza apagar as alternativas**.
+Dimensões, viewport, safe areas, tokens, tipografia, componentes, elevação, iconografia e demais regras técnicas pertencem exclusivamente ao README superior.
 
 ---
 
@@ -34,432 +25,149 @@ A aprovação de um template **não autoriza apagar as alternativas**.
 ```text
 templates/
 ├── README.md
+├── references/
+│   ├── Especificação Técnica - Prancha de Trabalho.png
+│   ├── Especificação Técnica do Viewport Mobile.png
+│   └── WF-VIEWPORT-360x800-clean.png
 ├── alternatives/
-│   ├── .gitkeep
-│   ├── WF-TEMPLATE-A_v01.png
-│   ├── WF-TEMPLATE-A_v02.png
-│   ├── WF-TEMPLATE-B_v01.png
-│   └── WF-TEMPLATE-C_v01.png
-└── official/
-    ├── .gitkeep
-    └── WF-TEMPLATE-OFFICIAL_v01.png
+│   ├── <prancha-em-avaliação>.png
+│   └── wiframetext/
+│       └── <mesmo-nome-base>.md
+└── aprovados/
+    ├── <prancha-aprovada>.png
+    └── wiframetext/
+        └── <mesmo-nome-base>.md
 ```
 
-`alternatives/` e `official/` possuem finalidades diferentes e não devem ser misturados.
+## 2.1 `references/`
+
+Somente referências técnicas compartilhadas. Não são alternativas, não recebem status de template e não são copiadas para as outras pastas.
+
+## 2.2 `alternatives/`
+
+Somente pranchas-modelo em avaliação, rejeitadas ou preservadas como alternativas. A imagem fica diretamente na pasta e o Wireframe Text correspondente em `alternatives/wiframetext/`.
+
+## 2.3 `aprovados/`
+
+Somente pranchas-modelo explicitamente aprovadas. A imagem fica diretamente na pasta e o Wireframe Text correspondente em `aprovados/wiframetext/`.
 
 ---
 
-# 3. Convenções de nomes
+# 3. Pareamento PNG ↔ Wireframe Text
 
-Alternativas:
+Toda nova prancha-modelo deve possuir um Wireframe Text antes de sua imagem ser considerada pronta para avaliação.
+
+Pareamento pelo mesmo nome-base:
 
 ```text
-WF-TEMPLATE-<LETRA>_v<VERSÃO>.png
+alternatives/WF-TEMPLATE-X_v01.png
+alternatives/wiframetext/WF-TEMPLATE-X_v01.md
 ```
 
-Exemplos:
+O mesmo padrão vale em `aprovados/`.
+
+O Wireframe Text registra somente a composição específica da prancha:
 
 ```text
-WF-TEMPLATE-A_v01.png
-WF-TEMPLATE-A_v02.png
-WF-TEMPLATE-B_v01.png
+identificação e versão
+conceito de composição
+mapa de regiões
+posições e dimensões específicas
+cabeçalho e textos exatos
+viewport utilizado e posição
+seções presentes
+tokens técnicos usados por nome
+componentes usados por nome
+ícones utilizados
+regras específicas da composição
+checklist visual da prancha
 ```
 
-Modelo oficial:
+Não registrar conversa, memória de processo, tentativas descartadas, raciocínio interno, histórico narrativo desnecessário ou cópia integral das regras do README superior.
+
+---
+
+# 4. Nomenclatura
+
+Prancha:
 
 ```text
-WF-TEMPLATE-OFFICIAL_v<VERSÃO>.png
+WF-TEMPLATE-<IDENTIFICADOR>_v<VERSÃO>.png
+```
+
+Wireframe Text:
+
+```text
+WF-TEMPLATE-<IDENTIFICADOR>_v<VERSÃO>.md
 ```
 
 Exemplo:
 
 ```text
-WF-TEMPLATE-OFFICIAL_v01.png
+WF-TEMPLATE-A_v02.png
+wiframetext/WF-TEMPLATE-A_v02.md
 ```
 
-Uma nova versão nunca substitui fisicamente a anterior.
+Nova versão nunca sobrescreve silenciosamente versão preservada.
 
 ---
 
-# 4. Estados das alternativas
-
-Estados permitidos:
+# 5. Fluxo de trabalho
 
 ```text
-PENDENTE DE PRODUÇÃO
-EM VALIDAÇÃO
-AJUSTES NECESSÁRIOS
-CANDIDATA
-REJEITADA
-SUPERADA
-SELECIONADA
-```
-
-`CANDIDATA` significa que a alternativa foi validada para participar da comparação final entre A/B/C.  
-`SELECIONADA` somente pode ser usada depois da comparação final e de decisão explícita do responsável.
-
-`REJEITADA` e `SUPERADA` não significam exclusão do arquivo.
-
----
-
-# 5. Estado do modelo oficial
-
-Estados permitidos:
-
-```text
-NÃO DEFINIDO
-EM VALIDAÇÃO
-AJUSTES NECESSÁRIOS
-APROVADO
-SUPERADO POR NOVA VERSÃO
-```
-
-Somente declaração explícita do responsável pode definir `APROVADO`.
-
----
-
-# 6. Alternativa A — viewport central dominante
-
-**Versão histórica:** `alternatives/WF-TEMPLATE-A_v01.png`  
-**Versão validada para comparação:** `alternatives/WF-TEMPLATE-A_v02.png`  
-**Status atual da alternativa:** `CANDIDATA`
-
-Conceito:
-
-- viewport `360 × 800 px` como elemento visual dominante;
-- escala rigorosa `1:1`;
-- cabeçalho técnico na região superior;
-- metadados e especificações distribuídos nas áreas restantes;
-- prioridade visual para a interface.
-
-Resultado da avaliação:
-
-- a v01 permanece preservada como histórico da primeira proposta;
-- a v02 incorpora os ajustes realizados durante a avaliação da Alternativa A;
-- a v02 foi validada explicitamente pelo responsável em 24/10/2026;
-- a alternativa A passa a `CANDIDATA` para comparação posterior com B e C;
-- a validação da A não significa que ela já foi `SELECIONADA` como template oficial.
-
-Registro:
-
-```text
-Data da validação: 24/10/2026
-Arquivo validado: alternatives/WF-TEMPLATE-A_v02.png
-Versão: v02
-Status anterior: EM VALIDAÇÃO
-Status novo: CANDIDATA
-Decisão: Alternativa A validada para comparação com B e C.
-Observação: v01 preservada como histórico; v02 é a referência vigente da Alternativa A.
-```
-
----
-
-# 7. Alternativa B — viewport à esquerda + painel técnico à direita
-
-**Arquivo planejado:** `alternatives/WF-TEMPLATE-B_v01.png`  
-**Status atual:** `PENDENTE DE PRODUÇÃO`  
-**Próxima alternativa autorizada para produção:** **SIM**
-
-Conceito:
-
-- viewport à esquerda;
-- escala rigorosa `1:1`;
-- painel técnico vertical à direita;
-- interface e especificação simultaneamente visíveis;
-- canvas vigente para a nova produção: `1280 × 1920 px`.
-
-Ordem obrigatória de construção da Alternativa B:
-
-```text
-1. canvas vazio 1280 × 1920 px
+especificação técnica em ../README.md
         ↓
-2. cabeçalho técnico
+Wireframe Text em alternatives/wiframetext/
         ↓
-3. viewport 360 × 800 px / 1:1
+PNG em alternatives/
         ↓
-4. validação física do viewport
+avaliação
         ↓
-5. restante da documentação
+┌──────────────────────┬──────────────────────┐
+│ não aprovada         │ aprovada             │
+│ permanece em         │ mover o par para     │
+│ alternatives/        │ aprovados/           │
+└──────────────────────┴──────────────────────┘
 ```
 
-A etapa 5 somente pode começar depois de comprovado que o viewport mede fisicamente `360 × 800 px`.
-
-Regra de não regressão em relação à A validada:
-
-- B deve herdar as **decisões técnicas documentadas** já validadas durante a avaliação da A;
-- B não deve reabrir tipografia, paleta, componentes, estados, safe areas, medidas, radius, elevação, iconografia, metadados ou regras multipágina sem decisão explícita;
-- a diferença deliberada da B é a **composição documental**: viewport à esquerda + painel técnico principal à direita;
-- a nova composição deve ser construída a partir da especificação vigente, sem copiar, escalar ou usar a geometria raster de uma prancha anterior como base de montagem;
-- versões anteriores podem ser consultadas como histórico de decisão, mas não substituem os valores e regras registrados nos documentos vigentes;
-- qualquer outra mudança exige justificativa explícita antes de ser incorporada.
-
-Objetivo da avaliação:
-
-- verificar legibilidade de uma coluna técnica lateral;
-- testar leitura comparativa interface/especificação;
-- confirmar que o viewport não perde prioridade excessivamente.
-
-Registro:
-
-```text
-Data da produção:
-Arquivo:
-Versão:
-Status após avaliação:
-Pontos positivos:
-Problemas encontrados:
-Ajustes solicitados:
-Decisão:
-```
+A promoção para `aprovados/` exige aprovação explícita.
 
 ---
 
-# 8. Alternativa C — viewport superior + documentação inferior
+# 6. Promoção
 
-**Arquivo planejado:** `alternatives/WF-TEMPLATE-C_v01.png`  
-**Status atual:** `PENDENTE DE PRODUÇÃO`
-
-Conceito:
-
-- viewport na região superior/central;
-- escala rigorosa `1:1`;
-- blocos documentais na região inferior;
-- leitura predominantemente vertical.
-
-Objetivo da avaliação:
-
-- verificar se a documentação inferior comporta todos os dados;
-- testar clareza da leitura vertical;
-- confirmar que o modelo funciona para páginas únicas e multipágina.
-
-Registro:
+Quando uma prancha for aprovada, mover o par:
 
 ```text
-Data da produção:
-Arquivo:
-Versão:
-Status após avaliação:
-Pontos positivos:
-Problemas encontrados:
-Ajustes solicitados:
-Decisão:
+<nome>.png
+wiframetext/<nome>.md
 ```
+
+de `alternatives/` para `aprovados/`.
+
+Não manter cópias canônicas simultâneas do mesmo par nas duas pastas. Alternativas não selecionadas permanecem preservadas em `alternatives/`.
 
 ---
 
-# 9. Ordem de produção
+# 7. Preservação
 
-Estado atual:
+- não sobrescrever versão preservada;
+- não excluir alternativa porque outra foi aprovada;
+- não alterar prancha aprovada sem nova versão;
+- não promover PNG sem seu Wireframe Text;
+- não promover Wireframe Text sem seu PNG.
 
-```text
-1. WF-TEMPLATE-A_v01 — produzido / histórico
-2. WF-TEMPLATE-A_v02 — CANDIDATA
-3. WF-TEMPLATE-B_v01 — PRÓXIMA PRODUÇÃO
-4. avaliação da B
-5. WF-TEMPLATE-C_v01
-6. avaliação da C
-7. comparação técnica A × B × C
-8. escolha explícita
-```
-
-Motivo da produção sequencial:
-
-- defeitos objetivos descobertos cedo não devem ser repetidos;
-- decisões já validadas devem ser preservadas;
-- aprendizados de legibilidade podem ser aplicados às alternativas seguintes;
-- o conceito próprio de cada alternativa deve ser preservado;
-- nenhuma nova alternativa pode regredir decisões já aceitas sem justificativa explícita.
+A pasta indica o estado documental; não é necessário duplicar esse estado em documentos auxiliares.
 
 ---
 
-# 10. Conteúdo de demonstração
+# 8. Relação com wireframes funcionais
 
-As pranchas-modelo não utilizarão T00 nem outra interface funcional como conteúdo de teste.
+Pranchas-modelo calibram e congelam a composição documental da etapa.
 
-Podem utilizar amostras neutras e controladas para verificar espaço e legibilidade, por exemplo:
+Elas:
 
-- título;
-- texto;
-- campo Outlined;
-- botões;
-- item de lista;
-- ícone;
-- card;
-- estado disabled;
-- estado error;
-- indicador de scroll.
-
-Essas amostras não criam requisitos funcionais e não pertencem às 71 interfaces.
-
----
-
-# 11. Critérios obrigatórios de avaliação
-
-Cada alternativa deve ser medida quanto aos seguintes critérios:
-
-```text
-01. viewport exatamente 360 × 800 px
-02. escala exatamente 1:1
-03. nenhuma legenda invade o viewport
-04. metadados permanecem legíveis
-05. tokens cromáticos cabem de forma legível
-06. especificação tipográfica cabe integralmente
-07. observações técnicas possuem área utilizável
-08. página XX/YY fica claramente identificável
-09. versão vNN fica claramente identificável
-10. scroll/continuidade pode ser representado
-11. Claro/Escuro podem usar exatamente as mesmas coordenadas
-12. template funciona para uma página e para multipágina
-13. canvas físico da nova produção é exatamente 1280 × 1920 px
-```
-
-Também devem ser observados:
-
-- consistência com canvas vigente `1280 × 1920 px` nas novas produções posteriores a esta decisão;
-- respeito, na prancha-modelo, às safe areas de referência do wireframe (`24 px` superior / `32 px` inferior);
-- ausência de interpretação dessas safe areas como paddings ou constantes obrigatórias da implementação;
-- ausência de redução do viewport;
-- ausência de fonte documental ilegível;
-- capacidade de congelar coordenadas para reprodução posterior;
-- preservação das decisões já validadas em alternativas anteriores, exceto quando a própria diferença conceitual da alternativa exigir mudança.
-
-As safe areas avaliadas nas pranchas são **referências documentais desta etapa**. Elas não determinam os insets finais do produto. Na implementação futura, superfícies visuais poderão ocupar a tela edge-to-edge, enquanto conteúdos sensíveis deverão respeitar os insets reais fornecidos pela plataforma/dispositivo.
-
-A mudança do canvas para `1280 × 1920 px` não autoriza regenerar ou sobrescrever as alternativas históricas já preservadas. Ela passa a reger novas produções e revisões posteriores a esta decisão. A avaliação da Alternativa B deve, portanto, considerar o novo canvas sem alterar o viewport `360 × 800 px`.
-
----
-
-# 12. Matriz de comparação
-
-Preencher após as três avaliações.
-
-| Critério | A | B | C | Observação |
-|---|---|---|---|---|
-| Viewport 360 × 800 / 1:1 | CANDIDATA | — | — | A validada em v02 |
-| Legibilidade dos metadados | CANDIDATA | — | — | A validada em v02 |
-| Espaço para cores | CANDIDATA | — | — | A validada em v02 |
-| Espaço para tipografia | CANDIDATA | — | — | A validada em v02 |
-| Espaço para observações | CANDIDATA | — | — | A validada em v02 |
-| Página/versão legíveis | CANDIDATA | — | — | A validada em v02 |
-| Scroll/continuidade | CANDIDATA | — | — | A validada em v02 |
-| Equivalência Claro/Escuro | CANDIDATA | — | — | A validada em v02 |
-| Multipágina | CANDIDATA | — | — | A validada em v02 |
-| Consistência/reprodutibilidade | CANDIDATA | — | — | A validada em v02 |
-
-A marcação `CANDIDATA` na coluna A registra que a alternativa foi aceita para comparação. Ela não antecipa a seleção final.
-
-A matriz deve registrar fatos observáveis; preferência estética isolada não é critério suficiente.
-
----
-
-# 13. Escolha do modelo
-
-Após avaliação de A/B/C, as decisões permitidas são:
-
-```text
-A
-B
-C
-AJUSTAR UMA ALTERNATIVA
-COMBINAR PARTES EXPLICITAMENTE IDENTIFICADAS
-```
-
-Se houver combinação, registrar exatamente:
-
-```text
-Origem estrutural:
-Cabeçalho proveniente de:
-Posição do viewport proveniente de:
-Painel/rodapé técnico proveniente de:
-Outros elementos:
-Motivo:
-```
-
-Não inferir uma combinação automaticamente.
-
----
-
-# 14. Modelo oficial
-
-Depois da decisão explícita, gerar:
-
-```text
-official/WF-TEMPLATE-OFFICIAL_v01.png
-```
-
-Registro obrigatório:
-
-```text
-Data:
-Arquivo:
-Versão:
-Origem: A | B | C | combinação
-Decisão que originou o modelo:
-Coordenadas congeladas:
-Status: EM VALIDAÇÃO | APROVADO
-Observação:
-```
-
----
-
-# 15. Congelamento
-
-Após aprovação explícita:
-
-```text
-WF-TEMPLATE-OFFICIAL_v01.png
-Status: APROVADO / CONGELADO
-```
-
-Não pode ser:
-
-- sobrescrito;
-- regenerado;
-- melhorado automaticamente;
-- substituído sem nova versão.
-
-Nova alteração:
-
-```text
-WF-TEMPLATE-OFFICIAL_v02.png
-```
-
-A versão `v01` permanece preservada.
-
----
-
-# 16. Relação com os wireframes funcionais
-
-Somente depois do modelo oficial aprovado e congelado:
-
-```text
-template oficial
-        ↓
-fechamento do gate em ../README.md
-        ↓
-T00 Claro
-        ↓
-T00 Escuro
-```
-
-As pranchas-modelo:
-
-- não são T00;
-- não recebem ID funcional T/M/E;
-- não são contabilizadas entre as imagens funcionais;
-- não alteram a baseline;
-- não autorizam Design Visual ou Figma antecipadamente.
-
----
-
-# 17. Registro atual
-
-| Artefato | Caminho | Status |
-|---|---|---|
-| Alternativa A v01 | `alternatives/WF-TEMPLATE-A_v01.png` | HISTÓRICO / PRESERVADA |
-| Alternativa A v02 | `alternatives/WF-TEMPLATE-A_v02.png` | CANDIDATA |
-| Alternativa B | `alternatives/WF-TEMPLATE-B_v01.png` | PENDENTE DE PRODUÇÃO |
-| Alternativa C | `alternatives/WF-TEMPLATE-C_v01.png` | PENDENTE DE PRODUÇÃO |
-| Modelo oficial | `official/WF-TEMPLATE-OFFICIAL_v01.png` | NÃO DEFINIDO |
-
-A Alternativa A está validada para comparação. A próxima produção autorizada é `WF-TEMPLATE-B_v01.png`.
+- não representam interface funcional T/M/E;
+- não entram na contagem mínima Claro/Escuro;
+- não alteram a baseline funcional;
+- não substituem os Textframes do Documento Mestre.
