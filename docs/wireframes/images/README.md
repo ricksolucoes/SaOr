@@ -40,6 +40,7 @@ docs/
         │   ├── alternatives/
         │   │   ├── .gitkeep
         │   │   ├── WF-TEMPLATE-A_v01.png
+        │   │   ├── WF-TEMPLATE-A_v02.png
         │   │   ├── WF-TEMPLATE-B_v01.png
         │   │   └── WF-TEMPLATE-C_v01.png
         │   └── official/
@@ -544,24 +545,31 @@ As pranchas-modelo:
 - não devem ser apagadas porque foram rejeitadas;
 - servem como histórico de decisão e referência de auditoria.
 
-## 19.1 Alternativas planejadas
+## 19.1 Estado das alternativas
 
 ```text
-WF-TEMPLATE-A_v01.png
-WF-TEMPLATE-B_v01.png
-WF-TEMPLATE-C_v01.png
+WF-TEMPLATE-A_v01.png — HISTÓRICO / PRESERVADA
+WF-TEMPLATE-A_v02.png — CANDIDATA
+WF-TEMPLATE-B_v01.png — PRÓXIMA PRODUÇÃO
+WF-TEMPLATE-C_v01.png — PENDENTE
 ```
 
-Produção sequencial:
+Produção sequencial atual:
 
 ```text
-A → validar problemas geométricos
+A_v01 → histórico preservado
   ↓
-B → produzir já considerando aprendizados válidos
+A_v02 → validada / CANDIDATA
   ↓
-C → produzir já considerando aprendizados válidos
+B_v01 → próxima produção
   ↓
-comparação técnica
+avaliação de B
+  ↓
+C_v01
+  ↓
+avaliação de C
+  ↓
+comparação técnica A × B × C
 ```
 
 A produção sequencial não autoriza alterar silenciosamente o conceito de cada alternativa.
@@ -586,7 +594,7 @@ Cada alternativa deve ser verificada quanto a:
 3. ausência de invasão do viewport por legendas;
 4. legibilidade dos metadados;
 5. espaço suficiente para tokens cromáticos;
-6. espaço suficiente para especificação tipográfica;
+6. especificação tipográfica cabe integralmente;
 7. área utilizável de observações;
 8. identificação clara de `XX/YY`;
 9. identificação clara de `vNN`;
@@ -659,10 +667,11 @@ A versão anterior permanece preservada.
 [x] governança e preservação das pranchas-modelo
 ```
 
-## 21.2 Pendente
+## 21.2 Estado do gate das alternativas
 
 ```text
-[ ] WF-TEMPLATE-A_v01 produzido e avaliado
+[x] WF-TEMPLATE-A_v01 produzido e preservado como histórico
+[x] WF-TEMPLATE-A_v02 produzido e validado como CANDIDATA
 [ ] WF-TEMPLATE-B_v01 produzido e avaliado
 [ ] WF-TEMPLATE-C_v01 produzido e avaliado
 [ ] comparação técnica registrada
@@ -688,7 +697,11 @@ ESPECIFICAÇÃO DOCUMENTADA
         ↓
 WF-TEMPLATE-A_v01
         ↓
-avaliação
+ajustes
+        ↓
+WF-TEMPLATE-A_v02
+        ↓
+CANDIDATA
         ↓
 WF-TEMPLATE-B_v01
         ↓

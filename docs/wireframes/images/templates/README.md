@@ -37,6 +37,7 @@ templates/
 ├── alternatives/
 │   ├── .gitkeep
 │   ├── WF-TEMPLATE-A_v01.png
+│   ├── WF-TEMPLATE-A_v02.png
 │   ├── WF-TEMPLATE-B_v01.png
 │   └── WF-TEMPLATE-C_v01.png
 └── official/
@@ -94,6 +95,9 @@ SUPERADA
 SELECIONADA
 ```
 
+`CANDIDATA` significa que a alternativa foi validada para participar da comparação final entre A/B/C.  
+`SELECIONADA` somente pode ser usada depois da comparação final e de decisão explícita do responsável.
+
 `REJEITADA` e `SUPERADA` não significam exclusão do arquivo.
 
 ---
@@ -116,8 +120,9 @@ Somente declaração explícita do responsável pode definir `APROVADO`.
 
 # 6. Alternativa A — viewport central dominante
 
-**Arquivo planejado:** `alternatives/WF-TEMPLATE-A_v01.png`  
-**Status atual:** `PENDENTE DE PRODUÇÃO`
+**Versão histórica:** `alternatives/WF-TEMPLATE-A_v01.png`  
+**Versão validada para comparação:** `alternatives/WF-TEMPLATE-A_v02.png`  
+**Status atual da alternativa:** `CANDIDATA`
 
 Conceito:
 
@@ -127,23 +132,24 @@ Conceito:
 - metadados e especificações distribuídos nas áreas restantes;
 - prioridade visual para a interface.
 
-Objetivo da avaliação:
+Resultado da avaliação:
 
-- verificar se a interface possui destaque suficiente;
-- confirmar que metadados, tokens e observações continuam legíveis;
-- medir o aproveitamento dos espaços laterais e inferiores.
+- a v01 permanece preservada como histórico da primeira proposta;
+- a v02 incorpora os ajustes realizados durante a avaliação da Alternativa A;
+- a v02 foi validada explicitamente pelo responsável em 24/10/2026;
+- a alternativa A passa a `CANDIDATA` para comparação posterior com B e C;
+- a validação da A não significa que ela já foi `SELECIONADA` como template oficial.
 
 Registro:
 
 ```text
-Data da produção:
-Arquivo:
-Versão:
-Status após avaliação:
-Pontos positivos:
-Problemas encontrados:
-Ajustes solicitados:
-Decisão:
+Data da validação: 24/10/2026
+Arquivo validado: alternatives/WF-TEMPLATE-A_v02.png
+Versão: v02
+Status anterior: EM VALIDAÇÃO
+Status novo: CANDIDATA
+Decisão: Alternativa A validada para comparação com B e C.
+Observação: v01 preservada como histórico; v02 é a referência vigente da Alternativa A.
 ```
 
 ---
@@ -151,7 +157,8 @@ Decisão:
 # 7. Alternativa B — viewport à esquerda + painel técnico à direita
 
 **Arquivo planejado:** `alternatives/WF-TEMPLATE-B_v01.png`  
-**Status atual:** `PENDENTE DE PRODUÇÃO`
+**Status atual:** `PENDENTE DE PRODUÇÃO`  
+**Próxima alternativa autorizada para produção:** **SIM**
 
 Conceito:
 
@@ -159,6 +166,13 @@ Conceito:
 - escala rigorosa `1:1`;
 - painel técnico vertical à direita;
 - interface e especificação simultaneamente visíveis.
+
+Regra de não regressão em relação à A validada:
+
+- B deve herdar as decisões técnicas e visuais já validadas em `WF-TEMPLATE-A_v02.png`;
+- B não deve reabrir tipografia, paleta, componentes, estados, safe areas, medidas, radius, elevação, iconografia, metadados ou regras multipágina;
+- a diferença deliberada da B é a **composição documental**: viewport à esquerda + painel técnico principal à direita;
+- qualquer outra mudança exige justificativa explícita antes de ser incorporada.
 
 Objetivo da avaliação:
 
@@ -216,25 +230,26 @@ Decisão:
 
 # 9. Ordem de produção
 
-As alternativas serão produzidas separadamente:
+Estado atual:
 
 ```text
-1. WF-TEMPLATE-A_v01
-2. avaliação da A
-3. WF-TEMPLATE-B_v01
+1. WF-TEMPLATE-A_v01 — produzido / histórico
+2. WF-TEMPLATE-A_v02 — CANDIDATA
+3. WF-TEMPLATE-B_v01 — PRÓXIMA PRODUÇÃO
 4. avaliação da B
 5. WF-TEMPLATE-C_v01
 6. avaliação da C
-7. comparação técnica
+7. comparação técnica A × B × C
 8. escolha explícita
 ```
 
 Motivo da produção sequencial:
 
-- defeitos geométricos objetivos descobertos cedo não devem ser repetidos;
+- defeitos objetivos descobertos cedo não devem ser repetidos;
+- decisões já validadas devem ser preservadas;
 - aprendizados de legibilidade podem ser aplicados às alternativas seguintes;
 - o conceito próprio de cada alternativa deve ser preservado;
-- nenhuma alternativa pode ser silenciosamente convertida em outra.
+- nenhuma nova alternativa pode regredir decisões já aceitas sem justificativa explícita.
 
 ---
 
@@ -285,7 +300,8 @@ Também devem ser observados:
 - ausência de interpretação dessas safe areas como paddings ou constantes obrigatórias da implementação;
 - ausência de redução do viewport;
 - ausência de fonte documental ilegível;
-- capacidade de congelar coordenadas para reprodução posterior.
+- capacidade de congelar coordenadas para reprodução posterior;
+- preservação das decisões já validadas em alternativas anteriores, exceto quando a própria diferença conceitual da alternativa exigir mudança.
 
 As safe areas avaliadas nas pranchas são **referências documentais desta etapa**. Elas não determinam os insets finais do produto. Na implementação futura, superfícies visuais poderão ocupar a tela edge-to-edge, enquanto conteúdos sensíveis deverão respeitar os insets reais fornecidos pela plataforma/dispositivo.
 
@@ -297,16 +313,18 @@ Preencher após as três avaliações.
 
 | Critério | A | B | C | Observação |
 |---|---|---|---|---|
-| Viewport 360 × 800 / 1:1 | — | — | — | |
-| Legibilidade dos metadados | — | — | — | |
-| Espaço para cores | — | — | — | |
-| Espaço para tipografia | — | — | — | |
-| Espaço para observações | — | — | — | |
-| Página/versão legíveis | — | — | — | |
-| Scroll/continuidade | — | — | — | |
-| Equivalência Claro/Escuro | — | — | — | |
-| Multipágina | — | — | — | |
-| Consistência/reprodutibilidade | — | — | — | |
+| Viewport 360 × 800 / 1:1 | CANDIDATA | — | — | A validada em v02 |
+| Legibilidade dos metadados | CANDIDATA | — | — | A validada em v02 |
+| Espaço para cores | CANDIDATA | — | — | A validada em v02 |
+| Espaço para tipografia | CANDIDATA | — | — | A validada em v02 |
+| Espaço para observações | CANDIDATA | — | — | A validada em v02 |
+| Página/versão legíveis | CANDIDATA | — | — | A validada em v02 |
+| Scroll/continuidade | CANDIDATA | — | — | A validada em v02 |
+| Equivalência Claro/Escuro | CANDIDATA | — | — | A validada em v02 |
+| Multipágina | CANDIDATA | — | — | A validada em v02 |
+| Consistência/reprodutibilidade | CANDIDATA | — | — | A validada em v02 |
+
+A marcação `CANDIDATA` na coluna A registra que a alternativa foi aceita para comparação. Ela não antecipa a seleção final.
 
 A matriz deve registrar fatos observáveis; preferência estética isolada não é critério suficiente.
 
@@ -314,7 +332,7 @@ A matriz deve registrar fatos observáveis; preferência estética isolada não 
 
 # 13. Escolha do modelo
 
-Após a comparação, as decisões permitidas são:
+Após avaliação de A/B/C, as decisões permitidas são:
 
 ```text
 A
@@ -412,13 +430,14 @@ As pranchas-modelo:
 
 ---
 
-# 17. Registro inicial
+# 17. Registro atual
 
 | Artefato | Caminho | Status |
 |---|---|---|
-| Alternativa A | `alternatives/WF-TEMPLATE-A_v01.png` | PENDENTE DE PRODUÇÃO |
+| Alternativa A v01 | `alternatives/WF-TEMPLATE-A_v01.png` | HISTÓRICO / PRESERVADA |
+| Alternativa A v02 | `alternatives/WF-TEMPLATE-A_v02.png` | CANDIDATA |
 | Alternativa B | `alternatives/WF-TEMPLATE-B_v01.png` | PENDENTE DE PRODUÇÃO |
 | Alternativa C | `alternatives/WF-TEMPLATE-C_v01.png` | PENDENTE DE PRODUÇÃO |
 | Modelo oficial | `official/WF-TEMPLATE-OFFICIAL_v01.png` | NÃO DEFINIDO |
 
-Este registro deve ser atualizado conforme as pranchas forem produzidas e avaliadas.
+A Alternativa A está validada para comparação. A próxima produção autorizada é `WF-TEMPLATE-B_v01.png`.
