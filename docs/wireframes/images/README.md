@@ -3,10 +3,11 @@
 
 **Baseline funcional:** v1.0 — APROVADO / BASELINE FUNCIONAL  
 **Etapa atual:** Wireframe Conceitual em Imagem  
-**Status deste documento:** EM VALIDAÇÃO  
+**Status deste documento:** EM VALIDAÇÃO — especificação técnica em fechamento  
 **Interfaces documentadas:** 71  
 **Variações obrigatórias:** Claro (`white`) e Escuro (`black`)  
-**Total de imagens previstas:** 142  
+**Quantidade mínima de imagens:** 142  
+**Quantidade final de imagens:** variável conforme paginação necessária por interface  
 **Fonte funcional:** `docs/Documento_Mestre.md`  
 **Registro de não regressão:** `docs/Registro_Fechamento_Documento_Mestre.md`
 
@@ -16,12 +17,14 @@
 
 Este documento controla exclusivamente a produção, validação, aprovação e preservação dos wireframes conceituais em imagem do **SaOr - Sales Order**.
 
-Cada interface `T`, `M` ou `E` da baseline funcional deve possuir duas imagens independentes:
+Cada interface `T`, `M` ou `E` da baseline funcional deve possuir, no mínimo:
 
-- uma variação **Claro**, em `docs/wireframes/images/white`;
-- uma variação **Escuro**, em `docs/wireframes/images/black`.
+- uma representação **Claro**, em `docs/wireframes/images/white`;
+- uma representação **Escuro**, em `docs/wireframes/images/black`.
 
-As duas imagens representam a mesma interface e devem ser estruturalmente idênticas. A existência das duas variantes nesta etapa tem a finalidade de permitir avaliar o comportamento estrutural da interface em ambiente claro e escuro, sem transformar o wireframe em Design Visual final.
+Quando todo o conteúdo funcional de uma interface não puder ser representado em um único viewport de `360 × 800 px`, a mesma interface será documentada em páginas sequenciais. Por esse motivo, **142 é o mínimo de imagens**, e não um total rígido.
+
+As variantes Claro e Escuro representam a mesma interface e devem ser estruturalmente equivalentes. As definições deste documento existem para tornar o wireframe reproduzível e transferível ao Figma, sem antecipar o Design Visual definitivo nem a arquitetura de implementação.
 
 ---
 
@@ -34,91 +37,179 @@ docs/
         ├── README.md
         ├── white/
         │   ├── .gitkeep
-        │   ├── T00_v01.png
+        │   ├── T00-01-01_v01.png
         │   └── ...
         └── black/
             ├── .gitkeep
-            ├── T00_v01.png
+            ├── T00-01-01_v01.png
             └── ...
 ```
 
-Os arquivos `.gitkeep` existem somente porque o Git não versiona diretórios vazios. Eles podem permanecer sem efeito funcional após a inclusão das imagens.
+Os arquivos `.gitkeep` existem somente porque o Git não versiona diretórios vazios.
 
 ---
 
-# 3. Referência dimensional
+# 3. Referência dimensional aprovada
 
-## 3.1 Viewport mobile oficial desta etapa
+## 3.1 Viewport mobile oficial
 
-**Viewport lógico de referência: `390 × 844 px`**
+**Viewport lógico oficial: `360 × 800 px`**
 
-O viewport foi definido como referência única para a produção inicial dos wireframes mobile.
+Regras aprovadas:
+
+- orientação: **retrato**;
+- largura lógica total: `360 px`;
+- altura lógica total: `800 px`;
+- o retângulo de `360 × 800 px` representa a **tela lógica completa do celular** para esta etapa;
+- barras, navegação, indicadores de rolagem e demais elementos que ocupem ou sobreponham a tela devem ser considerados **dentro desses 360 × 800 px**, nunca acrescentados por fora;
+- não deve ser desenhada moldura física de aparelho;
+- não deve ser criada uma versão específica para iOS ou Android;
+- paisagem não faz parte da produção inicial e será estudada posteriormente;
+- tablet e desktop não serão produzidos automaticamente nesta etapa.
+
+## 3.2 Safe areas técnicas
+
+Dentro dos `360 × 800 px`, reservar:
+
+```text
+Safe area superior: 24 px
+Safe area inferior: 32 px
+```
+
+Essas reservas são técnicas e neutras em relação ao sistema operacional.
 
 Regras:
 
-- orientação: retrato;
-- largura lógica: 390 px;
-- altura lógica: 844 px;
-- a estrutura funcional da interface deve ser concebida dentro desse viewport;
-- todas as interfaces partem da mesma referência dimensional;
-- tablet e desktop não serão produzidos automaticamente nesta etapa;
-- diferenças estruturais relevantes para tablet ou desktop devem ser registradas quando identificadas, sem criar versões adicionais sem autorização.
+- não desenhar notch, Dynamic Island, barra Android ou outro chrome específico;
+- App Bar, conteúdo e navegação da aplicação devem respeitar as safe areas;
+- elementos persistentes da aplicação continuam consumindo espaço dentro do viewport;
+- a representação gráfica final das safe areas será validada na prancha técnica-modelo.
 
-O viewport representa a área lógica da interface. Ele não é o tamanho total do arquivo de documentação.
+## 3.3 Prancha técnica
 
-## 3.2 Prancha técnica
+**Canvas aprovado: `1024 × 1536 px`, orientação retrato.**
 
-**Canvas da prancha: `1024 × 1536 px`, orientação retrato.**
+**Escala do viewport dentro da prancha: `1:1`.**
 
-A prancha deve permitir exibir a interface na proporção correta e, fora do viewport, os metadados técnicos necessários à rastreabilidade.
+```text
+1 px lógico do wireframe = 1 px na representação do viewport na prancha
+```
 
-A prancha deve conter obrigatoriamente:
+A prancha deve conter:
 
-- projeto;
-- ID e nome da interface;
-- baseline;
-- etapa;
-- variação Claro/Escuro;
-- status;
-- versão do arquivo;
-- viewport lógico `390 × 844 px`;
-- canvas da prancha `1024 × 1536 px`;
-- wireframe da interface;
-- legenda dos tokens cromáticos efetivamente utilizados;
-- referência tipográfica efetivamente utilizada.
+- metadados técnicos;
+- viewport `360 × 800 px`;
+- wireframe;
+- legenda cromática usada;
+- legenda tipográfica usada;
+- observações técnicas quando aplicáveis.
+
+A composição conceitual da prancha está aprovada, porém **as coordenadas exatas das áreas documentais ainda dependem da aprovação da prancha técnica-modelo**.
 
 ---
 
-# 4. Convenção dos arquivos
+# 4. Margens, grid e espaçamento
 
-Formato:
+## 4.1 Margem estrutural
+
+**Margem horizontal estrutural do conteúdo: `12 px`.**
+
+A margem é aplicada dentro do viewport e deve ser respeitada como referência geral, salvo componente cuja geometria aprovada exija comportamento diferente.
+
+## 4.2 Unidade de espaçamento
+
+**Base técnica: `4 px`.**
+
+Escala aprovada:
 
 ```text
-<ID>_vNN.png
+4 px
+8 px
+12 px
+16 px
+24 px
+32 px
 ```
+
+Não devem ser utilizados espaçamentos arbitrários sem justificativa registrada.
+
+## 4.3 Padding-base
+
+```text
+Horizontal: 16 px
+Vertical:   12 px
+```
+
+O padding-base não substitui dimensões mínimas específicas de cada componente.
+
+---
+
+# 5. Convenção de arquivos e paginação
+
+## 5.1 Formato oficial
+
+```text
+<ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>.png
+```
+
+Os números de página e total devem utilizar dois dígitos quando aplicável.
 
 Exemplos:
 
 ```text
-white/T00_v01.png
-black/T00_v01.png
-white/T00_v02.png
-black/T00_v02.png
+white/T00-01-01_v01.png
+black/T00-01-01_v01.png
+white/T00-01-02_v01.png
+white/T00-02-02_v01.png
 ```
 
-Regras:
+Significado:
 
-- `v01` representa a primeira versão colocada em validação;
-- qualquer ajuste gera uma nova versão somente para a variante afetada;
-- versões anteriores não são apagadas durante a validação;
-- o checklist deve indicar a versão atualmente aprovada;
-- uma imagem já aprovada não poderá receber nova versão nesta etapa sem solicitação explícita do responsável pelo projeto.
+- `<ID>`: identificador funcional da interface;
+- `<PÁGINA>`: página atual da sequência;
+- `<TOTAL>`: quantidade total de páginas daquela representação;
+- `<VERSÃO>`: versão do arquivo daquela página.
+
+## 5.2 Regra multipágina
+
+Quando a interface exceder o viewport:
+
+- o viewport permanece `360 × 800 px`;
+- o conteúdo não deve ser comprimido para caber artificialmente;
+- devem ser criadas páginas sequenciais;
+- elementos realmente persistentes da interface devem ser repetidos nas páginas em que permaneceriam visíveis durante a rolagem;
+- conteúdo não persistente deve continuar a partir do ponto correspondente;
+- não criar controle de paginação dentro da interface se a baseline não possuir tal controle;
+- a paginação documental é externa à funcionalidade do produto.
+
+## 5.3 Versionamento multipágina
+
+Uma correção pode incrementar somente a página afetada, preservando as demais quando não mudarem.
+
+Exemplo:
+
+```text
+T00-01-02_v01.png
+T00-02-02_v02.png
+```
+
+Se uma alteração mudar o número total de páginas, a nova sequência deve utilizar o novo total de forma consistente nos arquivos afetados.
+
+## 5.4 Aprovação multipágina
+
+As páginas podem ser avaliadas individualmente, porém a interface somente recebe `APROVADO` quando:
+
+```text
+todas as páginas Claro = APROVADO
+E
+todas as páginas Escuro = APROVADO
+```
 
 ---
 
-# 5. Estados de controle
+# 6. Estados de controle documental
 
-Estados permitidos para cada variante:
+Estados permitidos:
 
 ```text
 PENDENTE
@@ -127,67 +218,44 @@ AJUSTES NECESSÁRIOS
 APROVADO
 ```
 
-O estado geral da interface somente será `APROVADO` quando:
-
-```text
-Claro = APROVADO
-E
-Escuro = APROVADO
-```
-
 Silêncio ou ausência de solicitação de ajuste não constitui aprovação.
 
----
-
-# 6. Congelamento após aprovação
-
-Quando uma variante receber aprovação explícita:
+Quando uma página/variante é aprovada:
 
 ```text
 APROVADO → CONGELADO NESTA ETAPA
 ```
 
-A partir desse momento, o arquivo aprovado:
-
-- não poderá ser alterado;
-- não poderá ser substituído;
-- não poderá ser regenerado;
-- não poderá receber melhorias automáticas;
-- não poderá ser adaptado em consequência de mudanças feitas em outras interfaces.
-
-A única exceção é uma solicitação explícita do responsável pelo projeto.
-
-Caso uma interface aprovada seja reaberta, a versão aprovada anterior deve ser preservada e o motivo da reabertura registrado.
+Um arquivo aprovado não pode ser sobrescrito, regenerado, alterado silenciosamente ou substituído por melhoria automática. Reabertura exige solicitação explícita e preservação da versão aprovada anterior.
 
 ---
 
-# 7. Equivalência obrigatória entre Claro e Escuro
+# 7. Equivalência entre Claro e Escuro
 
-As variantes `white` e `black` da mesma interface devem possuir exatamente:
+Para uma mesma interface e página, as variantes devem possuir exatamente:
 
-- mesmas informações;
-- mesmos textos funcionais;
-- mesmos campos;
-- mesmas ações;
-- mesmos destinos;
-- mesma hierarquia;
-- mesmos agrupamentos;
-- mesmas proporções;
-- mesma navegação;
-- mesmos estados;
-- mesma ordem de leitura;
-- mesmos componentes funcionais;
-- mesma escala tipográfica técnica.
+- informações;
+- textos funcionais;
+- campos;
+- ações;
+- destinos;
+- hierarquia;
+- agrupamentos;
+- proporções;
+- navegação;
+- estados;
+- ordem de leitura;
+- componentes;
+- tipografia técnica;
+- paginação funcional equivalente.
 
-A única diferença permitida é a aplicação da paleta técnica correspondente à variante.
-
-Uma variante não poderá possuir funcionalidade, ação, campo, estado ou hierarquia tipográfica diferente da outra.
+A diferença permitida é a aplicação da paleta técnica correspondente.
 
 ---
 
 # 8. Paletas técnicas do Wireframe
 
-As cores abaixo pertencem exclusivamente à etapa de **Wireframe Conceitual em Imagem**. Elas não são automaticamente os tokens definitivos do Design Visual.
+As cores abaixo pertencem exclusivamente a esta etapa e não constituem automaticamente a paleta definitiva do produto.
 
 ## 8.1 Claro — `white`
 
@@ -202,7 +270,7 @@ As cores abaixo pertencem exclusivamente à etapa de **Wireframe Conceitual em I
 | `WF-W-ACTION` | ações e elementos interativos | `#333333` |
 | `WF-W-DISABLED` | estado desabilitado | `#9A9A9A` |
 | `WF-W-FOCUS` | foco/seleção estrutural | `#4A4A4A` |
-| `WF-W-STATUS` | indicador de status, sempre acompanhado de outro indicador | `#626262` |
+| `WF-W-STATUS` | indicador de status acompanhado de outro indicador | `#626262` |
 
 ## 8.2 Escuro — `black`
 
@@ -217,129 +285,303 @@ As cores abaixo pertencem exclusivamente à etapa de **Wireframe Conceitual em I
 | `WF-B-ACTION` | ações e elementos interativos | `#E0E0E0` |
 | `WF-B-DISABLED` | estado desabilitado | `#777777` |
 | `WF-B-FOCUS` | foco/seleção estrutural | `#D0D0D0` |
-| `WF-B-STATUS` | indicador de status, sempre acompanhado de outro indicador | `#A8A8A8` |
+| `WF-B-STATUS` | indicador de status acompanhado de outro indicador | `#A8A8A8` |
 
-## 8.3 Catalogação cromática dentro de cada imagem
+## 8.3 Catalogação cromática
 
-Cada prancha deve apresentar a legenda dos tokens realmente usados naquela interface.
-
-A legenda deve permitir identificar, no mínimo quando existirem na tela:
-
-- fundo;
-- superfície principal;
-- superfície secundária;
-- borda/divisor;
-- texto principal;
-- texto secundário;
-- ação/interação;
-- desabilitado;
-- foco/seleção;
-- status.
-
-Nenhum elemento visível deve receber uma cor arbitrária fora da paleta técnica sem que essa exceção seja registrada na própria prancha.
+Cada prancha deve listar somente os tokens realmente utilizados. Cor nunca pode ser o único indicador de estado, erro, foco, seleção, sucesso ou indisponibilidade.
 
 ---
 
-# 9. Tipografia técnica do Wireframe
+# 9. Tipografia técnica aprovada
 
-A tipografia utilizada nos wireframes deve ser **catalogada com o mesmo rigor das cores**, porque fará parte da referência para reconstrução posterior no Figma.
-
-A tipografia desta etapa é técnica e temporária. Ela **não constitui automaticamente a tipografia oficial do SaOr nem do futuro Design System**.
-
-## 9.1 Família tipográfica técnica
+A tipografia técnica desta etapa é deliberadamente separada da tipografia oficial da marca.
 
 ```text
-WF-FONT-FAMILY: A DEFINIR ANTES DA GERAÇÃO DO PRIMEIRO WIREFRAME
+WF-FONT-FAMILY: Inter
 ```
 
-A família não deve ser escolhida ou inferida automaticamente.
+A família Inter é referência técnica de wireframe e **não se torna automaticamente a tipografia oficial do produto ou do futuro Design System**.
 
-Antes de gerar `T00_v01`, deve existir decisão explícita sobre a família tipográfica técnica utilizada nesta etapa. Depois de definida, a mesma família deve ser aplicada às 71 interfaces, salvo exceção explicitamente documentada.
+## 9.1 Escala tipográfica
 
-## 9.2 Catálogo tipográfico obrigatório
+| Token | Família | Peso | Tamanho | Line-height | Letter-spacing |
+|---|---|---:|---:|---:|---|
+| `WF-TITLE` | Inter | 600 / SemiBold | 20 px | 28 px | `normal` |
+| `WF-SECTION` | Inter | 600 / SemiBold | 14 px | 20 px | `normal` |
+| `WF-BODY` | Inter | 400 / Regular | 16 px | 24 px | `normal` |
+| `WF-LABEL` | Inter | 500 / Medium | 14 px | 20 px | `normal` |
+| `WF-ACTION-TEXT` | Inter | 500 / Medium | 16 px | 24 px | `normal` |
+| `WF-CAPTION` | Inter | 400 / Regular | 12 px | 16 px | `normal` |
 
-A escala técnica deverá utilizar identificadores consistentes. A referência inicial é:
+Claro e Escuro devem usar exatamente a mesma escala.
 
-| Token | Finalidade estrutural |
-|---|---|
-| `WF-TITLE` | título principal da interface |
-| `WF-SECTION` | título ou rótulo de agrupamento/seção |
-| `WF-BODY` | conteúdo textual principal |
-| `WF-LABEL` | rótulos de campos e controles |
-| `WF-ACTION-TEXT` | texto de ações, botões ou itens navegáveis |
-| `WF-CAPTION` | texto auxiliar, metadado ou informação secundária |
-
-Para cada token efetivamente utilizado na imagem, a prancha deve registrar:
-
-```text
-Família
-Peso
-Tamanho em px
-Line-height em px
-Letter-spacing, quando diferente do padrão da família
-```
-
-Exemplo estrutural, sem definir valores nesta etapa:
-
-```text
-WF-BODY
-Família: <família técnica aprovada>
-Peso: <valor utilizado>
-Tamanho: <valor utilizado> px
-Line-height: <valor utilizado> px
-Letter-spacing: <valor, se aplicável>
-```
-
-## 9.3 Regra de equivalência tipográfica
-
-As variantes Claro e Escuro da mesma interface devem utilizar exatamente:
-
-- mesma família;
-- mesmos pesos;
-- mesmos tamanhos;
-- mesmos line-heights;
-- mesmos letter-spacings;
-- mesma hierarquia tipográfica.
-
-A troca de tema não pode alterar a estrutura tipográfica.
-
-## 9.4 Fonte da verdade tipográfica
-
-Em uma imagem gerada, não se deve tentar identificar visualmente a fonte depois da geração.
-
-A fonte da verdade é a **especificação registrada na prancha técnica**.
-
-Se a ferramenta de geração não reproduzir visualmente a família com fidelidade suficiente, a prancha ainda deverá registrar a especificação correta; essa diferença deve ser considerada limitação do artefato raster e não autorização para alterar o padrão.
-
-## 9.5 Relação futura com o Design System
-
-Os tokens `WF-*` de tipografia servem como referência de transição.
-
-Na etapa de Design Visual/Figma, eles poderão ser mapeados para tokens definitivos do Design System, mas não deverão ser promovidos automaticamente.
+A especificação registrada na prancha é a fonte da verdade. Se a ferramenta raster não reproduzir a família com fidelidade perfeita, isso é limitação de renderização, não autorização para modificar o padrão.
 
 ---
 
-# 10. Acessibilidade estrutural
+# 10. Referência de componentes
 
-Mesmo nesta etapa:
+Os componentes visíveis nos wireframes devem possuir geometria consistente porque servirão como referência para reconstrução posterior no Figma.
 
-- cor nunca pode ser o único indicador de estado;
-- status deve possuir texto, ícone, forma ou rótulo adicional;
+MUI / Material UI pode ser usado como **referência conceitual de componentes, estados e iconografia**, mas:
+
+- não constitui escolha definitiva de framework;
+- não constitui decisão de TypeScript;
+- não cria dependência tecnológica;
+- não antecipa a arquitetura definitiva.
+
+## 10.1 App Bar
+
+```text
+Altura: 56 px
+```
+
+A App Bar deve respeitar a safe area superior e somente existir nas interfaces cuja estrutura funcional exigir cabeçalho.
+
+## 10.2 Alvos interativos
+
+```text
+Touch target mínimo: 48 × 48 px
+```
+
+O ícone visível pode ser menor que o alvo interativo.
+
+## 10.3 Campos
+
+```text
+Variante: Outlined
+Altura: 56 px
+Radius: 12 px
+Borda: 1 px quando aplicável
+Padding-base horizontal: 16 px
+Padding-base vertical: 12 px
+```
+
+Campos devem possuir rótulo identificável e estados estruturais coerentes.
+
+## 10.4 Botões
+
+Categorias aprovadas:
+
+```text
+Primary
+Secondary
+Text
+Icon Button
+```
+
+```text
+Altura mínima de botão textual: 48 px
+Touch target mínimo: 48 × 48 px
+Radius: 12 px
+```
+
+A categoria deve refletir hierarquia funcional, não preferência estética.
+
+## 10.5 Itens de lista e configuração
+
+```text
+Item simples: mínimo 56 px
+Item com informação secundária/status: mínimo 64 px
+```
+
+A altura pode crescer quando o conteúdo funcional exigir.
+
+## 10.6 Cards e superfícies agrupadas
+
+```text
+Radius: 16 px
+Borda: 1 px quando necessária
+```
+
+Cards não devem ser introduzidos apenas por estética.
+
+## 10.7 Modal / Dialog
+
+```text
+Margem lateral no viewport: 24 px
+Radius: 16 px
+```
+
+## 10.8 Bottom Navigation
+
+Quando prevista pela baseline:
+
+```text
+Altura: 64 px
+```
+
+A Bottom Navigation deve permanecer acima da safe area inferior e não pode ser adicionada a uma interface sem necessidade funcional documentada.
+
+---
+
+# 11. Bordas, divisores, radius e elevação
+
+## 11.1 Bordas
+
+```text
+1 px quando necessária para delimitação estrutural
+```
+
+## 11.2 Divisores
+
+```text
+Espessura: 1 px
+```
+
+Devem respeitar o alinhamento do conteúdo e existir apenas quando houver separação semântica real.
+
+## 11.3 Radius
+
+```text
+Campos: 12 px
+Botões: 12 px
+Cards: 16 px
+Modais/Dialogs: 16 px
+```
+
+## 11.4 Elevação técnica
+
+```text
+WF-ELEVATION-0
+offset-x: 0 px
+offset-y: 0 px
+blur: 0 px
+opacidade: 0%
+
+WF-ELEVATION-1
+offset-x: 0 px
+offset-y: 1 px
+blur: 2 px
+cor-base: preto neutro
+opacidade: 12%
+
+WF-ELEVATION-2
+offset-x: 0 px
+offset-y: 2 px
+blur: 6 px
+cor-base: preto neutro
+opacidade: 16%
+
+WF-ELEVATION-3
+offset-x: 0 px
+offset-y: 4 px
+blur: 12 px
+cor-base: preto neutro
+opacidade: 20%
+```
+
+Uso de referência:
+
+- E0: conteúdo integrado;
+- E1: card destacado quando houver necessidade estrutural;
+- E2: menu, dropdown ou elemento temporariamente sobreposto;
+- E3: modal/dialog.
+
+---
+
+# 12. Iconografia técnica
+
+Referência visual aprovada:
+
+```text
+Material Icons Outlined
+```
+
+Essa referência não obriga a implementação futura a utilizar MUI ou Material Icons.
+
+```text
+Ícone auxiliar: 20 px
+Ícone de ação/navegação: 24 px
+Touch target mínimo: 48 × 48 px
+```
+
+Ícones isolados somente devem ser utilizados para ações reconhecíveis e inequívocas. Quando houver ambiguidade, utilizar texto ou associação textual.
+
+---
+
+# 13. Estados de componentes
+
+Estados previstos:
+
+```text
+default
+focus
+pressed / selected
+disabled
+error
+hover
+```
+
+Regras:
+
+- `hover` integra a especificação, mas não precisa ser apresentado nas pranchas mobile salvo necessidade específica;
+- `focus`, `selected`, `disabled` e `error` não podem depender somente de cor;
+- `error` deve possuir mensagem, rótulo, ícone ou outro marcador estrutural quando aplicável;
+- estados inexistentes na baseline de uma interface não devem ser inventados para preencher a prancha.
+
+---
+
+# 14. Scroll e continuidade vertical
+
+O viewport permanece sempre `360 × 800 px`.
+
+Quando o conteúdo ultrapassar a altura disponível:
+
+- utilizar rolagem vertical conceitual;
+- não aumentar a altura do telefone;
+- não reduzir tipografia, touch targets ou espaçamento para forçar o conteúdo a caber;
+- representar a continuação por páginas documentais sequenciais;
+- utilizar indicador vertical de rolagem somente quando necessário;
+- o indicador deve existir dentro dos `360 × 800 px`;
+- a geometria visual exata do indicador será validada na prancha técnica-modelo.
+
+Apenas elementos realmente persistentes reaparecem em páginas subsequentes.
+
+---
+
+# 15. Regra para componentes ainda não catalogados
+
+O catálogo acima não antecipa todos os componentes possíveis das 71 interfaces.
+
+Se uma interface exigir componente ainda não especificado — por exemplo switch, radio, checkbox, chip, tabs, seletor de data ou outro controle — aplicar:
+
+```text
+componente necessário
+        ↓
+verificar requisito no Documento Mestre
+        ↓
+definir geometria e estados antes da primeira imagem que o utilize
+        ↓
+registrar neste README
+        ↓
+usar de forma consistente nas interfaces seguintes
+```
+
+É proibido introduzir componente visual novo silenciosamente.
+
+---
+
+# 16. Acessibilidade estrutural
+
+Mesmo na etapa de wireframe:
+
+- cor nunca pode ser o único indicador;
+- touch target mínimo deve ser respeitado;
 - ordem de leitura deve ser clara;
-- campos devem possuir rótulos identificáveis;
+- campos devem possuir rótulos;
 - erros devem permanecer próximos ao contexto;
-- controles interativos devem ser distinguíveis;
-- a estrutura deve permitir alvos adequados;
-- foco e seleção devem poder ser representados sem depender somente da cor;
-- escala tipográfica deve preservar hierarquia, legibilidade e associação entre rótulos e controles.
+- ações devem ser distinguíveis;
+- foco e seleção devem possuir representação estrutural;
+- hierarquia tipográfica deve ser consistente;
+- componentes não devem ser compactados a ponto de prejudicar legibilidade ou operação.
 
-A validação cromática e tipográfica definitiva de WCAG pertence à etapa de Design Visual. O wireframe, entretanto, não deve criar uma estrutura incompatível com WCAG 2.2 AA.
+A validação cromática definitiva de WCAG pertence à etapa de Design Visual, mas a estrutura desta etapa não pode impedir conformidade futura com WCAG 2.2 AA.
 
 ---
 
-# 11. Conteúdo obrigatório de cada prancha
-
-Cada arquivo deve apresentar:
+# 17. Conteúdo obrigatório de cada prancha
 
 ```text
 Projeto: SaOr - Sales Order
@@ -348,24 +590,29 @@ Baseline: v1.0
 Etapa: Wireframe Conceitual em Imagem
 Variação: Claro | Escuro
 Status: EM VALIDAÇÃO | AJUSTES NECESSÁRIOS | APROVADO
-Versão: vNN
-Viewport lógico: 390 × 844 px
+Página: <XX>/<YY>
+Versão do arquivo: vNN
+Viewport lógico: 360 × 800 px
+Orientação: Retrato
 Canvas da prancha: 1024 × 1536 px
-Fonte técnica: <família aprovada>
+Escala do viewport: 1:1
+Fonte técnica: Inter
 ```
 
-Além desses dados, devem existir:
+Além dos metadados:
 
-- legenda dos tokens cromáticos realmente utilizados;
-- legenda dos tokens tipográficos realmente utilizados, com família, peso, tamanho e line-height.
+- legenda dos tokens cromáticos realmente usados;
+- legenda dos tokens tipográficos realmente usados;
+- observações técnicas necessárias;
+- indicação de continuidade quando a interface possuir outras páginas.
 
 ---
 
-# 12. Regra de produção
+# 18. Regra de produção por interface
 
-Antes de produzir qualquer interface, devem ser lidos no `docs/Documento_Mestre.md`:
+Antes de produzir qualquer interface, consultar no `docs/Documento_Mestre.md`:
 
-- Ficha funcional de aceite;
+- ficha funcional de aceite;
 - objetivo;
 - informações exibidas;
 - campos;
@@ -375,12 +622,10 @@ Antes de produzir qualquer interface, devem ser lidos no `docs/Documento_Mestre.
 - Textframe;
 - estados;
 - comportamento de retorno;
-- relações com outras interfaces;
+- interfaces relacionadas;
 - regras transversais aplicáveis.
 
-A imagem deve ser uma tradução visual do conteúdo aprovado.
-
-É proibido nesta etapa:
+É proibido:
 
 - criar funcionalidade para preencher espaço;
 - remover ação documentada;
@@ -389,81 +634,128 @@ A imagem deve ser uma tradução visual do conteúdo aprovado.
 - fundir interfaces com IDs diferentes;
 - transformar informação estática em interação;
 - alterar o Textframe por conveniência visual;
-- introduzir arquitetura ou componentes de framework;
-- transformar o wireframe em Design Visual final;
-- escolher tipografia diferente por tela sem justificativa e autorização;
-- promover a tipografia técnica do wireframe a tipografia oficial do produto sem a etapa correspondente.
+- introduzir tecnologia definitiva;
+- transformar wireframe em Design Visual final;
+- introduzir componente não catalogado sem documentá-lo antes;
+- alterar padrões aprovados por preferência de uma tela isolada.
 
 ---
 
-# 13. Gate obrigatório antes do primeiro wireframe
+# 19. Gate antes do primeiro wireframe funcional
 
-Antes da geração de `T00_v01`, devem estar fechados e registrados neste documento:
+## 19.1 Itens aprovados
 
 ```text
-[x] viewport lógico: 390 × 844 px
+[x] viewport lógico: 360 × 800 px
+[x] orientação: retrato
+[x] safe area superior: 24 px
+[x] safe area inferior: 32 px
 [x] canvas da prancha: 1024 × 1536 px
+[x] escala do viewport na prancha: 1:1
+[x] margem estrutural horizontal: 12 px
+[x] grid/espaçamento base: 4 px
+[x] escala de espaçamento: 4 / 8 / 12 / 16 / 24 / 32 px
+[x] padding-base: 16 px horizontal / 12 px vertical
 [x] paleta técnica Claro
 [x] paleta técnica Escuro
-[ ] família tipográfica técnica do Wireframe
-[ ] escala tipográfica técnica inicial
+[x] família tipográfica: Inter
+[x] pesos tipográficos
+[x] tamanhos tipográficos
+[x] line-heights
+[x] letter-spacing: normal
+[x] App Bar: 56 px
+[x] touch target mínimo: 48 × 48 px
+[x] campos Outlined: 56 px
+[x] botões: Primary / Secondary / Text / Icon Button
+[x] itens de lista: 56 / 64 px
+[x] radius: 12 / 16 px
+[x] bordas e divisores: 1 px
+[x] elevação E0 / E1 / E2 / E3
+[x] Material Icons Outlined como referência
+[x] ícones: 20 / 24 px
+[x] Bottom Navigation: 64 px quando aplicável
+[x] modal: margem lateral 24 px
+[x] estados de componente
+[x] regra de scroll e paginação
+[x] convenção multipágina e versionamento
+[x] aprovação de interface multipágina
 ```
 
-Enquanto os dois itens tipográficos permanecerem pendentes, nenhum wireframe deverá ser tratado como artefato definitivo de validação.
+## 19.2 Pendente antes de T00
+
+```text
+[ ] prancha técnica-modelo produzida
+[ ] coordenadas exatas do viewport dentro do canvas aprovadas
+[ ] dimensões/posição do cabeçalho técnico aprovadas
+[ ] posição da legenda cromática aprovada
+[ ] posição da legenda tipográfica aprovada
+[ ] posição da área de observações aprovada
+[ ] representação gráfica das safe areas aprovada
+[ ] representação gráfica do scroll/continuidade aprovada
+[ ] composição final da prancha técnica aprovada
+```
+
+Enquanto esses itens permanecerem pendentes, `T00` não deve ser tratado como liberado para produção definitiva.
 
 ---
 
-# 14. Fluxo por interface
+# 20. Fluxo operacional
 
 ```text
-PENDENTE
-   ↓
-WHITE v01
-   ↓
-BLACK v01
-   ↓
+ESPECIFICAÇÃO TÉCNICA DOCUMENTADA
+        ↓
+PRANCHA TÉCNICA-MODELO
+        ↓
 EM VALIDAÇÃO
-   ↓
-ajuste solicitado?
-   ├── SIM → AJUSTES NECESSÁRIOS → nova versão afetada → EM VALIDAÇÃO
-   └── NÃO
-          ↓
-aprovação explícita das duas variantes
-          ↓
-APROVADO
-          ↓
-CONGELADO NESTA ETAPA
+        ↓
+aprovação explícita do modelo
+        ↓
+PADRÃO DA PRANCHA CONGELADO
+        ↓
+T00 Claro
+        ↓
+T00 Escuro
+        ↓
+EM VALIDAÇÃO
+        ↓
+ajustes, se necessários
+        ↓
+aprovação de todas as páginas Claro + Escuro
+        ↓
+T00 APROVADA / CONGELADA
+        ↓
+próxima interface
 ```
 
-Por padrão, a próxima interface somente deve ser iniciada depois da decisão de validação da interface atual, salvo orientação explícita em contrário.
+Por padrão, não avançar para a próxima interface antes da decisão sobre a interface atual, salvo orientação explícita.
 
 ---
 
-# 15. Classificação de ocorrências
-
-Durante a elaboração de uma interface:
+# 21. Classificação de ocorrências
 
 ```text
-A — a baseline pode ser representada exatamente;
-B — existe ambiguidade de representação sem mudança funcional;
-C — existe contradição documental objetiva;
-D — seria necessário requisito novo posterior à baseline.
+A — baseline representável exatamente
+B — ambiguidade de representação sem mudança funcional
+C — contradição documental objetiva
+D — requisito novo posterior à baseline
 ```
 
 Tratamento:
 
 - `A`: produzir normalmente;
-- `B`: adotar a representação mais conservadora e registrar;
+- `B`: adotar representação conservadora e registrar;
 - `C`: não alterar silenciosamente; apresentar a contradição;
 - `D`: não modificar a baseline; registrar como evolução posterior possível.
 
 ---
 
-# 16. Checklist mestre
+# 22. Checklist mestre
 
-**Estados possíveis:** `PENDENTE`, `EM VALIDAÇÃO`, `AJUSTES NECESSÁRIOS`, `APROVADO`.
+**Estados:** `PENDENTE`, `EM VALIDAÇÃO`, `AJUSTES NECESSÁRIOS`, `APROVADO`.
 
-| # | ID | Interface | Claro | Versão | Escuro | Versão | Interface |
+A coluna de versão pode registrar uma única versão quando a interface tiver uma página ou uma síntese das versões quando houver múltiplas páginas.
+
+| # | ID | Interface | Claro | Versão/Páginas | Escuro | Versão/Páginas | Interface |
 |---:|---|---|---|---|---|---|---|
 | 01 | `T00` | Configuração da aplicação | PENDENTE | — | PENDENTE | — | PENDENTE |
 | 02 | `T00.1` | Configuração da API | PENDENTE | — | PENDENTE | — | PENDENTE |
@@ -539,33 +831,38 @@ Tratamento:
 
 ---
 
-# 17. Contadores
+# 23. Contadores
 
-Estado inicial deste documento:
+Estado inicial:
 
 ```text
-Interfaces previstas:               71
-Imagens Claro previstas:            71
-Imagens Escuro previstas:           71
-Total de imagens previstas:        142
+Interfaces previstas:                    71
+Mínimo de imagens Claro:                 71
+Mínimo de imagens Escuro:                71
+Mínimo total de imagens:                142
 
-Claro aprovado:                     0 / 71
-Escuro aprovado:                    0 / 71
-Interfaces totalmente aprovadas:   0 / 71
+Total final de imagens:          VARIÁVEL POR PAGINAÇÃO
+
+Páginas Claro aprovadas:                  0
+Páginas Escuro aprovadas:                 0
+Interfaces totalmente aprovadas:        0 / 71
 ```
 
-Os contadores somente podem ser alterados após aprovação explícita.
+O número final de imagens somente será conhecido conforme cada interface for paginada.
+
+Nenhum contador de aprovação pode ser alterado sem aprovação explícita.
 
 ---
 
-# 18. Registro de aprovação e reabertura
+# 24. Registro de aprovação e reabertura
 
-Modelo de aprovação:
+Modelo de aprovação de página:
 
 ```text
 Data:
 Interface:
 Variação:
+Página:
 Arquivo:
 Versão:
 Status anterior:
@@ -573,7 +870,7 @@ Status novo: APROVADO
 Observação:
 ```
 
-Quando ambas as variantes forem aprovadas:
+Quando todas as páginas das duas variantes estiverem aprovadas:
 
 ```text
 Interface <ID> = APROVADA / CONGELADA NA ETAPA DE WIREFRAME
@@ -585,6 +882,7 @@ Modelo de reabertura:
 Data:
 Interface:
 Variação:
+Página:
 Versão aprovada anterior:
 Motivo da reabertura:
 Solicitação explícita do responsável:
@@ -593,7 +891,7 @@ Nova versão iniciada:
 
 ---
 
-# 19. Preservação documental
+# 25. Preservação documental
 
 A autoridade documental permanece:
 
@@ -605,10 +903,13 @@ A autoridade documental permanece:
 Este documento:
 
 - não altera a baseline funcional;
-- não cria novos requisitos funcionais;
+- não cria novos requisitos de negócio;
 - não substitui o Documento Mestre;
+- não define arquitetura definitiva;
+- não transforma MUI em tecnologia oficial;
 - não autoriza avanço para Design Visual;
-- não autoriza Figma, protótipo ou implementação;
-- não pode marcar uma interface como aprovada sem declaração explícita do responsável.
+- não autoriza Figma antes da etapa correspondente;
+- não autoriza protótipo ou implementação;
+- não pode marcar interface como aprovada sem declaração explícita do responsável.
 
-A conclusão das 142 imagens não libera automaticamente a etapa seguinte. A etapa completa de Wireframes somente será encerrada após aprovação formal do responsável pelo projeto.
+A conclusão das imagens não libera automaticamente a etapa seguinte. A etapa de Wireframes somente será encerrada após aprovação formal.
