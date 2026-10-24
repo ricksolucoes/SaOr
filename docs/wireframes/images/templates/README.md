@@ -165,13 +165,32 @@ Conceito:
 - viewport à esquerda;
 - escala rigorosa `1:1`;
 - painel técnico vertical à direita;
-- interface e especificação simultaneamente visíveis.
+- interface e especificação simultaneamente visíveis;
+- canvas vigente para a nova produção: `1280 × 1920 px`.
+
+Ordem obrigatória de construção da Alternativa B:
+
+```text
+1. canvas vazio 1280 × 1920 px
+        ↓
+2. cabeçalho técnico
+        ↓
+3. viewport 360 × 800 px / 1:1
+        ↓
+4. validação física do viewport
+        ↓
+5. restante da documentação
+```
+
+A etapa 5 somente pode começar depois de comprovado que o viewport mede fisicamente `360 × 800 px`.
 
 Regra de não regressão em relação à A validada:
 
-- B deve herdar as decisões técnicas e visuais já validadas em `WF-TEMPLATE-A_v02.png`;
-- B não deve reabrir tipografia, paleta, componentes, estados, safe areas, medidas, radius, elevação, iconografia, metadados ou regras multipágina;
+- B deve herdar as **decisões técnicas documentadas** já validadas durante a avaliação da A;
+- B não deve reabrir tipografia, paleta, componentes, estados, safe areas, medidas, radius, elevação, iconografia, metadados ou regras multipágina sem decisão explícita;
 - a diferença deliberada da B é a **composição documental**: viewport à esquerda + painel técnico principal à direita;
+- a nova composição deve ser construída a partir da especificação vigente, sem copiar, escalar ou usar a geometria raster de uma prancha anterior como base de montagem;
+- versões anteriores podem ser consultadas como histórico de decisão, mas não substituem os valores e regras registrados nos documentos vigentes;
 - qualquer outra mudança exige justificativa explícita antes de ser incorporada.
 
 Objetivo da avaliação:
@@ -291,11 +310,12 @@ Cada alternativa deve ser medida quanto aos seguintes critérios:
 10. scroll/continuidade pode ser representado
 11. Claro/Escuro podem usar exatamente as mesmas coordenadas
 12. template funciona para uma página e para multipágina
+13. canvas físico da nova produção é exatamente 1280 × 1920 px
 ```
 
 Também devem ser observados:
 
-- consistência com canvas `1024 × 1536 px`;
+- consistência com canvas vigente `1280 × 1920 px` nas novas produções posteriores a esta decisão;
 - respeito, na prancha-modelo, às safe areas de referência do wireframe (`24 px` superior / `32 px` inferior);
 - ausência de interpretação dessas safe areas como paddings ou constantes obrigatórias da implementação;
 - ausência de redução do viewport;
@@ -304,6 +324,8 @@ Também devem ser observados:
 - preservação das decisões já validadas em alternativas anteriores, exceto quando a própria diferença conceitual da alternativa exigir mudança.
 
 As safe areas avaliadas nas pranchas são **referências documentais desta etapa**. Elas não determinam os insets finais do produto. Na implementação futura, superfícies visuais poderão ocupar a tela edge-to-edge, enquanto conteúdos sensíveis deverão respeitar os insets reais fornecidos pela plataforma/dispositivo.
+
+A mudança do canvas para `1280 × 1920 px` não autoriza regenerar ou sobrescrever as alternativas históricas já preservadas. Ela passa a reger novas produções e revisões posteriores a esta decisão. A avaliação da Alternativa B deve, portanto, considerar o novo canvas sem alterar o viewport `360 × 800 px`.
 
 ---
 

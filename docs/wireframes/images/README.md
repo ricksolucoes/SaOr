@@ -9,7 +9,8 @@
 **Quantidade mínima de imagens funcionais:** 142  
 **Quantidade final de imagens funcionais:** variável conforme paginação necessária por interface  
 **Fonte funcional:** `docs/Documento_Mestre.md`  
-**Registro de não regressão:** `docs/Registro_Fechamento_Documento_Mestre.md`
+**Registro de não regressão:** `docs/Registro_Fechamento_Documento_Mestre.md`  
+**Canvas técnico vigente para novas pranchas:** `1280 × 1920 px`
 
 ---
 
@@ -82,7 +83,10 @@ Regras:
 - não desenhar moldura física de aparelho;
 - não criar versão específica para iOS ou Android;
 - paisagem será estudada posteriormente;
-- tablet e desktop não serão produzidos automaticamente nesta etapa.
+- tablet e desktop não serão produzidos automaticamente nesta etapa;
+- a representação do viewport na prancha deve medir **fisicamente `360 × 800 px` no PNG final**;
+- o viewport não pode ser redimensionado, esticado, comprimido ou reproporcionado para caber na prancha;
+- uma legenda declarando `360 × 800 px` não substitui a verificação física da área representada.
 
 ## 3.2 Safe areas técnicas
 
@@ -122,7 +126,7 @@ conteúdo sensível respeita os insets reais da plataforma/dispositivo
 ## 3.3 Prancha técnica
 
 ```text
-Canvas: 1024 × 1536 px
+Canvas vigente: 1280 × 1920 px
 Orientação: retrato
 Escala do viewport: 1:1
 ```
@@ -132,6 +136,10 @@ Consequência:
 ```text
 1 px lógico do wireframe = 1 px na representação do viewport na prancha
 ```
+
+A ampliação do canvas documental de `1024 × 1536 px` para `1280 × 1920 px` aumenta somente a área disponível para documentação técnica. Ela **não altera** o viewport oficial `360 × 800 px`, sua escala `1:1`, suas proporções ou a geometria dos componentes.
+
+Artefatos históricos já produzidos no canvas anterior permanecem preservados como registro e **não devem ser regenerados somente por causa desta mudança de canvas**. Novas produções e revisões posteriores a esta decisão devem utilizar `1280 × 1920 px`, salvo nova decisão explícita registrada.
 
 A prancha deve conter:
 
@@ -143,6 +151,42 @@ A prancha deve conter:
 - observações técnicas quando aplicáveis.
 
 As coordenadas exatas dessas áreas serão congeladas somente após aprovação do template oficial.
+
+## 3.4 Ordem obrigatória de construção da prancha
+
+Para impedir redução do viewport, compressão documental e regressões por reaproveitamento de composição antiga, a prancha deve ser construída nesta ordem:
+
+```text
+1. criar canvas vazio exatamente 1280 × 1920 px
+        ↓
+2. criar o cabeçalho técnico
+        ↓
+3. inserir/construir o viewport exatamente 360 × 800 px em escala 1:1
+        ↓
+4. validar fisicamente o viewport
+        ↓
+5. somente após PASS, distribuir todo o restante da documentação
+```
+
+Gate obrigatório após o passo 3:
+
+```text
+canvas = 1280 × 1920 px
+viewport = 360 × 800 px
+escala = 1:1
+```
+
+Se o viewport não medir fisicamente `360 × 800 px`, a composição é inválida e **não deve prosseguir** para os demais blocos.
+
+Regras de construção:
+
+- o canvas se adapta à documentação; o viewport não se adapta ao canvas;
+- é proibido reduzir o viewport para ganhar espaço;
+- é proibido reconstruir o viewport por aproximação visual quando houver referência mestre aprovada;
+- uma nova composição deve ser montada a partir da **especificação documental vigente**, e não pela cópia ou escala de uma prancha raster anterior;
+- decisões técnicas já aprovadas continuam obrigatórias, mas sua geometria documental deve ser recriada de acordo com a especificação vigente;
+- textos, ícones, medidas e componentes devem ser conferidos contra a documentação antes da exportação;
+- informações redundantes de processo, conversa ou validação interna não devem ser incorporadas à prancha quando não fizerem parte da especificação técnica.
 
 ---
 
@@ -502,7 +546,7 @@ Página: <XX>/<YY>
 Versão: vNN
 Viewport lógico: 360 × 800 px
 Orientação: Retrato
-Canvas: 1024 × 1536 px
+Canvas: 1280 × 1920 px
 Escala: 1:1
 Fonte técnica: Inter
 ```
@@ -600,7 +644,8 @@ Cada alternativa deve ser verificada quanto a:
 9. identificação clara de `vNN`;
 10. capacidade de indicar scroll/continuidade;
 11. mesmas coordenadas possíveis em Claro/Escuro;
-12. funcionamento para interface de uma ou várias páginas.
+12. funcionamento para interface de uma ou várias páginas;
+13. canvas físico exatamente `1280 × 1920 px` nas novas produções posteriores a esta decisão.
 
 ## 19.4 Seleção
 
@@ -652,7 +697,7 @@ A versão anterior permanece preservada.
 [x] viewport 360 × 800 px
 [x] retrato
 [x] safe area 24 / 32 px
-[x] canvas 1024 × 1536 px
+[x] canvas 1280 × 1920 px
 [x] escala 1:1
 [x] margem 12 px
 [x] spacing e padding
