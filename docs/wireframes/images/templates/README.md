@@ -172,6 +172,40 @@ A nova versão é então avaliada antes de qualquer promoção para `aprovados/`
 
 O estado acima registra decisões já tomadas. Ele não autoriza produzir, aprovar ou promover automaticamente qualquer alternativa.
 
+## 6.1 Conceitos fixos das alternativas
+
+Os identificadores A, B e C representam conceitos de composição já definidos e não podem ser reinterpretados silenciosamente:
+
+- **A — viewport central dominante:** viewport como elemento visual principal; cabeçalho técnico na região superior; especificações distribuídas nas áreas restantes.
+- **B — viewport à esquerda + painel técnico à direita:** viewport à esquerda em escala `1:1`; documentação técnica principal organizada em coluna lateral direita.
+- **C — viewport superior + documentação inferior:** viewport na região superior/central; documentação técnica organizada predominantemente abaixo.
+
+A produção de uma nova versão pode corrigir execução, legibilidade ou conformidade técnica, mas não muda o conceito da alternativa sem decisão explícita.
+
+## 6.2 Ordem vigente de avaliação
+
+A sequência vigente é:
+
+```text
+A_v01 — histórico preservado
+        ↓
+A_v02 — CANDIDATA
+        ↓
+Alternativa B — próxima produção
+        ↓
+avaliação da B
+        ↓
+Alternativa C
+        ↓
+avaliação da C
+        ↓
+comparação técnica A × B × C
+        ↓
+decisão explícita
+```
+
+A sequência organiza a avaliação e não autoriza gerar automaticamente a etapa seguinte.
+
 ---
 
 # 7. Conteúdo de demonstração das pranchas-modelo
@@ -214,6 +248,25 @@ Além disso, deve ser avaliada quanto a:
 12. preservação das decisões técnicas vigentes sem regressão silenciosa.
 
 A comparação deve registrar fatos observáveis. Preferência estética isolada não é critério suficiente.
+
+## 8.1 Comparação final obrigatória
+
+Antes de qualquer aprovação final, o resultado das alternativas avaliadas deve ser consolidado de forma objetiva.
+
+O registro mínimo da comparação deve indicar, para cada alternativa:
+
+```text
+estado final da avaliação
+critérios atendidos
+critérios não atendidos
+regressões identificadas
+restrições relevantes
+conclusão
+```
+
+A escolha final deve ser rastreável até essa comparação. Não é permitido aprovar uma alternativa sem que o resultado comparativo das alternativas efetivamente avaliadas esteja registrado.
+
+Alternativa ainda não produzida ou não avaliada deve ser marcada como `NÃO AVALIADA`; não deve receber pontuação ou conclusão presumida.
 
 ---
 
@@ -311,6 +364,29 @@ T00 Escuro
 ```
 
 Enquanto não houver um par aprovado e congelado em `aprovados/`, T00 e as demais interfaces permanecem pendentes para produção definitiva.
+
+## 13.1 Checklist final do gate
+
+Antes de liberar T00, todos os itens abaixo devem estar confirmados:
+
+```text
+[ ] especificação técnica vigente aplicada
+[ ] alternativas previstas para a decisão foram avaliadas ou formalmente dispensadas
+[ ] comparação final registrada
+[ ] decisão final explícita registrada
+[ ] PNG e Wireframe Text possuem o mesmo nome-base e versão
+[ ] composição reproduzível a partir do Wireframe Text
+[ ] viewport e canvas validados fisicamente
+[ ] cabeçalho e regiões documentais validados
+[ ] cotas e referências de safe area representáveis sem conflito
+[ ] página/versão, scroll e continuidade representáveis
+[ ] página única e multipágina suportadas
+[ ] equivalência geométrica Claro/Escuro preservada
+[ ] par final promovido para `aprovados/`
+[ ] composição final congelada
+```
+
+Se qualquer item obrigatório permanecer pendente, o gate continua aberto e a produção funcional definitiva não é liberada.
 
 ---
 
