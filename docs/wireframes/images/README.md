@@ -199,9 +199,12 @@ Essa função serve para ajudar a compreender a linguagem visual já alcançada 
 - densidade documental;
 - hierarquia visual;
 - tratamento de cabeçalhos, metadados e regiões documentais;
+- tratamento cromático integral, destaques, cores semânticas e contraste;
 - ritmo, alinhamento e qualidade geral de apresentação.
 
 A referência visual contextual não substitui `REGRAS-TECNICAS.md`, o Wireframe Text específico nem os ativos físicos obrigatórios. Se a composição específica de uma nova prancha divergir da referência, prevalece a composição documentada para a nova prancha.
+
+A função contextual também inclui compreender a cromia esperada da composição completa. `white` e `black` identificam variações de tema e não devem ser interpretados como instrução para converter a prancha em escala de cinza. A regra normativa de preservação cromática permanece em `MONTAGEM-IMAGEM.md`.
 
 Registro operacional vigente:
 

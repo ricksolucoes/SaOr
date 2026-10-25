@@ -78,6 +78,7 @@ Referências visuais existentes podem ser usadas para compreender e preservar co
 - densidade documental;
 - hierarquia visual;
 - tratamento de cabeçalhos, metadados e regiões documentais;
+- tratamento cromático, cores semânticas e relação entre cor, superfície e estado;
 - ritmo, alinhamento e qualidade geral de apresentação.
 
 Esse uso é **contextual**, não substitutivo.
@@ -102,6 +103,32 @@ Não ignorar referências existentes apenas porque pertencem a outro frame, quan
 Uma imagem anterior do **mesmo frame** continua possuindo função adicional de baseline de **não regressão** durante uma revisão daquele frame, conforme a seção de versionamento desta spec.
 
 Imagem histórica ou contextual não substitui spec nem Wireframe Text.
+
+### 3.1 Preservação cromática integral da prancha
+
+A montagem deve preservar o **tratamento cromático esperado da composição inteira**, e não apenas de blocos que documentem paleta, tokens ou estados.
+
+A cor de cada elemento deve ser obtida da fonte documental ou visual aplicável ao seu papel:
+
+- ativo físico oficial preserva sua própria cromia;
+- token ou regra cromática explícita deve ser aplicada ao elemento correspondente;
+- o Wireframe Text específico prevalece quando registrar cor ou tratamento próprio da composição;
+- referência visual contextual vigente pode orientar continuidade de uso de cor, contraste, destaque, superfície e semântica visual quando uma fonte superior não determinar tratamento diferente.
+
+As variações `white` e `black` representam **temas de representação**, não modos monocromáticos. Uma prancha `white` ou `black` pode conter cores cromáticas, destaques e cores semânticas previstas pelas fontes vigentes.
+
+É proibido durante a montagem:
+
+- dessaturar a composição por simplificação;
+- converter a prancha para escala de cinza sem determinação documental explícita;
+- neutralizar cores cromáticas existentes em referências, ativos ou tokens aplicáveis;
+- substituir `Primary`, `Secondary`, `Info`, `Success`, `Warning`, `Error` ou qualquer outra cor semântica aplicável por cinza apenas para uniformizar a prancha;
+- remover cores de ações, estados, ícones, superfícies, destaques, bordas ou componentes quando a cromia fizer parte da representação esperada;
+- inventar nova cor quando nenhuma fonte aplicável fornecer base suficiente.
+
+Preservar a cromia não autoriza copiar a geometria, o conteúdo ou a composição específica de outra prancha.
+
+Quando não for possível determinar com segurança a cor de um elemento exigido, tratar o caso como insuficiência documental conforme esta spec, em vez de convertê-lo automaticamente para um tom neutro.
 
 ---
 
@@ -460,9 +487,9 @@ Critérios adotados para a representação visual:
 - elementos desabilitados podem usar o tratamento técnico previsto para esse estado;
 - logotipo preserva sua identidade oficial e não deve ser recolorido apenas para satisfazer um cálculo genérico.
 
-Esses critérios não autorizam alterar tokens canônicos durante a montagem.
+Esses critérios não autorizam alterar tokens canônicos durante a montagem nem neutralizar a cromia esperada da prancha para obter contraste por conveniência.
 
-Se um par de tokens vigente não atender a um requisito necessário, a inconsistência deve ser devolvida para a fonte normativa correspondente.
+Ajuste de contraste deve preservar a função cromática documentada. Se um par de tokens vigente não atender a um requisito necessário, a inconsistência deve ser devolvida para a fonte normativa correspondente, em vez de substituir silenciosamente a cor por cinza, preto ou branco.
 
 ---
 
@@ -483,6 +510,10 @@ Quando a documentação exigir iconografia técnica:
 ## 16. White e black
 
 Cada variação é executada com seus próprios tokens e ativos específicos.
+
+`white` e `black` definem a variação de tema da representação. Eles **não significam escala de cinza** e não autorizam remover cores cromáticas ou semânticas que pertençam à composição esperada.
+
+Destaques, ações, estados, feedbacks, ícones, superfícies e demais elementos coloridos devem preservar as cores aplicáveis à variação conforme as fontes vigentes.
 
 É proibido:
 
@@ -509,14 +540,15 @@ Depois de a produção estar liberada, executar a imagem nesta ordem lógica:
 05. montar viewport e cotas conforme o Wireframe Text
 06. criar regiões documentais na geometria especificada
 07. aplicar superfícies, bordas/divisores e elevação somente quando cabíveis
-08. inserir títulos e estrutura tipográfica
-09. montar componentes e amostras
-10. inserir textos, valores, notas e legendas
-11. aplicar ícones e estados
-12. executar alinhamento óptico interno permitido
-13. revisar clipping, colisão, overflow e consistência
-14. validar qualidade visual e fidelidade documental
-15. exportar PNG sem redimensionamento final
+08. aplicar o tratamento cromático integral conforme as fontes vigentes
+09. inserir títulos e estrutura tipográfica
+10. montar componentes e amostras
+11. inserir textos, valores, notas e legendas
+12. aplicar ícones e estados preservando suas cores aplicáveis
+13. executar alinhamento óptico interno permitido
+14. revisar clipping, colisão, overflow, cromia e consistência
+15. validar qualidade visual e fidelidade documental
+16. exportar PNG sem redimensionamento final
 ```
 
 Essa sequência não substitui a sequência de construção e gates de `PROCESSO-PRANCHA.md`; ela detalha somente a execução visual depois da liberação da imagem.
@@ -569,6 +601,7 @@ alinhamento
 spacing
 quebras de linha
 tratamento tipográfico
+tratamento cromático
 superfícies
 bordas/divisores
 radius
@@ -714,6 +747,8 @@ A validação final possui quatro eixos.
 [ ] ativos obrigatórios são os arquivos oficiais
 [ ] variação correta foi usada
 [ ] tokens correspondem às specs vigentes
+[ ] cores e tratamentos cromáticos correspondem às fontes vigentes
+[ ] nenhum elemento cromático esperado foi neutralizado ou convertido para cinza por conveniência
 [ ] nenhum requisito foi inventado durante a montagem
 ```
 
@@ -731,6 +766,7 @@ A validação final possui quatro eixos.
 [ ] componentes equivalentes possuem tratamento equivalente
 [ ] ícones estão alinhados e pertencem à referência correta
 [ ] contraste dos elementos essenciais é verificável
+[ ] cromia, destaques e cores semânticas permanecem coerentes com a representação esperada
 [ ] a prancha mantém aparência técnica deliberada, não de rascunho
 ```
 
@@ -772,6 +808,8 @@ São falhas de montagem:
 - usar bitmap da variação errada;
 - substituir fonte oficial silenciosamente;
 - criar cor, token, radius, sombra ou componente não autorizado;
+- dessaturar, neutralizar ou converter para escala de cinza uma composição originalmente colorida sem determinação documental explícita;
+- substituir uma cor semântica ou cromática aplicável por tom neutro apenas por simplificação visual;
 - alterar texto para fazê-lo caber;
 - alterar geometria aprovada para melhorar estética;
 - reduzir viewport ou componente normativo;
