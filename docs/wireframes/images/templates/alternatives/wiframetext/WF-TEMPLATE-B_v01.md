@@ -8,13 +8,13 @@ CANVAS FINAL — 1280 × 1920 px
 │Sales Order         │PRANCHA TÉCNICA - MODELO B                      │WF-TEMPLATE-B     │XX / YY   │v01       │DD/MM/AAAA    │PENDENTE DE PRODUÇÃO                │
 │                    │(Viewport à esquerda + painel técnico à direita)│BASELINE v1.0     │VARIAÇÃO Claro | Escuro     │ETAPA Wireframe Conceitual em Imagem        │
 ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│┌ VIEWPORT TÉCNICO 360 x 800 px                ┐  ┌ 1. CANVAS E VIEWPORT                           ┐  ┌ 2. SAFE AREAS                                            ┐│
-││                  360 px                      │  │  Canvas da prancha      1280 x 1920 px         │  │  Safe area superior      24 px                           ││
-││        12 px | 336 px | 12 px                │  │  Viewport (interface)    360 x 800 px          │  │  Safe area inferior      32 px                           ││
-││                                              │  │  Escala do viewport      1:1                   │  │                                                          ││
-││          24 px safe area superior            │  │  Orientação              Retrato               │  │  Referências do wireframe; não são paddings              ││
-││       ┌────────────────────────────────┐     │  │  Margem horizontal       12 px                 │  │  fixos da implementação.                                 ││
-││       │  O  Título da Página  [S][M]   │     │  │                                                │  │                                                          ││
+│┌ VIEWPORT TÉCNICO 360 x 800 px                ┐  ┌ 1. CANVAS E VIEWPORT                           ┐  ┌ 2. COTAS DO VIEWPORT                                     ┐│
+││                    360 px                    │  │  Canvas da prancha      1280 x 1920 px         │  │  Largura total           360 px                          ││
+││            12 px | 336 px | 12 px            │  │  Viewport (interface)    360 x 800 px          │  │  Largura útil            336 px                          ││
+││                                              │  │  Escala do viewport      1:1                   │  │  Margem esquerda          12 px                          ││
+││                                              │  │  Orientação              Retrato               │  │  Margem direita           12 px                          ││
+││       ┌────────────────────────────────┐     │  │  Margem horizontal       12 px                 │  │  Altura total            800 px                          ││
+││       │  O  Título da Página  [S][M]   │     │  │                                                │  │  Escala                   1:1                            ││
 ││       │     Subtítulo da página        │     │  └────────────────────────────────────────────────┘  └──────────────────────────────────────────────────────────┘│
 ││       ├────────────────────────────────┤     │                                                                                                                  │
 ││       │ Seção de Conteúdo              │     │  ┌ 3. GRID E SPACING                              ┐  ┌ 4. COMPONENTES (MEDIDAS)                                 ┐│
@@ -51,7 +51,7 @@ CANVAS FINAL — 1280 × 1920 px
 ││       ├────────────────────────────────┤     │  │                                                │  │    ┌──────────────────────────────────────────────┐      ││
 ││       │ Início Pedidos Clientes Mais   │     │  │                                                │  │    │ O  Título do item                       >    │      ││
 ││       ├────────────────────────────────┤     │  │                                                │  │    └──────────────────────────────────────────────┘      ││
-││       │ 32 px safe area inferior       │     │  └────────────────────────────────────────────────┘  │                                                          ││
+││       │                                │     │  └────────────────────────────────────────────────┘  │                                                          ││
 ││       └────────────────────────────────┘     │                                                      │  ITEM DE LISTA - secundário (64 px)                      ││
 ││                                              │  ┌ 7. ELEVAÇÃO                                    ┐  │    ┌──────────────────────────────────────────────┐      ││
 ││                800 px                        │  │                                                │  │    │ O  Título do item                       >    │      ││
@@ -107,14 +107,14 @@ CANVAS FINAL — 1280 × 1920 px
 ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │┌ 12. OBSERVAÇÕES TÉCNICAS                                                                                                                                       ┐│
 ││  1. O viewport representa a tela completa do celular: 360 x 800 px em escala 1:1.                                                                              ││
-││  2. Safe areas de 24 px superior e 32 px inferior são referências do wireframe.                                                                                ││
-││  3. Na implementação, superfícies podem ocupar 100% da tela; conteúdos sensíveis respeitam os insets reais da plataforma/dispositivo.                          ││
-││  4. Todos os elementos seguem grid de 4 px e escala de espaçamento 4 / 8 / 12 / 16 / 24 / 32 px.                                                               ││
+││  2. Cotas vigentes: largura total 360 px, largura útil 336 px, margens laterais 12 + 12 px e altura total 800 px.                                              ││
+││  3. Não existe reserva fixa de faixa superior ou inferior de safe area nesta etapa.                                                                            ││
+││  4. Todos os elementos seguem grid e escala de espaçamento conforme REGRAS-TECNICAS.md.                                                                        ││
 ││  5. Inter é tipografia técnica do wireframe e não tipografia oficial da marca SaOr.                                                                            ││
 ││  6. Em páginas seguintes, repetir apenas elementos realmente persistentes.                                                                                     ││
 ││  7. Nomenclatura dos arquivos funcionais: <ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>.png.                                                                                 ││
 ││  8. Interface multipágina só é aprovada quando todas as páginas Claro e Escuro estiverem aprovadas.                                                            ││
-││  9. Cores, ícones e componentes são tokens e referências técnicas dos wireframes.                                                                              ││
+││  9. Cores, ícones e componentes seguem as specs canônicas de wireframe.                                                                                        ││
 ││  10. Cor nunca deve ser o único indicador de estado.                                                                                                           ││
 │└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘│
 └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -166,14 +166,32 @@ Ao reutilizar o conceito desta composição em outra prancha, deve-se recalcular
 Para esta prancha, a ordem de autoridade é:
 
 ```text
-1. docs/wireframes/images/README.md
-2. docs/wireframes/images/templates/README.md
-3. reprodução textual no início deste WF-TEMPLATE-B_v01.md
-4. especificação geométrica detalhada abaixo
-5. PNG que será produzido a partir deste Wireframe Text
+1. docs/Documento_Mestre.md — somente conteúdo e comportamento funcional quando aplicável
+2. .specs/wireframes/REGRAS-TECNICAS.md — invariantes técnicos
+3. .specs/wireframes/PROCESSO-PRANCHA.md — sequência e gates
+4. .specs/wireframes/WIREFRAME-TEXT.md — contrato documental
+5. docs/wireframes/images/templates/README.md — governança da prancha-modelo
+6. este WF-TEMPLATE-B_v01.md — composição específica desta alternativa
+7. PNG correspondente — resultado visual, nunca fonte normativa superior
 ```
 
 Nenhuma prancha histórica ou alternativa anterior é referência de geometria, proporção, posicionamento ou distribuição desta alternativa B.
+
+### Estado dos gates desta B_v01
+
+O repositório atual não contém registro explícito de aprovação individual dos gates 2 a 6. A existência de medidas e cálculos posteriores não constitui aprovação retroativa.
+
+```text
+Gate 1 — Canvas: DEFINIDO PELA SPEC CANÔNICA
+Gate 2 — Título / Cabeçalho: AGUARDANDO APROVAÇÃO
+Gate 3 — Viewport Técnico: BLOQUEADO POR GATE ANTERIOR
+Gate 4 — Área restante calculada: BLOQUEADO POR GATE ANTERIOR
+Gate 5 — Demais elementos definidos: BLOQUEADO POR GATE ANTERIOR
+Gate 6 — Wireframe Text completo: BLOQUEADO POR GATE ANTERIOR
+Produção do PNG: BLOQUEADA
+```
+
+As geometrias documentadas abaixo permanecem como proposta de trabalho até o gate correspondente ser aprovado e registrado neste próprio arquivo.
 
 ---
 
@@ -745,18 +763,15 @@ Rótulos e valores ficam em duas colunas internas.
 Referências:
 
 ```text
-docs/wireframes/images/README.md
-4.1 — Viewport
-4.3 — Canvas técnico
-5 — Grid e espaçamento
+.specs/wireframes/REGRAS-TECNICAS.md
+2 — Canvas
+3 — Viewport
+4 — Grid e spacing
 ```
 
 ---
 
 # 2. COTAS DO VIEWPORT
-
-> O frame inicial ainda preserva o rótulo histórico `2. SAFE AREAS`.
-> Para a execução técnica vigente desta B_v01, essa mesma região passa a documentar as cotas atuais do viewport.
 
 ## Área desta prancha-modelo
 
@@ -802,10 +817,10 @@ line-height: 16 px
 Referências:
 
 ```text
-docs/wireframes/images/README.md
-3 — Referências técnicas compartilhadas
-4.1 — Viewport
-4.2 — Sem reserva fixa de safe area
+.specs/wireframes/REGRAS-TECNICAS.md
+3 — Viewport
+3.2 — Cotas
+3.3 — Safe area
 
 docs/wireframes/images/templates/references/
 Especificação Técnica do Viewport Mobile.png
@@ -855,8 +870,8 @@ w: 328
 Referência:
 
 ```text
-docs/wireframes/images/README.md
-5 — Grid e espaçamento
+.specs/wireframes/REGRAS-TECNICAS.md
+4 — Grid e spacing
 ```
 
 ---
@@ -1083,8 +1098,8 @@ Somente quando previsto na baseline.
 Referências:
 
 ```text
-docs/wireframes/images/README.md
-7 — Componentes técnicos de representação
+.specs/wireframes/REGRAS-TECNICAS.md
+7 — Componentes técnicos
 ```
 
 ---
@@ -1132,8 +1147,8 @@ w: 328
 Referência:
 
 ```text
-docs/wireframes/images/README.md
-6.3 — Tipografia técnica
+.specs/wireframes/REGRAS-TECNICAS.md
+5 — Tipografia técnica
 ```
 
 ---
@@ -1189,8 +1204,8 @@ line-height:
 Referência:
 
 ```text
-docs/wireframes/images/README.md
-6.1 — Claro
+.specs/wireframes/REGRAS-TECNICAS.md
+6 — Tokens técnicos / Claro
 ```
 
 ---
@@ -1248,8 +1263,9 @@ y legenda: 984
 Referência:
 
 ```text
-docs/wireframes/images/README.md
-8 — Bordas, radius, elevação e iconografia
+.specs/wireframes/REGRAS-TECNICAS.md
+8 — Bordas, radius e elevação
+9 — Iconografia
 ```
 
 ---
@@ -1300,8 +1316,9 @@ y: 1112
 Referência:
 
 ```text
-docs/wireframes/images/README.md
-8 — Bordas, radius, elevação e iconografia
+.specs/wireframes/REGRAS-TECNICAS.md
+8 — Bordas, radius e elevação
+9 — Iconografia
 ```
 
 ---
@@ -1364,8 +1381,8 @@ Amostras:
 Referência:
 
 ```text
-docs/wireframes/images/README.md
-8 — Iconografia
+.specs/wireframes/REGRAS-TECNICAS.md
+9 — Iconografia
 ```
 
 ---
@@ -1414,9 +1431,9 @@ Error               y: 1348
 Referências:
 
 ```text
-docs/wireframes/images/README.md
-9 — Estados técnicos
-10 — Acessibilidade estrutural
+.specs/wireframes/REGRAS-TECNICAS.md
+10 — Estados
+11 — Acessibilidade estrutural
 ```
 
 ---
@@ -1464,9 +1481,9 @@ w: 680 px
 Referências:
 
 ```text
-docs/wireframes/images/README.md
-7 — Componentes técnicos de representação
-10 — Acessibilidade estrutural
+.specs/wireframes/REGRAS-TECNICAS.md
+7 — Componentes técnicos
+11 — Acessibilidade estrutural
 ```
 
 ---
@@ -1511,8 +1528,9 @@ h: 1
 Referência:
 
 ```text
-docs/wireframes/images/README.md
-8 — Bordas, radius, elevação e iconografia
+.specs/wireframes/REGRAS-TECNICAS.md
+8 — Bordas, radius e elevação
+9 — Iconografia
 ```
 
 ---
@@ -1583,43 +1601,40 @@ WF-LABEL
 Referências:
 
 ```text
-docs/wireframes/images/README.md
-3 — Referências técnicas compartilhadas
-4 — Viewport e geometria
-5 — Grid e espaçamento
+.specs/wireframes/REGRAS-TECNICAS.md
+2 — Canvas
+3 — Viewport
+4 — Grid e spacing
+5 — Tipografia técnica
 6 — Tokens técnicos
-7 — Componentes
-8 — Bordas, radius, elevação e iconografia
-9 — Estados
-10 — Acessibilidade
+7 — Componentes técnicos
+8 — Bordas, radius e elevação
+9 — Iconografia
+10 — Estados
+11 — Acessibilidade estrutural
 ```
 
 ---
 
 # Sequência de construção desta prancha-modelo
 
+Esta B_v01 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
+
 ```text
 01. Canvas 1280 × 1920
-02. Cabeçalho
-03. Bitmap WF-VIEWPORT-360x800-clean.png em 100% / 1:1
-04. Cotas 360 / 336 / 12 / 12 / 800
-05. Validar fisicamente o viewport
-06. Calcular as áreas documentais restantes desta B_v01
-07. Bloco 1
-08. Bloco 2
-09. Bloco 3
-10. Bloco 4
-11. Bloco 5
-12. Bloco 6
-13. Bloco 7
-14. Bloco 8
-15. Bloco 9
-16. Bloco 10
-17. Bloco 11
-18. Bordas e Divisores
-19. Bloco 12
-20. Conferência integral
-21. Somente após PASS: produzir o PNG correspondente
+02. Definir Cabeçalho
+03. APROVAR E CONGELAR Gate 2
+04. Posicionar WF-VIEWPORT-360x800-clean.png em 100% / 1:1
+05. Adicionar cotas 360 / 336 / 12 / 12 / 800
+06. APROVAR E CONGELAR Gate 3
+07. Calcular a área documental restante
+08. Registrar e aprovar Gate 4
+09. Definir Blocos 1 a 12 e Bordas/Divisores
+10. Aprovar e congelar Gate 5
+11. Conferir integralmente o Wireframe Text
+12. Aprovar e congelar Gate 6
+13. Somente então produzir o PNG correspondente
+14. Validar PNG × Wireframe Text
 ```
 
 ---
@@ -1627,7 +1642,11 @@ docs/wireframes/images/README.md
 # Gate antes da produção do PNG
 
 ```text
-[ ] frame inicial preservado como referência conceitual de composição
+[ ] Gate 2 registrado como APROVADO E CONGELADO
+[ ] Gate 3 registrado como APROVADO E CONGELADO
+[ ] Gate 4 registrado como APROVADO E CONGELADO
+[ ] Gate 5 registrado como APROVADO E CONGELADO
+[ ] frame inicial coerente com as specs canônicas vigentes
 [ ] canvas = 1280 × 1920 px
 [ ] cabeçalho montado conforme esta B_v01
 [ ] viewport físico = 360 × 800 px
@@ -1641,8 +1660,8 @@ docs/wireframes/images/README.md
 [ ] nenhuma medida desta B_v01 foi tratada como dimensão universal de futuros T/M/E
 [ ] nenhuma referência de layout foi herdada de prancha histórica ou alternativa anterior
 [ ] marca usa as fontes oficiais catalogadas
-[ ] componentes usam as medidas normativas do README técnico
+[ ] componentes usam as medidas normativas de `.specs/wireframes/REGRAS-TECNICAS.md`
 [ ] não existe requisito funcional inventado
 ```
 
-Somente depois desse gate o PNG da `WF-TEMPLATE-B_v01` deve ser produzido e comparado com esta especificação.
+Somente depois de todos os gates obrigatórios estarem registrados como aprovados e o Gate 6 estar `APROVADO E CONGELADO` o PNG da `WF-TEMPLATE-B_v01` pode ser produzido e comparado com esta especificação.

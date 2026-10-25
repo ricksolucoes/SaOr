@@ -67,291 +67,90 @@ A organização, os estados, os critérios de avaliação, a promoção e o gate
 
 # 3. Referências técnicas compartilhadas
 
-Os arquivos de `templates/references/` têm funções distintas e não são alternativas de template.
+Os arquivos físicos de `templates/references/` permanecem neste diretório porque são artefatos utilizados na produção. Sua interpretação normativa pertence às specs canônicas.
 
-| Arquivo | Função normativa |
-|---|---|
-| `Especificação Técnica - Prancha de Trabalho.png` | referência física do canvas `1280 × 1920 px` |
-| `Especificação Técnica do Viewport Mobile.png` | referência visual das linhas e cotas dimensionais do viewport |
-| `WF-VIEWPORT-360x800-clean.png` | bitmap mestre do viewport de demonstração, fisicamente `360 × 800 px` |
+| Arquivo | Função operacional | Regra canônica |
+|---|---|---|
+| `Especificação Técnica - Prancha de Trabalho.png` | referência física disponível para o canvas | `.specs/wireframes/REGRAS-TECNICAS.md` |
+| `Especificação Técnica do Viewport Mobile.png` | referência visual disponível para cotas | `.specs/wireframes/REGRAS-TECNICAS.md` |
+| `WF-VIEWPORT-360x800-clean.png` | bitmap mestre de demonstração para pranchas-modelo neutras | `.specs/wireframes/REGRAS-TECNICAS.md` |
 
-Regras:
-
-- orientação: **retrato**;
-- representa a **tela lógica completa do celular**;
-- overlays e demais elementos que pertençam à interface — por exemplo modal, dialog, bottom sheet, menu, toast ou estado sobreposto — devem ser representados dentro dos mesmos `360 × 800 px`, sem criar área funcional externa ao viewport;
-- canvas final: `1280 × 1920 px`;
-- viewport na prancha: `360 × 800 px`;
-- uma legenda declarando `360 × 800 px` não substitui a verificação física da área representada;
-- não acrescentar barras ou áreas por fora dos `800 px`;
-- escala do viewport: `1:1`;
-- bitmap mestre em `100%`, sem resize, deformação ou reconstrução por aproximação;
-- linhas de dimensão seguem a referência técnica sem alterar o bitmap mestre;
-- texto declarando uma dimensão não substitui a verificação física do PNG;
-- não criar versão específica para iOS ou Android;
-- paisagem será estudada posteriormente;
-- não desenhar moldura física de aparelho;
-- tablet e desktop não serão produzidos automaticamente nesta etapa;
-- o viewport não pode ser redimensionado, esticado, comprimido ou reproporcionado para caber na prancha.
-
-## 3.1 Escopo do `WF-VIEWPORT-360x800-clean.png`
-
-O arquivo `WF-VIEWPORT-360x800-clean.png` possui dois usos distintos:
-
-**Pranchas-modelo neutras**
-
-- pode ser inserido diretamente em `100%`;
-- deve permanecer fisicamente `360 × 800 px`;
-- pode ser usado como bitmap mestre do viewport de demonstração.
-
-**Wireframes funcionais T/M/E**
-
-- funciona como referência dimensional e estrutural do viewport;
-- a área funcional continua obrigatoriamente com `360 × 800 px` físicos e escala `1:1`;
-- o conteúdo interno deve ser o conteúdo documentado da interface correspondente;
-- não se exige identidade de pixels entre uma interface funcional e o bitmap clean.
-
-O bitmap clean nunca substitui o Textframe, a Ficha funcional de aceite ou o conteúdo real de uma interface funcional.
+Este README não redefine dimensões, cotas ou geometria desses arquivos.
 
 ---
 
 # 4. Viewport e geometria
 
-## 4.1 Viewport
-
-```text
-Viewport lógico: 360 × 800 px
-Orientação: retrato
-Escala na prancha: 1:1
-```
-
-Não adicionar moldura física, áreas fora dos `800 px`, variação específica de sistema operacional ou redução do viewport para acomodar documentação.
-
-## 4.2 Safe area
-
-Não existe reserva fixa de safe area nesta etapa.
-
-A regra canônica está em:
+Fonte canônica:
 
 ```text
 ../../../.specs/wireframes/REGRAS-TECNICAS.md
+../../../.specs/wireframes/PROCESSO-PRANCHA.md
 ```
 
-O viewport permanece integralmente `360 × 800 px`.
-
-## 4.3 Canvas técnico
-
-```text
-Canvas: 1280 × 1920 px
-Orientação: retrato
-Viewport: 360 × 800 px
-Escala: 1:1
-```
-
-Artefatos históricos produzidos antes da adoção do canvas `1280 × 1920 px` permanecem preservados como registro e não devem ser regenerados somente pela mudança dimensional.
-
-Qualquer **nova versão**, revisão posterior ou artefato promovido como referência aprovada deve cumprir a especificação técnica vigente deste README.
-
-## 4.4 Ordem obrigatória de montagem
-
-```text
-canvas 1280 × 1920
-        ↓
-cabeçalho técnico
-        ↓
-viewport 360 × 800 / 1:1
-        ↓
-validação física
-        ↓
-restante da documentação
-```
-
-O restante da prancha só deve ser montado depois de confirmado:
-
-```text
-canvas = 1280 × 1920 px
-viewport = 360 × 800 px
-escala = 1:1
-```
-
-Se o viewport não medir fisicamente `360 × 800 px`, a composição é inválida e não deve prosseguir.
-
-Uma nova composição deve ser construída a partir da **especificação documental vigente**, e não pela cópia, escala ou reaproveitamento da geometria raster de uma prancha anterior. Artefatos anteriores podem ser consultados como histórico visual, mas não substituem as medidas e regras vigentes.
+Este README não replica valores de viewport, canvas, cotas ou safe area.
 
 ---
 
 # 5. Grid e espaçamento
 
-```text
-Margem horizontal estrutural: 12 px
-Base de espaçamento: 4 px
-Escala: 4 / 8 / 12 / 16 / 24 / 32 px
-Padding-base horizontal: 16 px
-Padding-base vertical: 12 px
-```
+Fonte canônica:
 
-Espaçamentos fora da escala `4 / 8 / 12 / 16 / 24 / 32 px` exigem necessidade objetiva e justificativa registrada na especificação da composição.
+```text
+../../../.specs/wireframes/REGRAS-TECNICAS.md
+```
 
 ---
 
-# 6. Tokens técnicos do wireframe
+# 6. Tokens e tipografia técnica
 
-Os tokens desta seção servem **somente à representação técnica do wireframe**. Eles não substituem os tokens visuais oficiais do produto definidos no Documento Mestre.
-
-## 6.1 Claro
-
-| Token | Aplicação | HEX |
-|---|---|---|
-| `WF-W-BG` | fundo geral | `#F4F4F4` |
-| `WF-W-SURFACE` | superfície principal | `#FFFFFF` |
-| `WF-W-SURFACE-ALT` | superfície secundária | `#EAEAEA` |
-| `WF-W-BORDER` | borda/divisor | `#B5B5B5` |
-| `WF-W-TEXT` | texto principal | `#1A1A1A` |
-| `WF-W-TEXT-2` | texto secundário | `#565656` |
-| `WF-W-ACTION` | ação/interação | `#333333` |
-| `WF-W-DISABLED` | desabilitado | `#9A9A9A` |
-| `WF-W-FOCUS` | foco/seleção | `#4A4A4A` |
-| `WF-W-STATUS` | status | `#626262` |
-
-## 6.2 Escuro
-
-| Token | Aplicação | HEX |
-|---|---|---|
-| `WF-B-BG` | fundo geral | `#121212` |
-| `WF-B-SURFACE` | superfície principal | `#1E1E1E` |
-| `WF-B-SURFACE-ALT` | superfície secundária | `#2A2A2A` |
-| `WF-B-BORDER` | borda/divisor | `#5E5E5E` |
-| `WF-B-TEXT` | texto principal | `#F2F2F2` |
-| `WF-B-TEXT-2` | texto secundário | `#C2C2C2` |
-| `WF-B-ACTION` | ação/interação | `#E0E0E0` |
-| `WF-B-DISABLED` | desabilitado | `#777777` |
-| `WF-B-FOCUS` | foco/seleção | `#D0D0D0` |
-| `WF-B-STATUS` | status | `#A8A8A8` |
-
-Cor nunca pode ser o único indicador de estado.
-
-## 6.3 Tipografia técnica
+Fonte canônica:
 
 ```text
-WF-FONT-FAMILY: Inter
+../../../.specs/wireframes/REGRAS-TECNICAS.md
 ```
-
-| Token | Peso | Tamanho | Line-height | Letter-spacing |
-|---|---:|---:|---:|---|
-| `WF-TITLE` | 600 | 20 px | 28 px | `normal` |
-| `WF-SECTION` | 600 | 14 px | 20 px | `normal` |
-| `WF-BODY` | 400 | 16 px | 24 px | `normal` |
-| `WF-LABEL` | 500 | 14 px | 20 px | `normal` |
-| `WF-ACTION-TEXT` | 500 | 16 px | 24 px | `normal` |
-| `WF-CAPTION` | 400 | 12 px | 16 px | `normal` |
-
-Inter é tipografia técnica da etapa e não define automaticamente a tipografia oficial do produto ou da marca.
 
 ---
 
 # 7. Componentes técnicos de representação
 
-MUI / Material UI é referência conceitual, não escolha tecnológica definitiva.
-
-| Elemento | Especificação |
-|---|---|
-| App Bar | altura `56 px` |
-| Touch target | mínimo `48 × 48 px` |
-| Campo Outlined | altura `56 px`, radius `12 px`, borda `1 px` quando aplicável |
-| Botão textual | altura mínima `48 px`, radius `12 px` |
-| Icon Button | touch target mínimo `48 × 48 px` |
-| Item simples | mínimo `56 px` |
-| Item com secundário/status | mínimo `64 px` |
-| Card | radius `16 px`, borda `1 px` quando necessária |
-| Modal/Dialog | margem lateral `24 px`, radius `16 px` |
-| Bottom Navigation | `64 px` quando prevista na baseline |
-
-Padding-base:
+Fonte canônica:
 
 ```text
-16 px horizontal
-12 px vertical
+../../../.specs/wireframes/REGRAS-TECNICAS.md
 ```
-
-Componente ainda não catalogado deve primeiro ter necessidade funcional no Documento Mestre; depois sua geometria/estado técnico é registrada aqui. É proibido introduzi-lo silenciosamente.
 
 ---
 
 # 8. Bordas, radius, elevação e iconografia
 
-```text
-Bordas: 1 px quando necessárias
-Divisores: 1 px
-Campos/botões: radius 12 px
-Cards/modais: radius 16 px
-```
-
-Elevação:
-
-A notação compacta segue obrigatoriamente esta ordem:
+Fonte canônica:
 
 ```text
-offset-x / offset-y / blur / opacidade
+../../../.specs/wireframes/REGRAS-TECNICAS.md
 ```
-
-```text
-WF-ELEVATION-0: 0 px / 0 px / 0 px / 0%
-WF-ELEVATION-1: 0 px / 1 px / 2 px / 12%
-WF-ELEVATION-2: 0 px / 2 px / 6 px / 16%
-WF-ELEVATION-3: 0 px / 4 px / 12 px / 20%
-```
-
-Cor-base: preto neutro.
-
-Referência de uso:
-
-- `WF-ELEVATION-0` — conteúdo integrado à superfície;
-- `WF-ELEVATION-1` — card destacado;
-- `WF-ELEVATION-2` — menu ou dropdown;
-- `WF-ELEVATION-3` — modal ou dialog.
-
-Iconografia:
-
-```text
-Referência: Material Icons Outlined
-Auxiliar: 20 px
-Ação/navegação: 24 px
-Touch target: mínimo 48 × 48 px
-```
-
-Ícone isolado somente quando a ação for inequívoca; caso contrário, associar texto.
 
 ---
 
 # 9. Estados técnicos
 
-```text
-default
-focus
-pressed / selected
-disabled
-error
-hover
-```
+Fonte canônica:
 
-`hover` fica documentado, mas não precisa ser exibido em prancha mobile sem necessidade específica.
+```text
+../../../.specs/wireframes/REGRAS-TECNICAS.md
+```
 
 ---
 
 # 10. Acessibilidade estrutural
 
-A representação deve preservar condições para futura conformidade WCAG 2.2 AA:
+Fonte canônica:
 
-- cor nunca como único indicador;
-- touch target mínimo;
-- ordem de leitura clara;
-- campos com rótulos;
-- erros próximos ao contexto;
-- foco e seleção distinguíveis;
-- hierarquia tipográfica consistente;
-- ausência de compactação prejudicial.
+```text
+../../../.specs/wireframes/REGRAS-TECNICAS.md
+```
 
-Os critérios funcionais e visuais oficiais permanecem no Documento Mestre.
+O Documento Mestre continua sendo a autoridade para conteúdo e comportamento funcional.
 
 ---
 
@@ -425,11 +224,11 @@ Variação: Claro | Escuro
 Status: PENDENTE | EM VALIDAÇÃO | AJUSTES NECESSÁRIOS | APROVADO
 Página: <XX>/<YY>
 Versão: vNN
-Viewport: 360 × 800 px
-Orientação: Retrato
-Canvas: 1280 × 1920 px
-Escala: 1:1
-Fonte técnica: Inter
+Viewport: <valor vigente de REGRAS-TECNICAS.md>
+Orientação: <valor vigente de REGRAS-TECNICAS.md>
+Canvas: <valor vigente de REGRAS-TECNICAS.md>
+Escala: <valor vigente de REGRAS-TECNICAS.md>
+Fonte técnica: <valor vigente de REGRAS-TECNICAS.md>
 ```
 
 Mostrar somente tokens e observações realmente usados naquela representação.

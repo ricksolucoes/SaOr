@@ -56,7 +56,7 @@ Esses arquivos:
 - não são alternativas;
 - não recebem status de aprovação de template;
 - não são copiados para `alternatives/` ou `aprovados/`;
-- são usados conforme a função normativa definida no README superior.
+- são usados conforme a função normativa definida em `.specs/wireframes/REGRAS-TECNICAS.md`.
 
 ## 2.2 `alternatives/`
 
@@ -82,7 +82,7 @@ Contém somente pranchas-modelo com aprovação explícita.
 
 A imagem fica diretamente em `aprovados/` e o Wireframe Text correspondente em `aprovados/wiframetext/`.
 
-Um artefato somente entra em `aprovados/` quando o par PNG + Wireframe Text estiver compatível com a especificação técnica vigente.
+Um artefato somente entra em `aprovados/` quando o par PNG + Wireframe Text estiver compatível com as specs canônicas vigentes em `.specs/wireframes/`.
 
 ---
 
@@ -149,7 +149,7 @@ Por isso:
 
 Se uma alternativa anterior for escolhida para aprovação final, deve ser gerada **nova versão** compatível com:
 
-- o README técnico vigente;
+- as specs canônicas vigentes em `.specs/wireframes/`;
 - o canvas vigente;
 - as referências técnicas vigentes;
 - o Wireframe Text correspondente.
@@ -227,7 +227,7 @@ Esse conteúdo não cria requisito funcional e não altera a baseline.
 
 # 8. Critérios mínimos de avaliação
 
-Toda alternativa deve cumprir integralmente a especificação técnica do README superior.
+Toda alternativa deve cumprir integralmente as specs canônicas em `.specs/wireframes/`.
 
 Além disso, deve ser avaliada quanto a:
 
@@ -343,7 +343,7 @@ A pasta `aprovados/` contém somente artefatos que já passaram por esse process
 A produção definitiva das interfaces funcionais começa somente depois de existir uma composição documental aprovada e congelada.
 
 ```text
-especificação técnica estabilizada
+specs canônicas estabilizadas
         ↓
 alternativas avaliadas
         ↓
@@ -367,7 +367,7 @@ Enquanto não houver um par aprovado e congelado em `aprovados/`, T00 e as demai
 Antes de liberar T00, todos os itens abaixo devem estar confirmados:
 
 ```text
-[ ] especificação técnica vigente aplicada
+[ ] specs canônicas vigentes aplicadas
 [ ] alternativas previstas para a decisão foram avaliadas ou formalmente dispensadas
 [ ] comparação final registrada
 [ ] decisão final explícita registrada

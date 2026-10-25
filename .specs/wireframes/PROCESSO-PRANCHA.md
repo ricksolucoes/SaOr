@@ -36,6 +36,42 @@ PNG
 VALIDAÇÃO PNG × WIREFRAME TEXT
 ```
 
+## 2.1 Registro obrigatório do estado dos gates
+
+Para que o processo possa continuar em outra conversa ou por outra execução sem memória anterior, o Wireframe Text específico deve registrar explicitamente o estado atual de cada gate.
+
+Estados permitidos:
+
+```text
+PENDENTE
+EM DEFINIÇÃO
+AGUARDANDO APROVAÇÃO
+APROVADO E CONGELADO
+BLOQUEADO POR GATE ANTERIOR
+NÃO APLICÁVEL
+```
+
+Registro mínimo obrigatório:
+
+```text
+Gate 1 — Canvas
+Gate 2 — Título / Cabeçalho
+Gate 3 — Viewport Técnico
+Gate 4 — Área restante calculada
+Gate 5 — Demais elementos definidos
+Gate 6 — Wireframe Text completo
+Produção do PNG
+```
+
+Regras:
+
+- uma aprovação ocorrida fora do repositório deve ser refletida no Wireframe Text antes de depender dela em outra execução;
+- ausência de registro explícito não equivale a aprovação;
+- uma etapa somente pode ser tratada como congelada quando seu gate estiver registrado como `APROVADO E CONGELADO`;
+- `BLOQUEADO POR GATE ANTERIOR` impede cálculo definitivo das etapas seguintes;
+- a existência de coordenadas propostas não equivale a aprovação do gate correspondente;
+- a produção do PNG permanece bloqueada até o Gate 6 estar `APROVADO E CONGELADO`.
+
 ---
 
 # 3. Etapa 1 — Criar a prancha vazia
@@ -101,6 +137,8 @@ Somente após aprovação explícita:
 
 o cabeçalho é considerado **congelado**.
 
+A aprovação deve ser registrada no quadro de gates do Wireframe Text específico antes de prosseguir.
+
 Após congelado, a próxima etapa deve trabalhar com o espaço que realmente restou.
 
 ---
@@ -155,7 +193,7 @@ Confirmar:
 [ ] nenhuma invasão do cabeçalho
 ```
 
-Após aprovação, cabeçalho + viewport ficam congelados.
+Após aprovação, cabeçalho + viewport ficam congelados. A aprovação do Gate 3 deve estar registrada no Wireframe Text específico antes de calcular a área restante.
 
 ---
 

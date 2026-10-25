@@ -45,7 +45,8 @@ O documento deve registrar, quando aplicável:
 
 ```text
 identificação e versão
-estado
+estado do artefato
+estado dos gates do processo
 conceito de composição
 canvas
 cabeçalho
@@ -65,6 +66,28 @@ sequência de montagem
 gate antes da imagem
 checklist de validação
 ```
+
+## 4.1 Estado obrigatório do processo
+
+Todo Wireframe Text específico deve permitir que uma execução nova determine, sem consultar conversa anterior, em qual etapa o trabalho está.
+
+Deve registrar:
+
+```text
+Gate 1 — Canvas: <ESTADO>
+Gate 2 — Título / Cabeçalho: <ESTADO>
+Gate 3 — Viewport Técnico: <ESTADO>
+Gate 4 — Área restante calculada: <ESTADO>
+Gate 5 — Demais elementos definidos: <ESTADO>
+Gate 6 — Wireframe Text completo: <ESTADO>
+Produção do PNG: <ESTADO>
+```
+
+Os estados válidos são definidos em `PROCESSO-PRANCHA.md`.
+
+Se uma aprovação não estiver registrada no próprio Wireframe Text, uma nova execução deve tratá-la como não comprovada e não pode inferi-la a partir de memória, conversa, commit ou existência de medidas posteriores.
+
+---
 
 ## 5. Contrato mínimo por elemento
 
