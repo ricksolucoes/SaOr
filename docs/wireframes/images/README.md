@@ -22,6 +22,7 @@ As regras normativas reutilizáveis pertencem a:
 ../../../.specs/wireframes/REGRAS-TECNICAS.md
 ../../../.specs/wireframes/PROCESSO-PRANCHA.md
 ../../../.specs/wireframes/WIREFRAME-TEXT.md
+../../../.specs/wireframes/MONTAGEM-IMAGEM.md
 ```
 
 Este README mantém:
@@ -183,9 +184,37 @@ A construção e o acompanhamento de cada prancha-modelo obedecem a:
 ../../../.specs/wireframes/REGRAS-TECNICAS.md
 ../../../.specs/wireframes/PROCESSO-PRANCHA.md
 ../../../.specs/wireframes/WIREFRAME-TEXT.md
+../../../.specs/wireframes/MONTAGEM-IMAGEM.md
 ```
 
 Este README não redefine dimensões, cotas ou geometria desses arquivos.
+
+## 3.4 Referências visuais contextuais vigentes
+
+Pranchas-modelo existentes também podem exercer função de **referência visual contextual** quando isso estiver registrado operacionalmente.
+
+Essa função serve para ajudar a compreender a linguagem visual já alcançada na etapa, incluindo:
+
+- nível de acabamento;
+- densidade documental;
+- hierarquia visual;
+- tratamento de cabeçalhos, metadados e regiões documentais;
+- ritmo, alinhamento e qualidade geral de apresentação.
+
+A referência visual contextual não substitui `REGRAS-TECNICAS.md`, o Wireframe Text específico nem os ativos físicos obrigatórios. Se a composição específica de uma nova prancha divergir da referência, prevalece a composição documentada para a nova prancha.
+
+Registro operacional vigente:
+
+```text
+white
+→ references/templates/white/WF-TEMPLATE-A_v02.png
+→ referência visual esperada vigente para compreender o padrão de acabamento e linguagem da variação clara
+
+black
+→ nenhuma referência visual contextual vigente registrada neste momento
+```
+
+Esse registro pode evoluir quando outra referência for explicitamente adotada para a etapa ou para a variação, sem transformar a geometria de uma prancha específica em template universal.
 
 ---
 
@@ -403,7 +432,7 @@ Checklist obrigatório:
 
 Se qualquer item obrigatório falhar, o PNG não deve ser tratado como artefato pronto para validação ou aprovação.
 
-A conferência é feita contra as fontes documentais vigentes; a aparência de uma prancha raster anterior não substitui esse gate.
+A conferência é feita contra as fontes documentais vigentes; a aparência de uma prancha raster anterior não substitui esse gate. Quando houver referência visual contextual vigente aplicável, ela também deve ser observada para verificar continuidade de linguagem e qualidade, sem substituir a validação documental.
 
 ---
 
@@ -535,8 +564,9 @@ Pranchas-modelo de `references/templates/` não entram nessa contagem.
 3. `.specs/wireframes/REGRAS-TECNICAS.md` — invariantes técnicos;
 4. `.specs/wireframes/PROCESSO-PRANCHA.md` — sequência obrigatória de construção;
 5. `.specs/wireframes/WIREFRAME-TEXT.md` — contrato documental;
-6. este README — estrutura operacional e separação entre referências, pranchas-modelo e saídas funcionais;
-7. Wireframe Text específico em `references/templates/<variação>/wiframetext/` — composição reproduzível da prancha-modelo;
-8. PNG correspondente em `references/templates/<variação>/` — representação visual resultante da prancha-modelo.
+6. `.specs/wireframes/MONTAGEM-IMAGEM.md` — leitura contextual e método de execução visual profissional;
+7. este README — estrutura operacional, localização e papel contextual das referências vigentes;
+8. Wireframe Text específico em `references/templates/<variação>/wiframetext/` — composição reproduzível da prancha-modelo;
+9. PNG correspondente em `references/templates/<variação>/` — representação visual resultante da prancha-modelo.
 
 Artefato inferior não altera silenciosamente uma regra de nível superior.

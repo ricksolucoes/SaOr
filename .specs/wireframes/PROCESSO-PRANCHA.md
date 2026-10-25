@@ -439,6 +439,8 @@ Produção do PNG: PENDENTE
 
 Depois do Wireframe Text aprovado, partir novamente do canvas vazio e executar exatamente o que foi especificado.
 
+A construção visual deve seguir `MONTAGEM-IMAGEM.md` e consultar o contexto operacional e as referências aplicáveis localizadas por `docs/wireframes/images/README.md`, sem permitir que essas referências sobrescrevam a composição específica já aprovada.
+
 Ao iniciar a construção visual, registrar:
 
 ```text

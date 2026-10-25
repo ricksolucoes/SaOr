@@ -27,14 +27,17 @@ docs/Documento_Mestre.md
 .specs/wireframes/WIREFRAME-TEXT.md
 → contrato documental de cada Wireframe Text específico
 
-docs/wireframes/images/README.md
-→ estrutura operacional, separação `white` / `black` e localização das referências e pranchas-modelo
-
 Wireframe Text específico
 → composição particular daquela prancha
 
+.specs/wireframes/MONTAGEM-IMAGEM.md
+→ leitura contextual e método de execução visual profissional da composição aprovada
+
+docs/wireframes/images/README.md
+→ localização operacional das referências técnicas, visuais e pranchas-modelo vigentes
+
 PNG correspondente
-→ resultado visual da especificação aprovada
+→ resultado visual da especificação aprovada dentro do contexto vigente
 ```
 
 Um nível inferior não altera silenciosamente uma regra de nível superior.
@@ -45,6 +48,7 @@ Um nível inferior não altera silenciosamente uma regra de nível superior.
 - [`wireframes/REGRAS-TECNICAS.md`](wireframes/REGRAS-TECNICAS.md) — regras técnicas invariantes.
 - [`wireframes/PROCESSO-PRANCHA.md`](wireframes/PROCESSO-PRANCHA.md) — processo sequencial de construção.
 - [`wireframes/WIREFRAME-TEXT.md`](wireframes/WIREFRAME-TEXT.md) — padrão documental dos Wireframe Text.
+- [`wireframes/MONTAGEM-IMAGEM.md`](wireframes/MONTAGEM-IMAGEM.md) — leitura contextual e montagem visual profissional das imagens aprovadas.
 
 ## Regra de alteração
 

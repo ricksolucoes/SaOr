@@ -38,6 +38,9 @@ PROCESSO-PRANCHA.md
 WIREFRAME-TEXT.md
 → contrato documental
         ↓
+docs/wireframes/images/README.md
+→ contexto operacional e localização das referências vigentes
+        ↓
 Wireframe Text específico aprovado
 → composição, conteúdo e geometria da prancha
         ↓
@@ -56,28 +59,49 @@ Se esta spec e um Wireframe Text específico parecerem incompatíveis, a execuç
 
 ---
 
-## 3. Princípio de independência visual
+## 3. Leitura contextual e uso das referências existentes
 
-Uma prancha nova não depende visualmente de outra prancha para ser construída.
+A montagem de uma prancha nova deve ocorrer dentro do contexto documental e visual vigente do projeto.
 
-É proibido usar outra imagem como fonte automática de:
+Antes de produzir a imagem, a execução deve consultar, quando aplicáveis:
+
+- as specs canônicas da etapa;
+- o Wireframe Text específico aprovado;
+- `docs/wireframes/images/README.md`, para localizar a estrutura operacional e as referências vigentes;
+- referências técnicas neutras ou específicas da mesma variação;
+- pranchas-modelo existentes que estejam registradas como referência visual contextual da variação ou da etapa.
+
+Referências visuais existentes podem ser usadas para compreender e preservar continuidade de:
+
+- linguagem visual;
+- nível de acabamento;
+- densidade documental;
+- hierarquia visual;
+- tratamento de cabeçalhos, metadados e regiões documentais;
+- ritmo, alinhamento e qualidade geral de apresentação.
+
+Esse uso é **contextual**, não substitutivo.
+
+Uma referência visual não possui autoridade para sobrescrever uma decisão explicitamente definida em fonte superior ou no Wireframe Text específico, incluindo:
 
 - geometria;
-- proporção;
-- estilo local;
-- distribuição de regiões;
+- posição;
 - dimensões;
-- tratamento de cabeçalho;
-- hierarquia específica;
-- composição específica.
+- conteúdo;
+- ordem;
+- ativos obrigatórios;
+- composição específica;
+- separação `white` / `black`.
 
-As regras reutilizáveis devem existir nas specs.
+Quando a composição específica divergir visualmente de uma prancha de referência, preservar a composição específica e usar a referência somente para compreender o padrão de execução e acabamento que continue aplicável.
 
-Uma imagem anterior do **mesmo frame** possui uma função diferente: ela pode ser usada como baseline de **não regressão** durante uma revisão daquele frame, conforme a seção de versionamento desta spec.
+Não copiar automaticamente a geometria ou o conteúdo de outra prancha.
 
-Imagem histórica não substitui spec.
+Não ignorar referências existentes apenas porque pertencem a outro frame, quando sua função documental for ajudar a compreender a linguagem visual esperada.
 
-Imagem de outro frame não é template visual implícito.
+Uma imagem anterior do **mesmo frame** continua possuindo função adicional de baseline de **não regressão** durante uma revisão daquele frame, conforme a seção de versionamento desta spec.
+
+Imagem histórica ou contextual não substitui spec nem Wireframe Text.
 
 ---
 
@@ -122,6 +146,9 @@ Antes de desenhar qualquer elemento, confirmar:
 [ ] Gate 6 registrado conforme exigido por PROCESSO-PRANCHA.md
 [ ] Produção do PNG liberada pelo estado vigente
 [ ] REGRAS-TECNICAS.md vigente consultado
+[ ] contexto operacional em docs/wireframes/images/README.md consultado
+[ ] referências técnicas aplicáveis identificadas
+[ ] referências visuais contextuais vigentes identificadas e inspecionadas quando existirem
 [ ] geometria específica disponível no Wireframe Text
 [ ] conteúdo textual exato disponível
 [ ] ativos físicos obrigatórios localizados
@@ -566,12 +593,14 @@ specs canônicas
 +
 Wireframe Text específico aprovado
 +
+contexto operacional e referências vigentes aplicáveis
++
 ativos oficiais
 +
 esta MONTAGEM-IMAGEM.md
 ```
 
-Não escolher uma prancha de outro frame como substituto da baseline inexistente.
+Uma referência visual de outro frame pode ser consultada para verificar coerência de linguagem e qualidade quando estiver registrada ou for pertinente ao contexto da etapa, mas não substitui a baseline estrutural inexistente nem o Wireframe Text específico.
 
 ---
 

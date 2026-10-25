@@ -57,6 +57,13 @@ Não é padronizado:
    - proibições;
    - relação entre texto, composição e imagem.
 
+4. [`MONTAGEM-IMAGEM.md`](MONTAGEM-IMAGEM.md)
+   - leitura contextual antes da montagem;
+   - uso correto das referências técnicas e visuais existentes;
+   - execução visual profissional do Wireframe Text aprovado;
+   - qualidade, consistência e controle de regressão;
+   - validação da imagem sem substituir a composição específica.
+
 ## Regra de uso
 
 Antes de criar ou alterar um Wireframe Text:
@@ -66,7 +73,9 @@ Antes de criar ou alterar um Wireframe Text:
 2. ler REGRAS-TECNICAS.md;
 3. executar PROCESSO-PRANCHA.md;
 4. registrar o resultado em conformidade com WIREFRAME-TEXT.md;
-5. somente depois produzir a imagem.
+5. depois da aprovação do Wireframe Text, ler MONTAGEM-IMAGEM.md;
+6. consultar em docs/wireframes/images/README.md as referências técnicas e visuais aplicáveis;
+7. produzir a imagem preservando a composição específica e a continuidade visual pertinente ao contexto.
 ```
 
 A localização física das referências e das pranchas-modelo é definida em:
