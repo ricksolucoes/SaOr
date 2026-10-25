@@ -70,6 +70,7 @@ Regras:
 
 - orientação: **retrato**;
 - representa a **tela lógica completa do celular**;
+- overlays e demais elementos que pertençam à interface — por exemplo modal, dialog, bottom sheet, menu, toast ou estado sobreposto — devem ser representados dentro dos mesmos `360 × 800 px`, sem criar área funcional externa ao viewport;
 - canvas final: `1280 × 1920 px`;
 - viewport na prancha: `360 × 800 px`;
 - uma legenda declarando `360 × 800 px` não substitui a verificação física da área representada;
@@ -265,11 +266,17 @@ Cards/modais: radius 16 px
 
 Elevação:
 
+A notação compacta segue obrigatoriamente esta ordem:
+
 ```text
-WF-ELEVATION-0: 0 / 0 / 0 / 0%
-WF-ELEVATION-1: 0 / 1 / 2 / 12%
-WF-ELEVATION-2: 0 / 2 / 6 / 16%
-WF-ELEVATION-3: 0 / 4 / 12 / 20%
+offset-x / offset-y / blur / opacidade
+```
+
+```text
+WF-ELEVATION-0: 0 px / 0 px / 0 px / 0%
+WF-ELEVATION-1: 0 px / 1 px / 2 px / 12%
+WF-ELEVATION-2: 0 px / 2 px / 6 px / 16%
+WF-ELEVATION-3: 0 px / 4 px / 12 px / 20%
 ```
 
 Cor-base: preto neutro.
@@ -429,6 +436,31 @@ Durante a produção, qualquer dúvida ou incompatibilidade deve ser classificad
 | `REQUISITO NOVO` | não incorporar à baseline vigente; encaminhar para o processo formal de alteração |
 
 Essa classificação não cria uma segunda baseline e não autoriza modificar silenciosamente o Documento Mestre.
+
+## 13.2 Gate técnico antes da exportação
+
+Uma prancha somente pode ser considerada pronta para exportação quando a representação tiver sido conferida contra a documentação vigente.
+
+Checklist obrigatório:
+
+```text
+[ ] canvas físico validado
+[ ] viewport físico validado
+[ ] escala 1:1 validada
+[ ] textos conferidos
+[ ] ícones conferidos
+[ ] medidas e espaçamentos conferidos
+[ ] componentes conferidos
+[ ] tokens técnicos utilizados conferidos
+[ ] estados representados conferidos
+[ ] página, total de páginas e versão conferidos
+[ ] equivalência Claro/Escuro preservada quando aplicável
+[ ] nenhuma informação de conversa, processo interno ou validação temporária foi incorporada à prancha
+```
+
+Se qualquer item obrigatório falhar, o PNG não deve ser tratado como artefato pronto para validação ou aprovação.
+
+A conferência é feita contra as fontes documentais vigentes; a aparência de uma prancha raster anterior não substitui esse gate.
 
 ---
 
