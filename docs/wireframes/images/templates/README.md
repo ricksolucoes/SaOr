@@ -1,22 +1,27 @@
 # SaOr - Sales Order
-## Pranchas-modelo — organização e ciclo de vida
+## Pranchas-modelo — governança, organização e ciclo de vida
 
 **Diretório:** `docs/wireframes/images/templates/`  
 **Especificação técnica superior:** [`../README.md`](../README.md)
 
 ---
 
-# 1. Finalidade
+# 1. Responsabilidade deste documento
 
-Este documento define somente:
+Este README é a fonte de governança das pranchas-modelo.
 
-- estrutura das referências compartilhadas;
-- armazenamento das pranchas em avaliação;
-- armazenamento das pranchas aprovadas;
+Ele define somente:
+
+- estrutura das referências, alternativas e aprovados;
 - vínculo entre PNG e Wireframe Text;
-- versionamento, preservação e promoção dos artefatos.
+- estados documentais;
+- critérios mínimos de avaliação;
+- preservação e versionamento;
+- seleção, combinação e promoção;
+- congelamento da composição aprovada;
+- gate que libera os wireframes funcionais.
 
-Dimensões, viewport, safe areas, tokens, tipografia, componentes, elevação, iconografia e demais regras técnicas pertencem exclusivamente ao README superior.
+Dimensões, viewport, safe areas, grid, tokens, tipografia, componentes, elevação, iconografia e demais regras técnicas pertencem exclusivamente ao README superior.
 
 ---
 
@@ -41,21 +46,68 @@ templates/
 
 ## 2.1 `references/`
 
-Somente referências técnicas compartilhadas. Não são alternativas, não recebem status de template e não são copiadas para as outras pastas.
+Contém somente referências técnicas compartilhadas.
+
+Esses arquivos:
+
+- não são alternativas;
+- não recebem status de aprovação de template;
+- não são copiados para `alternatives/` ou `aprovados/`;
+- são usados conforme a função normativa definida no README superior.
 
 ## 2.2 `alternatives/`
 
-Somente pranchas-modelo em avaliação, rejeitadas ou preservadas como alternativas. A imagem fica diretamente na pasta e o Wireframe Text correspondente em `alternatives/wiframetext/`.
+Contém pranchas-modelo que ainda não constituem a composição aprovada da etapa.
+
+Podem permanecer aqui artefatos:
+
+```text
+HISTÓRICO
+PENDENTE DE PRODUÇÃO
+EM VALIDAÇÃO
+AJUSTES NECESSÁRIOS
+CANDIDATA
+REJEITADA
+SUPERADA
+```
+
+A imagem fica diretamente em `alternatives/`. O Wireframe Text correspondente, quando exigido, fica em `alternatives/wiframetext/`.
 
 ## 2.3 `aprovados/`
 
-Somente pranchas-modelo explicitamente aprovadas. A imagem fica diretamente na pasta e o Wireframe Text correspondente em `aprovados/wiframetext/`.
+Contém somente pranchas-modelo com aprovação explícita.
+
+A imagem fica diretamente em `aprovados/` e o Wireframe Text correspondente em `aprovados/wiframetext/`.
+
+Um artefato somente entra em `aprovados/` quando o par PNG + Wireframe Text estiver compatível com a especificação técnica vigente.
 
 ---
 
-# 3. Pareamento PNG ↔ Wireframe Text
+# 3. Estados e significado
 
-Toda nova prancha-modelo deve possuir um Wireframe Text antes de sua imagem ser considerada pronta para avaliação.
+| Estado | Significado |
+|---|---|
+| `HISTÓRICO` | versão preservada para auditoria; não é referência vigente |
+| `PENDENTE DE PRODUÇÃO` | conceito autorizado, mas ainda sem artefato produzido |
+| `EM VALIDAÇÃO` | artefato produzido e em revisão |
+| `AJUSTES NECESSÁRIOS` | revisão encontrou correções obrigatórias |
+| `CANDIDATA` | alternativa validada para participar da escolha final |
+| `REJEITADA` | avaliada e não aceita para prosseguir |
+| `SUPERADA` | preservada, mas substituída por versão ou abordagem posterior |
+| `APROVADA` | composição explicitamente escolhida, validada e promovida para `aprovados/` |
+
+Regras:
+
+- `CANDIDATA` não significa `APROVADA`;
+- silêncio não constitui aprovação;
+- uma alternativa não pode ser promovida apenas por estar tecnicamente correta;
+- `APROVADA` exige decisão explícita do responsável.
+
+---
+
+# 4. Pareamento PNG ↔ Wireframe Text
+
+Toda nova prancha-modelo ou nova versão produzida após a adoção desta regra deve possuir Wireframe Text antes de ser considerada pronta para avaliação final.
 
 Pareamento pelo mesmo nome-base:
 
@@ -87,54 +139,113 @@ Não registrar conversa, memória de processo, tentativas descartadas, raciocín
 
 ---
 
-# 4. Nomenclatura
+# 5. Regra de transição para artefatos anteriores
 
-Prancha:
+`WF-TEMPLATE-A_v01.png` e `WF-TEMPLATE-A_v02.png` foram produzidos antes da exigência do Wireframe Text e antes da consolidação do canvas técnico vigente.
 
-```text
-WF-TEMPLATE-<IDENTIFICADOR>_v<VERSÃO>.png
-```
+Por isso:
 
-Wireframe Text:
+- permanecem preservados;
+- não precisam ser regenerados somente para satisfazer retroativamente a nova estrutura;
+- mantêm seu valor histórico e o estado de decisão já alcançado;
+- não podem ser movidos diretamente para `aprovados/` como se já cumprissem a especificação atual.
 
-```text
-WF-TEMPLATE-<IDENTIFICADOR>_v<VERSÃO>.md
-```
+Se uma alternativa anterior for escolhida para aprovação final, deve ser gerada **nova versão** compatível com:
 
-Exemplo:
+- o README técnico vigente;
+- o canvas vigente;
+- as referências técnicas vigentes;
+- o Wireframe Text correspondente.
 
-```text
-WF-TEMPLATE-A_v02.png
-wiframetext/WF-TEMPLATE-A_v02.md
-```
-
-Nova versão nunca sobrescreve silenciosamente versão preservada.
+A nova versão é então avaliada antes de qualquer promoção para `aprovados/`.
 
 ---
 
-# 5. Fluxo de trabalho
+# 6. Estado conhecido das alternativas
 
-```text
-especificação técnica em ../README.md
-        ↓
-Wireframe Text em alternatives/wiframetext/
-        ↓
-PNG em alternatives/
-        ↓
-avaliação
-        ↓
-┌──────────────────────┬──────────────────────┐
-│ não aprovada         │ aprovada             │
-│ permanece em         │ mover o par para     │
-│ alternatives/        │ aprovados/           │
-└──────────────────────┴──────────────────────┘
-```
+| Artefato | Estado | Função atual |
+|---|---|---|
+| `WF-TEMPLATE-A_v01.png` | `HISTÓRICO` | primeira proposta preservada |
+| `WF-TEMPLATE-A_v02.png` | `CANDIDATA` | alternativa A validada para comparação em 24/10/2026 |
+| Alternativa B | `PENDENTE DE PRODUÇÃO` | depende da governança e do Wireframe Text antes de nova geração |
+| Alternativa C | `PENDENTE DE PRODUÇÃO` | ainda não produzida |
 
-A promoção para `aprovados/` exige aprovação explícita.
+O estado acima registra decisões já tomadas. Ele não autoriza produzir, aprovar ou promover automaticamente qualquer alternativa.
 
 ---
 
-# 6. Promoção
+# 7. Conteúdo de demonstração das pranchas-modelo
+
+Pranchas-modelo não devem utilizar T00 nem outra interface funcional T/M/E como conteúdo de teste.
+
+Podem usar conteúdo neutro e controlado para demonstrar:
+
+- título e texto;
+- campo;
+- botões;
+- item de lista;
+- ícones;
+- card;
+- estados;
+- scroll/continuidade;
+- paginação documental.
+
+Esse conteúdo não cria requisito funcional e não altera a baseline.
+
+---
+
+# 8. Critérios mínimos de avaliação
+
+Toda alternativa deve cumprir integralmente a especificação técnica do README superior.
+
+Além disso, deve ser avaliada quanto a:
+
+1. viewport preservado fisicamente e sem invasão documental;
+2. metadados legíveis;
+3. espaço suficiente para os tokens e especificações realmente necessários;
+4. tipografia documental legível;
+5. identificação clara de página e versão;
+6. capacidade de representar scroll/continuidade quando necessário;
+7. equivalência geométrica entre Claro e Escuro;
+8. funcionamento para página única e multipágina;
+9. ausência de compactação que prejudique leitura;
+10. reprodução consistente a partir do Wireframe Text;
+11. ausência de informação redundante de conversa ou processo;
+12. preservação das decisões técnicas vigentes sem regressão silenciosa.
+
+A comparação deve registrar fatos observáveis. Preferência estética isolada não é critério suficiente.
+
+---
+
+# 9. Seleção e combinação
+
+Depois de avaliar as alternativas, as decisões permitidas são:
+
+```text
+APROVAR UMA ALTERNATIVA
+SOLICITAR NOVA VERSÃO DE UMA ALTERNATIVA
+COMBINAR PARTES EXPLICITAMENTE IDENTIFICADAS
+MANTER TODAS PENDENTES
+```
+
+Nenhuma seleção ou combinação pode ser inferida automaticamente.
+
+Se houver combinação, devem ser definidos explicitamente:
+
+```text
+origem estrutural
+origem do cabeçalho
+origem da posição do viewport
+origem da distribuição documental
+outros elementos incorporados
+motivo da combinação
+```
+
+A combinação resulta em uma nova versão que também deve possuir Wireframe Text e passar por avaliação antes da aprovação.
+
+---
+
+# 10. Promoção para `aprovados/`
 
 Quando uma prancha for aprovada, mover o par:
 
@@ -145,29 +256,70 @@ wiframetext/<nome>.md
 
 de `alternatives/` para `aprovados/`.
 
-Não manter cópias canônicas simultâneas do mesmo par nas duas pastas. Alternativas não selecionadas permanecem preservadas em `alternatives/`.
+Não manter duas cópias canônicas do mesmo par nas duas pastas.
+
+Alternativas não aprovadas permanecem preservadas em `alternatives/` com seu estado documental correspondente.
 
 ---
 
-# 7. Preservação
+# 11. Congelamento
+
+Após a aprovação:
+
+- o PNG aprovado é congelado naquela versão;
+- o Wireframe Text correspondente é congelado naquela versão;
+- as coordenadas, regiões, textos e composição descritos pelo par tornam-se a referência documental aprovada da etapa;
+- nenhuma melhoria, reorganização ou regeneração pode substituir silenciosamente a versão aprovada;
+- qualquer mudança posterior exige nova versão e nova aprovação.
+
+A pasta `aprovados/` contém somente artefatos que já passaram por esse processo.
+
+---
+
+# 12. Preservação
 
 - não sobrescrever versão preservada;
-- não excluir alternativa porque outra foi aprovada;
-- não alterar prancha aprovada sem nova versão;
-- não promover PNG sem seu Wireframe Text;
-- não promover Wireframe Text sem seu PNG.
-
-A pasta indica o estado documental; não é necessário duplicar esse estado em documentos auxiliares.
+- não excluir alternativa apenas porque outra foi aprovada;
+- não apagar histórico necessário para explicar a decisão;
+- não promover PNG sem Wireframe Text quando a regra já for aplicável à versão;
+- não promover Wireframe Text sem o PNG correspondente;
+- não transformar artefato histórico em referência vigente apenas por conveniência;
+- não regenerar artefato histórico somente porque a especificação técnica evoluiu.
 
 ---
 
-# 8. Relação com wireframes funcionais
+# 13. Gate antes dos wireframes funcionais
 
-Pranchas-modelo calibram e congelam a composição documental da etapa.
+A produção definitiva das interfaces funcionais começa somente depois de existir uma composição documental aprovada e congelada.
 
-Elas:
+```text
+especificação técnica estabilizada
+        ↓
+alternativas avaliadas
+        ↓
+decisão explícita
+        ↓
+PNG + Wireframe Text compatíveis com a regra vigente
+        ↓
+par promovido para aprovados/
+        ↓
+composição congelada
+        ↓
+T00 Claro
+        ↓
+T00 Escuro
+```
+
+Enquanto não houver um par aprovado e congelado em `aprovados/`, T00 e as demais interfaces permanecem pendentes para produção definitiva.
+
+---
+
+# 14. Relação com os wireframes funcionais
+
+As pranchas-modelo:
 
 - não representam interface funcional T/M/E;
 - não entram na contagem mínima Claro/Escuro;
 - não alteram a baseline funcional;
-- não substituem os Textframes do Documento Mestre.
+- não substituem os Textframes do Documento Mestre;
+- definem somente a composição documental usada para representar os wireframes na etapa atual.

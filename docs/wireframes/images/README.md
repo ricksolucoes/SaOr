@@ -52,7 +52,7 @@ docs/wireframes/images/
 └── black/
 ```
 
-A organização e o ciclo de vida das pranchas-modelo são definidos exclusivamente em [`templates/README.md`](templates/README.md).
+A organização, os estados, os critérios de avaliação, a promoção e o gate de liberação das pranchas-modelo são definidos exclusivamente em [`templates/README.md`](templates/README.md).
 
 ---
 
@@ -72,17 +72,17 @@ Regras:
 - representa a **tela lógica completa do celular**;
 - canvas final: `1280 × 1920 px`;
 - viewport na prancha: `360 × 800 px`;
-- uma legenda declarando `360 × 800 px` não substitui a verificação física da área representada.
+- uma legenda declarando `360 × 800 px` não substitui a verificação física da área representada;
 - não acrescentar barras ou áreas por fora dos `800 px`;
 - escala do viewport: `1:1`;
 - bitmap mestre em `100%`, sem resize, deformação ou reconstrução por aproximação;
 - linhas de dimensão seguem a referência técnica sem alterar o bitmap mestre;
-- texto declarando uma dimensão não substitui a verificação física do PNG.
+- texto declarando uma dimensão não substitui a verificação física do PNG;
 - não criar versão específica para iOS ou Android;
 - paisagem será estudada posteriormente;
 - não desenhar moldura física de aparelho;
 - tablet e desktop não serão produzidos automaticamente nesta etapa;
-- o viewport não pode ser redimensionado, esticado, comprimido ou reproporcionado para caber na prancha;
+- o viewport não pode ser redimensionado, esticado, comprimido ou reproporcionado para caber na prancha.
 
 ---
 
@@ -105,7 +105,14 @@ Superior: 24 px
 Inferior: 32 px
 ```
 
-Esses valores são referências da etapa de wireframe. Não são paddings fixos do produto nem constantes obrigatórias de implementação. Superfícies podem ser edge-to-edge e conteúdo sensível deve respeitar os insets reais da plataforma/dispositivo na implementação.
+Esses valores são referências da etapa de wireframe. Não são paddings fixos do produto nem constantes obrigatórias de implementação.
+
+Na implementação futura:
+
+- superfícies visuais podem ocupar a tela edge-to-edge;
+- conteúdo sensível deve respeitar os insets reais fornecidos pela plataforma/dispositivo;
+- os insets reais podem ser diferentes de `24 px` e `32 px`;
+- não deve existir dupla compensação quando a plataforma ou o framework já tratar os insets.
 
 Não representar notch, Dynamic Island, barra Android ou outro chrome específico.
 
@@ -117,6 +124,10 @@ Orientação: retrato
 Viewport: 360 × 800 px
 Escala: 1:1
 ```
+
+Artefatos históricos produzidos antes da adoção do canvas `1280 × 1920 px` permanecem preservados como registro e não devem ser regenerados somente pela mudança dimensional.
+
+Qualquer **nova versão**, revisão posterior ou artefato promovido como referência aprovada deve cumprir a especificação técnica vigente deste README.
 
 ## 4.4 Ordem obrigatória de montagem
 
@@ -501,7 +512,7 @@ Pranchas-modelo de `templates/` não entram nessa contagem.
 1. `docs/Documento_Mestre.md` — conteúdo e comportamento funcional;
 2. `docs/Registro_Fechamento_Documento_Mestre.md` — proteção da baseline;
 3. este README — especificação técnica e controle dos wireframes;
-4. `templates/README.md` — organização/ciclo de vida das pranchas-modelo;
+4. `templates/README.md` — governança das pranchas-modelo;
 5. Wireframe Text específico — composição reproduzível da prancha-modelo;
 6. PNG correspondente — representação visual resultante.
 
