@@ -151,6 +151,10 @@ viewport = 360 × 800 px
 escala = 1:1
 ```
 
+Se o viewport não medir fisicamente `360 × 800 px`, a composição é inválida e não deve prosseguir.
+
+Uma nova composição deve ser construída a partir da **especificação documental vigente**, e não pela cópia, escala ou reaproveitamento da geometria raster de uma prancha anterior. Artefatos anteriores podem ser consultados como histórico visual, mas não substituem as medidas e regras vigentes.
+
 ---
 
 # 5. Grid e espaçamento
@@ -162,6 +166,8 @@ Escala: 4 / 8 / 12 / 16 / 24 / 32 px
 Padding-base horizontal: 16 px
 Padding-base vertical: 12 px
 ```
+
+Espaçamentos fora da escala `4 / 8 / 12 / 16 / 24 / 32 px` exigem necessidade objetiva e justificativa registrada na especificação da composição.
 
 ---
 
@@ -207,14 +213,14 @@ Cor nunca pode ser o único indicador de estado.
 WF-FONT-FAMILY: Inter
 ```
 
-| Token | Peso | Tamanho | Line-height |
-|---|---:|---:|---:|
-| `WF-TITLE` | 600 | 20 px | 28 px |
-| `WF-SECTION` | 600 | 14 px | 20 px |
-| `WF-BODY` | 400 | 16 px | 24 px |
-| `WF-LABEL` | 500 | 14 px | 20 px |
-| `WF-ACTION-TEXT` | 500 | 16 px | 24 px |
-| `WF-CAPTION` | 400 | 12 px | 16 px |
+| Token | Peso | Tamanho | Line-height | Letter-spacing |
+|---|---:|---:|---:|---|
+| `WF-TITLE` | 600 | 20 px | 28 px | `normal` |
+| `WF-SECTION` | 600 | 14 px | 20 px | `normal` |
+| `WF-BODY` | 400 | 16 px | 24 px | `normal` |
+| `WF-LABEL` | 500 | 14 px | 20 px | `normal` |
+| `WF-ACTION-TEXT` | 500 | 16 px | 24 px | `normal` |
+| `WF-CAPTION` | 400 | 12 px | 16 px | `normal` |
 
 Inter é tipografia técnica da etapa e não define automaticamente a tipografia oficial do produto ou da marca.
 
@@ -267,6 +273,13 @@ WF-ELEVATION-3: 0 / 4 / 12 / 20%
 ```
 
 Cor-base: preto neutro.
+
+Referência de uso:
+
+- `WF-ELEVATION-0` — conteúdo integrado à superfície;
+- `WF-ELEVATION-1` — card destacado;
+- `WF-ELEVATION-2` — menu ou dropdown;
+- `WF-ELEVATION-3` — modal ou dialog.
 
 Iconografia:
 
@@ -339,6 +352,12 @@ T00-01-02_v01.png
 T00-02-02_v01.png
 ```
 
+Regras de versionamento:
+
+- uma correção que não altere a quantidade total de páginas pode incrementar somente a versão da página afetada;
+- se a alteração modificar o total de páginas, toda a nova sequência deve refletir o novo total de forma consistente;
+- uma versão preservada não deve ser sobrescrita silenciosamente.
+
 ## 11.2 Paginação
 
 Quando o conteúdo exceder `360 × 800 px`:
@@ -397,6 +416,19 @@ Antes de produzir uma interface, consultar no Documento Mestre:
 - regras transversais aplicáveis.
 
 É proibido inventar funcionalidade, remover ação, criar destino inexistente, fundir IDs, alterar Textframe por conveniência visual, introduzir componente funcional não documentado ou transformar referência conceitual em tecnologia definitiva.
+
+## 13.1 Tratamento de ocorrências
+
+Durante a produção, qualquer dúvida ou incompatibilidade deve ser classificada antes de alterar a representação:
+
+| Classificação | Tratamento |
+|---|---|
+| `REPRESENTÁVEL` | produzir exatamente conforme a documentação vigente |
+| `AMBIGUIDADE DE REPRESENTAÇÃO` | adotar interpretação conservadora, sem alterar função, e registrar a ambiguidade antes de consolidar |
+| `CONTRADIÇÃO DOCUMENTAL` | não resolver por inferência; apresentar a contradição para decisão |
+| `REQUISITO NOVO` | não incorporar à baseline vigente; encaminhar para o processo formal de alteração |
+
+Essa classificação não cria uma segunda baseline e não autoriza modificar silenciosamente o Documento Mestre.
 
 ---
 
