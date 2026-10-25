@@ -124,44 +124,115 @@ CANVAS FINAL — 1280 × 1920 px
 
 # Especificação de implementação da prancha
 
-A reprodução textual acima é a referência visual da composição final da `WF-TEMPLATE-B_v01`.
+## 1. Regra de leitura deste documento
 
-A implementação da prancha deve seguir os tópicos abaixo na mesma ordem em que os elementos são congelados na imagem.
+A reprodução textual apresentada no início deste arquivo é a **referência conceitual de composição** da `WF-TEMPLATE-B_v01`.
+
+Ela define:
+
+```text
+- ordem visual das regiões;
+- relação relativa entre viewport e documentação;
+- quais blocos existem nesta prancha-modelo;
+- quais blocos ficam lado a lado;
+- quais blocos ficam abaixo de outros;
+- hierarquia geral da composição.
+```
+
+Ela **não deve ser interpretada como escala matemática de caracteres para pixels**.
+
+As medidas em pixels registradas nas seções seguintes foram recalculadas para esta prancha-modelo usando:
+
+```text
+canvas vigente:          1280 × 1920 px
+margem estrutural:       12 px
+grid base:                4 px
+escala de spacing:        4 / 8 / 12 / 16 / 24 / 32 px
+viewport físico:          360 × 800 px
+escala do viewport:       1:1
+conteúdo real de cada bloco desta prancha-modelo
+```
+
+As coordenadas, larguras e alturas abaixo são **específicas desta prancha-modelo B_v01**.
+
+Elas não são medidas universais dos futuros wireframes funcionais T/M/E.
+
+Ao reutilizar o conceito desta composição em outra prancha, deve-se recalcular as áreas documentais conforme o conteúdo real daquela prancha, preservando as regras técnicas normativas.
 
 ---
 
-## Cabeçalho
+## 2. Hierarquia de autoridade
 
-### Área ocupada
-
-```text
-Canvas de referência: 1280 × 1920 px
-
-x:       12 px
-y:       12 px
-largura: 1256 px
-altura:    96 px
-
-limite direito:  1268 px
-limite inferior:  108 px
-```
-
-O cabeçalho ocupa toda a largura útil superior da prancha, preservando `12 px` de margem estrutural em cada lado.
-
-A composição visual parte do cabeçalho validado da `WF-TEMPLATE-A_v02.png`, mas a geometria é reconstruída para o canvas vigente `1280 × 1920 px` e ajustada ao grid de `4 px`.
-
-Não utilizar resize do raster da Alternativa A como forma de construção.
-
-### Estrutura horizontal
+Para esta prancha, a ordem de autoridade é:
 
 ```text
-┌────────────────┬────────────────────────────────┬────────────────────────────────────────────────────────────┐
-│ MARCA          │ IDENTIFICAÇÃO DA PRANCHA       │ METADADOS                                                  │
-│ 156 px         │ 384 px                         │ 716 px                                                     │
-└────────────────┴────────────────────────────────┴────────────────────────────────────────────────────────────┘
+1. docs/wireframes/images/README.md
+2. docs/wireframes/images/templates/README.md
+3. reprodução textual no início deste WF-TEMPLATE-B_v01.md
+4. especificação geométrica detalhada abaixo
+5. PNG que será produzido a partir deste Wireframe Text
 ```
 
-Coordenadas:
+Nenhuma prancha histórica ou alternativa anterior é referência de geometria, proporção, posicionamento ou distribuição desta alternativa B.
+
+---
+
+## 3. Canvas da prancha
+
+```text
+canvas:       1280 × 1920 px
+orientação:   retrato
+margem externa estrutural: 12 px
+```
+
+Área útil entre as margens:
+
+```text
+x: 12 px
+y: 12 px
+w: 1256 px
+h: 1896 px
+```
+
+Limites:
+
+```text
+esquerda: 12 px
+direita: 1268 px
+topo: 12 px
+base: 1908 px
+```
+
+---
+
+# Cabeçalho
+
+## Área
+
+```text
+x: 12 px
+y: 12 px
+w: 1256 px
+h: 96 px
+
+limite direito: 1268 px
+limite inferior: 108 px
+```
+
+A altura de `96 px` foi definida para acomodar, nesta prancha-modelo:
+
+```text
+- marca;
+- identificação da prancha em três linhas;
+- metadados superiores;
+- metadados inferiores;
+- divisores internos;
+- padding técnico.
+```
+
+## Estrutura horizontal
+
+A proporção vem do frame inicial desta própria B_v01.
 
 ```text
 MARCA
@@ -183,7 +254,20 @@ w: 716
 h: 96
 ```
 
-### Marca — conteúdo e posição
+Relação:
+
+```text
+156 + 384 + 716 = 1256
+```
+
+## Marca
+
+Conteúdo:
+
+```text
+SaOr
+Sales Order
+```
 
 Área:
 
@@ -194,44 +278,36 @@ w: 156
 h: 96
 ```
 
-Conteúdo:
-
-```text
-SaOr
-Sales Order
-```
-
 Disposição:
 
 ```text
-alinhamento horizontal: esquerda
+padding horizontal: 16 px
+alinhamento: esquerda
 alinhamento vertical do conjunto: centro
-padding esquerdo: 16 px
 ```
 
-Hierarquia:
+Referências:
 
 ```text
-SaOr
-→ identificação principal da marca
-
-Sales Order
-→ assinatura secundária da marca
-```
-
-Referências obrigatórias:
-
-```text
-assets/fonts/logo/README.md
 assets/logo/README.md
-docs/wireframes/images/templates/alternatives/WF-TEMPLATE-B_v[XX].png
+assets/fonts/logo/README.md
 ```
 
-> XX -> E a versão da imagem que foi tentada ser gerada apartir deste template.
+Aplicação tipográfica:
 
-A tipografia da marca não deve ser substituída pela tipografia técnica Inter.
+```text
+SaOr:
+Google Sans Bold 700
 
-### Identificação da prancha — conteúdo e posição
+SALES ORDER:
+Quicksand Regular 400
+uppercase
+tracking ampliado
+```
+
+Inter não substitui a tipografia oficial da marca.
+
+## Identificação da prancha
 
 Área:
 
@@ -253,19 +329,14 @@ PRANCHA TÉCNICA - MODELO B
 Disposição:
 
 ```text
-alinhamento: esquerda
 padding horizontal: 24 px
-ordem vertical:
-1. WIREFRAME
-2. PRANCHA TÉCNICA - MODELO B
-3. (Viewport à esquerda + painel técnico à direita)
+alinhamento: esquerda
+ordem vertical: 3 linhas
 ```
 
-A hierarquia visual deve seguir o padrão do cabeçalho da `WF-TEMPLATE-A_v02.png`.
+## Metadados
 
-### Metadados — estrutura interna
-
-Área total:
+Área:
 
 ```text
 x: 552
@@ -274,52 +345,38 @@ w: 716
 h: 96
 ```
 
-A área é dividida em duas linhas.
-
-#### Linha superior
+### Linha superior
 
 ```text
-x: 552
 y: 12
-w: 716
 h: 64
 ```
 
-Distribuição:
+Células:
 
 ```text
 ID
 x: 552
-y: 12
 w: 164
-h: 64
 
 PÁGINA
 x: 716
-y: 12
 w: 128
-h: 64
 
 VERSÃO
 x: 844
-y: 12
 w: 124
-h: 64
 
 DATA
 x: 968
-y: 12
 w: 140
-h: 64
 
 STATUS
 x: 1108
-y: 12
 w: 160
-h: 64
 ```
 
-Conteúdo exato:
+Conteúdo:
 
 ```text
 ID
@@ -338,38 +395,30 @@ STATUS
 PENDENTE DE PRODUÇÃO
 ```
 
-#### Linha inferior
+### Linha inferior
 
 ```text
-x: 552
 y: 76
-w: 716
 h: 32
 ```
 
-Distribuição:
+Células:
 
 ```text
 BASELINE
 x: 552
-y: 76
 w: 164
-h: 32
 
 VARIAÇÃO
 x: 716
-y: 76
 w: 220
-h: 32
 
 ETAPA
 x: 936
-y: 76
 w: 332
-h: 32
 ```
 
-Conteúdo exato:
+Conteúdo:
 
 ```text
 BASELINE
@@ -382,512 +431,287 @@ ETAPA
 Wireframe Conceitual em Imagem
 ```
 
-### Referência obrigatória do cabeçalho
-
-```text
-docs/wireframes/images/templates/alternatives/WF-TEMPLATE-A_v02.png
-```
-
-A referência define:
-
-```text
-- linguagem visual;
-- hierarquia entre marca, título e metadados;
-- organização em linha superior e inferior;
-- uso de divisores;
-- densidade visual;
-- alinhamento dos conteúdos.
-```
-
-A geometria registrada neste Wireframe Text é a geometria da Alternativa B no canvas atual e prevalece sobre as dimensões físicas da antiga prancha A.
-
 ---
 
-## Viewport
+# Viewport
 
-### Área reservada do conjunto técnico
+## Papel na composição
 
-O conjunto do viewport ocupa a coluna esquerda imediatamente abaixo do cabeçalho.
+O viewport é o primeiro elemento estrutural montado após o cabeçalho.
 
-Área reservada:
+Ele deve ser inserido fisicamente antes do cálculo final das áreas documentais.
 
-```text
-x:        12 px
-y:       132 px
-largura: 428 px
-altura: 1012 px
-
-limite direito:  440 px
-limite inferior: 1144 px
-```
-
-Existe um afastamento vertical de `24 px` entre o fim do cabeçalho e o início da área do viewport:
-
-```text
-fim do cabeçalho: y = 108 px
-início do viewport técnico: y = 132 px
-
-108 + 24 = 132
-```
-
-Esta área contém:
-
-```text
-- identificação VIEWPORT TÉCNICO 360 × 800 px;
-- cotas superiores;
-- referência da safe area superior;
-- bitmap mestre 360 × 800 px;
-- referência da safe area inferior;
-- identificação da altura total 800 px.
-```
-
-### Arquivo obrigatório do viewport
+Arquivo obrigatório:
 
 ```text
 docs/wireframes/images/templates/references/WF-VIEWPORT-360x800-clean.png
 ```
 
-Dimensão física do arquivo:
+Dimensão obrigatória:
 
 ```text
 360 × 800 px
 ```
 
-Uso obrigatório:
+Uso:
 
 ```text
 escala de inserção: 100%
-escala física na prancha: 1:1
-largura final: 360 px
-altura final: 800 px
+escala na prancha: 1:1
 ```
 
-O bitmap é inserido diretamente.
-
-Seu conteúdo interno não deve ser reconstruído pelo Wireframe Text.
-
-### Posição física do bitmap
+É proibido:
 
 ```text
-x:  46 px
-y: 252 px
+- redimensionar;
+- ampliar;
+- reduzir;
+- esticar;
+- comprimir;
+- recortar;
+- reproporcionar;
+- reconstruir;
+- redesenhar;
+- adaptar o bitmap para caber em outro bloco.
+```
+
+## Área documental do conjunto do viewport nesta prancha-modelo
+
+```text
+x: 12 px
+y: 132 px
+w: 416 px
+h: 1024 px
+
+limite direito: 428 px
+limite inferior: 1156 px
+```
+
+O afastamento entre cabeçalho e corpo principal é:
+
+```text
+108 → fim do cabeçalho
+132 → início do corpo principal
+
+gap = 24 px
+```
+
+Esse `24 px` é **spacing documental da prancha**.
+Não é safe area.
+
+## Posição física do bitmap
+
+O bitmap é centralizado horizontalmente na coluna esquerda:
+
+```text
+x: 40 px
+y: 224 px
 w: 360 px
 h: 800 px
 
-limite direito: 406 px
-limite inferior: 1052 px
+limite direito: 400 px
+limite inferior: 1024 px
 ```
 
-O bitmap fica centralizado horizontalmente dentro da área reservada:
+Cálculo horizontal:
 
 ```text
-área reservada:
-x = 12
-w = 428
+largura da coluna: 416 px
+largura do bitmap: 360 px
+sobra: 56 px
+56 / 2 = 28 px
 
-bitmap:
-x = 46
-w = 360
-
-espaço lateral:
-34 px à esquerda
-34 px à direita
+12 + 28 = x 40
 ```
 
-### Proibição de redimensionamento
+## Cotas externas do viewport
 
-É proibido, em qualquer hipótese:
+Referência:
 
 ```text
-- reduzir;
-- ampliar;
-- esticar;
-- comprimir;
-- reproporcionar;
-- aplicar fit;
-- recortar;
-- reconstruir;
-- redesenhar;
-- substituir por aproximação;
-- alterar a dimensão para abrir espaço para documentação.
+docs/wireframes/images/templates/references/
+Especificação Técnica do Viewport Mobile.png
 ```
 
-Adicionar cotas, legendas, safe areas ou qualquer outra anotação técnica não autoriza alteração do bitmap.
-
-Depois de toda a documentação ser adicionada, o arquivo deve continuar medindo fisicamente:
+A referência vigente documenta:
 
 ```text
-360 × 800 px
+largura total:             360 px
+largura útil:              336 px
+margem esquerda:            12 px
+margem direita:             12 px
+altura total:              800 px
 ```
 
-### Referência obrigatória das cotas
-
-```text
-docs/wireframes/images/templates/references/Especificação Técnica do Viewport Mobile.png
-```
-
-Essa imagem define a linguagem das marcações dimensionais.
-
-Devem ser reproduzidas as seguintes referências:
-
-```text
-largura total:                360 px
-margem esquerda:               12 px
-largura útil:                 336 px
-margem direita:                12 px
-safe area superior:            24 px
-safe area inferior:            32 px
-altura total:                 800 px
-```
-
-Relação obrigatória:
+Relação horizontal:
 
 ```text
 12 + 336 + 12 = 360
 ```
 
-### Âncoras horizontais das cotas
+Não existe reserva fixa de safe area superior ou inferior.
 
-As cotas horizontais devem usar como referência os limites reais do bitmap.
-
-```text
-x0 = 46 px
-→ início físico do viewport
-
-x1 = 58 px
-→ início da largura útil
-→ 46 + 12
-
-x2 = 394 px
-→ fim da largura útil
-→ 58 + 336
-
-x3 = 406 px
-→ fim físico do viewport
-→ 394 + 12
-```
-
-Portanto:
-
-```text
-46 ─────────────── 406
-        360 px
-
-46 ─ 58 ───────────────────── 394 ─ 406
-     12          336           12
-```
-
-### Distribuição vertical das referências
+## Posições das cotas nesta prancha-modelo
 
 ```text
 TÍTULO DO BLOCO
 y: 144–164 px
 
 COTA 360 px
-y: 172–196 px
+y: 172–188 px
 
 COTA 12 / 336 / 12
-y: 196–220 px
-
-REFERÊNCIA SAFE AREA SUPERIOR
-y: 224–244 px
+y: 196–212 px
 
 BITMAP
-y: 252–1052 px
-
-REFERÊNCIA SAFE AREA INFERIOR
-y: 1060–1080 px
+y: 224–1024 px
 
 IDENTIFICAÇÃO 800 px
-y: 1088–1108 px
+y: 1032–1048 px
 
 TEXTO "(viewport total)"
-y: 1112–1132 px
+y: 1052–1068 px
 ```
 
-A disposição interna das setas, linhas e textos das cotas deve copiar a linguagem visual de:
-
-```text
-Especificação Técnica do Viewport Mobile.png
-```
-
-Não criar um novo padrão gráfico para as cotas.
-
-### Safe area superior
-
-Referência:
-
-```text
-24 px
-```
-
-Limites físicos dentro do viewport:
-
-```text
-x: 46 px
-y: 252 px
-w: 360 px
-h: 24 px
-```
-
-Se houver faixa visual de anotação sobre o viewport, ela deve existir como camada documental separada.
-
-O arquivo `WF-VIEWPORT-360x800-clean.png` permanece intacto.
-
-### Safe area inferior
-
-Referência:
-
-```text
-32 px
-```
-
-Limites físicos dentro do viewport:
-
-```text
-x: 46 px
-y: 1020 px
-w: 360 px
-h: 32 px
-```
-
-Cálculo:
-
-```text
-252 + 800 = 1052
-1052 - 32 = 1020
-```
-
-A anotação deve ser uma camada documental separada e não uma alteração do bitmap mestre.
-
-### Referência normativa do viewport
-
-```text
-docs/wireframes/images/README.md
-```
-
-Aplicar especialmente:
-
-```text
-3.1 — Viewport mobile oficial
-3.2 — Safe areas técnicas
-3.3 — Prancha técnica
-3.4 — Ordem obrigatória de construção da prancha
-```
-
-Essas regras são superiores a qualquer decisão visual da Alternativa B.
-
-### Geometria 
-
-Depois da montagem e validação do Cabeçalho e do Viewport:
-
-```text
-CABEÇALHO
-x: 12
-y: 12
-w: 1256
-h: 96
-
-VIEWPORT TÉCNICO
-x: 12
-y: 132
-w: 428
-h: 1012
-
-BITMAP DO VIEWPORT
-x: 46
-y: 252
-w: 360
-h: 800
-```
-
-> Essas áreas não podem ser alteradas para acomodar os demais blocos.
-
-### Espaço restante para os próximos blocos
-
-Após congelar Cabeçalho + Viewport, a região principal disponível à direita é:
-
-```text
-x: 456 px
-y: 132 px
-w: 812 px
-h: 1012 px
-
-limite direito: 1268 px
-limite inferior: 1144 px
-```
-
-Separação horizontal entre o viewport técnico e a região documental direita:
-
-```text
-440 → fim da região do viewport
-456 → início da documentação
-
-gap = 16 px
-```
-
-A região inferior restante começa somente depois do corpo principal:
-
-```text
-x: 12 px
-y: 1168 px
-w: 1256 px
-h: 740 px
-
-gap vertical:
-1144 → fim do corpo principal
-1168 → início da região inferior
-24 px
-```
-
-O detalhamento dos blocos `1` a `12` deverá utilizar somente essas áreas restantes.
-
-É proibido reduzir ou deslocar o viewport para fazer qualquer bloco posterior caber.
-
-## Mapa geométrico consolidado das áreas restantes
-
-### Corpo principal à direita do viewport
-
-```text
-REGIÃO DISPONÍVEL
-x: 456 px
-y: 132 px
-w: 812 px
-h: 1012 px
-```
-
-A região é dividida em duas colunas com `16 px` de separação:
-
-```text
-COLUNA CENTRAL
-x: 456 px
-w: 360 px
-
-GAP
-x: 816 px
-w: 16 px
-
-COLUNA DIREITA
-x: 832 px
-w: 436 px
-```
-
-Composição vertical:
-
-```text
-y = 132
-┌──────────────────────── 144 px ────────────────────────┐
-│ 1. CANVAS E VIEWPORT       │ 2. SAFE AREAS             │
-└────────────────────────────────────────────────────────┘
-
-gap vertical = 16 px
-
-y = 292
-┌────────────────────────────┬────────────────────────────┐
-│ 3. GRID E SPACING          │                            │
-├────────────────────────────┤                            │
-│ 5. TIPOGRAFIA              │                            │
-├────────────────────────────┤ 4. COMPONENTES             │
-│ 6. PALETA                  │                            │
-├────────────────────────────┤                            │
-│ 7. ELEVAÇÃO                │                            │
-├────────────────────────────┤                            │
-│ 8. RADIUS                  │                            │
-└────────────────────────────┴────────────────────────────┘
-base comum = y 1144
-```
-
-### Região inferior
-
-```text
-x: 12 px
-y: 1168 px
-w: 1256 px
-h: 740 px
-```
-
-Distribuição:
-
-```text
-9. ÍCONES                    10. ESTADOS
-y: 1168
-h: 220
-gap horizontal: 16 px
-
-gap vertical: 16 px
-
-11. REGRAS GERAIS            BORDAS E DIVISORES
-y: 1404
-h: 148
-gap horizontal: 16 px
-
-gap vertical: 16 px
-
-12. OBSERVAÇÕES TÉCNICAS
-y: 1568
-h: 340
-
-margem inferior do canvas:
-1908 → 1920 = 12 px
-```
-
-## Regra comum dos cartões técnicos
-
-Os cartões documentais da Alternativa B seguem a mesma linguagem visual observada na `WF-TEMPLATE-A_v02.png`, reconstruída no canvas vigente.
-
-Aplicação comum:
-
-```text
-borda: 1 px
-token da borda no Claro: WF-W-BORDER
-superfície: WF-W-SURFACE
-texto principal: WF-W-TEXT
-texto secundário: WF-W-TEXT-2
-
-padding interno horizontal: 16 px
-padding interno vertical: 12 px
-
-título do cartão:
-WF-SECTION
-alinhado à esquerda
-
-conteúdo documental:
-WF-CAPTION ou WF-LABEL conforme hierarquia
-```
-
-Referências:
-
-```text
-docs/wireframes/images/README.md
-Seção 5 — Grid e espaçamento
-Seção 6 — Tokens técnicos do wireframe
-
-docs/wireframes/images/templates/alternatives/WF-TEMPLATE-A_v02.png
-→ linguagem visual dos cartões
-→ hierarquia de títulos
-→ divisores
-→ densidade documental
-```
-
-A geometria abaixo é específica da Alternativa B e prevalece para este Wireframe Text.
+O espaço restante até `y = 1156` é respiro documental desta prancha-modelo.
 
 ---
 
-## 1. CANVAS E VIEWPORT
+# Mapa geométrico principal da B_v01
 
-### Área
+Depois de posicionados cabeçalho e viewport, a região principal restante é recalculada.
+
+## Colunas do corpo principal
 
 ```text
-x: 456 px
+COLUNA DO VIEWPORT
+x: 12
+w: 416
+
+GAP
+x: 428
+w: 16
+
+COLUNA CENTRAL
+x: 444
+w: 360
+
+GAP
+x: 804
+w: 16
+
+COLUNA DIREITA
+x: 820
+w: 448
+```
+
+Verificação:
+
+```text
+416 + 16 + 360 + 16 + 448 = 1256
+```
+
+Corpo principal:
+
+```text
+y: 132
+h: 1024
+base: 1156
+```
+
+## Faixa superior do corpo principal
+
+```text
+1. CANVAS E VIEWPORT
+x: 444
+y: 132
+w: 360
+h: 144
+
+2. COTAS DO VIEWPORT
+x: 820
+y: 132
+w: 448
+h: 144
+```
+
+Gap vertical:
+
+```text
+16 px
+```
+
+## Coluna central abaixo da faixa superior
+
+```text
+3. GRID E SPACING
+x: 444
+y: 292
+w: 360
+h: 112
+
+5. TIPOGRAFIA
+x: 444
+y: 420
+w: 360
+h: 152
+
+6. PALETA
+x: 444
+y: 588
+w: 360
+h: 216
+
+7. ELEVAÇÃO
+x: 444
+y: 820
+w: 360
+h: 180
+
+8. RADIUS
+x: 444
+y: 1016
+w: 360
+h: 140
+```
+
+Entre esses cartões:
+
+```text
+gap vertical: 16 px
+```
+
+## Coluna direita
+
+```text
+4. COMPONENTES (MEDIDAS)
+x: 820
+y: 292
+w: 448
+h: 864
+```
+
+Base comum:
+
+```text
+bloco 4 termina em y = 1156
+bloco 8 termina em y = 1156
+```
+
+---
+
+# 1. CANVAS E VIEWPORT
+
+## Área desta prancha-modelo
+
+```text
+x: 444 px
 y: 132 px
 w: 360 px
 h: 144 px
-
-limite direito: 816 px
-limite inferior: 276 px
 ```
 
-### Conteúdo exato
+## Conteúdo exato
 
 ```text
 1. CANVAS E VIEWPORT
@@ -899,139 +723,108 @@ Orientação              Retrato
 Margem horizontal       12 px
 ```
 
-### Disposição interna
+## Disposição interna
 
 ```text
-padding:
-16 px horizontal
-12 px vertical
+padding horizontal: 16 px
+padding vertical: 12 px
 
 título:
-x = 472
-y = 144
-w = 328
-h = 20
+x: 460
+y: 144
+h: 20
 
-linhas de conteúdo:
-início y = 176
-line-height = 20 px
-
-coluna dos rótulos:
-x = 472
-w = 180
-
-coluna dos valores:
-x = 652
-w = 148
+conteúdo:
+x: 460
+y: 176
+w: 328
 ```
 
-Ordem vertical:
+Rótulos e valores ficam em duas colunas internas.
 
-```text
-y 176  Canvas da prancha
-y 196  Viewport (interface)
-y 216  Escala do viewport
-y 236  Orientação
-y 256  Margem horizontal
-```
-
-### Referência normativa
+Referências:
 
 ```text
 docs/wireframes/images/README.md
-
+4.1 — Viewport
 4.3 — Canvas técnico
-4.4 — Ordem obrigatória de montagem
 5 — Grid e espaçamento
 ```
 
-Este cartão é documental.
-
-Ele não redefine o viewport físico já congelado.
-
 ---
 
-## 2. SAFE AREAS
+# 2. COTAS DO VIEWPORT
 
-### Área
+> O frame inicial ainda preserva o rótulo histórico `2. SAFE AREAS`.
+> Para a execução técnica vigente desta B_v01, essa mesma região passa a documentar as cotas atuais do viewport.
+
+## Área desta prancha-modelo
 
 ```text
-x: 832 px
+x: 820 px
 y: 132 px
-w: 436 px
+w: 448 px
 h: 144 px
-
-limite direito: 1268 px
-limite inferior: 276 px
 ```
 
-### Conteúdo exato
+## Conteúdo exato
 
 ```text
-2. SAFE AREAS
+2. COTAS DO VIEWPORT
 
-Safe area superior      24 px
-Safe area inferior      32 px
-
-Referências do wireframe; não são paddings
-fixos da implementação.
+Largura total           360 px
+Largura útil            336 px
+Margem esquerda          12 px
+Margem direita           12 px
+Altura total            800 px
+Escala                   1:1
 ```
 
-### Disposição interna
+## Disposição interna
 
 ```text
-padding:
-16 px horizontal
-12 px vertical
+padding horizontal: 16 px
+padding vertical: 12 px
 
 título:
-x = 848
-y = 144
-w = 404
-h = 20
+x: 836
+y: 144
+w: 416
+h: 20
 
-linha superior:
-y = 176
-
-linha inferior:
-y = 196
-
-observação:
-x = 848
-y = 228
-w = 404
-duas linhas
-line-height = 20 px
+conteúdo:
+x: 836
+y: 176
+w: 416
+line-height: 16 px
 ```
 
-### Referência normativa
+Referências:
 
 ```text
 docs/wireframes/images/README.md
-4.2 — Safe areas de referência
+3 — Referências técnicas compartilhadas
+4.1 — Viewport
+4.2 — Sem reserva fixa de safe area
+
+docs/wireframes/images/templates/references/
+Especificação Técnica do Viewport Mobile.png
 ```
-
-Este cartão explica a reserva técnica.
-
-Ele não autoriza desenhar chrome específico de iOS ou Android.
 
 ---
 
-## 3. GRID E SPACING
+# 3. GRID E SPACING
 
-### Área
+## Área
 
 ```text
-x: 456 px
+x: 444 px
 y: 292 px
 w: 360 px
-h: 120 px
-
-limite direito: 816 px
-limite inferior: 412 px
+h: 112 px
 ```
 
-### Conteúdo exato
+## Conteúdo exato
 
 ```text
 3. GRID E SPACING
@@ -1042,102 +835,67 @@ Padding-base horizontal 16 px
 Padding-base vertical   12 px
 ```
 
-### Disposição interna
+## Disposição
 
 ```text
-padding:
-16 px horizontal
-12 px vertical
+padding horizontal: 16 px
+padding vertical: 12 px
 
 título:
-x = 472
-y = 304
-h = 20
+x: 460
+y: 304
+h: 20
 
 conteúdo:
-x = 472
-y = 336
-w = 328
+x: 460
+y: 336
+w: 328
 ```
 
-As quatro informações são apresentadas em linhas independentes.
-
-A linha da escala pode usar a largura completa interna do cartão.
-
-### Referência normativa
+Referência:
 
 ```text
 docs/wireframes/images/README.md
 5 — Grid e espaçamento
 ```
 
-Não representar espaçamento fora da escala neste cartão.
-
 ---
 
-## 4. COMPONENTES (MEDIDAS)
+# 4. COMPONENTES (MEDIDAS)
 
-### Área
+## Área
 
 ```text
-x: 832 px
+x: 820 px
 y: 292 px
-w: 436 px
-h: 852 px
-
-limite direito: 1268 px
-limite inferior: 1144 px
+w: 448 px
+h: 864 px
 ```
 
-O cartão ocupa toda a coluna direita abaixo de `2. SAFE AREAS`.
-
-Sua base deve coincidir exatamente com a base de `8. RADIUS`.
-
-### Área interna útil
+Área interna:
 
 ```text
-padding horizontal: 16 px
-
-x interno: 848 px
-largura interna: 404 px
-
-início do conteúdo:
-y: 316 px
-
-fim máximo do conteúdo:
-y: 1128 px
-
-reserva inferior:
-16 px
+x: 836 px
+w: 416 px
 ```
 
-### Referência normativa
+O conteúdo é demonstrativo.
+As medidas dos componentes vêm do README técnico; a área deste cartão é específica desta prancha-modelo.
 
-```text
-docs/wireframes/images/README.md
-7 — Componentes técnicos de representação
-
-docs/wireframes/images/templates/alternatives/WF-TEMPLATE-A_v02.png
-→ forma de demonstrar fisicamente as medidas
-```
+## Distribuição vertical
 
 ### 4.1 App Bar
 
-Rótulo:
-
 ```text
-APP BAR (56 px)
-x: 848
-y: 316
+rótulo:
+x: 836
+y: 336
 h: 16
-```
 
-Amostra:
-
-```text
-x: 848
-y: 332
-w: 404
+amostra:
+x: 836
+y: 352
+w: 416
 h: 56
 ```
 
@@ -1147,104 +905,62 @@ Conteúdo:
 [MENU]  Título                         [SEARCH]
 ```
 
-Regras:
-
-```text
-altura física da amostra: 56 px
-ícones de ação/navegação: 24 px
-touch target dos ícones: mínimo 48 × 48 px
-```
-
 ### 4.2 Campo Outlined
 
-Rótulo:
-
 ```text
-CAMPO OUTLINED (56 px) · Rótulo
-x: 848
-y: 392
+rótulo:
+y: 412
 h: 16
-```
 
-Amostra:
-
-```text
-x: 848
-y: 408
-w: 404
+amostra:
+x: 836
+y: 428
+w: 416
 h: 56
 ```
 
 Conteúdo:
 
 ```text
+Rótulo
 Texto de exemplo                              v
-```
-
-Regras:
-
-```text
-altura: 56 px
-radius: 12 px
-borda: 1 px
-padding-base: 16 px horizontal / 12 px vertical
 ```
 
 ### 4.3 Botão Primário
 
-Rótulo:
-
 ```text
-BOTÃO PRIMÁRIO (48 px)
-x: 848
-y: 468
+rótulo:
+y: 488
 h: 16
-```
 
-Amostra:
-
-```text
-x: 848
-y: 484
-w: 404
+amostra:
+x: 836
+y: 504
+w: 416
 h: 48
 ```
 
-Texto central:
+Texto:
 
 ```text
 Botão Primário
 ```
 
-Regras:
-
-```text
-altura: 48 px
-radius: 12 px
-texto: WF-ACTION-TEXT
-```
-
 ### 4.4 Botão Secundário
 
-Rótulo:
-
 ```text
-BOTÃO SECUNDÁRIO (48 px)
-x: 848
-y: 536
+rótulo:
+y: 556
 h: 16
-```
 
-Amostra:
-
-```text
-x: 848
-y: 552
-w: 404
+amostra:
+x: 836
+y: 572
+w: 416
 h: 48
 ```
 
-Texto central:
+Texto:
 
 ```text
 Botão Secundário
@@ -1252,116 +968,70 @@ Botão Secundário
 
 ### 4.5 Botão Texto + Icon Button
 
-Os dois exemplos compartilham a mesma faixa horizontal, como na referência A_v02.
-
-Rótulo:
-
 ```text
-BOTÃO TEXTO / ICON BUTTON
-x: 848
-y: 604
+rótulo:
+y: 624
 h: 16
+
+faixa de demonstração:
+x: 836
+y: 640
+w: 416
+h: 48
 ```
 
-Botão Texto:
+Distribuição:
 
 ```text
-x: 848
-y: 620
-w: 340
+Botão Texto:
+x: 836
+w: 352
 h: 48
-
-texto:
-Botão Texto
-```
 
 Icon Button:
-
-```text
 x: 1204
-y: 620
 w: 48
 h: 48
-```
 
-Regras:
-
-```text
-gap entre exemplos: 16 px
-touch target do Icon Button: 48 × 48 px
-ícone: 24 px
+gap: 16 px
 ```
 
 ### 4.6 Item de Lista — simples
 
-Rótulo:
-
 ```text
-ITEM DE LISTA — simples (56 px)
-x: 848
-y: 672
-h: 16
-```
+rótulo:
+y: 692
 
-Amostra:
-
-```text
-x: 848
-y: 688
-w: 404
+amostra:
+x: 836
+y: 708
+w: 416
 h: 56
 ```
 
-Conteúdo:
+### 4.7 Item de Lista — secundário
 
 ```text
-O  Título do item                              >
-```
+rótulo:
+y: 768
 
-### 4.7 Item de Lista — com secundário
-
-Rótulo:
-
-```text
-ITEM DE LISTA — secundário (64 px)
-x: 848
-y: 748
-h: 16
-```
-
-Amostra:
-
-```text
-x: 848
-y: 764
-w: 404
+amostra:
+x: 836
+y: 784
+w: 416
 h: 64
-```
-
-Conteúdo:
-
-```text
-O  Título do item                              >
-   Texto secundário adicional
 ```
 
 ### 4.8 Card
 
-Rótulo:
-
 ```text
-CARD (radius 16 px)
-x: 848
-y: 832
-h: 16
-```
+rótulo:
+y: 852
 
-Amostra:
-
-```text
-x: 848
-y: 848
-w: 404
+amostra:
+x: 836
+y: 868
+w: 416
 h: 64
 ```
 
@@ -1372,116 +1042,65 @@ Título do Card
 Texto de exemplo do card.
 ```
 
-Regras:
-
-```text
-radius: 16 px
-borda: 1 px quando necessária
-```
-
 ### 4.9 Modal / Dialog
 
-Rótulo:
-
 ```text
-MODAL / DIALOG (margem lateral 24 px)
-x: 848
-y: 916
-h: 16
+rótulo:
+y: 936
+
+área demonstrativa:
+x: 836
+y: 952
+w: 416
+h: 96
 ```
 
-A área documental total da amostra ocupa:
-
-```text
-x: 848
-y: 932
-w: 404
-h: 88
-```
-
-O modal propriamente dito respeita `24 px` de margem lateral dentro da amostra:
-
-```text
-x: 872
-y: 932
-w: 356
-h: 88
-```
-
-Conteúdo:
-
-```text
-Título do Modal
-Texto de exemplo do modal.
-
-[ Cancelar ]              [ Confirmar ]
-```
-
-Regras:
-
-```text
-radius: 16 px
-margem lateral demonstrada: 24 px
-```
+O modal dentro da área respeita a margem lateral normativa de `24 px`.
 
 ### 4.10 Bottom Navigation
 
-Rótulo:
-
 ```text
-BOTTOM NAVIGATION (64 px)
-x: 848
-y: 1024
+rótulo:
+y: 1052
+
+amostra:
+x: 836
+y: 1068
+w: 416
+h: 64
+
+observação:
+y: 1136
 h: 16
 ```
 
-Amostra:
-
-```text
-x: 848
-y: 1040
-w: 404
-h: 64
-```
-
-Conteúdo:
-
-```text
-Início | Pedidos | Clientes | Mais
-```
-
-Observação abaixo da amostra:
+Texto da observação:
 
 ```text
 Somente quando previsto na baseline.
 ```
 
-Essa observação ocupa:
+Referências:
 
 ```text
-x: 848
-y: 1112
-w: 404
-h: 16
+docs/wireframes/images/README.md
+7 — Componentes técnicos de representação
 ```
 
 ---
 
-## 5. TIPOGRAFIA (Inter - Wireframe)
+# 5. TIPOGRAFIA (Inter - Wireframe)
 
-### Área
+## Área
 
 ```text
-x: 456 px
-y: 428 px
+x: 444 px
+y: 420 px
 w: 360 px
-h: 160 px
-
-limite direito: 816 px
-limite inferior: 588 px
+h: 152 px
 ```
 
-### Conteúdo exato
+## Conteúdo exato
 
 ```text
 5. TIPOGRAFIA (Inter - Wireframe)
@@ -1494,68 +1113,43 @@ WF-ACTION-TEXT  16 px | 24 px | Medium 500
 WF-CAPTION      12 px | 16 px | Regular 400
 ```
 
-### Disposição interna
+## Disposição
 
 ```text
-padding:
-16 px horizontal
-12 px vertical
+padding horizontal: 16 px
+padding vertical: 12 px
 
 título:
-x = 472
-y = 440
-h = 20
+x: 460
+y: 432
 
 lista:
-x = 472
-y = 472
-w = 328
+x: 460
+y: 460
+w: 328
 ```
 
-Cada token ocupa uma linha com `20 px` de altura visual.
-
-Estrutura de cada linha:
-
-```text
-TOKEN | tamanho | line-height | peso
-```
-
-Letter-spacing:
-
-```text
-normal
-```
-
-### Referência normativa
+Referência:
 
 ```text
 docs/wireframes/images/README.md
 6.3 — Tipografia técnica
 ```
 
-Inter é exclusiva da representação técnica.
-
-Não aplicar Inter automaticamente à marca `SaOr / Sales Order`.
-
 ---
 
-## 6. PALETA TÉCNICA — CLARO
+# 6. PALETA TÉCNICA — CLARO
 
-### Área
+## Área
 
 ```text
-x: 456 px
-y: 604 px
+x: 444 px
+y: 588 px
 w: 360 px
-h: 220 px
-
-limite direito: 816 px
-limite inferior: 824 px
+h: 216 px
 ```
 
-### Conteúdo
-
-A prancha demonstra os dez tokens técnicos Claro:
+## Conteúdo exato
 
 ```text
 WF-W-BG          #F4F4F4
@@ -1570,328 +1164,224 @@ WF-W-FOCUS       #4A4A4A
 WF-W-STATUS      #626262
 ```
 
-### Disposição interna
-
-```text
-padding:
-16 px horizontal
-12 px vertical
-
-título:
-x = 472
-y = 616
-h = 20
-
-primeira linha:
-y = 648
-
-line-height entre tokens:
-16 px
-```
+## Disposição
 
 Cada linha contém:
 
 ```text
-[amostra cromática]  TOKEN  HEX
+[swatch 16 × 16]  TOKEN  HEX
 ```
 
-Amostra cromática:
+Posições:
 
 ```text
-w: 16 px
-h: 16 px
+título:
+x: 460
+y: 600
+
+primeira linha:
+y: 632
+
+line-height:
+16 px
 ```
 
-Colunas:
-
-```text
-swatch:
-x = 472
-
-token:
-x = 496
-
-HEX:
-alinhado à direita da área interna
-```
-
-### Referência normativa
+Referência:
 
 ```text
 docs/wireframes/images/README.md
 6.1 — Claro
 ```
 
-A paleta é técnica.
-
-Não representar estes tokens como paleta oficial do produto.
-
 ---
 
-## 7. ELEVAÇÃO
+# 7. ELEVAÇÃO
 
-### Área
+## Área
 
 ```text
-x: 456 px
-y: 840 px
+x: 444 px
+y: 820 px
 w: 360 px
 h: 180 px
-
-limite direito: 816 px
-limite inferior: 1020 px
 ```
 
-### Conteúdo visual obrigatório
+## Conteúdo
 
-O cartão deve mostrar quatro amostras físicas, organizadas em matriz `2 × 2`.
+Matriz `2 × 2`:
 
 ```text
-┌────────┐        ┌────────┐
-│   E0   │        │   E1   │
-└────────┘        └────────┘
-0/0/0/0%          0/1/2/12%
-
-┌────────┐        ┌────────┐
-│   E2   │        │   E3   │
-└────────┘        └────────┘
-0/2/6/16%         0/4/12/20%
+E0   0/0/0/0%
+E1   0/1/2/12%
+E2   0/2/6/16%
+E3   0/4/12/20%
 ```
 
-### Posições das amostras
+## Posições das amostras
 
-Dimensão de cada amostra:
+Cada amostra:
 
 ```text
 w: 128 px
 h: 44 px
 ```
 
-Primeira coluna:
+Colunas:
 
 ```text
-x: 496 px
+x1: 484 px
+x2: 636 px
 ```
 
-Segunda coluna:
+Linhas:
 
 ```text
-x: 648 px
+linha 1:
+y amostra: 864
+y legenda: 912
+
+linha 2:
+y amostra: 936
+y legenda: 984
 ```
 
-Primeira linha:
-
-```text
-y da amostra: 872 px
-y da legenda: 920 px
-```
-
-Segunda linha:
-
-```text
-y da amostra: 948 px
-y da legenda: 996 px
-```
-
-### Efeitos
-
-```text
-E0:
-0 / 0 / 0 / 0%
-
-E1:
-0 / 1 / 2 / 12%
-
-E2:
-0 / 2 / 6 / 16%
-
-E3:
-0 / 4 / 12 / 20%
-```
-
-Ordem da notação:
-
-```text
-offset-x / offset-y / blur / opacidade
-```
-
-Cor-base:
-
-```text
-preto neutro
-```
-
-### Referência normativa
+Referência:
 
 ```text
 docs/wireframes/images/README.md
 8 — Bordas, radius, elevação e iconografia
 ```
 
-A amostra deve demonstrar o efeito visual, não apenas escrever o token.
-
 ---
 
-## 8. RADIUS
+# 8. RADIUS
 
-### Área
+## Área
 
 ```text
-x: 456 px
-y: 1036 px
+x: 444 px
+y: 1016 px
 w: 360 px
-h: 108 px
-
-limite direito: 816 px
-limite inferior: 1144 px
+h: 140 px
 ```
 
-### Conteúdo visual obrigatório
-
-Duas amostras lado a lado:
+## Conteúdo
 
 ```text
-┌──────────┐      ┌──────────┐
-│  12 px   │      │  16 px   │
-└──────────┘      └──────────┘
-Campos e botões   Cards e modais
-```
+12 px
+Campos e botões
 
-### Posições
+16 px
+Cards e modais
+```
 
 Amostras:
 
 ```text
 12 px:
-x = 496
-y = 1060
-w = 128
-h = 44
+x: 484
+y: 1060
+w: 128
+h: 44
 
 16 px:
-x = 648
-y = 1060
-w = 128
-h = 44
+x: 636
+y: 1060
+w: 128
+h: 44
 ```
 
 Legendas:
 
 ```text
-y = 1108
-h = 16
+y: 1112
 ```
 
-### Referência normativa
+Referência:
 
 ```text
 docs/wireframes/images/README.md
 8 — Bordas, radius, elevação e iconografia
 ```
 
-As amostras devem exibir os cantos fisicamente arredondados.
-
 ---
 
-## 9. ÍCONES (Material Icons Outlined)
+# Região inferior
 
-### Área
+A região inferior começa depois do corpo principal:
 
 ```text
 x: 12 px
-y: 1168 px
-w: 620 px
-h: 220 px
-
-limite direito: 632 px
-limite inferior: 1388 px
+y: 1180 px
+w: 1256 px
+h: 728 px
 ```
 
-### Estrutura
+Afastamento:
 
-O cartão demonstra dois tamanhos técnicos.
+```text
+1156 → fim do corpo principal
+1180 → início da região inferior
+
+gap = 24 px
+```
+
+---
+
+# 9. ÍCONES (Material Icons Outlined)
+
+## Área
+
+```text
+x: 12 px
+y: 1180 px
+w: 620 px
+h: 208 px
+```
+
+## Conteúdo
 
 ```text
 20 px
-ícone auxiliar
+Ícone auxiliar
 
 24 px
-ação / navegação
-```
-
-### Amostras visuais
-
-Cada amostra fica dentro de uma área demonstrativa própria.
-
-Primeira amostra:
-
-```text
-x: 140 px
-y: 1212 px
-área demonstrativa: 128 × 96 px
-
-ícone:
-20 × 20 px
-centralizado
-```
-
-Segunda amostra:
-
-```text
-x: 356 px
-y: 1212 px
-área demonstrativa: 128 × 96 px
-
-ícone:
-24 × 24 px
-centralizado
-```
-
-Legendas:
-
-```text
-Ícones auxiliares
 Ação / navegação
 ```
 
-### Ícones demonstrativos
-
-Usar a mesma linguagem da A_v02:
+Amostras:
 
 ```text
-Material Icons Outlined
+20 px:
+área demonstrativa 128 × 88 px
+ícone central 20 × 20 px
+
+24 px:
+área demonstrativa 128 × 88 px
+ícone central 24 × 24 px
 ```
 
-A seleção do glifo é apenas demonstrativa.
-
-Não cria função no produto.
-
-### Referência normativa
+Referência:
 
 ```text
 docs/wireframes/images/README.md
 8 — Iconografia
 ```
 
-Touch target de ações interativas permanece mínimo `48 × 48 px`.
-
 ---
 
-## 10. ESTADOS (Componentes)
+# 10. ESTADOS (Componentes)
 
-### Área
+## Área
 
 ```text
 x: 648 px
-y: 1168 px
+y: 1180 px
 w: 620 px
-h: 220 px
-
-limite direito: 1268 px
-limite inferior: 1388 px
+h: 208 px
 ```
 
-### Estados exibidos
+## Estados
 
 ```text
 Default
@@ -1901,60 +1391,27 @@ Disabled
 Error
 ```
 
-`Hover` aparece apenas como observação documental:
+`Hover` permanece documentado, mas não precisa ser demonstrado como estado visual obrigatório nesta prancha mobile.
+
+Amostras:
 
 ```text
-Hover: documentado; não obrigatório em mobile.
-```
-
-### Disposição
-
-Área interna:
-
-```text
-x: 664
-w: 588
-```
-
-Amostras de estado:
-
-```text
+x: 688 px
 w: 540 px
 h: 24 px
-
-x: 688 px
 ```
 
-Posições verticais:
+Posições:
 
 ```text
-Default             y = 1212
-Focus               y = 1244
-Pressed / Selected  y = 1276
-Disabled            y = 1308
-Error               y = 1340
+Default             y: 1220
+Focus               y: 1252
+Pressed / Selected  y: 1284
+Disabled            y: 1316
+Error               y: 1348
 ```
 
-Gap vertical entre amostras:
-
-```text
-8 px
-```
-
-Observação Hover:
-
-```text
-x = 664
-y = 1372
-```
-
-### Regra visual
-
-Cada estado deve possuir diferenciação perceptível.
-
-Cor não pode ser o único indicador de estado.
-
-### Referência normativa
+Referências:
 
 ```text
 docs/wireframes/images/README.md
@@ -1964,25 +1421,20 @@ docs/wireframes/images/README.md
 
 ---
 
-## 11. REGRAS GERAIS DE COMPONENTES
+# 11. REGRAS GERAIS DE COMPONENTES
 
-### Área
+## Área
 
 ```text
 x: 12 px
 y: 1404 px
 w: 780 px
-h: 148 px
-
-limite direito: 792 px
-limite inferior: 1552 px
+h: 144 px
 ```
 
-### Conteúdo exato
+## Conteúdo exato
 
 ```text
-11. REGRAS GERAIS DE COMPONENTES
-
 Touch target mínimo: 48 × 48 px.
 
 Aplicável a botões, ícones, itens de lista,
@@ -1992,9 +1444,7 @@ A área clicável deve respeitar o mínimo mesmo
 quando o elemento visual for menor.
 ```
 
-### Demonstração do touch target
-
-À esquerda do texto deve existir uma amostra quadrada:
+Amostra de touch target:
 
 ```text
 x: 28 px
@@ -2003,11 +1453,7 @@ w: 48 px
 h: 48 px
 ```
 
-O glifo dentro da amostra pode utilizar um ícone Material Outlined de interação.
-
-A amostra demonstra o alvo mínimo, não uma função específica.
-
-### Texto
+Texto:
 
 ```text
 x: 96 px
@@ -2015,7 +1461,7 @@ y: 1432 px
 w: 680 px
 ```
 
-### Referência normativa
+Referências:
 
 ```text
 docs/wireframes/images/README.md
@@ -2025,53 +1471,35 @@ docs/wireframes/images/README.md
 
 ---
 
-## BORDAS E DIVISORES
+# BORDAS E DIVISORES
 
-### Área
+## Área
 
 ```text
 x: 808 px
 y: 1404 px
 w: 460 px
-h: 148 px
-
-limite direito: 1268 px
-limite inferior: 1552 px
+h: 144 px
 ```
 
-### Conteúdo visual
-
-Duas demonstrações lado a lado.
-
-#### Borda
-
-Amostra:
+## Borda
 
 ```text
+amostra:
 x: 824
 y: 1440
 w: 160
 h: 64
-```
 
-Aplicação:
-
-```text
-borda: 1 px
-token Claro: WF-W-BORDER
-HEX: #B5B5B5
-```
-
-Legenda:
-
-```text
-Borda
+borda:
 1 px
+
+token Claro:
+WF-W-BORDER
+#B5B5B5
 ```
 
-#### Divisor
-
-Amostra:
+## Divisor
 
 ```text
 x: 1016
@@ -2080,20 +1508,7 @@ w: 220
 h: 1
 ```
 
-Legenda:
-
-```text
-Divisor
-1 px
-```
-
-Uso:
-
-```text
-entre seções/listas quando necessário
-```
-
-### Referência normativa
+Referência:
 
 ```text
 docs/wireframes/images/README.md
@@ -2102,278 +1517,132 @@ docs/wireframes/images/README.md
 
 ---
 
-## 12. OBSERVAÇÕES TÉCNICAS
+# 12. OBSERVAÇÕES TÉCNICAS
 
-### Área
+## Área
 
 ```text
 x: 12 px
-y: 1568 px
+y: 1564 px
 w: 1256 px
-h: 340 px
+h: 344 px
 
-limite direito: 1268 px
 limite inferior: 1908 px
+margem inferior do canvas: 12 px
 ```
 
-Margem inferior preservada:
+## Estrutura interna
+
+Este bloco é uma única área documental horizontal.
+
+Não dividir em duas colunas nesta prancha-modelo.
 
 ```text
-12 px
+padding horizontal: 16 px
+padding vertical: 12 px
+
+x interno: 28 px
+w interno: 1224 px
 ```
 
-### Estrutura interna
-
-O conteúdo é dividido em duas colunas, seguindo a linguagem da A_v02.
-
-Padding:
+## Conteúdo exato
 
 ```text
-16 px
+1. O viewport representa a tela completa do celular: 360 × 800 px em escala 1:1.
+
+2. A referência dimensional usa largura total 360 px, largura útil 336 px e margens laterais 12 + 12 px.
+
+3. Não existe reserva fixa de faixa superior ou inferior de safe area nesta prancha-modelo.
+
+4. O bitmap WF-VIEWPORT-360x800-clean.png deve permanecer fisicamente 360 × 800 px, inserido em 100%, sem resize.
+
+5. Todos os elementos seguem grid de 4 px e escala de espaçamento 4 / 8 / 12 / 16 / 24 / 32 px.
+
+6. Inter é tipografia técnica do wireframe e não tipografia oficial da marca SaOr.
+
+7. Em páginas seguintes, repetir apenas elementos realmente persistentes.
+
+8. Nomenclatura dos arquivos funcionais: <ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>.png.
+
+9. Interface multipágina só é aprovada quando todas as páginas Claro e Escuro estiverem aprovadas.
+
+10. Cor nunca deve ser o único indicador de estado; cores, ícones e componentes são referências técnicas dos wireframes.
 ```
 
-Área interna total:
+Tipografia:
 
 ```text
-x: 28 px
-y: 1604 px
-w: 1224 px
-```
-
-Duas colunas:
-
-```text
-COLUNA A
-x: 28 px
-w: 596 px
-
-GAP
-x: 624 px
-w: 32 px
-
-COLUNA B
-x: 656 px
-w: 596 px
-```
-
-### Coluna A — itens 1 a 5
-
-```text
-1. O viewport representa a tela completa do celular:
-   360 × 800 px em escala 1:1.
-
-2. Safe areas de 24 px superior e 32 px inferior
-   são referências do wireframe.
-
-3. Na implementação, superfícies podem ocupar 100%
-   da tela; conteúdos sensíveis respeitam os insets
-   reais da plataforma/dispositivo.
-
-4. Todos os elementos seguem grid de 4 px e escala
-   de espaçamento 4 / 8 / 12 / 16 / 24 / 32 px.
-
-5. Inter é tipografia técnica do wireframe e não
-   tipografia oficial da marca SaOr.
-```
-
-### Coluna B — itens 6 a 10
-
-```text
-6. Em páginas seguintes, repetir apenas elementos
-   realmente persistentes.
-
-7. Nomenclatura dos arquivos funcionais:
-   <ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>.png.
-
-8. Interface multipágina só é aprovada quando todas
-   as páginas Claro e Escuro estiverem aprovadas.
-
-9. Cores, ícones e componentes são tokens e
-   referências técnicas dos wireframes.
-
-10. Cor nunca deve ser o único indicador de estado.
-```
-
-### Tipografia
-
-Usar:
-
-```text
+texto:
 WF-CAPTION
 12 px / 16 px
-Regular 400
-```
 
-Número de cada observação:
-
-```text
+numeração:
 WF-LABEL
 ```
 
-### Referências normativas
-
-As observações são síntese de regras já vigentes em:
+Referências:
 
 ```text
 docs/wireframes/images/README.md
-
-4 — Referências geométricas
+3 — Referências técnicas compartilhadas
+4 — Viewport e geometria
 5 — Grid e espaçamento
-6 — Tokens e tipografia
+6 — Tokens técnicos
 7 — Componentes
-8 — Bordas/radius/elevação/iconografia
+8 — Bordas, radius, elevação e iconografia
 9 — Estados
 10 — Acessibilidade
-11 — Imagens funcionais
 ```
-
-Não acrescentar observação de processo, conversa ou validação temporária.
 
 ---
 
-# Sequência final de construção da WF-TEMPLATE-B_v01
-
-A prancha deve ser montada nesta sequência física:
+# Sequência de construção desta prancha-modelo
 
 ```text
 01. Canvas 1280 × 1920
 02. Cabeçalho
-03. Viewport mestre 360 × 800 em 100% / 1:1
-04. Cotas do viewport
-05. Congelar Cabeçalho + Viewport + Cotas
-06. Bloco 1 — Canvas e Viewport
-07. Bloco 2 — Safe Areas
-08. Bloco 3 — Grid e Spacing
-09. Bloco 4 — Componentes
-10. Bloco 5 — Tipografia
-11. Bloco 6 — Paleta
-12. Bloco 7 — Elevação
-13. Bloco 8 — Radius
-14. Bloco 9 — Ícones
-15. Bloco 10 — Estados
-16. Bloco 11 — Regras Gerais
-17. Bordas e Divisores
-18. Bloco 12 — Observações Técnicas
-19. Conferência física completa
-20. Somente após PASS: geração do PNG correspondente
-```
-
-Nenhum passo posterior pode alterar silenciosamente a geometria congelada de passo anterior.
-
----
-
-# Referências específicas utilizadas pela composição B
-
-```text
-docs/wireframes/images/README.md
-
-docs/wireframes/images/templates/README.md
-
-docs/wireframes/images/templates/references/
-Especificação Técnica - Prancha de Trabalho.png
-
-docs/wireframes/images/templates/references/
-Especificação Técnica do Viewport Mobile.png
-
-docs/wireframes/images/templates/references/
-WF-VIEWPORT-360x800-clean.png
-
-docs/wireframes/images/templates/alternatives/
-WF-TEMPLATE-A_v02.png
-
-assets/logo/README.md
-
-assets/fonts/logo/README.md
-```
-
-Uso das referências:
-
-```text
-README técnico
-→ medidas, tokens, tipografia, componentes e regras superiores
-
-templates/README.md
-→ conceito e governança da Alternativa B
-
-Prancha de Trabalho
-→ canvas físico vigente
-
-Especificação Técnica do Viewport Mobile
-→ cotas e linguagem das referências dimensionais
-
-WF-VIEWPORT-360x800-clean.png
-→ bitmap obrigatório do viewport
-
-WF-TEMPLATE-A_v02.png
-→ linguagem visual documental já validada
-→ não usar como fonte raster de geometria
-
-assets/logo + assets/fonts/logo
-→ marca e tipografia da marca no cabeçalho
+03. Bitmap WF-VIEWPORT-360x800-clean.png em 100% / 1:1
+04. Cotas 360 / 336 / 12 / 12 / 800
+05. Validar fisicamente o viewport
+06. Calcular as áreas documentais restantes desta B_v01
+07. Bloco 1
+08. Bloco 2
+09. Bloco 3
+10. Bloco 4
+11. Bloco 5
+12. Bloco 6
+13. Bloco 7
+14. Bloco 8
+15. Bloco 9
+16. Bloco 10
+17. Bloco 11
+18. Bordas e Divisores
+19. Bloco 12
+20. Conferência integral
+21. Somente após PASS: produzir o PNG correspondente
 ```
 
 ---
 
-# Gate de conclusão do Wireframe Text da Alternativa B
-
-Antes de produzir a imagem `WF-TEMPLATE-B_v01.png`, o Wireframe Text deve fechar todos os itens:
+# Gate antes da produção do PNG
 
 ```text
-[ ] frame inicial corresponde à composição especificada abaixo
-
+[ ] frame inicial preservado como referência conceitual de composição
 [ ] canvas = 1280 × 1920 px
-
-[ ] cabeçalho especificado
-
-[ ] viewport mestre definido por arquivo
-
+[ ] cabeçalho montado conforme esta B_v01
 [ ] viewport físico = 360 × 800 px
-
 [ ] viewport inserido em 100% / 1:1
-
-[ ] cotas do viewport especificadas
-
-[ ] áreas Cabeçalho + Viewport congeladas
-
-[ ] bloco 1 especificado
-
-[ ] bloco 2 especificado
-
-[ ] bloco 3 especificado
-
-[ ] bloco 4 especificado
-
-[ ] bloco 5 especificado
-
-[ ] bloco 6 especificado
-
-[ ] bloco 7 especificado com amostras visuais
-
-[ ] bloco 8 especificado com amostras visuais
-
-[ ] bloco 9 especificado
-
-[ ] bloco 10 especificado
-
-[ ] bloco 11 especificado
-
-[ ] Bordas e Divisores especificado
-
-[ ] bloco 12 especificado
-
-[ ] todas as coordenadas permanecem dentro do canvas
-
-[ ] nenhum cartão invade o viewport
-
-[ ] nenhuma documentação exige resize do viewport
-
-[ ] margem estrutural externa preservada
-
-[ ] referências técnicas identificadas
-
+[ ] nenhuma reserva fixa de safe area adicionada
+[ ] cotas 360 / 336 / 12 / 12 / 800 representadas
+[ ] nenhuma cota alterou o bitmap
+[ ] todas as áreas desta prancha-modelo permanecem dentro do canvas
+[ ] blocos 1 a 12 dimensionados para o conteúdo real deste template
+[ ] bloco 12 permanece como uma única área documental
+[ ] nenhuma medida desta B_v01 foi tratada como dimensão universal de futuros T/M/E
+[ ] nenhuma referência de layout foi herdada de prancha histórica ou alternativa anterior
+[ ] marca usa as fontes oficiais catalogadas
+[ ] componentes usam as medidas normativas do README técnico
 [ ] não existe requisito funcional inventado
-
-[ ] não existe informação de conversa/processo na prancha
 ```
 
-Somente depois de este Wireframe Text ser aceito como completo deve ser produzida a imagem correspondente da Alternativa B.
+Somente depois desse gate o PNG da `WF-TEMPLATE-B_v01` deve ser produzido e comparado com esta especificação.

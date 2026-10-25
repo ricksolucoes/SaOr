@@ -2,7 +2,8 @@
 ## Pranchas-modelo — governança, organização e ciclo de vida
 
 **Diretório:** `docs/wireframes/images/templates/`  
-**Especificação técnica superior:** [`../README.md`](../README.md)
+**Specs canônicas:** [`../../../../.specs/wireframes/README.md`](../../../../.specs/wireframes/README.md)  
+**Controle operacional:** [`../README.md`](../README.md)
 
 ---
 
@@ -21,7 +22,9 @@ Ele define somente:
 - congelamento da composição aprovada;
 - gate que libera os wireframes funcionais.
 
-Dimensões, viewport, safe areas, grid, tokens, tipografia, componentes, elevação, iconografia e demais regras técnicas pertencem exclusivamente ao README superior.
+Dimensões, viewport, grid, tokens, tipografia, componentes, elevação, iconografia e demais regras técnicas pertencem às specs canônicas em `.specs/wireframes/`.
+
+O processo obrigatório de construção da prancha e o padrão documental do Wireframe Text também pertencem a `.specs/wireframes/`.
 
 ---
 
@@ -118,24 +121,18 @@ alternatives/wiframetext/WF-TEMPLATE-X_v01.md
 
 O mesmo padrão vale em `aprovados/`.
 
-O Wireframe Text registra somente a composição específica da prancha:
+O Wireframe Text registra somente a composição específica da prancha e deve cumprir:
 
 ```text
-identificação e versão
-conceito de composição
-mapa de regiões
-posições e dimensões específicas
-cabeçalho e textos exatos
-viewport utilizado e posição
-seções presentes
-tokens técnicos usados por nome
-componentes usados por nome
-ícones utilizados
-regras específicas da composição
-checklist visual da prancha
+../../../../.specs/wireframes/PROCESSO-PRANCHA.md
+../../../../.specs/wireframes/WIREFRAME-TEXT.md
 ```
 
-Não registrar conversa, memória de processo, tentativas descartadas, raciocínio interno, histórico narrativo desnecessário ou cópia integral das regras do README superior.
+Não existe template visual universal de prancha.
+
+Cada composição deve ser calculada a partir do canvas vazio, congelando título e viewport antes de calcular e posicionar os demais elementos.
+
+Não registrar conversa, memória de processo, tentativas descartadas, raciocínio interno ou histórico narrativo desnecessário.
 
 ---
 
@@ -378,7 +375,7 @@ Antes de liberar T00, todos os itens abaixo devem estar confirmados:
 [ ] composição reproduzível a partir do Wireframe Text
 [ ] viewport e canvas validados fisicamente
 [ ] cabeçalho e regiões documentais validados
-[ ] cotas e referências de safe area representáveis sem conflito
+[ ] cotas do viewport representáveis sem conflito e sem reserva fixa de safe area
 [ ] página/versão, scroll e continuidade representáveis
 [ ] página única e multipágina suportadas
 [ ] equivalência geométrica Claro/Escuro preservada

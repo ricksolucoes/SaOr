@@ -1,5 +1,5 @@
 # SaOr - Sales Order
-## Wireframes Conceituais em Imagem — Especificação técnica e controle
+## Wireframes Conceituais em Imagem — Controle operacional
 
 **Baseline funcional:** `v1.0 — APROVADO / BASELINE FUNCIONAL`  
 **Etapa atual:** `Wireframe Conceitual em Imagem`  
@@ -14,16 +14,25 @@
 
 # 1. Responsabilidade deste documento
 
-Este README é a **fonte normativa técnica da etapa de wireframes**.
+Este README é a fonte de **controle operacional** da etapa de wireframes.
 
-Ele define somente:
+As regras normativas reutilizáveis pertencem a:
 
-- geometria e referências técnicas da prancha;
-- tokens técnicos usados para documentar wireframes;
-- componentes e estados necessários para a representação;
-- regras de paginação, nomenclatura e equivalência Claro/Escuro;
-- critérios de produção e aprovação das imagens funcionais;
-- controle operacional das 71 interfaces.
+```text
+../../../.specs/wireframes/REGRAS-TECNICAS.md
+../../../.specs/wireframes/PROCESSO-PRANCHA.md
+../../../.specs/wireframes/WIREFRAME-TEXT.md
+```
+
+Este README mantém:
+
+- estrutura operacional da etapa;
+- referências físicas existentes no diretório;
+- regras de paginação e nomenclatura;
+- critérios operacionais de produção e aprovação;
+- controle das 71 interfaces.
+
+Ele não deve criar uma segunda definição para regras já canônicas em `.specs/`.
 
 Ele **não redefine** regras de negócio, conteúdo funcional, Textframes, tokens visuais oficiais do produto ou arquitetura. Esses assuntos permanecem em seus documentos canônicos.
 
@@ -106,7 +115,7 @@ O bitmap clean nunca substitui o Textframe, a Ficha funcional de aceite ou o con
 
 ---
 
-# 4. Viewport, safe areas e geometria
+# 4. Viewport e geometria
 
 ## 4.1 Viewport
 
@@ -118,23 +127,17 @@ Escala na prancha: 1:1
 
 Não adicionar moldura física, áreas fora dos `800 px`, variação específica de sistema operacional ou redução do viewport para acomodar documentação.
 
-## 4.2 Safe areas de referência
+## 4.2 Safe area
+
+Não existe reserva fixa de safe area nesta etapa.
+
+A regra canônica está em:
 
 ```text
-Superior: 24 px
-Inferior: 32 px
+../../../.specs/wireframes/REGRAS-TECNICAS.md
 ```
 
-Esses valores são referências da etapa de wireframe. Não são paddings fixos do produto nem constantes obrigatórias de implementação.
-
-Na implementação futura:
-
-- superfícies visuais podem ocupar a tela edge-to-edge;
-- conteúdo sensível deve respeitar os insets reais fornecidos pela plataforma/dispositivo;
-- os insets reais podem ser diferentes de `24 px` e `32 px`;
-- não deve existir dupla compensação quando a plataforma ou o framework já tratar os insets.
-
-Não representar notch, Dynamic Island, barra Android ou outro chrome específico.
+O viewport permanece integralmente `360 × 800 px`.
 
 ## 4.3 Canvas técnico
 
@@ -610,9 +613,12 @@ Pranchas-modelo de `templates/` não entram nessa contagem.
 
 1. `docs/Documento_Mestre.md` — conteúdo e comportamento funcional;
 2. `docs/Registro_Fechamento_Documento_Mestre.md` — proteção da baseline;
-3. este README — especificação técnica e controle dos wireframes;
-4. `templates/README.md` — governança das pranchas-modelo;
-5. Wireframe Text específico — composição reproduzível da prancha-modelo;
-6. PNG correspondente — representação visual resultante.
+3. `.specs/wireframes/REGRAS-TECNICAS.md` — invariantes técnicos;
+4. `.specs/wireframes/PROCESSO-PRANCHA.md` — sequência obrigatória de construção;
+5. `.specs/wireframes/WIREFRAME-TEXT.md` — contrato documental;
+6. `templates/README.md` — governança das pranchas-modelo;
+7. este README — controle operacional;
+8. Wireframe Text específico — composição reproduzível da prancha;
+9. PNG correspondente — representação visual resultante.
 
 Artefato inferior não altera silenciosamente uma regra de nível superior.
