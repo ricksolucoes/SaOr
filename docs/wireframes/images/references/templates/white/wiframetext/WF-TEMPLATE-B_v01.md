@@ -6,7 +6,7 @@ CANVAS FINAL — 1280 × 1920 px
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │SaOr                │WIREFRAME                                       │ID                │PÁGINA       │VERSÃO      │DATA            │STATUS                       │
 │Sales Order         │PRANCHA TÉCNICA - MODELO B                      │WF-TEMPLATE-B     │XX / YY   │v01       │DD/MM/AAAA    │AGUARDANDO APROVAÇÃO                │
-│                    │(Viewport à esquerda + painel técnico à direita)│BASELINE v1.0     │VARIAÇÃO Claro              │ETAPA Wireframe Conceitual em Imagem        │
+│                    │(Viewport à esquerda + painel técnico à direita)│BASELINE v1.0     │VARIAÇÃO white              │ETAPA Wireframe Conceitual em Imagem        │
 ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │┌ VIEWPORT TÉCNICO 360 x 800 px                ┐  ┌ 1. CANVAS E VIEWPORT                           ┐  ┌ 2. COTAS DO VIEWPORT                                     ┐│
 ││                    360 px                    │  │  Canvas da prancha      1280 x 1920 px         │  │  Largura total           360 px                          ││
@@ -447,7 +447,7 @@ BASELINE
 v1.0
 
 VARIAÇÃO
-Claro
+white
 
 ETAPA
 Wireframe Conceitual em Imagem
@@ -899,7 +899,7 @@ w: 416 px
 ```
 
 O conteúdo é demonstrativo.
-As medidas dos componentes vêm do README técnico; a área deste cartão é específica desta prancha-modelo.
+As medidas dos componentes vêm de `.specs/wireframes/REGRAS-TECNICAS.md`; a área deste cartão é específica desta prancha-modelo.
 
 ## Distribuição vertical
 

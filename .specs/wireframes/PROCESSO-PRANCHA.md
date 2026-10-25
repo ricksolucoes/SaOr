@@ -229,7 +229,7 @@ viewport físico: 360 × 800 px
 escala: 1:1
 ```
 
-Para prancha-modelo neutra, usar o bitmap oficial quando aplicável.
+Para a variação atual (`white` ou `black`), usar a referência física específica da mesma variação quando ela existir e for aplicável. A ausência de referência física específica não altera as invariantes técnicas e não autoriza reutilizar por inferência um bitmap da outra variação.
 
 O Wireframe Text deve definir:
 
