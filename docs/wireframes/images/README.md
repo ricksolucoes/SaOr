@@ -85,6 +85,25 @@ Regras:
 - tablet e desktop não serão produzidos automaticamente nesta etapa;
 - o viewport não pode ser redimensionado, esticado, comprimido ou reproporcionado para caber na prancha.
 
+## 3.1 Escopo do `WF-VIEWPORT-360x800-clean.png`
+
+O arquivo `WF-VIEWPORT-360x800-clean.png` possui dois usos distintos:
+
+**Pranchas-modelo neutras**
+
+- pode ser inserido diretamente em `100%`;
+- deve permanecer fisicamente `360 × 800 px`;
+- pode ser usado como bitmap mestre do viewport de demonstração.
+
+**Wireframes funcionais T/M/E**
+
+- funciona como referência dimensional e estrutural do viewport;
+- a área funcional continua obrigatoriamente com `360 × 800 px` físicos e escala `1:1`;
+- o conteúdo interno deve ser o conteúdo documentado da interface correspondente;
+- não se exige identidade de pixels entre uma interface funcional e o bitmap clean.
+
+O bitmap clean nunca substitui o Textframe, a Ficha funcional de aceite ou o conteúdo real de uma interface funcional.
+
 ---
 
 # 4. Viewport, safe areas e geometria
@@ -359,6 +378,13 @@ T00-01-02_v01.png
 T00-02-02_v01.png
 ```
 
+Significado:
+
+- `<ID>` — ID canônico da interface;
+- `<PÁGINA>` — página documental atual;
+- `<TOTAL>` — quantidade total de páginas daquela representação;
+- `<VERSÃO>` — versão específica daquela página.
+
 Regras de versionamento:
 
 - uma correção que não altere a quantidade total de páginas pode incrementar somente a versão da página afetada;
@@ -479,7 +505,16 @@ Silêncio não constitui aprovação. Artefato aprovado fica congelado naquela v
 
 # 15. Controle das 71 interfaces
 
-O nome e a especificação funcional de cada ID permanecem exclusivamente no Documento Mestre. Este checklist controla apenas o estado da etapa.
+O nome e a especificação funcional de cada ID permanecem exclusivamente no Documento Mestre. Este checklist controla apenas o estado resumido da etapa.
+
+Autoridade operacional:
+
+- `white/` e `black/` contêm os arquivos funcionais produzidos;
+- o nome físico de cada arquivo é a fonte de verdade para página atual, total de páginas e versão;
+- as colunas `Claro` e `Escuro` registram o estado agregado de cada variação;
+- `Status geral` deriva do conjunto completo das duas variações;
+- uma interface somente pode ficar `APROVADO` quando todas as páginas necessárias de Claro e Escuro estiverem aprovadas;
+- o checklist não deve duplicar versão/paginação já expressas nos nomes dos arquivos.
 
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|

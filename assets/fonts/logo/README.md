@@ -2,7 +2,7 @@
 ## Fontes da identidade visual
 
 **Diretório:** `assets/fonts/logo/`  
-**Finalidade:** armazenar as famílias tipográficas associadas à composição oficial da marca SaOr.
+**Finalidade:** armazenar os arquivos tipográficos associados à composição oficial da marca SaOr.
 
 ---
 
@@ -12,20 +12,24 @@
 Google_Sans,Quicksand.zip
 ```
 
-O pacote reúne as famílias tipográficas utilizadas na identidade visual documentada em [`../../logo/README.md`](../../logo/README.md).
+O pacote reúne os arquivos tipográficos utilizados na identidade visual.
+
+A especificação canônica de família, peso, estilo, caixa, tracking e finalidade de cada fonte pertence exclusivamente a [`../../logo/README.md`](../../logo/README.md).
+
+Este README não replica esses valores para evitar divergência entre a especificação da marca e o diretório de armazenamento.
 
 ---
 
-## 2. Uso catalogado
+## 2. Responsabilidade deste diretório
 
-A referência tipográfica oficial da marca é:
+Este diretório é responsável somente por:
 
-| Elemento | Família | Peso | Estilo |
-|---|---|---:|---|
-| `SaOr` | Google Sans | 700 | Bold / Normal |
-| `SALES ORDER` | Quicksand | 400 | Regular / Normal, uppercase e tracking ampliado |
+- localizar o pacote tipográfico usado pela identidade;
+- preservar os arquivos associados à marca;
+- registrar regras de distribuição e substituição do pacote;
+- apontar para o catálogo canônico de identidade visual.
 
-A especificação visual da marca e suas regras de aplicação permanecem sob autoridade de `assets/logo/README.md`.
+Alterações na família, peso, estilo ou uso da marca devem ser feitas primeiro no documento canônico de identidade e somente depois refletidas nos arquivos deste diretório.
 
 ---
 
@@ -43,9 +47,9 @@ Ao substituir ou adicionar arquivos tipográficos:
 
 ## 4. Limite de uso
 
-Estas fontes estão catalogadas aqui por sua relação com a **identidade da marca**.
+Os arquivos estão catalogados aqui por sua relação com a **identidade da marca**.
 
-Elas não se tornam automaticamente:
+Sua presença neste diretório não os transforma automaticamente em:
 
 - tipografia técnica dos wireframes;
 - tipografia oficial da interface;

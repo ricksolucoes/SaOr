@@ -13,7 +13,7 @@ Este documento cataloga os artefatos de logo e ícone do **SaOr - Sales Order** 
 
 Seu objetivo é impedir uso ambíguo, alteração acidental ou escolha incorreta de variantes durante as etapas de Wireframe, Design Visual, Figma, apresentações e implementação.
 
-Este catálogo não substitui um futuro manual completo de identidade visual. Regras que ainda não foram formalmente definidas — como área mínima de proteção, tamanho mínimo de reprodução ou tipografia oficial da marca — não devem ser inventadas nesta etapa.
+Este catálogo não substitui um futuro manual completo de identidade visual. Regras que ainda não foram formalmente definidas — como área mínima de proteção, tamanho mínimo de reprodução ou outras regras de aplicação não registradas neste catálogo — não devem ser inventadas nesta etapa.
 
 ---
 
@@ -124,6 +124,8 @@ Fonte oficial do arquivo:
 - Google Sans: Google / arquivo oficial autorizado da família tipográfica
 - Quicksand: Google Fonts / repositório oficial google/fonts
 ```
+
+O pacote de fontes mantido no repositório é catalogado em [`../fonts/logo/README.md`](../fonts/logo/README.md). Esse diretório armazena os arquivos; a especificação de família, peso, estilo e uso da marca permanece canônica nesta seção.
 
 Qualquer tipografia usada nos wireframes pertence exclusivamente à especificação técnica de wireframe e não deve ser considerada tipografia oficial da marca, salvo quando expressamente especificada neste catálogo.
 
