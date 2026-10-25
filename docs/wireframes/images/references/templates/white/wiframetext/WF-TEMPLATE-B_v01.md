@@ -5,7 +5,7 @@ CANVAS FINAL — 1280 × 1920 px
 
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │SaOr                │WIREFRAME                                       │ID                │PÁGINA       │VERSÃO      │DATA            │STATUS                       │
-│Sales Order         │PRANCHA TÉCNICA - MODELO B                      │WF-TEMPLATE-B     │XX / YY   │v01       │DD/MM/AAAA    │AGUARDANDO APROVAÇÃO                │
+│Sales Order         │PRANCHA TÉCNICA - MODELO B                      │WF-TEMPLATE-B     │XX / YY   │v01       │DD/MM/AAAA    │APROVADO E CONGELADO                │
 │                    │(Viewport à esquerda + painel técnico à direita)│BASELINE v1.0     │VARIAÇÃO white              │ETAPA Wireframe Conceitual em Imagem        │
 ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │┌ VIEWPORT TÉCNICO 360 x 800 px                ┐  ┌ 1. CANVAS E VIEWPORT                           ┐  ┌ 2. COTAS DO VIEWPORT                                     ┐│
@@ -183,19 +183,39 @@ O Gate 1 é técnico e está concluído porque o canvas registrado nesta B_v01 a
 
 Os Gates 2, 3 e 6 exigem aprovação humana explícita. Os Gates 4 e 5 são técnicos e somente podem ser concluídos depois das dependências anteriores estarem congeladas.
 
-A existência de medidas e cálculos posteriores não constitui aprovação retroativa de um gate humano nem conclusão automática de um gate técnico bloqueado.
+A aprovação humana necessária para os Gates 2, 3 e 6 foi explicitamente autorizada pelo responsável em `25/10/2026` para liberar a produção visual desta `B_v01`.
+
+Após esse registro, os Gates 4 e 5 foram validados tecnicamente contra este próprio Wireframe Text:
+
+```text
+Gate 4
+- fechamento horizontal do cabeçalho: 156 + 384 + 716 = 1256 px;
+- fechamento horizontal do corpo principal: 416 + 16 + 360 + 16 + 448 = 1256 px;
+- viewport: 12 + 336 + 12 = 360 px;
+- 42 áreas com x/y/w/h verificadas permanecem dentro do canvas 1280 × 1920 px;
+- limite inferior documental permanece em y = 1908 px, preservando 12 px de margem.
+
+Gate 5
+- blocos 1 a 12 presentes;
+- região BORDAS E DIVISORES presente;
+- geometria, conteúdo e referências de reconstrução registrados;
+- nenhuma área x/y/w/h verificada excede o canvas;
+- nenhuma geometria congelada foi alterada para concluir esta validação.
+```
+
+Estado registrado:
 
 ```text
 Gate 1 — Canvas: APROVADO E CONGELADO
-Gate 2 — Título / Cabeçalho: AGUARDANDO APROVAÇÃO
-Gate 3 — Viewport Técnico: BLOQUEADO POR GATE ANTERIOR
-Gate 4 — Área restante calculada: BLOQUEADO POR GATE ANTERIOR
-Gate 5 — Demais elementos definidos: BLOQUEADO POR GATE ANTERIOR
-Gate 6 — Wireframe Text completo: BLOQUEADO POR GATE ANTERIOR
-Produção do PNG: BLOQUEADO POR GATE ANTERIOR
+Gate 2 — Título / Cabeçalho: APROVADO E CONGELADO
+Gate 3 — Viewport Técnico: APROVADO E CONGELADO
+Gate 4 — Área restante calculada: APROVADO E CONGELADO
+Gate 5 — Demais elementos definidos: APROVADO E CONGELADO
+Gate 6 — Wireframe Text completo: APROVADO E CONGELADO
+Produção do PNG: PENDENTE
 ```
 
-As geometrias documentadas abaixo permanecem como proposta de trabalho até o gate correspondente ser aprovado e registrado neste próprio arquivo.
+As geometrias documentadas abaixo estão aprovadas e congeladas para esta `B_v01`. Qualquer alteração posterior deve seguir o processo vigente e reabrir somente os gates realmente afetados.
 
 ---
 
@@ -414,7 +434,7 @@ DATA
 DD/MM/AAAA
 
 STATUS
-AGUARDANDO APROVAÇÃO
+APROVADO E CONGELADO
 ```
 
 ### Linha inferior
@@ -1650,12 +1670,12 @@ Esta B_v01 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
 # Gate antes da produção do PNG
 
 ```text
-[ ] Gate 1 registrado como APROVADO E CONGELADO
-[ ] Gate 2 registrado como APROVADO E CONGELADO
-[ ] Gate 3 registrado como APROVADO E CONGELADO
-[ ] Gate 4 registrado como APROVADO E CONGELADO
-[ ] Gate 5 registrado como APROVADO E CONGELADO
-[ ] Gate 6 registrado como APROVADO E CONGELADO
+[x] Gate 1 registrado como APROVADO E CONGELADO
+[x] Gate 2 registrado como APROVADO E CONGELADO
+[x] Gate 3 registrado como APROVADO E CONGELADO
+[x] Gate 4 registrado como APROVADO E CONGELADO
+[x] Gate 5 registrado como APROVADO E CONGELADO
+[x] Gate 6 registrado como APROVADO E CONGELADO
 [ ] frame inicial coerente com as specs canônicas vigentes
 [ ] canvas = 1280 × 1920 px
 [ ] cabeçalho montado conforme esta B_v01
