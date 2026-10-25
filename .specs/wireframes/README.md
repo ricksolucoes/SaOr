@@ -13,7 +13,7 @@ O que é padronizado é:
 ```text
 - as regras técnicas invariantes;
 - a sequência de construção;
-- os gates de aprovação;
+- os gates técnicos e os gates de aprovação humana;
 - o conjunto mínimo de informações que o Wireframe Text deve registrar;
 - a obrigação de recalcular a geometria para o conteúdo real da prancha.
 ```
@@ -62,8 +62,17 @@ Não é padronizado:
 Antes de criar ou alterar um Wireframe Text:
 
 ```text
-1. ler REGRAS-TECNICAS.md;
-2. executar PROCESSO-PRANCHA.md;
-3. registrar o resultado em conformidade com WIREFRAME-TEXT.md;
-4. somente depois produzir a imagem.
+1. identificar a variação da prancha-modelo (`white` ou `black`) na estrutura operacional;
+2. ler REGRAS-TECNICAS.md;
+3. executar PROCESSO-PRANCHA.md;
+4. registrar o resultado em conformidade com WIREFRAME-TEXT.md;
+5. somente depois produzir a imagem.
 ```
+
+A localização física das referências e das pranchas-modelo é definida em:
+
+```text
+docs/wireframes/images/README.md
+```
+
+Referências específicas de `white` e `black` não devem ser misturadas. Referências neutras compartilhadas podem permanecer diretamente em `docs/wireframes/images/references/`.

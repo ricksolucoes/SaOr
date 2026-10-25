@@ -5,7 +5,7 @@ CANVAS FINAL — 1280 × 1920 px
 
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │SaOr                │WIREFRAME                                       │ID                │PÁGINA       │VERSÃO      │DATA            │STATUS                       │
-│Sales Order         │PRANCHA TÉCNICA - MODELO B                      │WF-TEMPLATE-B     │XX / YY   │v01       │DD/MM/AAAA    │PENDENTE DE PRODUÇÃO                │
+│Sales Order         │PRANCHA TÉCNICA - MODELO B                      │WF-TEMPLATE-B     │XX / YY   │v01       │DD/MM/AAAA    │AGUARDANDO APROVAÇÃO                │
 │                    │(Viewport à esquerda + painel técnico à direita)│BASELINE v1.0     │VARIAÇÃO Claro              │ETAPA Wireframe Conceitual em Imagem        │
 ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │┌ VIEWPORT TÉCNICO 360 x 800 px                ┐  ┌ 1. CANVAS E VIEWPORT                           ┐  ┌ 2. COTAS DO VIEWPORT                                     ┐│
@@ -170,7 +170,7 @@ Para esta prancha, a ordem de autoridade é:
 2. .specs/wireframes/REGRAS-TECNICAS.md — invariantes técnicos
 3. .specs/wireframes/PROCESSO-PRANCHA.md — sequência e gates
 4. .specs/wireframes/WIREFRAME-TEXT.md — contrato documental
-5. docs/wireframes/images/templates/README.md — governança da prancha-modelo
+5. docs/wireframes/images/README.md — estrutura operacional e separação `white` / `black`
 6. este WF-TEMPLATE-B_v01.md — composição específica desta alternativa
 7. PNG correspondente — resultado visual, nunca fonte normativa superior
 ```
@@ -179,16 +179,20 @@ Nenhuma prancha histórica ou alternativa anterior é referência de geometria, 
 
 ### Estado dos gates desta B_v01
 
-O repositório atual não contém registro explícito de aprovação individual dos gates 2 a 6. A existência de medidas e cálculos posteriores não constitui aprovação retroativa.
+O Gate 1 é técnico e está concluído porque o canvas registrado nesta B_v01 atende às invariantes canônicas.
+
+Os Gates 2, 3 e 6 exigem aprovação humana explícita. Os Gates 4 e 5 são técnicos e somente podem ser concluídos depois das dependências anteriores estarem congeladas.
+
+A existência de medidas e cálculos posteriores não constitui aprovação retroativa de um gate humano nem conclusão automática de um gate técnico bloqueado.
 
 ```text
-Gate 1 — Canvas: DEFINIDO PELA SPEC CANÔNICA
+Gate 1 — Canvas: APROVADO E CONGELADO
 Gate 2 — Título / Cabeçalho: AGUARDANDO APROVAÇÃO
 Gate 3 — Viewport Técnico: BLOQUEADO POR GATE ANTERIOR
 Gate 4 — Área restante calculada: BLOQUEADO POR GATE ANTERIOR
 Gate 5 — Demais elementos definidos: BLOQUEADO POR GATE ANTERIOR
 Gate 6 — Wireframe Text completo: BLOQUEADO POR GATE ANTERIOR
-Produção do PNG: BLOQUEADA
+Produção do PNG: BLOQUEADO POR GATE ANTERIOR
 ```
 
 As geometrias documentadas abaixo permanecem como proposta de trabalho até o gate correspondente ser aprovado e registrado neste próprio arquivo.
@@ -410,7 +414,7 @@ DATA
 DD/MM/AAAA
 
 STATUS
-PENDENTE DE PRODUÇÃO
+AGUARDANDO APROVAÇÃO
 ```
 
 ### Linha inferior
@@ -443,7 +447,7 @@ BASELINE
 v1.0
 
 VARIAÇÃO
-Claro | Escuro
+Claro
 
 ETAPA
 Wireframe Conceitual em Imagem
@@ -462,7 +466,7 @@ Ele deve ser inserido fisicamente antes do cálculo final das áreas documentais
 Arquivo obrigatório:
 
 ```text
-docs/wireframes/images/templates/references/WF-VIEWPORT-360x800-clean.png
+docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean.png
 ```
 
 Dimensão obrigatória:
@@ -547,7 +551,7 @@ sobra: 56 px
 Referência:
 
 ```text
-docs/wireframes/images/templates/references/
+docs/wireframes/images/references/white/
 Especificação Técnica do Viewport Mobile.png
 ```
 
@@ -822,7 +826,7 @@ Referências:
 3.2 — Cotas
 3.3 — Safe area
 
-docs/wireframes/images/templates/references/
+docs/wireframes/images/references/white/
 Especificação Técnica do Viewport Mobile.png
 ```
 
@@ -1622,19 +1626,23 @@ Esta B_v01 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
 
 ```text
 01. Canvas 1280 × 1920
-02. Definir Cabeçalho
-03. APROVAR E CONGELAR Gate 2
-04. Posicionar WF-VIEWPORT-360x800-clean.png em 100% / 1:1
-05. Adicionar cotas 360 / 336 / 12 / 12 / 800
-06. APROVAR E CONGELAR Gate 3
-07. Calcular a área documental restante
-08. Registrar e aprovar Gate 4
-09. Definir Blocos 1 a 12 e Bordas/Divisores
-10. Aprovar e congelar Gate 5
-11. Conferir integralmente o Wireframe Text
-12. Aprovar e congelar Gate 6
-13. Somente então produzir o PNG correspondente
-14. Validar PNG × Wireframe Text
+02. Validar tecnicamente Gate 1
+03. Definir Cabeçalho
+04. APROVAR E CONGELAR Gate 2 — aprovação humana
+05. Posicionar WF-VIEWPORT-360x800-clean.png em 100% / 1:1
+06. Adicionar cotas 360 / 336 / 12 / 12 / 800
+07. APROVAR E CONGELAR Gate 3 — aprovação humana
+08. Calcular a área documental restante
+09. Validar tecnicamente Gate 4
+10. Definir Blocos 1 a 12 e Bordas/Divisores
+11. Validar tecnicamente Gate 5
+12. Conferir integralmente o Wireframe Text
+13. APROVAR E CONGELAR Gate 6 — aprovação humana
+14. Produção do PNG: PENDENTE
+15. Produzir o PNG — Produção do PNG: EM DEFINIÇÃO
+16. Validar PNG × Wireframe Text
+17. Se conforme: Produção do PNG: AGUARDANDO APROVAÇÃO
+18. Após aprovação explícita: Produção do PNG: APROVADO E CONGELADO
 ```
 
 ---
@@ -1642,10 +1650,12 @@ Esta B_v01 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
 # Gate antes da produção do PNG
 
 ```text
+[ ] Gate 1 registrado como APROVADO E CONGELADO
 [ ] Gate 2 registrado como APROVADO E CONGELADO
 [ ] Gate 3 registrado como APROVADO E CONGELADO
 [ ] Gate 4 registrado como APROVADO E CONGELADO
 [ ] Gate 5 registrado como APROVADO E CONGELADO
+[ ] Gate 6 registrado como APROVADO E CONGELADO
 [ ] frame inicial coerente com as specs canônicas vigentes
 [ ] canvas = 1280 × 1920 px
 [ ] cabeçalho montado conforme esta B_v01
@@ -1664,4 +1674,6 @@ Esta B_v01 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
 [ ] não existe requisito funcional inventado
 ```
 
-Somente depois de todos os gates obrigatórios estarem registrados como aprovados e o Gate 6 estar `APROVADO E CONGELADO` o PNG da `WF-TEMPLATE-B_v01` pode ser produzido e comparado com esta especificação.
+Somente depois dos Gates 1 a 6 estarem registrados como `APROVADO E CONGELADO` a `Produção do PNG` pode sair de `BLOQUEADO POR GATE ANTERIOR` para `PENDENTE`.
+
+Durante a construção da imagem, usar `EM DEFINIÇÃO`. Depois da validação PNG × Wireframe Text, usar `AGUARDANDO APROVAÇÃO`. Somente após aprovação explícita da imagem usar `APROVADO E CONGELADO`.

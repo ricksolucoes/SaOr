@@ -6,9 +6,21 @@ A prancha não nasce de um template visual pré-pronto.
 
 Ela nasce de um **canvas vazio** e é construída por etapas sequenciais.
 
-Cada etapa deve ser aprovada antes de a próxima definir sua geometria.
+Cada etapa deve ser concluída antes de a próxima definir sua geometria.
 
-A geometria de uma etapa já aprovada não pode ser alterada silenciosamente para fazer uma etapa posterior caber.
+Os gates são de dois tipos:
+
+```text
+GATE TÉCNICO
+→ conclusão por verificação objetiva das specs;
+→ não cria uma nova parada para aprovação humana.
+
+GATE DE APROVAÇÃO HUMANA
+→ exige decisão explícita do responsável;
+→ a execução deve parar em AGUARDANDO APROVAÇÃO.
+```
+
+A geometria de uma etapa registrada como `APROVADO E CONGELADO` não pode ser alterada silenciosamente para fazer uma etapa posterior caber.
 
 ## 2. Sequência obrigatória
 
@@ -51,6 +63,31 @@ BLOQUEADO POR GATE ANTERIOR
 NÃO APLICÁVEL
 ```
 
+Significado dos estados:
+
+| Estado | Significado |
+|---|---|
+| `PENDENTE` | etapa liberada, mas ainda não iniciada |
+| `EM DEFINIÇÃO` | etapa em construção, cálculo, revisão ou correção |
+| `AGUARDANDO APROVAÇÃO` | trabalho necessário concluído e parado aguardando decisão humana explícita |
+| `APROVADO E CONGELADO` | etapa concluída e congelada; em gate técnico significa validação técnica concluída; em gate humano significa aprovação explícita registrada |
+| `BLOQUEADO POR GATE ANTERIOR` | etapa não pode avançar porque uma dependência anterior ainda não foi concluída |
+| `NÃO APLICÁVEL` | etapa comprovadamente não se aplica ao artefato, com justificativa registrada |
+
+Classificação dos gates:
+
+```text
+Gate 1 — Canvas: TÉCNICO
+Gate 2 — Título / Cabeçalho: APROVAÇÃO HUMANA
+Gate 3 — Viewport Técnico: APROVAÇÃO HUMANA
+Gate 4 — Área restante calculada: TÉCNICO
+Gate 5 — Demais elementos definidos: TÉCNICO
+Gate 6 — Wireframe Text completo: APROVAÇÃO HUMANA
+Produção do PNG: EXECUÇÃO + APROVAÇÃO HUMANA FINAL
+```
+
+A execução deve parar para decisão humana nos Gates 2, 3 e 6 e na aprovação final do PNG. Os Gates 1, 4 e 5 não criam novas paradas humanas.
+
 Registro mínimo obrigatório:
 
 ```text
@@ -68,9 +105,33 @@ Regras:
 - uma aprovação ocorrida fora do repositório deve ser refletida no Wireframe Text antes de depender dela em outra execução;
 - ausência de registro explícito não equivale a aprovação;
 - uma etapa somente pode ser tratada como congelada quando seu gate estiver registrado como `APROVADO E CONGELADO`;
+- gates técnicos podem evoluir de `PENDENTE` para `EM DEFINIÇÃO` e, quando todos os critérios objetivos forem atendidos, para `APROVADO E CONGELADO` sem criar uma nova aprovação humana;
+- gates humanos devem passar por `AGUARDANDO APROVAÇÃO` antes de `APROVADO E CONGELADO`;
 - `BLOQUEADO POR GATE ANTERIOR` impede cálculo definitivo das etapas seguintes;
-- a existência de coordenadas propostas não equivale a aprovação do gate correspondente;
-- a produção do PNG permanece bloqueada até o Gate 6 estar `APROVADO E CONGELADO`.
+- a existência de coordenadas propostas não equivale à conclusão do gate correspondente;
+- se uma etapa congelada for reaberta, ela volta para `EM DEFINIÇÃO` e as etapas dependentes voltam para `BLOQUEADO POR GATE ANTERIOR`;
+- a produção do PNG permanece em `BLOQUEADO POR GATE ANTERIOR` até o Gate 6 estar `APROVADO E CONGELADO`.
+
+Estado da produção do PNG:
+
+```text
+BLOQUEADO POR GATE ANTERIOR
+→ Gate 6 ainda não aprovado
+
+PENDENTE
+→ Gate 6 aprovado; produção ainda não iniciada
+
+EM DEFINIÇÃO
+→ imagem em construção ou correção
+
+AGUARDANDO APROVAÇÃO
+→ PNG construído e validado contra o Wireframe Text
+
+APROVADO E CONGELADO
+→ imagem aprovada explicitamente e congelada
+```
+
+`NÃO APLICÁVEL` somente pode ser usado quando a produção de PNG realmente não fizer parte do artefato.
 
 ---
 
@@ -86,7 +147,9 @@ margens estruturais aplicáveis
 
 Nenhum cartão documental, viewport ou bloco deve ser posicionado nesta etapa.
 
-## Gate 1
+## Gate 1 — validação técnica
+
+Durante a construção, usar `EM DEFINIÇÃO`.
 
 Confirmar:
 
@@ -95,6 +158,14 @@ Confirmar:
 [ ] orientação correta
 [ ] nenhum elemento antecipado
 ```
+
+Quando os critérios forem atendidos, registrar:
+
+```text
+Gate 1 — Canvas: APROVADO E CONGELADO
+```
+
+Essa conclusão é técnica e não exige aprovação humana.
 
 ---
 
@@ -123,7 +194,11 @@ A largura e a altura devem ser calculadas para o conteúdo real do cabeçalho da
 
 Não copiar dimensões de uma prancha anterior apenas porque ela possui cabeçalho semelhante.
 
-## Gate 2 — aprovação do título
+## Gate 2 — aprovação humana do título
+
+Enquanto o cabeçalho estiver sendo definido, registrar `EM DEFINIÇÃO`.
+
+Quando a proposta estiver completa, registrar `AGUARDANDO APROVAÇÃO` e parar até existir decisão explícita.
 
 Somente após aprovação explícita:
 
@@ -181,7 +256,11 @@ Não deslocar o cabeçalho aprovado para abrir espaço.
 
 Não usar geometria de prancha anterior como atalho.
 
-## Gate 3 — aprovação do viewport
+## Gate 3 — aprovação humana do viewport
+
+Enquanto o viewport estiver sendo definido, registrar `EM DEFINIÇÃO`.
+
+Quando a proposta estiver completa, registrar `AGUARDANDO APROVAÇÃO` e parar até existir decisão explícita.
 
 Confirmar:
 
@@ -223,6 +302,23 @@ limites
 ```
 
 Não é permitido partir de uma grade visual presumida e tentar forçar o conteúdo a caber nela.
+
+## Gate 4 — validação técnica da área restante
+
+Durante o cálculo, registrar `EM DEFINIÇÃO`.
+
+Confirmar:
+
+```text
+[ ] cálculo parte somente de elementos já congelados
+[ ] coordenadas e limites fecham matematicamente
+[ ] área restante permanece dentro do canvas
+[ ] nenhum elemento congelado foi movido
+```
+
+Quando os critérios forem atendidos, registrar `APROVADO E CONGELADO`.
+
+Essa conclusão é técnica e não exige aprovação humana.
 
 ---
 
@@ -283,11 +379,32 @@ Se o conteúdo não couber:
 6. registrar o novo cálculo no Wireframe Text;
 7. submeter novamente à aprovação quando a alteração afetar composição já aprovada.
 
+## Gate 5 — validação técnica dos demais elementos
+
+Durante a definição, registrar `EM DEFINIÇÃO`.
+
+Confirmar:
+
+```text
+[ ] todos os elementos necessários foram definidos
+[ ] todos possuem geometria, conteúdo e referências suficientes para reconstrução
+[ ] nenhuma área excede os limites calculados
+[ ] nenhuma geometria congelada foi alterada silenciosamente
+```
+
+Quando os critérios forem atendidos, registrar `APROVADO E CONGELADO`.
+
+Essa conclusão é técnica e não exige aprovação humana.
+
 ---
 
 # 8. Etapa 6 — Aprovar o Wireframe Text completo
 
 Antes da imagem, o documento deve permitir reconstruir a prancha sem interpretação livre.
+
+## Gate 6 — aprovação humana do Wireframe Text
+
+Durante a conferência integral, registrar `EM DEFINIÇÃO`.
 
 Confirmar:
 
@@ -306,11 +423,27 @@ Confirmar:
 
 Enquanto qualquer item estiver aberto, **não gerar a imagem**.
 
+Quando todos os itens estiverem fechados, registrar `AGUARDANDO APROVAÇÃO` e parar.
+
+Somente após aprovação humana explícita registrar:
+
+```text
+Gate 6 — Wireframe Text completo: APROVADO E CONGELADO
+Produção do PNG: PENDENTE
+```
+
 ---
+
 
 # 9. Etapa 7 — Construir a prancha visual
 
-Depois do Wireframe Text aprovado, partir novamente do canvas vazio e executar exatamente o que foi especificado:
+Depois do Wireframe Text aprovado, partir novamente do canvas vazio e executar exatamente o que foi especificado.
+
+Ao iniciar a construção visual, registrar:
+
+```text
+Produção do PNG: EM DEFINIÇÃO
+```
 
 ```text
 1. canvas;
@@ -350,14 +483,30 @@ margens
 gaps
 ```
 
+Se a imagem corresponder ao Wireframe Text, registrar:
+
+```text
+Produção do PNG: AGUARDANDO APROVAÇÃO
+```
+
+Após aprovação humana explícita da imagem, registrar:
+
+```text
+Produção do PNG: APROVADO E CONGELADO
+```
+
 Se a imagem revelar que a especificação não funciona:
 
 ```text
 não corrigir somente a imagem
         ↓
+Produção do PNG: EM DEFINIÇÃO
+        ↓
 corrigir primeiro o Wireframe Text
         ↓
-aprovar a correção
+reabrir somente os gates realmente afetados
+        ↓
+obter nova aprovação quando um gate humano for reaberto
         ↓
 gerar novamente
 ```

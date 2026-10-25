@@ -27,8 +27,8 @@ docs/Documento_Mestre.md
 .specs/wireframes/WIREFRAME-TEXT.md
 → contrato documental de cada Wireframe Text específico
 
-docs/wireframes/images/templates/README.md
-→ governança, estados, promoção e congelamento das pranchas-modelo
+docs/wireframes/images/README.md
+→ estrutura operacional, separação `white` / `black` e localização das referências e pranchas-modelo
 
 Wireframe Text específico
 → composição particular daquela prancha

@@ -43,7 +43,7 @@ A etapa atual é **Wireframe Conceitual em Imagem**. O processo oficial de evolu
 - [`.specs/README.md`](.specs/README.md) — índice das especificações normativas reutilizáveis do projeto; para wireframes, centraliza regras técnicas, processo de construção e padrão documental do Wireframe Text.
 - [`docs/Registro_Fechamento_Documento_Mestre.md`](docs/Registro_Fechamento_Documento_Mestre.md) — registro canônico de fechamento e proteção contra regressões da baseline funcional v1.0.
 - [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md) — controle operacional da etapa de Wireframe Conceitual em Imagem e referência para as specs canônicas em `.specs/wireframes/`.
-- [`docs/wireframes/images/templates/README.md`](docs/wireframes/images/templates/README.md) — organização e ciclo de vida das pranchas-modelo, seus Wireframe Text e referências compartilhadas.
+- [`docs/wireframes/images/references/templates/`](docs/wireframes/images/references/templates/) — pranchas-modelo e Wireframe Text separados por `white` e `black`; a estrutura operacional é definida em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md).
 
 O README principal mantém apenas a visão macro do projeto. Regras funcionais e técnicas devem ser consultadas em seus documentos canônicos para evitar duplicidade e divergência.
 

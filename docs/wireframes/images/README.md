@@ -40,40 +40,150 @@ Ele **não redefine** regras de negócio, conteúdo funcional, Textframes, token
 
 # 2. Estrutura da etapa
 
+A estrutura física vigente é:
+
 ```text
 docs/wireframes/images/
 ├── README.md
-├── templates/
-│   ├── README.md
-│   ├── references/
-│   │   ├── Especificação Técnica - Prancha de Trabalho.png
+├── references/
+│   ├── Especificação Técnica - Prancha de Trabalho.png
+│   ├── white/
 │   │   ├── Especificação Técnica do Viewport Mobile.png
 │   │   └── WF-VIEWPORT-360x800-clean.png
-│   ├── alternatives/
-│   │   ├── <pranchas em avaliação>.png
-│   │   └── wiframetext/
-│   │       └── <mesmo-nome-base>.md
-│   └── aprovados/
-│       ├── <pranchas aprovadas>.png
-│       └── wiframetext/
-│           └── <mesmo-nome-base>.md
+│   ├── black/
+│   │   └── <referências específicas da variação, quando existirem>
+│   └── templates/
+│       ├── white/
+│       │   ├── <pranchas-modelo claras>.png
+│       │   └── wiframetext/
+│       │       └── <mesmo-nome-base>.md
+│       └── black/
+│           ├── <pranchas-modelo escuras>.png
+│           └── wiframetext/
+│               └── <mesmo-nome-base>.md
 ├── white/
+│   └── <saídas funcionais claras, em etapa posterior>
 └── black/
+    └── <saídas funcionais escuras, em etapa posterior>
 ```
 
-A organização, os estados, os critérios de avaliação, a promoção e o gate de liberação das pranchas-modelo são definidos exclusivamente em [`templates/README.md`](templates/README.md).
+Separação de responsabilidade:
+
+```text
+references/
+→ referências técnicas compartilhadas ou específicas por variação
+
+references/templates/white/
+→ pranchas-modelo e Wireframe Text da variação clara
+
+references/templates/black/
+→ pranchas-modelo e Wireframe Text da variação escura
+
+white/ e black/ na raiz de images/
+→ saídas funcionais futuras produzidas a partir da prancha-modelo aprovada
+```
+
+A estrutura anterior baseada em pastas de ciclo de vida não faz mais parte da organização vigente.
+
+A evolução de uma prancha-modelo é registrada no próprio Wireframe Text pelos estados definidos em `.specs/wireframes/PROCESSO-PRANCHA.md`.
+
+## 2.1 Estados de construção das pranchas-modelo
+
+Durante a construção de uma prancha-modelo e do PNG correspondente, somente estes estados podem ser usados:
+
+```text
+PENDENTE
+EM DEFINIÇÃO
+AGUARDANDO APROVAÇÃO
+APROVADO E CONGELADO
+BLOQUEADO POR GATE ANTERIOR
+NÃO APLICÁVEL
+```
+
+Os Gates 1, 4 e 5 são técnicos.
+
+Os Gates 2, 3 e 6 exigem aprovação humana explícita.
+
+A produção do PNG usa o mesmo conjunto de estados:
+
+```text
+BLOQUEADO POR GATE ANTERIOR
+→ Gate 6 ainda não aprovado
+
+PENDENTE
+→ Gate 6 aprovado; produção ainda não iniciada
+
+EM DEFINIÇÃO
+→ imagem em construção ou correção
+
+AGUARDANDO APROVAÇÃO
+→ PNG construído e validado contra o Wireframe Text
+
+APROVADO E CONGELADO
+→ imagem aprovada explicitamente e congelada
+```
+
+Essa classificação pertence às pranchas-modelo e não substitui os estados da matriz funcional das 71 interfaces.
 
 ---
 
-# 3. Referências técnicas compartilhadas
+# 3. Referências técnicas e pranchas-modelo
 
-Os arquivos físicos de `templates/references/` permanecem neste diretório porque são artefatos utilizados na produção. Sua interpretação normativa pertence às specs canônicas.
+`references/` concentra os artefatos de referência usados na etapa.
 
-| Arquivo | Função operacional | Regra canônica |
-|---|---|---|
-| `Especificação Técnica - Prancha de Trabalho.png` | referência física disponível para o canvas | `.specs/wireframes/REGRAS-TECNICAS.md` |
-| `Especificação Técnica do Viewport Mobile.png` | referência visual disponível para cotas | `.specs/wireframes/REGRAS-TECNICAS.md` |
-| `WF-VIEWPORT-360x800-clean.png` | bitmap mestre de demonstração para pranchas-modelo neutras | `.specs/wireframes/REGRAS-TECNICAS.md` |
+## 3.1 Referência neutra compartilhada
+
+Arquivo atualmente existente:
+
+```text
+references/Especificação Técnica - Prancha de Trabalho.png
+```
+
+## 3.2 Referências específicas por variação
+
+Variação clara:
+
+```text
+references/white/Especificação Técnica do Viewport Mobile.png
+references/white/WF-VIEWPORT-360x800-clean.png
+```
+
+Variação escura:
+
+```text
+references/black/
+```
+
+A pasta `black/` recebe somente referências físicas específicas da variação escura quando elas existirem.
+
+Não utilizar um bitmap específico de `white` como referência de `black` por inferência.
+
+As dimensões, cotas, grid e demais invariantes continuam pertencendo às specs canônicas, independentemente da existência de um bitmap específico.
+
+## 3.3 Pranchas-modelo
+
+As pranchas-modelo ficam separadas por variação:
+
+```text
+references/templates/white/
+references/templates/black/
+```
+
+O Wireframe Text de cada prancha-modelo fica dentro da mesma variação:
+
+```text
+references/templates/<variação>/wiframetext/<nome>.md
+```
+
+A variação registrada no Wireframe Text deve coincidir com a pasta onde o artefato está localizado.
+
+A construção e o acompanhamento de cada prancha-modelo obedecem a:
+
+```text
+../../../.specs/wireframes/REGRAS-TECNICAS.md
+../../../.specs/wireframes/PROCESSO-PRANCHA.md
+../../../.specs/wireframes/WIREFRAME-TEXT.md
+```
 
 Este README não redefine dimensões, cotas ou geometria desses arquivos.
 
@@ -154,7 +264,12 @@ O Documento Mestre continua sendo a autoridade para conteúdo e comportamento fu
 
 ---
 
-# 11. Imagens funcionais
+# 11. Saídas funcionais futuras
+
+Esta seção se aplica somente depois de existir uma prancha-modelo aprovada e congelada para a variação correspondente.
+
+A construção atual das pranchas-modelo ocorre em `references/templates/` e não deve ser confundida com as saídas funcionais em `white/` e `black/`.
+
 
 Cada uma das 71 interfaces deve possuir, no mínimo, uma representação Claro em `white/` e uma representação Escuro em `black/`.
 
@@ -292,7 +407,12 @@ A conferência é feita contra as fontes documentais vigentes; a aparência de u
 
 ---
 
-# 14. Estados de controle
+# 14. Estados de controle das interfaces funcionais
+
+Os estados abaixo pertencem à matriz futura das 71 interfaces e permanecem alinhados ao Documento Mestre.
+
+Eles não são os estados usados para acompanhar a construção das pranchas-modelo.
+
 
 ```text
 PENDENTE
@@ -404,7 +524,7 @@ Mínimo de imagens funcionais:     142
 Total final: variável por paginação
 ```
 
-Pranchas-modelo de `templates/` não entram nessa contagem.
+Pranchas-modelo de `references/templates/` não entram nessa contagem.
 
 ---
 
@@ -415,9 +535,8 @@ Pranchas-modelo de `templates/` não entram nessa contagem.
 3. `.specs/wireframes/REGRAS-TECNICAS.md` — invariantes técnicos;
 4. `.specs/wireframes/PROCESSO-PRANCHA.md` — sequência obrigatória de construção;
 5. `.specs/wireframes/WIREFRAME-TEXT.md` — contrato documental;
-6. `templates/README.md` — governança das pranchas-modelo;
-7. este README — controle operacional;
-8. Wireframe Text específico — composição reproduzível da prancha;
-9. PNG correspondente — representação visual resultante.
+6. este README — estrutura operacional e separação entre referências, pranchas-modelo e saídas funcionais;
+7. Wireframe Text específico em `references/templates/<variação>/wiframetext/` — composição reproduzível da prancha-modelo;
+8. PNG correspondente em `references/templates/<variação>/` — representação visual resultante da prancha-modelo.
 
 Artefato inferior não altera silenciosamente uma regra de nível superior.

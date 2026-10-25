@@ -33,21 +33,31 @@ Regras obrigatórias:
 
 ### 3.1 Referência de demonstração
 
-Para pranchas-modelo neutras:
+A referência física atualmente disponível para a variação `white` é:
 
 ```text
-docs/wireframes/images/templates/references/WF-VIEWPORT-360x800-clean.png
+docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean.png
 ```
 
-Pode ser inserido diretamente em `100%` e deve permanecer `360 × 800 px`.
+Pode ser inserida diretamente em `100%` e deve permanecer `360 × 800 px`.
+
+Referências físicas específicas da variação `black`, quando existirem, pertencem a:
+
+```text
+docs/wireframes/images/references/black/
+```
+
+Não reutilizar por inferência um bitmap específico de `white` em uma prancha `black`. As dimensões normativas do viewport permanecem as mesmas independentemente da variação.
 
 ### 3.2 Cotas
 
-Referência:
+Referência física atualmente disponível para a variação `white`:
 
 ```text
-docs/wireframes/images/templates/references/Especificação Técnica do Viewport Mobile.png
+docs/wireframes/images/references/white/Especificação Técnica do Viewport Mobile.png
 ```
+
+As cotas abaixo são normativas e independem da variação visual.
 
 Cotas vigentes:
 

@@ -20,6 +20,8 @@ O documento específico pode organizar seus tópicos conforme a composição que
 
 O que é obrigatório é o **conteúdo mínimo e a ordem de decisão**, não uma distribuição visual fixa.
 
+Para pranchas-modelo, a variação (`white` ou `black`) também deve ser explícita. A localização operacional é definida em `docs/wireframes/images/README.md`.
+
 ## 3. O frame conceitual inicial
 
 Quando uma prancha possui uma reprodução textual inicial aprovada, ela registra a intenção de composição:
@@ -45,8 +47,10 @@ O documento deve registrar, quando aplicável:
 
 ```text
 identificação e versão
+variação da prancha-modelo: white ou black
 estado do artefato
 estado dos gates do processo
+estado da produção do PNG
 conceito de composição
 canvas
 cabeçalho
@@ -83,7 +87,29 @@ Gate 6 — Wireframe Text completo: <ESTADO>
 Produção do PNG: <ESTADO>
 ```
 
-Os estados válidos são definidos em `PROCESSO-PRANCHA.md`.
+Os estados válidos são definidos em `PROCESSO-PRANCHA.md` e são exclusivamente:
+
+```text
+PENDENTE
+EM DEFINIÇÃO
+AGUARDANDO APROVAÇÃO
+APROVADO E CONGELADO
+BLOQUEADO POR GATE ANTERIOR
+NÃO APLICÁVEL
+```
+
+Classificação:
+
+```text
+Gate 1 — Canvas: TÉCNICO
+Gate 2 — Título / Cabeçalho: APROVAÇÃO HUMANA
+Gate 3 — Viewport Técnico: APROVAÇÃO HUMANA
+Gate 4 — Área restante calculada: TÉCNICO
+Gate 5 — Demais elementos definidos: TÉCNICO
+Gate 6 — Wireframe Text completo: APROVAÇÃO HUMANA
+```
+
+Gates técnicos não criam novas paradas humanas quando seus critérios objetivos forem atendidos. Gates humanos devem parar em `AGUARDANDO APROVAÇÃO`.
 
 Se uma aprovação não estiver registrada no próprio Wireframe Text, uma nova execução deve tratá-la como não comprovada e não pode inferi-la a partir de memória, conversa, commit ou existência de medidas posteriores.
 
@@ -125,12 +151,13 @@ COMPONENTES / ÍCONES
 
 REFERÊNCIA
 → spec ou documento que sustenta a decisão
+→ referência física da mesma variação, quando aplicável
 
 DEPENDÊNCIA
-→ qual etapa anterior precisava estar aprovada
+→ qual etapa anterior precisava estar `APROVADO E CONGELADO`
 
 STATUS
-→ definido / pendente / aprovado, quando necessário
+→ usar um dos estados canônicos quando o elemento precisar de acompanhamento próprio
 ```
 
 Isso é um contrato documental; **não é um template de layout**.
@@ -170,7 +197,17 @@ conteúdo real
 área restante
 regras técnicas
 conceito da composição atual
+variação atual
 ```
+
+Para pranchas-modelo, os arquivos ficam separados por variação:
+
+```text
+docs/wireframes/images/references/templates/white/
+docs/wireframes/images/references/templates/black/
+```
+
+O Wireframe Text correspondente fica em `wiframetext/` dentro da mesma variação. Referências específicas de `white` e `black` não devem ser misturadas por inferência.
 
 ## 8. Aprovação progressiva
 
@@ -178,13 +215,16 @@ O Wireframe Text deve refletir o processo de construção:
 
 ```text
 canvas
+→ validação técnica
 → título
-→ aprovação
+→ aprovação humana
 → viewport
-→ aprovação
+→ aprovação humana
 → área restante
+→ validação técnica
 → elementos
-→ aprovação integral
+→ validação técnica
+→ aprovação humana integral do Wireframe Text
 → imagem
 ```
 
@@ -200,20 +240,31 @@ Não registrar como regra:
 - medida inferida de raster histórico;
 - escolha visual não aprovada;
 - funcionalidade inexistente;
-- geometria copiada por conveniência.
+- geometria copiada por conveniência;
+- mistura implícita de referências específicas de `white` e `black`;
+- estado de processo fora do conjunto canônico.
 
-Não gerar PNG enquanto houver decisão geométrica pendente no Wireframe Text.
+Não gerar PNG enquanto o Gate 6 não estiver `APROVADO E CONGELADO`.
 
 ## 10. Relação com a imagem
 
 ```text
 Wireframe Text aprovado
         ↓
+Produção do PNG: PENDENTE
+        ↓
 execução visual
+Produção do PNG: EM DEFINIÇÃO
         ↓
 PNG
         ↓
 validação contra o Wireframe Text
+        ↓
+Produção do PNG: AGUARDANDO APROVAÇÃO
+        ↓
+aprovação explícita
+        ↓
+Produção do PNG: APROVADO E CONGELADO
 ```
 
 Se houver incompatibilidade, corrigir primeiro a especificação e depois regenerar a imagem.
