@@ -188,6 +188,100 @@ Se um ativo obrigatório não estiver disponível para a execução, não o reco
 
 Se uma fonte oficial obrigatória não estiver disponível, não substituir silenciosamente por uma fonte parecida e tratar a saída como final.
 
+### 5.1 Regra de execução restritiva
+
+A montagem deve ser tratada como **execução determinística por etapas congeladas**.
+
+Não existe liberdade para:
+
+- reinterpretar a composição para fazê-la caber;
+- criar fluxo paralelo de montagem;
+- substituir uma etapa por outra estratégia;
+- reduzir canvas, viewport, componente ou tipografia por conveniência;
+- inventar ícone, modal, navegação, estado, componente ou tratamento visual sem antes consultar as fontes vigentes;
+- continuar para a etapa seguinte quando a etapa atual apresentar overflow, colisão, compressão, dimensão incorreta ou conteúdo fora dos limites.
+
+A execução deve parar na primeira inconformidade física ou documental encontrada.
+
+A regra geral é:
+
+```text
+medida exata
+→ conteúdo real
+→ validação
+→ congelamento
+→ próxima etapa
+```
+
+Uma etapa congelada não pode ser redimensionada, deslocada ou reinterpretada para acomodar uma etapa posterior sem alteração documental autorizada.
+
+### 5.2 Pré-layout obrigatório no tamanho final
+
+Antes do acabamento visual de qualquer região, deve existir um **pré-layout no tamanho físico final**.
+
+O pré-layout não é uma caixa vazia meramente ilustrativa. Ele deve usar:
+
+- `x`, `y`, `w` e `h` reais;
+- texto real ou conteúdo representativo suficiente para comprovar ocupação física;
+- tipografia real prevista para a região;
+- ícones, componentes e cotas em seus tamanhos reais quando já definidos;
+- margens, paddings e gaps reais;
+- ativos `1:1` em suas dimensões reais quando aplicáveis.
+
+Objetivo obrigatório:
+
+> comprovar que a informação cabe fisicamente dentro da área antes da montagem visual definitiva.
+
+É proibido considerar um bloco aprovado apenas porque o retângulo externo cabe no canvas.
+
+O bloco somente pode avançar quando seu conteúdo real também couber sem:
+
+- clipping;
+- overflow;
+- colisão;
+- compressão tipográfica;
+- redução indevida de componente;
+- saída de informação para fora do card;
+- alteração de medida normativa.
+
+### 5.3 Preservação dimensional durante toda revisão
+
+As dimensões normativas devem ser verificadas **antes e depois de cada rodada de ajuste**.
+
+Quando a prancha definir canvas `1280 × 1920 px` e viewport `360 × 800 px`, a condição de entrada e de saída da revisão deve permanecer:
+
+```text
+ANTES
+canvas   = 1280 × 1920 px
+viewport = 360 × 800 px em 1:1
+
+DEPOIS
+canvas   = 1280 × 1920 px
+viewport = 360 × 800 px em 1:1
+```
+
+É proibido:
+
+- editar em resolução reduzida e ampliar posteriormente;
+- reduzir a prancha para facilitar a montagem;
+- redimensionar o viewport junto com o canvas;
+- exportar em outra resolução e reescalar;
+- alterar coordenadas ou dimensões congeladas sem mudança documental autorizada.
+
+### 5.4 Proibição de ramificação de solução
+
+Durante a correção do mesmo frame, a execução deve permanecer no **mesmo fluxo de montagem e na mesma composição aprovada**.
+
+Não criar:
+
+- fluxo A / fluxo B;
+- alternativa visual paralela;
+- composição substituta;
+- renderer conceitualmente diferente para resolver um problema local;
+- nova interpretação completa da prancha.
+
+Correções do mesmo frame devem ser incrementais e restritas ao escopo autorizado.
+
 ---
 
 ## 6. Classificação dos elementos durante a montagem
@@ -493,17 +587,61 @@ Ajuste de contraste deve preservar a função cromática documentada. Se um par 
 
 ---
 
-## 15. Uso de ícones
+## 15. Uso de ícones e consulta contextual obrigatória
 
-Quando a documentação exigir iconografia técnica:
+A escolha ou desenho de qualquer ícone deve ocorrer **somente depois da consulta ao contexto vigente**.
 
-- usar a família/referência definida em `REGRAS-TECNICAS.md`;
-- usar o tamanho definido para o papel do ícone;
-- respeitar o touch target quando o componente demonstrado for interativo;
-- preservar alinhamento óptico com texto e componente;
-- não substituir ícone por emoji;
-- não substituir ícone por letra, símbolo ASCII ou glifo semelhante quando existir referência oficial;
-- não misturar famílias de ícone na mesma prancha sem autorização documental.
+A sequência obrigatória é:
+
+```text
+1. identificar que o elemento exige ícone
+2. consultar REGRAS-TECNICAS.md
+3. consultar o Wireframe Text específico
+4. consultar docs/wireframes/images/README.md
+5. localizar referências técnicas aplicáveis
+6. localizar referências visuais contextuais aplicáveis
+7. verificar se existe ativo, família, variante ou representação já definida
+8. verificar como a iconografia já é usada em componentes equivalentes
+9. somente então inserir o ícone
+10. validar tamanho, alinhamento, estilo e touch target
+```
+
+Quando a documentação determinar uma família ou referência, essa definição é obrigatória.
+
+Quando existir ativo oficial, usar o ativo oficial.
+
+Quando existir representação visual já consolidada para o mesmo componente ou linguagem da etapa, ela deve ser consultada para preservar continuidade.
+
+É proibido:
+
+- desenhar um ícone próprio por conveniência;
+- substituir ícone por emoji;
+- substituir ícone por letra, símbolo ASCII ou glifo semelhante quando houver referência aplicável;
+- inventar família visual;
+- misturar famílias sem autorização;
+- mudar o estilo de ícone durante correção de outro problema;
+- usar memória de conversa como fonte primária quando o projeto contém referência documental ou visual aplicável.
+
+Se as fontes vigentes não forem suficientes para determinar o ícone:
+
+```text
+→ classificar como LACUNA DE MONTAGEM
+→ não inventar
+→ não avançar como se estivesse resolvido
+```
+
+A mesma consulta contextual é obrigatória, quando houver representação já estabelecida, para:
+
+- App Bar;
+- Bottom Navigation;
+- Modal / Dialog;
+- campos;
+- botões;
+- listas;
+- estados;
+- indicadores;
+- cotas técnicas;
+- demais componentes demonstrativos.
 
 ---
 
@@ -528,30 +666,196 @@ A solução deve seguir as regras superiores vigentes e, se necessário, registr
 
 ---
 
-## 17. Sequência de montagem visual
+## 17. Sequência obrigatória de montagem da prancha
 
-Depois de a produção estar liberada, executar a imagem nesta ordem lógica:
+Esta sequência é **normativa, linear e bloqueante**.
+
+Nenhuma etapa posterior pode ser usada para corrigir uma etapa anterior.
+
+### 17.1 Etapa 1 — Criar a prancha no tamanho exato
+
+Criar o canvas diretamente nas dimensões canônicas vigentes.
+
+Quando o canvas aprovado for `1280 × 1920 px`:
 
 ```text
-01. criar o canvas exatamente nas dimensões canônicas vigentes
-02. aplicar o fundo técnico da variação
-03. montar o cabeçalho conforme o Wireframe Text
-04. inserir ativos físicos oficiais já definidos
-05. montar viewport e cotas conforme o Wireframe Text
-06. criar regiões documentais na geometria especificada
-07. aplicar superfícies, bordas/divisores e elevação somente quando cabíveis
-08. aplicar o tratamento cromático integral conforme as fontes vigentes
-09. inserir títulos e estrutura tipográfica
-10. montar componentes e amostras
-11. inserir textos, valores, notas e legendas
-12. aplicar ícones e estados preservando suas cores aplicáveis
-13. executar alinhamento óptico interno permitido
-14. revisar clipping, colisão, overflow, cromia e consistência
-15. validar qualidade visual e fidelidade documental
-16. exportar PNG sem redimensionamento final
+canvas = 1280 × 1920 px
+escala = 1:1
+orientação = retrato
 ```
 
-Essa sequência não substitui a sequência de construção e gates de `PROCESSO-PRANCHA.md`; ela detalha somente a execução visual depois da liberação da imagem.
+Validar a dimensão física do documento antes de inserir qualquer conteúdo.
+
+**Bloqueio:** se o canvas não estiver na dimensão normativa, não avançar.
+
+### 17.2 Etapa 2 — Montar e validar título/cabeçalho
+
+Montar o cabeçalho **dentro da prancha já criada**, usando:
+
+- dimensões reais;
+- textos reais;
+- tipografia real;
+- metadados reais;
+- status real;
+- divisões internas reais.
+
+Verificar:
+
+- se o título cabe;
+- se o subtítulo cabe;
+- se status e metadados permanecem dentro de suas células;
+- se existe respiro suficiente;
+- se nenhum texto está comprimido;
+- se nenhuma informação toca ou atravessa os limites.
+
+Ajustes de altura ou distribuição interna só podem ocorrer dentro da autoridade documental aplicável.
+
+Depois da validação, congelar a geometria do cabeçalho.
+
+**Bloqueio:** não montar viewport nem demais blocos enquanto o cabeçalho não estiver fisicamente correto.
+
+### 17.3 Etapa 3 — Inserir e validar o viewport
+
+Inserir o viewport oficial nas dimensões físicas definidas.
+
+Quando a regra exigir `360 × 800 px` em `1:1`:
+
+```text
+viewport = 360 × 800 px
+escala = 1:1
+resize = proibido
+crop = proibido
+stretch = proibido
+reconstrução = proibida quando existir ativo oficial
+```
+
+Montar também as cotas previstas no Wireframe Text.
+
+Validar:
+
+- posição;
+- largura;
+- altura;
+- escala;
+- relação das cotas com o bitmap;
+- ausência de sobreposição indevida.
+
+Depois da validação, congelar viewport e cotas.
+
+**Bloqueio:** o viewport não pode ser redimensionado posteriormente para abrir espaço para outro conteúdo.
+
+### 17.4 Etapa 4 — Calcular o espaço realmente restante
+
+Somente depois de cabeçalho e viewport estarem congelados, calcular a área ainda disponível para os demais elementos.
+
+É proibido diminuir, deslocar ou comprimir elementos congelados para criar espaço artificialmente.
+
+### 17.5 Etapa 5 — Fazer o pré-layout dos demais blocos
+
+Criar cada bloco no `x/y/w/h` final que terá na prancha.
+
+O pré-layout deve conter informação real suficiente para validar ocupação física, conforme a seção 5.2.
+
+Para cada bloco:
+
+```text
+1. criar caixa no tamanho final
+2. inserir conteúdo real/representativo no tamanho real
+3. aplicar tipografia real
+4. reservar espaço real para ícones, cotas e ações
+5. verificar limites internos
+6. verificar overflow e colisão
+7. verificar se toda informação permanece dentro do card
+8. somente então congelar o bloco
+```
+
+**Bloqueio:** se qualquer informação ultrapassar o limite do bloco, o bloco está reprovado.
+
+### 17.6 Etapa 6 — Consultar o contexto antes de montar cada componente
+
+Antes de montar visualmente App Bar, Bottom Navigation, Modal, ícones, estados ou qualquer outro componente, executar a consulta contextual obrigatória:
+
+```text
+REGRAS-TECNICAS.md
+→ Wireframe Text específico
+→ docs/wireframes/images/README.md
+→ referências técnicas aplicáveis
+→ referências visuais contextuais aplicáveis
+→ ativos/famílias/representações existentes
+→ somente então montar
+```
+
+A ausência de consulta não autoriza dedução visual.
+
+Quando o contexto não fornecer informação suficiente:
+
+```text
+→ LACUNA DE MONTAGEM
+→ não inventar
+```
+
+### 17.7 Etapa 7 — Montar cada elemento separadamente
+
+Montar cada elemento dentro da caixa já validada no pré-layout.
+
+Para cada elemento:
+
+- preservar `x/y/w/h` congelados;
+- preservar tipografia;
+- preservar dimensões de componente;
+- preservar iconografia contextual;
+- preservar cromia aplicável;
+- preservar conteúdo;
+- manter toda informação dentro dos limites.
+
+Depois de montado, validar o elemento isoladamente antes de integrá-lo à prancha.
+
+### 17.8 Etapa 8 — Unir os elementos na prancha
+
+Somente elementos já validados podem ser inseridos na composição final.
+
+Durante a união é proibido:
+
+- escalar o bloco para caber;
+- redimensionar o canvas;
+- redimensionar o viewport;
+- alterar componente já validado;
+- reinterpretar estilo;
+- deslocar informação para fora do card.
+
+### 17.9 Etapa 9 — Validar a prancha completa
+
+Antes da exportação, validar obrigatoriamente:
+
+```text
+[ ] canvas mantém dimensão normativa
+[ ] viewport mantém dimensão normativa em 1:1
+[ ] cabeçalho permanece congelado e íntegro
+[ ] todos os cards respeitam seus limites
+[ ] nenhuma cota sai do card ao qual pertence
+[ ] nenhum texto está comprimido ou cortado
+[ ] ícones correspondem ao contexto vigente
+[ ] Modal / Dialog preserva a linguagem contextual aplicável
+[ ] Bottom Navigation preserva a linguagem contextual aplicável
+[ ] nenhuma área fora do escopo foi reinterpretada
+[ ] não ocorreu regressão de geometria, conteúdo, iconografia ou estilo
+```
+
+Se qualquer item falhar, não exportar como final.
+
+### 17.10 Etapa 10 — Exportar sem redimensionamento
+
+Exportar diretamente no tamanho físico da prancha.
+
+Depois da exportação, reabrir o PNG e verificar novamente:
+
+- largura;
+- altura;
+- viewport `1:1`;
+- ausência de resize global;
+- ausência de margem externa não documentada.
+
+A exportação não pode corrigir ou compensar erro de montagem.
 
 ---
 
@@ -765,6 +1069,9 @@ A validação final possui quatro eixos.
 [ ] não há ruído excessivo de bordas, linhas ou sombras
 [ ] componentes equivalentes possuem tratamento equivalente
 [ ] ícones estão alinhados e pertencem à referência correta
+[ ] consulta contextual de iconografia/componentes foi executada antes da montagem
+[ ] nenhum ícone ou componente foi inventado por conveniência
+[ ] nenhuma informação ultrapassa o limite do card ao qual pertence
 [ ] contraste dos elementos essenciais é verificável
 [ ] cromia, destaques e cores semânticas permanecem coerentes com a representação esperada
 [ ] a prancha mantém aparência técnica deliberada, não de rascunho
@@ -774,7 +1081,14 @@ A validação final possui quatro eixos.
 
 ```text
 [ ] PNG possui as dimensões físicas corretas
+[ ] dimensões normativas foram verificadas antes da revisão
+[ ] dimensões normativas foram verificadas depois da revisão
+[ ] pré-layout utilizou tamanho final e conteúdo real/representativo suficiente
+[ ] cabeçalho foi congelado antes da inserção do viewport
+[ ] viewport foi congelado antes da montagem dos demais blocos
 [ ] viewport e ativos 1:1 continuam 1:1 quando exigido
+[ ] viewport não foi redimensionado para acomodar a composição
+[ ] nenhum bloco congelado foi redimensionado para abrir espaço
 [ ] nenhuma etapa de exportação redimensionou a prancha
 [ ] linhas e divisores não ficaram borrados por posicionamento inadequado
 [ ] não existe margem externa não documentada
@@ -803,6 +1117,14 @@ A imagem somente pode avançar para o estado de aprovação definido em `PROCESS
 São falhas de montagem:
 
 - depender de memória de conversa para completar aparência;
+- pular a sequência obrigatória da seção 17;
+- iniciar acabamento sem pré-layout físico validado;
+- aprovar pré-layout apenas pela caixa externa sem verificar o conteúdo real;
+- continuar a montagem com conteúdo fora do limite do card;
+- alterar dimensão de etapa já congelada para acomodar etapa posterior;
+- criar fluxo paralelo, alternativa visual ou nova composição para corrigir problema local;
+- definir ícone ou componente sem executar a consulta contextual obrigatória;
+- inventar ícone, modal, navegação ou estado quando houver contexto aplicável ou quando a informação for insuficiente;
 - copiar estilo ou geometria de outro frame por conveniência;
 - reconstruir ativo físico oficial por aproximação;
 - usar bitmap da variação errada;
@@ -816,6 +1138,8 @@ São falhas de montagem:
 - introduzir novo requisito durante a renderização;
 - usar spacing arbitrário fora das regras vigentes;
 - exportar em dimensão diferente e depois reescalar;
+- pular a pré-validação geométrica e montar a prancha diretamente;
+- redimensionar o viewport para fazer a composição caber;
 - alterar áreas fora do escopo em revisão do mesmo frame;
 - criar novo `vNN` apenas porque houve uma correção;
 - tratar snapshot `-RR` como nova versão de frame;
