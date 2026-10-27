@@ -38,24 +38,24 @@ CANVAS FINAL — 1280 × 1920 px
 ││       │ │ Título do Card         │     │     │  └────────────────────────────────────────────────┘  │    ┌──────────────────────────────────────────────┐      ││
 ││       │ │ Texto de exemplo do    │     │     │                                                      │    │                Botão Secundário              │      ││
 ││       │ │ card com informações.  │     │     │  ┌ 6. PALETA TÉCNICA - CLARO                      ┐  │    └──────────────────────────────────────────────┘      ││
-││       │ └────────────────────────┘     │     │  │  WF-W-BG          #F4F4F4                      │  │                                                          ││
-││       │ [i] Mensagem informativa       │     │  │  WF-W-SURFACE     #FFFFFF                      │  │  BOTÃO TEXTO (mínimo 48 px)                              ││
-││       │     de exemplo.                │     │  │  WF-W-SURFACE-ALT #EAEAEA                      │  │                      Botão Texto                         ││
-││       │ ┌────────────────────────┐     │     │  │  WF-W-BORDER      #B5B5B5                      │  │                                                          ││
-││       │ │           ^            │     │     │  │  WF-W-TEXT        #1A1A1A                      │  │  ICON BUTTON (touch target 48 x 48 px)                   ││
-││       │ │ Área de conteúdo       │     │     │  │  WF-W-TEXT-2      #565656                      │  │    ┌──────────┐                                          ││
-││       │ │ indicando scroll       │     │     │  │  WF-W-ACTION      #333333                      │  │    │   [G]    │                                          ││
-││       │ │ vertical               │     │     │  │  WF-W-DISABLED    #9A9A9A                      │  │    └──────────┘                                          ││
-││       │ │           v            │     │     │  │  WF-W-FOCUS       #4A4A4A                      │  │                                                          ││
-││       │ └────────────────────────┘     │     │  │  WF-W-STATUS      #626262                      │  │  ITEM DE LISTA - simples (56 px)                         ││
+││       │ └────────────────────────┘     │     │  │  WF-W-BG           #F4F4F4 Primary    #0061FE  │  │                                                          ││
+││       │ [i] Mensagem informativa       │     │  │  WF-W-SURFACE      #FFFFFF On Primary #FFFFFF  │  │  BOTÃO TEXTO (mínimo 48 px) + ICON BUTTON (48 x 48 px)   ││
+││       │     de exemplo.                │     │  │  WF-W-SURFACE-ALT  #EAEAEA Secondary  #9E9EDE  │  │    ┌──────┐                                              ││
+││       │ ┌────────────────────────┐     │     │  │  WF-W-BORDER       #B5B5B5 Info       #0288D1  │  │    │ [G]  │  Botão Texto                                 ││
+││       │ │           ^            │     │     │  │  WF-W-TEXT         #1A1A1A Error      #D32F2F  │  │    └──────┘                                              ││
+││       │ │ Área de conteúdo       │     │     │  │  WF-W-TEXT-2       #565656 Success    #2E7D32  │  │                                                          ││
+││       │ │ indicando scroll       │     │     │  │  WF-W-ACTION       #333333 Warning    #ED6C02  │  │                                                          ││
+││       │ │ vertical               │     │     │  │  WF-W-DISABLED     #9A9A9A Info BG    #DDEEFC  │  │                                                          ││
+││       │ │           v            │     │     │  │  WF-W-FOCUS        #4A4A4A Cores semânticas    │  │                                                          ││
+││       │ └────────────────────────┘     │     │  │  WF-W-STATUS       #626262 da representação.   │  │  ITEM DE LISTA - simples (56 px)                         ││
 ││       ├────────────────────────────────┤     │  │                                                │  │    ┌──────────────────────────────────────────────┐      ││
 ││       │ Início Pedidos Clientes Mais   │     │  │                                                │  │    │ O  Título do item                       >    │      ││
 ││       ├────────────────────────────────┤     │  │                                                │  │    └──────────────────────────────────────────────┘      ││
 ││       │                                │     │  └────────────────────────────────────────────────┘  │                                                          ││
 ││       └────────────────────────────────┘     │                                                      │  ITEM DE LISTA - secundário (64 px)                      ││
 ││                                              │  ┌ 7. ELEVAÇÃO                                    ┐  │    ┌──────────────────────────────────────────────┐      ││
-││                800 px                        │  │                                                │  │    │ O  Título do item                       >    │      ││
-││           (viewport total)                   │  │          ┌────────┐        ┌────────┐          │  │    │    Texto secundário adicional                │      ││
+││  cota vertical 800 px (à direita do bitmap)  │  │                                                │  │    │ O  Título do item                       >    │      ││
+││   texto na vertical: 800 px (viewport total) │  │          ┌────────┐        ┌────────┐          │  │    │    Texto secundário adicional                │      ││
 ││                                              │  │          │   E0   │        │   E1   │          │  │    └──────────────────────────────────────────────┘      ││
 ││                                              │  │          └────────┘        └────────┘          │  │                                                          ││
 ││                                              │  │           0/0/0/0%          0/1/2/12%          │  │  CARD (radius 16 px)                                     ││
@@ -79,7 +79,7 @@ CANVAS FINAL — 1280 × 1920 px
 ││                                              │  │                                                │  │  Somente quando previsto na baseline.                    ││
 │└──────────────────────────────────────────────┘  └────────────────────────────────────────────────┘  └──────────────────────────────────────────────────────────┘│
 ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│┌ 9. ÍCONES (Material Icons Outlined)                                          ┐  ┌ 10. ESTADOS (Componentes)                                                    ┐│
+│┌ 9. ÍCONES (Material Icons Outlined)                                          ┐  ┌ 10. ESTADOS (Componentes)     Hover: documentado; não obrigatório em mobile. ┐│
 ││                                                                              │  │  ┌──────────────────────────────────────────────┐                            ││
 ││  ┌──────────────┐           ┌──────────────┐                                 │  │  │ Default                                      │                            ││
 ││  │    20 px     │           │    24 px     │                                 │  │  ├──────────────────────────────────────────────┤                            ││
@@ -91,7 +91,7 @@ CANVAS FINAL — 1280 × 1920 px
 ││                                                                              │  │  ├──────────────────────────────────────────────┤                            ││
 ││                                                                              │  │  │ Error                                        │                            ││
 ││                                                                              │  │  └──────────────────────────────────────────────┘                            ││
-││                                                                              │  │  Hover: documentado; não obrigatório em mobile.                              ││
+││                                                                              │  │                                                                              ││
 ││                                                                              │  │                                                                              ││
 │└──────────────────────────────────────────────────────────────────────────────┘  └──────────────────────────────────────────────────────────────────────────────┘│
 ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
@@ -212,7 +212,8 @@ Gate 3 — Viewport Técnico: APROVADO E CONGELADO
 Gate 4 — Área restante calculada: APROVADO E CONGELADO
 Gate 5 — Demais elementos definidos: APROVADO E CONGELADO
 Gate 6 — Wireframe Text completo: APROVADO E CONGELADO
-Produção do PNG: PENDENTE
+Produção do PNG: APROVADO E CONGELADO
+STATUS no cabeçalho: APROVADO E CONGELADO
 ```
 
 As geometrias documentadas abaixo estão aprovadas e congeladas para esta `B_v01`. Qualquer alteração posterior deve seguir o processo vigente e reabrir somente os gates realmente afetados.
@@ -486,8 +487,10 @@ Ele deve ser inserido fisicamente antes do cálculo final das áreas documentais
 Arquivo obrigatório:
 
 ```text
-docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean.png
+docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png
 ```
+
+Este é o bitmap derivado (ícone do Botão Texto/Icon Button à esquerda). O original `WF-VIEWPORT-360x800-clean.png` não é usado nesta prancha; a aceitação do derivado segue como pendência de spec.
 
 Dimensão obrigatória:
 
@@ -595,27 +598,35 @@ Não existe reserva fixa de safe area superior ou inferior.
 
 ## Posições das cotas nesta prancha-modelo
 
+Cotas em azul #0061FE, linha de 1 px, setas de 5 px, rótulos WF-CAPTION 600 com fundo SURFACE (padding horizontal 6 px).
+
 ```text
 TÍTULO DO BLOCO
 y: 144–164 px
 
+Linhas de extensão tracejadas (2/2):
+  x: 40 e x: 399, de y: 180 a y: 224
+  x: 52 e x: 387, de y: 206 a y: 224
+
 COTA 360 px
-y: 172–188 px
+linha: y: 186, x: 40–399, setas nas pontas
+rótulo "360 px (viewport total)": centrado em x: 220, y: 178
 
 COTA 12 / 336 / 12
-y: 196–212 px
+linha: y: 210, x: 40–399, setas nas pontas; marcas de divisão em x: 52 e x: 387 (y: 206–215)
+rótulo "336 px (largura útil)": centrado em x: 220, y: 202
+rótulos "12 px" (11 px, 600): x: 13 (w: 26, alinhado à direita) e x: 401 (w: 26, alinhado à esquerda), y: 202
+
+COTA 800 px (vertical, à direita do bitmap)
+extensões horizontais tracejadas: x: 400–424 em y: 224 e em y: 1023
+linha vertical: x: 414, de y: 225 a y: 1023, setas nas pontas
+rótulo "800 px (viewport total)": na vertical (lê-se de baixo para cima), sobre a linha, centrado em x: 415, y: 624
 
 BITMAP
 y: 224–1024 px
-
-IDENTIFICAÇÃO 800 px
-y: 1032–1048 px
-
-TEXTO "(viewport total)"
-y: 1052–1068 px
 ```
 
-O espaço restante até `y = 1156` é respiro documental desta prancha-modelo.
+Não há texto de cota abaixo do bitmap. O espaço de y = 1024 até y = 1156 é respiro documental desta prancha-modelo.
 
 ---
 
@@ -1019,18 +1030,21 @@ w: 416
 h: 48
 ```
 
-Distribuição:
+Distribuição (Icon Button à esquerda, Botão Texto colado a ele):
 
 ```text
-Botão Texto:
-x: 836
-w: 352
-h: 48
-
 Icon Button:
-x: 1204
+x: 836
+y: 640
 w: 48
 h: 48
+radius: 12, borda 1 px
+ícone settings 24 px em (848, 652)
+
+Botão Texto:
+x: 900
+y: 652 (texto WF-ACTION-TEXT, azul #0061FE, alinhado à esquerda)
+h: 48 (altura mínima da faixa)
 
 gap: 16 px
 ```
@@ -1201,14 +1215,18 @@ WF-W-ACTION      #333333
 WF-W-DISABLED    #9A9A9A
 WF-W-FOCUS       #4A4A4A
 WF-W-STATUS      #626262
+
+Cores semânticas da representação (chip + HEX):
+Primary #0061FE · On Primary #FFFFFF · Secondary #9E9EDE · Info #0288D1
+Error #D32F2F · Success #2E7D32 · Warning #ED6C02 · Info BG #DDEEFC
 ```
 
 ## Disposição
 
-Cada linha contém:
+Cada linha contém o nome do token e um chip preenchido com a cor, com o HEX centrado dentro do chip:
 
 ```text
-[swatch 16 × 16]  TOKEN  HEX
+TOKEN  [chip com HEX]
 ```
 
 Posições:
@@ -1221,8 +1239,22 @@ y: 600
 primeira linha:
 y: 632
 
-line-height:
+passo da linha:
 16 px
+
+neutros (10 linhas):
+token x: 460
+chip x: 586, w: 60, h: 16, borda 1 px WF-W-BORDER
+HEX centrado (WF-CAPTION; branco ou #1A1A1A conforme contraste)
+
+semânticas (8 linhas, mesmas linhas y 632 + 16 × n):
+nome x: 660
+chip x: 724, w: 60, h: 16, borda 1 px WF-W-BORDER
+
+nota:
+x: 660, y: 764 e y: 780
+"Cores semânticas" / "da representação."
+WF-CAPTION, WF-W-TEXT-2
 ```
 
 Referência:
@@ -1432,7 +1464,15 @@ Disabled
 Error
 ```
 
-`Hover` permanece documentado, mas não precisa ser demonstrado como estado visual obrigatório nesta prancha mobile.
+`Hover` permanece documentado, mas não precisa ser demonstrado como estado visual obrigatório nesta prancha mobile. A nota registra isso:
+
+```text
+nota:
+x: 900
+y: 1194 (na linha do título do bloco, alinhada à direita; w: 352, termina em x: 1252)
+"Hover: documentado; não obrigatório em mobile."
+WF-CAPTION, WF-W-TEXT-2
+```
 
 Amostras:
 
@@ -1640,6 +1680,25 @@ Referências:
 
 ---
 
+# Cotas de componente e detalhes complementares de montagem
+
+```text
+Cotas de componente (azul, estilo A_v02):
+coluna da cota: x: 1260 (gutter de 16 px entre a amostra, que termina em 1252, e a borda do cartão, 1268)
+colchetes horizontais 1255–1265 nos limites; linha vertical com setas; rótulo vertical "NN px" no centro (12 px, 500)
+alturas (y1–y2): 56 (352–408), 56 (428–484), 48 (504–552), 48 (572–620), 48 (640–688),
+                 56 (708–764), 64 (784–848), 64 (868–932), 96 (952–1048), 64 (1068–1132)
+modal: cotas horizontais "24" em x: 836–860 e x: 1228–1252, y: 1000 (rótulo 18 px acima da linha)
+
+Modal (4.9): área SURFACE-ALT com borda 1 px, radius 12; modal x: 860, y: 956, w: 368, h: 88, radius 16, borda 1 px, sombra 0 4px 12px rgba(0,0,0,.20);
+  alça 32 × 4 no topo (y: 962); "Título do Modal" (WF-SECTION) x: 876 y: 970; "Texto de exemplo do modal." (WF-CAPTION) x: 876 y: 990;
+  [Cancelar] 84 × 26 em x: 876 y: 1010; [Confirmar] 92 × 26, azul, em x: 1120 y: 1010; radius 8
+Bottom Navigation (4.10): 4 itens a cada 104 px; ícones home, description, people, more_horiz de 24 px em y: 1076; rótulos em y: 1106 (WF-CAPTION); ativo: pílula #DDEEFC 48 × 28 radius 14 em y: 1074, ícone e texto azuis
+Itens de lista (4.6 e 4.7): avatar 40 × 40 radius 20, borda 1 px; título em x: 900; chevron_right 24 px à direita
+```
+
+---
+
 # Sequência de construção desta prancha-modelo
 
 Esta B_v01 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
@@ -1649,7 +1708,7 @@ Esta B_v01 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
 02. Validar tecnicamente Gate 1
 03. Definir Cabeçalho
 04. APROVAR E CONGELAR Gate 2 — aprovação humana
-05. Posicionar WF-VIEWPORT-360x800-clean.png em 100% / 1:1
+05. Posicionar WF-VIEWPORT-360x800-clean_icone-esquerda.png em 100% / 1:1
 06. Adicionar cotas 360 / 336 / 12 / 12 / 800
 07. APROVAR E CONGELAR Gate 3 — aprovação humana
 08. Calcular a área documental restante
