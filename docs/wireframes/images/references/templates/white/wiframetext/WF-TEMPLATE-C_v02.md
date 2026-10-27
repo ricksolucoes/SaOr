@@ -4,7 +4,7 @@
 CANVAS FINAL — 1280 × 1920 px
 
 ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ SaOr / Sales Order │ WIREFRAME · MODELO C │ WF-TEMPLATE-C │ XX / YY │ v02 │ DD/MM/AAAA │ [ ] AGUARDANDO APROVAÇÃO                                  │
+│ SaOr / Sales Order │ WIREFRAME · MODELO C │ WF-TEMPLATE-C │ XX / YY │ v02 │ DD/MM/AAAA │ [✓] APROVADO E CONGELADO                                  │
 └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 VIEWPORT                                      ESTRUTURA                                 COMPONENTES
@@ -113,7 +113,7 @@ As coordenadas são **específicas desta prancha-modelo C_v02** e não são medi
 5. Bloco 9 PALETA: 24 linhas (11 neutros, 10 semânticas, 3 de cromia adicional) em linhas de 24 px dentro do mesmo card
    (x 444, y 976, w 360, h 632, base 1608). Nenhuma outra área mudou de posição ou de tamanho.
 6. Bloco 12: a amostra de borda passa a demonstrar WF-W-BORDER-CONTROL e fica com w 56 (rótulo "Borda de controle" mais largo).
-7. STATUS do cabeçalho: AGUARDANDO APROVAÇÃO (nova versão; gates reiniciados na seção 3).
+7. STATUS do cabeçalho: APROVADO E CONGELADO (nova versão; gates reiniciados na seção 3 e todos aprovados em 27/10/2026).
 8. Composição, geometria e conteúdo dos demais blocos permanecem como na v01.
 ```
 
@@ -133,13 +133,13 @@ Estado dos gates:
 
 ```text
 Gate 1 — Canvas:                       APROVADO E CONGELADO
-Gate 2 — Título / Cabeçalho:           AGUARDANDO APROVAÇÃO
-Gate 3 — Viewport Técnico:             AGUARDANDO APROVAÇÃO
-Gate 4 — Área restante calculada:      BLOQUEADO POR GATE ANTERIOR
-Gate 5 — Demais elementos definidos:   BLOQUEADO POR GATE ANTERIOR
-Gate 6 — Wireframe Text completo:      BLOQUEADO POR GATE ANTERIOR
-Produção do PNG:                       BLOQUEADO POR GATE ANTERIOR
-STATUS no cabeçalho:                   AGUARDANDO APROVAÇÃO
+Gate 2 — Título / Cabeçalho:           APROVADO E CONGELADO
+Gate 3 — Viewport Técnico:             APROVADO E CONGELADO
+Gate 4 — Área restante calculada:      APROVADO E CONGELADO
+Gate 5 — Demais elementos definidos:   APROVADO E CONGELADO
+Gate 6 — Wireframe Text completo:      APROVADO E CONGELADO
+Produção do PNG:                       APROVADO E CONGELADO
+STATUS no cabeçalho:                   APROVADO E CONGELADO
 ```
 
 Esta v02 deriva da `WF-TEMPLATE-C_v01` (Gates 1 a 6 e PNG APROVADO E CONGELADO), que permanece como histórico imutável. A v02 é uma nova versão: os gates humanos foram reabertos porque cores, viewport e bloco 9 mudaram.
@@ -148,11 +148,13 @@ Registros:
 
 ```text
 Gate 1 (técnico): canvas 1280 × 1920 px conforme REGRAS-TECNICAS.md — APROVADO E CONGELADO.
-Gate 2: cabeçalho com nova versão (v02), tokens da seção 6 e STATUS AGUARDANDO APROVAÇÃO — aguarda aprovação humana.
-Gate 3: o bitmap references/white/WF-VIEWPORT-360x800.png foi aprovado pelo responsável em 27/10/2026 (comunicado na conversa);
-        a posição, as cotas e o registro formal do Gate 3 neste documento aguardam aprovação humana.
-Gates 4 e 5 (técnicos): permanecem BLOQUEADO POR GATE ANTERIOR até os Gates 2 e 3 estarem APROVADO E CONGELADO.
-Pré-validação técnica (informativa, não conclui gate): 416 + 16 + 360 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px;
+Gate 2: aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gate 3: bitmap aprovado em 27/10/2026; posição, cotas e registro do gate aprovados explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gates 4 e 5 (técnicos): validados em 27/10/2026 depois dos Gates 2 e 3 estarem congelados — APROVADO E CONGELADO.
+Gate 6: aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Produção do PNG: gerado em 27/10/2026 a partir deste Wireframe Text e validado contra ele; aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+STATUS no cabeçalho: registrado como APROVADO E CONGELADO; o PNG foi regenerado com o STATUS aprovado e revalidado.
+Validação técnica dos Gates 4 e 5: 416 + 16 + 360 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px;
   todas as áreas x/y/w/h dentro do canvas 1280 × 1920 px; limite inferior documental y 1904 ≤ 1908; bloco 9 dentro do card (última linha termina em y 1584 ≤ 1608).
 Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (comunicado na conversa);
   o registro formal em REGRAS-TECNICAS.md 6.7 é feito pelo responsável.
@@ -276,7 +278,7 @@ DATA    x 968  w 140   DD/MM/AAAA
 STATUS  x 1108 w 160
 ```
 
-STATUS: fundo WF-W-SURFACE, rótulo "STATUS" como os demais. Enquanto AGUARDANDO APROVAÇÃO: sem ícone; valor em (1120, 38), w 140, 2 linhas "AGUARDANDO / APROVAÇÃO", WF-CAPTION 600, WF-W-TEXT-2. Ao ser registrado APROVADO E CONGELADO: valor e ícone em Success, conforme abaixo.
+STATUS: fundo WF-W-SURFACE, rótulo "STATUS" como os demais. Estado atual APROVADO E CONGELADO: valor e ícone em Success, conforme abaixo. Enquanto AGUARDANDO APROVAÇÃO (regra de estado, não aplicável a esta versão congelada): sem ícone; valor em (1120, 38), w 140, 2 linhas "AGUARDANDO / APROVAÇÃO", WF-CAPTION 600, WF-W-TEXT-2.
 
 ```text
 ícone check_circle: x 1120, y 46, 20 × 20
@@ -650,28 +652,29 @@ Coluna direita
 
 ```text
 01. Canvas 1280 × 1920 (Gate 1 — técnico)
-02. Cabeçalho (Gate 2 — aprovação humana) — AGUARDANDO APROVAÇÃO
-03. Viewport em 100% / 1:1 em (40, 272) + cotas (Gate 3 — aprovação humana) — AGUARDANDO APROVAÇÃO
-04. Zonas e blocos 2 a 14 (Gates 4 e 5) — BLOQUEADO POR GATE ANTERIOR
-05. Conferência integral do Wireframe Text (Gate 6 — aprovação humana) — BLOQUEADO POR GATE ANTERIOR
-06. Produção do PNG — BLOQUEADO POR GATE ANTERIOR (proibido antes do Gate 6 APROVADO E CONGELADO)
+02. Cabeçalho (Gate 2 — aprovação humana) — APROVADO E CONGELADO
+03. Viewport em 100% / 1:1 em (40, 272) + cotas (Gate 3 — aprovação humana) — APROVADO E CONGELADO
+04. Zonas e blocos 2 a 14 (Gates 4 e 5) — APROVADO E CONGELADO
+05. Conferência integral do Wireframe Text (Gate 6 — aprovação humana) — APROVADO E CONGELADO
+06. Produção do PNG — APROVADO E CONGELADO (gerado após o Gate 6 APROVADO E CONGELADO)
 ```
 
 # Registro de validação desta versão
 
 ```text
 [x] Gate 1 registrado como APROVADO E CONGELADO (técnico)
-[ ] Gate 2 — AGUARDANDO APROVAÇÃO humana
-[ ] Gate 3 — AGUARDANDO APROVAÇÃO humana (bitmap aprovado em 27/10/2026; posição e cotas pendentes)
-[ ] Gates 4 e 5 — BLOQUEADO POR GATE ANTERIOR
-[ ] Gate 6 — BLOQUEADO POR GATE ANTERIOR
-[ ] Produção do PNG — BLOQUEADO POR GATE ANTERIOR
+[x] Gates 2 e 3 registrados como APROVADO E CONGELADO (aprovação do responsável em 27/10/2026)
+[x] Gates 4 e 5 (técnicos) validados e registrados como APROVADO E CONGELADO
+[x] Gate 6 registrado como APROVADO E CONGELADO (aprovação do responsável em 27/10/2026)
+[x] Produção do PNG registrada como APROVADO E CONGELADO (aprovação explícita do responsável em 27/10/2026)
+[x] STATUS do cabeçalho registrado como APROVADO E CONGELADO; PNG regenerado com o STATUS aprovado e revalidado
+[x] WF-TEMPLATE-C_v02 é a versão vigente do Modelo C white; WF-TEMPLATE-C_v01 permanece como histórico imutável
 [x] viewport especificado: WF-VIEWPORT-360x800.png (white), 360 × 800 px em 1:1
 [x] todas as cores usadas constam em REGRAS-TECNICAS.md, seção 6 (tabela 6.5); HEX somente no bloco 9
 [x] pares texto/fundo registrados na seção 4.1
 [x] canvas 1280 × 1920; todas as áreas documentadas dentro do canvas (base 1904 ≤ 1908)
-[ ] REGRAS-TECNICAS.md seção 3.1 ainda não lista WF-VIEWPORT-360x800.png (registro pendente do responsável)
-[ ] REGRAS-TECNICAS.md 6.7 — registro formal da aprovação das lacunas de cor (pendente do responsável)
+[x] REGRAS-TECNICAS.md seção 3.1 lista WF-VIEWPORT-360x800.png
+[x] REGRAS-TECNICAS.md 6.7 — aprovação das lacunas de cor registrada em 27/10/2026
 ```
 
 A variação `black` correspondente é a `WF-TEMPLATE-C_v01` (pasta `templates/black/`), derivada desta v02 conforme `WIREFRAME-TEXT.md` 7.1.
