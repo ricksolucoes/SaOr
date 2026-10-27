@@ -588,6 +588,8 @@ Critérios adotados para a representação visual:
 - elementos desabilitados podem usar o tratamento técnico previsto para esse estado;
 - logotipo preserva sua identidade oficial e não deve ser recolorido apenas para satisfazer um cálculo genérico.
 
+A fonte normativa das cores, dos níveis de contraste e das exceções registradas é `REGRAS-TECNICAS.md`, seção 6. Os critérios acima são conferidos contra as tabelas dessa seção.
+
 Esses critérios não autorizam alterar tokens canônicos durante a montagem nem neutralizar a cromia esperada da prancha para obter contraste por conveniência.
 
 Ajuste de contraste deve preservar a função cromática documentada. Se um par de tokens vigente não atender a um requisito necessário, a inconsistência deve ser devolvida para a fonte normativa correspondente, em vez de substituir silenciosamente a cor por cinza, preto ou branco.
@@ -654,7 +656,7 @@ A mesma consulta contextual é obrigatória, quando houver representação já e
 
 ## 16. White e black
 
-Cada variação é executada com seus próprios tokens e ativos específicos.
+Cada variação é executada com seus próprios tokens (`REGRAS-TECNICAS.md`, seção 6) e ativos específicos, incluindo o bitmap do viewport da própria variação.
 
 `white` e `black` definem a variação de tema da representação. Eles **não significam escala de cinza** e não autorizam remover cores cromáticas ou semânticas que pertençam à composição esperada.
 
@@ -846,6 +848,8 @@ Antes da exportação, validar obrigatoriamente:
 [ ] Bottom Navigation preserva a linguagem contextual aplicável
 [ ] nenhuma área fora do escopo foi reinterpretada
 [ ] não ocorreu regressão de geometria, conteúdo, iconografia ou estilo
+[ ] o inventário de cores da imagem contém somente tokens da variação (tolerância de antialias)
+[ ] nenhum token da outra variação aparece na imagem
 ```
 
 Se qualquer item falhar, não exportar como final.

@@ -122,56 +122,154 @@ Inter é tipografia técnica e não substitui a tipografia oficial da marca.
 
 ## 6. Tokens técnicos
 
-### Claro
+Esta seção é a **fonte única das cores da representação técnica** dos wireframes. Nenhum Wireframe Text, prancha ou montagem pode usar cor que não conste nas tabelas 6.5 e 6.6.
 
-| Token | HEX |
+As cores técnicas pertencem à representação dos wireframes. Elas **não redefinem nem substituem** a paleta funcional/visual do produto documentada no Documento Mestre ou em etapas posteriores de Design Visual.
+
+### 6.1 Fonte e precedência
+
+```text
+1. Token do Documento Mestre §20.1 (Tema Claro → white; Tema Escuro → black)
+   → usado como está, sem recalcular.
+2. Neutros técnicos WF-W-* e WF-B-*
+   → definidos nesta seção.
+3. Lacuna: cor sem token no Documento Mestre
+   → definida por teste (6.2) e derivação reproduzível (6.3);
+   → marcada com * nas tabelas;
+   → só vale depois da aprovação humana registrada nesta seção.
+```
+
+É proibido:
+
+- usar cor fora das tabelas 6.5 e 6.6;
+- inferir equivalente de uma variação na outra sem teste;
+- alterar token durante a montagem ou a criação de um Wireframe Text; a inconsistência volta para esta seção (`MONTAGEM-IMAGEM.md`, seção 14);
+- misturar tokens `WF-W-*` e `WF-B-*` sem regra explícita.
+
+### 6.2 Critérios de teste
+
+Fórmula: luminância relativa e razão de contraste da WCAG 2.2. A razão é calculada contra as três superfícies do tema (`SURFACE`, `BG`, `SURFACE-ALT`) e a tabela registra a **razão e o nível do pior caso**.
+
+| Papel da cor | Critério |
 |---|---|
-| `WF-W-BG` | `#F4F4F4` |
-| `WF-W-SURFACE` | `#FFFFFF` |
-| `WF-W-SURFACE-ALT` | `#EAEAEA` |
-| `WF-W-BORDER` | `#B5B5B5` |
-| `WF-W-TEXT` | `#1A1A1A` |
-| `WF-W-TEXT-2` | `#565656` |
-| `WF-W-ACTION` | `#333333` |
-| `WF-W-DISABLED` | `#9A9A9A` |
-| `WF-W-FOCUS` | `#4A4A4A` |
-| `WF-W-STATUS` | `#626262` |
+| Texto e ícone informativo | AAA (7:1) sobre `SURFACE`; mínimo AA (4,5:1) sobre `BG` e `SURFACE-ALT`; texto grande mínimo 3:1 |
+| Par texto sobre preenchimento | testado como texto: o texto sobre o preenchimento |
+| Borda de controle, foco e indicador não textual | mínimo 3:1 |
+| Divisor e borda decorativa | sem exigência; proibida como borda de controle |
+| Componente inativo | isento; razão registrada só como informação |
 
-#### Cores semânticas técnicas — white
+Regras do teste:
 
-As pranchas-modelo `WF-TEMPLATE-A_v03`, `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` usam de forma consistente o conjunto abaixo para a representação técnica `white`:
+- abaixo do mínimo, a cor é inválida e não pode ser registrada;
+- nível abaixo de AAA sobre `SURFACE` é aceito somente com a exceção registrada na coluna Observação;
+- a cor nunca é o único indicador de estado (seção 11).
 
-| Referência | HEX |
-|---|---|
-| `Primary` | `#0061FE` |
-| `On Primary` | `#FFFFFF` |
-| `Secondary` | `#9E9EDE` |
-| `Info` | `#0288D1` |
-| `Error` | `#D32F2F` |
-| `Success` | `#2E7D32` |
-| `Warning` | `#ED6C02` |
-| `Info BG` | `#DDEEFC` |
+### 6.3 Derivação das lacunas
 
-Essas cores pertencem à **representação técnica dos wireframes white**. Elas não redefinem nem substituem a paleta funcional/visual do produto documentada no Documento Mestre ou em etapas posteriores de Design Visual.
+Cada lacuna registra a regra que a gerou, para que qualquer execução chegue ao mesmo HEX:
 
-Não inferir automaticamente equivalentes para `black`. Cores semânticas da representação escura devem ser registradas somente quando houver fonte aprovada para essa variação.
+```text
+Info BG                 mistura de 10% da cor Info sobre WF-*-SURFACE
+Secondary               matiz e saturação do valor anterior (#9E9EDE); só a luminosidade muda,
+                        com o menor ajuste que dá AAA nas três superfícies
+WF-*-BORDER-CONTROL     cinza neutro (R = G = B) mais próximo de WF-*-BORDER que dá 3:1
+                        nas três superfícies
+Warning (texto/ícone)   white: matiz de #ED6C02 com o menor escurecimento que dá AA nas três superfícies
+On Warning              reuso do texto principal (white) ou de text.inverse (black)
+Zebra black             mesmo deslocamento de nível da zebra white em relação a SURFACE (9 níveis)
+BRAND / On Brand black  WF-B-TEXT como fundo e WF-B-BG como texto
+```
 
-### Escuro
+Nova lacuna: aplicar 6.2, registrar a regra de derivação nesta lista, acrescentar a linha à tabela e submeter à aprovação humana antes do uso.
 
-| Token | HEX |
-|---|---|
-| `WF-B-BG` | `#121212` |
-| `WF-B-SURFACE` | `#1E1E1E` |
-| `WF-B-SURFACE-ALT` | `#2A2A2A` |
-| `WF-B-BORDER` | `#5E5E5E` |
-| `WF-B-TEXT` | `#F2F2F2` |
-| `WF-B-TEXT-2` | `#C2C2C2` |
-| `WF-B-ACTION` | `#E0E0E0` |
-| `WF-B-DISABLED` | `#777777` |
-| `WF-B-FOCUS` | `#D0D0D0` |
-| `WF-B-STATUS` | `#A8A8A8` |
+### 6.4 Controle de mudança
+
+- Qualquer alteração de token cria nova revisão desta seção, com revalidação completa das tabelas e aprovação humana.
+- Mudança de token no Documento Mestre §20.1 exige revalidar as tabelas antes de qualquer novo Wireframe Text.
+- Wireframe Texts `APROVADO E CONGELADO` não são editados; a mudança de cor gera nova versão do Wireframe Text.
+- O Wireframe Text cita tokens pelo nome. O HEX aparece apenas no bloco de paleta, que deve ser cópia da tabela vigente (`WIREFRAME-TEXT.md`, seção 4.2).
+
+Conjunto semântico white anterior, usado por `WF-TEMPLATE-A_v03`, `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` e preservado como histórico dessas versões:
+
+```text
+Primary #0061FE · On Primary #FFFFFF · Secondary #9E9EDE · Info #0288D1
+Error #D32F2F · Success #2E7D32 · Warning #ED6C02 · Info BG #DDEEFC
+```
+
+Esse conjunto **não vale** para novos Wireframe Texts.
+
+### 6.5 Claro (white)
+
+Superfícies de teste: `SURFACE` `#FFFFFF`, `BG` `#F4F4F4`, `SURFACE-ALT` `#EAEAEA`. `*` = lacuna do Documento Mestre.
+
+| Token | HEX | Origem | Papel | Contraste | Nível | Observação |
+|---|---|---|---|---|---|---|
+| `WF-W-BG` | `#F4F4F4` | Vigente (esta seção) | Fundo da prancha / app bar | 15,82 (TEXT sobre ele) | AAA |  |
+| `WF-W-SURFACE` | `#FFFFFF` | Vigente (esta seção) | Superfície de cards, campos, viewport | 17,40 (TEXT sobre ele) | AAA |  |
+| `WF-W-SURFACE-ALT` | `#EAEAEA` | Vigente (esta seção) | Superfície alternativa, avatares, placeholders | 14,47 (TEXT sobre ele) | AAA |  |
+| `WF-W-BORDER` | `#B5B5B5` | Vigente (esta seção) | Divisor e borda decorativa | SURFACE 2,05 · BG 1,86 · ALT 1,70 | decorativo (isento) | Uso restrito a divisores decorativos; nunca em borda de controle |
+| `WF-W-BORDER-CONTROL` \* | `#868686` | Lacuna → teste e derivação (6.3) | Borda de campos, botões secundários e icon buttons | SURFACE 3,64 · BG 3,31 · ALT 3,03 | OK (≥3:1) | Cinza neutro. O border.default do Doc. Mestre (#64748B) é azulado |
+| `WF-W-TEXT` | `#1A1A1A` | Vigente (esta seção) | Texto principal | SURFACE 17,40 · BG 15,82 · ALT 14,47 | AAA |  |
+| `WF-W-TEXT-2` | `#565656` | Vigente (esta seção) | Texto secundário | SURFACE 7,34 · BG 6,67 · ALT 6,10 | SURFACE AAA · pior caso AA |  |
+| `WF-W-ACTION` | `#333333` | Vigente (esta seção) | Ícones e ações neutras | SURFACE 12,63 · BG 11,49 · ALT 10,50 | AAA |  |
+| `WF-W-DISABLED` | `#9A9A9A` | Vigente (esta seção) | Componente inativo | SURFACE 2,81 · BG 2,56 · ALT 2,34 | isento | Inativo é isento no WCAG 1.4.3 e 1.4.11; razão só informativa |
+| `WF-W-FOCUS` | `#4A4A4A` | Vigente (esta seção) | Anel de foco | SURFACE 8,86 · BG 8,06 · ALT 7,37 | OK (≥3:1) |  |
+| `WF-W-STATUS` | `#626262` | Vigente (esta seção) | Rótulo de status neutro | SURFACE 6,10 · BG 5,55 · ALT 5,07 | AA | AA sobre SURFACE: exceção registrada (neutro vigente) |
+| Primary | `#004A99` | Doc. Mestre §20.1 action.primary | Ação principal, link, cotas, destaque | SURFACE 8,61 · BG 7,83 · ALT 7,16 | AAA | Substitui #0061FE do conjunto anterior |
+| On Primary | `#FFFFFF` | Doc. Mestre §20.1 text.inverse | Texto sobre Primary | 8,61 (sobre Primary) | AAA |  |
+| Secondary \* | `#3C3CB0` | Lacuna → teste e derivação (6.3) | Apoio / acento secundário | SURFACE 8,52 · BG 7,74 · ALT 7,08 | AAA | Substitui #9E9EDE (2,50:1 sobre SURFACE, reprovava) |
+| Info | `#004A99` | Doc. Mestre §20.1 status.info | Informação (ícone e texto) | SURFACE 8,61 · BG 7,83 · ALT 7,16 | AAA | Igual ao Primary, como no Doc. Mestre |
+| Error | `#991B1B` | Doc. Mestre §20.1 status.error | Erro (ícone e texto) | SURFACE 8,31 · BG 7,56 · ALT 6,91 | SURFACE AAA · pior caso AA | Substitui #D32F2F do conjunto anterior |
+| Success | `#166534` | Doc. Mestre §20.1 status.success | Sucesso (ícone e texto) | SURFACE 7,13 · BG 6,48 · ALT 5,93 | SURFACE AAA · pior caso AA | Substitui #2E7D32 do conjunto anterior |
+| Warning (texto/ícone) \* | `#AC4F01` | Lacuna → derivação (6.3) | Aviso em texto solto e ícone sobre superfície | SURFACE 5,42 · BG 4,93 · ALT 4,51 | AA | AA, não AAA: matiz de #ED6C02 com o menor escurecimento que dá AA nas 3 superfícies. Para AAA seria #7E3A01 (mais escuro) |
+| Warning (preenchimento) \* | `#ED6C02` | Existente nos WT white, validado por teste | Fundo de banner, badge e chip de aviso | 5,59 (On Warning sobre ele) | AA | Não usar como cor de texto (3,11:1 sobre SURFACE) |
+| On Warning \* | `#1A1A1A` | Reuso de WF-W-TEXT | Texto e ícone sobre Warning (preenchimento) | 5,59 (sobre Warning (preenchimento)) | AA |  |
+| Info BG \* | `#E6EDF5` | Lacuna → derivação (6.3) | Fundo do banner informativo, pílula ativa | Info 7,30 · TEXT 14,75 (sobre ele) | AAA | Substitui #DDEEFC do conjunto anterior |
+| BRAND | `#0F172A` | Existente nos WT white | Marca, badge numerado | 17,85 (On Brand sobre ele) | AAA | Sem token no Doc. Mestre; mantida |
+| On Brand | `#FFFFFF` | Existente nos WT white | Texto sobre BRAND | 17,85 (sobre BRAND) | AAA |  |
+| Zebra de tabela | `#F6F6F6` | Existente nos WT white | Faixa zebra (decorativa) | 16,10 (WF-W-TEXT sobre ela) | AAA |  |
+
+### 6.6 Escuro (black)
+
+Superfícies de teste: `SURFACE` `#1E1E1E`, `BG` `#121212`, `SURFACE-ALT` `#2A2A2A`. `*` = lacuna do Documento Mestre.
+
+| Token | HEX | Origem | Papel | Contraste | Nível | Observação |
+|---|---|---|---|---|---|---|
+| `WF-B-BG` | `#121212` | Vigente (esta seção) | Fundo da prancha / app bar | 16,73 (TEXT sobre ele) | AAA |  |
+| `WF-B-SURFACE` | `#1E1E1E` | Vigente (esta seção) | Superfície de cards, campos, viewport | 14,89 (TEXT sobre ele) | AAA |  |
+| `WF-B-SURFACE-ALT` | `#2A2A2A` | Vigente (esta seção) | Superfície alternativa, avatares, placeholders | 12,82 (TEXT sobre ele) | AAA |  |
+| `WF-B-BORDER` | `#5E5E5E` | Vigente (esta seção) | Divisor e borda decorativa | SURFACE 2,57 · BG 2,89 · ALT 2,21 | decorativo (isento) | Uso restrito a divisores decorativos; nunca em borda de controle |
+| `WF-B-BORDER-CONTROL` \* | `#737373` | Lacuna → teste e derivação (6.3) | Borda de campos, botões secundários e icon buttons | SURFACE 3,52 · BG 3,95 · ALT 3,03 | OK (≥3:1) | Cinza neutro. O border.default do Doc. Mestre (#64748B) é azulado |
+| `WF-B-TEXT` | `#F2F2F2` | Vigente (esta seção) | Texto principal | SURFACE 14,89 · BG 16,73 · ALT 12,82 | AAA |  |
+| `WF-B-TEXT-2` | `#C2C2C2` | Vigente (esta seção) | Texto secundário | SURFACE 9,36 · BG 10,52 · ALT 8,06 | AAA |  |
+| `WF-B-ACTION` | `#E0E0E0` | Vigente (esta seção) | Ícones e ações neutras | SURFACE 12,63 · BG 14,19 · ALT 10,87 | AAA |  |
+| `WF-B-DISABLED` | `#777777` | Vigente (esta seção) | Componente inativo | SURFACE 3,72 · BG 4,18 · ALT 3,21 | isento | Inativo é isento; razão só informativa |
+| `WF-B-FOCUS` | `#D0D0D0` | Vigente (esta seção) | Anel de foco | SURFACE 10,81 · BG 12,15 · ALT 9,31 | OK (≥3:1) |  |
+| `WF-B-STATUS` | `#A8A8A8` | Vigente (esta seção) | Rótulo de status neutro | SURFACE 7,01 · BG 7,88 · ALT 6,04 | SURFACE AAA · pior caso AA |  |
+| Primary | `#8ABEFF` | Doc. Mestre §20.1 action.primary | Ação principal, link, cotas, destaque | SURFACE 8,65 · BG 9,71 · ALT 7,44 | AAA |  |
+| On Primary | `#0F1115` | Doc. Mestre §20.1 text.inverse | Texto sobre Primary | 9,80 (sobre Primary) | AAA |  |
+| Secondary \* | `#B3B3E5` | Lacuna → teste e derivação (6.3) | Apoio / acento secundário | SURFACE 8,33 · BG 9,36 · ALT 7,17 | AAA | Substitui #9E9EDE (5,74:1 sobre ALT, só AA) |
+| Info | `#8ABEFF` | Doc. Mestre §20.1 status.info | Informação (ícone e texto) | SURFACE 8,65 · BG 9,71 · ALT 7,44 | AAA | Igual ao Primary, como no Doc. Mestre |
+| Error | `#FCA5A5` | Doc. Mestre §20.1 status.error | Erro (ícone e texto) | SURFACE 8,78 · BG 9,87 · ALT 7,56 | AAA |  |
+| Success | `#A7F3D0` | Doc. Mestre §20.1 status.success | Sucesso (ícone e texto) | SURFACE 13,00 · BG 14,61 · ALT 11,19 | AAA |  |
+| Warning (texto/ícone) | `#FDE68A` | Doc. Mestre §20.1 status.warning | Aviso em texto solto e ícone sobre superfície | SURFACE 13,39 · BG 15,04 · ALT 11,53 | AAA |  |
+| Warning (preenchimento) | `#FDE68A` | Doc. Mestre §20.1 status.warning | Fundo de banner, badge e chip de aviso | 15,17 (On Warning sobre ele) | AAA | Mesmo valor do texto/ícone |
+| On Warning \* | `#0F1115` | Reuso de Doc. Mestre §20.1 text.inverse | Texto e ícone sobre Warning (preenchimento) | 15,17 (sobre Warning (preenchimento)) | AAA |  |
+| Info BG \* | `#292E34` | Lacuna → derivação (6.3) | Fundo do banner informativo, pílula ativa | Info 7,10 · TEXT 12,22 (sobre ele) | AAA |  |
+| BRAND \* | `#F2F2F2` | Lacuna → derivação (6.3) | Badge numerado (fundo claro) | 16,73 (On Brand sobre ele) | AAA | Sem equivalente no Doc. Mestre. Cabeçalho black usa o logo para fundos escuros, sem preenchimento BRAND |
+| On Brand \* | `#121212` | Reuso de WF-B-BG | Texto sobre BRAND | 16,73 (sobre BRAND) | AAA |  |
+| Zebra de tabela \* | `#272727` | Lacuna → derivação (6.3) | Faixa zebra (decorativa) | 13,34 (WF-B-TEXT sobre ela) | AAA |  |
 
 Cor nunca pode ser o único indicador de estado.
+
+### 6.7 Estado das lacunas desta revisão
+
+```text
+Cores marcadas com * (white e black): AGUARDANDO APROVAÇÃO
+Aprovação humana explícita: NÃO REGISTRADA
+```
+
+Enquanto a aprovação não for registrada aqui, as cores marcadas com `*` não podem ser usadas em Wireframe Text nem em imagem final. Ao aprovar, o responsável substitui o estado acima por `APROVADO E CONGELADO` e registra a data.
 
 ## 7. Componentes técnicos
 
@@ -247,4 +345,5 @@ A composição deve preservar:
 - erro próximo ao contexto;
 - foco e seleção distinguíveis;
 - hierarquia tipográfica consistente;
+- contraste de texto, controles e indicadores conforme os critérios da seção 6.2;
 - ausência de compactação prejudicial.

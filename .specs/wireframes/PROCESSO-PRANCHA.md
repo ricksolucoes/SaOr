@@ -390,6 +390,9 @@ Confirmar:
 [ ] todos possuem geometria, conteúdo e referências suficientes para reconstrução
 [ ] nenhuma área excede os limites calculados
 [ ] nenhuma geometria congelada foi alterada silenciosamente
+[ ] todas as cores usadas constam nas tabelas vigentes de REGRAS-TECNICAS.md, seção 6 (inventário)
+[ ] HEX aparece somente no bloco de paleta
+[ ] os pares texto/fundo estão registrados com a razão de contraste da tabela
 ```
 
 Quando os critérios forem atendidos, registrar `APROVADO E CONGELADO`.
@@ -419,6 +422,8 @@ Confirmar:
 [ ] nenhuma medida depende de memória
 [ ] nenhuma geometria foi copiada de outra prancha sem justificativa normativa
 [ ] não existem lacunas que precisem ser resolvidas durante a geração da imagem
+[ ] a paleta do Wireframe Text coincide com a tabela vigente de REGRAS-TECNICAS.md, seção 6
+[ ] nenhuma cor em lacuna (*) sem aprovação registrada na seção 6
 ```
 
 Enquanto qualquer item estiver aberto, **não gerar a imagem**.

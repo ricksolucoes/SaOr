@@ -62,6 +62,7 @@ posição e dimensão de cada elemento
 conteúdo textual exato
 tipografia
 tokens técnicos usados
+paleta técnica da variação e pares texto/fundo (seção 4.2)
 componentes demonstrados
 ícones
 estados
@@ -112,6 +113,21 @@ Gate 6 — Wireframe Text completo: APROVAÇÃO HUMANA
 Gates técnicos não criam novas paradas humanas quando seus critérios objetivos forem atendidos. Gates humanos devem parar em `AGUARDANDO APROVAÇÃO`.
 
 Se uma aprovação não estiver registrada no próprio Wireframe Text, uma nova execução deve tratá-la como não comprovada e não pode inferi-la a partir de memória, conversa, commit ou existência de medidas posteriores.
+
+## 4.2 Cores no Wireframe Text
+
+A fonte única das cores é `REGRAS-TECNICAS.md`, seção 6. O Wireframe Text deve:
+
+```text
+citar as cores pelo nome do token;
+registrar o HEX somente no bloco de paleta;
+manter o bloco de paleta como cópia da tabela vigente da variação (white ou black),
+  com a indicação da revisão da seção 6 usada;
+listar cada par texto/fundo usado e a razão de contraste correspondente da tabela;
+registrar qualquer exceção de nível (AA onde o alvo é AAA) já prevista na tabela.
+```
+
+Cor que não esteja na tabela vigente é lacuna: não entra no Wireframe Text até ser definida e aprovada em `REGRAS-TECNICAS.md`.
 
 ---
 
@@ -209,6 +225,24 @@ docs/wireframes/images/references/templates/black/
 
 O Wireframe Text correspondente fica em `wiframetext/` dentro da mesma variação. Referências específicas de `white` e `black` não devem ser misturadas por inferência.
 
+### 7.1 Variação black derivada de uma white aprovada
+
+Um Wireframe Text `black` pode ser derivado de um Wireframe Text `white` **somente quando o `black` registrar, no próprio documento**:
+
+```text
+- o Wireframe Text white de origem (nome e versão) e seu estado (APROVADO E CONGELADO);
+- a regra: geometria e composição herdadas; mudam apenas paleta, ativos físicos e as
+  decisões que dependem da paleta (por exemplo, sombra que não é perceptível sobre fundo escuro);
+- cada diferença em relação ao white, classificada como DIFERENÇA INTENCIONAL.
+```
+
+Regras:
+
+- a geometria herdada continua `GEOMETRIA DESTA PRANCHA`, e não passa a regra normativa;
+- tokens `WF-B-*`, viewport e cabeçalho (logo para fundos escuros) são os da variação `black`; nenhum ativo ou bitmap `white` é reutilizado;
+- os gates **não são herdados**: o `black` começa em `PENDENTE` e registra seus próprios estados, e os Gates 2, 3 e 6 voltam a exigir aprovação humana;
+- a numeração do `black` é própria (primeira versão = `v01`), independente da versão `white` de origem.
+
 ## 8. Aprovação progressiva
 
 O Wireframe Text deve refletir o processo de construção:
@@ -242,7 +276,10 @@ Não registrar como regra:
 - funcionalidade inexistente;
 - geometria copiada por conveniência;
 - mistura implícita de referências específicas de `white` e `black`;
-- estado de processo fora do conjunto canônico.
+- estado de processo fora do conjunto canônico;
+- cor fora das tabelas vigentes de `REGRAS-TECNICAS.md`, seção 6;
+- HEX de cor fora do bloco de paleta;
+- ajuste de token dentro do Wireframe Text (a inconsistência volta para `REGRAS-TECNICAS.md`).
 
 Não gerar PNG enquanto o Gate 6 não estiver `APROVADO E CONGELADO`.
 
