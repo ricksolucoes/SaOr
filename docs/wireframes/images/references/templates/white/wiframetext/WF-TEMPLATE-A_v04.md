@@ -529,8 +529,8 @@ Elevação: E3 do modal 0 4px 12px rgba(0,0,0,.20).
 [x] todas as cores usadas constam em REGRAS-TECNICAS.md, seção 6 (tabela 6.5); HEX somente no bloco 5
 [x] pares texto/fundo registrados na seção 4.4
 [x] canvas 1280 × 1920; todas as áreas documentadas dentro do canvas (base 1904 ≤ 1908)
-[ ] REGRAS-TECNICAS.md seção 3.1 ainda não lista WF-VIEWPORT-360x800.png (registro pendente do responsável)
-[ ] REGRAS-TECNICAS.md 6.7 — registro formal da aprovação das lacunas de cor (pendente do responsável)
+[x] REGRAS-TECNICAS.md seção 3.1 lista WF-VIEWPORT-360x800.png
+[x] REGRAS-TECNICAS.md 6.7 — aprovação das lacunas de cor registrada em 27/10/2026
 [x] WF-TEMPLATE-A_v04 é a versão vigente do Modelo A white; WF-TEMPLATE-A_v03 permanece como histórico imutável
 ```
 

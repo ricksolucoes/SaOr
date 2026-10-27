@@ -31,11 +31,11 @@ Entre os principais módulos previstos estão:
 
 ## Status do projeto
 
-**Documentação Mestre aprovada — pranchas-modelo white concluídas; wireframes funcionais e variação black ainda pendentes**
+**Documentação Mestre aprovada — pranchas-modelo white e black concluídas; wireframes funcionais ainda pendentes**
 
 A baseline funcional vigente é a versão **1.0 — APROVADO / BASELINE FUNCIONAL**.
 
-A etapa atual é **Wireframe Conceitual em Imagem**. As pranchas-modelo `white` vigentes estão concluídas e aprovadas como referências contextuais da etapa; isso não significa que as 71 interfaces funcionais tenham sido produzidas. A variação `black` e as saídas funcionais permanecem pendentes conforme o controle operacional em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md). O processo oficial de evolução, os gates entre etapas e os critérios de alteração da baseline são definidos no [`Documento Mestre`](docs/Documento_Mestre.md).
+A etapa atual é **Wireframe Conceitual em Imagem**. As pranchas-modelo vigentes das variações `white` e `black` estão concluídas e aprovadas como referências contextuais da etapa; isso não significa que as 71 interfaces funcionais tenham sido produzidas. As saídas funcionais `white` e `black` permanecem pendentes conforme o controle operacional em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md). A escolha de um template oficial para produção funcional, ou de uma regra de seleção entre os modelos A/B/C, ainda não foi formalizada e não deve ser inferida. O processo oficial de evolução, os gates entre etapas e os critérios de alteração da baseline são definidos no [`Documento Mestre`](docs/Documento_Mestre.md).
 
 ## Documentação
 

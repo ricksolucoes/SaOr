@@ -51,9 +51,10 @@ docs/wireframes/images/
 │   ├── white/
 │   │   ├── Especificação Técnica do Viewport Mobile.png
 │   │   ├── WF-VIEWPORT-360x800-clean.png
-│   │   └── WF-VIEWPORT-360x800-clean_icone-esquerda.png
+│   │   ├── WF-VIEWPORT-360x800-clean_icone-esquerda.png
+│   │   └── WF-VIEWPORT-360x800.png
 │   ├── black/
-│   │   └── <referências específicas da variação, quando existirem>
+│   │   └── WF-VIEWPORT-360x800.png
 │   └── templates/
 │       ├── white/
 │       │   ├── <pranchas-modelo claras>.png
@@ -230,11 +231,20 @@ black
 → references/templates/black/WF-TEMPLATE-C_v01.png
 ```
 
-`WF-TEMPLATE-A_v01.png`, `WF-TEMPLATE-A_v02.png` e `WF-TEMPLATE-A_v03.png` permanecem como referências históricas da evolução do Modelo A; `WF-TEMPLATE-B_v01.png` e `WF-TEMPLATE-C_v01.png` permanecem como histórico dos Modelos B e C white. Não devem ser promovidos novamente a referência vigente apenas por existirem no diretório.
+`WF-TEMPLATE-A_v01.png`, `WF-TEMPLATE-A_v02.png` e `WF-TEMPLATE-A_v03.png` permanecem como referências históricas da evolução do Modelo A white; `WF-TEMPLATE-B_v01.png` e `WF-TEMPLATE-C_v01.png` permanecem como histórico dos Modelos B e C white. Não devem ser promovidos novamente a referência vigente apenas por existirem no diretório.
 
-Nenhuma das três referências white atuais define geometria universal. Cada Wireframe Text preserva sua própria composição; o conjunto serve para compreender linguagem, acabamento e decisões já aprovadas, sem copiar automaticamente layout ou conteúdo.
+Os conjuntos vigentes são, portanto:
 
-Esse registro pode evoluir quando outra referência for explicitamente adotada para a etapa ou para a variação, sem transformar a geometria de uma prancha específica em template universal.
+```text
+white → A_v04 / B_v02 / C_v02
+black → A_v01 / B_v01 / C_v01
+```
+
+Nenhuma dessas referências define geometria universal. Cada Wireframe Text preserva sua própria composição; o conjunto serve para compreender linguagem, acabamento e decisões já aprovadas, sem copiar automaticamente layout ou conteúdo.
+
+**Ainda não existe decisão registrada de qual Modelo A/B/C será o template oficial para as saídas funcionais, nem regra objetiva de seleção entre eles.** Até que essa decisão seja formalizada, nenhuma produção funcional deve escolher um dos três modelos por inferência, ordem de versão, posição no diretório ou semelhança visual.
+
+Esse registro pode evoluir quando um template oficial ou uma regra de seleção for explicitamente aprovado para a etapa, sem transformar silenciosamente a geometria de uma prancha específica em template universal.
 
 ---
 

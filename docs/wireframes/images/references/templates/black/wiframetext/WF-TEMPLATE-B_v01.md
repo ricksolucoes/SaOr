@@ -549,7 +549,7 @@ Arquivo obrigatório:
 docs/wireframes/images/references/black/WF-VIEWPORT-360x800.png
 ```
 
-Este é o bitmap black gerado em 27/10/2026 com a paleta da seção 6 de `REGRAS-TECNICAS.md` (Icon Button à esquerda do Botão Texto). Nenhum bitmap da variação white é usado nesta prancha. O registro do arquivo em `REGRAS-TECNICAS.md` (seção 3.1) é pendência do responsável.
+Este é o bitmap black gerado em 27/10/2026 com a paleta da seção 6 de `REGRAS-TECNICAS.md` (Icon Button à esquerda do Botão Texto). Nenhum bitmap da variação white é usado nesta prancha. O arquivo está registrado em `REGRAS-TECNICAS.md`, seção 3.1.
 
 Dimensão obrigatória:
 

@@ -547,7 +547,7 @@ Arquivo obrigatório:
 docs/wireframes/images/references/white/WF-VIEWPORT-360x800.png
 ```
 
-Este é o bitmap white gerado em 27/10/2026 com a paleta da seção 6 de `REGRAS-TECNICAS.md` (Icon Button à esquerda do Botão Texto). Os bitmaps anteriores permanecem preservados como referências históricas e não são usados nesta prancha. O registro do arquivo em `REGRAS-TECNICAS.md` (seção 3.1) é pendência do responsável.
+Este é o bitmap white gerado em 27/10/2026 com a paleta da seção 6 de `REGRAS-TECNICAS.md` (Icon Button à esquerda do Botão Texto). Os bitmaps anteriores permanecem preservados como referências históricas e não são usados nesta prancha. O arquivo está registrado em `REGRAS-TECNICAS.md`, seção 3.1.
 
 Dimensão obrigatória:
 
@@ -1870,8 +1870,8 @@ Esta B_v02 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
 [x] todas as cores usadas constam em REGRAS-TECNICAS.md, seção 6 (tabela 6.5); HEX somente no bloco 6
 [x] pares texto/fundo registrados na seção 2 (Cores usadas e pares texto/fundo)
 [x] canvas 1280 × 1920; todas as áreas documentadas dentro do canvas (base 1908)
-[ ] REGRAS-TECNICAS.md seção 3.1 ainda não lista WF-VIEWPORT-360x800.png (registro pendente do responsável)
-[ ] REGRAS-TECNICAS.md 6.7 — registro formal da aprovação das lacunas de cor (pendente do responsável)
+[x] REGRAS-TECNICAS.md seção 3.1 lista WF-VIEWPORT-360x800.png
+[x] REGRAS-TECNICAS.md 6.7 — aprovação das lacunas de cor registrada em 27/10/2026
 ```
 
 A variação `black` correspondente é a `WF-TEMPLATE-B_v01` (pasta `templates/black/`), derivada desta v02 conforme `WIREFRAME-TEXT.md` 7.1.

@@ -41,11 +41,11 @@ docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda
 docs/wireframes/images/references/white/WF-VIEWPORT-360x800.png
 ```
 
-`WF-VIEWPORT-360x800.png` (white) foi gerado com a paleta técnica da seção 6 (tabela 6.5) e é usado por `WF-TEMPLATE-A_v04`, `WF-TEMPLATE-B_v02` e `WF-TEMPLATE-C_v02`.
+As três referências white medem fisicamente `360 × 800 px` e podem ser inseridas em `100%` quando o Wireframe Text específico determinar seu uso.
 
-Ambas medem fisicamente `360 × 800 px` e podem ser inseridas em `100%` quando o Wireframe Text específico determinar seu uso.
+`WF-VIEWPORT-360x800.png` (white) foi gerado com a paleta técnica da seção 6 (tabela 6.5), mantém o Icon Button à esquerda do Botão Texto e é usado por `WF-TEMPLATE-A_v04`, `WF-TEMPLATE-B_v02` e `WF-TEMPLATE-C_v02`.
 
-A diferença entre elas é parte do próprio ativo:
+As duas variantes históricas `clean` diferem entre si pelo posicionamento do Icon Button:
 
 ```text
 WF-VIEWPORT-360x800-clean.png
@@ -55,7 +55,7 @@ WF-VIEWPORT-360x800-clean_icone-esquerda.png
 → Icon Button à esquerda do Botão Texto
 ```
 
-Nenhuma das duas substitui universalmente a outra. A escolha do bitmap pertence ao Wireframe Text específico. É proibido trocar, reconstruir ou adaptar silenciosamente um ativo para reproduzir a outra variante.
+Nenhuma das três referências substitui universalmente outra. A escolha do bitmap pertence ao Wireframe Text específico. É proibido trocar, reconstruir ou adaptar silenciosamente um ativo para reproduzir outra variante.
 
 As `WF-TEMPLATE-A_v03`, `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` (históricas) usavam `WF-VIEWPORT-360x800-clean_icone-esquerda.png`. As `WF-TEMPLATE-A_v04`, `WF-TEMPLATE-B_v02` e `WF-TEMPLATE-C_v02` usam `WF-VIEWPORT-360x800.png`. O arquivo `WF-VIEWPORT-360x800-clean.png` permanece preservado como referência válida para artefatos que o especifiquem.
 
