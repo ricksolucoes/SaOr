@@ -116,13 +116,13 @@ Uso:
 - SaOr: Google Sans Bold 700
 - SALES ORDER: Quicksand Regular 400, uppercase, tracking ampliado
 
-Licenciamento:
-- Google Sans: fonte proprietária do Google, sujeita aos termos de licenciamento e uso da família tipográfica.
-- Quicksand: SIL Open Font License 1.1 (OFL)
+Licenciamento do pacote armazenado no repositório:
+- Google Sans: SIL Open Font License 1.1 (OFL), conforme `OFL.txt` e metadados incorporados aos TTFs presentes em `assets/fonts/logo/Google_Sans,Quicksand.zip`.
+- Quicksand: SIL Open Font License 1.1 (OFL), conforme `OFL.txt` e metadados incorporados aos TTFs do mesmo pacote.
 
-Fonte oficial do arquivo:
-- Google Sans: Google / arquivo oficial autorizado da família tipográfica
-- Quicksand: Google Fonts / repositório oficial google/fonts
+Fonte dos arquivos catalogados:
+- os arquivos utilizados pela identidade estão preservados no pacote local `assets/fonts/logo/Google_Sans,Quicksand.zip`;
+- este catálogo não atribui origem externa além do que pode ser comprovado pelos próprios arquivos e seus metadados.
 ```
 
 O pacote de fontes mantido no repositório é catalogado em [`../fonts/logo/README.md`](../fonts/logo/README.md). Esse diretório armazena os arquivos; a especificação de família, peso, estilo e uso da marca permanece canônica nesta seção.

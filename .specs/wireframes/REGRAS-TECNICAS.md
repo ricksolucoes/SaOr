@@ -31,15 +31,30 @@ Regras obrigatórias:
 - não criar versão específica para iOS ou Android;
 - uma legenda de dimensão não substitui a verificação física.
 
-### 3.1 Referência de demonstração
+### 3.1 Referências físicas de demonstração
 
-A referência física atualmente disponível para a variação `white` é:
+As referências físicas atualmente disponíveis para a variação `white` são:
 
 ```text
 docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean.png
+docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png
 ```
 
-Pode ser inserida diretamente em `100%` e deve permanecer `360 × 800 px`.
+Ambas medem fisicamente `360 × 800 px` e podem ser inseridas em `100%` quando o Wireframe Text específico determinar seu uso.
+
+A diferença entre elas é parte do próprio ativo:
+
+```text
+WF-VIEWPORT-360x800-clean.png
+→ Botão Texto com Icon Button à direita
+
+WF-VIEWPORT-360x800-clean_icone-esquerda.png
+→ Icon Button à esquerda do Botão Texto
+```
+
+Nenhuma das duas substitui universalmente a outra. A escolha do bitmap pertence ao Wireframe Text específico. É proibido trocar, reconstruir ou adaptar silenciosamente um ativo para reproduzir a outra variante.
+
+As pranchas-modelo `WF-TEMPLATE-A_v03`, `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` usam `WF-VIEWPORT-360x800-clean_icone-esquerda.png`. O arquivo `WF-VIEWPORT-360x800-clean.png` permanece preservado como referência válida para artefatos que o especifiquem.
 
 Referências físicas específicas da variação `black`, quando existirem, pertencem a:
 
@@ -122,6 +137,25 @@ Inter é tipografia técnica e não substitui a tipografia oficial da marca.
 | `WF-W-FOCUS` | `#4A4A4A` |
 | `WF-W-STATUS` | `#626262` |
 
+#### Cores semânticas técnicas — white
+
+As pranchas-modelo `WF-TEMPLATE-A_v03`, `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` usam de forma consistente o conjunto abaixo para a representação técnica `white`:
+
+| Referência | HEX |
+|---|---|
+| `Primary` | `#0061FE` |
+| `On Primary` | `#FFFFFF` |
+| `Secondary` | `#9E9EDE` |
+| `Info` | `#0288D1` |
+| `Error` | `#D32F2F` |
+| `Success` | `#2E7D32` |
+| `Warning` | `#ED6C02` |
+| `Info BG` | `#DDEEFC` |
+
+Essas cores pertencem à **representação técnica dos wireframes white**. Elas não redefinem nem substituem a paleta funcional/visual do produto documentada no Documento Mestre ou em etapas posteriores de Design Visual.
+
+Não inferir automaticamente equivalentes para `black`. Cores semânticas da representação escura devem ser registradas somente quando houver fonte aprovada para essa variação.
+
 ### Escuro
 
 | Token | HEX |
@@ -177,6 +211,8 @@ Ordem:
 ```text
 offset-x / offset-y / blur / opacidade
 ```
+
+Os tokens `WF-ELEVATION-*` governam elevação técnica de componentes e amostras de interface. Uma sombra usada exclusivamente como tratamento documental da própria prancha pode ser definida pelo Wireframe Text específico quando fizer parte de uma composição aprovada. Nesse caso, ela não cria automaticamente novo token de componente nem regra universal para futuras interfaces.
 
 ## 9. Iconografia
 

@@ -128,7 +128,7 @@ STATUS no cabeçalho:                   APROVADO E CONGELADO
 
 Os Gates 1 a 6 e o PNG foram aprovados pelo responsável em `26/10/2026`. A revisão do PNG no mesmo frame (`v03-01` → `v03`) foi feita em `26/10/2026` seguindo `MONTAGEM-IMAGEM.md` §20.2: o PNG anterior foi arquivado como `WF-TEMPLATE-A_v03-01.png` e o novo mantém o nome canônico. Este texto foi atualizado para corresponder à imagem revisada, e o novo PNG foi aprovado pelo responsável em `26/10/2026`. Validação técnica: 336 + 16 + 440 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px; todas as áreas x/y/w/h dentro do canvas 1280 × 1920 px; limite inferior documental y 1904 ≤ 1908.
 
-Pendências na spec, herdadas do modelo C, que **não foram resolvidas** por esta aprovação: cromia adicional (azul, verde, semânticas), viewport derivado `WF-VIEWPORT-360x800-clean_icone-esquerda.png`, card sem borda e título fora do card, chips de 20 px de altura e sombra do card fora dos tokens WF-ELEVATION.
+As decisões visuais desta prancha permanecem específicas de `WF-TEMPLATE-A_v03` quando não forem invariantes canônicas. A paleta semântica técnica white e a existência das duas referências físicas de viewport estão registradas em `REGRAS-TECNICAS.md`; o tratamento documental de sombra segue `MONTAGEM-IMAGEM.md`. Card sem borda, título fora do card e chips cromáticos documentais não constituem, por si só, desvios das regras canônicas.
 
 ## 4. Padrões visuais
 
@@ -259,7 +259,7 @@ Limite inferior documental: y 1904 (≤ 1908). A base do bloco 5 coincide com a 
 Título "MODELO VIEWPORT" (ver 4.1). Sem card. O bitmap fica entre as colunas, sobre o fundo da prancha.
 
 ```text
-arquivo: docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png (derivado; ver seção 3)
+arquivo: docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png (variante física white; ver seção 3)
 posição: x 404, y 208, w 360, h 800 (limite direito 764, inferior 1008)
 escala: 100% / 1:1
 cálculo horizontal: coluna 440 − bitmap 360 = 80; 80 / 2 = 40; 364 + 40 = x 404
@@ -443,7 +443,7 @@ Card x 12, y 1628, w 1256, h 276 (base 1904). Duas colunas de 5 itens: marcador 
 1. O viewport representa a tela completa do celular: 360 × 800 px em escala 1:1.
 2. A referência dimensional usa largura total 360 px, largura útil 336 px e margens laterais 12 + 12 px.
 3. Não existe reserva fixa de faixa superior ou inferior de safe area nesta prancha-modelo.
-4. O bitmap WF-VIEWPORT-360x800-clean.png deve permanecer fisicamente 360 × 800 px, inserido em 100%, sem resize.
+4. O bitmap WF-VIEWPORT-360x800-clean_icone-esquerda.png deve permanecer fisicamente 360 × 800 px, inserido em 100%, sem resize.
 5. Todos os elementos seguem grid de 4 px e escala de espaçamento 4 / 8 / 12 / 16 / 24 / 32 px.
 6. Inter é tipografia técnica do wireframe e não tipografia oficial da marca SaOr.
 7. Em páginas seguintes, repetir apenas elementos realmente persistentes.
@@ -476,15 +476,17 @@ Elevação: E3 do modal 0 4px 12px rgba(0,0,0,.20).
 
 ---
 
-# Checklist (itens de spec ainda abertos)
+# Registro de validação da versão aprovada
 
 ```text
-[ ] cromia adicional registrada em REGRAS-TECNICAS.md
-[ ] bitmap derivado do viewport aceito (ou original restaurado)
-[ ] título fora do card com barra azul e card sem borda aceitos na spec
-[ ] canvas 1280 × 1920; viewport 360 × 800 em 1:1; nenhuma cota altera o bitmap
-[ ] todas as áreas dentro do canvas (base documental 1904 ≤ 1908)
-[ ] marca com SVG mestre e fontes oficiais
-[ ] componentes com as medidas normativas
-[ ] versão Escuro desta prancha
+[x] Gates 1 a 6 registrados como APROVADO E CONGELADO
+[x] Produção do PNG registrada como APROVADO E CONGELADO
+[x] viewport especificado: WF-VIEWPORT-360x800-clean_icone-esquerda.png
+[x] canvas 1280 × 1920; viewport 360 × 800 em 1:1
+[x] todas as áreas documentadas dentro do canvas (base 1904 ≤ 1908)
+[x] marca especificada com SVG mestre e fontes catalogadas
+[x] componentes documentados com as medidas normativas aplicáveis
+[ ] versão Escuro desta prancha — não produzida; permanece fora do estado aprovado desta prancha white
 ```
+
+O item `black` acima não reabre os gates desta prancha `white`; ele apenas registra que a variação escura ainda não existe.

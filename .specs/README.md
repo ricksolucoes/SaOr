@@ -2,6 +2,8 @@
 
 A pasta `.specs/` concentra especificações normativas reutilizáveis do projeto.
 
+Toda intervenção assistida no repositório deve começar por [`PROCESSO-ALTERACAO-ASSISTIDA.md`](PROCESSO-ALTERACAO-ASSISTIDA.md), que define leitura contextual, comprovação, aprovação prévia, execução local, auditoria e entrega.
+
 Ela existe para impedir que regras técnicas e processos de construção sejam reinterpretados a partir de:
 
 - memória de conversa;
@@ -44,6 +46,7 @@ Um nível inferior não altera silenciosamente uma regra de nível superior.
 
 ## Índice
 
+- [`PROCESSO-ALTERACAO-ASSISTIDA.md`](PROCESSO-ALTERACAO-ASSISTIDA.md) — processo global obrigatório para análises e alterações assistidas no projeto.
 - [`wireframes/README.md`](wireframes/README.md) — índice das specs de wireframe.
 - [`wireframes/REGRAS-TECNICAS.md`](wireframes/REGRAS-TECNICAS.md) — regras técnicas invariantes.
 - [`wireframes/PROCESSO-PRANCHA.md`](wireframes/PROCESSO-PRANCHA.md) — processo sequencial de construção.
@@ -51,6 +54,8 @@ Um nível inferior não altera silenciosamente uma regra de nível superior.
 - [`wireframes/MONTAGEM-IMAGEM.md`](wireframes/MONTAGEM-IMAGEM.md) — leitura contextual e montagem visual profissional das imagens aprovadas.
 
 ## Regra de alteração
+
+Antes de qualquer mudança, aplicar `PROCESSO-ALTERACAO-ASSISTIDA.md`.
 
 Uma mudança normativa deve ser feita primeiro na spec canônica correspondente.
 

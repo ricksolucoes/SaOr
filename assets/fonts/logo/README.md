@@ -14,6 +14,8 @@ Google_Sans,Quicksand.zip
 
 O pacote reúne os arquivos tipográficos utilizados na identidade visual.
 
+Na auditoria física do pacote atual, os arquivos `OFL.txt` e os metadados incorporados aos TTFs identificam **SIL Open Font License 1.1 (OFL)** para Google Sans e Quicksand. Essas informações de licença devem permanecer preservadas junto aos arquivos.
+
 A especificação canônica de família, peso, estilo, caixa, tracking e finalidade de cada fonte pertence exclusivamente a [`../../logo/README.md`](../../logo/README.md).
 
 Este README não replica esses valores para evitar divergência entre a especificação da marca e o diretório de armazenamento.
@@ -33,9 +35,9 @@ Alterações na família, peso, estilo ou uso da marca devem ser feitas primeiro
 
 ---
 
-## 3. Distribuição
+## 3. Distribuição e licença
 
-A redistribuição do pacote presente neste diretório é considerada permitida no projeto conforme a licença aplicável confirmada pelo responsável pelo repositório.
+O pacote atual contém os textos de licença OFL correspondentes às famílias armazenadas. Qualquer redistribuição deve respeitar esses textos e preservar os avisos/licenças incluídos no próprio pacote.
 
 Ao substituir ou adicionar arquivos tipográficos:
 

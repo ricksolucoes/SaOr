@@ -114,29 +114,29 @@ As coordenadas são **específicas desta prancha-modelo C_v01** e não são medi
 7. PNG correspondente — resultado visual, nunca fonte normativa superior
 ```
 
-Estado dos gates (imagem WF-TEMPLATE-C_v01.png aprovada pelo responsável após a reorganização dos blocos 1–14):
+Estado dos gates (imagem `WF-TEMPLATE-C_v01.png` aprovada pelo responsável após a reorganização dos blocos 1–14):
 
 ```text
-Gate 1 — Canvas:                       conforme (1280 × 1920 px)
-Gate 2 — Título / Cabeçalho:           APROVADO
-Gate 3 — Viewport Técnico:             APROVADO
-Gate 4 — Área restante calculada:      conforme (bases alinhadas em y 1608)
-Gate 5 — Demais elementos definidos:   conforme
-Gate 6 — Wireframe Text completo:      ajustado à imagem aprovada
+Gate 1 — Canvas:                       APROVADO E CONGELADO
+Gate 2 — Título / Cabeçalho:           APROVADO E CONGELADO
+Gate 3 — Viewport Técnico:             APROVADO E CONGELADO
+Gate 4 — Área restante calculada:      APROVADO E CONGELADO
+Gate 5 — Demais elementos definidos:   APROVADO E CONGELADO
+Gate 6 — Wireframe Text completo:      APROVADO E CONGELADO
 Produção do PNG:                       APROVADO E CONGELADO
+STATUS no cabeçalho:                   APROVADO E CONGELADO
 ```
 
-O texto "APROVADO E CONGELADO" no campo STATUS do cabeçalho está coerente com o estado atual da prancha.
+## 4. Decisões específicas da composição aprovada
 
-## 4. Desvios das REGRAS-TECNICAS (aprovados com a imagem; registro na spec ainda a fazer)
+As decisões abaixo pertencem a `WF-TEMPLATE-C_v01` quando não forem invariantes canônicas:
 
 ```text
-- Cromia: REGRAS-TECNICAS define tokens apenas neutros. As cores abaixo estão no PNG
-  e precisam ser aprovadas e registradas na spec antes de congelar.
-- Viewport: usa o bitmap derivado WF-VIEWPORT-360x800-clean_icone-esquerda.png
-  (360 × 800 px, ícone à esquerda no Botão Texto). O original permanece intacto.
-- Card sem borda: a spec prevê borda 1 px (WF-W-BORDER) nos cartões.
-- Contraste: WF-W-BORDER #B5B5B5 (2,05:1) e WF-W-DISABLED #9A9A9A (2,81:1) ficam abaixo de 3:1.
+- A paleta semântica técnica white usada nesta prancha está registrada em REGRAS-TECNICAS.md.
+- O viewport usa WF-VIEWPORT-360x800-clean_icone-esquerda.png; o clean.png permanece preservado como outra referência white.
+- Cards documentais podem aparecer sem borda porque REGRAS-TECNICAS.md exige borda somente quando necessária.
+- A sombra dos cards é tratamento documental específico desta composição e segue a distinção registrada em MONTAGEM-IMAGEM.md.
+- WF-W-BORDER #B5B5B5 (2,05:1) e WF-W-DISABLED #9A9A9A (2,81:1) permanecem observações de contraste técnico; não reabrem os gates já aprovados desta prancha.
 ```
 
 ### 4.1 Cromia adicional
@@ -309,7 +309,7 @@ Card: x 12, y 196, w 416, h 892.
 Bitmap obrigatório:
 
 ```text
-docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png  (derivado; ver seção 4)
+docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png  (variante física white; ver seção 4)
 ```
 
 ```text
@@ -609,16 +609,18 @@ Coluna direita
 08. Aprovação explícita — APROVADO E CONGELADO (imagem e Wireframe Text)
 ```
 
-# Checklist antes de congelar
+# Registro de validação da versão aprovada
 
 ```text
-[ ] cromia adicional registrada em REGRAS-TECNICAS.md
-[ ] bitmap derivado do viewport aceito (ou original restaurado)
-[ ] card sem borda aceito (ou borda 1 px restaurada)
-[ ] canvas = 1280 × 1920 px
-[ ] viewport = 360 × 800 px, 1:1, nenhuma cota altera o bitmap
-[ ] todas as áreas dentro do canvas (base documental 1904 ≤ 1908)
-[ ] marca com SVG mestre e fontes oficiais
-[ ] componentes com as medidas normativas
-[ ] nenhum requisito funcional inventado
+[x] Gates 1 a 6 registrados como APROVADO E CONGELADO
+[x] Produção do PNG registrada como APROVADO E CONGELADO
+[x] paleta semântica técnica white registrada em REGRAS-TECNICAS.md
+[x] viewport especificado: WF-VIEWPORT-360x800-clean_icone-esquerda.png
+[x] card sem borda tratado como decisão específica compatível com a regra de borda quando necessária
+[x] canvas = 1280 × 1920 px
+[x] viewport = 360 × 800 px em 1:1
+[x] todas as áreas documentadas dentro do canvas (base 1904 ≤ 1908)
+[x] marca especificada com SVG mestre e fontes catalogadas
+[x] componentes documentados com as medidas normativas aplicáveis
+[x] nenhum requisito funcional adicional é definido por esta prancha-modelo
 ```

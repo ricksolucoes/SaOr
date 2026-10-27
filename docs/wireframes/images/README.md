@@ -50,7 +50,8 @@ docs/wireframes/images/
 │   ├── Especificação Técnica - Prancha de Trabalho.png
 │   ├── white/
 │   │   ├── Especificação Técnica do Viewport Mobile.png
-│   │   └── WF-VIEWPORT-360x800-clean.png
+│   │   ├── WF-VIEWPORT-360x800-clean.png
+│   │   └── WF-VIEWPORT-360x800-clean_icone-esquerda.png
 │   ├── black/
 │   │   └── <referências específicas da variação, quando existirem>
 │   └── templates/
@@ -140,6 +141,8 @@ Arquivo atualmente existente:
 references/Especificação Técnica - Prancha de Trabalho.png
 ```
 
+Esse PNG mede `1280 × 1920 px` e é fisicamente um canvas branco neutro. Ele serve como referência física de prancha, não como fonte normativa de medidas, regras ou conteúdo. As regras permanecem nas specs canônicas.
+
 ## 3.2 Referências específicas por variação
 
 Variação clara:
@@ -147,7 +150,12 @@ Variação clara:
 ```text
 references/white/Especificação Técnica do Viewport Mobile.png
 references/white/WF-VIEWPORT-360x800-clean.png
+references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png
 ```
+
+Os dois bitmaps `WF-VIEWPORT-360x800-*` medem `360 × 800 px` e representam variações físicas diferentes do mesmo viewport demonstrativo. O Wireframe Text específico determina qual arquivo deve ser usado. O `clean.png` permanece preservado; não deve ser removido nem substituído silenciosamente pelo arquivo `_icone-esquerda.png`.
+
+As pranchas-modelo white atuais `WF-TEMPLATE-A_v03`, `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` usam `WF-VIEWPORT-360x800-clean_icone-esquerda.png`.
 
 Variação escura:
 
@@ -210,12 +218,18 @@ Registro operacional vigente:
 
 ```text
 white
-→ references/templates/white/WF-TEMPLATE-A_v02.png
-→ referência visual esperada vigente para compreender o padrão de acabamento e linguagem da variação clara
+→ references/templates/white/WF-TEMPLATE-A_v03.png
+→ references/templates/white/WF-TEMPLATE-B_v01.png
+→ references/templates/white/WF-TEMPLATE-C_v01.png
+→ conjunto de referências visuais contextuais aprovadas da variação clara
 
 black
 → nenhuma referência visual contextual vigente registrada neste momento
 ```
+
+`WF-TEMPLATE-A_v01.png` e `WF-TEMPLATE-A_v02.png` permanecem como referências históricas da evolução do Modelo A. Não devem ser promovidos novamente a referência vigente apenas por existirem no diretório.
+
+Nenhuma das três referências white atuais define geometria universal. Cada Wireframe Text preserva sua própria composição; o conjunto serve para compreender linguagem, acabamento e decisões já aprovadas, sem copiar automaticamente layout ou conteúdo.
 
 Esse registro pode evoluir quando outra referência for explicitamente adotada para a etapa ou para a variação, sem transformar a geometria de uma prancha específica em template universal.
 

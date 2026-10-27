@@ -31,16 +31,17 @@ Entre os principais módulos previstos estão:
 
 ## Status do projeto
 
-**Documentação Mestre aprovada — Wireframes em execução**
+**Documentação Mestre aprovada — pranchas-modelo white concluídas; wireframes funcionais e variação black ainda pendentes**
 
 A baseline funcional vigente é a versão **1.0 — APROVADO / BASELINE FUNCIONAL**.
 
-A etapa atual é **Wireframe Conceitual em Imagem**. O processo oficial de evolução, os gates entre etapas e os critérios de alteração da baseline são definidos no [`Documento Mestre`](docs/Documento_Mestre.md).
+A etapa atual é **Wireframe Conceitual em Imagem**. As pranchas-modelo `white` vigentes estão concluídas e aprovadas como referências contextuais da etapa; isso não significa que as 71 interfaces funcionais tenham sido produzidas. A variação `black` e as saídas funcionais permanecem pendentes conforme o controle operacional em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md). O processo oficial de evolução, os gates entre etapas e os critérios de alteração da baseline são definidos no [`Documento Mestre`](docs/Documento_Mestre.md).
 
 ## Documentação
 
 - [`docs/Documento_Mestre.md`](docs/Documento_Mestre.md) — fonte canônica funcional do projeto: escopo, regras de negócio, interfaces, Textframes, navegação, componentes funcionais, estados globais e critérios de evolução.
-- [`.specs/README.md`](.specs/README.md) — índice das especificações normativas reutilizáveis do projeto; para wireframes, centraliza regras técnicas, processo de construção e padrão documental do Wireframe Text.
+- [`.specs/README.md`](.specs/README.md) — índice das especificações normativas reutilizáveis do projeto.
+- [`.specs/PROCESSO-ALTERACAO-ASSISTIDA.md`](.specs/PROCESSO-ALTERACAO-ASSISTIDA.md) — processo obrigatório para análises e alterações assistidas, com leitura contextual, comprovação, aprovação prévia, execução local, auditoria e entrega.
 - [`docs/Registro_Fechamento_Documento_Mestre.md`](docs/Registro_Fechamento_Documento_Mestre.md) — registro canônico de fechamento e proteção contra regressões da baseline funcional v1.0.
 - [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md) — controle operacional da etapa de Wireframe Conceitual em Imagem e referência para as specs canônicas em `.specs/wireframes/`.
 - [`docs/wireframes/images/references/templates/`](docs/wireframes/images/references/templates/) — pranchas-modelo e Wireframe Text separados por `white` e `black`; a estrutura operacional é definida em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md).

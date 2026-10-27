@@ -490,7 +490,7 @@ Arquivo obrigatório:
 docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png
 ```
 
-Este é o bitmap derivado (ícone do Botão Texto/Icon Button à esquerda). O original `WF-VIEWPORT-360x800-clean.png` não é usado nesta prancha; a aceitação do derivado segue como pendência de spec.
+Este é o bitmap com o Icon Button à esquerda do Botão Texto. O original `WF-VIEWPORT-360x800-clean.png` não é usado nesta prancha e permanece preservado como outra referência física white. A existência e a regra de seleção entre os dois ativos estão registradas em `REGRAS-TECNICAS.md`.
 
 Dimensão obrigatória:
 
@@ -1636,7 +1636,7 @@ w interno: 1224 px
 
 3. Não existe reserva fixa de faixa superior ou inferior de safe area nesta prancha-modelo.
 
-4. O bitmap WF-VIEWPORT-360x800-clean.png deve permanecer fisicamente 360 × 800 px, inserido em 100%, sem resize.
+4. O bitmap WF-VIEWPORT-360x800-clean_icone-esquerda.png deve permanecer fisicamente 360 × 800 px, inserido em 100%, sem resize.
 
 5. Todos os elementos seguem grid de 4 px e escala de espaçamento 4 / 8 / 12 / 16 / 24 / 32 px.
 
@@ -1726,7 +1726,9 @@ Esta B_v01 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
 
 ---
 
-# Gate antes da produção do PNG
+# Registro de validação da versão aprovada
+
+A lista abaixo registra condições verificáveis da versão final; não representa gate ainda aberto.
 
 ```text
 [x] Gate 1 registrado como APROVADO E CONGELADO
@@ -1735,24 +1737,18 @@ Esta B_v01 deve obedecer aos gates de `.specs/wireframes/PROCESSO-PRANCHA.md`.
 [x] Gate 4 registrado como APROVADO E CONGELADO
 [x] Gate 5 registrado como APROVADO E CONGELADO
 [x] Gate 6 registrado como APROVADO E CONGELADO
-[ ] frame inicial coerente com as specs canônicas vigentes
-[ ] canvas = 1280 × 1920 px
-[ ] cabeçalho montado conforme esta B_v01
-[ ] viewport físico = 360 × 800 px
-[ ] viewport inserido em 100% / 1:1
-[ ] nenhuma reserva fixa de safe area adicionada
-[ ] cotas 360 / 336 / 12 / 12 / 800 representadas
-[ ] nenhuma cota alterou o bitmap
-[ ] todas as áreas desta prancha-modelo permanecem dentro do canvas
-[ ] blocos 1 a 12 dimensionados para o conteúdo real deste template
-[ ] bloco 12 permanece como uma única área documental
-[ ] nenhuma medida desta B_v01 foi tratada como dimensão universal de futuros T/M/E
-[ ] nenhuma referência de layout foi herdada de prancha histórica ou alternativa anterior
-[ ] marca usa as fontes oficiais catalogadas
-[ ] componentes usam as medidas normativas de `.specs/wireframes/REGRAS-TECNICAS.md`
-[ ] não existe requisito funcional inventado
+[x] Produção do PNG registrada como APROVADO E CONGELADO
+[x] canvas = 1280 × 1920 px
+[x] cabeçalho documentado conforme esta B_v01
+[x] viewport especificado: WF-VIEWPORT-360x800-clean_icone-esquerda.png
+[x] viewport físico = 360 × 800 px em 100% / 1:1
+[x] nenhuma reserva fixa de safe area especificada
+[x] cotas 360 / 336 / 12 / 12 / 800 documentadas
+[x] todas as áreas documentadas permanecem dentro do canvas
+[x] as medidas desta B_v01 permanecem específicas da prancha-modelo
+[x] marca especificada com as fontes catalogadas
+[x] componentes documentados com as medidas normativas aplicáveis
+[x] nenhum requisito funcional adicional é definido por esta prancha-modelo
 ```
 
-Somente depois dos Gates 1 a 6 estarem registrados como `APROVADO E CONGELADO` a `Produção do PNG` pode sair de `BLOQUEADO POR GATE ANTERIOR` para `PENDENTE`.
-
-Durante a construção da imagem, usar `EM DEFINIÇÃO`. Depois da validação PNG × Wireframe Text, usar `AGUARDANDO APROVAÇÃO`. Somente após aprovação explícita da imagem usar `APROVADO E CONGELADO`.
+A sequência de estados `PENDENTE → EM DEFINIÇÃO → AGUARDANDO APROVAÇÃO → APROVADO E CONGELADO` permanece descrita acima como histórico do processo. O estado atual desta versão é `APROVADO E CONGELADO`.

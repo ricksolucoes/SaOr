@@ -510,7 +510,14 @@ Quando usados:
 
 Elevação indica camada, não decoração.
 
-Usar somente quando houver necessidade real de distinguir profundidade ou sobreposição e somente com valores definidos em `REGRAS-TECNICAS.md`.
+Para componentes técnicos e amostras de interface, usar somente quando houver necessidade real de distinguir profundidade ou sobreposição e somente com os valores `WF-ELEVATION-*` definidos em `REGRAS-TECNICAS.md`.
+
+Uma sombra pode existir como **tratamento documental da própria prancha** quando o Wireframe Text específico aprovado a definir explicitamente para superfícies de apresentação, cabeçalhos ou cartões documentais. Essa sombra:
+
+- pertence somente à composição específica documentada;
+- não substitui os tokens `WF-ELEVATION-*` de componentes;
+- não cria novo token universal;
+- não deve ser herdada por outra prancha apenas por semelhança visual.
 
 Não aplicar sombra genérica a todos os painéis para “deixar bonito”.
 
