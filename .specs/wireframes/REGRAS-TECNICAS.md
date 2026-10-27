@@ -65,7 +65,7 @@ As referências físicas atualmente disponíveis para a variação `black` são:
 docs/wireframes/images/references/black/WF-VIEWPORT-360x800.png
 ```
 
-`WF-VIEWPORT-360x800.png` (black) foi gerado com a paleta técnica da seção 6 (tabela 6.6) e é usado por `WF-TEMPLATE-A_v01` e `WF-TEMPLATE-B_v01` (black). Referências físicas específicas da variação `black` pertencem a `docs/wireframes/images/references/black/`.
+`WF-VIEWPORT-360x800.png` (black) foi gerado com a paleta técnica da seção 6 (tabela 6.6) e é usado por `WF-TEMPLATE-A_v01`, `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` (black). Referências físicas específicas da variação `black` pertencem a `docs/wireframes/images/references/black/`.
 
 Não reutilizar por inferência um bitmap específico de `white` em uma prancha `black`. As dimensões normativas do viewport permanecem as mesmas independentemente da variação.
 
@@ -315,7 +315,7 @@ Ordem:
 offset-x / offset-y / blur / opacidade
 ```
 
-Elevação na variação `black`: a sombra `rgba(0,0,0,·)` dos tokens `WF-ELEVATION-*` é pouco perceptível sobre superfícies escuras (sobre `WF-B-SURFACE` #1E1E1E, a sombra E3 escurece apenas cerca de 6 níveis de cinza), e o que funciona no white não é aplicado por semelhança. Nas amostras de elevação da variação `black`, o preenchimento usa **um único token existente mais claro que o card**, `WF-B-SURFACE-ALT`, do mesmo modo que o white usa uma única cor nas amostras; os parâmetros de sombra permanecem os da lista acima, e o nível é identificado pela legenda. Não se criam tokens novos de superfície por nível de elevação. Definição aprovada em 27/10/2026 e aplicada em `WF-TEMPLATE-A_v01` e `WF-TEMPLATE-B_v01` (black).
+Elevação na variação `black`: a sombra `rgba(0,0,0,·)` dos tokens `WF-ELEVATION-*` é pouco perceptível sobre superfícies escuras (sobre `WF-B-SURFACE` #1E1E1E, a sombra E3 escurece apenas cerca de 6 níveis de cinza), e o que funciona no white não é aplicado por semelhança. Nas amostras de elevação da variação `black`, o preenchimento usa **um único token existente mais claro que o card**, `WF-B-SURFACE-ALT`, do mesmo modo que o white usa uma única cor nas amostras; os parâmetros de sombra permanecem os da lista acima, e o nível é identificado pela legenda. Não se criam tokens novos de superfície por nível de elevação. Definição aprovada em 27/10/2026 e aplicada em `WF-TEMPLATE-A_v01`, `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` (black).
 
 Os tokens `WF-ELEVATION-*` governam elevação técnica de componentes e amostras de interface. Uma sombra usada exclusivamente como tratamento documental da própria prancha pode ser definida pelo Wireframe Text específico quando fizer parte de uma composição aprovada. Nesse caso, ela não cria automaticamente novo token de componente nem regra universal para futuras interfaces.
 
