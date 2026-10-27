@@ -226,6 +226,7 @@ white
 
 black
 → references/templates/black/WF-TEMPLATE-A_v01.png
+→ references/templates/black/WF-TEMPLATE-B_v01.png
 ```
 
 `WF-TEMPLATE-A_v01.png`, `WF-TEMPLATE-A_v02.png` e `WF-TEMPLATE-A_v03.png` permanecem como referências históricas da evolução do Modelo A; `WF-TEMPLATE-B_v01.png` permanece como histórico do Modelo B white. Não devem ser promovidos novamente a referência vigente apenas por existirem no diretório.
