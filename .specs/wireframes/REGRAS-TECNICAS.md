@@ -41,7 +41,7 @@ docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda
 docs/wireframes/images/references/white/WF-VIEWPORT-360x800.png
 ```
 
-`WF-VIEWPORT-360x800.png` (white) foi gerado com a paleta técnica da seção 6 (tabela 6.5) e é usado por `WF-TEMPLATE-A_v04`.
+`WF-VIEWPORT-360x800.png` (white) foi gerado com a paleta técnica da seção 6 (tabela 6.5) e é usado por `WF-TEMPLATE-A_v04` e `WF-TEMPLATE-B_v02`.
 
 Ambas medem fisicamente `360 × 800 px` e podem ser inseridas em `100%` quando o Wireframe Text específico determinar seu uso.
 
@@ -57,7 +57,7 @@ WF-VIEWPORT-360x800-clean_icone-esquerda.png
 
 Nenhuma das duas substitui universalmente a outra. A escolha do bitmap pertence ao Wireframe Text específico. É proibido trocar, reconstruir ou adaptar silenciosamente um ativo para reproduzir a outra variante.
 
-As pranchas-modelo `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` usam `WF-VIEWPORT-360x800-clean_icone-esquerda.png` (a `WF-TEMPLATE-A_v03`, histórica, também usava). A `WF-TEMPLATE-A_v04` usa `WF-VIEWPORT-360x800.png`. O arquivo `WF-VIEWPORT-360x800-clean.png` permanece preservado como referência válida para artefatos que o especifiquem.
+A prancha-modelo `WF-TEMPLATE-C_v01` usa `WF-VIEWPORT-360x800-clean_icone-esquerda.png` (a `WF-TEMPLATE-A_v03` e a `WF-TEMPLATE-B_v01`, históricas, também usavam). As `WF-TEMPLATE-A_v04` e `WF-TEMPLATE-B_v02` usam `WF-VIEWPORT-360x800.png`. O arquivo `WF-VIEWPORT-360x800-clean.png` permanece preservado como referência válida para artefatos que o especifiquem.
 
 As referências físicas atualmente disponíveis para a variação `black` são:
 

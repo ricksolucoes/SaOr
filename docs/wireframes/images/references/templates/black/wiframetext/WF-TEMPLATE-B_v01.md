@@ -65,35 +65,35 @@ CANVAS FINAL — 1280 × 1920 px
 │                                                  │ On Brand                                       │  │    └──────────────────────────────────────────────┘      ││
 │┌ 7. ELEVAÇÃO                                  ┐  │ Zebra de tabela                                │  │                                                          ││
 ││                                              │  │                                                │  │  MODAL / DIALOG (margem lateral 24 px)                   ││
-││          ┌────────┐        ┌────────┐        │  │ Cópia da tabela 6.6 de REGRAS-TECNICAS.md      │  │    ┌──────────────────────────────────────────────┐      ││
+││          ┌────────┐        ┌────────┐        │  │                                                │  │    ┌──────────────────────────────────────────────┐      ││
 ││          │   E0   │        │   E1   │        │  │                                                │  │    │                  -----                       │      ││
-││          └────────┘        └────────┘        │  └────────────────────────────────────────────────┘  │    │ Título do Modal                              │      ││
-││           0/0/0/0%          0/1/2/12%        │                                                      │    │ Texto de exemplo do modal.                   │      ││
-││                                              │  ┌ 8. RADIUS                                      ┐  │    │ [ Cancelar ]              [ Confirmar ]      │      ││
+││          └────────┘        └────────┘        │  │                                                │  │    │ Título do Modal                              │      ││
+││           0/0/0/0%          0/1/2/12%        │  │                                                │  │    │ Texto de exemplo do modal.                   │      ││
+││                                              │  │                                                │  │    │ [ Cancelar ]              [ Confirmar ]      │      ││
 ││          ┌────────┐        ┌────────┐        │  │                                                │  │    └──────────────────────────────────────────────┘      ││
-││          │   E2   │        │   E3   │        │  │         ┌──────────┐      ┌──────────┐         │  │                                                          ││
-││          └────────┘        └────────┘        │  │         │  12 px   │      │  16 px   │         │  │  BOTTOM NAVIGATION (64 px)                               ││
-││           0/2/6/16%        0/4/12/20%        │  │         └──────────┘      └──────────┘         │  │    ┌──────────────────────────────────────────────┐      ││
-││                                              │  │       Campos e botões    Cards e modais        │  │    │ Início | Pedidos | Clientes | Mais           │      ││
+││          │   E2   │        │   E3   │        │  │                                                │  │                                                          ││
+││          └────────┘        └────────┘        │  │                                                │  │  BOTTOM NAVIGATION (64 px)                               ││
+││           0/2/6/16%        0/4/12/20%        │  │                                                │  │    ┌──────────────────────────────────────────────┐      ││
+││                                              │  │                                                │  │    │ Início | Pedidos | Clientes | Mais           │      ││
 ││                                              │  │                                                │  │    └──────────────────────────────────────────────┘      ││
 ││                                              │  │                                                │  │  Somente quando previsto na baseline.                    ││
 │└──────────────────────────────────────────────┘  └────────────────────────────────────────────────┘  └──────────────────────────────────────────────────────────┘│
 ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│┌ 9. ÍCONES (Material Icons Outlined)                                          ┐  ┌ 10. ESTADOS (Componentes)     Hover: documentado; não obrigatório em mobile. ┐│
-││                                                                              │  │  ┌──────────────────────────────────────────────┐                            ││
-││  ┌──────────────┐           ┌──────────────┐                                 │  │  │ Default                                      │                            ││
-││  │    20 px     │           │    24 px     │                                 │  │  ├──────────────────────────────────────────────┤                            ││
-││  │  [AUXILIAR]  │           │ [AÇÃO / NAV] │                                 │  │  │ Focus                                        │                            ││
-││  └──────────────┘           └──────────────┘                                 │  │  ├──────────────────────────────────────────────┤                            ││
-││  Ícones auxiliares          Ação / navegação                                 │  │  │ Pressed / Selected                           │                            ││
-││                                                                              │  │  ├──────────────────────────────────────────────┤                            ││
-││  Material Icons Outlined: referência conceitual.                             │  │  │ Disabled                                     │                            ││
-││                                                                              │  │  ├──────────────────────────────────────────────┤                            ││
-││                                                                              │  │  │ Error                                        │                            ││
-││                                                                              │  │  └──────────────────────────────────────────────┘                            ││
-││                                                                              │  │                                                                              ││
-││                                                                              │  │                                                                              ││
-│└──────────────────────────────────────────────────────────────────────────────┘  └──────────────────────────────────────────────────────────────────────────────┘│
+│┌ 8. RADIUS                            ┐  ┌ 9. ÍCONES (Material Icons Outlined)  ┐  ┌ 10. ESTADOS (Componentes)   Hover: documentado; não obrigatório em mobile. ┐│
+││                                      │  │                                      │  │  ┌──────────────────────────────────────────────┐                          ││
+││  ┌────────────┐    ┌────────────┐    │  │  ┌────────────┐    ┌────────────┐    │  │  │ Default                                      │                          ││
+││  │   12 px    │    │   16 px    │    │  │  │   20 px    │    │   24 px    │    │  │  ├──────────────────────────────────────────────┤                          ││
+││  └────────────┘    └────────────┘    │  │  │ [AUXILIAR] │    │[AÇÃO / NAV]│    │  │  │ Focus                                        │                          ││
+││  Campos e botões   Cards e modais    │  │  └────────────┘    └────────────┘    │  │  ├──────────────────────────────────────────────┤                          ││
+││                                      │  │  Ícones auxiliares Ação / navegação  │  │  │ Pressed / Selected                           │                          ││
+││                                      │  │                                      │  │  ├──────────────────────────────────────────────┤                          ││
+││                                      │  │  Material Icons Outlined:            │  │  │ Disabled                                     │                          ││
+││                                      │  │  referência conceitual.              │  │  ├──────────────────────────────────────────────┤                          ││
+││                                      │  │                                      │  │  │ Error                                        │                          ││
+││                                      │  │                                      │  │  └──────────────────────────────────────────────┘                          ││
+││                                      │  │                                      │  │                                                                            ││
+││                                      │  │                                      │  │                                                                            ││
+│└──────────────────────────────────────┘  └──────────────────────────────────────┘  └────────────────────────────────────────────────────────────────────────────┘│
 ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │┌ 11. REGRAS GERAIS DE COMPONENTES                                                                 ┐  ┌ BORDAS E DIVISORES                                       ┐│
 ││  Touch target mínimo: 48 x 48 px.                                                                │  │  ┌────────────────────┐  ─────────────────────           ││
@@ -165,7 +165,7 @@ Origem (WIREFRAME-TEXT.md, 7.1):
 
 ```text
 Wireframe Text white de origem: WF-TEMPLATE-B_v02 (docs/wireframes/images/references/templates/white/wiframetext/)
-Estado do white de origem:      AGUARDANDO APROVAÇÃO (Gates 2 e 3 aguardando aprovação; Gates 4 a 6 e PNG bloqueados)
+Estado do white de origem:      AGUARDANDO APROVAÇÃO (Gates 1 a 5 APROVADO E CONGELADO; Gate 6 AGUARDANDO APROVAÇÃO, reaberto pela nova disposição dos blocos 6, 8, 9 e 10; PNG bloqueado)
 Regra: geometria e composição herdadas; mudam apenas paleta, ativos físicos e as decisões que dependem da paleta.
 Geometria herdada continua GEOMETRIA DESTA PRANCHA (não passa a regra normativa).
 Gates não herdados: o black registra os próprios estados (seção 3); Gates 2, 3 e 6 exigem nova aprovação humana.
@@ -231,8 +231,9 @@ Pré-validação técnica (informativa, não conclui gate):
   - fechamento horizontal do cabeçalho: 156 + 384 + 716 = 1256 px;
   - fechamento horizontal do corpo principal: 416 + 16 + 360 + 16 + 448 = 1256 px;
   - viewport: 12 + 336 + 12 = 360 px;
-  - fechamento vertical do corpo principal: coluna do viewport 132 + 908 + 16 + 180 = 1236; coluna central 132 + 144 + 16 + 112 + 16 + 152 + 16 + 456 + 16 + 176 = 1236;
+  - fechamento vertical do corpo principal: coluna do viewport 132 + 908 + 16 + 180 = 1236; coluna central 132 + 144 + 16 + 112 + 16 + 152 + 16 + 648 = 1236;
     coluna direita 132 + 144 + 16 + 944 = 1236;
+  - fechamento horizontal da linha inferior 8 | 9 | 10: 328 + 16 + 328 + 16 + 568 = 1256 px;
   - região inferior: 1260 + 208 + 16 + 144 + 16 + 264 = 1908 (limite inferior do canvas);
   - todas as áreas x/y/w/h permanecem dentro do canvas 1280 × 1920 px.
 Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (comunicado na conversa);
@@ -781,13 +782,7 @@ h: 152
 x: 444
 y: 588
 w: 360
-h: 456          (base 1044)
-
-8. RADIUS
-x: 444
-y: 1060
-w: 360
-h: 176          (base 1236)
+h: 648          (base 1236)
 ```
 
 Entre esses cartões:
@@ -809,7 +804,7 @@ h: 944          (base 1236)
 Base comum:
 
 ```text
-coluna do viewport (bloco 7), coluna central (bloco 8) e coluna direita (bloco 4) terminam em y = 1236
+coluna do viewport (bloco 7), coluna central (bloco 6) e coluna direita (bloco 4) terminam em y = 1236
 ```
 
 ---
@@ -1266,7 +1261,7 @@ Referência:
 x: 444 px
 y: 588 px
 w: 360 px
-h: 456 px          (base 1044)
+h: 648 px          (base 1236)
 ```
 
 ## Conteúdo exato
@@ -1284,7 +1279,7 @@ primeira linha:
 y: 632
 
 passo da linha:
-16 px
+24 px (mais 8 px de avanço a cada divisor)
 
 token:
 x: 460, y_linha, WF-CAPTION, WF-B-TEXT
@@ -1294,10 +1289,10 @@ x: 692, y_linha, w: 96, h: 16, borda 1 px WF-B-BORDER
 HEX centrado (WF-CAPTION; WF-B-TEXT quando luminância < 0,3; senão WF-B-BG)
 
 divisor:
-1 px WF-B-BORDER, x: 460, w: 328, em y: 811 e y: 979 (8 px de avanço por divisor)
+1 px WF-B-BORDER, x: 460, w: 328, em y: 896 e y: 1144 (= y da primeira linha do grupo − 8)
 
 fim da lista:
-y: 1032; margem inferior: 12 px (base 1044)
+y: 1216; margem inferior: 20 px (base 1236)
 ```
 
 Linhas (y da linha):
@@ -1305,33 +1300,33 @@ Linhas (y da linha):
 ```text
 Neutros (linhas 1 a 11)
  1. WF-B-BG                   #121212   y 632
- 2. WF-B-SURFACE              #1E1E1E   y 648
- 3. WF-B-SURFACE-ALT          #2A2A2A   y 664
- 4. WF-B-BORDER               #5E5E5E   y 680
- 5. WF-B-BORDER-CONTROL       #737373   y 696
- 6. WF-B-TEXT                 #F2F2F2   y 712
- 7. WF-B-TEXT-2               #C2C2C2   y 728
- 8. WF-B-ACTION               #E0E0E0   y 744
- 9. WF-B-DISABLED             #777777   y 760
-10. WF-B-FOCUS                #D0D0D0   y 776
-11. WF-B-STATUS               #A8A8A8   y 792
+ 2. WF-B-SURFACE              #1E1E1E   y 656
+ 3. WF-B-SURFACE-ALT          #2A2A2A   y 680
+ 4. WF-B-BORDER               #5E5E5E   y 704
+ 5. WF-B-BORDER-CONTROL       #737373   y 728
+ 6. WF-B-TEXT                 #F2F2F2   y 752
+ 7. WF-B-TEXT-2               #C2C2C2   y 776
+ 8. WF-B-ACTION               #E0E0E0   y 800
+ 9. WF-B-DISABLED             #777777   y 824
+10. WF-B-FOCUS                #D0D0D0   y 848
+11. WF-B-STATUS               #A8A8A8   y 872
 
 Semânticas (linhas 12 a 21)
-12. Primary                   #8ABEFF   y 816
-13. On Primary                #0F1115   y 832
-14. Secondary                 #B3B3E5   y 848
-15. Info                      #8ABEFF   y 864
-16. Error                     #FCA5A5   y 880
-17. Success                   #A7F3D0   y 896
-18. Warning (texto/ícone)     #FDE68A   y 912
-19. Warning (preenchimento)   #FDE68A   y 928
-20. On Warning                #0F1115   y 944
-21. Info BG                   #292E34   y 960
+12. Primary                   #8ABEFF   y 904
+13. On Primary                #0F1115   y 928
+14. Secondary                 #B3B3E5   y 952
+15. Info                      #8ABEFF   y 976
+16. Error                     #FCA5A5   y 1000
+17. Success                   #A7F3D0   y 1024
+18. Warning (texto/ícone)     #FDE68A   y 1048
+19. Warning (preenchimento)   #FDE68A   y 1072
+20. On Warning                #0F1115   y 1096
+21. Info BG                   #292E34   y 1120
 
 Cromia adicional (linhas 22 a 24)
-22. BRAND                     #F2F2F2   y 984
-23. On Brand                  #121212   y 1000
-24. Zebra de tabela           #272727   y 1016
+22. BRAND                     #F2F2F2   y 1152
+23. On Brand                  #121212   y 1176
+24. Zebra de tabela           #272727   y 1200
 ```
 
 Referência:
@@ -1405,58 +1400,7 @@ Referência:
 9 — Iconografia
 ```
 
----
 
-# 8. RADIUS
-
-## Área
-
-```text
-x: 444 px
-y: 1060 px
-w: 360 px
-h: 176 px          (base 1236)
-```
-
-## Conteúdo
-
-```text
-12 px
-Campos e botões
-
-16 px
-Cards e modais
-```
-
-Amostras:
-
-```text
-12 px:
-x: 484
-y: 1116
-w: 128
-h: 64
-
-16 px:
-x: 636
-y: 1116
-w: 128
-h: 64
-```
-
-Legendas:
-
-```text
-y: 1192
-```
-
-Referência:
-
-```text
-.specs/wireframes/REGRAS-TECNICAS.md
-8 — Bordas, radius e elevação
-9 — Iconografia
-```
 
 ---
 
@@ -1480,6 +1424,79 @@ Afastamento:
 gap = 24 px
 ```
 
+Primeira linha da região inferior (blocos 8, 9 e 10):
+
+```text
+y: 1260
+h: 208
+
+8. RADIUS      x: 12   w: 328
+9. ÍCONES      x: 356  w: 328
+10. ESTADOS    x: 700  w: 568
+
+gap horizontal: 16 px
+328 + 16 + 328 + 16 + 568 = 1256
+```
+
+---
+
+# 8. RADIUS
+
+## Área
+
+```text
+x: 12 px
+y: 1260 px
+w: 328 px
+h: 208 px
+```
+
+Posição na composição: região inferior, primeiro bloco da linha 8 | 9 | 10, à esquerda de ÍCONES (gap 16 px).
+
+## Conteúdo
+
+```text
+12 px
+Campos e botões
+
+16 px
+Cards e modais
+```
+
+Posições:
+
+```text
+título "8. RADIUS": x: 28, y: 1272
+
+amostra 12 px:
+x: 36
+y: 1304
+w: 128
+h: 64
+rótulo interno "12 px": centralizado, y: 1326
+
+amostra 16 px:
+x: 188
+y: 1304
+w: 128
+h: 64
+rótulo interno "16 px": centralizado, y: 1326
+```
+
+Legendas:
+
+```text
+y: 1380 (centradas sob cada amostra)
+```
+
+Referência:
+
+```text
+.specs/wireframes/REGRAS-TECNICAS.md
+8 — Bordas, radius e elevação
+9 — Iconografia
+```
+
 ---
 
 # 9. ÍCONES (Material Icons Outlined)
@@ -1487,9 +1504,9 @@ gap = 24 px
 ## Área
 
 ```text
-x: 12 px
+x: 356 px
 y: 1260 px
-w: 620 px
+w: 328 px
 h: 208 px
 ```
 
@@ -1515,6 +1532,31 @@ Amostras:
 ícone central 24 × 24 px
 ```
 
+Posições:
+
+```text
+título "9. ÍCONES (Material Icons Outlined)": x: 372, y: 1272
+
+área 20 px:
+x: 380
+y: 1304
+w: 128
+h: 88
+rótulo "20 px": centralizado, y: 1316
+ícone central: centro em y: 1360
+
+área 24 px:
+x: 532
+y: 1304
+w: 128
+h: 88
+rótulo "24 px": centralizado, y: 1316
+ícone central: centro em y: 1360
+
+legendas: y: 1400 (centradas sob cada área)
+texto de referência "Material Icons Outlined: referência conceitual.": x: 380, y: 1432
+```
+
 Referência:
 
 ```text
@@ -1529,9 +1571,9 @@ Referência:
 ## Área
 
 ```text
-x: 648 px
+x: 700 px
 y: 1260 px
-w: 620 px
+w: 568 px
 h: 208 px
 ```
 
@@ -1549,8 +1591,8 @@ Error
 
 ```text
 nota:
-x: 900
-y: 1274 (na linha do título do bloco, alinhada à direita; w: 352, termina em x: 1252)
+x: 936
+y: 1274 (na linha do título do bloco, alinhada à direita; w: 316, termina em x: 1252)
 "Hover: documentado; não obrigatório em mobile."
 WF-CAPTION, WF-B-TEXT-2
 ```
@@ -1558,8 +1600,8 @@ WF-CAPTION, WF-B-TEXT-2
 Amostras:
 
 ```text
-x: 688 px
-w: 540 px
+x: 716 px
+w: 536 px
 h: 24 px
 ```
 

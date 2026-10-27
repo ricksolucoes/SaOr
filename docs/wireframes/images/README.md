@@ -156,7 +156,7 @@ references/white/WF-VIEWPORT-360x800.png
 
 Os bitmaps `WF-VIEWPORT-360x800*` medem `360 × 800 px` e representam variações físicas diferentes do mesmo viewport demonstrativo; `WF-VIEWPORT-360x800.png` é a variante gerada com a paleta técnica de `REGRAS-TECNICAS.md`, seção 6 (tabela 6.5). O Wireframe Text específico determina qual arquivo deve ser usado. O `clean.png` permanece preservado; não deve ser removido nem substituído silenciosamente pelo arquivo `_icone-esquerda.png`.
 
-A prancha-modelo white atual `WF-TEMPLATE-A_v04` usa `WF-VIEWPORT-360x800.png`. As pranchas-modelo white `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` continuam usando `WF-VIEWPORT-360x800-clean_icone-esquerda.png` até que suas novas versões sejam aprovadas.
+As pranchas-modelo white atuais `WF-TEMPLATE-A_v04` e `WF-TEMPLATE-B_v02` usam `WF-VIEWPORT-360x800.png`. A prancha-modelo white `WF-TEMPLATE-C_v01` continua usando `WF-VIEWPORT-360x800-clean_icone-esquerda.png` até que suas novas versões sejam aprovadas.
 
 Variação escura:
 
@@ -220,7 +220,7 @@ Registro operacional vigente:
 ```text
 white
 → references/templates/white/WF-TEMPLATE-A_v04.png
-→ references/templates/white/WF-TEMPLATE-B_v01.png
+→ references/templates/white/WF-TEMPLATE-B_v02.png
 → references/templates/white/WF-TEMPLATE-C_v01.png
 → conjunto de referências visuais contextuais aprovadas da variação clara
 
@@ -228,7 +228,7 @@ black
 → references/templates/black/WF-TEMPLATE-A_v01.png
 ```
 
-`WF-TEMPLATE-A_v01.png`, `WF-TEMPLATE-A_v02.png` e `WF-TEMPLATE-A_v03.png` permanecem como referências históricas da evolução do Modelo A. Não devem ser promovidos novamente a referência vigente apenas por existirem no diretório.
+`WF-TEMPLATE-A_v01.png`, `WF-TEMPLATE-A_v02.png` e `WF-TEMPLATE-A_v03.png` permanecem como referências históricas da evolução do Modelo A; `WF-TEMPLATE-B_v01.png` permanece como histórico do Modelo B white. Não devem ser promovidos novamente a referência vigente apenas por existirem no diretório.
 
 Nenhuma das três referências white atuais define geometria universal. Cada Wireframe Text preserva sua própria composição; o conjunto serve para compreender linguagem, acabamento e decisões já aprovadas, sem copiar automaticamente layout ou conteúdo.
 
