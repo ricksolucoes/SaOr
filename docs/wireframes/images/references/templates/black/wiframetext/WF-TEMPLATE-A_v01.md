@@ -4,7 +4,7 @@
 CANVAS FINAL — 1280 × 1920 px
 
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ SaOr / Sales Order │ WIREFRAME · PRANCHA TÉCNICA - MODELO A (Viewport central dominante) │ WF-TEMPLATE-A │ XX / YY │ v01 │ DD/MM/AAAA │ [ ] AGUARDANDO APROVAÇÃO │
+│ SaOr / Sales Order │ WIREFRAME · PRANCHA TÉCNICA - MODELO A (Viewport central dominante) │ WF-TEMPLATE-A │ XX / YY │ v01 │ DD/MM/AAAA │ [✓] APROVADO E CONGELADO │
 └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 ▌1. CANVAS E VIEWPORT                       ▌MODELO VIEWPORT                        ▌6. COMPONENTES (MEDIDAS)
@@ -84,13 +84,13 @@ Wireframe Text white de origem: WF-TEMPLATE-A_v04 (docs/wireframes/images/refere
 Estado do white de origem:      Wireframe Text APROVADO E CONGELADO (Gates 1 a 6, Gates 2, 3 e 6 aprovados pelo responsável em 27/10/2026); PNG da origem e STATUS do cabeçalho APROVADO E CONGELADO em 27/10/2026
 Regra: geometria e composição herdadas; mudam apenas paleta, ativos físicos e as decisões que dependem da paleta.
 Geometria herdada continua GEOMETRIA DESTA PRANCHA (não passa a regra normativa).
-Gates não herdados: o black registra os próprios estados (seção 3); Gates 2, 3 e 6 exigem nova aprovação humana.
+Gates não herdados: o black registra os próprios estados (seção 3); os Gates 2, 3 e 6 foram aprovados pelo responsável para esta v01 em 27/10/2026 (resposta registrada na conversa).
 Numeração própria: esta é a v01 da variação black.
 ```
 
 O WIREFRAME-TEXT.md 7.1 prevê a origem `APROVADO E CONGELADO`: o Wireframe Text white de origem está `APROVADO E CONGELADO`; o PNG da origem também está `APROVADO E CONGELADO`. Os estados do black são próprios e a aprovação do white não aprova este documento.
 
-Diferenças em relação ao white de origem (todas DIFERENÇA INTENCIONAL; aguardam aprovação nos Gates 2, 3 e 6):
+Diferenças em relação ao white de origem (todas DIFERENÇA INTENCIONAL; aprovadas nos Gates 2, 3 e 6 em 27/10/2026):
 
 ```text
 D1 — Paleta: tokens WF-B-* e semânticas da tabela 6.6 de REGRAS-TECNICAS.md no lugar de WF-W-* e da tabela 6.5; HEX somente no bloco 5.
@@ -98,7 +98,7 @@ D2 — Viewport: references/black/WF-VIEWPORT-360x800.png (360 × 800 px, 1:1) n
 D3 — Pares texto/fundo: razões recalculadas para a paleta escura (tabela 6.6); não há exceção de nível (todos os pares de texto em AAA).
 D4 — Ícone do cabeçalho: assets/logo/saor-icon-para_fundos_escuros.png (variante preparada para fundos escuros; sem inversão manual nem filtro) no lugar de saor-icon-master.svg; ícone 44 × 44 em (24, 38), com o mesmo centro vertical do white; SaOr e SALES ORDER em BRAND (paleta escura).
 D5 — Sombra dos cards e do cabeçalho: o tratamento documental de sombra do white não é perceptível sobre WF-B-BG e não é herdado (MONTAGEM-IMAGEM.md: não herdar sombra por semelhança visual); cards e cabeçalho ficam sem sombra e sem borda, separados pelo contraste tonal WF-B-SURFACE × WF-B-BG.
-D6 — Elevação (amostras E0 a E3): parâmetros inalterados (REGRAS-TECNICAS.md); sobre superfície escura a sombra rgba(0,0,0,·) é pouco perceptível, e o nível é identificado pela legenda numérica.
+D6 — Elevação (amostras E0 a E3): parâmetros de sombra inalterados (REGRAS-TECNICAS.md); sobre superfície escura a sombra rgba(0,0,0,·) é pouco perceptível. As quatro amostras usam WF-B-SURFACE-ALT (token existente, mais claro que o card WF-B-SURFACE) como preenchimento, do mesmo modo que o white usa uma única cor nas amostras; o nível é identificado pela legenda e pela sombra.
 ```
 
 Todo o resto (composição, geometria, conteúdo textual, tipografia, componentes, ícones e regras específicas) é o da origem.
@@ -118,13 +118,13 @@ Todo o resto (composição, geometria, conteúdo textual, tipografia, componente
 
 ```text
 Gate 1 — Canvas:                       APROVADO E CONGELADO
-Gate 2 — Título / Cabeçalho:           AGUARDANDO APROVAÇÃO
-Gate 3 — Viewport Técnico:             AGUARDANDO APROVAÇÃO
-Gate 4 — Área restante calculada:      BLOQUEADO POR GATE ANTERIOR
-Gate 5 — Demais elementos definidos:   BLOQUEADO POR GATE ANTERIOR
-Gate 6 — Wireframe Text completo:      BLOQUEADO POR GATE ANTERIOR
-Produção do PNG:                       BLOQUEADO POR GATE ANTERIOR
-STATUS no cabeçalho:                   AGUARDANDO APROVAÇÃO
+Gate 2 — Título / Cabeçalho:           APROVADO E CONGELADO
+Gate 3 — Viewport Técnico:             APROVADO E CONGELADO
+Gate 4 — Área restante calculada:      APROVADO E CONGELADO
+Gate 5 — Demais elementos definidos:   APROVADO E CONGELADO
+Gate 6 — Wireframe Text completo:      APROVADO E CONGELADO
+Produção do PNG:                       APROVADO E CONGELADO
+STATUS no cabeçalho:                   APROVADO E CONGELADO
 ```
 
 Esta v01 é a primeira versão da variação black e os estados acima são próprios (não herdados da origem white).
@@ -133,11 +133,14 @@ Registros:
 
 ```text
 Gate 1 (técnico): canvas 1280 × 1920 px conforme REGRAS-TECNICAS.md — APROVADO E CONGELADO.
-Gate 2: cabeçalho da v01 black, tokens da seção 6 (tabela 6.6) e STATUS AGUARDANDO APROVAÇÃO — aguarda aprovação humana (inclui D4).
-Gate 3: o bitmap references/black/WF-VIEWPORT-360x800.png foi aprovado pelo responsável em 27/10/2026 (comunicado na conversa);
-        a posição, as cotas e o registro formal do Gate 3 neste documento aguardam aprovação humana.
-Gates 4 e 5 (técnicos): permanecem BLOQUEADO POR GATE ANTERIOR até os Gates 2 e 3 estarem APROVADO E CONGELADO.
-Pré-validação técnica (informativa, não conclui gate): 336 + 16 + 440 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px;
+Gate 2: cabeçalho da v01 black, tokens da seção 6 (tabela 6.6) e STATUS (inclui D4) aprovados explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gate 3: o bitmap references/black/WF-VIEWPORT-360x800.png foi aprovado pelo responsável em 27/10/2026; a posição, as cotas e o registro
+        do gate foram aprovados explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gates 4 e 5 (técnicos): validados em 27/10/2026 depois dos Gates 2 e 3 estarem congelados — APROVADO E CONGELADO.
+Gate 6: aprovado em 27/10/2026, reaberto na mesma data pela alteração do bloco 7 e de D6 (preenchimento das amostras de elevação em WF-B-SURFACE-ALT, decisão do responsável) e aprovado novamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Produção do PNG: gerado em 27/10/2026 a partir deste Wireframe Text (o PNG anterior à alteração foi descartado) e validado contra ele; aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+STATUS no cabeçalho: registrado como APROVADO E CONGELADO em 27/10/2026; o PNG foi regenerado com o STATUS aprovado (ícone check_circle e texto em Success) e revalidado contra este Wireframe Text.
+Validação técnica dos Gates 4 e 5: 336 + 16 + 440 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px;
   todas as áreas x/y/w/h dentro do canvas 1280 × 1920 px; limite inferior documental y 1904 ≤ 1908; bloco 5 dentro do card (última linha termina em y 1416 ≤ 1428).
 Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (comunicado na conversa);
   o registro formal em REGRAS-TECNICAS.md 6.7 é feito pelo responsável.
@@ -194,6 +197,8 @@ Pares texto/fundo usados (razões da tabela 6.6 de `REGRAS-TECNICAS.md`):
 | WF-B-TEXT sobre Zebra de tabela | 13,34:1 | AAA |
 | WF-B-BORDER-CONTROL sobre WF-B-SURFACE (borda de campo, botão secundário, icon button) | 3,52:1 | OK (≥ 3:1) |
 | WF-B-FOCUS sobre WF-B-SURFACE (foco) | 10,81:1 | OK (≥ 3:1) |
+| WF-B-TEXT sobre WF-B-SURFACE-ALT (amostras de elevação) | 12,82:1 | AAA |
+| WF-B-TEXT-2 sobre WF-B-SURFACE-ALT (legenda e amostras) | 8,06:1 | AAA |
 
 Sem exceção de nível nos pares acima (todos AAA); a seção 6.6 registra os demais pares.
 
@@ -224,10 +229,10 @@ ID      x 552  w 164   WF-TEMPLATE-A
 PÁGINA  x 716  w 128   XX / YY
 VERSÃO  x 844  w 124   v01
 DATA    x 968  w 140   DD/MM/AAAA
-STATUS  x 1108 w 160   AGUARDANDO APROVAÇÃO
+STATUS  x 1108 w 160   APROVADO E CONGELADO
 ```
 
-STATUS: fundo WF-B-SURFACE. Enquanto AGUARDANDO APROVAÇÃO (estado atual desta v01 black): sem ícone; valor em (1120, 38), w 140, 2 linhas "AGUARDANDO / APROVAÇÃO", WF-CAPTION 600, WF-B-TEXT-2. Ao ser registrado APROVADO E CONGELADO: ícone check_circle 20 px em (1120, 46) e valor em (1146, 38), w 114, 2 linhas "APROVADO E / CONGELADO", WF-CAPTION 600, ambos em Success.
+STATUS: fundo WF-B-SURFACE. Estado atual APROVADO E CONGELADO: ícone check_circle 20 px em (1120, 46) e valor em (1146, 38), w 114, 2 linhas "APROVADO E / CONGELADO", WF-CAPTION 600, ambos em Success. Enquanto AGUARDANDO APROVAÇÃO (regra de estado, não aplicável a esta versão congelada): sem ícone; valor em (1120, 38), w 140, 2 linhas "AGUARDANDO / APROVAÇÃO", WF-CAPTION 600, WF-B-TEXT-2.
 
 Linha inferior (y 76, h 32; rótulo WF-CAPTION + valor WF-LABEL na mesma linha, y 84):
 
@@ -437,6 +442,7 @@ Cotas de componente (Primary, estilo A_v02): coluna em x 1260 (gutter de 16 px e
 7. ELEVAÇÃO (card x 372, y 1068, w 896, h 100) — amostras 128 × 44, radius 12, borda 1 px WF-B-BORDER, em uma fileira
    quatro colunas de 224 px a partir de x 372; amostra centrada na coluna (x = 372 + 224·k + 48), y 1084
    rótulo (E0…E3, WF-LABEL) centrado na amostra, y +12; legenda (WF-CAPTION, WF-B-TEXT-2) centrada, y 1132
+   preenchimento das quatro amostras: WF-B-SURFACE-ALT (D6); borda 1 px WF-B-BORDER
    E0 0/0/0/0%    x 420   sem sombra
    E1 0/1/2/12%   x 644   sombra 0 1px 2px rgba(0,0,0,.12)
    E2 0/2/6/16%   x 868   sombra 0 2px 6px rgba(0,0,0,.16)
@@ -534,18 +540,20 @@ Elevação: E3 do modal 0 4px 12px rgba(0,0,0,.20).
 
 ```text
 [x] Gate 1 registrado como APROVADO E CONGELADO (técnico)
-[ ] Gate 2 — AGUARDANDO APROVAÇÃO humana
-[ ] Gate 3 — AGUARDANDO APROVAÇÃO humana (bitmap aprovado em 27/10/2026; posição e cotas pendentes)
-[ ] Gates 4 e 5 — BLOQUEADO POR GATE ANTERIOR
-[ ] Gate 6 — BLOQUEADO POR GATE ANTERIOR
-[ ] Produção do PNG — BLOQUEADO POR GATE ANTERIOR
+[x] Gates 2 e 3 registrados como APROVADO E CONGELADO (aprovação do responsável em 27/10/2026)
+[x] Gates 4 e 5 (técnicos) validados e registrados como APROVADO E CONGELADO
+[x] Gate 6 registrado como APROVADO E CONGELADO (aprovado em 27/10/2026; reaprovado após a alteração do bloco 7 / D6)
+[x] Produção do PNG registrada como APROVADO E CONGELADO (aprovação explícita do responsável em 27/10/2026)
+[x] STATUS do cabeçalho registrado como APROVADO E CONGELADO; PNG regenerado com o STATUS aprovado e revalidado
+[x] WF-TEMPLATE-A_v01 é a versão vigente do Modelo A black
 [x] origem registrada: WF-TEMPLATE-A_v04 (white), estado Wireframe Text APROVADO E CONGELADO; diferenças classificadas como DIFERENÇA INTENCIONAL (D1 a D6)
 [x] viewport especificado: references/black/WF-VIEWPORT-360x800.png, 360 × 800 px em 1:1; nenhum ativo ou bitmap white reutilizado
 [x] todas as cores usadas constam em REGRAS-TECNICAS.md, seção 6 (tabela 6.6); HEX somente no bloco 5
 [x] pares texto/fundo registrados (sem exceção de nível)
 [x] canvas 1280 × 1920; todas as áreas documentadas dentro do canvas
-[ ] REGRAS-TECNICAS.md seção 3.1 ainda não lista references/black/WF-VIEWPORT-360x800.png (registro pendente do responsável)
-[ ] REGRAS-TECNICAS.md 6.7 — registro formal da aprovação das lacunas de cor (pendente do responsável)
+[x] REGRAS-TECNICAS.md seção 3.1 lista references/black/WF-VIEWPORT-360x800.png
+[x] REGRAS-TECNICAS.md 6.7 — aprovação das lacunas de cor registrada em 27/10/2026
+[x] REGRAS-TECNICAS.md seção 8 — regra de elevação na variação black registrada (D6)
 [x] origem white WF-TEMPLATE-A_v04: Wireframe Text APROVADO E CONGELADO (7.1); PNG da origem APROVADO E CONGELADO
 ```
 

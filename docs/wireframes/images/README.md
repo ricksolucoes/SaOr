@@ -225,7 +225,7 @@ white
 → conjunto de referências visuais contextuais aprovadas da variação clara
 
 black
-→ nenhuma referência visual contextual vigente registrada neste momento
+→ references/templates/black/WF-TEMPLATE-A_v01.png
 ```
 
 `WF-TEMPLATE-A_v01.png`, `WF-TEMPLATE-A_v02.png` e `WF-TEMPLATE-A_v03.png` permanecem como referências históricas da evolução do Modelo A. Não devem ser promovidos novamente a referência vigente apenas por existirem no diretório.

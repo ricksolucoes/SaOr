@@ -38,7 +38,10 @@ As referências físicas atualmente disponíveis para a variação `white` são:
 ```text
 docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean.png
 docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png
+docs/wireframes/images/references/white/WF-VIEWPORT-360x800.png
 ```
+
+`WF-VIEWPORT-360x800.png` (white) foi gerado com a paleta técnica da seção 6 (tabela 6.5) e é usado por `WF-TEMPLATE-A_v04`.
 
 Ambas medem fisicamente `360 × 800 px` e podem ser inseridas em `100%` quando o Wireframe Text específico determinar seu uso.
 
@@ -54,13 +57,15 @@ WF-VIEWPORT-360x800-clean_icone-esquerda.png
 
 Nenhuma das duas substitui universalmente a outra. A escolha do bitmap pertence ao Wireframe Text específico. É proibido trocar, reconstruir ou adaptar silenciosamente um ativo para reproduzir a outra variante.
 
-As pranchas-modelo `WF-TEMPLATE-A_v03`, `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` usam `WF-VIEWPORT-360x800-clean_icone-esquerda.png`. O arquivo `WF-VIEWPORT-360x800-clean.png` permanece preservado como referência válida para artefatos que o especifiquem.
+As pranchas-modelo `WF-TEMPLATE-B_v01` e `WF-TEMPLATE-C_v01` usam `WF-VIEWPORT-360x800-clean_icone-esquerda.png` (a `WF-TEMPLATE-A_v03`, histórica, também usava). A `WF-TEMPLATE-A_v04` usa `WF-VIEWPORT-360x800.png`. O arquivo `WF-VIEWPORT-360x800-clean.png` permanece preservado como referência válida para artefatos que o especifiquem.
 
-Referências físicas específicas da variação `black`, quando existirem, pertencem a:
+As referências físicas atualmente disponíveis para a variação `black` são:
 
 ```text
-docs/wireframes/images/references/black/
+docs/wireframes/images/references/black/WF-VIEWPORT-360x800.png
 ```
+
+`WF-VIEWPORT-360x800.png` (black) foi gerado com a paleta técnica da seção 6 (tabela 6.6) e é usado por `WF-TEMPLATE-A_v01` (black). Referências físicas específicas da variação `black` pertencem a `docs/wireframes/images/references/black/`.
 
 Não reutilizar por inferência um bitmap específico de `white` em uma prancha `black`. As dimensões normativas do viewport permanecem as mesmas independentemente da variação.
 
@@ -265,11 +270,11 @@ Cor nunca pode ser o único indicador de estado.
 ### 6.7 Estado das lacunas desta revisão
 
 ```text
-Cores marcadas com * (white e black): AGUARDANDO APROVAÇÃO
-Aprovação humana explícita: NÃO REGISTRADA
+Cores marcadas com * (white e black): APROVADO E CONGELADO
+Aprovação humana explícita: REGISTRADA em 27/10/2026
 ```
 
-Enquanto a aprovação não for registrada aqui, as cores marcadas com `*` não podem ser usadas em Wireframe Text nem em imagem final. Ao aprovar, o responsável substitui o estado acima por `APROVADO E CONGELADO` e registra a data.
+As cores marcadas com `*` foram aprovadas pelo responsável em 27/10/2026 e podem ser usadas em Wireframe Text e em imagem final. Qualquer alteração dessas cores reabre este estado (6.4).
 
 ## 7. Componentes técnicos
 
@@ -309,6 +314,8 @@ Ordem:
 ```text
 offset-x / offset-y / blur / opacidade
 ```
+
+Elevação na variação `black`: a sombra `rgba(0,0,0,·)` dos tokens `WF-ELEVATION-*` é pouco perceptível sobre superfícies escuras (sobre `WF-B-SURFACE` #1E1E1E, a sombra E3 escurece apenas cerca de 6 níveis de cinza), e o que funciona no white não é aplicado por semelhança. Nas amostras de elevação da variação `black`, o preenchimento usa **um único token existente mais claro que o card**, `WF-B-SURFACE-ALT`, do mesmo modo que o white usa uma única cor nas amostras; os parâmetros de sombra permanecem os da lista acima, e o nível é identificado pela legenda. Não se criam tokens novos de superfície por nível de elevação. Definição aprovada em 27/10/2026 e aplicada em `WF-TEMPLATE-A_v01` (black).
 
 Os tokens `WF-ELEVATION-*` governam elevação técnica de componentes e amostras de interface. Uma sombra usada exclusivamente como tratamento documental da própria prancha pode ser definida pelo Wireframe Text específico quando fizer parte de uma composição aprovada. Nesse caso, ela não cria automaticamente novo token de componente nem regra universal para futuras interfaces.
 

@@ -519,6 +519,8 @@ Uma sombra pode existir como **tratamento documental da própria prancha** quand
 - não cria novo token universal;
 - não deve ser herdada por outra prancha apenas por semelhança visual.
 
+Na variação `black`, a sombra preta é pouco perceptível sobre superfície escura. Amostras de elevação do `black` seguem a regra de `REGRAS-TECNICAS.md`, seção 8: preenchimento em `WF-B-SURFACE-ALT`, sem criar token novo e sem copiar do white a percepção de sombra.
+
 Não aplicar sombra genérica a todos os painéis para “deixar bonito”.
 
 ---
