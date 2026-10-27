@@ -81,14 +81,14 @@ Origem (WIREFRAME-TEXT.md, 7.1):
 
 ```text
 Wireframe Text white de origem: WF-TEMPLATE-A_v04 (docs/wireframes/images/references/templates/white/wiframetext/)
-Estado do white de origem:      AGUARDANDO APROVAÇÃO (Gates 2 e 3 aguardando aprovação; Gates 4 a 6 e PNG bloqueados)
+Estado do white de origem:      Wireframe Text APROVADO E CONGELADO (Gates 1 a 6, Gates 2, 3 e 6 aprovados pelo responsável em 27/10/2026); PNG da origem e STATUS do cabeçalho APROVADO E CONGELADO em 27/10/2026
 Regra: geometria e composição herdadas; mudam apenas paleta, ativos físicos e as decisões que dependem da paleta.
 Geometria herdada continua GEOMETRIA DESTA PRANCHA (não passa a regra normativa).
 Gates não herdados: o black registra os próprios estados (seção 3); Gates 2, 3 e 6 exigem nova aprovação humana.
 Numeração própria: esta é a v01 da variação black.
 ```
 
-O WIREFRAME-TEXT.md 7.1 prevê a origem `APROVADO E CONGELADO`. Esta derivação foi feita a pedido do responsável enquanto o white de origem está `AGUARDANDO APROVAÇÃO`; qualquer alteração do white de origem exige revisar este documento, e este documento não avança além de `AGUARDANDO APROVAÇÃO` antes de a origem ser aprovada.
+O WIREFRAME-TEXT.md 7.1 prevê a origem `APROVADO E CONGELADO`: o Wireframe Text white de origem está `APROVADO E CONGELADO`; o PNG da origem também está `APROVADO E CONGELADO`. Os estados do black são próprios e a aprovação do white não aprova este documento.
 
 Diferenças em relação ao white de origem (todas DIFERENÇA INTENCIONAL; aguardam aprovação nos Gates 2, 3 e 6):
 
@@ -227,7 +227,7 @@ DATA    x 968  w 140   DD/MM/AAAA
 STATUS  x 1108 w 160   AGUARDANDO APROVAÇÃO
 ```
 
-STATUS: fundo WF-B-SURFACE. Enquanto AGUARDANDO APROVAÇÃO: sem ícone; valor em (1120, 38), w 140, 2 linhas "AGUARDANDO / APROVAÇÃO", WF-CAPTION 600, WF-B-TEXT-2. Ao ser registrado APROVADO E CONGELADO: ícone check_circle 20 px em (1120, 46) e valor em (1146, 38), w 114, 2 linhas "APROVADO E / CONGELADO", WF-CAPTION 600, ambos em Success.
+STATUS: fundo WF-B-SURFACE. Enquanto AGUARDANDO APROVAÇÃO (estado atual desta v01 black): sem ícone; valor em (1120, 38), w 140, 2 linhas "AGUARDANDO / APROVAÇÃO", WF-CAPTION 600, WF-B-TEXT-2. Ao ser registrado APROVADO E CONGELADO: ícone check_circle 20 px em (1120, 46) e valor em (1146, 38), w 114, 2 linhas "APROVADO E / CONGELADO", WF-CAPTION 600, ambos em Success.
 
 Linha inferior (y 76, h 32; rótulo WF-CAPTION + valor WF-LABEL na mesma linha, y 84):
 
@@ -539,14 +539,14 @@ Elevação: E3 do modal 0 4px 12px rgba(0,0,0,.20).
 [ ] Gates 4 e 5 — BLOQUEADO POR GATE ANTERIOR
 [ ] Gate 6 — BLOQUEADO POR GATE ANTERIOR
 [ ] Produção do PNG — BLOQUEADO POR GATE ANTERIOR
-[x] origem registrada: WF-TEMPLATE-A_v04 (white), estado AGUARDANDO APROVAÇÃO; diferenças classificadas como DIFERENÇA INTENCIONAL (D1 a D6)
+[x] origem registrada: WF-TEMPLATE-A_v04 (white), estado Wireframe Text APROVADO E CONGELADO; diferenças classificadas como DIFERENÇA INTENCIONAL (D1 a D6)
 [x] viewport especificado: references/black/WF-VIEWPORT-360x800.png, 360 × 800 px em 1:1; nenhum ativo ou bitmap white reutilizado
 [x] todas as cores usadas constam em REGRAS-TECNICAS.md, seção 6 (tabela 6.6); HEX somente no bloco 5
 [x] pares texto/fundo registrados (sem exceção de nível)
 [x] canvas 1280 × 1920; todas as áreas documentadas dentro do canvas
 [ ] REGRAS-TECNICAS.md seção 3.1 ainda não lista references/black/WF-VIEWPORT-360x800.png (registro pendente do responsável)
 [ ] REGRAS-TECNICAS.md 6.7 — registro formal da aprovação das lacunas de cor (pendente do responsável)
-[ ] origem white WF-TEMPLATE-A_v04 ainda não está APROVADO E CONGELADO (7.1)
+[x] origem white WF-TEMPLATE-A_v04: Wireframe Text APROVADO E CONGELADO (7.1); PNG da origem APROVADO E CONGELADO
 ```
 
 A variação `white` de origem é a `WF-TEMPLATE-A_v04` (pasta `templates/white/`), conforme `WIREFRAME-TEXT.md` 7.1.

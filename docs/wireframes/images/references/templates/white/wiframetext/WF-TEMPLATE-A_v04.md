@@ -4,7 +4,7 @@
 CANVAS FINAL — 1280 × 1920 px
 
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ SaOr / Sales Order │ WIREFRAME · PRANCHA TÉCNICA - MODELO A (Viewport central dominante) │ WF-TEMPLATE-A │ XX / YY │ v04 │ DD/MM/AAAA │ [ ] AGUARDANDO APROVAÇÃO │
+│ SaOr / Sales Order │ WIREFRAME · PRANCHA TÉCNICA - MODELO A (Viewport central dominante) │ WF-TEMPLATE-A │ XX / YY │ v04 │ DD/MM/AAAA │ [✓] APROVADO E CONGELADO │
 └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 ▌1. CANVAS E VIEWPORT                       ▌MODELO VIEWPORT                        ▌6. COMPONENTES (MEDIDAS)
@@ -85,7 +85,7 @@ viewport físico:      360 × 800 px, escala 1:1
 4. Viewport: references/white/WF-VIEWPORT-360x800.png (gerado com a paleta da seção 6). Posição (x 404, y 208) e escala 1:1 inalteradas.
 5. Bloco 5 PALETA: 24 linhas (11 neutros, 10 semânticas, 3 de cromia adicional) em linhas de 20 px, dentro do mesmo card
    (x 12, y 904, w 336, h 524, base 1428). Nenhuma outra área mudou de posição ou de tamanho.
-6. STATUS do cabeçalho: AGUARDANDO APROVAÇÃO (nova versão; gates reiniciados na seção 3).
+6. STATUS do cabeçalho: APROVADO E CONGELADO (nova versão; gates reiniciados na seção 3 e todos aprovados em 27/10/2026).
 7. Composição, geometria e conteúdo dos demais blocos permanecem como na v03.
 ```
 
@@ -104,13 +104,13 @@ viewport físico:      360 × 800 px, escala 1:1
 
 ```text
 Gate 1 — Canvas:                       APROVADO E CONGELADO
-Gate 2 — Título / Cabeçalho:           AGUARDANDO APROVAÇÃO
-Gate 3 — Viewport Técnico:             AGUARDANDO APROVAÇÃO
-Gate 4 — Área restante calculada:      BLOQUEADO POR GATE ANTERIOR
-Gate 5 — Demais elementos definidos:   BLOQUEADO POR GATE ANTERIOR
-Gate 6 — Wireframe Text completo:      BLOQUEADO POR GATE ANTERIOR
-Produção do PNG:                       BLOQUEADO POR GATE ANTERIOR
-STATUS no cabeçalho:                   AGUARDANDO APROVAÇÃO
+Gate 2 — Título / Cabeçalho:           APROVADO E CONGELADO
+Gate 3 — Viewport Técnico:             APROVADO E CONGELADO
+Gate 4 — Área restante calculada:      APROVADO E CONGELADO
+Gate 5 — Demais elementos definidos:   APROVADO E CONGELADO
+Gate 6 — Wireframe Text completo:      APROVADO E CONGELADO
+Produção do PNG:                       APROVADO E CONGELADO
+STATUS no cabeçalho:                   APROVADO E CONGELADO
 ```
 
 Esta v04 deriva da `WF-TEMPLATE-A_v03` (Gates 1 a 6 e PNG APROVADO E CONGELADO em `26/10/2026`), que permanece como histórico imutável. A v04 é uma nova versão: os gates humanos foram reabertos porque cores, viewport e bloco 5 mudaram.
@@ -119,11 +119,14 @@ Registros:
 
 ```text
 Gate 1 (técnico): canvas 1280 × 1920 px conforme REGRAS-TECNICAS.md — APROVADO E CONGELADO.
-Gate 2: cabeçalho com nova versão (v04), tokens da seção 6 e STATUS AGUARDANDO APROVAÇÃO — aguarda aprovação humana.
-Gate 3: o bitmap references/white/WF-VIEWPORT-360x800.png foi aprovado pelo responsável em 27/10/2026 (comunicado na conversa);
-        a posição, as cotas e o registro formal do Gate 3 neste documento aguardam aprovação humana.
-Gates 4 e 5 (técnicos): permanecem BLOQUEADO POR GATE ANTERIOR até os Gates 2 e 3 estarem APROVADO E CONGELADO.
-Pré-validação técnica (informativa, não conclui gate): 336 + 16 + 440 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px;
+Gate 2: aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gate 3: bitmap aprovado em 27/10/2026; posição, cotas e registro do gate aprovados explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gate 4 (técnico): validado em 27/10/2026 depois dos Gates 2 e 3 estarem congelados — APROVADO E CONGELADO.
+Gate 5 (técnico): validado em 27/10/2026 — APROVADO E CONGELADO.
+Gate 6: aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Produção do PNG: gerado em 27/10/2026 a partir deste Wireframe Text e validado contra ele; aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+STATUS no cabeçalho: registrado como APROVADO E CONGELADO em 27/10/2026; o PNG foi regenerado com o STATUS aprovado (ícone check_circle e texto em Success) e revalidado contra este Wireframe Text.
+Validação técnica dos Gates 4 e 5: 336 + 16 + 440 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px;
   todas as áreas x/y/w/h dentro do canvas 1280 × 1920 px; limite inferior documental y 1904 ≤ 1908; bloco 5 dentro do card (última linha termina em y 1416 ≤ 1428).
 Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (comunicado na conversa);
   o registro formal em REGRAS-TECNICAS.md 6.7 é feito pelo responsável.
@@ -210,10 +213,10 @@ ID      x 552  w 164   WF-TEMPLATE-A
 PÁGINA  x 716  w 128   XX / YY
 VERSÃO  x 844  w 124   v04
 DATA    x 968  w 140   DD/MM/AAAA
-STATUS  x 1108 w 160   AGUARDANDO APROVAÇÃO
+STATUS  x 1108 w 160   APROVADO E CONGELADO
 ```
 
-STATUS: fundo WF-W-SURFACE. Enquanto AGUARDANDO APROVAÇÃO: sem ícone; valor em (1120, 38), w 140, 2 linhas "AGUARDANDO / APROVAÇÃO", WF-CAPTION 600, WF-W-TEXT-2. Ao ser registrado APROVADO E CONGELADO: ícone check_circle 20 px em (1120, 46) e valor em (1146, 38), w 114, 2 linhas "APROVADO E / CONGELADO", WF-CAPTION 600, ambos em Success.
+STATUS: fundo WF-W-SURFACE. Estado atual APROVADO E CONGELADO: ícone check_circle 20 px em (1120, 46) e valor em (1146, 38), w 114, 2 linhas "APROVADO E / CONGELADO", WF-CAPTION 600, ambos em Success. Enquanto AGUARDANDO APROVAÇÃO (regra de estado, não aplicável a esta versão congelada): sem ícone; valor em (1120, 38), w 140, 2 linhas "AGUARDANDO / APROVAÇÃO", WF-CAPTION 600, WF-W-TEXT-2.
 
 Linha inferior (y 76, h 32; rótulo WF-CAPTION + valor WF-LABEL na mesma linha, y 84):
 
@@ -519,18 +522,16 @@ Elevação: E3 do modal 0 4px 12px rgba(0,0,0,.20).
 # Registro de validação desta versão
 
 ```text
-[x] Gate 1 registrado como APROVADO E CONGELADO (técnico)
-[ ] Gate 2 — AGUARDANDO APROVAÇÃO humana
-[ ] Gate 3 — AGUARDANDO APROVAÇÃO humana (bitmap aprovado em 27/10/2026; posição e cotas pendentes)
-[ ] Gates 4 e 5 — BLOQUEADO POR GATE ANTERIOR
-[ ] Gate 6 — BLOQUEADO POR GATE ANTERIOR
-[ ] Produção do PNG — BLOQUEADO POR GATE ANTERIOR
+[x] Gates 1 a 6 registrados como APROVADO E CONGELADO (Gates 2, 3 e 6 aprovados pelo responsável em 27/10/2026)
+[x] Produção do PNG registrada como APROVADO E CONGELADO (aprovação explícita do responsável em 27/10/2026)
+[x] STATUS do cabeçalho registrado como APROVADO E CONGELADO; PNG regenerado com o STATUS aprovado e revalidado
 [x] viewport especificado: WF-VIEWPORT-360x800.png (white), 360 × 800 px em 1:1
 [x] todas as cores usadas constam em REGRAS-TECNICAS.md, seção 6 (tabela 6.5); HEX somente no bloco 5
 [x] pares texto/fundo registrados na seção 4.4
 [x] canvas 1280 × 1920; todas as áreas documentadas dentro do canvas (base 1904 ≤ 1908)
 [ ] REGRAS-TECNICAS.md seção 3.1 ainda não lista WF-VIEWPORT-360x800.png (registro pendente do responsável)
 [ ] REGRAS-TECNICAS.md 6.7 — registro formal da aprovação das lacunas de cor (pendente do responsável)
+[x] WF-TEMPLATE-A_v04 é a versão vigente do Modelo A white; WF-TEMPLATE-A_v03 permanece como histórico imutável
 ```
 
 A variação `black` correspondente é a `WF-TEMPLATE-A_v01` (pasta `templates/black/`), derivada desta v04 conforme `WIREFRAME-TEXT.md` 7.1.
