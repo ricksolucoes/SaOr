@@ -3,51 +3,59 @@
 ```text
 CANVAS FINAL — 1280 × 1920 px
 
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │ SaOr / Sales Order │ WIREFRAME · PRANCHA TÉCNICA - MODELO A (Viewport central dominante) │ WF-TEMPLATE-A │ XX / YY │ v03 │ DD/MM/AAAA │ [✓] APROVADO E CONGELADO │
-└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-▌1. CANVAS E VIEWPORT                       VIEWPORT CENTRAL DOMINANTE (sem card)   ▌6. COMPONENTES (MEDIDAS)
-┌────────────────────────────────────────┐  ┌────────────────────────────────────┐  ┌────────────────────────────────────────────────┐
-│ Canvas 1280 × 1920 | Viewport 360 × 800 │  │ 360 px (viewport total)            │  │ App Bar (56) | Campo Outlined (56)             │
-│ Escala 1:1 | Retrato | Margem 12 px    │  │ 12 | 336 px (largura útil) | 12    │  │ Botão Primário (48) | Secundário (48)          │
-└────────────────────────────────────────┘  │ ┌──────────────────────────┐       │  │ [G] Botão Texto + Icon Button (48 × 48)        │
-                                            │ │ (o) Título da Página [S][:]│     │  │ Item de lista simples (56) / secundário (64)   │
-▌2. COTAS DO VIEWPORT                       │ │     Subtítulo da página  │       │  │ Card (64) | Modal (96)                         │
-┌────────────────────────────────────────┐  │ │ Seção de Conteúdo        │       │  │ Bottom Navigation (64)                         │
-│ 360 | 336 | 12 + 12 | 800 px | 1:1     │  │ │ Rótulo do campo          │       │  │ + cota azul vertical à direita                 │
-└────────────────────────────────────────┘  │ │ [ Texto de exemplo    v ]│       │  └────────────────────────────────────────────────┘
-                                            │ │ [    Botão Primário     ]│       │
-▌3. GRID E SPACING                          │ │ [   Botão Secundário    ]│       │
-┌────────────────────────────────────────┐  │ │ [G] Botão Texto          │       │
-│ Grid 4 px | 4/8/12/16/24/32            │  │ │ (o) Título do item     > │       │
-│ Padding-base 16 / 12 px                │  │ │ [ Título do Card        ]│       │
-└────────────────────────────────────────┘  │ │ [i] Mensagem informativa │       │
-                                            │ │ [ ^ Área de scroll v    ]│       │
-▌4. TIPOGRAFIA (Inter - Wireframe)          │ │ Início Pedidos Clientes M│       │
-┌────────────────────────────────────────┐  │ └──────────────────────────┘       │
-│ WF-TITLE ... WF-CAPTION (6 linhas)     │  │ 800 px (viewport total)            │
-└────────────────────────────────────────┘  └────────────────────────────────────┘
+▌1. CANVAS E VIEWPORT                       ▌MODELO VIEWPORT                        ▌6. COMPONENTES (MEDIDAS)
+┌────────────────────────────────────────┐                                          ┌──────────────────────────────────────────────────────────────────────────────┐
+│ Canvas 1280 × 1920 | Viewport 360 × 800│     360 px (viewport total)              │ App Bar (56) | Campo Outlined (56)                                           │
+│ Escala 1:1 | Retrato | Margem 12 px    │    12 | 336 px (largura útil) | 12       │ Botão Primário (48) | Secundário (48)                                        │
+└────────────────────────────────────────┘     ┌───────────────────────────┐        │ [⚙] Icon Button + Botão Texto (48 × 48)                                      │
+                                               │ (o) Título da Página [S][:]│       │ Item de lista simples (56) / secundário (64)                                 │
+▌2. COTAS DO VIEWPORT                          │     Subtítulo da página   │        │ Card (64) | Modal (96)                                                       │
+┌────────────────────────────────────────┐     │ Seção de Conteúdo         │        │ Bottom Navigation (64)                                                       │
+│ 360 | 336 | 12 + 12 | 800 px | 1:1     │     │ Rótulo do campo           │        │ + cota azul vertical à direita                                               │
+└────────────────────────────────────────┘     │ [ Texto de exemplo     v ]│        │                                                                              │
+                                               │ [    Botão Primário     ]│         │                                                                              │
+▌3. GRID E SPACING                             │ [   Botão Secundário    ]│         │                                                                              │
+┌────────────────────────────────────────┐     │ [G] Botão Texto           │        │                                                                              │
+│ Grid 4 px | 4/8/12/16/24/32            │     │ (o) Título do item      > │        │                                                                              │
+│ Padding-base 16 / 12 px                │     │ [ Título do Card        ]│         │                                                                              │
+└────────────────────────────────────────┘     │ [i] Mensagem informativa  │        │                                                                              │
+                                               │ [ ^ Área de scroll v    ]│         │                                                                              │
+▌4. TIPOGRAFIA (Inter - Wireframe)             │ Início Pedidos Clientes Mais│      │                                                                              │
+┌────────────────────────────────────────┐     └───────────────────────────┘        │                                                                              │
+│ WF-TITLE ... WF-CAPTION (6 linhas)     │        800 px (viewport total)           │                                                                              │
+└────────────────────────────────────────┘                                          └──────────────────────────────────────────────────────────────────────────────┘
+                                            ▌7. ELEVAÇÃO
+▌5. PALETA TÉCNICA — CLARO                  ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────┐  │ E0        E1        E2        E3        (4 amostras em uma fileira, legenda sob cada uma)                            │
+│ [#HEX]  WF-W-BG                        │  └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+│ [#HEX]  WF-W-SURFACE                   │
+│ ... (10 tokens neutros)                │  ▌8. RADIUS                      ▌9. ÍCONES (Material Icons Outlined)      ▌10. ESTADOS (Componentes)
+│ ──────────────────────────────         │  ┌────────────────────────────┐  ┌──────────────────────────────────────┐  ┌────────────────────────────────────────────┐
+│ [#HEX]  Primary                        │  │ 12 px  Campos e botões     │  │ 20 px  info                          │  │ Default                                    │
+│ [#HEX]  On Primary                     │  │ 16 px  Cards e modais      │  │ 24 px  home                          │  │ Focus                                      │
+│ ... (8 cores semânticas)               │  │                            │  │ Referência conceitual                │  │ Pressed / Selected                         │
+│                                        │  │                            │  │                                      │  │ Disabled                                   │
+│                                        │  │                            │  │                                      │  │ Error                                      │
+│                                        │  │                            │  │                                      │  │                                            │
+│                                        │  │                            │  │                                      │  │                                            │
+│                                        │  │                            │  │                                      │  │                                            │
+└────────────────────────────────────────┘  └────────────────────────────┘  └──────────────────────────────────────┘  └────────────────────────────────────────────┘
 
-▌5. PALETA TÉCNICA — CLARO
-┌────────────────────────────────────────┐
-│ 10 tokens neutros [chip + HEX]         │
-│ 8 cores semânticas [chip + HEX]        │
-└────────────────────────────────────────┘
+▌11. REGRAS GERAIS DE COMPONENTES                                                  ▌12. BORDAS E DIVISORES
+┌───────────────────────────────────────────────────────────────────────────────┐  ┌───────────────────────────────────────────────────────────────────────────────┐
+│ [ ] Touch target mínimo 48 × 48 px                                            │  │ [ ] Borda 1 px (onde aplicável) | [──] Divisor 1 px (entre seções e listas)   │
+└───────────────────────────────────────────────────────────────────────────────┘  └───────────────────────────────────────────────────────────────────────────────┘
 
-
-▌7 ELEVAÇÃO │ ▌8 RADIUS │ ▌9 ÍCONES (Material Icons Outlined) │ ▌10 ESTADOS (Componentes)   [4 cards em linha]                        
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ E0–E3 (2×2)  │  12 px / 16 px  │  20 px / 24 px  │  Default Focus Pressed Disabled Error                                           │
-└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-▌11 REGRAS GERAIS DE COMPONENTES │ ▌12 BORDAS E DIVISORES   [2 cards em linha]                                                        
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ [ ] Touch target mínimo 48 × 48 px  │  Borda 1 px · Divisor 1 px                                                                   │
-└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-▌13 OBSERVAÇÕES TÉCNICAS   [2 colunas: 1–5 e 6–10]                                                                                    
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ 1–5 (esquerda)                                         6–10 (direita)                                                              │
-└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+▌13. OBSERVAÇÕES TÉCNICAS
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ (1)–(5) esquerda                                                   (6)–(10) direita                                                                              │
+│                                                                                                                                                                  │
+│                                                                                                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -66,6 +74,7 @@ escala de spacing:      4 / 8 / 12 / 16 / 24 / 32 px
 viewport físico:      360 × 800 px, escala 1:1
 ```
 
+
 ## 2. O que a v03 muda em relação à v02
 
 ```text
@@ -82,6 +91,15 @@ viewport físico:      360 × 800 px, escala 1:1
 10. Blocos REGRAS GERAIS e BORDAS E DIVISORES numerados 11 e 12; observações viram o bloco 13.
 11. Mantida a disposição do A: viewport central dominante entre a coluna de referências (esquerda)
     e a coluna de componentes (direita); linha inferior com 4 cards; regras e observações no rodapé.
+12. Coluna central com título próprio "MODELO VIEWPORT" na mesma linha dos blocos 1 e 6;
+    viewport e cotas descem 24 px (viewport em y 208).
+13. App Bar do bloco 6 igual ao do viewport (círculo, título, subtítulo, busca e more_vert).
+14. Bloco 5 PALETA em lista única (10 neutros, divisor, 8 semânticas), sem títulos de grupo e sem nota;
+    card até a base da linha dos blocos 8–10.
+15. Bloco 7 ELEVAÇÃO sobe para a faixa acima dos blocos 8, 9 e 10, em uma fileira.
+16. Blocos 8, 9 e 10 com a mesma altura (204 px); bloco 10 sem a nota de hover.
+17. Bloco 12 BORDAS E DIVISORES: amostra à esquerda e texto à direita, para borda e divisor (sem o token).
+18. Observações do bloco 13 numeradas com círculo azul.
 ```
 
 ## 3. Hierarquia de autoridade e estado
@@ -96,6 +114,7 @@ viewport físico:      360 × 800 px, escala 1:1
 7. PNG correspondente — resultado visual, nunca fonte normativa superior
 ```
 
+
 ```text
 Gate 1 — Canvas:                       APROVADO E CONGELADO
 Gate 2 — Título / Cabeçalho:           APROVADO E CONGELADO
@@ -107,9 +126,9 @@ Produção do PNG:                       APROVADO E CONGELADO
 STATUS no cabeçalho:                   APROVADO E CONGELADO
 ```
 
-A aprovação humana dos Gates 2, 3 e 6 e do PNG foi dada pelo responsável em `26/10/2026`, após a visualização da prévia. Os Gates 4 e 5 foram validados tecnicamente contra este texto: 336 + 16 + 440 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px; todas as áreas x/y/w/h dentro do canvas 1280 × 1920 px; limite inferior documental y 1904 ≤ 1908.
+Os Gates 1 a 6 e o PNG foram aprovados pelo responsável em `26/10/2026`. A revisão do PNG no mesmo frame (`v03-01` → `v03`) foi feita em `26/10/2026` seguindo `MONTAGEM-IMAGEM.md` §20.2: o PNG anterior foi arquivado como `WF-TEMPLATE-A_v03-01.png` e o novo mantém o nome canônico. Este texto foi atualizado para corresponder à imagem revisada, e o novo PNG foi aprovado pelo responsável em `26/10/2026`. Validação técnica: 336 + 16 + 440 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px; todas as áreas x/y/w/h dentro do canvas 1280 × 1920 px; limite inferior documental y 1904 ≤ 1908.
 
-Pendências na spec, herdadas do modelo C, que **não foram resolvidas** por esta aprovação: cromia adicional (azul, verde, semânticas), viewport derivado `WF-VIEWPORT-360x800-clean_icone-esquerda.png`, card sem borda e título fora do card.
+Pendências na spec, herdadas do modelo C, que **não foram resolvidas** por esta aprovação: cromia adicional (azul, verde, semânticas), viewport derivado `WF-VIEWPORT-360x800-clean_icone-esquerda.png`, card sem borda e título fora do card, chips de 20 px de altura e sombra do card fora dos tokens WF-ELEVATION.
 
 ## 4. Padrões visuais
 
@@ -119,7 +138,9 @@ Pendências na spec, herdadas do modelo C, que **não foram resolvidas** por est
 faixa de título: 32 px (o card começa em y_título + 32)
 barra: 4 × 20 px, radius 2, #0061FE, em (x_bloco, y_título + 2)
 texto: "N. TÍTULO" em caixa alta, WF-SECTION 14/20 600, WF-W-TEXT, x_bloco + 14, y_título + 2
+       (texto entre parênteses mantém a caixa original)
 gap entre blocos: 16 px (24 a 32 px entre seções)
+coluna central: título "MODELO VIEWPORT", sem numeração, mesmo estilo (barra em x 364, texto em x 378)
 ```
 
 ### 4.2 Card
@@ -190,7 +211,7 @@ ETAPA     x 936  w 332   Wireframe Conceitual em Imagem
 ```text
 COLUNA ESQUERDA  x 12   w 336
 gap              16
-COLUNA CENTRAL   x 364  w 440   (viewport, sem card)
+COLUNA CENTRAL   x 364  w 440   (título + viewport, sem card)
 gap              16
 COLUNA DIREITA   x 820  w 448
 336 + 16 + 440 + 16 + 448 = 1256
@@ -204,59 +225,67 @@ COLUNA ESQUERDA (x 12, w 336)
 2  COTAS DO VIEWPORT                312 → 344,   h 152 → 496
 3  GRID E SPACING                   512 → 544,   h 112 → 656
 4  TIPOGRAFIA (Inter - Wireframe)   672 → 704,   h 152 → 856
-5  PALETA TÉCNICA — CLARO           872 → 904,   h 192 → 1096
+5  PALETA TÉCNICA — CLARO           872 → 904,   h 524 → 1428
+
+COLUNA CENTRAL (x 364, w 440)
+   MODELO VIEWPORT (título)         132           barra x 364 y 134 · texto x 378 y 134
+   viewport + cotas                 y 138 → 1008  (bitmap y 208 → 1008)
 
 COLUNA DIREITA (x 820, w 448)
 6  COMPONENTES (MEDIDAS)            132 → 164,   h 848 → 1012
 
-LINHA INFERIOR (y_título 1128 → y_card 1160)
-7  ELEVAÇÃO                         x 12   w 344  h 168 → 1328
-8  RADIUS                           x 372  w 256  h 100 → 1260
-9  ÍCONES (Material Icons Outlined) x 644  w 304  h 160 → 1320
-10 ESTADOS (Componentes)            x 964  w 304  h 228 → 1388
+FAIXA DE ELEVAÇÃO (x 372, w 896)
+7  ELEVAÇÃO                         1036 → 1068, h 100 → 1168
 
-REGRAS E BORDAS (y_título 1420 → y_card 1452, h 120 → 1572)
+LINHA DOS BLOCOS 8, 9 e 10 (y_título 1192 → y_card 1224, h 204 → 1428)
+8  RADIUS                           x 372  w 256
+9  ÍCONES (Material Icons Outlined) x 644  w 304
+10 ESTADOS (Componentes)            x 964  w 304
+
+REGRAS E BORDAS (y_título 1452 → y_card 1484, h 88 → 1572)
 11 REGRAS GERAIS DE COMPONENTES     x 12   w 620
 12 BORDAS E DIVISORES               x 648  w 620
 
 RODAPÉ
-13 OBSERVAÇÕES TÉCNICAS             x 12   w 1256  y_título 1604 → y_card 1636, h 268 → 1904
+13 OBSERVAÇÕES TÉCNICAS             x 12   w 1256  y_título 1596 → y_card 1628, h 276 → 1904
 ```
 
-Limite inferior documental: y 1904 (≤ 1908).
+Limite inferior documental: y 1904 (≤ 1908). A base do bloco 5 coincide com a base dos blocos 8, 9 e 10 (y 1428).
 
 ---
 
 # Viewport central
 
-Sem título e sem card. O bitmap fica entre as colunas, sobre o fundo da prancha.
+Título "MODELO VIEWPORT" (ver 4.1). Sem card. O bitmap fica entre as colunas, sobre o fundo da prancha.
 
 ```text
 arquivo: docs/wireframes/images/references/white/WF-VIEWPORT-360x800-clean_icone-esquerda.png (derivado; ver seção 3)
-posição: x 404, y 184, w 360, h 800 (limite direito 764, inferior 984)
+posição: x 404, y 208, w 360, h 800 (limite direito 764, inferior 1008)
 escala: 100% / 1:1
 cálculo horizontal: coluna 440 − bitmap 360 = 80; 80 / 2 = 40; 364 + 40 = x 404
+cálculo vertical: o grupo cotas + viewport desce 24 px em relação à v03 original (y 184 → 208) para liberar o título em y 132
 ```
 
 Proibido: redimensionar, ampliar, reduzir, esticar, recortar, reconstruir ou adaptar o bitmap. Sem safe area.
 
-Cotas (azul #0061FE, linha 1 px, setas 5 px, rótulos WF-CAPTION 600 sobre fundo da prancha):
+Cotas (azul #0061FE, linha 1 px, setas 5 px de comprimento × 6 px de largura, rótulos WF-CAPTION 600 sobre fundo da prancha com padding horizontal 6 px):
 
 ```text
 Linhas de extensão tracejadas (2/2):
-  x 404 e x 763, de y 140 a y 184
-  x 416 e x 751, de y 166 a y 184
-360 px (viewport total):    linha y 146, x 404–764; rótulo centrado, y 138
-12 | 336 | 12:              linha y 170, x 404–764; divisões em x 416 e x 751
-  rótulo "336 px (largura útil)" centrado, y 162
-  rótulos "12 px": x 377 (alinhado à direita, w 26) e x 765 (alinhado à esquerda)
+  x 404 e x 763, de y 164 a y 208
+  x 416 e x 751, de y 190 a y 208
+360 px (viewport total):    linha y 170, x 404–764, setas nas pontas; rótulo centrado em x 584, y 162
+12 | 336 | 12:              linha y 194, x 404–764; divisões em x 416 e x 751; setas nas pontas de cada trecho
+  rótulo "336 px (largura útil)" centrado em x 584, y 186
+  rótulos "12 px": alinhado à direita, terminando em x 403 (y 186), e começando em x 765 (y 186)
 800 px (viewport total):
-  extensões horizontais x 764–788 em y 184 e y 983
-  linha vertical x 778, de y 185 a y 983, setas nas pontas
-  rótulo vertical sobre a linha, centrado em y 584
+  extensões horizontais tracejadas x 764–788 em y 208 e y 1007
+  linha vertical x 778, de y 209 a y 1007, setas nas pontas
+  rótulo vertical (lê-se de baixo para cima) sobre a linha, centrado em y 608
 ```
 
 ---
+
 
 # Blocos da coluna esquerda
 
@@ -292,22 +321,21 @@ Tabelas zebra (4.3) começam em y_card + 16; valor em x_card + 176 (blocos 1 a 3
 
 ## 5. PALETA TÉCNICA — CLARO
 
-Card x 12, y 904, w 336, h 192. Linhas de 16 px a partir de y 920. Chip preenchido com a cor, HEX centrado (11 px; branco ou #1A1A1A conforme contraste).
+Card x 12, y 904, w 336, h 524 (base 1428). Lista única, sem títulos de grupo e sem nota: 10 neutros, divisor, 8 semânticas. Linhas de 26 px a partir de y 920; a partir da 11ª linha, deslocamento de +10 px; divisor de 1 px WF-W-BORDER em x 28, w 304, y 1184. Faixa zebra #F6F6F6 (radius 4, x 20, w 320, h 26) nas linhas ímpares (1ª, 3ª, ... da lista de 18). Chip preenchido com a cor em x 28, w 64, h 20, y_linha + 3; HEX centrado (12 px, WF-CAPTION; branco ou #1A1A1A conforme contraste; luminância < 0,3 → branco). Chips com luminância > 0,7 recebem borda de 1 px WF-W-BORDER. Nome do token em x 104, y_linha + 5, WF-CAPTION, WF-W-TEXT.
 
 ```text
-Neutros (token x 28, chip x 152, w 56, h 16)
+Neutros (linhas 1 a 10)
 WF-W-BG #F4F4F4 · WF-W-SURFACE #FFFFFF · WF-W-SURFACE-ALT #EAEAEA · WF-W-BORDER #B5B5B5
 WF-W-TEXT #1A1A1A · WF-W-TEXT-2 #565656 · WF-W-ACTION #333333 · WF-W-DISABLED #9A9A9A
 WF-W-FOCUS #4A4A4A · WF-W-STATUS #626262
 
-Semânticas (rótulo x 216, chip x 288, w 52, h 16)
+Semânticas (linhas 11 a 18)
 Primary #0061FE · On Primary #FFFFFF · Secondary #9E9EDE · Info #0288D1
 Error #D32F2F · Success #2E7D32 · Warning #ED6C02 · Info BG #DDEEFC
-
-Nota (x 220, y 1052 e 1068): "Cores semânticas / da representação."
 ```
 
 ---
+
 
 # 6. COMPONENTES (MEDIDAS)
 
@@ -331,7 +359,9 @@ Card x 820, y 164, w 448, h 848. Amostras x 836, w 416. Rótulo WF-CAPTION, h 16
 Conteúdo:
 
 ```text
-4.1  [menu] Título (WF-TITLE) [search]; ícones 24 px
+4.1  avatar 40 × 40 (radius 20, SURFACE-ALT) em x +12 / y +8; "Título da Página" (WF-SECTION) x +64 / y +10;
+     "Subtítulo da página" (WF-CAPTION, WF-W-TEXT-2) x +64 / y +30; [search] 24 px em x 1184, y 212;
+     [more_vert] 24 px em x 1216, y 212 (extremo direito, 12 px de margem); sem logo
 4.2  Rótulo (WF-CAPTION, y +7) / Texto de exemplo (WF-BODY, y +24) / expand_more
 4.5  Icon Button à ESQUERDA: x 836, y 484, 48 × 48, radius 12, ícone settings 24 px em (848, 496)
      Botão Texto colado ao ícone: x 900, azul #0061FE, WF-ACTION-TEXT, y 496
@@ -347,63 +377,67 @@ Cotas de componente (azul, estilo A_v02): coluna em x 1260 (gutter de 16 px entr
 
 ---
 
-# Linha inferior
+# Faixa de elevação e linha dos blocos 8, 9 e 10
 
 ```text
-7. ELEVAÇÃO (card x 12, y 1160, w 344, h 168) — amostras 128 × 44, radius 12, borda 1 px
-   E0 0/0/0/0%   x 44,  y 1176   legenda y 1224
-   E1 0/1/2/12%  x 196, y 1176   legenda y 1224
-   E2 0/2/6/16%  x 44,  y 1248   legenda y 1296
-   E3 0/4/12/20% x 196, y 1248   legenda y 1296
+7. ELEVAÇÃO (card x 372, y 1068, w 896, h 100) — amostras 128 × 44, radius 12, borda 1 px WF-W-BORDER, em uma fileira
+   quatro colunas de 224 px a partir de x 372; amostra centrada na coluna (x = 372 + 224·k + 48), y 1084
+   rótulo (E0…E3, WF-LABEL) centrado na amostra, y +12; legenda (WF-CAPTION, WF-W-TEXT-2) centrada, y 1132
+   E0 0/0/0/0%    x 420   sem sombra
+   E1 0/1/2/12%   x 644   sombra 0 1px 2px rgba(0,0,0,.12)
+   E2 0/2/6/16%   x 868   sombra 0 2px 6px rgba(0,0,0,.16)
+   E3 0/4/12/20%  x 1092  sombra 0 4px 12px rgba(0,0,0,.20)
 
-8. RADIUS (card x 372, y 1160, w 256, h 100) — amostras 112 × 44
-   12 px — Campos e botões   x 384, y 1176, radius 12   rótulo y 1190, legenda y 1228
-   16 px — Cards e modais    x 504, y 1176, radius 16   rótulo y 1190, legenda y 1228
+8. RADIUS (card x 372, y 1224, w 256, h 204) — amostras 112 × 44
+   12 px — Campos e botões   x 384, y 1240, radius 12   rótulo y 1254, legenda y 1292
+   16 px — Cards e modais    x 504, y 1240, radius 16   rótulo y 1254, legenda y 1292
 
-9. ÍCONES (Material Icons Outlined) (card x 644, y 1160, w 304, h 160)
-   amostra 20 px: x 660, y 1176, 128 × 88 (ícone info 20 px, guia tracejado)
-   amostra 24 px: x 804, y 1176, 128 × 88 (ícone home 24 px, guia tracejado)
-   rótulo "20 px"/"24 px" y 1188; ícone centrado em y 1232; legenda y 1272 ("Ícones auxiliares" / "Ação / navegação")
-   nota x 660, y 1294: "Referência conceitual dos wireframes."
+9. ÍCONES (Material Icons Outlined) (card x 644, y 1224, w 304, h 204)
+   amostra 20 px: x 660, y 1240, 128 × 88, radius 12, borda 1 px (ícone info 20 px, guia tracejado do tamanho do ícone)
+   amostra 24 px: x 804, y 1240, 128 × 88, radius 12, borda 1 px (ícone home 24 px, guia tracejado do tamanho do ícone)
+   rótulo "20 px"/"24 px" y 1252; ícone centrado em y 1296; legenda y 1336 ("Ícones auxiliares" / "Ação / navegação")
+   nota x 660, y 1358: "Referência conceitual dos wireframes."
 
-10. ESTADOS (Componentes) (card x 964, y 1160, w 304, h 228)
+10. ESTADOS (Componentes) (card x 964, y 1224, w 304, h 204)
    amostras x 980, w 272, h 28, radius 6; texto x 1016, y +6; ícone 16 px x 992, y +6
-   Default             y 1176   borda 1 px                          radio_button_unchecked
-   Focus               y 1212   borda 2 px WF-W-FOCUS               center_focus_strong
-   Pressed / Selected  y 1248   fundo #DDEEFC, borda #0061FE, barra esquerda 4 px azul; check azul
-   Disabled            y 1284   fundo SURFACE-ALT, borda tracejada WF-W-DISABLED; block
-   Error               y 1320   borda 2 px #D32F2F; error_outline #D32F2F
-   nota x 980, y 1356: "Hover: documentado; não obrigatório em mobile."
+   Default             y 1240   borda 1 px                          radio_button_unchecked
+   Focus               y 1276   borda 2 px WF-W-FOCUS               center_focus_strong
+   Pressed / Selected  y 1312   fundo #DDEEFC, borda #0061FE, barra esquerda 4 px azul; check azul
+   Disabled            y 1348   fundo SURFACE-ALT, borda tracejada WF-W-DISABLED; block
+   Error               y 1384   borda 2 px #D32F2F; error_outline #D32F2F
+   (sem nota de hover)
 ```
 
 # 11. REGRAS GERAIS DE COMPONENTES
 
-Card x 12, y 1452, w 620, h 120.
+Card x 12, y 1484, w 620, h 88.
 
 ```text
-amostra touch target: x 28, y 1468, 48 × 48, borda tracejada WF-W-FOCUS; ícone settings 24 px em (40, 1480)
-título: x 92, y 1466, WF-LABEL — "Touch target mínimo: 48 × 48 px."
-parágrafo: x 92, y 1488, w 520, até 3 linhas, WF-CAPTION, WF-W-TEXT-2
+amostra touch target: x 28, y 1500, 48 × 48, borda tracejada WF-W-FOCUS; ícone settings 24 px em (40, 1512)
+título: x 92, y 1498, WF-LABEL — "Touch target mínimo: 48 × 48 px."
+parágrafo: x 92, y 1520, w 520, até 3 linhas, WF-CAPTION, WF-W-TEXT-2
   "Aplicável a botões, ícones, itens de lista, navegação e demais áreas interativas. A área clicável deve respeitar o mínimo mesmo quando o elemento visual for menor."
 ```
 
 # 12. BORDAS E DIVISORES
 
-Card x 648, y 1452, w 620, h 120.
+Card x 648, y 1484, w 620, h 88. Amostra à esquerda e texto à direita, para borda e divisor.
 
 ```text
-amostra de borda: x 664, y 1468, 160 × 56, radius 12, borda 1 px; "Borda 1 px" centrado
-título do divisor: x 848, y 1468, WF-LABEL — "Divisor 1 px"
-divisor: x 848, y 1496, w 400, h 1, WF-W-BORDER
-legenda: x 848, y 1504, w 400 — "Uso entre seções e listas quando necessário."
-token: x 664, y 1540 — "Token claro: WF-W-BORDER #B5B5B5"
+amostra de borda:   x 664, y 1500, 80 × 56, radius 12, borda 1 px WF-W-BORDER, fundo SURFACE, vazia
+  texto (x 760):    "Borda" y 1502 WF-LABEL · "1 px" y 1522 WF-CAPTION WF-W-TEXT · "(onde aplicável)" y 1538 WF-CAPTION WF-W-TEXT-2
+amostra de divisor: x 972, y 1500, 80 × 56, radius 12, borda 1 px WF-W-BORDER, fundo SURFACE
+  linha interna:    x 984, y 1528, w 56, h 1, WF-W-BORDER
+  texto (x 1068):   "Divisor" y 1502 WF-LABEL · "1 px" y 1522 WF-CAPTION WF-W-TEXT · "(entre seções e listas)" y 1538 WF-CAPTION WF-W-TEXT-2
+(sem linha de token: o HEX de WF-W-BORDER já consta no bloco 5)
 ```
 
 ---
 
+
 # 13. OBSERVAÇÕES TÉCNICAS
 
-Card x 12, y 1636, w 1256, h 268 (base 1904). Duas colunas de 5 itens: número em x 28 e x 648; texto em x 56 e x 676 (w 572, até 2 linhas, WF-CAPTION); número em WF-LABEL; linhas em y 1656 + 50 × n (n = 0…4).
+Card x 12, y 1628, w 1256, h 276 (base 1904). Duas colunas de 5 itens: marcador em x 28 e x 648; texto em x 56 e x 676, y_linha + 2 (w 572, até 2 linhas, WF-CAPTION, WF-W-TEXT); linhas em y 1648 + 52 × n (n = 0…4). Marcador: círculo 22 × 22, radius 11, #0061FE, em (x, y_linha − 1), número branco centralizado, WF-CAPTION 600.
 
 ```text
 1. O viewport representa a tela completa do celular: 360 × 800 px em escala 1:1.
@@ -416,6 +450,28 @@ Card x 12, y 1636, w 1256, h 268 (base 1904). Duas colunas de 5 itens: número e
 8. Nomenclatura dos arquivos funcionais: <ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>.png.
 9. Interface multipágina só é aprovada quando todas as páginas Claro e Escuro estiverem aprovadas.
 10. Cor nunca deve ser o único indicador de estado; cores, ícones e componentes são referências técnicas dos wireframes.
+```
+
+
+---
+
+# Detalhes complementares de montagem (não numerados nas seções acima)
+
+```text
+Cabeçalho: rótulos ID/PÁGINA/VERSÃO/DATA em x_célula + 12, y 20, WF-CAPTION, WF-W-TEXT-2, tracking 0.06em; valores em x_célula + 12, y 40, WF-LABEL.
+           Linha inferior: rótulo (WF-CAPTION, WF-W-TEXT-2, tracking 0.06em) em x_célula + 12, y 84 + gap 8 + valor (WF-LABEL) na mesma linha.
+           Divisores: verticais x 168 e 552 (y 13–107); x 716, 844, 968, 1108 (y 13–76); x 716 e 936 (y 77–107); horizontal y 76 de x 553 a 1267.
+Rótulos dos componentes do bloco 6: texto "NOME (medida)" sem o prefixo 4.x, WF-CAPTION, WF-W-TEXT, x 836.
+Amostras do bloco 6: fundo SURFACE, borda 1 px WF-W-BORDER; radius: App Bar 0, Campo 12, botões 12, itens de lista 12, card 16; Botão Secundário fundo SURFACE com borda.
+  4.2 rótulo x 852 (WF-W-TEXT-2); texto x 852; expand_more 24 px a 16 px da borda direita, y +16
+  4.6/4.7 chevron_right 24 px a 12 px da borda direita; 4.7 secundário: "Texto secundário adicional" (WF-CAPTION, WF-W-TEXT-2)
+  4.8 título y +10, texto y +34
+  4.9 alça 32 × 4 radius 2 WF-W-BORDER em (1028, 806); título x 876 y 814 (WF-SECTION); texto x 876 y 834; botões y 854, radius 6, texto WF-LABEL;
+      Cancelar x 876 (borda 1 px WF-W-BORDER); Confirmar x 1120 (fundo #0061FE, texto branco)
+  4.10 ícones home, description, people, more_horiz 24 px centrados em cada coluna de 104 px, y +10; rótulo y +42 centrado (WF-CAPTION); ativo: pílula #DDEEFC 48 × 28 radius 14 em y +8, ícone e texto azul (600)
+Cotas de componente: colchetes 11 px em 1255–1265, linha vertical x 1260 com setas; rótulo vertical sobre a linha, fundo SURFACE.
+Estados: barra esquerda do Pressed/Selected 4 px, radius esquerdo 6.
+Elevação: E3 do modal 0 4px 12px rgba(0,0,0,.20).
 ```
 
 ---
