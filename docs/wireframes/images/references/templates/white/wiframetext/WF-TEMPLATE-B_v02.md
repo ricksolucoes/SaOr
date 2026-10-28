@@ -180,7 +180,7 @@ Ao reutilizar o conceito desta composição em outra prancha, deve-se recalcular
 6. STATUS do cabeçalho: APROVADO E CONGELADO (nova versão; gates reiniciados na seção 2 e todos aprovados em 27/10/2026).
 7. Conteúdo, composição e geometria dos blocos 1, 2, 3 e 5 e do cabeçalho permanecem como na v01.
 8. A disposição dos blocos 6, 8, 9 e 10 (RADIUS na região inferior, à esquerda de ÍCONES; PALETA ampliada) foi definida pelo responsável
-   em 27/10/2026 (comunicado na conversa) por critério visual; ela substitui a disposição da v01 e reabre o Gate 6.
+   em 27/10/2026 (decisão registrada neste Wireframe Text) por critério visual; ela substitui a disposição da v01 e reabre o Gate 6.
 ```
 
 ---
@@ -226,11 +226,11 @@ Registros:
 
 ```text
 Gate 1 (técnico): canvas 1280 × 1920 px conforme REGRAS-TECNICAS.md — APROVADO E CONGELADO.
-Gate 2: aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO. O cabeçalho não mudou com a nova disposição.
-Gate 3: bitmap aprovado em 27/10/2026; posição, cotas e registro do gate aprovados explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO. Viewport e cotas não mudaram com a nova disposição.
+Gate 2: aprovado explicitamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO. O cabeçalho não mudou com a nova disposição.
+Gate 3: bitmap aprovado em 27/10/2026; posição, cotas e registro do gate aprovados explicitamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO. Viewport e cotas não mudaram com a nova disposição.
 Gates 4 e 5 (técnicos): revalidados em 27/10/2026 para a nova disposição dos blocos 6, 8, 9 e 10 (decidida pelo responsável em 27/10/2026), com os Gates 2 e 3 congelados — APROVADO E CONGELADO.
-Gate 6: reaberto pela nova disposição dos blocos 6, 8, 9 e 10 e aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
-Produção do PNG: gerado em 27/10/2026 a partir deste Wireframe Text e validado contra ele; aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gate 6: reaberto pela nova disposição dos blocos 6, 8, 9 e 10 e aprovado explicitamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO.
+Produção do PNG: gerado em 27/10/2026 a partir deste Wireframe Text e validado contra ele; aprovado explicitamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO.
 STATUS no cabeçalho: registrado como APROVADO E CONGELADO; o PNG foi regenerado com o STATUS aprovado e revalidado.
 Validação técnica dos Gates 4 e 5:
   - fechamento horizontal do cabeçalho: 156 + 384 + 716 = 1256 px;
@@ -241,7 +241,7 @@ Validação técnica dos Gates 4 e 5:
   - fechamento horizontal da linha inferior 8 | 9 | 10: 328 + 16 + 328 + 16 + 568 = 1256 px;
   - região inferior: 1260 + 208 + 16 + 144 + 16 + 264 = 1908 (limite inferior do canvas);
   - todas as áreas x/y/w/h permanecem dentro do canvas 1280 × 1920 px.
-Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (comunicado na conversa);
+Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (decisão registrada neste Wireframe Text);
   o registro formal em REGRAS-TECNICAS.md 6.7 é feito pelo responsável.
 ```
 

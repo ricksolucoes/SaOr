@@ -84,7 +84,7 @@ Wireframe Text white de origem: WF-TEMPLATE-A_v04 (docs/wireframes/images/refere
 Estado do white de origem:      Wireframe Text APROVADO E CONGELADO (Gates 1 a 6, Gates 2, 3 e 6 aprovados pelo responsável em 27/10/2026); PNG da origem e STATUS do cabeçalho APROVADO E CONGELADO em 27/10/2026
 Regra: geometria e composição herdadas; mudam apenas paleta, ativos físicos e as decisões que dependem da paleta.
 Geometria herdada continua GEOMETRIA DESTA PRANCHA (não passa a regra normativa).
-Gates não herdados: o black registra os próprios estados (seção 3); os Gates 2, 3 e 6 foram aprovados pelo responsável para esta v01 em 27/10/2026 (resposta registrada na conversa).
+Gates não herdados: o black registra os próprios estados (seção 3); os Gates 2, 3 e 6 foram aprovados pelo responsável para esta v01 em 27/10/2026 (aprovação registrada neste Wireframe Text).
 Numeração própria: esta é a v01 da variação black.
 ```
 
@@ -133,16 +133,16 @@ Registros:
 
 ```text
 Gate 1 (técnico): canvas 1280 × 1920 px conforme REGRAS-TECNICAS.md — APROVADO E CONGELADO.
-Gate 2: cabeçalho da v01 black, tokens da seção 6 (tabela 6.6) e STATUS (inclui D4) aprovados explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gate 2: cabeçalho da v01 black, tokens da seção 6 (tabela 6.6) e STATUS (inclui D4) aprovados explicitamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO.
 Gate 3: o bitmap references/black/WF-VIEWPORT-360x800.png foi aprovado pelo responsável em 27/10/2026; a posição, as cotas e o registro
-        do gate foram aprovados explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+        do gate foram aprovados explicitamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO.
 Gates 4 e 5 (técnicos): validados em 27/10/2026 depois dos Gates 2 e 3 estarem congelados — APROVADO E CONGELADO.
-Gate 6: aprovado em 27/10/2026, reaberto na mesma data pela alteração do bloco 7 e de D6 (preenchimento das amostras de elevação em WF-B-SURFACE-ALT, decisão do responsável) e aprovado novamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
-Produção do PNG: gerado em 27/10/2026 a partir deste Wireframe Text (o PNG anterior à alteração foi descartado) e validado contra ele; aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gate 6: aprovado em 27/10/2026, reaberto na mesma data pela alteração do bloco 7 e de D6 (preenchimento das amostras de elevação em WF-B-SURFACE-ALT, decisão do responsável) e aprovado novamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO.
+Produção do PNG: gerado em 27/10/2026 a partir deste Wireframe Text (o PNG anterior à alteração foi descartado) e validado contra ele; aprovado explicitamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO.
 STATUS no cabeçalho: registrado como APROVADO E CONGELADO em 27/10/2026; o PNG foi regenerado com o STATUS aprovado (ícone check_circle e texto em Success) e revalidado contra este Wireframe Text.
 Validação técnica dos Gates 4 e 5: 336 + 16 + 440 + 16 + 448 = 1256 px; viewport 12 + 336 + 12 = 360 px;
   todas as áreas x/y/w/h dentro do canvas 1280 × 1920 px; limite inferior documental y 1904 ≤ 1908; bloco 5 dentro do card (última linha termina em y 1416 ≤ 1428).
-Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (comunicado na conversa);
+Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (decisão registrada neste Wireframe Text);
   o registro formal em REGRAS-TECNICAS.md 6.7 é feito pelo responsável.
 ```
 

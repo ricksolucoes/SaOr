@@ -223,11 +223,11 @@ Registros:
 
 ```text
 Gate 1 (técnico): canvas 1280 × 1920 px conforme REGRAS-TECNICAS.md — APROVADO E CONGELADO.
-Gate 2: cabeçalho da v01 black, tokens da seção 6 (tabela 6.6) e STATUS (inclui D4) — aprovado em 27/10/2026 e reaberto na mesma data pela correção de D4 e do bloco Marca (ícone do cabeçalho, conforme o PNG white B aprovado; decisão do responsável) — aprovado novamente pelo responsável em 27/10/2026 (aprovação da imagem, resposta registrada na conversa) — APROVADO E CONGELADO.
-Gate 3: bitmap references/black/WF-VIEWPORT-360x800.png aprovado em 27/10/2026; posição, cotas e registro do gate aprovados explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gate 2: cabeçalho da v01 black, tokens da seção 6 (tabela 6.6) e STATUS (inclui D4) — aprovado em 27/10/2026 e reaberto na mesma data pela correção de D4 e do bloco Marca (ícone do cabeçalho, conforme o PNG white B aprovado; decisão do responsável) — aprovado novamente pelo responsável em 27/10/2026 (aprovação da imagem registrada neste Wireframe Text) — APROVADO E CONGELADO.
+Gate 3: bitmap references/black/WF-VIEWPORT-360x800.png aprovado em 27/10/2026; posição, cotas e registro do gate aprovados explicitamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO.
 Gates 4 e 5 (técnicos): revalidados em 27/10/2026 depois dos Gates 2 e 3 estarem congelados (geometria inalterada pela correção de D4) — APROVADO E CONGELADO.
-Gate 6: aprovado em 27/10/2026, reaberto pela correção de D4 e aprovado novamente pelo responsável em 27/10/2026 (aprovação da imagem, resposta registrada na conversa) — APROVADO E CONGELADO.
-Produção do PNG: gerado em 27/10/2026 a partir deste Wireframe Text, validado contra ele e aprovado explicitamente pelo responsável em 27/10/2026 (resposta registrada na conversa) — APROVADO E CONGELADO.
+Gate 6: aprovado em 27/10/2026, reaberto pela correção de D4 e aprovado novamente pelo responsável em 27/10/2026 (aprovação da imagem registrada neste Wireframe Text) — APROVADO E CONGELADO.
+Produção do PNG: gerado em 27/10/2026 a partir deste Wireframe Text, validado contra ele e aprovado explicitamente pelo responsável em 27/10/2026 (aprovação registrada neste Wireframe Text) — APROVADO E CONGELADO.
 STATUS no cabeçalho: registrado como APROVADO E CONGELADO em 27/10/2026; o PNG foi regenerado com o STATUS aprovado (ícone check_circle e texto em Success) e revalidado.
 Validação técnica dos Gates 4 e 5:
 Validação técnica dos Gates 4 e 5:
@@ -239,7 +239,7 @@ Validação técnica dos Gates 4 e 5:
   - fechamento horizontal da linha inferior 8 | 9 | 10: 328 + 16 + 328 + 16 + 568 = 1256 px;
   - região inferior: 1260 + 208 + 16 + 144 + 16 + 264 = 1908 (limite inferior do canvas);
   - todas as áreas x/y/w/h permanecem dentro do canvas 1280 × 1920 px.
-Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (comunicado na conversa);
+Cores: as lacunas da seção 6 (marcadas com *) foram aprovadas pelo responsável em 27/10/2026 (decisão registrada neste Wireframe Text);
   o registro formal em REGRAS-TECNICAS.md 6.7 é feito pelo responsável.
 ```
 

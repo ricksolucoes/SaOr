@@ -558,12 +558,14 @@ Não permitir:
 
 ## 16. Chroma Key e composição
 
-Todas as referências utilizam:
+O **alvo nominal de chroma key** para geração, pós-processamento e entrega final é:
 
 ```text
-HEX: #00FF00
-RGB: 0, 255, 0
+HEX nominal: #00FF00
+RGB nominal: 0, 255, 0
 ```
+
+As quatro pranchas PNG canônicas atualmente armazenadas **não apresentam fundo uniformemente igual a esse valor exato**: há pequenas variações de RGB nos pixels verdes. Portanto, `#00FF00` é uma **especificação-alvo**, não uma medição literal da cor de todos os pixels dos arquivos atuais. Não tratar os PNGs existentes como se já tivessem chroma matematicamente uniforme; antes da composição final, avaliar o matte e, quando necessário, normalizar o fundo no pipeline sem modificar a identidade do personagem.
 
 O pipeline final deve suportar:
 
@@ -626,7 +628,7 @@ Do not alter ethnicity appearance, skin tone, age, hairstyle, body type,
 height or clothing.
 
 Maintain temporal consistency and photorealistic human anatomy.
-Background must remain pure chroma key green #00FF00 with no green spill.
+Target output background: nominal chroma key green #00FF00, with no green spill. Existing canonical reference PNGs can contain small RGB variations; do not assume their green background is pixel-uniform.
 ```
 
 ---
@@ -717,8 +719,9 @@ rendering:
   lighting_kelvin: 5500
   background:
     type: chroma_key
-    hex: "#00FF00"
-    rgb: [0, 255, 0]
+    target_hex: "#00FF00"
+    target_rgb: [0, 255, 0]
+    canonical_reference_pngs_pixel_uniform: false
   green_spill: forbidden
 
 animation:
@@ -795,7 +798,7 @@ Antes de aprovar um frame ou vídeo, validar:
 
 ### Chroma Key
 
-- [ ] fundo uniforme `#00FF00`;
+- [ ] fundo do **resultado final** normalizado ao alvo nominal `#00FF00`, quando a entrega exigir chroma uniforme (não presumir uniformidade dos PNGs de referência);
 - [ ] sem cenário;
 - [ ] sem sombra no fundo;
 - [ ] sem green spill;
