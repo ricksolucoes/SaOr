@@ -1,82 +1,77 @@
 # SaOr — Gate obrigatório de conformidade das Telas e Pranchas de Implementação
 
-## 1. Autoridade e aplicação
+## 1. Autoridade, escopo e regra anti-regressão
 
-Este é o **Gate auxiliar obrigatório da SPEC 3** [`PROCESSO-TELA-PRANCHA.md`](PROCESSO-TELA-PRANCHA.md), aplicado a **cada interface T/M/E**, temas `white` e `black`, cada página de continuidade e seu conjunto completo. **Não** é Gate de criação de Prancha do Template (SPEC 1), não define ou escolhe a referência selecionada (SPEC 2) e não altera os seis arquivos oficiais congelados. O Documento Mestre é a fonte dos requisitos funcionais; a SPEC 3 governa os procedimentos; este documento governa **somente o bloqueio, a evidência e a passagem verificável** entre etapas.
+Gate auxiliar **exclusivo da SPEC 3** [`PROCESSO-TELA-PRANCHA.md`](PROCESSO-TELA-PRANCHA.md), para interfaces T/M/E, temas white/black, estados aplicáveis e páginas de continuidade. Não se aplica à construção do template (SPEC 1), não muda a referência vigente (SPEC 2), não reexecuta Gates históricos 1–6 e não altera os arquivos congelados.
 
-Ordem estrita: `GI-0 → GI-1 → GI-2 → GI-3 → GI-4`. A passagem requer checklist sem falhas, artefatos e registros existentes e, onde indicado, aprovação **humana explícita**. Nenhuma etapa é considerada aprovada por ter sido renderizada nem por aparecer em conversa. `PENDENTE`, `EM VERIFICAÇÃO`, `AGUARDANDO APROVAÇÃO`, `APROVADO E CONGELADO` e `BLOQUEADO` são estados internos do Gate; **não** substituem os estados agregados da matriz de 71 interfaces no README operacional.
+**Ordem obrigatória e bloqueante:** `GI-0 (requisitos) → PNG da Tela → GI-1 (aprovação visual do PNG) → TextFrame derivado → GI-2 (aprovação documental do conjunto PNG + TextFrame) → GI-3 (montagem técnica da Prancha) → GI-4 (aceite final)`. É proibido criar o TextFrame como base para adivinhar o PNG. Nenhuma etapa pode herdar aprovação nem ser aprovada apenas por existir arquivo ou por constar em conversa.
 
-## 2. GI-0 — Pré-condições documentais (técnico)
+Usar `PENDENTE`, `EM VERIFICAÇÃO`, `AGUARDANDO APROVAÇÃO`, `APROVADO E CONGELADO` ou `BLOQUEADO` com decisão e evidência explícitas. Esses estados não substituem os estados agregados da matriz das 71 interfaces.
 
-- [ ] ID e nome conferidos na ficha/Textframe da baseline funcional; nenhuma função ou campo acrescentado por inferência.
-- [ ] Ambos os temas e a versão técnica `360 × 800 px` aplicável identificados; interface, estados, ações, ordem, regras de rolagem e páginas previstos.
-- [ ] Referência aprovada e vigente verificada na SPEC 2 e no registro permanente por tema (modelo, versões, caminhos, SHA-256); nenhum arquivo congelado destinado a edição.
-- [ ] Existência e acessibilidade do contrato do Wireframe Text da Tela, das invariantes e dos caminhos para saídas isoladas.
-- [ ] Ambiguidades e contradições identificadas e bloqueadas até decisão documentada; aprovação do Gate não autoriza novo requisito funcional.
+## 2. GI-0 — Pré-condições e inventário funcional (técnico)
 
-**Passagem:** evidência registrada, sem lacunas que comprometam a execução; senão `BLOQUEADO`. GI-0 não aprova previamente um futuro WT, PNG ou Prancha.
+- [ ] Ler ficha **e Textframe** da interface no Documento Mestre, regras transversais, estados, conteúdo, ações/destinos e relações; produzir inventário verificável dos elementos requeridos, sem introduzir outros.
+- [ ] Conferir temas white/black, ViewPort técnico `360 × 800`, margens/tokens e padrões aplicáveis; inspecionar visualmente PNG e Wireframe Text oficiais da referência vigente por meio da SPEC 2.
+- [ ] Registrar quais elementos são próprios da Tela e quais são apenas demonstrações do template; nenhum exemplo da Prancha vira componente da interface sem requisito.
+- [ ] Mapear estados exigidos, variações reais de rolagem, comportamento fixo/rolável e potencial total de páginas; não assumir uma página sem inspeção geométrica posterior.
+- [ ] Identificar qualquer lacuna de requisito, padrão técnico ou definição visual; se impedir representação fiel, `BLOQUEADO`, sem decisão estética inferida.
+- [ ] Criar registro persistente no caminho `docs/wireframes/images/<tema>/telas/controle/<nome-base>.md`, contendo ID, tema, plano de páginas/estados, requisitos com fontes, referência vigente e hashes, evidências e decisão GI-0. **Esse registro não é um Wireframe Text e não define aparência concorrente.**
 
-## 3. GI-1 — Wireframe Text completo antes de qualquer PNG (aprovação humana)
+**Passagem:** inventário/autoridades completos e nenhuma lacuna impeditiva. GI-0 autoriza **propor um PNG visual**, mas não aprova a Tela.
 
-- [ ] Documento individual por **ID / tema / página / total / versão**, conforme `WIREFRAME-TEXT-TELA.md`, elaborado antes de gerar a imagem.
-- [ ] **Inventário completo dos elementos** da interface: campos, textos, obrigatoriedade, componentes, ações/destinos, estados, origem funcional e página de aparição.
-- [ ] AppBar de cada estado/posição especificada com **layout próprio** (ou ausência justificada), sem copiar a amostra demonstrativa; em cada item de lista, presença/ausência de ícone fundamentada.
-- [ ] Continuidade real de rolagem especificada: página `XX / YY`, posição/trecho, ordem de elementos, limites, elementos realmente fixos e roláveis; **nenhum** campo eliminado, inventado, comprimido ou repetido como novo.
-- [ ] Tema white/black funcionalmente equivalente, sem presumir equivalência de aprovação; `PÁGINA` distinta de `VERSÃO`.
-- [ ] Medidas da Tela verificadas em `360 × 800`; layout e tokens justificados; componentes dos futuros Itens 10 e notas do Item 14 rastreáveis ao WT e à ficha.
-- [ ] Decisão **humana explícita e datada** para a versão exata do WT, registrada no próprio documento (`APROVADO E CONGELADO`).
+## 3. GI-1 — PNG de proposta visual da Tela (aprovação humana)
 
-**Passagem:** todos os WT necessários da página/tema aprovados. A aprovação permite executar GI-2 e não constitui aprovação de PNG.
+- [ ] Produzir PNG isolado **antes de escrever o TextFrame** em `docs/wireframes/images/<tema>/telas/<nome-base>.png`, `360 × 800 px`, a partir do inventário e da fonte funcional; o template oficial não foi copiado nem modificado.
+- [ ] Abrir o PNG fisicamente e **inspecionar a interface real** (não apenas metadados): composição, alinhamento, hierarquia, tamanhos, textos, superfícies, tipografia, cores, ícones, ações visíveis e estados correspondem à documentação e aos padrões aplicáveis do tema.
+- [ ] AppBar é a da interface; item de lista tem ícone apenas quando documentado; cada indicador de estado tem ícone/rótulo conforme sua especificação e não é transformado em botão sem requisito.
+- [ ] Nenhum texto solto, região vazia arbitrária, conteúdo demonstrativo do Modelo C, componente inventado, campo omitido, comprimido ou truncado. Qualquer elemento não verificável bloqueia a aprovação.
+- [ ] Se houver rolagem, apresentar **todos** os PNGs da sequência, um por posição de rolagem, com inventário coberto e sem duplicações; white/black devem ter equivalência funcional. Representações adicionais de estados são PNGs distintos e só existem se os estados forem exigidos.
+- [ ] Registrar no `telas/controle/<nome-base>.md`: caminho, dimensões, SHA-256 de cada PNG/estado/página, fonte de cada elemento, inspeção visual, pendências, responsável, data e **decisão humana expressa vinculada aos hashes**.
 
-## 4. GI-2 — ViewPorts técnicos / Telas de Referência (aprovação humana)
+**Passagem:** PNGs visualmente aprovados, com hashes congelados para documentação. **Aprovação GI-1 não aprova TextFrame nem autoriza montar Prancha.** Se a imagem for alterada depois dessa decisão, GI-1 perde validade para os novos bytes; exigir nova apresentação e aprovação, preservando o histórico dos hashes aprovados.
 
-- [ ] Um PNG **individual por ID/tema/página** tem `360 × 800 px` exatos e nome/caminho/versão do WT aprovado.
-- [ ] Cada pixel/conteúdo representa a posição de rolagem aprovada; os campos e estados visíveis da página coincidem com o WT, inclusive a AppBar e ícones opcionais em itens de lista.
-- [ ] Inventário de cobertura de **todas as páginas**: união dos campos/ações/estados exigidos completa; continuidade ordenada, sem exclusão e sem repetição funcional indevida.
-- [ ] Elementos persistentes repetidos somente se documentados; não copiar o ViewPort demonstrativo como conteúdo funcional nem desenhar a Tela dentro da Prancha.
-- [ ] Geometria, margens, tokens, legibilidade, comportamento de rolagem e equivalência entre temas verificados.
-- [ ] Caminho, dimensões, SHA-256, WT vinculado e decisão **humana explícita** registrados por Tela/página/tema; todas as páginas dependentes aprovadas.
+## 4. GI-2 — TextFrame derivado e aprovação documental do conjunto (aprovação humana)
 
-**Passagem:** todas as Telas necessárias aprovadas e `APROVADO E CONGELADO`, incluindo a verificação do conjunto. Se houver conteúdo excedente, retornar a GI-1 para **nova página de continuidade** e aprovação; mudar a especificação já aprovada exige **nova versão**, sem apagamento histórico.
+- [ ] O TextFrame/Wireframe Text da Tela foi **criado somente após GI-1**, no contrato [`WIREFRAME-TEXT-TELA.md`](WIREFRAME-TEXT-TELA.md), a partir dos PNGs cujos hashes e aprovações constam no controle.
+- [ ] O documento contém vínculo exato com os PNGs, fontes, textos, estados, tokens e **cotas x/y/w/h medidas na imagem**, além do TextFrame textual refletindo a disposição visual aprovada.
+- [ ] Inspeção cruzada **PNG ↔ TextFrame ↔ geometria ↔ requisito** para todos os elementos: nenhum componente fora do PNG, nenhum elemento do PNG sem especificação, nenhum posicionamento aproximado como definição final.
+- [ ] A documentação visual não se resume a desenho ASCII, tabela, régua `y` ou inventário. A **evidência visual é o próprio PNG aprovado**; texto e tabelas só documentam o que já existe nele.
+- [ ] Completude do conjunto de páginas, estados e continuidade comprovada. White e black têm a mesma semântica funcional e suas cores/estilos autorizados, com revisões e aprovações independentes.
+- [ ] Confrontar novamente SHA-256 dos PNGs com os aprovados em GI-1. Se os bytes mudaram, **retornar ao GI-1**, não aceitar mera mudança textual.
+- [ ] Registrar decisão humana **expressa, datada e vinculada à versão e aos hashes** do TextFrame, do PNG e do controle. Só após esse aceite o par Tela + documento pode ficar `APROVADO E CONGELADO`.
 
-## 5. GI-3 — Uso do template vigente e sequência da montagem (técnico)
+**Passagem:** todas as páginas e temas e os estados requeridos estão aprovados **como conjunto visual e documental**. Falha bloqueia montagem. Se mudar paginação/geométrica/estado do PNG, voltar a GI-1; se apenas o texto tiver erro, corrigir o rascunho textual sem alterar o PNG e reapresentar GI-2.
 
-- [ ] A cópia de trabalho da Prancha usa **exatamente** a referência vigente verificada (ou a versão historicamente vinculada a uma revisão autorizada); a origem congelada permanece intacta.
-- [ ] **Primeiro ato de alteração da nova cópia:** substituir o ViewPort técnico demonstrativo pelo PNG da Tela **da mesma página e tema**, `360 × 800 px`, no Modelo C em `x=40`, `y=272`, escala `1:1`, sem recorte, recoloração ou redimensionamento. Conferir identidade pixel a pixel. Coordenadas de outros modelos não podem ser presumidas.
-- [ ] Só **depois** dessa substituição preencher metadados e quadros variáveis: `PÁGINA = XX / YY` da rolagem, `ETAPA = <ID> - <Nome da interface>` da ficha (por exemplo `T00 - Configuração da aplicação`), `VERSÃO = vNN` da revisão e os demais identificadores.
-- [ ] **Item 10 — COMPONENTES:** contém somente tipos, amostras, estados e dimensões dos componentes realmente usados na Tela; AppBar fiel àquela interface (sem depender do exemplo), ícones de lista apenas quando previstos, nenhum item incluído só por existir no template.
-- [ ] **Item 14 — OBSERVAÇÕES TÉCNICAS:** contém somente particularidades, premissas ou restrições comprovadas da Tela/posição, sem copiar notas padrão do template ou inventar preenchimento.
-- [ ] Geometria fixa, painéis e áreas do Modelo C preservados; variabilidade somente conforme seção 6.1 da SPEC 3. Impossibilidade de acomodar informações técnicas na área aprovada **bloqueia**, não cria rolagem falsa da documentação nem autoriza alterar o modelo.
-- [ ] Registro de composição textual preenchido **antes da aprovação final**, com os hashes exatos da Tela, WT, modelo, ViewPort oficial e identidade da página/rolagem.
+## 5. GI-3 — Uso da referência vigente e montagem da Prancha (técnico)
 
-**Passagem:** `GI-3 = CONFORME` com evidências técnicas persistentes. Não é aprovação da Prancha e não requer reexecutar Gates 1–6 da SPEC 1.
+- [ ] Conferir novamente seleção vigente e os hashes dos arquivos oficiais via SPEC 2. A cópia de trabalho é **nova**, `1280 × 1920 px`, e a referência congelada permanece intacta.
+- [ ] **Primeiro ato de alteração da nova cópia:** substituir o ViewPort demonstrativo pelo PNG **já aprovado em GI-2** da mesma página e tema, `360 × 800 px`, para Modelo C em `x=40, y=272`, `1:1`, sem recorte, recoloração ou alteração de pixels. Conferir recorte contra fonte pixel a pixel. Outro modelo exige mapeamento previamente autorizado, nunca coordenadas inferidas.
+- [ ] **Somente depois** preencher cabeçalho/quadros variáveis: `ETAPA = <ID> - <Nome>` da ficha, `PÁGINA = XX / YY` da continuidade e `VERSÃO = vNN` da revisão. Preservar a estrutura do modelo vigente.
+- [ ] **Item 10** contém apenas componentes usados na Tela aprovada, suas amostras/medidas reais; a AppBar é específica e os ícones de lista seguem requisitos individuais, não o exemplo do template.
+- [ ] **Item 14** contém apenas observações técnicas relevantes àquela interface/página; nada genérico é inserido para preencher espaço.
+- [ ] Registro textual de composição contém fontes, nome/hash da Tela e do TextFrame, controle GI-0/1/2, modelo/versão/hash, campos específicos, coordenadas, dados de página e decisão técnica GI-3.
+- [ ] Se uma informação técnica não couber nas áreas fixas, bloquear; não reduzir Tela nem gerar página fictícia de rolagem para acomodar notas da Prancha.
 
-## 6. GI-4 — Conferência e aprovação da Prancha funcional e do conjunto (aprovação humana)
+**Passagem:** GI-3 `CONFORME` com evidências técnicas, não aprovação final. Os Gates 1–6 de construção de template não são executados.
 
-- [ ] PNG da Prancha de Implementação **novo** com `1280 × 1920 px` e caminho/versão corretos; cópia de referência preservada por SHA-256.
-- [ ] Recorte da região ViewPort é **pixel a pixel idêntico** ao PNG isolado aprovado correspondente.
-- [ ] `ETAPA`, `PÁGINA`, `VERSÃO`, ID, tema e status correspondem ao WT, à Tela e ao registro; todas as páginas possuem total `YY` correto.
-- [ ] Item 10 e Item 14 conferidos contra a **Tela efetiva** e o Wireframe Text aprovado, sem itens demonstrativos incorretos, campos omitidos ou notas genéricas.
-- [ ] Todas as Pranchas de todas as posições de rolagem estão presentes, com continuidade completa e equivalência white/black; itens fixos/roláveis preservam comportamento.
-- [ ] Versões antigas e decisões históricas mantidas; todas as fontes, hashes e aprovações independentes estão registradas por tema e página.
-- [ ] **Aprovação humana expressa, datada e vinculada à versão** para cada Prancha; avaliação do conjunto confirma zero campo faltante, zero conteúdo inventado, zero regressão do template.
+## 6. GI-4 — Conferência e aprovação da Prancha e do conjunto (aprovação humana)
 
-**Passagem:** `GI-4 = APROVADO E CONGELADO` somente após aprovação individual e do **conjunto completo dos dois temas**. Só então a interface pode receber estado agregado `APROVADO` no inventário. Falha de apresentação não autoriza editar Tela/WT aprovados nem template.
+- [ ] PNG novo da Prancha `1280 × 1920` com identificação, versão e caminho corretos; template oficial preservado por hash.
+- [ ] Recorte da região de ViewPort da Prancha **pixel a pixel idêntico** ao PNG aprovado do GI-2.
+- [ ] ID, `ETAPA`, `PÁGINA`, `VERSÃO`, temas, datas, status e referências exatas em conformidade com arquivos e aprovações.
+- [ ] Item 10, Item 14 e demais regiões variáveis conferidos com Tela real e documentos, não com exemplos históricos.
+- [ ] Todas as páginas necessárias e estados aplicáveis estão representados conforme a decisão, sem campos faltantes ou duplicados e com equivalência white/black.
+- [ ] Evidências de cada gate, aprovações humanas independentes, nomes, hashes e referências históricas constam dos registros persistentes.
+- [ ] Aprovação humana expressa, datada e vinculada à versão exata **de cada Prancha**; decisão final sobre o conjunto completo dos dois temas.
 
-## 7. Evidência persistente e consequência de falhas
+**Passagem:** `GI-4 = APROVADO E CONGELADO` somente com aprovação individual e do conjunto completo. Só então a interface pode receber `APROVADO` na matriz operacional. Falha na apresentação não autoriza alterar os artefatos anteriores já aprovados.
 
-Registrar **nos próprios Wireframe Text individuais e registros de composição existentes**, sem criar formulário paralelo ou depender da conversa:
+## 7. Evidência persistente, regressão e independência de conversa
 
-```text
-ID funcional / Nome / Tema / Página XX / YY / Versão
-Gate: GI-0 | GI-1 | GI-2 | GI-3 | GI-4
-Critério avaliado / Fonte normativa + localização / Resultado CONFORME ou NÃO CONFORME
-Arquivo de evidência / SHA-256 / dimensão quando aplicável
-Decisão técnica / pendências / impacto sobre as páginas e temas relacionados
-Aprovação humana quando exigida: responsável / data / versão exata / decisão
-Estado final: PENDENTE | EM VERIFICAÇÃO | AGUARDANDO APROVAÇÃO | APROVADO E CONGELADO | BLOQUEADO
-```
+**GI-0 e GI-1 devem existir no registro `telas/controle/<nome-base>.md` ANTES da criação do Wireframe Text individual.** Esse registro é evidência factual do processo, não um segundo contrato visual. GI-2 e as referências aos GI-0/1 devem constar no Wireframe Text e no registro; GI-3/4 devem constar no registro de composição da Prancha. Não criar uma aprovação fictícia para preencher campos e não depender de chat para comprovar decisões.
 
-Não declarar `CONFORME` quando a evidência faltar. Divergência não resolvida bloqueia todos os artefatos descendentes daquele trecho, sem invalidar silenciosamente outros aprovados. Alteração na ordem de rolagem, campos ou total de páginas obriga revisar GI-1/GI-2/GI-3/GI-4 das páginas/temas afetados, com versões e aprovações próprias. Revisão da referência oficial só pela SPEC 2 e processo formal de alteração; não deve ser provocada automaticamente pelo Gate funcional.
+Campos mínimos: `ID / nome / tema / página XX/YY / versão / Gate / regra e fonte / resultado CONFORME ou NÃO CONFORME / arquivo e SHA-256 / dimensões / parecer / responsável / data / decisão / impactos`. Se não houver prova persistente, o Gate é `BLOQUEADO` ou `AGUARDANDO APROVAÇÃO`; aprovação em conversa só vale quando transcrita fielmente para o documento antes do avanço.
 
-**Critério final de saída:** uma pessoa ou execução independente pode reproduzir todos os ViewPorts e Pranchas por página, conferir os 14 blocos de apresentação aplicáveis e rastrear cada elemento à sua origem funcional, utilizando apenas os artefatos aprovados e as evidências persistentes no repositório.
+**Regressão:** alterações de PNG depois de GI-1 exigem reavaliação GI-1/2/3/4 dependentes; alterações apenas do TextFrame antes de GI-2 preservam o PNG aprovado, mas devem passar pela validação cruzada; mudanças na rolagem, total de páginas, estados ou conteúdo funcional exigem voltar ao Gate correspondente com nova versão/rastreabilidade. As alterações não autorizam modificar template, Documento Mestre ou outras interfaces.
+
+**Critério final:** uma pessoa sem acesso a conversas consegue abrir o PNG aprovado, verificar todos os componentes/estados, reproduzir suas especificações a partir do TextFrame derivado, montar a Prancha com a referência vigente e comprovar cada decisão pelo repositório. **Um esquema textual isolado nunca satisfaz o GI-1 nem o GI-2.**

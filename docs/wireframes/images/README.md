@@ -66,7 +66,8 @@ docs/wireframes/images/
 │   │   ├── WF-TEMPLATE-C_v02.md
 │   │   └── WF-VIEWPORT-360x800.png
 │   ├── telas/
-│   │   ├── wiframetext/   # Wireframe Text individual (futuro)
+│   │   ├── controle/      # Decisões GI-0/GI-1 antes do TextFrame (futuro)
+│   │   ├── wiframetext/   # TextFrame derivado após PNG aprovado (futuro)
 │   │   └── <Telas de Referência 360x800, futuras>
 │   ├── wiframetext/      # Registros de composição funcional (futuros)
 │   └── <Pranchas de Implementação, futuras>
@@ -76,7 +77,8 @@ docs/wireframes/images/
     │   ├── WF-TEMPLATE-C_v01.md
     │   └── WF-VIEWPORT-360x800.png
     ├── telas/
-    │   ├── wiframetext/   # Wireframe Text individual (futuro)
+    │   ├── controle/      # Decisões GI-0/GI-1 antes do TextFrame (futuro)
+    │   ├── wiframetext/   # TextFrame derivado após PNG aprovado (futuro)
     │   └── <Telas de Referência 360x800, futuras>
     ├── wiframetext/      # Registros de composição funcional (futuros)
     └── <Pranchas de Implementação, futuras>
@@ -351,13 +353,13 @@ O total final pode aumentar por paginação.
 
 ## 11.1 Localização e nomenclatura operacional
 
-Nomes, páginas, versões, procedimentos de criação/revisão e separação de pastas são definidos **somente** na [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md), seções 3–8. Para um mesmo ID/tema/página/versão, o arquivo de Tela fica em `<tema>/telas/` e o PNG da Prancha de Implementação fica diretamente em `<tema>/`; os registros `.md` ficam nos respectivos diretórios `wiframetext/`. Uma aprovação de Prancha não representa aprovação da Tela.
+Nomes, páginas, versões, procedimentos de criação/revisão e separação de pastas são definidos **somente** na [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md), seções 3–8. Para cada ID/tema/página/versão, o registro prévio de inventário e aprovação visual GI-0/GI-1 fica em `<tema>/telas/controle/` (diretório futuro), o **PNG da Tela deve existir e receber aprovação visual antes da criação de seu TextFrame**, e o arquivo de Tela fica em `<tema>/telas/` e o PNG da Prancha de Implementação fica diretamente em `<tema>/`; os registros `.md` ficam nos respectivos diretórios `wiframetext/`. Uma aprovação de Prancha não representa aprovação da Tela.
 
 Os arquivos de interface funcional ainda estão pendentes; o esquema de diretórios na seção 2 inclui destinos **planejados**, não declara arquivos físicos já existentes.
 
 ## 11.2 Conteúdo e produção
 
-O conteúdo mínimo, a sequência de Wireframe Text → aprovação → Tela → aprovação → Prancha de Implementação → aprovação, a paginação, a equivalência white/black e os critérios de exportação pertencem exclusivamente à [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md), ao [contrato textual da Tela](../../../.specs/wireframes/WIREFRAME-TEXT-TELA.md) e ao [Gate funcional GI-0 a GI-4](../../../.specs/wireframes/GATE-IMPLEMENTACAO-TELAS.md). Os requisitos funcionais permanecem no Documento Mestre. Não inferir conteúdo da demonstração de ViewPort ou da Prancha do Template. Os campos já existentes `PÁGINA` e `ETAPA` devem ser preenchidos conforme a SPEC 3; a matriz abaixo permanece agregada por ID/tema, não por página.
+O conteúdo mínimo, a sequência de inventário GI-0 → PNG visual de Tela → aprovação visual GI-1 → TextFrame derivado do PNG → aprovação documental do conjunto GI-2 → Prancha de Implementação → aprovação GI-4, a paginação, a equivalência white/black e os critérios de exportação pertencem exclusivamente à [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md), ao [contrato textual da Tela](../../../.specs/wireframes/WIREFRAME-TEXT-TELA.md) e ao [Gate funcional GI-0 a GI-4](../../../.specs/wireframes/GATE-IMPLEMENTACAO-TELAS.md). Os requisitos funcionais permanecem no Documento Mestre. Não inferir conteúdo da demonstração de ViewPort ou da Prancha do Template. Os campos já existentes `PÁGINA` e `ETAPA` devem ser preenchidos conforme a SPEC 3; a matriz abaixo permanece agregada por ID/tema, não por página.
 
 ---
 
@@ -489,6 +491,6 @@ Pranchas-modelo de `references/templates/` **e os seis arquivos oficiais de temp
 - SPEC 2 `REFERENCIA-TEMPLATE-OFICIAL.md`: contrato permanente da referência oficialmente selecionada.
 - [`Registro_Controle_Template_Oficial.md`](Registro_Controle_Template_Oficial.md): única fonte da decisão vigente, histórico das substituições, caminhos e hashes.
 - SPEC 3 `PROCESSO-TELA-PRANCHA.md`: produção e aprovação de Wireframe Text da Tela, Tela de Referência e Prancha de Implementação.
-- `WIREFRAME-TEXT-TELA.md`: contrato textual específico da Tela, aprovado antes do PNG.
+- `WIREFRAME-TEXT-TELA.md`: contrato de TextFrame individual **derivado do PNG visual previamente aprovado em GI-1**, com confronto e aprovação documental em GI-2.
 - `REGRAS-TECNICAS.md`: invariantes de representação; `WIREFRAME-TEXT.md` e `MONTAGEM-IMAGEM.md`: contratos auxiliares da **Prancha do Template**.
 - Este README: **estrutura, inventário, matriz de 71 IDs e contadores**, sem autorização para redefinir qualquer regra anterior.

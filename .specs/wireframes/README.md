@@ -16,18 +16,21 @@
 
 ### SPEC 3 — Prancha de Implementação: utilização funcional
 
-[`PROCESSO-TELA-PRANCHA.md`](PROCESSO-TELA-PRANCHA.md) governa **cada interface T/M/E**, nos dois temas, com o contrato auxiliar [`WIREFRAME-TEXT-TELA.md`](WIREFRAME-TEXT-TELA.md) e o [Gate obrigatório de conformidade GI-0 a GI-4](GATE-IMPLEMENTACAO-TELAS.md):
+[`PROCESSO-TELA-PRANCHA.md`](PROCESSO-TELA-PRANCHA.md) governa **cada interface T/M/E**, nos dois temas, com o contrato auxiliar de **TextFrame posterior ao PNG** [`WIREFRAME-TEXT-TELA.md`](WIREFRAME-TEXT-TELA.md) e o [Gate obrigatório de conformidade GI-0 a GI-4](GATE-IMPLEMENTACAO-TELAS.md):
 
 ```text
-Documento Mestre → Wireframe Text individual da Tela → APROVAÇÃO
-→ Tela de Referência independente (360 × 800 px) → APROVAÇÃO
+Documento Mestre + ficha/Textframe funcional → GI-0 / inventário
+→ PNG VISUAL da Tela isolada (360 × 800 por tema/página/estado aplicável)
+→ GI-1 / INSPEÇÃO E APROVAÇÃO VISUAL do PNG e do seu hash
+→ TextFrame / Wireframe Text DERIVADO do PNG já aprovado
+→ GI-2 / CONFRONTO E APROVAÇÃO DOCUMENTAL do conjunto PNG + TextFrame
 → verificação da referência vigente (SPEC 2)
-→ substituição inicial do ViewPort na cópia funcional por página
+→ GI-3 / substituição inicial do ViewPort na nova cópia de Prancha
 → preenchimento fiel dos campos PÁGINA, ETAPA, Item 10 e Item 14
-→ nova Prancha de Implementação → GATE GI-4 / APROVAÇÃO / VERSIONAMENTO
+→ GI-4 / APROVAÇÃO da Prancha e do conjunto / VERSIONAMENTO
 ```
 
-Não desenhar a Tela diretamente na Prancha. A Tela não herda medidas de componentes demonstrativos da Prancha e não deve ser redimensionada para caber nela. Se a interface precisar de rolagem, produzir **um ViewPort técnico aprovado e uma nova Prancha por posição/página**, mantendo todos os campos, sem reduzir ou omitir conteúdos; o campo `PÁGINA = XX / YY` controla a sequência e `ETAPA = <ID> - <Nome>` identifica a mesma interface. O Item 10 só registra componentes usados (AppBar fiel; ícones de lista opcionais) e o Item 14 só observações pertinentes à Tela. Uma Prancha de Implementação **não modifica** o template congelado. Os Gates 1–6 da SPEC 1 não são reexecutados por interface funcional.
+Não desenhar a Tela diretamente na Prancha. O PNG visual é a primeira representação da Tela e deve ser aprovado antes de escrever seu TextFrame; um esquema ASCII não substitui a imagem. Os registros GI-0/GI-1 ficam em `telas/controle/` e são distintos do TextFrame. A Tela não herda medidas de componentes demonstrativos da Prancha e não deve ser redimensionada para caber nela. Se a interface precisar de rolagem, produzir **um ViewPort técnico aprovado e uma nova Prancha por posição/página**, mantendo todos os campos, sem reduzir ou omitir conteúdos; o campo `PÁGINA = XX / YY` controla a sequência e `ETAPA = <ID> - <Nome>` identifica a mesma interface. O Item 10 só registra componentes usados (AppBar fiel; ícones de lista opcionais) e o Item 14 só observações pertinentes à Tela. Uma Prancha de Implementação **não modifica** o template congelado. Os Gates 1–6 da SPEC 1 não são reexecutados por interface funcional.
 
 ## Norma técnica transversal
 
