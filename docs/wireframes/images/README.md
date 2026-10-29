@@ -66,9 +66,12 @@ docs/wireframes/images/
 │   │   ├── WF-TEMPLATE-C_v02.md
 │   │   └── WF-VIEWPORT-360x800.png
 │   ├── telas/
-│   │   ├── controle/      # Decisões GI-0/GI-1 antes do TextFrame (futuro)
-│   │   ├── wiframetext/   # TextFrame derivado após PNG aprovado (futuro)
-│   │   └── <Telas de Referência 360x800, futuras>
+│   │   ├── controle/
+│   │   │   └── T00-01-01_v01.md
+│   │   ├── wiframetext/
+│   │   │   └── T00-01-01_v01.md
+│   │   ├── T00-01-01_v01.png
+│   │   └── T00-01-01_v01__estado-desconectada.png
 │   ├── wiframetext/      # Registros de composição funcional (futuros)
 │   └── <Pranchas de Implementação, futuras>
 └── black/
@@ -77,9 +80,12 @@ docs/wireframes/images/
     │   ├── WF-TEMPLATE-C_v01.md
     │   └── WF-VIEWPORT-360x800.png
     ├── telas/
-    │   ├── controle/      # Decisões GI-0/GI-1 antes do TextFrame (futuro)
-    │   ├── wiframetext/   # TextFrame derivado após PNG aprovado (futuro)
-    │   └── <Telas de Referência 360x800, futuras>
+    │   ├── controle/
+    │   │   └── T00-01-01_v01.md
+    │   ├── wiframetext/
+    │   │   └── T00-01-01_v01.md
+    │   ├── T00-01-01_v01.png
+    │   └── T00-01-01_v01__estado-desconectada.png
     ├── wiframetext/      # Registros de composição funcional (futuros)
     └── <Pranchas de Implementação, futuras>
 ```
@@ -396,7 +402,7 @@ Autoridade operacional:
 
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|
-| 01 | `T00` | PENDENTE | PENDENTE | PENDENTE |
+| 01 | `T00` | EM DEFINIÇÃO | EM DEFINIÇÃO | EM DEFINIÇÃO |
 | 02 | `T00.1` | PENDENTE | PENDENTE | PENDENTE |
 | 03 | `T00.2` | PENDENTE | PENDENTE | PENDENTE |
 | 04 | `T00.3` | PENDENTE | PENDENTE | PENDENTE |
