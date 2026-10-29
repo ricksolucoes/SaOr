@@ -8,34 +8,29 @@
 **Interfaces:** `71`  
 **Variações funcionais obrigatórias:** Claro (`white`) e Escuro (`black`)  
 **Viewport lógico oficial:** `360 × 800 px`  
-**Canvas técnico das pranchas:** `1280 × 1920 px`
+**Canvas técnico das pranchas:** `1280 × 1920 px`  
+**Template oficial atualmente vigente:** Modelo C (`white` v02 / `black` v01); arquivos `APROVADO E CONGELADO`, seleção revisável somente por aprovação formal  
+**Vigência e histórico das decisões:** [`Registro_Controle_Template_Oficial.md`](Registro_Controle_Template_Oficial.md)
 
 ---
 
 # 1. Responsabilidade deste documento
 
-Este README é a fonte de **controle operacional** da etapa de wireframes.
+Este README é um **inventário e controle operacional**: diretórios, referências físicas, histórico dos modelos A/B/C, identidade dos arquivos, matriz das 71 interfaces, estados agregados e contadores. Ele **não** define o processo normativo de construção nem seleciona um modelo por conta própria.
 
-As regras normativas reutilizáveis pertencem a:
+Autoridades (caminhos relativos à raiz do repositório):
 
 ```text
-../../../.specs/wireframes/REGRAS-TECNICAS.md
-../../../.specs/wireframes/PROCESSO-PRANCHA.md
-../../../.specs/wireframes/WIREFRAME-TEXT.md
-../../../.specs/wireframes/MONTAGEM-IMAGEM.md
+docs/Documento_Mestre.md — fonte de requisitos funcionais
+.specs/wireframes/REGRAS-TECNICAS.md — invariantes de representação
+.specs/wireframes/PROCESSO-PRANCHA.md — SPEC 1, Prancha do Template
+.specs/wireframes/REFERENCIA-TEMPLATE-OFICIAL.md — SPEC 2, referência selecionada
+docs/wireframes/images/Registro_Controle_Template_Oficial.md — vigência/histórico/hashes
+.specs/wireframes/PROCESSO-TELA-PRANCHA.md — SPEC 3, fluxo funcional
+.specs/wireframes/WIREFRAME-TEXT-TELA.md — contrato do texto individual da Tela
 ```
 
-Este README mantém:
-
-- estrutura operacional da etapa;
-- referências físicas existentes no diretório;
-- regras de paginação e nomenclatura;
-- critérios operacionais de produção e aprovação;
-- controle das 71 interfaces.
-
-Ele não deve criar uma segunda definição para regras já canônicas em `.specs/`.
-
-Ele **não redefine** regras de negócio, conteúdo funcional, Textframes, tokens visuais oficiais do produto ou arquitetura. Esses assuntos permanecem em seus documentos canônicos.
+Este README não altera a baseline funcional nem os hashes do template. Não devem existir regras concorrentes aqui: quando necessário, a seção operacional aponta para a SPEC competente.
 
 ---
 
@@ -46,6 +41,7 @@ A estrutura física vigente é:
 ```text
 docs/wireframes/images/
 ├── README.md
+├── Registro_Controle_Template_Oficial.md
 ├── references/
 │   ├── Especificação Técnica - Prancha de Trabalho.png
 │   ├── white/
@@ -65,9 +61,25 @@ docs/wireframes/images/
 │           └── wiframetext/
 │               └── <mesmo-nome-base>.md
 ├── white/
-│   └── <saídas funcionais claras, em etapa posterior>
+│   ├── template/
+│   │   ├── WF-TEMPLATE-C_v02.png
+│   │   ├── WF-TEMPLATE-C_v02.md
+│   │   └── WF-VIEWPORT-360x800.png
+│   ├── telas/
+│   │   ├── wiframetext/   # Wireframe Text individual (futuro)
+│   │   └── <Telas de Referência 360x800, futuras>
+│   ├── wiframetext/      # Registros de composição funcional (futuros)
+│   └── <Pranchas de Implementação, futuras>
 └── black/
-    └── <saídas funcionais escuras, em etapa posterior>
+    ├── template/
+    │   ├── WF-TEMPLATE-C_v01.png
+    │   ├── WF-TEMPLATE-C_v01.md
+    │   └── WF-VIEWPORT-360x800.png
+    ├── telas/
+    │   ├── wiframetext/   # Wireframe Text individual (futuro)
+    │   └── <Telas de Referência 360x800, futuras>
+    ├── wiframetext/      # Registros de composição funcional (futuros)
+    └── <Pranchas de Implementação, futuras>
 ```
 
 Separação de responsabilidade:
@@ -82,8 +94,17 @@ references/templates/white/
 references/templates/black/
 → pranchas-modelo e Wireframe Text da variação escura
 
-white/ e black/ na raiz de images/
-→ saídas funcionais futuras produzidas a partir da prancha-modelo aprovada
+white/template/ e black/template/
+→ conjunto oficial **atualmente vigente** por tema: Prancha C (PNG + Wireframe Text) + Viewport técnico (PNG), todos congelados; NÃO são interfaces funcionais
+
+white/telas/ e black/telas/
+→ telas de referência funcionais independentes e seus Wireframe Text individuais (futuras)
+
+white/wiframetext/ e black/wiframetext/
+→ registros textuais de composição da Prancha de Implementação (futuros)
+
+white/ e black/ na raiz de images/ (fora de template/ e telas/)
+→ PNGs de Prancha de Implementação (futuros), vinculados à versão oficial exata utilizada
 ```
 
 A estrutura anterior baseada em pastas de ciclo de vida não faz mais parte da organização vigente.
@@ -192,59 +213,47 @@ A construção e o acompanhamento de cada prancha-modelo obedecem a:
 
 ```text
 ../../../.specs/wireframes/REGRAS-TECNICAS.md
-../../../.specs/wireframes/PROCESSO-PRANCHA.md
 ../../../.specs/wireframes/WIREFRAME-TEXT.md
 ../../../.specs/wireframes/MONTAGEM-IMAGEM.md
 ```
 
 Este README não redefine dimensões, cotas ou geometria desses arquivos.
 
-## 3.4 Referências visuais contextuais vigentes
+## 3.4 Referências históricas e seleção atualmente vigente
 
-Pranchas-modelo existentes também podem exercer função de **referência visual contextual** quando isso estiver registrado operacionalmente.
+Os artefatos completos dos Modelos A/B/C permanecem em `references/templates/`, em `white` e `black`, conforme inventário na seção 3.3. O histórico não é uma lista de modelos intercambiáveis para nova produção funcional. **A vigência é determinada somente pelo registro genérico**, conforme a SPEC 2:
 
-Essa função serve para ajudar a compreender a linguagem visual já alcançada na etapa, incluindo:
+- [`.specs/wireframes/REFERENCIA-TEMPLATE-OFICIAL.md`](../../../.specs/wireframes/REFERENCIA-TEMPLATE-OFICIAL.md)
+- [`Registro_Controle_Template_Oficial.md`](Registro_Controle_Template_Oficial.md)
 
-- nível de acabamento;
-- densidade documental;
-- hierarquia visual;
-- tratamento de cabeçalhos, metadados e regiões documentais;
-- tratamento cromático integral, destaques, cores semânticas e contraste;
-- ritmo, alinhamento e qualidade geral de apresentação.
+**Seleção atual registrada em 28/10/2026:** Modelo C, `white` v02 e `black` v01. A/B e versões históricas do C permanecem como histórico/contexto; nenhuma substituição pode ser presumida por imagem, nome ou preferência. A referência de uma saída já aprovada é a **versão exata registrada naquela saída**, mesmo após uma eventual mudança de vigência.
 
-A referência visual contextual não substitui `REGRAS-TECNICAS.md`, o Wireframe Text específico nem os ativos físicos obrigatórios. Se a composição específica de uma nova prancha divergir da referência, prevalece a composição documentada para a nova prancha.
+### 3.4.1 Inventário visual contextual aprovado e histórico
 
-A função contextual também inclui compreender a cromia esperada da composição completa. `white` e `black` identificam variações de tema e não devem ser interpretados como instrução para converter a prancha em escala de cinza. A regra normativa de preservação cromática permanece em `MONTAGEM-IMAGEM.md`.
-
-Registro operacional vigente:
+As pranchas-modelo ainda podem servir como **referências contextuais de linguagem e acabamento**: densidade documental, hierarquia, cabeçalho, metadados, distribuição de regiões, tratamento cromático integral, contrastes, alinhamento, ritmo e qualidade de apresentação. Essa função **não as promove a modelo vigente** e não autoriza copiar sua geometria para uma interface funcional; a cromia normativa continua definida em `REGRAS-TECNICAS.md` e `MONTAGEM-IMAGEM.md`.
 
 ```text
-white
-→ references/templates/white/WF-TEMPLATE-A_v04.png
-→ references/templates/white/WF-TEMPLATE-B_v02.png
-→ references/templates/white/WF-TEMPLATE-C_v02.png
-→ conjunto de referências visuais contextuais aprovadas da variação clara
+white — conjunto contextual atualizado
+references/templates/white/WF-TEMPLATE-A_v04.png
+references/templates/white/WF-TEMPLATE-B_v02.png
+references/templates/white/WF-TEMPLATE-C_v02.png
 
-black
-→ references/templates/black/WF-TEMPLATE-A_v01.png
-→ references/templates/black/WF-TEMPLATE-B_v01.png
-→ references/templates/black/WF-TEMPLATE-C_v01.png
+black — conjunto contextual atualizado
+references/templates/black/WF-TEMPLATE-A_v01.png
+references/templates/black/WF-TEMPLATE-B_v01.png
+references/templates/black/WF-TEMPLATE-C_v01.png
 ```
 
-`WF-TEMPLATE-A_v01.png`, `WF-TEMPLATE-A_v02.png` e `WF-TEMPLATE-A_v03.png` permanecem como referências históricas da evolução do Modelo A white; `WF-TEMPLATE-B_v01.png` e `WF-TEMPLATE-C_v01.png` permanecem como histórico dos Modelos B e C white. Não devem ser promovidos novamente a referência vigente apenas por existirem no diretório.
+Também permanecem as versões históricas white `A_v01`, `A_v02`, `A_v03`, `B_v01` e `C_v01`, preservadas para rastreabilidade de evolução. `white`/`black` são variações técnicas e cromáticas, **não** autorização para converter elementos em escala de cinza. A imagem contextual nunca se sobrepõe às especificações aprovadas.
 
-Os conjuntos vigentes são, portanto:
+## 3.5 Arquivos da referência oficial atualmente vigente
 
-```text
-white → A_v04 / B_v02 / C_v02
-black → A_v01 / B_v01 / C_v01
-```
+| Tema | Prancha aprovada | Wireframe Text da Prancha aprovada | ViewPort demonstrativo |
+|---|---|---|---|
+| `white` | `white/template/WF-TEMPLATE-C_v02.png` | `white/template/WF-TEMPLATE-C_v02.md` | `white/template/WF-VIEWPORT-360x800.png` |
+| `black` | `black/template/WF-TEMPLATE-C_v01.png` | `black/template/WF-TEMPLATE-C_v01.md` | `black/template/WF-VIEWPORT-360x800.png` |
 
-Nenhuma dessas referências define geometria universal. Cada Wireframe Text preserva sua própria composição; o conjunto serve para compreender linguagem, acabamento e decisões já aprovadas, sem copiar automaticamente layout ou conteúdo.
-
-**Ainda não existe decisão registrada de qual Modelo A/B/C será o template oficial para as saídas funcionais, nem regra objetiva de seleção entre eles.** Até que essa decisão seja formalizada, nenhuma produção funcional deve escolher um dos três modelos por inferência, ordem de versão, posição no diretório ou semelhança visual.
-
-Esse registro pode evoluir quando um template oficial ou uma regra de seleção for explicitamente aprovado para a etapa, sem transformar silenciosamente a geometria de uma prancha específica em template universal.
+Os seis arquivos e as seis origens estão preservados. **Caminhos e hashes oficiais devem ser conferidos diretamente no registro genérico**, não inferidos desta tabela de estado. O ViewPort demonstrativo não constitui Tela funcional. A produção individual segue a SPEC 3 e não conta nenhum desses arquivos como saída T/M/E.
 
 ---
 
@@ -340,129 +349,15 @@ Mínimo funcional: 142
 
 O total final pode aumentar por paginação.
 
-## 11.1 Nomenclatura
+## 11.1 Localização e nomenclatura operacional
 
-```text
-<ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>.png
-```
+Nomes, páginas, versões, procedimentos de criação/revisão e separação de pastas são definidos **somente** na [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md), seções 3–8. Para um mesmo ID/tema/página/versão, o arquivo de Tela fica em `<tema>/telas/` e o PNG da Prancha de Implementação fica diretamente em `<tema>/`; os registros `.md` ficam nos respectivos diretórios `wiframetext/`. Uma aprovação de Prancha não representa aprovação da Tela.
 
-Exemplos:
+Os arquivos de interface funcional ainda estão pendentes; o esquema de diretórios na seção 2 inclui destinos **planejados**, não declara arquivos físicos já existentes.
 
-```text
-T00-01-01_v01.png
-T00-01-02_v01.png
-T00-02-02_v01.png
-```
+## 11.2 Conteúdo e produção
 
-Significado:
-
-- `<ID>` — ID canônico da interface;
-- `<PÁGINA>` — página documental atual;
-- `<TOTAL>` — quantidade total de páginas daquela representação;
-- `<VERSÃO>` — versão específica daquela página.
-
-Regras de versionamento:
-
-- uma correção que não altere a quantidade total de páginas pode incrementar somente a versão da página afetada;
-- se a alteração modificar o total de páginas, toda a nova sequência deve refletir o novo total de forma consistente;
-- uma versão preservada não deve ser sobrescrita silenciosamente.
-
-## 11.2 Paginação
-
-Quando o conteúdo exceder `360 × 800 px`:
-
-- manter o viewport;
-- não comprimir artificialmente;
-- criar páginas sequenciais;
-- repetir somente elementos persistentes;
-- continuar o conteúdo no ponto correspondente;
-- não inventar paginação funcional;
-- usar indicador de rolagem somente quando necessário.
-
-A interface só é aprovada quando todas as páginas Claro e Escuro estiverem aprovadas.
-
-## 11.3 Equivalência Claro / Escuro
-
-Devem permanecer iguais: informações, ações/destinos, campos, estados, hierarquia, agrupamentos, proporções, navegação, ordem de leitura, componentes, tipografia e paginação. A diferença permitida é a paleta técnica da representação.
-
----
-
-# 12. Conteúdo obrigatório da prancha funcional
-
-```text
-Projeto: SaOr - Sales Order
-Interface: <ID> — <Nome>
-Baseline: v1.0
-Etapa: Wireframe Conceitual em Imagem
-Variação: Claro | Escuro
-Status: PENDENTE | EM VALIDAÇÃO | AJUSTES NECESSÁRIOS | APROVADO
-Página: <XX>/<YY>
-Versão: vNN
-Viewport: <valor vigente de REGRAS-TECNICAS.md>
-Orientação: <valor vigente de REGRAS-TECNICAS.md>
-Canvas: <valor vigente de REGRAS-TECNICAS.md>
-Escala: <valor vigente de REGRAS-TECNICAS.md>
-Fonte técnica: <valor vigente de REGRAS-TECNICAS.md>
-```
-
-Mostrar somente tokens e observações realmente usados naquela representação.
-
----
-
-# 13. Regra de produção funcional
-
-Antes de produzir uma interface, consultar no Documento Mestre:
-
-- Ficha funcional de aceite;
-- objetivo;
-- informações exibidas;
-- campos e obrigatoriedade;
-- ações e destinos;
-- Textframe;
-- estados;
-- retorno;
-- interfaces relacionadas;
-- regras transversais aplicáveis.
-
-É proibido inventar funcionalidade, remover ação, criar destino inexistente, fundir IDs, alterar Textframe por conveniência visual, introduzir componente funcional não documentado ou transformar referência conceitual em tecnologia definitiva.
-
-## 13.1 Tratamento de ocorrências
-
-Durante a produção, qualquer dúvida ou incompatibilidade deve ser classificada antes de alterar a representação:
-
-| Classificação | Tratamento |
-|---|---|
-| `REPRESENTÁVEL` | produzir exatamente conforme a documentação vigente |
-| `AMBIGUIDADE DE REPRESENTAÇÃO` | adotar interpretação conservadora, sem alterar função, e registrar a ambiguidade antes de consolidar |
-| `CONTRADIÇÃO DOCUMENTAL` | não resolver por inferência; apresentar a contradição para decisão |
-| `REQUISITO NOVO` | não incorporar à baseline vigente; encaminhar para o processo formal de alteração |
-
-Essa classificação não cria uma segunda baseline e não autoriza modificar silenciosamente o Documento Mestre.
-
-## 13.2 Gate técnico antes da exportação
-
-Uma prancha somente pode ser considerada pronta para exportação quando a representação tiver sido conferida contra a documentação vigente.
-
-Checklist obrigatório:
-
-```text
-[ ] canvas físico validado
-[ ] viewport físico validado
-[ ] escala 1:1 validada
-[ ] textos conferidos
-[ ] ícones conferidos
-[ ] medidas e espaçamentos conferidos
-[ ] componentes conferidos
-[ ] tokens técnicos utilizados conferidos
-[ ] estados representados conferidos
-[ ] página, total de páginas e versão conferidos
-[ ] equivalência Claro/Escuro preservada quando aplicável
-[ ] nenhuma informação de conversa, processo interno ou validação temporária foi incorporada à prancha
-```
-
-Se qualquer item obrigatório falhar, o PNG não deve ser tratado como artefato pronto para validação ou aprovação.
-
-A conferência é feita contra as fontes documentais vigentes; a aparência de uma prancha raster anterior não substitui esse gate. Quando houver referência visual contextual vigente aplicável, ela também deve ser observada para verificar continuidade de linguagem e qualidade, sem substituir a validação documental.
+O conteúdo mínimo, a sequência de Wireframe Text → aprovação → Tela → aprovação → Prancha de Implementação → aprovação, a paginação, a equivalência white/black e os critérios de exportação pertencem exclusivamente à [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md) e ao [contrato textual da Tela](../../../.specs/wireframes/WIREFRAME-TEXT-TELA.md). Os requisitos funcionais permanecem no Documento Mestre. Não inferir conteúdo da demonstração de ViewPort ou da Prancha do Template.
 
 ---
 
@@ -583,20 +478,17 @@ Mínimo de imagens funcionais:     142
 Total final: variável por paginação
 ```
 
-Pranchas-modelo de `references/templates/` não entram nessa contagem.
+Pranchas-modelo de `references/templates/` **e os seis arquivos oficiais de template em `white/template/` e `black/template/`** não entram nessa contagem. Telas isoladas não são Pranchas funcionais; a matriz mantém o controle das saídas funcionais conforme seus critérios próprios.
 
 ---
 
 # 17. Autoridade documental
 
-1. `docs/Documento_Mestre.md` — conteúdo e comportamento funcional;
-2. `docs/Registro_Fechamento_Documento_Mestre.md` — proteção da baseline;
-3. `.specs/wireframes/REGRAS-TECNICAS.md` — invariantes técnicos;
-4. `.specs/wireframes/PROCESSO-PRANCHA.md` — sequência obrigatória de construção;
-5. `.specs/wireframes/WIREFRAME-TEXT.md` — contrato documental;
-6. `.specs/wireframes/MONTAGEM-IMAGEM.md` — leitura contextual e método de execução visual profissional;
-7. este README — estrutura operacional, localização e papel contextual das referências vigentes;
-8. Wireframe Text específico em `references/templates/<variação>/wiframetext/` — composição reproduzível da prancha-modelo;
-9. PNG correspondente em `references/templates/<variação>/` — representação visual resultante da prancha-modelo.
-
-Artefato inferior não altera silenciosamente uma regra de nível superior.
+- Documento Mestre: requisitos, fichas funcionais e Textframes das 71 interfaces.
+- SPEC 1 `PROCESSO-PRANCHA.md`: definição/construção técnica de uma **Prancha do Template**; não governa saídas T/M/E.
+- SPEC 2 `REFERENCIA-TEMPLATE-OFICIAL.md`: contrato permanente da referência oficialmente selecionada.
+- [`Registro_Controle_Template_Oficial.md`](Registro_Controle_Template_Oficial.md): única fonte da decisão vigente, histórico das substituições, caminhos e hashes.
+- SPEC 3 `PROCESSO-TELA-PRANCHA.md`: produção e aprovação de Wireframe Text da Tela, Tela de Referência e Prancha de Implementação.
+- `WIREFRAME-TEXT-TELA.md`: contrato textual específico da Tela, aprovado antes do PNG.
+- `REGRAS-TECNICAS.md`: invariantes de representação; `WIREFRAME-TEXT.md` e `MONTAGEM-IMAGEM.md`: contratos auxiliares da **Prancha do Template**.
+- Este README: **estrutura, inventário, matriz de 71 IDs e contadores**, sem autorização para redefinir qualquer regra anterior.

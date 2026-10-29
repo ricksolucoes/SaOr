@@ -1,87 +1,44 @@
-# Wireframes — Índice de especificações
+# SaOr — Wireframes: índice de autoridades e contratos
 
-Este diretório contém as regras canônicas aplicáveis à etapa de Wireframe Conceitual em Imagem.
+**Fase:** Wireframe Conceitual em Imagem. A baseline funcional `v1.0` é definida em [`docs/Documento_Mestre.md`](../../docs/Documento_Mestre.md). Este README é índice, não um quarto processo normativo.
 
-## Princípio fundamental
+## Três SPECs distintas
 
-**Não existe um template visual universal de prancha.**
+### SPEC 1 — Prancha do Template: definição técnica
 
-Cada prancha-modelo é uma composição variável.
+[`PROCESSO-PRANCHA.md`](PROCESSO-PRANCHA.md): processo de construção da **estrutura de uma nova prancha-modelo** a partir de canvas vazio, com Gates 1–6, aprovação de texto e PNG. Contratos auxiliares: [`WIREFRAME-TEXT.md`](WIREFRAME-TEXT.md) (especificação textual da Prancha do Template) e [`MONTAGEM-IMAGEM.md`](MONTAGEM-IMAGEM.md) (execução visual profissional). Não governa interfaces T/M/E já baseadas em referência aprovada.
 
-O que é padronizado é:
+### SPEC 2 — Prancha de Modelo (Template): referência selecionada
 
-```text
-- as regras técnicas invariantes;
-- a sequência de construção;
-- os gates técnicos e os gates de aprovação humana;
-- o conjunto mínimo de informações que o Wireframe Text deve registrar;
-- a obrigação de recalcular a geometria para o conteúdo real da prancha.
-```
+[`REFERENCIA-TEMPLATE-OFICIAL.md`](REFERENCIA-TEMPLATE-OFICIAL.md): como identificar, validar e preservar a **referência aprovada e vigente**, **não** como desenhar outra prancha. A fonte de verdade da seleção atual e de todas as decisões históricas é o [`Registro_Controle_Template_Oficial.md`](../../docs/wireframes/images/Registro_Controle_Template_Oficial.md).
 
-Não é padronizado:
+**Seleção vigente na atualização deste índice:** Modelo C, `white` v02 e `black` v01, aprovado em 28/10/2026. As seis cópias oficiais ficam em `docs/wireframes/images/<tema>/template/`, com hashes e origens inventariados no registro. Uma versão aprovada permanece congelada mesmo quando deixa de ser vigente; revisão exige justificativa, autorização, nova versão e atualização formal do registro.
+
+### SPEC 3 — Prancha de Implementação: utilização funcional
+
+[`PROCESSO-TELA-PRANCHA.md`](PROCESSO-TELA-PRANCHA.md) governa **cada interface T/M/E**, nos dois temas, com o contrato auxiliar [`WIREFRAME-TEXT-TELA.md`](WIREFRAME-TEXT-TELA.md):
 
 ```text
-- a posição universal do viewport;
-- a largura universal dos cartões documentais;
-- a quantidade universal de colunas;
-- a altura universal dos blocos;
-- a geometria específica de uma alternativa;
-- a distribuição visual de A, B, C ou futuras composições.
+Documento Mestre → Wireframe Text individual da Tela → APROVAÇÃO
+→ Tela de Referência independente (360 × 800 px) → APROVAÇÃO
+→ verificação da referência vigente (SPEC 2)
+→ nova Prancha de Implementação → APROVAÇÃO / VERSIONAMENTO
 ```
 
-## Specs
+Não desenhar a Tela diretamente na Prancha. A Tela não herda medidas de componentes demonstrativos da Prancha e não deve ser ajustada para caber nela. Uma Prancha de Implementação **não modifica** o template congelado. Os Gates 1–6 da SPEC 1 não são reexecutados por interface funcional.
 
-1. [`REGRAS-TECNICAS.md`](REGRAS-TECNICAS.md)
-   - canvas;
-   - viewport;
-   - grid e spacing;
-   - tipografia técnica;
-   - tokens;
-   - componentes;
-   - bordas, radius e elevação;
-   - iconografia;
-   - estados;
-   - acessibilidade estrutural.
+## Norma técnica transversal
 
-2. [`PROCESSO-PRANCHA.md`](PROCESSO-PRANCHA.md)
-   - ordem obrigatória de construção;
-   - congelamento por etapas;
-   - cálculo do espaço restante;
-   - aprovação antes da imagem;
-   - validação do PNG contra a especificação.
+[`REGRAS-TECNICAS.md`](REGRAS-TECNICAS.md) determina canvas, ViewPort, margens, tokens, componentes, estados e acessibilidade da representação. Uma norma compartilhada não escolhe um modelo oficial e não define conteúdo individual das interfaces.
 
-3. [`WIREFRAME-TEXT.md`](WIREFRAME-TEXT.md)
-   - função do Wireframe Text;
-   - conteúdo mínimo;
-   - contrato mínimo por elemento;
-   - proibições;
-   - relação entre texto, composição e imagem.
+## Consulta por tarefa
 
-4. [`MONTAGEM-IMAGEM.md`](MONTAGEM-IMAGEM.md)
-   - leitura contextual antes da montagem;
-   - uso correto das referências técnicas e visuais existentes;
-   - execução visual profissional do Wireframe Text aprovado;
-   - qualidade, consistência e controle de regressão;
-   - validação da imagem sem substituir a composição específica.
+| Tarefa | Consultar nesta ordem de responsabilidade |
+|---|---|
+| Definir/revisar prancha-modelo | SPEC 1 → regras técnicas → Wireframe Text da Prancha → montagem visual → aprovações |
+| Identificar referência oficial | SPEC 2 → registro genérico → seis artefatos físicos e hashes |
+| Produzir uma interface funcional | Documento Mestre → SPEC 3 → contrato do Wireframe Text da Tela → normas técnicas → SPEC 2 → arquivos funcionais e registros de aprovação |
+| Localizar arquivos, versões e estados | [`docs/wireframes/images/README.md`](../../docs/wireframes/images/README.md) |
+| Solicitar mudança de qualquer norma ou versão congelada | [`.specs/PROCESSO-ALTERACAO-ASSISTIDA.md`](../PROCESSO-ALTERACAO-ASSISTIDA.md) |
 
-## Regra de uso
-
-Antes de criar ou alterar um Wireframe Text:
-
-```text
-1. identificar a variação da prancha-modelo (`white` ou `black`) na estrutura operacional;
-2. ler REGRAS-TECNICAS.md;
-3. executar PROCESSO-PRANCHA.md;
-4. registrar o resultado em conformidade com WIREFRAME-TEXT.md;
-5. depois da aprovação do Wireframe Text, ler MONTAGEM-IMAGEM.md;
-6. consultar em docs/wireframes/images/README.md as referências técnicas e visuais aplicáveis;
-7. produzir a imagem preservando a composição específica e a continuidade visual pertinente ao contexto.
-```
-
-A localização física das referências e das pranchas-modelo é definida em:
-
-```text
-docs/wireframes/images/README.md
-```
-
-Referências específicas de `white` e `black` não devem ser misturadas. Referências neutras compartilhadas podem permanecer diretamente em `docs/wireframes/images/references/`.
+**Proibição:** nenhuma instrução de README, referência visual, geometria histórica, nome de arquivo ou prompt altera os contratos aprovados ou substitui uma decisão explícita. Conteúdo insuficiente bloqueia a etapa, em vez de autorizar inferências.

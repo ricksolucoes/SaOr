@@ -2,7 +2,7 @@
 
 ## 1. Função
 
-O Wireframe Text é a especificação reproduzível de uma prancha específica.
+Este contrato governa o **Wireframe Text de definição da Prancha do Template (SPEC 1)**. Especifica uma prancha-modelo concreta e sua construção, **não** a geometria interna de uma Tela funcional. A referência oficial selecionada obedece à SPEC 2 e o Wireframe Text individual da Tela obedece a [`WIREFRAME-TEXT-TELA.md`](WIREFRAME-TEXT-TELA.md), subordinado à SPEC 3.
 
 Ele deve permitir que outra execução construa a imagem sem depender de:
 
@@ -74,7 +74,7 @@ checklist de validação
 
 ## 4.1 Estado obrigatório do processo
 
-Todo Wireframe Text específico deve permitir que uma execução nova determine, sem consultar conversa anterior, em qual etapa o trabalho está.
+Todo Wireframe Text específico **de Prancha do Template** deve permitir que uma execução nova determine, sem consultar conversa anterior, em qual etapa o trabalho está.
 
 Deve registrar:
 

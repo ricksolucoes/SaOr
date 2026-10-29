@@ -2,7 +2,9 @@
 
 ## 1. Escopo
 
-Esta spec define **como executar visualmente um Wireframe Text já aprovado** e produzir a imagem final da prancha com qualidade profissional, consistência e controle de regressão.
+Esta spec é o método auxiliar de **execução visual da Prancha do Template (SPEC 1)**, a partir de seu Wireframe Text aprovado. Não governa a construção da Tela funcional nem a seleção da referência oficial (SPEC 2). A SPEC 3 define a produção das Pranchas de Implementação e pode consultar técnicas visuais compartilhadas, sem reexecutar o processo de criação do template.
+
+Quando técnicas de composição forem consultadas durante a implementação funcional, a autoridade de sequência, aprovações e proteção do template é **exclusivamente** [`PROCESSO-TELA-PRANCHA.md`](PROCESSO-TELA-PRANCHA.md).
 
 Ela começa somente quando o artefato já possui autorização para produção visual conforme o processo vigente.
 
@@ -679,7 +681,7 @@ A solução deve seguir as regras superiores vigentes e, se necessário, registr
 
 ## 17. Sequência obrigatória de montagem da prancha
 
-Esta sequência é **normativa, linear e bloqueante**.
+Esta sequência é **normativa, linear e bloqueante para montar uma Prancha do Template a partir de sua especificação aprovada**. Na produção funcional, a SPEC 3 estabelece seu próprio fluxo e somente reutiliza critérios técnicos de qualidade aqui descritos quando forem compatíveis com a referência selecionada.
 
 Nenhuma etapa posterior pode ser usada para corrigir uma etapa anterior.
 
@@ -727,7 +729,7 @@ Depois da validação, congelar a geometria do cabeçalho.
 
 ### 17.3 Etapa 3 — Inserir e validar o viewport
 
-Inserir o viewport oficial nas dimensões físicas definidas.
+Na **Prancha do Template** inserir o viewport físico demonstrativo aplicável nas dimensões e posições definidas no Wireframe Text específico. O uso posterior de uma Tela funcional aprovada é regido pela SPEC 3 e não integra esta etapa de construção do template.
 
 Quando a regra exigir `360 × 800 px` em `1:1`:
 
@@ -958,7 +960,7 @@ Uma referência visual de outro frame pode ser consultada para verificar coerên
 
 As regras desta seção se aplicam a **pranchas-modelo e demais artefatos cuja identidade seja versionada por frame/concepção**.
 
-Elas **não redefinem a nomenclatura nem o versionamento das saídas funcionais** controladas por `docs/wireframes/images/README.md`. Quando uma saída funcional possuir regra operacional própria, essa regra permanece vigente.
+As regras de versionamento desta seção são exclusivas de **Pranchas do Template**. As versões e os registros de interfaces funcionais pertencem à **SPEC 3**, que não herda este procedimento de revisão de frames.
 
 ### 20.1 Versão de frame
 

@@ -31,11 +31,11 @@ Entre os principais módulos previstos estão:
 
 ## Status do projeto
 
-**Documentação Mestre aprovada — pranchas-modelo white e black concluídas; wireframes funcionais ainda pendentes**
+**Documentação Mestre aprovada — Modelo C atualmente vigente e versões físicas congeladas; wireframes funcionais ainda pendentes**
 
 A baseline funcional vigente é a versão **1.0 — APROVADO / BASELINE FUNCIONAL**.
 
-A etapa atual é **Wireframe Conceitual em Imagem**. As pranchas-modelo vigentes das variações `white` e `black` estão concluídas e aprovadas como referências contextuais da etapa; isso não significa que as 71 interfaces funcionais tenham sido produzidas. As saídas funcionais `white` e `black` permanecem pendentes conforme o controle operacional em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md). A escolha de um template oficial para produção funcional, ou de uma regra de seleção entre os modelos A/B/C, ainda não foi formalizada e não deve ser inferida. O processo oficial de evolução, os gates entre etapas e os critérios de alteração da baseline são definidos no [`Documento Mestre`](docs/Documento_Mestre.md).
+A etapa atual é **Wireframe Conceitual em Imagem**. As pranchas-modelo vigentes das variações `white` e `black` estão concluídas e aprovadas como referências contextuais da etapa; isso não significa que as 71 interfaces funcionais tenham sido produzidas. As saídas funcionais `white` e `black` permanecem pendentes conforme o controle operacional em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md). O **Modelo C** foi selecionado como referência atualmente vigente para ambas as variações em **28/10/2026**, sujeito a revisão somente mediante necessidade técnica comprovada, nova aprovação e preservação do histórico. As cópias oficiais congeladas ficam em `docs/wireframes/images/white/template/` e `docs/wireframes/images/black/template/`, conforme o [`Registro de Controle do Template Oficial`](docs/wireframes/images/Registro_Controle_Template_Oficial.md). Os modelos A e B permanecem como referências históricas/contextuais, não como alternativas oficiais de produção funcional. O processo oficial de evolução, os gates entre etapas e os critérios de alteração da baseline são definidos no [`Documento Mestre`](docs/Documento_Mestre.md).
 
 ## Documentação
 
@@ -44,6 +44,8 @@ A etapa atual é **Wireframe Conceitual em Imagem**. As pranchas-modelo vigentes
 - [`.specs/PROCESSO-ALTERACAO-ASSISTIDA.md`](.specs/PROCESSO-ALTERACAO-ASSISTIDA.md) — processo obrigatório para análises e alterações assistidas, com leitura contextual, comprovação, aprovação prévia, execução local, auditoria e entrega.
 - [`docs/Registro_Fechamento_Documento_Mestre.md`](docs/Registro_Fechamento_Documento_Mestre.md) — registro canônico de fechamento e proteção contra regressões da baseline funcional v1.0.
 - [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md) — controle operacional da etapa de Wireframe Conceitual em Imagem e referência para as specs canônicas em `.specs/wireframes/`.
+- [`docs/wireframes/images/Registro_Controle_Template_Oficial.md`](docs/wireframes/images/Registro_Controle_Template_Oficial.md) — registro genérico de decisões históricas, modelo vigente, versões, hashes e controle de revisões.
+- [`.specs/wireframes/README.md`](.specs/wireframes/README.md) — três autoridades distintas: definição técnica da Prancha do Template, referência selecionada e produção de interfaces funcionais.
 - [`docs/wireframes/images/references/templates/`](docs/wireframes/images/references/templates/) — pranchas-modelo e Wireframe Text separados por `white` e `black`; a estrutura operacional é definida em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md).
 
 O README principal mantém apenas a visão macro do projeto. Regras funcionais e técnicas devem ser consultadas em seus documentos canônicos para evitar duplicidade e divergência.

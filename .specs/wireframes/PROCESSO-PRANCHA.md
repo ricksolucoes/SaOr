@@ -1,8 +1,10 @@
-# Wireframes — Processo obrigatório de construção da prancha
+# SaOr — SPEC 1: Definição técnica e construção da Prancha do Template
 
 ## 1. Princípio
 
-A prancha não nasce de um template visual pré-pronto.
+Esta SPEC estabelece **exclusivamente** como definir, especificar, construir, validar e aprovar uma **Prancha do Template**. A referência já selecionada e vigente pertence à **SPEC 2** ([`REFERENCIA-TEMPLATE-OFICIAL.md`](REFERENCIA-TEMPLATE-OFICIAL.md)); a construção das interfaces funcionais pertence à **SPEC 3** ([`PROCESSO-TELA-PRANCHA.md`](PROCESSO-TELA-PRANCHA.md)). Os Gates históricos abaixo não se aplicam à produção individual de Telas ou Pranchas de Implementação.
+
+Na construção de uma **nova prancha-modelo**, a prancha não nasce de um template visual pré-pronto.
 
 Ela nasce de um **canvas vazio** e é construída por etapas sequenciais.
 
@@ -23,6 +25,8 @@ GATE DE APROVAÇÃO HUMANA
 A geometria de uma etapa registrada como `APROVADO E CONGELADO` não pode ser alterada silenciosamente para fazer uma etapa posterior caber.
 
 ## 2. Sequência obrigatória
+
+A sequência abaixo aplica-se **somente à definição ou revisão formal de uma Prancha do Template**. Nunca é reexecutada por interface funcional para recriar uma referência já selecionada.
 
 ```text
 PRANCHA VAZIA
@@ -442,7 +446,7 @@ Produção do PNG: PENDENTE
 
 # 9. Etapa 7 — Construir a prancha visual
 
-Depois do Wireframe Text aprovado, partir novamente do canvas vazio e executar exatamente o que foi especificado.
+Depois do Wireframe Text da **Prancha do Template** aprovado, executar exatamente o que foi especificado, partindo novamente do canvas vazio. A execução de interfaces funcionais não é governada por estes Gates; consultar exclusivamente a SPEC 3 para utilização de uma referência aprovada.
 
 A construção visual deve seguir `MONTAGEM-IMAGEM.md` e consultar o contexto operacional e as referências aplicáveis localizadas por `docs/wireframes/images/README.md`, sem permitir que essas referências sobrescrevam a composição específica já aprovada.
 
