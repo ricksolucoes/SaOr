@@ -20,6 +20,7 @@ A documentação não depende de prompts ou memória de conversa. Uma regra poss
 - [`wireframes/WIREFRAME-TEXT.md`](wireframes/WIREFRAME-TEXT.md) — contrato textual da **Prancha do Template** (SPEC 1).
 - [`wireframes/MONTAGEM-IMAGEM.md`](wireframes/MONTAGEM-IMAGEM.md) — método de montagem visual da **Prancha do Template** (SPEC 1); a SPEC 3 pode consultar critérios de qualidade sem reabrir Gates do template.
 - [`wireframes/WIREFRAME-TEXT-TELA.md`](wireframes/WIREFRAME-TEXT-TELA.md) — contrato do texto individual e anterior ao PNG da Tela (SPEC 3).
+- [`wireframes/GATE-IMPLEMENTACAO-TELAS.md`](wireframes/GATE-IMPLEMENTACAO-TELAS.md) — controle de conformidade GI-0 a GI-4 obrigatório na SPEC 3; sem nova autoridade concorrente sobre o template.
 - [`docs/wireframes/images/README.md`](../docs/wireframes/images/README.md) — diretórios, nomes, estado e inventário operacional, não autoridade normativa concorrente.
 - [`wireframes/README.md`](wireframes/README.md) — índice contextual e caminhos da etapa.
 
@@ -27,7 +28,7 @@ A documentação não depende de prompts ou memória de conversa. Uma regra poss
 
 1. Requisitos funcionais vêm exclusivamente do Documento Mestre aprovado. Regras técnicas invariantes vêm de `REGRAS-TECNICAS.md`.
 2. SPEC 1 define como construir/validar **um template novo**; SPEC 2 identifica **a referência que está aprovada e vigente**. Nenhuma interface funcional reexecuta os Gates da SPEC 1.
-3. SPEC 3 inicia pela especificação textual **individual da Tela**, aprovada antes do PNG. Somente depois a Tela aprovada pode ser apresentada na referência da SPEC 2.
+3. SPEC 3 inicia pela especificação textual **individual da Tela**, aprovada antes do PNG. Cada posição real de rolagem possui seu próprio ViewPort técnico `360 × 800`; depois da aprovação do conjunto, o ViewPort é o **primeiro conteúdo substituído** na nova cópia de Prancha, seguindo GI-0 a GI-4. Campos PÁGINA/ETAPA, itens 10/14 e aprovação da Prancha pertencem somente à SPEC 3.
 4. O registro genérico é a **única fonte da seleção vigente**, e cada saída aponta para o modelo/versão/hash que utilizou. Aprovação histórica não equivale a vigência atual.
 5. README, PNG histórico, nome de arquivo ou decisão em conversa não substitui uma aprovação ou norma; inconsistências bloqueiam a execução.
 

@@ -357,7 +357,7 @@ Os arquivos de interface funcional ainda estão pendentes; o esquema de diretór
 
 ## 11.2 Conteúdo e produção
 
-O conteúdo mínimo, a sequência de Wireframe Text → aprovação → Tela → aprovação → Prancha de Implementação → aprovação, a paginação, a equivalência white/black e os critérios de exportação pertencem exclusivamente à [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md) e ao [contrato textual da Tela](../../../.specs/wireframes/WIREFRAME-TEXT-TELA.md). Os requisitos funcionais permanecem no Documento Mestre. Não inferir conteúdo da demonstração de ViewPort ou da Prancha do Template.
+O conteúdo mínimo, a sequência de Wireframe Text → aprovação → Tela → aprovação → Prancha de Implementação → aprovação, a paginação, a equivalência white/black e os critérios de exportação pertencem exclusivamente à [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md), ao [contrato textual da Tela](../../../.specs/wireframes/WIREFRAME-TEXT-TELA.md) e ao [Gate funcional GI-0 a GI-4](../../../.specs/wireframes/GATE-IMPLEMENTACAO-TELAS.md). Os requisitos funcionais permanecem no Documento Mestre. Não inferir conteúdo da demonstração de ViewPort ou da Prancha do Template. Os campos já existentes `PÁGINA` e `ETAPA` devem ser preenchidos conforme a SPEC 3; a matriz abaixo permanece agregada por ID/tema, não por página.
 
 ---
 
@@ -389,7 +389,7 @@ Autoridade operacional:
 - o nome físico de cada arquivo é a fonte de verdade para página atual, total de páginas e versão;
 - as colunas `Claro` e `Escuro` registram o estado agregado de cada variação;
 - `Status geral` deriva do conjunto completo das duas variações;
-- uma interface somente pode ficar `APROVADO` quando todas as páginas necessárias de Claro e Escuro estiverem aprovadas;
+- uma interface somente pode ficar `APROVADO` quando todas as páginas necessárias de Claro e Escuro estiverem aprovadas e o Gate GI-4 do conjunto estiver concluído;
 - o checklist não deve duplicar versão/paginação já expressas nos nomes dos arquivos.
 
 | # | ID | Claro | Escuro | Status geral |

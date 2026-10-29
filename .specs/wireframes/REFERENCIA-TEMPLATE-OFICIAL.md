@@ -29,8 +29,8 @@ Os arquivos em `references/` preservam referências históricas e origens. Os di
 
 1. Abrir o registro genérico e identificar o modelo **vigente no momento da criação da saída**, para ambos os temas; não adivinhar pelo nome do arquivo.
 2. Abrir os seis artefatos correspondentes registrados, conferir existência, tipo, dimensão física e SHA-256. Comparar a identidade binária das cópias com as origens quando estiverem presentes.
-3. Ler o Wireframe Text aprovado para obter a geometria e distinguir regiões estruturais fixas dos campos de apresentação que podem receber dados específicos, **sem inferir uma região variável pelo aspecto visual**.
-4. Conferir o PNG e o ViewPort fisicamente. Falha de hash, falta de região variável documentada, incompatibilidade entre variações ou ausência de informação necessária é **BLOQUEIO**, não autorização para editar o modelo.
+3. Ler o Wireframe Text aprovado para comprovar **geometria e identidade estrutural fixa**. A autorização para substituir **apenas os conteúdos demonstrativos** das regiões identificadas no Modelo C em **novas Pranchas de Implementação** está registrada no mapeamento explícito da SPEC 3, seção 6.1; ela não altera os campos, coordenadas, PNG ou Wireframe Text originais. **Não inferir** novas regiões variáveis pela aparência ou transferir esse mapeamento automaticamente para eventual modelo futuro.
+4. Conferir o PNG e o ViewPort fisicamente. Falha de hash, falta de mapeamento **explícito e aplicável à versão vigente** na SPEC 3, incompatibilidade entre variações ou ausência de informação necessária é **BLOQUEIO**, não autorização para editar o modelo. Para o Modelo C atualmente vigente, o mapeamento de utilização funcional aprovado pertence à SPEC 3, seção 6.1, e não ao Wireframe Text original congelado.
 5. Registrar na saída dependente o identificador **exato da versão usada** e os hashes, preservando o vínculo mesmo se outro modelo passar a vigorar depois.
 
 A leitura desta SPEC não equivale a autorização para modificar o conjunto oficial. Sua utilização nas interfaces funcionais é regida somente pela SPEC 3.
