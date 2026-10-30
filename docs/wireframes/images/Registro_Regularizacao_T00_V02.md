@@ -1,7 +1,7 @@
 # SaOr — Registro sequencial da regularização V2 de T00 Mobile
 
 **Natureza:** evidências de transição documental; não substitui as SPECs, decisões de aprovação de interface ou os registros canônicos de vigência.  
-**Base física:** `SaOr-main-Casa.zip` — SHA-256 `36cd7eb01486df0c220c1584fcdf16f5f863bc6da1e0b6361a271ea52e1636eb`.  
+**Base inicial da análise (histórica):** `SaOr-main-Casa.zip` — SHA-256 `36cd7eb01486df0c220c1584fcdf16f5f863bc6da1e0b6361a271ea52e1636eb`. A base de execução atual está identificada no adendo final.  
 **Data do registro técnico:** 30/10/2026.  
 **Escopo:** somente Mobile `360 × 800`, white/black; não produzir T00.1 ou versões Tablet/Notebook/Desktop.
 
@@ -35,7 +35,7 @@
 | Restaurar destacado como ação destrutiva em cartão próprio | Tratamento contextual de ação destrutiva, condicionada a requisito funcional | PNG V2 / destino `M00.5` |
 | `Versão 1.0.0` no rodapé do conteúdo | Informação individual não interativa | PNG V2 / Documento Mestre |
 | Item 10 e Item 14 específicos | Dados de composição da Prancha funcional, não parte do template congelado | PNGs das Pranchas V2 / contratos individuais |
-| Nome `v02_estado-desconectada` (um `_`) | Inconsistência de nomenclatura física; a convenção aprovada usa `__estado-` | SPEC 3, §3; corrigir apenas em GV2-03 |
+| Nome `v02_estado-desconectada` (um `_`) | **Avaliação original posteriormente revogada**: o nome físico já atende à convenção corrigida de um sublinhado; não renomear a V2 | Contrato `WIREFRAME-TEXT-TELA.md` §2, corrigenda abaixo |
 
 ### Hashes protegidos do template oficial
 
@@ -50,7 +50,7 @@
 
 ## GV2-01 — Reestruturação normativa
 
-**Situação:** `EM EXECUÇÃO / AGUARDANDO ACEITE FORMAL DA REVISÃO`.
+**Situação histórica deste registro de transição:** `EM EXECUÇÃO / AGUARDANDO ACEITE FORMAL DA REVISÃO`. O aceite posterior e a nova situação estão documentados no adendo de continuidade ao final.
 
 A versão anterior de `PROCESSO-TELA-PRANCHA.md` possui SHA-256 `73f898cb7f30a3ad9c1cdb59ee435938206bff2900b9ce24886362578a9411ef`. Abaixo está preservado **integralmente** o conteúdo particular do Modelo C e de T00 que será retirado das regras permanentes neste Gate. O texto preservado é prova histórica de migração, **não** uma fonte normativa concorrente. Seu destino definitivo, sujeito ao GV2-02, será o contrato de utilização do template concreto e o controle específico da interface T00.
 
@@ -124,3 +124,108 @@ O registro de composição **não é outro Wireframe Text de construção de tem
 ## GV2-02 a GV2-08
 
 **Estado:** `NÃO INICIADOS`. A abertura depende do registro de encerramento do Gate imediatamente anterior. Nenhuma declaração ou imagem dispensa essa dependência.
+
+
+---
+
+# Adendo de continuidade — clone físico `SaOr-main-Casa (2).zip` (30/10/2026)
+
+**O conteúdo anterior deste documento é preservado como evidência histórica da base `SaOr-main-Casa.zip`; não deve ser interpretado como inventário atual do novo clone.** Nova fonte física primária: `/SaOr-main-Casa (2).zip`, SHA-256 `4fbfceacb5b273d7e58408d875446e4b6f43bd997c36d2c79da713bec6fb8717` (caminho do upload fora do repositório). Integridade interna do ZIP: conforme.
+
+## GV2-00 — Reconferência e encerramento na nova base
+
+- Inventário do ZIP recebido: **115 arquivos**, entre eles **54 PNGs** e **41 Markdown**. Os 4 MP4 foram apenas identificados por nome/bytes, **sem processamento do conteúdo**.
+- O novo clone contém as quatro normas GV2-01 no mesmo conteúdo binário do pacote revisado. Existem ainda dez PNGs preliminares de T00.1, **fora do escopo da regularização de T00 V2**; não foram modificados, aprovados nem utilizados para inferir padrões.
+- **Não conformidade material localizada e resolvida na cópia de trabalho:** o novo clone omitira `docs/wireframes/images/white/telas/pranchas/01_Mobile_360x800/T00-01-01_v02.png`, embora o registro original GV2-00 (acima) o identifique pelo SHA-256 `310bbac69366d6f57279ca30f2858d0489ca17e370120819b0594c18c06a9fae`. O arquivo foi recuperado como **bytes exatos** de outro clone físico previamente fornecido pelo responsável, `SaOr-main-Casa.zip`, somente após conferir identidade integral com o hash prescrito no documento do **novo** clone. Essa cópia anterior serviu exclusivamente como repositório de bytes, não como autoridade normativa ou de seleção. A recuperação deve integrar o pacote de atualização; sem ela, o conjunto de seis PNGs V2 continuaria incompleto.
+- No conjunto de trabalho, as duas Pranchas V2 têm `1280 × 1920 px`, os dois PNGs principais e estados alternativos têm `360 × 800 px`, e o recorte `x40,y272,360×800` de cada Prancha corresponde à respectiva Tela principal com **0 pixels divergentes**. Regiões diferentes de cada estado: `white 1428 pixels`, `black 1410 pixels`, ambas na caixa `(68,150,204,174)`.
+- Todos os artefatos congelados do Modelo C e os documentos/PNGs históricos V1 foram mantidos sem alterações; os dois nomes V2 fora do padrão são corrigidos no GV2-03, não neste Gate.
+
+**GV2-00: `CONCLUÍDO — verificação física atualizada, com recuperação binária explicitada`.** Esta conclusão não presume que GIF, GI-1 ou GI-2 estejam aprovados.
+
+## GV2-01 — Verificação binária da revisão implementada e aceite de prosseguimento
+
+- O ZIP atualizado incorpora exatamente os **quatro arquivos normativos** anteriormente revisados e validados tecnicamente, com bytes idênticos ao pacote GV2-01. As SPECs 1, o Documento Mestre e o conjunto oficial do Modelo C não foram alterados.
+- **Manifestação do responsável nesta etapa:** “Arquivo ja com spec implementado para poder prosseguir.” Trata-se de autorização expressa de continuidade **com a revisão aplicada na nova base**, não de aprovação automática de Telas, TextFrames, Pranchas ou de todos os Gates futuros.
+- Conferidos os critérios G01.1–G01.5 documentados anteriormente: separação de autoridades; ausência de parâmetros do Modelo C como normas universais; transcrição completa dos conteúdos migrados neste registro; bloqueio por ausência de contrato; preservação da baseline. O destino concreto dos parâmetros foi preenchido no GV2-02.
+
+**GV2-01: `CONCLUÍDO PARA CONTINUIDADE`, com aceitação da revisão implementada evidenciada pela manifestação acima.** Se o responsável contestar a abrangência desse aceite, a decisão deverá ser reavaliada antes de utilizar os contratos em produção funcional.
+
+## GV2-02 — Contratos técnicos versionados (checagem técnica)
+
+Os seguintes documentos foram criados após o GV2-01, cada qual com responsabilidade separada:
+
+| Documento | SHA-256 |
+|---|---|
+| `.specs/wireframes/PROCESSO-TELA-PRANCHA.md` | `635e7a7212c59d37e175ac27826909109b6060c67f77dc1cc9fa40a206da89b7` |
+| `.specs/wireframes/GATE-IMPLEMENTACAO-TELAS.md` | `2086c846237ae0628e4b7b7ba29c02ac3351211c23484da08eef3c29dc8d8cff` |
+| `.specs/wireframes/REFERENCIA-TEMPLATE-OFICIAL.md` | `c0b7c56ac76a58f12eff2db25f45c27be02852dd1ad3e050e3141893437625d1` |
+| `.specs/wireframes/README.md` | `3847e785edd0e13875cd03b7f85da361777fe9c226ec4610da4c1ee293249dde` |
+| `docs/wireframes/images/contratos/USO-TEMPLATE-C.md` | `0a095edcf4bfb3252d8ae3c18ce810d119d1747f188bd090232c362cf5b13fe4` |
+| `docs/wireframes/images/padroes-funcionais/Mobile-v02.md` | `7aab2650d9c6fb492656c189fcea6432b988a89bcecc96c34fd238896777af94` |
+| `docs/wireframes/images/Registro_Padrao_Visual_Funcional_Mobile.md` | `0bcc3e7de752b8141c3e7bf58033f9f197db11d0ee1da9913911dfde0d178f61` |
+
+- `contratos/USO-TEMPLATE-C.md` conserva a geometria e as condições concretas de substituição anteriormente na SPEC 3, sem alterar os seis arquivos oficiais. As versões de template white/black e seis hashes foram verificados contra `Registro_Controle_Template_Oficial.md`.
+- `padroes-funcionais/Mobile-v02.md` delimita os padrões visuais que podem ser considerados para novos requisitos, distingue os conteúdos exclusivos de T00 e identifica fisicamente as duas Telas principais e dois estados V2 por hash. Não cria requisito funcional de T00.1.
+- `Registro_Padrao_Visual_Funcional_Mobile.md` é registro genérico de futura vigência; mantém **V2 como candidata em formalização**, sem marcar padrão V2 vigente antes de GV2-06.
+- Teste lógico de independência: para V1 e V2 a SPEC 3 exige a **mesma sequência**, fonte funcional e contrato técnico concreto; nenhuma mudança de versão exige mudar seus §§6.1–6.3. As informações específicas de cada versão ficam nos documentos individuais. Teste de reprodução visual integral de T00 v02 dependerá do TextFrame e GI-2, não é declarado concluído aqui.
+
+**GV2-02: `CONCLUÍDO — contratos e separação normativa verificadas tecnicamente`; a vigência funcional V2 continua pendente do GV2-06.** As referências atuais do índice operacional serão consolidadas no GV2-07; até lá a pasta `contratos/` contém o vínculo concreto por modelo e hashes.
+
+## GV2-03 — Regularização de PNGs/controles V2
+
+- **Registro histórico da tentativa anterior:** havia sido proposta uma mudança de `_estado-desconectada.png` para `__estado-desconectada.png` nos temas white/black. **Essa mudança nominal foi revogada pela corrigenda posterior neste documento; o nome original com um `_` prevalece**. O conteúdo binário não se altera; os SHA-256 são `0e4a2da069611f52064c9a3e60f27536ebef21fd787ee9829a70d635de750e90` e `d9d70702af9473bad1688faae215ca14fdd5e294c076e32a3c4526e3d33dbe77`.
+- Foram criados `white/telas/controle/T00-01-01_v02.md` e `black/telas/controle/T00-01-01_v02.md` com caminhos, hashes, fontes funcionais, diferenças V1/V2 e alcance documentado das manifestações do responsável.
+- **Pendência bloqueante G03:** a adoção visual da V2 e a aprovação visual das Pranchas foram comunicadas, mas não há **decisão GI-1 humana individual identificando expressamente os quatro PNGs das Telas por hash**. A aprovação das Pranchas não se estende automaticamente a GI-1 ou GI-2 pela regra do `GATE-IMPLEMENTACAO-TELAS.md`, §3–4. Não atribuir aprovação por inferência.
+
+**GV2-03: `PENDENTE — GI-1 dos PNGs de Tela não comprovado`.** GV2-04 a GV2-08 permanecem `NÃO INICIADOS`. A recuperação da Prancha White e os arquivos de controle são uma **entrega intermediária**; não representam aprovação ou vigência V2. Quando o responsável confirmar expressamente as Telas/estados identificados nos registros por hash, incorporar fielmente a decisão, validar e encerrar GV2-03 antes de criar os TextFrames.
+
+
+# Adendo de aceite específico — GV2-03 e início controlado do GV2-04
+
+**Manifestação humana vinculada ao turno de continuação:** após a exposição individual dos **quatro arquivos PNG**, com temas, estados e respectivos hashes, o responsável declarou expressamente: **“Sim estão aprovados”**. O objeto dessa decisão são as Telas de Referência T00 V2 **white/black**, nos estados **Conectada e Desconectada**, identificadas a seguir; não é aprovação do TextFrame futuro, da aplicação em código nem um novo aceite da Prancha.
+
+| Tela/estado aprovado | Caminho relativo à raiz | SHA-256 revalidado |
+|---|---|---|
+| White, Conectada | `docs/wireframes/images/white/telas/design/01_Mobile_360x800/T00-01-01_v02.png` | `0442412875e3c45b85038d75d8b628f16c94c4ba06529d1c0c97a32d47761504` |
+| White, Desconectada | `docs/wireframes/images/white/telas/design/01_Mobile_360x800/T00-01-01_v02_estado-desconectada.png` | `0e4a2da069611f52064c9a3e60f27536ebef21fd787ee9829a70d635de750e90` |
+| Black, Conectada | `docs/wireframes/images/black/telas/design/01_Mobile_360x800/T00-01-01_v02.png` | `0d4baf7b7d4e12a59db8646dc6317976a860b573abd14745def152ea64b34950` |
+| Black, Desconectada | `docs/wireframes/images/black/telas/design/01_Mobile_360x800/T00-01-01_v02_estado-desconectada.png` | `d9d70702af9473bad1688faae215ca14fdd5e294c076e32a3c4526e3d33dbe77` |
+
+**Verificações físicas executadas no fechamento:** os quatro arquivos abrem como PNG RGB `360 × 800` e os SHA-256 coincidem; ambas as variantes mudam apenas a caixa `(68,150)–(204,174)` do status; a Tela principal de cada tema é bit a bit igual à área `x=40,y=272,w=360,h=800` de sua Prancha, cuja dimensão é `1280 × 1920`. Os seis arquivos protegidos do Modelo C e os artefatos V1 não foram modificados. A decisão visual V2 e o inventário funcional de T00 foram confrontados com `docs/Documento_Mestre.md`, §T00; os novos subtítulos/ícones/agrupamentos são decisões de **representação visual de T00 V2**, não novos comportamentos funcionais.
+
+| Critério GV2-03 | Resultado e evidência |
+|---|---|
+| Conjunto V2 completo | **CONFORME** — seis PNGs presentes no changeset/base consolidada, dois por estado e uma Prancha por tema |
+| Nomenclatura do estado | **CONFORME à convenção revisada** — sufixo `_estado-desconectada` original; não remover os PNGs originais. Os nomes com `__estado-` são duplicatas da tentativa revogada e devem ser removidos somente se existirem e após conferir o SHA-256. |
+| Identidade binária dos quatro PNGs | **CONFORME** — tamanhos, hashes e inspeção visual registrada acima |
+| GI-0 da Tela | **CONFORME quanto a inventário e fontes** — T00 §9.1 e `REGRAS-TECNICAS.md`; diferenças V1/V2 classificadas neste registro |
+| GI-1 dos quatro PNGs individuais | **APROVADO EXPRESSAMENTE** — confirmação “Sim estão aprovados” após identificação individual com hash |
+| Integridade e preservação histórica | **CONFORME** — V1 e Modelo C preservados, sem edição de pixels |
+
+**Encerramento formal GV2-03: `CONCLUÍDO`**, com os critérios acima verificados. A origem da decisão é a manifestação atual do responsável; não se atribui data histórica fictícia às imagens ou a aprovações anteriores. **GV2-04: `EM EXECUÇÃO`** para elaboração dos TextFrames a partir das Telas aprovadas, sem antecipação do aceite GI-2. **GV2-05 a GV2-08: `NÃO INICIADOS`** até encerramento comprovado de GV2-04.
+
+
+## GV2-04 — TextFrames V2 produzidos e submetidos a GI-2
+
+**Abertura:** somente após GV2-03 formalmente encerrado no adendo imediatamente anterior. Foram criados a partir dos PNGs de GI-1 aprovados:
+
+| Tema | Arquivo TextFrame | SHA-256 do TextFrame |
+|---|---|---|
+| white | `docs/wireframes/images/white/telas/wiframetext/T00-01-01_v02.md` | `51fc0b44db607522618dcb9e321602e442e4c90a0c2da86597328a0ad6226089` |
+| black | `docs/wireframes/images/black/telas/wiframetext/T00-01-01_v02.md` | `2d7d16b74ae00bb9f33a75c9e9a8015ea9661f55295e3f710ed90f790941d25e` |
+
+**Conferências técnicas realizadas:** dimensões e hashes das quatro Telas; superfícies dos quatro cartões por tema; regiões de tinta/caixas identificáveis; textos presentes; quatro destinos de T00; estados e posição do indicador; equivalência funcional white/black; regiões do ViewPort idênticas nas Pranchas preexistentes. Os TextFrames indicam expressamente o método e os limites da medição raster, sem atribuir automaticamente à fonte editável original uma família tipográfica, peso ou glyph exato não comprovados.
+
+**Pendências de GI-2:** (1) aprovação humana do par **PNG + TextFrame** de cada tema ainda não apresentada; (2) nomes exatos de glyphs e parâmetros editáveis originais não recuperáveis univocamente apenas do PNG, devendo ser fundamentados em fontes normativas/ativos de origem ou receber decisão registrada de equivalência visual, se exigidos para reprodução paramétrica. Estas pendências não são resolvidas por aprovação GI-1 anterior nem pela mera existência dos documentos.
+
+**GV2-04: `PENDENTE — TextFrames produzidos, aceite GI-2 não comprovado`.** GV2-05, GV2-06, GV2-07 e GV2-08 continuam `NÃO INICIADOS`. Não criar registros de composição V2 nem declarar padrão Mobile V2 oficialmente vigente antes dos Gates correspondentes. Os arquivos de T00.1 permanecem fora do escopo deste changeset.
+
+## Corrigenda normativa posterior — variante V2 com um único `_`
+
+**Decisão expressa posterior do responsável:** manter `T00-01-01_v02_estado-desconectada.png`, com um único sublinhado, como nome canônico nos temas `white` e `black`. A exigência anterior de `__estado-` não demonstrou dependência técnica e foi substituída no contrato `.specs/wireframes/WIREFRAME-TEXT-TELA.md`, §2.
+
+- **Sem alteração de imagem:** os PNGs originais com `_estado-` são mantidos com os hashes `0e4a2da069611f52064c9a3e60f27536ebef21fd787ee9829a70d635de750e90` (white) e `d9d70702af9473bad1688faae215ca14fdd5e294c076e32a3c4526e3d33dbe77` (black).
+- **Histórico preservado:** a classificação anterior e a proposta de renomeação no GV2-03 ficam registradas como ocorrências históricas, **não** instruções ativas. Os PNGs e documentos da V1 já aprovados permanecem intactos, inclusive os nomes históricos com dois sublinhados.
+- **Cópias adicionais:** se uma aplicação anterior criou arquivos físicos `T00-01-01_v02__estado-desconectada.png`, eles são duplicatas sem função. Só removê-los após conferir a existência e o hash correspondente do PNG canônico com um `_`. Não excluir os arquivos originais.
+- **Estado dos Gates:** a correção de nomenclatura não concede nem revoga aprovação visual GI-1; os quatro PNGs já aprovados continuam identificados pelos mesmos SHA-256. O GV2-04/GI-2 permanece pendente de aceite humano dos TextFrames; GV2-05 e posteriores continuam não iniciados.
+- **Rastreabilidade documental:** hashes dos dois TextFrames e do perfil `Mobile-v02.md` foram recalculados nas tabelas anteriores para refletir exclusivamente a correção das referências textuais.
