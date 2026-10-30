@@ -8,6 +8,12 @@ Gate auxiliar **exclusivo da SPEC 3** [`PROCESSO-TELA-PRANCHA.md`](PROCESSO-TELA
 
 Usar `PENDENTE`, `EM VERIFICAÇÃO`, `AGUARDANDO APROVAÇÃO`, `APROVADO E CONGELADO` ou `BLOQUEADO` com decisão e evidência explícitas. Esses estados não substituem os estados agregados da matriz das 71 interfaces.
 
+### Aplicação por resolução e registro de aprovação preexistente
+
+O MVP vigente é **exclusivamente Mobile**, nos dois temas, com `design/01_Mobile_360x800/` para o PNG individual e `pranchas/01_Mobile_360x800/` para o PNG da Prancha. O registro de composição fica em `pranchas/01_Mobile_360x800/wiframetext/`. As pastas Tablet, Notebook e Desktop são apenas referências para outro MVP e **não produzem Gates nem entregáveis nesta etapa**.
+
+A **aprovação visual já concedida** de uma Prancha identificável pode ser transcrita posteriormente no registro específico, vinculada ao nome, tema, versão e SHA-256, sem repetir a decisão. Registrar o teor da declaração, sua abrangência e a data de regularização; **não inventar data de aprovação original**. Aprovação de Prancha não constitui aprovação GI-1 dos PNGs individuais nem GI-2 dos TextFrames por herança. A regularização mantém os controles técnicos obrigatórios e exige que o estado da matriz reflita somente Gates concluídos comprovadamente.
+
 ## 2. GI-0 — Pré-condições e inventário funcional (técnico)
 
 - [ ] Ler ficha **e Textframe** da interface no Documento Mestre, regras transversais, estados, conteúdo, ações/destinos e relações; produzir inventário verificável dos elementos requeridos, sem introduzir outros.
@@ -21,7 +27,7 @@ Usar `PENDENTE`, `EM VERIFICAÇÃO`, `AGUARDANDO APROVAÇÃO`, `APROVADO E CONGE
 
 ## 3. GI-1 — PNG de proposta visual da Tela (aprovação humana)
 
-- [ ] Produzir PNG isolado **antes de escrever o TextFrame** em `docs/wireframes/images/<tema>/telas/<nome-base>.png`, `360 × 800 px`, a partir do inventário e da fonte funcional; o template oficial não foi copiado nem modificado.
+- [ ] Produzir PNG isolado **antes de escrever o TextFrame** em `docs/wireframes/images/<tema>/telas/design/01_Mobile_360x800/<nome-base>.png`, `360 × 800 px`, a partir do inventário e da fonte funcional; o template oficial não foi copiado nem modificado.
 - [ ] Abrir o PNG fisicamente e **inspecionar a interface real** (não apenas metadados): composição, alinhamento, hierarquia, tamanhos, textos, superfícies, tipografia, cores, ícones, ações visíveis e estados correspondem à documentação e aos padrões aplicáveis do tema.
 - [ ] AppBar é a da interface; item de lista tem ícone apenas quando documentado; cada indicador de estado tem ícone/rótulo conforme sua especificação e não é transformado em botão sem requisito.
 - [ ] Nenhum texto solto, região vazia arbitrária, conteúdo demonstrativo do Modelo C, componente inventado, campo omitido, comprimido ou truncado. Qualquer elemento não verificável bloqueia a aprovação.
@@ -44,6 +50,7 @@ Usar `PENDENTE`, `EM VERIFICAÇÃO`, `AGUARDANDO APROVAÇÃO`, `APROVADO E CONGE
 
 ## 5. GI-3 — Uso da referência vigente e montagem da Prancha (técnico)
 
+- [ ] Conferir caminhos efetivos no MVP vigente: PNG da Tela em `telas/design/01_Mobile_360x800/`, registro de composição em `telas/pranchas/01_Mobile_360x800/wiframetext/` e PNG da Prancha em `telas/pranchas/01_Mobile_360x800/`; não produzir Tablet/Notebook/Desktop.
 - [ ] Conferir novamente seleção vigente e os hashes dos arquivos oficiais via SPEC 2. A cópia de trabalho é **nova**, `1280 × 1920 px`, e a referência congelada permanece intacta.
 - [ ] **Primeiro ato de alteração da nova cópia:** substituir o ViewPort demonstrativo pelo PNG **já aprovado em GI-2** da mesma página e tema, `360 × 800 px`, para Modelo C em `x=40, y=272`, `1:1`, sem recorte, recoloração ou alteração de pixels. Conferir recorte contra fonte pixel a pixel. Outro modelo exige mapeamento previamente autorizado, nunca coordenadas inferidas.
 - [ ] **Somente depois** preencher cabeçalho/quadros variáveis: `ETAPA = <Nome da interface>` (sem ID repetido), extraído da ficha, `PÁGINA = XX / YY` da continuidade e `VERSÃO = vNN` da revisão. Preservar a estrutura do modelo vigente.
@@ -59,7 +66,7 @@ Usar `PENDENTE`, `EM VERIFICAÇÃO`, `AGUARDANDO APROVAÇÃO`, `APROVADO E CONGE
 
 ## 6. GI-4 — Conferência e aprovação da Prancha e do conjunto (aprovação humana)
 
-- [ ] PNG novo da Prancha `1280 × 1920` com identificação, versão e caminho corretos; template oficial preservado por hash.
+- [ ] PNG de Prancha `1280 × 1920` com identificação, versão e caminho corretos; **quando a imagem já estiver aprovada**, verificar e transcrever a decisão existente (com hash), sem reabrir sua inspeção visual exclusivamente para registrar a aprovação; template oficial preservado por hash.
 - [ ] Recorte da região de ViewPort da Prancha **pixel a pixel idêntico** ao PNG aprovado do GI-2.
 - [ ] ID, `ETAPA`, `PÁGINA`, `VERSÃO`, temas, datas, status e referências exatas em conformidade com arquivos e aprovações.
 - [ ] Conferir título exatamente `PRANCHA TÉCNICA`, sem `WIREFRAME`, sem legenda demonstrativa, e `ETAPA` somente com descrição; checar que a geometria fixa não mudou.

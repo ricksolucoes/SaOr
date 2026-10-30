@@ -12,6 +12,8 @@ A experiência será projetada com abordagem mobile first, considerando a seguin
 2. Tablet
 3. Desktop
 
+**Delimitação de entrega vigente:** o **MVP atual é exclusivamente Mobile**, usando ViewPort funcional `360 × 800 px`, nas variações `white` e `black`. Tablet, Notebook e Desktop pertencem a um **MVP posterior** e figuram agora somente como referências de evolução; não integram a produção, o aceite ou os entregáveis atuais. A ordem de prioridades acima expressa a visão evolutiva do produto, não autoriza entregas simultâneas de outras resoluções.
+
 ## Escopo funcional
 
 Entre os principais módulos previstos estão:
@@ -31,11 +33,11 @@ Entre os principais módulos previstos estão:
 
 ## Status do projeto
 
-**Documentação Mestre aprovada — Modelo C atualmente vigente e versões físicas congeladas; wireframes funcionais ainda pendentes**
+**Documentação Mestre aprovada — Modelo C vigente e congelado; T00 Mobile com imagens de Tela e Pranchas produzidas, documentação em regularização de aceite**
 
 A baseline funcional vigente é a versão **1.0 — APROVADO / BASELINE FUNCIONAL**.
 
-A etapa atual é **Wireframe Conceitual em Imagem**. As pranchas-modelo vigentes das variações `white` e `black` estão concluídas e aprovadas como referências contextuais da etapa; isso não significa que as 71 interfaces funcionais tenham sido produzidas. As saídas funcionais `white` e `black` permanecem pendentes conforme o controle operacional em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md). O **Modelo C** foi selecionado como referência atualmente vigente para ambas as variações em **28/10/2026**, sujeito a revisão somente mediante necessidade técnica comprovada, nova aprovação e preservação do histórico. As cópias oficiais congeladas ficam em `docs/wireframes/images/white/template/` e `docs/wireframes/images/black/template/`, conforme o [`Registro de Controle do Template Oficial`](docs/wireframes/images/Registro_Controle_Template_Oficial.md). Os modelos A e B permanecem como referências históricas/contextuais, não como alternativas oficiais de produção funcional. O processo oficial de evolução, os gates entre etapas e os critérios de alteração da baseline são definidos no [`Documento Mestre`](docs/Documento_Mestre.md).
+A etapa atual é **Wireframe Conceitual em Imagem**. As pranchas-modelo vigentes das variações `white` e `black` estão concluídas e aprovadas como referências contextuais da etapa; isso não significa que as 71 interfaces funcionais tenham sido produzidas. As demais saídas funcionais permanecem pendentes; T00 Mobile possui imagens produzidas e aprovação visual das Pranchas comunicada pelo responsável, com registro documental em regularização conforme o controle operacional em [`docs/wireframes/images/README.md`](docs/wireframes/images/README.md). O **Modelo C** foi selecionado como referência atualmente vigente para ambas as variações em **28/10/2026**, sujeito a revisão somente mediante necessidade técnica comprovada, nova aprovação e preservação do histórico. As cópias oficiais congeladas ficam em `docs/wireframes/images/white/template/` e `docs/wireframes/images/black/template/`, conforme o [`Registro de Controle do Template Oficial`](docs/wireframes/images/Registro_Controle_Template_Oficial.md). Os modelos A e B permanecem como referências históricas/contextuais, não como alternativas oficiais de produção funcional. O processo oficial de evolução, os gates entre etapas e os critérios de alteração da baseline são definidos no [`Documento Mestre`](docs/Documento_Mestre.md).
 
 ## Documentação
 

@@ -14,9 +14,11 @@ O Wireframe Text nasce **somente depois da aprovação GI-1**, para cada ID func
 
 `docs/wireframes/images/<tema>/telas/wiframetext/<ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>.md`.
 
-Ele referencia obrigatoriamente o **PNG visual que já existe**, em `docs/wireframes/images/<tema>/telas/<mesmo-nome-base>.png`, e o registro de decisões GI-0/GI-1 em `docs/wireframes/images/<tema>/telas/controle/<mesmo-nome-base>.md`. Os registros de controle são provas de aprovações anteriores ao TextFrame, **não são TextFrames, não contêm uma composição alternativa e não substituem esta SPEC**. Somente criar essas pastas na produção autorizada de uma interface; não criar arquivos funcionais por alteração normativa.
+Ele referencia obrigatoriamente o **PNG visual que já existe**, em `docs/wireframes/images/<tema>/telas/design/01_Mobile_360x800/<mesmo-nome-base>.png`, e o registro de decisões GI-0/GI-1 em `docs/wireframes/images/<tema>/telas/controle/<mesmo-nome-base>.md`. Os registros de controle são provas de aprovações anteriores ao TextFrame, **não são TextFrames, não contêm uma composição alternativa e não substituem esta SPEC**. Somente criar essas pastas na produção autorizada de uma interface; não criar arquivos funcionais por alteração normativa.
 
 O PNG principal mostra o estado/posição selecionado e documentado. Quando houver estados alternativos **realmente previstos ou aprovados**, conservar PNGs individualizados com sufixo `__estado-<identificador>.png`, mesma base de nome, dimensão e tema. O documento deve listar cada estado/variante, caminho, hash e diferença em relação ao PNG principal; não presumir que todo elemento possui variantes. Os IDs são os do Documento Mestre. A quantidade `PÁGINA/TOTAL` descreve posições da mesma interface durante rolagem; `vNN` descreve revisão, não nova página.
+
+**Escopo de execução do MVP vigente:** somente Mobile `360 × 800 px`, white e black. Os diretórios Tablet, Notebook e Desktop são reservas físicas para MVP futuro, **não** autorizam produção de variantes nem mudanças dos contratos nesta etapa. O caminho do PNG de estado alternativo usa o mesmo diretório `design/01_Mobile_360x800/` e o sufixo `__estado-<identificador>.png`; o arquivo `.md` mantém sua pasta `telas/wiframetext/`.
 
 ## 3. Fonte de verdade e fidelidade visual
 
@@ -40,6 +42,10 @@ O TextFrame deve **representar a Tela que já foi aprovada em imagem**. Exigir s
 Estados próprios do Wireframe Text: `PENDENTE`, `EM DEFINIÇÃO`, `AGUARDANDO APROVAÇÃO`, `APROVADO E CONGELADO` e `BLOQUEADO` (ou `NÃO APLICÁVEL` fundamentado). **GI-1 aprova somente o PNG visual**, não o texto futuro. GI-2 requer simultaneamente: PNG visual previamente aprovado e íntegro, TextFrame reproduzindo esse PNG, verificação de requisitos e aprovação humana específica do documento. Apenas então a Tela de Referência **e o Wireframe Text** podem ficar `APROVADO E CONGELADO` para montagem da Prancha.
 
 Mudança de conteúdo, geometria, estado, paginação ou pixels após GI-1 exige nova versão ou nova revisão aprovada com cadeia de evidências, preservando artefatos já aprovados. Modificar apenas o TextFrame para mascarar discrepância com PNG é proibido. O conjunto completo white/black deve ter aprovações específicas por tema/página/estado aplicável e avaliação de equivalência funcional.
+
+### Medidas verificáveis versus informações não recuperáveis do raster
+
+A medição de bordas, regiões e caixas visíveis deve indicar **coordenadas inteiras mensuradas no PNG**, seu método e a convenção `[x,y,w,h]`; não converter estimativas em cotas exatas. O bitmap **não permite inferir com certeza** família tipográfica, peso, padding original, tamanho lógico de fonte nem nomes de componentes de uma ferramenta externa. Essas propriedades só serão declaradas como normativas quando tiverem fonte técnica independente; caso contrário, registrar `não comprovado no raster` e bloquear a afirmação de reprodução paramétrica exata, sem inventar valores. A reprodução **visual** continua ancorada no PNG aprovado por hash.
 
 ## 5. Testes obrigatórios de correspondência (GI-2)
 

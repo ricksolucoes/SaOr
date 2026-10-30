@@ -61,34 +61,43 @@ docs/wireframes/images/
 │           └── wiframetext/
 │               └── <mesmo-nome-base>.md
 ├── white/
-│   ├── template/
+│   ├── template/                # Modelo C oficial — arquivos congelados
 │   │   ├── WF-TEMPLATE-C_v02.png
 │   │   ├── WF-TEMPLATE-C_v02.md
 │   │   └── WF-VIEWPORT-360x800.png
-│   ├── telas/
-│   │   ├── controle/
-│   │   │   └── T00-01-01_v01.md  # Registro, sem aprovação humana presumida
-│   │   ├── wiframetext/
-│   │   │   └── <TextFrame após aprovação GI-1>
-│   │   ├── T00-01-01_v01.png
-│   │   └── T00-01-01_v01__estado-desconectada.png
-│   ├── wiframetext/      # Registros de composição funcional (futuros)
-│   └── <Pranchas de Implementação, futuras>
+│   └── telas/
+│       ├── controle/T00-01-01_v01.md
+│       ├── wiframetext/T00-01-01_v01.md
+│       ├── design/
+│       │   ├── 01_Mobile_360x800/       # 2 PNGs T00
+│       │   ├── 02_Tablet_768x1024/     # reserva para MVP posterior
+│       │   ├── 03_Notebook_1366x768/   # reserva para MVP posterior
+│       │   └── 04_Desktop_1920x1080/  # reserva para MVP posterior
+│       └── pranchas/
+│           ├── 01_Mobile_360x800/       # Prancha T00 + registro de composição
+│           ├── 02_Tablet_768x1024/     # reserva para MVP posterior
+│           ├── 03_Notebook_1366x768/   # reserva para MVP posterior
+│           └── 04_Desktop_1920x1080/  # reserva para MVP posterior
 └── black/
-    ├── template/
+    ├── template/                # Modelo C oficial — arquivos congelados
     │   ├── WF-TEMPLATE-C_v01.png
     │   ├── WF-TEMPLATE-C_v01.md
     │   └── WF-VIEWPORT-360x800.png
-    ├── telas/
-    │   ├── controle/
-    │   │   └── T00-01-01_v01.md  # Registro, sem aprovação humana presumida
-    │   ├── wiframetext/
-    │   │   └── <TextFrame após aprovação GI-1>
-    │   ├── T00-01-01_v01.png
-    │   └── T00-01-01_v01__estado-desconectada.png
-    ├── wiframetext/      # Registros de composição funcional (futuros)
-    └── <Pranchas de Implementação, futuras>
+    └── telas/
+        ├── controle/T00-01-01_v01.md
+        ├── wiframetext/T00-01-01_v01.md
+        ├── design/
+        │   ├── 01_Mobile_360x800/       # 2 PNGs T00
+        │   ├── 02_Tablet_768x1024/     # reserva para MVP posterior
+        │   ├── 03_Notebook_1366x768/   # reserva para MVP posterior
+        │   └── 04_Desktop_1920x1080/  # reserva para MVP posterior
+        └── pranchas/
+            ├── 01_Mobile_360x800/       # Prancha T00 + registro de composição
+            ├── 02_Tablet_768x1024/     # reserva para MVP posterior
+            ├── 03_Notebook_1366x768/   # reserva para MVP posterior
+            └── 04_Desktop_1920x1080/  # reserva para MVP posterior
 ```
+
 
 Separação de responsabilidade:
 
@@ -105,14 +114,20 @@ references/templates/black/
 white/template/ e black/template/
 → conjunto oficial **atualmente vigente** por tema: Prancha C (PNG + Wireframe Text) + Viewport técnico (PNG), todos congelados; NÃO são interfaces funcionais
 
-white/telas/ e black/telas/
-→ telas de referência funcionais independentes e seus Wireframe Text individuais (futuras)
+white/telas/design/01_Mobile_360x800/ e black/telas/design/01_Mobile_360x800/
+→ PNGs independentes de Telas Mobile, incluindo estados alternativos; T00 já possui arquivos
 
-white/wiframetext/ e black/wiframetext/
-→ registros textuais de composição da Prancha de Implementação (futuros)
+white/telas/wiframetext/ e black/telas/wiframetext/
+→ TextFrames individuais das Telas, derivados dos PNGs existentes
 
-white/ e black/ na raiz de images/ (fora de template/ e telas/)
-→ PNGs de Prancha de Implementação (futuros), vinculados à versão oficial exata utilizada
+white/telas/controle/ e black/telas/controle/
+→ controles GI-0/GI-1 e decisões específicas por tema
+
+white/telas/pranchas/01_Mobile_360x800/ e black/telas/pranchas/01_Mobile_360x800/
+→ PNGs de Prancha de Implementação Mobile (T00 existente) e, em `wiframetext/`, seu registro de composição
+
+02_Tablet_768x1024/, 03_Notebook_1366x768/ e 04_Desktop_1920x1080/
+→ somente diretórios de referência reservados a um **MVP posterior**; `.gitkeep` não autoriza produção atual
 ```
 
 A estrutura anterior baseada em pastas de ciclo de vida não faz mais parte da organização vigente.
@@ -340,11 +355,11 @@ O Documento Mestre continua sendo a autoridade para conteúdo e comportamento fu
 
 ---
 
-# 11. Saídas funcionais futuras
+# 11. Saídas funcionais Mobile no MVP vigente
 
 Esta seção se aplica somente depois de existir uma prancha-modelo aprovada e congelada para a variação correspondente.
 
-A construção atual das pranchas-modelo ocorre em `references/templates/` e não deve ser confundida com as saídas funcionais em `white/` e `black/`.
+A construção histórica das pranchas-modelo ocorre em `references/templates/` e não deve ser confundida com as saídas funcionais atuais em `white/telas/` e `black/telas/`. **Somente Mobile** `01_Mobile_360x800` integra as entregas do MVP vigente. Tablet, Notebook e Desktop são referências físicas para um MVP posterior, sem pranchas, Telas ou Gates exigíveis agora.
 
 
 Cada uma das 71 interfaces deve possuir, no mínimo, uma representação Claro em `white/` e uma representação Escuro em `black/`.
@@ -359,9 +374,9 @@ O total final pode aumentar por paginação.
 
 ## 11.1 Localização e nomenclatura operacional
 
-Nomes, páginas, versões, procedimentos de criação/revisão e separação de pastas são definidos **somente** na [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md), seções 3–8. Para cada ID/tema/página/versão, o registro prévio de inventário e aprovação visual GI-0/GI-1 fica em `<tema>/telas/controle/` (diretório futuro), o **PNG da Tela deve existir e receber aprovação visual antes da criação de seu TextFrame**, e o arquivo de Tela fica em `<tema>/telas/` e o PNG da Prancha de Implementação fica diretamente em `<tema>/`; os registros `.md` ficam nos respectivos diretórios `wiframetext/`. Uma aprovação de Prancha não representa aprovação da Tela.
+Nomes, páginas, versões, procedimentos de criação/revisão e separação de pastas são definidos **somente** na [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md), seções 3–8. Para cada ID/tema/página/versão, o registro de GI-0/GI-1 fica em `<tema>/telas/controle/`; o PNG da Tela fica em `<tema>/telas/design/01_Mobile_360x800/`, antes do TextFrame em `<tema>/telas/wiframetext/`. A Prancha de Implementação fica em `<tema>/telas/pranchas/01_Mobile_360x800/` e o registro de composição em `wiframetext/` dessa mesma pasta. **A aprovação visual de uma Prancha não aprova automaticamente os TextFrames ou os estados alternativos da Tela.**
 
-Os arquivos de interface funcional ainda estão pendentes; o esquema de diretórios na seção 2 inclui destinos **planejados**, não declara arquivos físicos já existentes.
+T00 já possui PNGs de Tela e Pranchas em ambas as variações, além dos documentos de controle e TextFrame. O registro da aprovação visual das Pranchas deve indicar os hashes efetivos; a conclusão agregada depende dos Gates documentais aplicáveis, não apenas da presença física dos arquivos.
 
 ## 11.2 Conteúdo e produção
 
@@ -402,7 +417,7 @@ Autoridade operacional:
 
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|
-| 01 | `T00` | EM DEFINIÇÃO | EM DEFINIÇÃO | EM DEFINIÇÃO |
+| 01 | `T00` | EM VALIDAÇÃO | EM VALIDAÇÃO | EM VALIDAÇÃO |
 
 | 02 | `T00.1` | PENDENTE | PENDENTE | PENDENTE |
 | 03 | `T00.2` | PENDENTE | PENDENTE | PENDENTE |

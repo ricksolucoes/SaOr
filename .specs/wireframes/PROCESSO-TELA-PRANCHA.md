@@ -15,6 +15,10 @@ Autoridades distintas:
 
 Documentos históricos de construção do template (`PROCESSO-PRANCHA.md`, `WIREFRAME-TEXT.md`, `MONTAGEM-IMAGEM.md`) **não constituem Gates de aprovação das Telas** nem redefinem a composição selecionada. Suas regras técnicas comuns podem ser consultadas quando aplicáveis, sem executar novamente o processo de criação do template.
 
+## 1.1 MVP vigente — somente Mobile
+
+**Decisão de escopo vigente:** o MVP atual produz **somente interfaces Mobile**, nos temas `white` e `black`, com ViewPort funcional `360 × 800 px` e Prancha `1280 × 1920 px`. As pastas `02_Tablet_768x1024`, `03_Notebook_1366x768` e `04_Desktop_1920x1080` são **referências físicas reservadas ao MVP posterior**: sua existência não autoriza nem exige telas, pranchas, versionamento, Gates, adaptações responsivas ou atividades de desenvolvimento nessas resoluções no MVP atual. Não extrapolar regras Mobile para elas; eventual produção futura depende de especificação e autorização próprias. O catálogo de 71 interfaces do Documento Mestre permanece inalterado; o encerramento de T00 não significa encerramento do MVP nem das demais interfaces.
+
 ## 2. Três artefatos e processo linear bloqueante — PNG primeiro
 
 **Tela de Referência:** PNG visual individual `360 × 800 px`, criado primeiro em canvas independente com base no Documento Mestre e nas regras técnicas; apresentado visualmente e aprovado antes da redação do TextFrame. Antes de GI-1 é uma proposta, não um artefato congelado.
@@ -58,12 +62,12 @@ Para cada ID, tema, página e versão, usar o mesmo nome-base `<ID>-<PÁGINA>-<T
 | Artefato | Caminho relativo à raiz do repositório |
 |---|---|
 | Wireframe Text individual | `docs/wireframes/images/<tema>/telas/wiframetext/<nome-base>.md` |
-| Tela visual (proposta GI-1; congelada após GI-2) | `docs/wireframes/images/<tema>/telas/<nome-base>.png` |
+| Tela visual Mobile (proposta GI-1; congelada após GI-2) | `docs/wireframes/images/<tema>/telas/design/01_Mobile_360x800/<nome-base>.png` |
 | Registro de verificações GI-0/GI-1 | `docs/wireframes/images/<tema>/telas/controle/<nome-base>.md` |
-| Registro textual de composição da Prancha de Implementação | `docs/wireframes/images/<tema>/wiframetext/<nome-base>.md` |
-| Prancha de Implementação | `docs/wireframes/images/<tema>/<nome-base>.png` |
+| Registro textual de composição da Prancha de Implementação Mobile | `docs/wireframes/images/<tema>/telas/pranchas/01_Mobile_360x800/wiframetext/<nome-base>.md` |
+| Prancha de Implementação Mobile | `docs/wireframes/images/<tema>/telas/pranchas/01_Mobile_360x800/<nome-base>.png` |
 
-`<tema>` é exclusivamente `white` ou `black`; `template/` contém apenas arquivos oficiais do modelo, nunca arquivos de interface. Quando houver estados visuais alternativos aprovados, o PNG de cada variante usa a mesma base seguida de `__estado-<identificador>.png`, com entrada própria no controle GI-1 e no TextFrame derivado; o nome-base sem sufixo identifica o estado principal documentado, não autoriza omitir os demais estados realmente exigidos. Os arquivos de controle GI-0/GI-1 não são Wireframe Text; existem para registrar fonte, hash e aprovação **antes** de elaborar o texto. Diretórios de saída ainda não existentes devem ser criados **somente quando houver produção autorizada da primeira interface**, não pela simples aprovação desta SPEC. O README operacional apresenta a estrutura e o estado real, não escolhe versões.
+`<tema>` é exclusivamente `white` ou `black`; `template/` contém apenas arquivos oficiais do modelo, nunca arquivos de interface. Os nomes das subpastas de resolução são parte dos caminhos físicos; para o MVP vigente usar **somente `01_Mobile_360x800`**. Os controles e TextFrames individuais continuam fora das pastas de resolução, em `telas/controle/` e `telas/wiframetext/`. Os PNGs alternativos de estado ficam ao lado do PNG principal em `telas/design/01_Mobile_360x800/`. Quando houver estados visuais alternativos aprovados, o PNG de cada variante usa a mesma base seguida de `__estado-<identificador>.png`, com entrada própria no controle GI-1 e no TextFrame derivado; o nome-base sem sufixo identifica o estado principal documentado, não autoriza omitir os demais estados realmente exigidos. Os arquivos de controle GI-0/GI-1 não são Wireframe Text; existem para registrar fonte, hash e aprovação **antes** de elaborar o texto. Diretórios de saída ainda não existentes devem ser criados **somente quando houver produção autorizada da primeira interface**, não pela simples aprovação desta SPEC. O README operacional apresenta a estrutura e o estado real, não escolhe versões.
 
 Interpretação de `<ID>-<PÁGINA>-<TOTAL>_v<VERSÃO>`: `<ID>` é o ID canônico; `<PÁGINA>` é a página documental atual; `<TOTAL>` é o total de páginas da representação; `<VERSÃO>` é a versão daquela página. A correção localizada pode incrementar somente a versão da página afetada se a paginação total for preservada. Se o total mudar, toda a sequência nova deve refletir o total correto. Uma sequência de páginas é aprovada somente com todas as páginas dos temas exigidos conferidas.
 
@@ -167,6 +171,12 @@ Antes de solicitar aprovação humana da Prancha de Implementação, conferir:
 ```
 
 Aprovador registra decisão humana expressa para a Prancha, independente das aprovações GI-1 (PNG visual) e GI-2 (conjunto PNG + TextFrame), após verificar o [Gate GI-4](GATE-IMPLEMENTACAO-TELAS.md). Falha da Tela ou do TextFrame bloqueia a composição até a aprovação GI-1/GI-2 correspondente; falha da apresentação corrige **somente o novo artefato e seu registro**, sem adulterar o template ou a Tela aprovada.
+
+### 7.1 Regularização de decisão de aprovação já concedida
+
+Quando o responsável declarar que uma **Prancha já foi aprovada**, registrar a declaração nos **registros de composição** das versões físicas envolvidas, com nome, caminho, SHA-256, tema, página, escopo da decisão, texto efetivo do STATUS, fonte/teor da declaração e **data da regularização separada da data original da decisão**. Não presumir que a data desenhada na Prancha seja a data da aprovação. A transcrição fiel da decisão **não é nova avaliação visual nem exige gerar outro PNG**. A decisão não se estende automaticamente ao PNG-fonte de estados alternativos ou ao aceite documental GI-2, salvo evidência específica.
+
+A revisão técnica de caminhos, medidas, integridade e vínculos continua obrigatória. Registrar separadamente (i) **aprovação visual da Prancha já declarada**, (ii) conformidade técnica GI-3 verificável, (iii) estado documental GI-1/GI-2 e (iv) condição para encerramento na matriz funcional. Se faltar aceite documental próprio para GI-2, **não registrar GI-2 como aprovado**, não inventar ordem/data de Gates anteriores e manter a matriz `EM VALIDAÇÃO` até completar as evidências. Isso não revoga a aprovação visual das Pranchas existentes.
 
 ## 8. Estados e rastreabilidade
 
