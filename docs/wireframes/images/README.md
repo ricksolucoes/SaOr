@@ -67,9 +67,9 @@ docs/wireframes/images/
 │   │   └── WF-VIEWPORT-360x800.png
 │   ├── telas/
 │   │   ├── controle/
-│   │   │   └── T00-01-01_v01.md
+│   │   │   └── T00-01-01_v01.md  # Registro, sem aprovação humana presumida
 │   │   ├── wiframetext/
-│   │   │   └── T00-01-01_v01.md
+│   │   │   └── <TextFrame após aprovação GI-1>
 │   │   ├── T00-01-01_v01.png
 │   │   └── T00-01-01_v01__estado-desconectada.png
 │   ├── wiframetext/      # Registros de composição funcional (futuros)
@@ -81,9 +81,9 @@ docs/wireframes/images/
     │   └── WF-VIEWPORT-360x800.png
     ├── telas/
     │   ├── controle/
-    │   │   └── T00-01-01_v01.md
+    │   │   └── T00-01-01_v01.md  # Registro, sem aprovação humana presumida
     │   ├── wiframetext/
-    │   │   └── T00-01-01_v01.md
+    │   │   └── <TextFrame após aprovação GI-1>
     │   ├── T00-01-01_v01.png
     │   └── T00-01-01_v01__estado-desconectada.png
     ├── wiframetext/      # Registros de composição funcional (futuros)
@@ -403,6 +403,7 @@ Autoridade operacional:
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|
 | 01 | `T00` | EM DEFINIÇÃO | EM DEFINIÇÃO | EM DEFINIÇÃO |
+
 | 02 | `T00.1` | PENDENTE | PENDENTE | PENDENTE |
 | 03 | `T00.2` | PENDENTE | PENDENTE | PENDENTE |
 | 04 | `T00.3` | PENDENTE | PENDENTE | PENDENTE |

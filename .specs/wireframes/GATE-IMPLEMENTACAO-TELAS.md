@@ -46,7 +46,10 @@ Usar `PENDENTE`, `EM VERIFICAÇÃO`, `AGUARDANDO APROVAÇÃO`, `APROVADO E CONGE
 
 - [ ] Conferir novamente seleção vigente e os hashes dos arquivos oficiais via SPEC 2. A cópia de trabalho é **nova**, `1280 × 1920 px`, e a referência congelada permanece intacta.
 - [ ] **Primeiro ato de alteração da nova cópia:** substituir o ViewPort demonstrativo pelo PNG **já aprovado em GI-2** da mesma página e tema, `360 × 800 px`, para Modelo C em `x=40, y=272`, `1:1`, sem recorte, recoloração ou alteração de pixels. Conferir recorte contra fonte pixel a pixel. Outro modelo exige mapeamento previamente autorizado, nunca coordenadas inferidas.
-- [ ] **Somente depois** preencher cabeçalho/quadros variáveis: `ETAPA = <ID> - <Nome>` da ficha, `PÁGINA = XX / YY` da continuidade e `VERSÃO = vNN` da revisão. Preservar a estrutura do modelo vigente.
+- [ ] **Somente depois** preencher cabeçalho/quadros variáveis: `ETAPA = <Nome da interface>` (sem ID repetido), extraído da ficha, `PÁGINA = XX / YY` da continuidade e `VERSÃO = vNN` da revisão. Preservar a estrutura do modelo vigente.
+- [ ] Omitir **somente na cópia funcional** `WIREFRAME` e a legenda demonstrativa; o título será exclusivamente `PRANCHA TÉCNICA`. Preservar marca, coordenadas, divisores e regiões do cabeçalho; não deslocar outros elementos para ocupar espaço vazio.
+- [ ] Para o estado real `AGUARDANDO APROVAÇÃO` da Prancha funcional, usar glyph Material Icons Outlined `schedule` de 20 px mais `AGUARDANDO / APROVAÇÃO`, coloridos por token `Error` do tema (`#991B1B` white; `#FCA5A5` black). Conferir geometria na região STATUS (`x=1108`, `w=160`), sem redefinir seu significado como erro e sem atribuir aprovação automaticamente.
+- [ ] Comparar eventuais exceções visuais da Tela com a Baseline e com a decisão específica registrada por ID/tema; não declarar conformidade por aparência nem omitir requisito por inferência. T00: ocultação excepcional do subtítulo `Claro / Escuro`, com item `Tema` e destino `T00.2` preservados; outras interfaces não herdam a exceção.
 - [ ] **Item 10** contém apenas componentes usados na Tela aprovada, suas amostras/medidas reais; a AppBar é específica e os ícones de lista seguem requisitos individuais, não o exemplo do template.
 - [ ] **Item 14** contém apenas observações técnicas relevantes àquela interface/página; nada genérico é inserido para preencher espaço.
 - [ ] Registro textual de composição contém fontes, nome/hash da Tela e do TextFrame, controle GI-0/1/2, modelo/versão/hash, campos específicos, coordenadas, dados de página e decisão técnica GI-3.
@@ -59,6 +62,9 @@ Usar `PENDENTE`, `EM VERIFICAÇÃO`, `AGUARDANDO APROVAÇÃO`, `APROVADO E CONGE
 - [ ] PNG novo da Prancha `1280 × 1920` com identificação, versão e caminho corretos; template oficial preservado por hash.
 - [ ] Recorte da região de ViewPort da Prancha **pixel a pixel idêntico** ao PNG aprovado do GI-2.
 - [ ] ID, `ETAPA`, `PÁGINA`, `VERSÃO`, temas, datas, status e referências exatas em conformidade com arquivos e aprovações.
+- [ ] Conferir título exatamente `PRANCHA TÉCNICA`, sem `WIREFRAME`, sem legenda demonstrativa, e `ETAPA` somente com descrição; checar que a geometria fixa não mudou.
+- [ ] Conferir `AGUARDANDO APROVAÇÃO` com glyph `schedule` e cor Error específica do tema quando for o estado aplicável, sem classificá-lo funcionalmente como ERRO. Conferir legibilidade e ausência de cortes no bloco STATUS.
+- [ ] Conferir que divergências funcionais excepcionais estejam explicitamente aprovadas e rastreadas ao Documento Mestre; se faltar evidência, não aprovar o conjunto.
 - [ ] Item 10, Item 14 e demais regiões variáveis conferidos com Tela real e documentos, não com exemplos históricos.
 - [ ] Todas as páginas necessárias e estados aplicáveis estão representados conforme a decisão, sem campos faltantes ou duplicados e com equivalência white/black.
 - [ ] Evidências de cada gate, aprovações humanas independentes, nomes, hashes e referências históricas constam dos registros persistentes.
