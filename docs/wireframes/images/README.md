@@ -415,10 +415,11 @@ Autoridade operacional:
 - uma interface somente pode ficar `APROVADO` quando todas as páginas necessárias de Claro e Escuro estiverem aprovadas e o Gate GI-4 do conjunto estiver concluído;
 - o checklist não deve duplicar versão/paginação já expressas nos nomes dos arquivos.
 
+**Fechamento T00 Mobile — 30/10/2026:** a linha T00 foi atualizada após conferência física dos quatro PNGs de Tela, dois TextFrames e duas Pranchas, com vínculo de hashes registrado nos controles `white/telas/controle/T00-01-01_v01.md` e `black/telas/controle/T00-01-01_v01.md`. O responsável autorizou expressamente o encerramento (“Pode concluir.”), associado no controle aos artefatos identificados; isso regulariza os aceites da etapa sem presumir datas históricas não comprovadas. Não implica aprovação das 70 interfaces restantes nem dos formatos fora do MVP Mobile.
+
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|
-| 01 | `T00` | EM VALIDAÇÃO | EM VALIDAÇÃO | EM VALIDAÇÃO |
-
+| 01 | `T00` | APROVADO | APROVADO | APROVADO |
 | 02 | `T00.1` | PENDENTE | PENDENTE | PENDENTE |
 | 03 | `T00.2` | PENDENTE | PENDENTE | PENDENTE |
 | 04 | `T00.3` | PENDENTE | PENDENTE | PENDENTE |
