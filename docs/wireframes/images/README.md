@@ -43,7 +43,6 @@ A estrutura física vigente é:
 docs/wireframes/images/
 ├── README.md
 ├── Registro_Controle_Template_Oficial.md
-├── Registro_Regularizacao_T00_V02.md
 ├── Registro_Padrao_Visual_Funcional_Mobile.md
 ├── contratos/USO-TEMPLATE-C.md
 ├── padroes-funcionais/Mobile-v02.md
@@ -422,7 +421,7 @@ Autoridade operacional:
 
 **Fechamento histórico de T00 V1 — 30/10/2026:** a linha T00 foi originalmente atualizada após conferência física dos quatro PNGs de Tela, dois TextFrames e duas Pranchas, com hashes registrados em `white/telas/controle/T00-01-01_v01.md` e `black/telas/controle/T00-01-01_v01.md`. O responsável autorizou o encerramento (“Pode concluir.”), vinculado aos artefatos identificados, sem inventar datas históricas anteriores.
 
-**Atualização da versão vigente de T00 para V2 — registro de 30/10/2026:** GV2-04 concluiu o GI-2 dos TextFrames V2 identificados por SHA-256; GV2-05 comprovou GI-3 das Pranchas V2 e preservação do Modelo C; GV2-06 formalizou GI-4 e declarou o perfil visual funcional `Mobile-v02.md` como `VIGENTE` no registro genérico de seleção. Os documentos V1 permanecem preservados e a matriz continua agregada por ID/tema, não por versão. **O estado `APROVADO` da linha T00 refere-se agora à V2 vigente**, com base no registro de regularização. Nenhuma das 70 interfaces restantes ou das resoluções futuras está incluída nessa aprovação.
+**Atualização da versão vigente de T00 para V2 — registro de 30/10/2026:** GV2-04 concluiu o GI-2 dos TextFrames V2 identificados por SHA-256; GV2-05 comprovou GI-3 das Pranchas V2 e preservação do Modelo C; GV2-06 formalizou GI-4 e declarou o perfil visual funcional `Mobile-v02.md` como `VIGENTE` no registro genérico de seleção. Os documentos V1 permanecem preservados e a matriz continua agregada por ID/tema, não por versão. **O estado `APROVADO` da linha T00 refere-se agora à V2 vigente**, conforme os controles `white/black/telas/controle/T00-01-01_v02.md` (§§6–8), os registros de composição das Pranchas V2 (§§6–7) e `Registro_Padrao_Visual_Funcional_Mobile.md` (§5). Nenhuma das 70 interfaces restantes ou das resoluções futuras está incluída nessa aprovação.
 
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|
