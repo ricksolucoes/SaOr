@@ -10,7 +10,8 @@
 **Viewport lógico oficial:** `360 × 800 px`  
 **Canvas técnico das pranchas:** `1280 × 1920 px`  
 **Template oficial atualmente vigente:** Modelo C (`white` v02 / `black` v01); arquivos `APROVADO E CONGELADO`, seleção revisável somente por aprovação formal  
-**Vigência e histórico das decisões:** [`Registro_Controle_Template_Oficial.md`](Registro_Controle_Template_Oficial.md)
+**Vigência e histórico das decisões do template:** [`Registro_Controle_Template_Oficial.md`](Registro_Controle_Template_Oficial.md)  
+**Padrão visual funcional Mobile vigente:** `Mobile-v02.md` (T00 V2 como fonte visual, sem herança de componentes individuais); seleção independente em [`Registro_Padrao_Visual_Funcional_Mobile.md`](Registro_Padrao_Visual_Funcional_Mobile.md)
 
 ---
 
@@ -42,6 +43,10 @@ A estrutura física vigente é:
 docs/wireframes/images/
 ├── README.md
 ├── Registro_Controle_Template_Oficial.md
+├── Registro_Regularizacao_T00_V02.md
+├── Registro_Padrao_Visual_Funcional_Mobile.md
+├── contratos/USO-TEMPLATE-C.md
+├── padroes-funcionais/Mobile-v02.md
 ├── references/
 │   ├── Especificação Técnica - Prancha de Trabalho.png
 │   ├── white/
@@ -66,15 +71,15 @@ docs/wireframes/images/
 │   │   ├── WF-TEMPLATE-C_v02.md
 │   │   └── WF-VIEWPORT-360x800.png
 │   └── telas/
-│       ├── controle/T00-01-01_v01.md
-│       ├── wiframetext/T00-01-01_v01.md
+│       ├── controle/T00-01-01_v01.md, T00-01-01_v02.md
+│       ├── wiframetext/T00-01-01_v01.md, T00-01-01_v02.md
 │       ├── design/
-│       │   ├── 01_Mobile_360x800/       # 2 PNGs T00
+│       │   ├── 01_Mobile_360x800/       # T00 V1 e V2; Conectada + Desconectada por versão
 │       │   ├── 02_Tablet_768x1024/     # reserva para MVP posterior
 │       │   ├── 03_Notebook_1366x768/   # reserva para MVP posterior
 │       │   └── 04_Desktop_1920x1080/  # reserva para MVP posterior
 │       └── pranchas/
-│           ├── 01_Mobile_360x800/       # Prancha T00 + registro de composição
+│           ├── 01_Mobile_360x800/       # Pranchas e registros de composição T00 V1/V2
 │           ├── 02_Tablet_768x1024/     # reserva para MVP posterior
 │           ├── 03_Notebook_1366x768/   # reserva para MVP posterior
 │           └── 04_Desktop_1920x1080/  # reserva para MVP posterior
@@ -84,15 +89,15 @@ docs/wireframes/images/
     │   ├── WF-TEMPLATE-C_v01.md
     │   └── WF-VIEWPORT-360x800.png
     └── telas/
-        ├── controle/T00-01-01_v01.md
-        ├── wiframetext/T00-01-01_v01.md
+        ├── controle/T00-01-01_v01.md, T00-01-01_v02.md
+        ├── wiframetext/T00-01-01_v01.md, T00-01-01_v02.md
         ├── design/
-        │   ├── 01_Mobile_360x800/       # 2 PNGs T00
+        │   ├── 01_Mobile_360x800/       # T00 V1 e V2; Conectada + Desconectada por versão
         │   ├── 02_Tablet_768x1024/     # reserva para MVP posterior
         │   ├── 03_Notebook_1366x768/   # reserva para MVP posterior
         │   └── 04_Desktop_1920x1080/  # reserva para MVP posterior
         └── pranchas/
-            ├── 01_Mobile_360x800/       # Prancha T00 + registro de composição
+            ├── 01_Mobile_360x800/       # Pranchas e registros de composição T00 V1/V2
             ├── 02_Tablet_768x1024/     # reserva para MVP posterior
             ├── 03_Notebook_1366x768/   # reserva para MVP posterior
             └── 04_Desktop_1920x1080/  # reserva para MVP posterior
@@ -376,7 +381,7 @@ O total final pode aumentar por paginação.
 
 Nomes, páginas, versões, procedimentos de criação/revisão e separação de pastas são definidos **somente** na [SPEC 3](../../../.specs/wireframes/PROCESSO-TELA-PRANCHA.md), seções 3–8. Para cada ID/tema/página/versão, o registro de GI-0/GI-1 fica em `<tema>/telas/controle/`; o PNG da Tela fica em `<tema>/telas/design/01_Mobile_360x800/`, antes do TextFrame em `<tema>/telas/wiframetext/`. A Prancha de Implementação fica em `<tema>/telas/pranchas/01_Mobile_360x800/` e o registro de composição em `wiframetext/` dessa mesma pasta. **A aprovação visual de uma Prancha não aprova automaticamente os TextFrames ou os estados alternativos da Tela.**
 
-T00 já possui PNGs de Tela e Pranchas em ambas as variações, além dos documentos de controle e TextFrame. O registro da aprovação visual das Pranchas deve indicar os hashes efetivos; a conclusão agregada depende dos Gates documentais aplicáveis, não apenas da presença física dos arquivos.
+T00 Mobile possui versões `v01` (histórica aprovada) e `v02` (vigente após GV2-06) em ambas as variações, com PNGs principais/alternativos, TextFrames por versão, controles de aprovação e registros de composição. A fonte autoritativa da **vigência funcional** é `Registro_Padrao_Visual_Funcional_Mobile.md`, §5; o template vigente continua em `Registro_Controle_Template_Oficial.md`. T00.1 e demais IDs mantêm seus estados independentes; nenhuma aprovação passa de T00 para eles.
 
 ## 11.2 Conteúdo e produção
 
@@ -415,7 +420,9 @@ Autoridade operacional:
 - uma interface somente pode ficar `APROVADO` quando todas as páginas necessárias de Claro e Escuro estiverem aprovadas e o Gate GI-4 do conjunto estiver concluído;
 - o checklist não deve duplicar versão/paginação já expressas nos nomes dos arquivos.
 
-**Fechamento T00 Mobile — 30/10/2026:** a linha T00 foi atualizada após conferência física dos quatro PNGs de Tela, dois TextFrames e duas Pranchas, com vínculo de hashes registrado nos controles `white/telas/controle/T00-01-01_v01.md` e `black/telas/controle/T00-01-01_v01.md`. O responsável autorizou expressamente o encerramento (“Pode concluir.”), associado no controle aos artefatos identificados; isso regulariza os aceites da etapa sem presumir datas históricas não comprovadas. Não implica aprovação das 70 interfaces restantes nem dos formatos fora do MVP Mobile.
+**Fechamento histórico de T00 V1 — 30/10/2026:** a linha T00 foi originalmente atualizada após conferência física dos quatro PNGs de Tela, dois TextFrames e duas Pranchas, com hashes registrados em `white/telas/controle/T00-01-01_v01.md` e `black/telas/controle/T00-01-01_v01.md`. O responsável autorizou o encerramento (“Pode concluir.”), vinculado aos artefatos identificados, sem inventar datas históricas anteriores.
+
+**Atualização da versão vigente de T00 para V2 — registro de 30/10/2026:** GV2-04 concluiu o GI-2 dos TextFrames V2 identificados por SHA-256; GV2-05 comprovou GI-3 das Pranchas V2 e preservação do Modelo C; GV2-06 formalizou GI-4 e declarou o perfil visual funcional `Mobile-v02.md` como `VIGENTE` no registro genérico de seleção. Os documentos V1 permanecem preservados e a matriz continua agregada por ID/tema, não por versão. **O estado `APROVADO` da linha T00 refere-se agora à V2 vigente**, com base no registro de regularização. Nenhuma das 70 interfaces restantes ou das resoluções futuras está incluída nessa aprovação.
 
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|

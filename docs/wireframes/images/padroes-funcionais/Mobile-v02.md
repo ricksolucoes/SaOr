@@ -4,7 +4,7 @@
 
 **Natureza:** perfil **concreto**, derivado das Telas Mobile de T00 v02 fornecidas para os temas white e black. **Não é SPEC 1, 2 ou 3; não é novo template de prancha.**
 
-**Estado documental nesta elaboração:** `CANDIDATO — AGUARDANDO FORMALIZAÇÃO GV2-06`. Este arquivo não seleciona sozinho a versão vigente nem declara aprovações individuais GI-1/GI-2. O registro de seleção, quando concluído, é `docs/wireframes/images/Registro_Padrao_Visual_Funcional_Mobile.md`.
+**Situação vigente após GV2-06:** `PERFIL VISUAL FUNCIONAL MOBILE v02 — VIGENTE`, por ato formal de seleção em `docs/wireframes/images/Registro_Padrao_Visual_Funcional_Mobile.md`, seção 5. A presente descrição técnica não seleciona uma versão por conta própria; seus PNGs, suas características e seu alcance permanecem os mesmos. Os GI-1/GI-2/GI-3/GI-4 de T00 V2 estão comprovados nos controles e registros específicos.
 
 **Imagens que limitam o alcance de suas observações:**
 
@@ -29,7 +29,7 @@ Ambas as Telas são `360 × 800 px`. A compatibilidade com `.specs/wireframes/RE
 | Iconografia | Família técnica prevista em REGRAS-TECNICAS §9. **Os identificadores específicos de cada ícone pertencem ao TextFrame da interface**, e não são transferidos automaticamente desta amostra |
 | Valores cromáticos | Nunca inventar HEX: obter os tokens canônicos de REGRAS-TECNICAS §§6.5/6.6 e conferir as cores visíveis do PNG em cada versão de Tela |
 
-Este documento registra a **linguagem visual candidata**; a equivalência entre um valor rasterizado e uma propriedade editável de origem (por exemplo, família exata de glyph, sombra e raio antialias) não é afirmada quando não for tecnicamente demonstrável. Um novo componente sem padrão suficiente bloqueia o Gate correspondente até definição própria, em vez de receber parâmetros inventados.
+Este documento registra a **linguagem visual funcional selecionada**; a equivalência entre um valor rasterizado e uma propriedade editável de origem (por exemplo, família exata de glyph, sombra e raio antialias) não é afirmada quando não for tecnicamente demonstrável. Um novo componente sem padrão suficiente bloqueia o Gate correspondente até definição própria, em vez de receber parâmetros inventados.
 
 ## 3. Conteúdos exclusivos de T00 — proibida herança automática
 
@@ -48,4 +48,4 @@ Para `T00.1`, por exemplo, URL, credenciais condicionais, testes de conexão e e
 
 ## 5. Preservação e revisões
 
-A V1 permanece histórica. A V2 só passará a vigente mediante a conclusão documental e registro de aprovação previsto em GV2-06. Mudança futura de perfil exigirá nova identidade, versão, evidências e histórico; as SPECs permanentes e os templates oficiais não são reescritos para refletir cada mudança visual.
+A V1 permanece histórica. A V2 passou a `VIGENTE` mediante o registro de seleção GV2-06 em `Registro_Padrao_Visual_Funcional_Mobile.md`, sem alterar o Modelo C. Mudança futura de perfil exigirá nova identidade, versão, evidências e histórico; as SPECs permanentes e os templates oficiais não são reescritos para refletir cada mudança visual.

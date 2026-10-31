@@ -279,3 +279,182 @@ Os seguintes documentos foram criados após o GV2-01, cada qual com responsabili
 **Pendência objetiva:** comprovação dos identificadores dos glyphs e parâmetros editáveis relevantes em arquivos de origem, **ou decisão técnica explícita e documentada que estabeleça uma equivalência visual suficiente e seus limites**, quando compatível com o contrato normativo. Não preencher a lacuna por aproximação, dedução de família de ícones ou aceitação fictícia. O aceite humano GI-2 de ambos os TextFrames ainda não foi concedido e é requisito separado da conclusão técnica.
 
 **Decisão:** **Etapa 2 `PENDENTE`; GV2-04/GI-2 continuam abertos.** Etapas 3–7 e GV2-05 a GV2-08 permanecem **`NÃO INICIADOS`**. Preservar as aprovações GI-1 e Pranchas visuais existentes; nenhuma inferência de aceite GI-2, GI-3 ou GI-4. A SPEC, este registro e o restante da árvore deverão ser auditados fisicamente antes de utilizar este adendo como prova de resultado.
+
+
+---
+
+## Reavaliação da Etapa 2 — assinaturas visuais verificáveis dos TextFrames V2
+
+**Motivo da revisão:** determinação posterior de corrigir os TextFrames e avançar pelo plano somente após êxito comprovado. Esta reavaliação não altera aprovações GI-1, não substitui o contrato GI-2, não modifica PNGs e não dá início ao GV2-05.
+
+### Trabalho executado na Etapa 2
+
+Foram relidos integralmente os dois TextFrames da T00 V2 e os PNGs correspondentes. Foi acrescentada a **seção 4A** em cada TextFrame, com retângulos reais da área raster dos ícones, dos chevrons e dos indicadores, assinaturas SHA-256 **dos bytes RGB dos recortes**, algoritmo reproduzível e distinção explícita entre evidência visual e parâmetros editáveis de origem.
+
+| Tema | TextFrame atualizado | SHA-256 da versão atual |
+|---|---|---|
+| white | `docs/wireframes/images/white/telas/wiframetext/T00-01-01_v02.md` | `67a6256fa5e797ed5b36fe04bd6df1445c047c66ec7c8831386f71a235b3dbf8` |
+| black | `docs/wireframes/images/black/telas/wiframetext/T00-01-01_v02.md` | `2241e454bb1eb75eced6b3b02305dcf6359e735500b0b1374d55b91faf80c5c1` |
+
+**Evidência de verificação física:** após editar, cada documento foi reaberto do disco, relido e confrontado com o conteúdo gerado; as assinaturas de recorte foram calculadas por decodificação `RGB` das imagens existentes e conferidas com os valores efetivamente inseridos. A diferença entre estados permanece confinada a `[68,150,136,24]`, com 1.428 pixels diferentes no white e 1.410 no black. As posições, textos e destinos documentados nas seções anteriores não foram substituídos. Os quatro PNGs originais e o conjunto histórico V1 seguem inalterados.
+
+### Revalidação de E2.1 a E2.8
+
+| Critério | Evidência física após correção | Resultado |
+|---|---|---|
+| E2.1 — Geometria | Caixas dos cartões (§3) e recortes de ícones/status (§4A) em ambos os TextFrames | `CONFORME` quanto às dimensões raster documentadas |
+| E2.2 — Conteúdo | Confronto dos rótulos e quatro destinos com o PNG e Documento Mestre | `CONFORME` quanto ao conteúdo visual identificado |
+| E2.3 — Estados | Pixels de Conectada × Desconectada e assinaturas diferenciadas por estado | `CONFORME` |
+| E2.4 — Temas | Inspeção e assinaturas independentes White/Black | `CONFORME` quanto às referências individuais |
+| E2.5 — Requisitos | TextFrames §5 × Documento Mestre §T00 | `CONFORME` quanto a itens e destinos; nenhuma nova funcionalidade introduzida |
+| E2.6 — Parâmetros de origem | Tokens técnicos Inter/Material Icons documentados; glyphs visuais **agora referenciados por pixels**, mas arquivo-fonte editável/nome original exato do glyph não encontrado | **`PENDENTE — IMPEDITIVO para alegar reprodução editável exata`** |
+| E2.7 — Integridade | PNGs aprovados por SHA-256; os dois documentos têm novo hash listado acima | `CONFORME` |
+| E2.8 — Verificação pós-edição | Dois TextFrames reabertos e assinaturas da seção 4A revalidadas | `CONFORME` para os dados incluídos, não supre E2.6 |
+
+**Limite do avanço:** a evidência raster agora é reproduzível, mas não prova o **identificador vetorial original** nem a fonte/peso usados para renderizar os PNGs. Se o contrato exigir reprodução paramétrica exata, permanece necessária a fonte editável com procedência, ou uma **decisão técnica explícita, registrada e compatível com as normas**, definindo equivalência visual aceitável e seus limites. Também é exigido **aceite humano GI-2 específico dos dois TextFrames e PNGs pelos hashes vigentes**, que não foi concedido nesta revisão.
+
+**Decisão atual da Etapa 2:** `PENDENTE`. **GV2-04/GI-2:** ainda abertos. Etapas 3–7 e GV2-05 a GV2-08: `NÃO INICIADAS`. Não declarar T00 V2 vigente, nem produzir registros de composição como se GI-2 já estivesse aprovado. O registro histórico anterior permanece preservado.
+
+---
+
+## Revalidação ampliada da Etapa 2 — fidelidade raster e submissão GI-2 (30/10/2026)
+
+**Natureza:** novo evento de verificação, posterior às reavaliações históricas acima. Este adendo **não as apaga**; prevalece somente para o estado corrente dos critérios da Etapa 2. Fontes físicas: clone `SaOr-mai-Casa (2).zip` e alterações documentais cumulativas correspondentes à correção `_estado-` e à revisão destes TextFrames. A data acima identifica esta revisão documental, não uma data presumida de aprovação anterior.
+
+### Enquadramento normativo do limite da origem raster
+
+Confrontada novamente a redação efetiva de `.specs/wireframes/WIREFRAME-TEXT-TELA.md` §§3–5, a regra **não exige afirmar a identidade do arquivo vetorial original**: exige documentar como *não comprovadas* as propriedades não recuperáveis e **proíbe declarar reprodução paramétrica original exata sem fonte independente**. A fonte visual aprovada continua sendo o próprio PNG por hash. A ausência do arquivo editável original, isoladamente, **não invalida a conferência de fidelidade raster** do TextFrame, desde que não se infira glyph, fonte ou engine originais. A referência para uma implementação técnica futura permanece `REGRAS-TECNICAS.md` §§5–9; o documento individual descreve a aparência observável, não a origem editável.
+
+Esta delimitação **não autoriza copiar ou inferir componentes exclusivos da T00 para T00.1**, não altera as SPECs e não elimina a aprovação humana expressa de GI-2.
+
+### Evidência nova e verificação física reproduzível
+
+| Tema | TextFrame final proposto | SHA-256 da versão verificada | Evidência de recortes |
+|---|---|---|---|
+| white | `docs/wireframes/images/white/telas/wiframetext/T00-01-01_v02.md` | `e590ef912f00902aad3beb1bd6885c26631528088c5a97dc3f5b81e2553a0cb0` | §4A: 11 recortes; §4B: 22 recortes de conteúdo |
+| black | `docs/wireframes/images/black/telas/wiframetext/T00-01-01_v02.md` | `9d550bf5cf2ee73fff2f495d20997d644f95f14c2e1cc22beb23c2f41b1d5dc9` | §4A: 11 recortes; §4B: 22 recortes de conteúdo |
+
+- **66 verificações SHA-256 de recortes RGB** refeitas a partir dos PNGs originais decodificados, todas coincidentes com as assinaturas das seções 4A e 4B. Algoritmo determinístico, caixas e hashes estão nos dois TextFrames; o cálculo independe de prompt ou lembrança de conversa.
+- Telas principais e alternativas: todas `360×800` RGB, hashes iguais aos controles GI-1 já aprovados; diferença entre estados: **1428** pixels white e **1410** black, inteiramente no retângulo `[68,150,136,24]`.
+- Pranchas V2 White/Black: `1280×1920`; a área `[40,272,360,800]` é idêntica em todos os **288000 pixels** ao PNG principal de mesmo tema.
+- Amostras verificáveis de superfícies por tema constam de §4B: white fundo `#F4F4F4` e cards `#FFFFFF`; black fundo `#121212` e cards `#1E1E1E`.
+- Os dois arquivos Markdown foram reabertos após as alterações; conteúdo e tabela de assinaturas rechecados. Nenhum PNG, documento V1, Documento Mestre ou fonte congelada do Modelo C foi alterado.
+
+### Resultado revisado de E2.1–E2.8
+
+| Critério | Resultado técnico atual | Limite expresso |
+|---|---|---|
+| E2.1 — Geometria | `CONFORME` quanto às regiões, caixas de tinta e coordenadas documentadas | Coordenadas de tinta não são hit-targets nem código CSS de origem |
+| E2.2 — Conteúdo | `CONFORME` para rótulos, seções, subtítulos, estados e inventário visual cotejados com os PNGs | PNG é autoridade de aparência; Documento Mestre é autoridade funcional |
+| E2.3 — Estados | `CONFORME`; diferenças confinadas à cápsula de status | Não significa fluxo funcional adicional |
+| E2.4 — Temas | `CONFORME`; imagens e assinaturas calculadas separadamente | Não reutilizar tokens de um tema no outro |
+| E2.5 — Requisitos | `CONFORME`; destinos T00.1, T00.2, T00.3, M00.5 preservados | Conteúdo visual V2 não introduz ação nova |
+| E2.6 — Parâmetros da referência | `CONFORME PARA REPRODUÇÃO VISUAL RASTER`: assinaturas exatas de ícones e demais conteúdos, tokens normativos e limitações registradas | `NÃO COMPROVADO` o arquivo editável de origem e a identidade do glyph/fonte exatos da geração; **não** certificar reprodução paramétrica original exata |
+| E2.7 — Integridade | `CONFORME`: quatro PNGs GI-1 e hashes dos dois TextFrames | Alteração futura de bytes exige nova validação |
+| E2.8 — Verificação pós-edição | `CONFORME`: releitura física e 66 confrontos reproduzíveis | Não substitui aceite humano GI-2 |
+
+**Encerramento da Etapa 2:** `CONCLUÍDA TECNICAMENTE`, **limitada à fidelidade visual/documental demonstrável pelo raster e fontes normativas**, sem alegar acesso aos arquivos editáveis ou a seus parâmetros originais. Os critérios E2.1–E2.8 estão verificados nesse âmbito, sem relaxamento de coordenadas ou introdução de componentes. **Etapa 3 — GI-2: EM EXECUÇÃO (submissão ao responsável)**. GI-2 **não está APROVADO**, pois o contrato `.specs/wireframes/GATE-IMPLEMENTACAO-TELAS.md` §4 exige decisão humana específica, datada e vinculada a hashes do PNG e do TextFrame. Sem essa evidência não iniciar GV2-05/GI-3, GV2-06, GV2-07 ou GV2-08; não alterar o status de vigência funcional V2. A conclusão técnica deve ser revalidada se qualquer hash mudar.
+
+
+---
+
+## GV2-04 — Encerramento posterior do GI-2 (registro de 30/10/2026)
+
+**Decisão do responsável:** aprovação expressa e individual de ambos os pares PNG + TextFrame T00 V2, com hashes apresentados na solicitação de continuidade. Esta entrada posterior prevalece para o **estado vigente** sobre os estados históricos de espera, que ficam preservados na cronologia. **Não alterar o conteúdo dos dois TextFrames aprovados**, para não mudar seus hashes.
+
+| Tema | TextFrame aprovado (SHA-256) | PNG principal GI-1 | PNG estado alternativo GI-1 | Resultado |
+|---|---|---|---|---|
+| white | `e590ef912f00902aad3beb1bd6885c26631528088c5a97dc3f5b81e2553a0cb0` | `0442412875e3c45b85038d75d8b628f16c94c4ba06529d1c0c97a32d47761504` | `0e4a2da069611f52064c9a3e60f27536ebef21fd787ee9829a70d635de750e90` | **GI-2 APROVADO** |
+| black | `9d550bf5cf2ee73fff2f495d20997d644f95f14c2e1cc22beb23c2f41b1d5dc9` | `0d4baf7b7d4e12a59db8646dc6317976a860b573abd14745def152ea64b34950` | `d9d70702af9473bad1688faae215ca14fdd5e294c076e32a3c4526e3d33dbe77` | **GI-2 APROVADO** |
+
+**Verificação antes de encerrar:** ambos os Markdown e quatro PNGs reabertos e conferidos por SHA-256; 66 recortes RGB das seções 4A e 4B confrontados conforme a origem **declarada por seção**: §4A contempla a variante alternativa, enquanto §4B mede sempre o PNG principal. A linha de §4B rotulada “Desconectada” assina os pixels do principal Conectada e **não é evidência da variante**; a variante está comprovada por §4A. Essa ressalva semântica fica registrada sem editar o TextFrame aprovado; os parâmetros editáveis originais que não podem ser recuperados do raster permanecem identificados, sem serem declarados como comprovados. A decisão GI-2 abrange a fidelidade visual/documental da referência, não a recuperação dos projetos vetoriais originais.
+
+**Etapas 2 e 3: `CONCLUÍDAS`. GV2-04: `CONCLUÍDO`.** GI-0/GI-1 permanecem válidos conforme registros anteriores. **Condição de avanço:** permitida a abertura de GV2-05, uma vez comprovada a correspondência entre referências, hashes e aprovação; GV2-06 a GV2-08 permanecem `NÃO INICIADOS` nesta data de registro de GI-2.
+
+
+---
+
+## GV2-05 — Conclusão de composição técnica GI-3 (registro de 30/10/2026)
+
+**Pré-condição verificada:** GV2-04 encerrado após a aprovação expressa GI-2 dos dois TextFrames de hashes `e590ef912f00902aad3beb1bd6885c26631528088c5a97dc3f5b81e2553a0cb0` (white) e `9d550bf5cf2ee73fff2f495d20997d644f95f14c2e1cc22beb23c2f41b1d5dc9` (black). Nenhum TextFrame aprovado sofreu alteração.
+
+- **Novos registros físicos, lidos após a escrita:** `docs/wireframes/images/white/telas/pranchas/01_Mobile_360x800/wiframetext/T00-01-01_v02.md` e equivalente em `black/`.
+- **Pranchas examinadas:** White `310bbac69366d6f57279ca30f2858d0489ca17e370120819b0594c18c06a9fae`; Black `564cddc9a492810298be96c811487e702ab8273ee1a6bfe8d153db6741354efd`.
+- **Confrontos físicos por tema:** 360×800 inseridos em `[40,272,360,800]` sem nenhum pixel diferente; seis regiões fixas do Modelo C idênticas pixel a pixel; fontes oficiais congeladas preservadas por SHA-256; cabeçalho e itens 10/14 examinados visualmente e detalhados nos registros de composição, seções 3–5.
+- **Restrição metodológica:** a sequência de operações executadas dentro da ferramenta externa não é inferida de uma imagem final; verifica-se a composição final e conserva-se a regra obrigatória de montagem para novas saídas na SPEC 3.
+
+**GI-3: `CONFORME` (white e black). GV2-05: `CONCLUÍDO`.** Libera-se GV2-06 para formalizar GI-4 e a vigência, somente depois da releitura dos dois documentos de composição e das imagens. O estado `APROVADO` inscrito no PNG não substitui, por si, a decisão da autoridade competente.
+
+
+---
+
+## GV2-06 — Oficialização da V2 Mobile e conclusão GI-4 (registro de 30/10/2026)
+
+**Pré-condição:** GV2-05 `CONCLUÍDO`; duas Pranchas V2 e seus registros de composição foram abertos e validados, com identidade do ViewPort e seis regiões fixas do Modelo C conferidas por pixels e hashes. O aceite GI-2 anterior foi declarado expressamente pelo responsável para os TextFrames com hashes indicados abaixo.
+
+| Gate/controle | white | black | Evidência efetivamente conferida |
+|---|---|---|---|
+| GI-0 | CONFORME | CONFORME | Inventário específico T00 V2 nos controles individuais §3/§6 |
+| GI-1 | APROVADO | APROVADO | PNG principal e alternativo por hashes nos controles §6 |
+| GI-2 | APROVADO | APROVADO | TextFrame `e590ef912f00902aad3beb1bd6885c26631528088c5a97dc3f5b81e2553a0cb0` / `9d550bf5cf2ee73fff2f495d20997d644f95f14c2e1cc22beb23c2f41b1d5dc9`; manifestação humana expressa registrada em §7 dos controles |
+| GI-3 | CONFORME | CONFORME | Registros de composição §6; pixel do ViewPort e seis áreas fixas do template idênticos |
+| GI-4 | APROVADO E CONGELADO | APROVADO E CONGELADO | Aprovação visual das Pranchas V2 comunicada pelo responsável, vinculada aos PNGs `310bbac69366d6f57279ca30f2858d0489ca17e370120819b0594c18c06a9fae` / `564cddc9a492810298be96c811487e702ab8273ee1a6bfe8d153db6741354efd`; encerramento documental nos registros de composição §7 |
+
+**Decisão sobre o conjunto:** T00 V2 White e Black `APROVADO E CONGELADO`, sem revogar T00 V1 histórica. A aprovação visual da Prancha é preexistente e não foi inferida exclusivamente do rótulo desenhado no arquivo; a data exata da decisão original não foi inventada. A data `30/10/2026` identifica a formalização documental.
+
+**Padrão visual funcional Mobile:** perfil `docs/wireframes/images/padroes-funcionais/Mobile-v02.md`, SHA-256 `88c9258e53c7a4416403b6f60f792d923b2234bd78e1fdb52b40a505f0781dea`, formalmente selecionado como `VIGENTE` pelo evento posterior em `docs/wireframes/images/Registro_Padrao_Visual_Funcional_Mobile.md`, §5. Este evento não altera a seleção Modelo C da SPEC 2.
+
+**GV2-06: `CONCLUÍDO`.** Após releitura do perfil, registro de seleção e controles de cada tema, autorizada a abertura do GV2-07 para atualizar índices e executar auditoria integral de regressão. **GV2-07 e GV2-08 permanecem `NÃO INICIADOS` neste ato.**
+
+
+---
+
+## GV2-07 — Auditoria final documental e controle de regressões (registro de 30/10/2026)
+
+**Pré-condição comprovada:** GV2-06 encerrado, perfil Mobile v02 declarado vigente em registro próprio e PNGs/Modelo C congelados preservados por SHA-256.
+
+- `README.md`: atualizado para declarar T00 V2 vigente e V1 histórica; `docs/wireframes/images/README.md`: inventário físico por tema/versão e histórico de fechamento V1/V2 sincronizados, com T00 `APROVADO` e outras 70 interfaces preservadas como `PENDENTE`.
+- **Auditoria da base `SaOr-mai-Casa (2).zip`:** 123 arquivos físicos-base, sem exclusões; **10 arquivos modificados e 2 novos**, exatamente no escopo autorizado. Nenhum PNG, imagem V1, referência congelada do Modelo C ou Documento Mestre foi alterado.
+- **Links Markdown:** 86 vínculos locais verificados pela resolução física relativa ao documento; zero destinos inexistentes. Documentos normativos da SPEC 3 usam `_estado-` e os arquivos V2 usam a mesma convenção; a V1 histórica conserva seus nomes originais.
+- **Conjunto de integridade:** seis fontes oficiais do Modelo C conferidas por seus hashes publicados; hashes dos TextFrames GI-2 mantidos; imagens V2 idênticas aos bytes originais; registros de composição reabertos e verificados. Os textos preservam explicitamente a diferença entre fidelidade raster comprovada e origem editável não comprovada.
+- **Matriz funcional:** 71 IDs distintos, T00 `APROVADO` nos dois temas e geral, T00.1 e os outros 69 IDs `PENDENTE`; nenhuma etapa Tablet/Notebook/Desktop iniciada. A V1 preservada não é reclassificada como vigente.
+- **Autossuficiência documental:** uma execução sem conversa pode localizar o padrão visual funcional vigente pelo registro de seleção e hash, consultar o contrato concreto e a SPEC 3, identificar fontes de T00 e os quatro destinos do Documento Mestre e os controles GI-0/1/2/3/4. Não existe prova de origem vetorial exata dos ícones externos; essa limitação permanece expressa sem alterar os critérios normativos.
+- **Entrega:** preparar ZIP cumulativo relativo à raiz do repositório contendo somente estes arquivos modificados/criados; simular a aplicação em cópia limpa e comparar seu resultado com o changeset. A mera entrega do pacote não certifica aplicação no GitHub.
+
+**GV2-07: `CONCLUÍDO` quanto à auditoria documental e de regressão.** Liberação sequencial de GV2-08 após nova leitura deste evento e dos arquivos referenciados. O encerramento da etapa T00 V2 não inicia automaticamente GI-0/GI-1 de T00.1.
+
+
+---
+
+## GV2-08 — Liberação sequencial para início do GI-0 de T00.1 (registro de 30/10/2026)
+
+**Pré-condição comprovada:** GV2-07 encerrado com auditoria de escopo, preservação de fontes congeladas, referências e inventário. O padrão visual funcional Mobile **v02** está `VIGENTE` pelo registro `docs/wireframes/images/Registro_Padrao_Visual_Funcional_Mobile.md`, §5, que aponta para o perfil `padroes-funcionais/Mobile-v02.md` com SHA-256 verificável. **Modelo C** permanece selecionado separadamente na SPEC 2 e no seu registro permanente, com contrato concreto `contratos/USO-TEMPLATE-C.md`.
+
+### Fontes verificadas para T00.1 — sem iniciar GI-0
+
+- `docs/Documento_Mestre.md`, seção `T00.1 — Configuração da API`: URL da API obrigatória, credencial protegida **condicional** ao contrato, retorno à origem, testar conexão com E00.6/E00.7/E00.8, salvar inicialmente para T01 e alterações sujeitas a M00.4; segurança de credenciais e distinção de permissões.
+- `.specs/wireframes/PROCESSO-TELA-PRANCHA.md`: processo genérico PNG → GI-1 → TextFrame → GI-2 → Prancha GI-3 → GI-4, usando as fontes individuais da interface.
+- `.specs/wireframes/GATE-IMPLEMENTACAO-TELAS.md`: GI-0 deve verificar inventário, estados, contratos e eventuais lacunas, **sem atribuir** a T00.1 aprovações de T00.
+- `docs/wireframes/images/padroes-funcionais/Mobile-v02.md`, §3: textos, ícones, cartões, destinos e estados individuais de T00 **não podem ser importados automaticamente** para T00.1.
+- **Arquivos de T00.1 existentes na base:** dez PNGs em `white/black/telas/design/01_Mobile_360x800/`. Sua presença não constitui GI-0 ou GI-1 aprovado e não foi alterada. Há pelo menos uma grafia física `T00.1-01-01_v1_estado-testando.png` no tema white, em contraste com a convenção `vNN`; essa questão deve ser investigada **no GI-0 específico de T00.1**, sem renomeação ou correção fora do escopo deste pacote.
+- **Lacuna de fase futura já declarada na fonte funcional:** o formato definitivo de autenticação depende do Documento Técnico. O GI-0 de T00.1 deverá tratar essa condicionalidade sem inventar contrato ou campo obrigatório.
+
+**Conclusão de liberação:** as fontes normativas e os parâmetros funcionais e visuais necessários para **iniciar a análise GI-0 de T00.1** estão localizáveis no repositório, sem depender da V1 nem de memória de conversa. Isto **não certifica que o GI-0 de T00.1 já esteja conforme**: a inspeção individual de seus PNGs, requisitos, nomenclatura e estados ainda não começou e deverá registrar qualquer pendência.
+
+**GV2-08: `CONCLUÍDO` — LIBERADO O INÍCIO DO GI-0 DE T00.1**, não sua conclusão. Nenhum PNG, controle ou TextFrame de T00.1 foi criado, modificado ou aprovado por este evento.
+
+### Situação consolidada da sequência T00 V2
+
+| Etapa | Estado verificável | Autoridade / registro |
+|---|---|---|
+| GV2-00 | CONCLUÍDO | Inventário e classificação V1/V2 neste registro |
+| GV2-01 | CONCLUÍDO | SPECs independentes revisadas e incorporadas |
+| GV2-02 | CONCLUÍDO | Contrato do Modelo C e perfil funcional separados |
+| GV2-03 / GI-1 | CONCLUÍDO / APROVADO | Controles White/Black V2, §6; quatro PNGs por SHA-256 |
+| GV2-04 / GI-2 | CONCLUÍDO / APROVADO | Controles, §7; TextFrames aprovados preservados por hash |
+| GV2-05 / GI-3 | CONCLUÍDO / CONFORME | Registros de composição de Prancha, §6 |
+| GV2-06 / GI-4 | CONCLUÍDO / APROVADO | Composições §7 e registro genérico de vigência Mobile v02 |
+| GV2-07 | CONCLUÍDO | Auditoria de diferenças, links, imagens e matriz das 71 interfaces |
+| GV2-08 | CONCLUÍDO — GI-0 DE T00.1 LIBERADO | Fontes funcionais de T00.1 e seleção visual vigente |
+
+**Preservação:** nenhuma mudança de PNG V1/V2, nenhum arquivo do Modelo C, nenhum requisito do Documento Mestre nem documentação de T00.1 alterados durante a regularização T00 V2. A aplicação efetiva do ZIP cumulativo no repositório do responsável será verificada no próximo clone, sem presumir atualização no GitHub.
