@@ -423,10 +423,12 @@ Autoridade operacional:
 
 **Atualização da versão vigente de T00 para V2 — registro de 30/10/2026:** GV2-04 concluiu o GI-2 dos TextFrames V2 identificados por SHA-256; GV2-05 comprovou GI-3 das Pranchas V2 e preservação do Modelo C; GV2-06 formalizou GI-4 e declarou o perfil visual funcional `Mobile-v02.md` como `VIGENTE` no registro genérico de seleção. Os documentos V1 permanecem preservados e a matriz continua agregada por ID/tema, não por versão. **O estado `APROVADO` da linha T00 refere-se agora à V2 vigente**, conforme os controles `white/black/telas/controle/T00-01-01_v02.md` (§§6–8), os registros de composição das Pranchas V2 (§§6–7) e `Registro_Padrao_Visual_Funcional_Mobile.md` (§5). Nenhuma das 70 interfaces restantes ou das resoluções futuras está incluída nessa aprovação.
 
+**Fechamento funcional de T00.1 v01 — GI-4, 31/10/2026:** os PNGs individuais e TextFrames da T00.1 foram aprovados em GI-1/GI-2, com GI-0 documentado nos controles por tema; o GI-3 das Pranchas Mobile White/Black foi registrado como `CONFORME TÉCNICO`, e o responsável aprovou expressamente no GI-4 **cada Prancha final e o conjunto White/Black**. O aceite e os SHA-256 dos PNGs `1280 × 1920` constam nos registros de composição `white/telas/pranchas/01_Mobile_360x800/wiframetext/T00.1-01-01_v01.md` e `black/telas/pranchas/01_Mobile_360x800/wiframetext/T00.1-01-01_v01.md`, §11. A linha agregada de T00.1 passa a `APROVADO` em Claro, Escuro e Status geral. O encerramento limita-se à T00.1 `v01` Mobile: não muda a baseline, a seleção do template Modelo C, o perfil visual Mobile-v02 vigente, as outras interfaces nem os Gates históricos de T00.
+
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|
 | 01 | `T00` | APROVADO | APROVADO | APROVADO |
-| 02 | `T00.1` | PENDENTE | PENDENTE | PENDENTE |
+| 02 | `T00.1` | APROVADO | APROVADO | APROVADO |
 | 03 | `T00.2` | PENDENTE | PENDENTE | PENDENTE |
 | 04 | `T00.3` | PENDENTE | PENDENTE | PENDENTE |
 | 05 | `M00.4` | PENDENTE | PENDENTE | PENDENTE |
