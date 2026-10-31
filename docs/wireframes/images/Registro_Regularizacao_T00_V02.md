@@ -229,3 +229,53 @@ Os seguintes documentos foram criados após o GV2-01, cada qual com responsabili
 - **Cópias adicionais:** se uma aplicação anterior criou arquivos físicos `T00-01-01_v02__estado-desconectada.png`, eles são duplicatas sem função. Só removê-los após conferir a existência e o hash correspondente do PNG canônico com um `_`. Não excluir os arquivos originais.
 - **Estado dos Gates:** a correção de nomenclatura não concede nem revoga aprovação visual GI-1; os quatro PNGs já aprovados continuam identificados pelos mesmos SHA-256. O GV2-04/GI-2 permanece pendente de aceite humano dos TextFrames; GV2-05 e posteriores continuam não iniciados.
 - **Rastreabilidade documental:** hashes dos dois TextFrames e do perfil `Mobile-v02.md` foram recalculados nas tabelas anteriores para refletir exclusivamente a correção das referências textuais.
+
+
+---
+
+## Execução sequencial adicional — 30/10/2026 (base `SaOr-mai-Casa (2).zip`)
+
+**Objeto:** execução autorizada do plano de regularização da T00 V2, etapas 0 a 7. **Regra:** nenhuma etapa seguinte é iniciada enquanto a anterior não tiver todos os critérios verificados e seu fechamento registrado. Este adendo prevalece para a *situação atual* sobre entradas históricas de Gate, sem alterar ou apagar a cronologia anterior.
+
+### Etapa 0 — Fixação da base: `CONCLUÍDA`
+
+- **Base física:** arquivo ZIP `SaOr-mai-Casa (2).zip`; SHA-256 `b748e3cc2b0860ea2adcc8c694496f7e8ae44f5c63337f84f52001566783b0c0`; integridade de arquivo ZIP verificada, sem entrada corrompida.
+- **Inventário observado:** 123 arquivos físicos, 48 documentos Markdown, 55 PNGs; vídeos excluídos da análise de conteúdo. Nenhum arquivo fonte editável para os componentes/glyphs individuais da Tela V2 foi identificado.
+- **Fontes:** `docs/Documento_Mestre.md` §T00; `.specs/wireframes/REGRAS-TECNICAS.md` §§3–9; `.specs/wireframes/WIREFRAME-TEXT-TELA.md` §§2–5; `.specs/wireframes/GATE-IMPLEMENTACAO-TELAS.md` §§2–4; controles e TextFrames `v02` de White/Black; registro de seleção e contrato do Modelo C.
+- **Conjunto V2:** PNGs principais/alternativos `white` e `black` têm `360×800`; Pranchas V2 têm `1280×1920`; o recorte `(x=40,y=272,w=360,h=800)` de ambas as Pranchas é idêntico pixel a pixel ao PNG principal correspondente. As diferenças entre Conectada e Desconectada ficam em `x=68..203,y=150..173` em ambos os temas.
+- **GI-1:** aprovação humana já registrada para os quatro PNGs por hash (§GV2-03 deste registro); mantida, sem reabertura. **GI-2:** não aprovado nos TextFrames físicos, §6 dos dois documentos. **GV2-05 a GV2-08:** não iniciados.
+- **Preservação:** seis arquivos oficiais do Modelo C conferidos contra `Registro_Controle_Template_Oficial.md` por SHA-256; V1 preservada integralmente. Não foi constatada necessidade de editar imagens.
+- **Critérios E0.1–E0.5:** conformes por inspeção do arquivo ZIP, leitura dos documentos, abertura e comparação dos PNGs, conferência dos hashes e inventário de versões. **Decisão:** `CONCLUÍDA`; permitida abertura da Etapa 1.
+
+### Etapa 1 — Correção normativa do sufixo: `CONCLUÍDA`
+
+- **Arquivo alterado:** `.specs/wireframes/PROCESSO-TELA-PRANCHA.md`, §3, parágrafo da identificação e versionamento. Substituída **somente** a ocorrência normativa de `` `__estado-<identificador>.png` `` por `` `_estado-<identificador>.png` ``.
+- **Fonte da decisão e norma compatível:** `.specs/wireframes/WIREFRAME-TEXT-TELA.md`, §2, determina `_estado-` para artefatos novos e preserva os nomes históricos V1; corrigenda anterior neste registro revoga a tentativa de renomeação de T00 V2. Os quatro PNGs V2 originais mantêm nomes e hashes.
+- **Verificação física pós-edição:** o arquivo foi reaberto e confrontado byte a byte com a versão-base, confirmando alteração localizada. Busca das normas ativas confirmou ausência de nova exigência `__estado-`; as ocorrências remanescentes nos documentos V1 e no histórico são exclusivamente **históricas**, não instruções vigentes.
+- **SHA-256 anterior da SPEC 3:** `635e7a7212c59d37e175ac27826909109b6060c67f77dc1cc9fa40a206da89b7` (mantido nos registros históricos anteriores).
+- **SHA-256 da SPEC 3 corrigida:** `66a40eaa91b3ca83a31fa28ddde1a1c01b89c445f113aeae0e34c66e933e57d9`.
+- **Critérios E1.1–E1.6:** conformes; a correção de texto não altera dimensão, pixels, aprovações visuais, BaseLine ou contrato das versões V1. **Decisão:** `CONCLUÍDA`; permitida abertura da Etapa 2.
+
+### Etapa 2 — Conferência técnica dos TextFrames V2: `PENDENTE` (sem encerramento)
+
+**Reabertura física e fontes:**
+
+- `docs/wireframes/images/white/telas/wiframetext/T00-01-01_v02.md`, §§2–6; SHA-256 original `51fc0b44db607522618dcb9e321602e442e4c90a0c2da86597328a0ad6226089`;
+- `docs/wireframes/images/black/telas/wiframetext/T00-01-01_v02.md`, §§2–6; SHA-256 original `2d7d16b74ae00bb9f33a75c9e9a8015ea9661f55295e3f710ed90f790941d25e`;
+- Quatro PNGs V2 aprovados e hashes registrados nos controles `white/black/telas/controle/T00-01-01_v02.md`, §6;
+- `.specs/wireframes/REGRAS-TECNICAS.md` §§5, 6, 8, 9 (tipografia `Inter`, tokens de cor, radius e iconografia `Material Icons Outlined`); `.specs/wireframes/WIREFRAME-TEXT-TELA.md` §§3–5 (critério de reprodução determinística).
+
+| Critério | Verificação realizada | Situação |
+|---|---|---|
+| E2.1 — Geometria | PNGs `360×800`; cartões `[12,108,336,80]`, `[12,240,336,72]`, `[12,364,336,72]`, `[12,452,336,56]` confrontados com os TextFrames; caixa de diferença de estados confirmada | `CONFORME` para caixas verificadas; não extrapolar para hit-targets editáveis |
+| E2.2 — Conteúdo | Inspeção visual dos dois PNGs; textos, quatro cartões, seções, versão e navegação confrontados com §§2–5 dos TextFrames | `CONFORME` para conteúdo visível |
+| E2.3 — Estados | Imagens de Conectada e Desconectada diferem apenas na região `(68,150)–(204,174)` | `CONFORME` |
+| E2.4 — Temas | White/Black têm mesma composição e destinos, com paletas distintas | `CONFORME` |
+| E2.5 — Requisitos | Documento Mestre §T00 × inventário de ambos os TextFrames: destinos T00.1, T00.2, T00.3 e M00.5 sem nova ação funcional | `CONFORME` quanto aos destinos; diferenças visuais V2 descritas nos controles |
+| E2.6 — Propriedades técnicas | A SPEC técnica fornece famílias/tokens **normativos**, mas nenhum arquivo editável ou fonte de exportação comprova os **identificadores exatos de glyphs** e os parâmetros originais de renderização dos PNGs gerados externamente; os próprios TextFrames, §4/§6, registram essas limitações | **`PENDENTE — IMPEDITIVO`** para afirmar reprodução paramétrica exata |
+| E2.7 — Integridade | SHA-256 dos quatro PNGs coincide com controles; os seis artefatos oficiais do Modelo C foram verificados por hash | `CONFORME` |
+| E2.8 — Documentos | Os dois TextFrames foram integralmente relidos: já declaram com clareza a ausência de fonte original e conservam `GI-2: AGUARDANDO APROVAÇÃO HUMANA`; não foi encontrada informação adicional verificável que justificasse alterar seus textos para afirmar valores desconhecidos | `CONFORME` quanto à leitura; **não supre E2.6** |
+
+**Pendência objetiva:** comprovação dos identificadores dos glyphs e parâmetros editáveis relevantes em arquivos de origem, **ou decisão técnica explícita e documentada que estabeleça uma equivalência visual suficiente e seus limites**, quando compatível com o contrato normativo. Não preencher a lacuna por aproximação, dedução de família de ícones ou aceitação fictícia. O aceite humano GI-2 de ambos os TextFrames ainda não foi concedido e é requisito separado da conclusão técnica.
+
+**Decisão:** **Etapa 2 `PENDENTE`; GV2-04/GI-2 continuam abertos.** Etapas 3–7 e GV2-05 a GV2-08 permanecem **`NÃO INICIADOS`**. Preservar as aprovações GI-1 e Pranchas visuais existentes; nenhuma inferência de aceite GI-2, GI-3 ou GI-4. A SPEC, este registro e o restante da árvore deverão ser auditados fisicamente antes de utilizar este adendo como prova de resultado.
