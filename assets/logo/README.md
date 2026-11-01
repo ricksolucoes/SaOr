@@ -44,21 +44,50 @@ Regras:
 
 ---
 
-# 3. Arquivos catalogados
+# 3. Inventário físico de arquivos catalogados
 
-| Arquivo | Categoria | Uso catalogado |
+Este inventário foi confrontado com o conteúdo de `assets/logo/` no clone local `SaOr-main (3).zip` (SHA-256 `53c599d01259a5a0d26a82b6e6494508d5a81daa23f62343963867bb75c00361`), em 31/10/2026. Existem **21 artefatos gráficos** (20 PNGs e um SVG), além deste README. Os hashes identificam o arquivo físico e não autorizam alterações nele.
+
+| Arquivo existente | Categoria de inventário | Dimensão | SHA-256 |
+|---|---|---|---|
+| `saor-icon-master.svg` | Ícone — mestre vetorial | viewBox 833 × 748 | `ea51308440113aab770edd07bdf03c5c6016060ed40367b0a926302fbbad35ac` |
+| `saor-icon-modelo-com_fundos_claro.png` | Modelo demonstrativo | 1254 × 1254 | `9f8118de971211ff3d0975c69f37455d32e8219c0f5d2672b496bb729a5054b8` |
+| `saor-icon-modelo-com_fundos_escuros.png` | Modelo demonstrativo | 1254 × 1254 | `fdf53e2c3a177b3683b28296a05b0beef66a0d065ea8b9e3783a6a9285737f2e` |
+| `saor-icon-para_fundos_claros.png` | Ícone PNG | 1536 × 1024 | `c0b5c34c03a6e95df993677cce8850f4396c572514bce25477ad1edf83613d34` |
+| `saor-icon-para_fundos_escuros.png` | Ícone PNG | 1254 × 1254 | `fd2df24e3974ad099e544660c1e41c037ca726b14289c3dcc7dadea375c07851` |
+| `saor-logo-SSO-para_fundos_claros.png` | Logomarca PNG | 1254 × 1254 | `dd4082946acfce2d25ccf2b154949ec3df8c1d36fe2a8cfa406e4054949cf419` |
+| `saor-logo-SSO-para_fundos_escuro.png` | Logomarca PNG | 1254 × 1254 | `302f1b6453bb39929c4635ffbd26fc96d05c45c34998df4b00359242004bbc94` |
+| `saor-logo-horizontal-SSO-para_fundos_claros.png` | Logomarca horizontal SSO | 1672 × 941 | `fc6c9bf449af442b85bf2a99b21592472b59f518448e31294f7e51b773e646e8` |
+| `saor-logo-horizontal-SSO-para_fundos_escuros.png` | Logomarca horizontal SSO | 2172 × 724 | `2869306697411fdf53bc8dae7efa84cf9bcc87b30fa9cd4fc5dd7b0bb86fcfba` |
+| `saor-logo-horizontal-para_fundos_claros.png` | Logomarca horizontal | 2172 × 724 | `b3ea50173f6f45c4c9dfd67debc24b25dd9a52cec8febf375860f1373be27561` |
+| `saor-logo-horizontal-para_fundos_escuros.png` | Logomarca horizontal | 2172 × 724 | `07f8ec48f18888f2ad6f8dbb3d428cb03f84b885d6cbbfc7fc7cfbaead367656` |
+| `saor-logo-modelo-SOO-com_fundos_escuros.png` | Modelo demonstrativo | 1448 × 1086 | `3711f23c508e0a1ade1337cb5f0b4cbd717cc7632e66386d542d7a99a8f5b24a` |
+| `saor-logo-modelo-SSO-com_fundos_claro.png` | Modelo demonstrativo | 1448 × 1086 | `a8a5cf74358ef02321f75c7e1b3a2b22bbe9f09a2953853cade7e3f2c96bea56` |
+| `saor-logo-modelo-SSO-com_fundos_escuros.png` | Modelo demonstrativo | 1447 × 1087 | `88aad59015df9a6bcde44905214d22e2420229bcb7b4f284d254beb3aa2a086e` |
+| `saor-logo-modelo-com_fundos_claro.png` | Modelo demonstrativo | 1448 × 1086 | `8ccb8a9a711f79a5621b0de3fd03121bcaebf5a7b9fe32884b893a410e5b58ee` |
+| `saor-logo-modelo-com_fundos_escuros.png` | Modelo demonstrativo | 1448 × 1086 | `cdeb60e088b68f86409f0449d22527d9b03e16b1ec72112ade0bf83c8a78342a` |
+| `saor-logo-modelo-horizontal-SSO-com_fundos_claro.png` | Modelo demonstrativo | 1672 × 941 | `6454b5e62703afbf3eaf3f9be9012ab43b5e6d2fb23215e68b131ef8c82f0d19` |
+| `saor-logo-modelo-horizontal-SSO-com_fundos_escuros.png` | Modelo demonstrativo | 1672 × 941 | `5c0b698545acc3178f461115c1963009ba2bfe70a7a6b12eec1dd6b6c1cf9681` |
+| `saor-logo-modelo-horizontal-com_fundos_claro.png` | Modelo demonstrativo | 2172 × 724 | `e58254e89040c0097f081594201a1e938b4e1db24aecc50e183975d882343f95` |
+| `saor-logo-modelo-horizontal-com_fundos_escuros.png` | Modelo demonstrativo | 2172 × 724 | `58c5587ae6c204fef8041f273b485fa8cea0d4210068f0d1d5e28f1610b45324` |
+| `saor-logo-para_fundos_claros.png` | Logomarca PNG | 1448 × 1086 | `66403aaa48ff18cd641d01ac11f0b0f7bc18ac237a60bd5139a821e294c84ad8` |
+
+**Critério de aplicação:** artefatos com `-modelo-` no nome são composições demonstrativas. Para aplicação direta, usar a variante `-para_fundos_claros` ou `-para_fundos_escuros` pertinente, sem inverter cores. As variantes horizontais `SSO` examinadas não trazem o subtítulo visual `SALES ORDER`; o termo `SSO` no nome do arquivo **não constitui, por si só, especificação de autenticação**.
+
+### 3.1 Aplicação específica — T00.2, pré-visualização
+
+A Tela T00.2 possui dois temas visuais (`white` e `black`) e estados de seleção Claro/Escuro. A logomarca dentro da **miniatura de pré-visualização** acompanha o fundo da miniatura, e não necessariamente o tema externo da Tela:
+
+| Fundo da miniatura | Variante utilizada como referência visual | SHA-256 |
 |---|---|---|
-| `saor-icon-master.svg` | Ícone / mestre vetorial | Fonte vetorial mestre do ícone |
-| `saor-icon-para_fundos_claros.png` | Ícone | Variante preparada para aplicação sobre fundos claros |
-| `saor-icon-para_fundos_escuros.png` | Ícone | Variante preparada para aplicação sobre fundos escuros |
-| `saor-icon-modelo-com_fundos_claro.png` | Referência visual | Modelo de visualização do ícone em contexto de fundo claro |
-| `saor-icon-modelo-com_fundos_escuros.png` | Referência visual | Modelo de visualização do ícone em contexto de fundo escuro |
-| `saor-logo-para_fundos_claros.png` | Logo completa | Variante preparada para aplicação sobre fundos claros |
-| `saor-logo-para_fundos_escuros.png` | Logo completa | Variante preparada para aplicação sobre fundos escuros |
-| `saor-logo-modelo-com_fundos_claro.png` | Referência visual | Modelo de visualização da logo em contexto de fundo claro |
-| `saor-logo-modelo-com_fundos_escuros.png` | Referência visual | Modelo de visualização da logo em contexto de fundo escuro |
+| Claro | `saor-logo-horizontal-SSO-para_fundos_claros.png` | `fc6c9bf449af442b85bf2a99b21592472b59f518448e31294f7e51b773e646e8` |
+| Escuro | `saor-logo-horizontal-SSO-para_fundos_escuros.png` | `2869306697411fdf53bc8dae7efa84cf9bcc87b30fa9cd4fc5dd7b0bb86fcfba` |
 
-Os arquivos classificados como **modelo de visualização** servem como referência de aplicação. Para inserção direta em uma interface, deve-se preferir a variante indicada como **para fundos claros** ou **para fundos escuros**, conforme o contexto.
+A relação visual foi confrontada com os quatro PNGs atuais da T00.2. **Limite:** uma composição PNG rasterizada não demonstra identidade binária do arquivo-fonte embutido no editor; a correspondência da variante é visual. A substituição de `SaOr` textual na baseline por logomarca é a **diferença visual D-02**, a ser decidida no GI-1 da interface, conforme SPEC 3 §6.3. A catalogação aqui não aprova GI-1 nem cria regra funcional global de uso da marca.
+
+### 3.2 Referência documental não encontrada
+
+A versão anterior desta tabela listava `saor-logo-para_fundos_escuros.png` como arquivo disponível, mas **não foi encontrado arquivo com esse nome exato** em `assets/logo/` do clone auditado. O nome não foi substituído por outro semelhante (por exemplo, `saor-logo-SSO-para_fundos_escuro.png`), pois a equivalência não está demonstrada. A referência anterior fica registrada nesta ocorrência de catálogo como **REFERÊNCIA QUEBRADA — pendente de identificação histórica**, sem autorizar renomear, excluir ou criar logomarcas.
 
 ---
 
