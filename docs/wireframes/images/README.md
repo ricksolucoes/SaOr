@@ -435,12 +435,14 @@ Autoridade operacional:
 
 **Preparação da formalização GI-4 — T00.3 v01, 06/11/2026 (registro posterior):** após a regularização GI-2/GI-3, o responsável autorizou gerar os documentos para concluir o processo. Foram reconfirmados na base `SaOr-main (16).zip` os hashes das Pranchas White `f4c161fd2c3f2a2c0113aded4f5f9b9efe9059634a15d9eb214532b242e1834b` e Black `8f97cbfead954d56de8a58a72ef620630837b63b6fef82471736384ab9fc2b46`, bem como a integridade dos respectivos ViewPorts. A declaração visual de aprovação permanece registrada; a autorização documental atual não contém declaração inequívoca de aprovação GI-4 individual por hash e do conjunto. Os registros de composição White/Black, §9, identificam os objetos submetidos à confirmação. **Não presumir GI-4 concluído**: manter `EM VALIDAÇÃO` nos três campos de T00.3 até a decisão humana final expressa, a transcrição fiel e a validação dos hashes. Nenhum PNG, TextFrame aprovado, template, contrato ou histórico anterior foi alterado nesta preparação.
 
+**Fechamento formal de T00.3 v01 — GI-4, 06/11/2026 (evento posterior à preparação acima):** o responsável aprovou expressamente o GI-4 da Prancha White `white/telas/pranchas/01_Mobile_360x800/T00.3-01-01_v01.png` (SHA-256 `f4c161fd2c3f2a2c0113aded4f5f9b9efe9059634a15d9eb214532b242e1834b`), da Prancha Black `black/telas/pranchas/01_Mobile_360x800/T00.3-01-01_v01.png` (SHA-256 `8f97cbfead954d56de8a58a72ef620630837b63b6fef82471736384ab9fc2b46`) **e do conjunto White/Black**, reconhecendo o STATUS `APROVADO E CONGELADO` já impresso nas duas imagens. A declaração de 06/11/2026 e a data de regularização estão transcritas na **§10** dos registros de composição `white/telas/pranchas/01_Mobile_360x800/wiframetext/T00.3-01-01_v01.md` e `black/telas/pranchas/01_Mobile_360x800/wiframetext/T00.3-01-01_v01.md`. As verificações GI-3 permanecem `CONFORME TECNICAMENTE` (ViewPort de cada Prancha igual ao PNG de Tela aprovado em seus 288.000 pixels; estrutura fixa do Modelo C preservada), e as aprovações GI-0/GI-1/GI-2 permanecem preservadas. A ressalva histórica do STATUS antecipado, a ordem original de montagem não comprovável e o limite dos bytes pré-adendo GI-2 continuam documentados, sem reabrir os Gates já aprovados. **T00.3 v01 Mobile está APROVADA E CONGELADA no processo SPEC 3**, individualmente para White/Black e como conjunto. Somente a linha T00.3 da matriz muda de `EM VALIDAÇÃO` para `APROVADO`; normas, Documento Mestre, PNGs, TextFrames, templates, registros históricos e demais interfaces permanecem intactos.
+
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|
 | 01 | `T00` | APROVADO | APROVADO | APROVADO |
 | 02 | `T00.1` | APROVADO | APROVADO | APROVADO |
 | 03 | `T00.2` | APROVADO | APROVADO | APROVADO |
-| 04 | `T00.3` | EM VALIDAÇÃO | EM VALIDAÇÃO | EM VALIDAÇÃO |
+| 04 | `T00.3` | APROVADO | APROVADO | APROVADO |
 | 05 | `M00.4` | PENDENTE | PENDENTE | PENDENTE |
 | 06 | `M00.5` | PENDENTE | PENDENTE | PENDENTE |
 | 07 | `E00.6` | PENDENTE | PENDENTE | PENDENTE |
