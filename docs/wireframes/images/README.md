@@ -437,6 +437,10 @@ Autoridade operacional:
 
 **Fechamento formal de T00.3 v01 — GI-4, 06/11/2026 (evento posterior à preparação acima):** o responsável aprovou expressamente o GI-4 da Prancha White `white/telas/pranchas/01_Mobile_360x800/T00.3-01-01_v01.png` (SHA-256 `f4c161fd2c3f2a2c0113aded4f5f9b9efe9059634a15d9eb214532b242e1834b`), da Prancha Black `black/telas/pranchas/01_Mobile_360x800/T00.3-01-01_v01.png` (SHA-256 `8f97cbfead954d56de8a58a72ef620630837b63b6fef82471736384ab9fc2b46`) **e do conjunto White/Black**, reconhecendo o STATUS `APROVADO E CONGELADO` já impresso nas duas imagens. A declaração de 06/11/2026 e a data de regularização estão transcritas na **§10** dos registros de composição `white/telas/pranchas/01_Mobile_360x800/wiframetext/T00.3-01-01_v01.md` e `black/telas/pranchas/01_Mobile_360x800/wiframetext/T00.3-01-01_v01.md`. As verificações GI-3 permanecem `CONFORME TECNICAMENTE` (ViewPort de cada Prancha igual ao PNG de Tela aprovado em seus 288.000 pixels; estrutura fixa do Modelo C preservada), e as aprovações GI-0/GI-1/GI-2 permanecem preservadas. A ressalva histórica do STATUS antecipado, a ordem original de montagem não comprovável e o limite dos bytes pré-adendo GI-2 continuam documentados, sem reabrir os Gates já aprovados. **T00.3 v01 Mobile está APROVADA E CONGELADA no processo SPEC 3**, individualmente para White/Black e como conjunto. Somente a linha T00.3 da matriz muda de `EM VALIDAÇÃO` para `APROVADO`; normas, Documento Mestre, PNGs, TextFrames, templates, registros históricos e demais interfaces permanecem intactos.
 
+**M00.5 v01 — GI-2 aprovado, GI-3 conforme, GI-4 pendente (07/11/2026):** Tela Mobile `360 × 800` (modal de confirmação sobre a T00 v02) aprovada em GI-1 e TextFrame em GI-2, para White, Black e conjunto. As Pranchas `1280 × 1920` foram montadas sobre o Modelo C vigente e verificadas: ViewPort idêntico (288.000 de 288.000 pixels) e nenhuma alteração fora das regiões autorizadas. O STATUS impresso é `AGUARDANDO APROVAÇÃO`; **o GI-4 depende de aceite humano expresso por tema, hash e conjunto**. Evidências: `white|black/telas/controle/M00.5-01-01_v01.md` §§12–13 e `white|black/telas/pranchas/01_Mobile_360x800/wiframetext/M00.5-01-01_v01.md`. Divergências restritas à M00.5: ícone, texto E (Formal), subtítulo Light 15 px; o Documento Mestre não foi alterado.
+
+**Fechamento formal de M00.5 v01 — GI-4, 07/11/2026:** o responsável respondeu **"Aprovado"** à solicitação que identificou a Prancha White (SHA-256 `4757b7d3cb357f771b4f9db2f48d76330b2f4eacece01088f13c1ed3ef5d38f1`), a Prancha Black (SHA-256 `6e08820d71441263b1a7d5391756718dac7bfa0fe8ee8f0c54dd5ca706b2bf5c`) e o conjunto. Após o aceite, o STATUS impresso passou a `APROVADO E CONGELADO`; hashes finais: White `918c6d7b1d6232269ed25757c378e1d94c995a90fb23146e6d97e60acbd500cf`, Black `9a3f87fc6db3cb09ce47f230d8e9687c038422b5fab7a9ab2909a21b4a400aff`. A linha M00.5 da matriz passa de `EM VALIDAÇÃO` a **`APROVADO`** nos três campos. Evidências: `white|black/telas/controle/M00.5-01-01_v01.md` §14 e `white|black/telas/pranchas/01_Mobile_360x800/wiframetext/M00.5-01-01_v01.md` §10.
+
 | # | ID | Claro | Escuro | Status geral |
 |---:|---|---|---|---|
 | 01 | `T00` | APROVADO | APROVADO | APROVADO |
@@ -444,7 +448,7 @@ Autoridade operacional:
 | 03 | `T00.2` | APROVADO | APROVADO | APROVADO |
 | 04 | `T00.3` | APROVADO | APROVADO | APROVADO |
 | 05 | `M00.4` | APROVADO | APROVADO | APROVADO |
-| 06 | `M00.5` | PENDENTE | PENDENTE | PENDENTE |
+| 06 | `M00.5` | APROVADO | APROVADO | APROVADO |
 | 07 | `E00.6` | PENDENTE | PENDENTE | PENDENTE |
 | 08 | `E00.7` | PENDENTE | PENDENTE | PENDENTE |
 | 09 | `E00.8` | PENDENTE | PENDENTE | PENDENTE |
