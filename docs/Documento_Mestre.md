@@ -1133,12 +1133,14 @@ Configurar agora → **T00.1**
 
 ```text
 ┌────────────────────────────────────┐
-│ ⚠ Não foi possível acessar o       │
+│                                    │
+│              ⚠                     │
+│                                    │
+│   Não foi possível acessar o       │
 │   servidor configurado.            │
 │                                    │
-│ [      TENTAR NOVAMENTE        ]   │
+│[ TENTAR NOVAMENTE ] [ VER CONFIGURAÇÃO ] │
 │                                    │
-│ [   VER CONFIGURAÇÃO DA API    ]   │
 └────────────────────────────────────┘
 ```
 
