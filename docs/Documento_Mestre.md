@@ -1055,18 +1055,17 @@ OK → retorna para **T00.1** mantendo a configuração em edição.
 | Relação com outras interfaces | E00.6, T00.1 |
 
 ```text
-┌────────────────────────────────────┐
+┌─────────────────────────────────────┐
 │               ⚠                    │
-│                                    │
-│      Não foi possível conectar     │
-│                                    │
-│ Verifique o endereço configurado,  │
-│ a conexão de rede e a              │
-│ disponibilidade do servidor.       │
-│                                    │
-│ [        TESTAR NOVAMENTE      ]   │
-│ [        EDITAR API           ]    │
-└────────────────────────────────────┘
+│                                     │
+│       Não foi possível conectar     │
+│                                     │
+│ Verifique o endereço configurado,   │
+│ a conexão de rede e a               │
+│ disponibilidade do servidor.        │
+│                                     │
+│ [ TESTAR NOVAMENTE ] [ EDITAR API ] │
+└─────────────────────────────────────┘
 ```
 
 Testar novamente → **E00.6**.  
