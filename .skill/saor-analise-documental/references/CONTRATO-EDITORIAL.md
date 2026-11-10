@@ -48,9 +48,9 @@ Não deixar `{{PLACEHOLDERS}}` no documento apresentado como concluído. Durante
 
 - `Estado vigente` no topo: **fotografia comprovada do estado atual** do objeto. Eventos anteriores ficam no H3 de Gate/histórico correspondente. Um texto `AGUARDANDO APROVAÇÃO` anterior não deve ser tratado como estado atual após aceite comprovado.
 - Para cada decisão: registrar **objeto**, **Gate**, **data comprovada**, **teor fiel**, **abrangência** e **hash/versão da submissão** quando aplicáveis. A fonte persistente é o próprio registro com a transcrição auditável; a história em conversa, isoladamente, não substitui a formalização requerida.
-- Hash histórico ≠ hash do arquivo atual. Se houver alteração posterior de STATUS, adendo ou reestruturação, preservar as identidades distintas e a decisão que abrange cada uma; não usar um SHA antigo rotulado como atual.
+- **Hash físico atual, evidência de aprovação e versão formal anterior são identidades diferentes.** Atualização autorizada de STATUS, campos ou redação dentro da mesma versão não cria uma versão nova nem histórico de hashes intermediários descartados. Referências correntes devem identificar os bytes físicos vigentes; identidades associadas a submissão/aprovação comprovada e versões formalmente anteriores são preservadas conforme seus próprios contratos, sem falsamente atribuir aos bytes novos o aceite anterior.
 - **Evitar autoreferência de hash:** inserir o SHA atual do próprio Markdown dentro de seus bytes mudaria o SHA. O campo do modelo destinado a versão aprovada deve referenciar expressamente o snapshot da decisão e/ou registro externo, nunca pretender representar o próprio arquivo pós-edição com valor impossível de estabilizar.
-- **Evitar ciclos entre documentos:** TextFrame pode referenciar a versão do Controle usada em GI-1; se o Controle for atualizado depois, esse hash é **histórico de origem**, não alegar que é o hash atual. O Controle pode referenciar uma versão textual posterior, preservando a ordem das decisões.
+- **Evitar ciclos entre documentos:** TextFrame pode referenciar o Controle que fundamentou o GI-1. Quando a identidade do Controle tiver valor probatório como **origem documentada** de uma submissão ou decisão, sua referência permanece classificada como tal, mesmo que os bytes atuais sejam diferentes; isso **não a torna outra versão formal**. Quando se tratar apenas de um hash corrente substituído por ajuste autorizado na mesma versão, atualizar as referências vigentes no escopo aprovado, sem conservar uma sequência artificial de revisões. Preservar a ordem das decisões e não declarar antigo SHA como atual.
 - Nomes, datas, condições, versões e coordenadas só vêm de evidências físicas ou humanas conferidas. Referenciar fontes por caminho relativo e seção/trecho; SHA-256 integral quando exigido pelo Gate/contrato. Uma informação histórica comprovada pode mencionar sua procedência quando relevante; não inserir o nome do ZIP de transporte como substituto da identidade de um artefato do repositório.
 
 ## 5. Geometria e alcance de prova
@@ -62,11 +62,11 @@ Não deixar `{{PLACEHOLDERS}}` no documento apresentado como concluído. Durante
 
 ## 6. Atualização e migração sem regressão
 
-1. Antes de modificar bytes: confirmar versão do objeto e dos documentos que o referenciam; registrar SHA, referências e histórico, mapear mudanças e obter autorização específica.
+1. Antes de modificar bytes: confirmar versão formal do objeto, sua identidade física, decisões vinculadas e documentos que o referenciam; mapear mudanças, referências e provas de aprovação/versões anteriores efetivas e obter autorização específica.
 2. **Atualizar** documento já conforme alterando campos/linhas preexistentes e, quando necessário, `Estado vigente`; manter a estrutura integral e as decisões anteriores.
 3. **Migrar** documento divergente construindo a versão normalizada a partir do **template integral**, redistribuindo todo o conteúdo para H3s predeterminados, sem transcrever interpretações como fatos nem apagar decisões.
 4. Classificar a alteração como editorial, factual ou normativa; alteração editorial **modifica hash** e pode afetar a identidade de bytes anteriormente aprovados. A consequência sobre o Gate depende da SPEC e da autorização humana, não da Skill.
-5. Confrontar White/Black/páginas/estados e referências históricas/dependentes; atualizar apenas vínculos autorizados. Um arquivo congelado não perde seu histórico nem é reaberto automaticamente por comparação de formato.
+5. Confrontar White/Black/páginas/estados, referências de aprovação e de versão formal anterior e os vínculos dependentes; atualizar apenas vínculos correntes autorizados. Um artefato congelado não perde evidências de decisão nem é reaberto automaticamente por comparação de formato.
 6. Validar scripts, diff e leitura semântica. Falha estrutural obriga correção da redação; falta de prova material obriga registrar `NÃO VALIDADO` e bloquear a afirmação correspondente.
 
 ## 7. Limite técnico do validador

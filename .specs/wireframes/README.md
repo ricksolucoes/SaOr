@@ -32,6 +32,8 @@ Documento Mestre + ficha/Textframe funcional → GI-0 / inventário
 
 Os parâmetros concretos de composição vêm do **contrato técnico versionado da referência vigente**, não de números fixados nas SPECs permanentes. O padrão visual funcional é selecionado por registro próprio, sem herdar componentes exclusivos de outra Tela. Não desenhar a Tela diretamente na Prancha. O PNG visual é a primeira representação da Tela e deve ser aprovado antes de escrever seu TextFrame; um esquema ASCII não substitui a imagem. Os registros GI-0/GI-1 ficam em `telas/controle/` e são distintos do TextFrame. A Tela não herda medidas de componentes demonstrativos da Prancha e não deve ser redimensionada para caber nela. Se a interface precisar de rolagem, produzir **um ViewPort técnico aprovado e uma nova Prancha por posição/página**, mantendo todos os campos, sem reduzir ou omitir conteúdos; o campo `PÁGINA = XX / YY` controla a sequência e `ETAPA = <Nome da interface>` identifica a mesma interface. O Item 10 só registra componentes usados (AppBar fiel; ícones de lista opcionais) e o Item 14 só observações pertinentes à Tela. Uma Prancha de Implementação **não modifica** o template congelado. Os Gates 1–6 da SPEC 1 não são reexecutados por interface funcional.
 
+**Auditoria independente da produção:** após o fechamento dos Gates aplicáveis da SPEC responsável, realizar a auditoria de encerramento definida no [Processo Genérico de Auditoria](../auditor/PROCESSO-AUDITORIA.md), com critérios do [Contrato de Auditoria de Wireframes](../auditor/wireframes/CONTRATO-AUDITORIA-WIREFRAMES.md) e procedimento operacional da [Skill de Auditoria](../../.skill/saor-auditoria/SKILL.md). A mesma auditoria pode ser executada sob demanda em estágio intermediário, respeitando somente obrigações já exigíveis. Não constitui GI-5 nem altera qualquer aceite, versão ou Gate por sua mera execução.
+
 ## Norma técnica transversal
 
 [`REGRAS-TECNICAS.md`](REGRAS-TECNICAS.md) determina canvas, ViewPort, margens, tokens, componentes, estados e acessibilidade da representação. Uma norma compartilhada não escolhe um modelo oficial e não define conteúdo individual das interfaces.
@@ -43,6 +45,7 @@ Os parâmetros concretos de composição vêm do **contrato técnico versionado 
 | Definir/revisar prancha-modelo | SPEC 1 → regras técnicas → Wireframe Text da Prancha → montagem visual → aprovações |
 | Identificar referência oficial | SPEC 2 → registro genérico → seis artefatos físicos e hashes |
 | Produzir uma interface funcional | Documento Mestre → SPEC 3 → contrato do Wireframe Text da Tela → normas técnicas → SPEC 2 → arquivos funcionais e registros de aprovação |
+| Auditar conforme a norma, sob demanda ou após encerramento | [Processo de Auditoria](../auditor/PROCESSO-AUDITORIA.md) → [contrato de wireframes](../auditor/wireframes/CONTRATO-AUDITORIA-WIREFRAMES.md) → [Skill operacional](../../.skill/saor-auditoria/SKILL.md); preservar as autoridades dos três processos |
 | Localizar arquivos, versões e estados | [`docs/wireframes/images/README.md`](../../docs/wireframes/images/README.md) |
 | Solicitar mudança de qualquer norma ou versão congelada | [`.specs/PROCESSO-ALTERACAO-ASSISTIDA.md`](../PROCESSO-ALTERACAO-ASSISTIDA.md) |
 

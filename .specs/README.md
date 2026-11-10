@@ -24,6 +24,12 @@ A documentação não depende de prompts ou memória de conversa. Uma regra poss
 - [`docs/wireframes/images/README.md`](../docs/wireframes/images/README.md) — diretórios, nomes, estado e inventário operacional, não autoridade normativa concorrente.
 - [`wireframes/README.md`](wireframes/README.md) — índice contextual e caminhos da etapa.
 
+## Auditoria transversal de conformidade
+
+O [índice da auditoria](auditor/README.md) aponta para o [PROCESSO-AUDITORIA.md](auditor/PROCESSO-AUDITORIA.md), autoridade canônica do **procedimento genérico** de auditoria sob demanda e de encerramento. A auditoria de encerramento sucede a conclusão do processo competente e precede a declaração de fechamento técnico-documental; a auditoria sob demanda considera exclusivamente os requisitos exigíveis no estágio efetivamente comprovado. A [Skill de Auditoria](../.skill/saor-auditoria/SKILL.md) operacionaliza o procedimento, sem alterar decisões, conceder autorizações ou substituir a norma responsável.
+
+Para wireframes, o [Contrato de Auditoria de Wireframes](auditor/wireframes/CONTRATO-AUDITORIA-WIREFRAMES.md) aplica os controles genéricos às três SPECs e à Skill documental, **por referência**, sem redefinir Gates ou formatos. O processo global continua sendo a autoridade para autorizar alterações e entregas; resultados automatizados não substituem análise semântica ou aceite humano.
+
 ## Regras de precedência e execução
 
 1. Requisitos funcionais vêm exclusivamente do Documento Mestre aprovado. Regras técnicas invariantes vêm de `REGRAS-TECNICAS.md`.
