@@ -93,6 +93,13 @@ Equivalência entre `white` e `black`: informações, campos, ações/destinos, 
 
 Cada revisão preserva as versões aprovadas; não sobrescrever silenciosamente. Mudanças que afetem paginação exigem revisar os nomes `<PÁGINA>-<TOTAL>` de toda sequência dependente, mantendo registro do que foi substituído. Para novas saídas, sempre vincular a versão **exata** do template vigente no instante da aprovação, com caminho e hash — uma seleção futura não altera artefatos históricos.
 
+**Versionamento, hashes e histórico — regra obrigatória.** Hashes diferentes dentro da mesma versão representam **ajustes dos arquivos, não histórico de versões**.
+
+- **Ajuste dentro da mesma versão:** trabalhando na versão A, alterar os arquivos dessa versão (mesmo que o hash mude) continua sendo a versão A. Não é nova versão e não exige criar nem preservar histórico desses ajustes intermediários; os hashes descartados não são acumulados como histórico. As referências correntes passam a identificar os bytes finais.
+- **Mudança efetiva de versão (A → B):** é evento de versionamento e torna **obrigatório** o registro do histórico, preservando a versão anterior aprovada e as informações exigidas pelas normas para a transição.
+- **Regra de interpretação:** *mesmo número de versão + hash alterado = ajuste da versão corrente; mudança de versão A → B = histórico obrigatório.* Rastreabilidade técnica de arquivos (hash) não se confunde com histórico de versões.
+- **Limites:** a regra não dispensa Gates nem autoriza sobrescrever silenciosamente artefato aprovado — alteração de pixels de PNG aprovado exige novo GI-1 ([GATE §3](GATE-IMPLEMENTACAO-TELAS.md)). O hash dos bytes efetivamente submetidos ou aprovados permanece como **evidência do ato de decisão**, não como histórico de versões. Procedimento de auditoria: [PROCESSO-AUDITORIA.md](../auditor/PROCESSO-AUDITORIA.md), §§8.2–8.3.
+
 ## 4. Etapa 1 — Construir e aprovar visualmente o PNG da Tela (GI-0 e GI-1)
 
 1. Ler a **ficha e o Textframe funcional do Documento Mestre**, ações, destinos, estados, componentes, retorno e regras transversais da interface. Executar GI-0 com inventário por elemento, requisito, condição e fonte; inspecionar os PNGs e Wireframe Text oficiais do tema conforme SPEC 2. Decisões sem fonte ou padrão visual insuficiente devem ser bloqueadas antes do desenho, e não resolvidas por adivinhação.

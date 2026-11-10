@@ -34,7 +34,9 @@ A **aprovação visual já concedida** de uma Prancha identificável pode ser tr
 - [ ] Se houver rolagem, apresentar **todos** os PNGs da sequência, um por posição de rolagem, com inventário coberto e sem duplicações; white/black devem ter equivalência funcional. Representações adicionais de estados são PNGs distintos e só existem se os estados forem exigidos.
 - [ ] Registrar no `telas/controle/<nome-base>.md`: caminho, dimensões, SHA-256 de cada PNG/estado/página, fonte de cada elemento, inspeção visual, pendências, responsável, data e **decisão humana expressa vinculada aos hashes**.
 
-**Passagem:** PNGs visualmente aprovados, com hashes congelados para documentação. **Aprovação GI-1 não aprova TextFrame nem autoriza montar Prancha.** Se a imagem for alterada depois dessa decisão, GI-1 perde validade para os novos bytes; exigir nova apresentação e aprovação, preservando o histórico dos hashes aprovados.
+**Passagem:** PNGs visualmente aprovados, com hashes congelados para documentação. **Aprovação GI-1 não aprova TextFrame nem autoriza montar Prancha.** Se a imagem for alterada depois dessa decisão, GI-1 perde validade para os novos bytes; exigir nova apresentação e aprovação, conforme a regra de versionamento a seguir.
+
+**Versionamento e hashes (autoridade: [SPEC 3 §3](PROCESSO-TELA-PRANCHA.md)).** Mesmo número de versão com hash alterado é **ajuste da versão corrente**: não gera histórico de versões nem acumula hashes intermediários descartados. O **histórico é obrigatório somente na mudança efetiva de versão (A → B)**. Em ambos os casos, o hash dos bytes efetivamente aprovados no GI-1 permanece como evidência do ato de aprovação, e a alteração de pixels após o GI-1 exige nova apresentação e aprovação para os novos bytes.
 
 ## 4. GI-2 — TextFrame derivado e aprovação documental do conjunto (aprovação humana)
 
