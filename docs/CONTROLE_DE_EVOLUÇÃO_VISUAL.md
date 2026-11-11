@@ -11,22 +11,37 @@ AJUSTES NECESSÁRIOS
 APROVADO
 ```
 
+**Última atualização:** 11/11/2026 — Wireframe aprovado e congelado (GI-4, Mobile `360 × 800`, temas Claro e Escuro) até a T01 v01.
+
+Resumo do avanço (71 interfaces):
+
+| Etapa | Aprovado | Pendente |
+|---|---:|---:|
+| Textframe | 71 | 0 |
+| Wireframe | 12 | 59 |
+| Design | 0 | 71 |
+| Figma | 0 | 71 |
+| Protótipo | 0 | 71 |
+| HTML | 0 | 71 |
+
+Fonte do estado do Wireframe: matriz da seção 15 de `docs/wireframes/images/README.md` e os registros de controle por tela em `docs/wireframes/images/<tema>/telas/`. Uma interface só consta como **Aprovado** no Wireframe quando as variações Claro e Escuro e o conjunto passaram pelo Gate GI-4. Para as interfaces com mais de uma versão (T00, T00.1 e T00.2), o estado refere-se à versão vigente.
+
 Modelo resumido de acompanhamento:
 
 | ID | Interface | Textframe | Wireframe | Design | Figma | Protótipo | HTML |
 |---|---|---|---|---|---|---|---|
-| T00 | Configuração da aplicação | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T00.1 | Configuração da API | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T00.2 | Aparência / Tema | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T00.3 | Diagnóstico de conexão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M00.4 | Confirmar alteração da API | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| M00.5 | Restaurar configuração | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.6 | Testando conexão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.7 | Conexão realizada | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.8 | Falha de conexão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.9 | API não configurada | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E00.10 | API indisponível no login | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
-| T01 | Login | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T00 | Configuração da aplicação | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| T00.1 | Configuração da API | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| T00.2 | Aparência / Tema | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| T00.3 | Diagnóstico de conexão | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| M00.4 | Confirmar alteração da API | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| M00.5 | Restaurar configuração | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| E00.6 | Testando conexão | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| E00.7 | Conexão realizada | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| E00.8 | Falha de conexão | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| E00.9 | API não configurada | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| E00.10 | API indisponível no login | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
+| T01 | Login | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | T01.1 | Recuperar senha | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
 | E01.2 | Login inválido | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
 | E01.3 | Sem conexão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
