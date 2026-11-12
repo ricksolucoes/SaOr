@@ -11,14 +11,14 @@ AJUSTES NECESSÁRIOS
 APROVADO
 ```
 
-**Última atualização:** 11/11/2026 — Wireframe aprovado e congelado (GI-4, Mobile `360 × 800`, temas Claro e Escuro) até a E01.2 v01, conforme decisão individual White/Black e do conjunto D-E01.2-06 e D-E01.2-08.
+**Última atualização:** 11/11/2026 — Wireframe aprovado e congelado (GI-4, Mobile `360 × 800`, temas Claro e Escuro) até a E01.3 v01, conforme decisão individual White/Black e do conjunto D-E01.3-14.
 
 Resumo do avanço (71 interfaces):
 
 | Etapa | Aprovado | Pendente |
 |---|---:|---:|
 | Textframe | 71 | 0 |
-| Wireframe | 14 | 57 |
+| Wireframe | 15 | 56 |
 | Design | 0 | 71 |
 | Figma | 0 | 71 |
 | Protótipo | 0 | 71 |
@@ -44,7 +44,7 @@ Modelo resumido de acompanhamento:
 | T01 | Login | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | T01.1 | Recuperar senha | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | E01.2 | Login inválido | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
-| E01.3 | Sem conexão | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.3 | Sem conexão | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | E01.4 | Recuperação solicitada | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
 | E01.5 | Falha ao solicitar recuperação | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
 | T02 | Início / Dashboard | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
