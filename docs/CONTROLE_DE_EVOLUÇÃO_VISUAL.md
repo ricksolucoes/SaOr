@@ -11,7 +11,7 @@ AJUSTES NECESSÁRIOS
 APROVADO
 ```
 
-**Última atualização:** 11/11/2026 — Wireframe aprovado e congelado (GI-4, Mobile `360 × 800`, temas Claro e Escuro) até a E01.3 v01, conforme decisão individual White/Black e do conjunto D-E01.3-14.
+**Última atualização:** 11/11/2026 — Wireframe aprovado e congelado (GI-4, Mobile `360 × 800`, temas Claro e Escuro) até a E01.3 v01, conforme decisão individual White/Black e do conjunto D-E01.3-18.
 
 Resumo do avanço (71 interfaces):
 
