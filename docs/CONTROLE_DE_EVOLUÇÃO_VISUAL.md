@@ -11,7 +11,7 @@ AJUSTES NECESSÁRIOS
 APROVADO
 ```
 
-**Última atualização:** 12/11/2026 — Wireframe aprovado e congelado (GI-4, Mobile `360 × 800`, temas Claro e Escuro) até a E01.4 v01, conforme a decisão D-E01.4-07 (Pranchas White e Black).
+**Última atualização:** 12/11/2026 — Wireframe aprovado e congelado (GI-4, Mobile `360 × 800`, temas Claro e Escuro) até a E01.5 v01, conforme a decisão D-E01.5-07 (Pranchas White e Black).
 
 Resumo do avanço (71 interfaces):
 
@@ -46,7 +46,7 @@ Modelo resumido de acompanhamento:
 | E01.2 | Login inválido | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | E01.3 | Sem conexão | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | E01.4 | Recuperação solicitada | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
-| E01.5 | Falha ao solicitar recuperação | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| E01.5 | Falha ao solicitar recuperação | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | T02 | Início / Dashboard | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
 | T02.1 | Notificações | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
 | T03 | Clientes e Prospects | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
