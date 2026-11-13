@@ -11,14 +11,14 @@ AJUSTES NECESSÁRIOS
 APROVADO
 ```
 
-**Última atualização:** 12/11/2026 — Wireframe aprovado e congelado (GI-4, Mobile `360 × 800`, temas Claro e Escuro) até a E01.5 v01, conforme a decisão D-E01.5-07 (Pranchas White e Black).
+**Última atualização:** 13/11/2026 — Wireframe aprovado e congelado (GI-4, Mobile `360 × 800`, temas Claro e Escuro) até a T02 v01, conforme a decisão D-22 do Controle da T02 (seis Pranchas, white e black, páginas 01/03 a 03/03). A contagem do Wireframe foi corrigida de 16/55 para 18/53: a matriz da seção 15 de `docs/wireframes/images/README.md` já tinha 17 interfaces aprovadas (T00 a E01.5), e a T02 passa a ser a 18ª.
 
 Resumo do avanço (71 interfaces):
 
 | Etapa | Aprovado | Pendente |
 |---|---:|---:|
 | Textframe | 71 | 0 |
-| Wireframe | 16 | 55 |
+| Wireframe | 18 | 53 |
 | Design | 0 | 71 |
 | Figma | 0 | 71 |
 | Protótipo | 0 | 71 |
@@ -47,7 +47,7 @@ Modelo resumido de acompanhamento:
 | E01.3 | Sem conexão | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | E01.4 | Recuperação solicitada | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | E01.5 | Falha ao solicitar recuperação | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
-| T02 | Início / Dashboard | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
+| T02 | Início / Dashboard | Aprovado | Aprovado | Pendente | Pendente | Pendente | Pendente |
 | T02.1 | Notificações | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
 | T03 | Clientes e Prospects | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
 | M03.1 | Filtros de clientes | Aprovado | Pendente | Pendente | Pendente | Pendente | Pendente |
