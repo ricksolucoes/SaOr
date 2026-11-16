@@ -94,6 +94,9 @@ COMP-[ID]-[NomeDoComponente]-[versão].png
 | C24 | StatusTimeline (estado) | `COMP-C24-StatusTimeline-v01_Etapa1.png` | v01 | 336 × 184 | APROVADO (15/11/2026, 19:10) |
 | C24 | StatusTimeline (estado) | `COMP-C24-StatusTimeline-v01_Etapa5.png` | v01 | 336 × 184 | APROVADO (15/11/2026, 19:10) |
 | C25 | Dialog | `COMP-C25-Dialog-v01.png` | v01 | 312 × 308 | APROVADO (15/11/2026, 12:08) |
+| C25.1 | DialogConfirm (variante do C25) | `COMP-C25.1-DialogConfirm-v01.png` | v01 | 312 × 372 | APROVADO (16/11/2026, 10:01) |
+| C25.2 | DialogOk (variante do C25) | `COMP-C25.2-DialogOk-v01.png` | v01 | 312 × 372 | APROVADO (16/11/2026, 10:01) |
+| C25.3 | DialogTimed (variante do C25) | `COMP-C25.3-DialogTimed-v01.png` | v01 | 312 × 310 | APROVADO (16/11/2026, 10:01) |
 | C26 | BottomSheet | `COMP-C26-BottomSheet-v01.png` | v01 | 360 × 280 | APROVADO (15/11/2026, 19:10) |
 | C27 | EmptyState | `COMP-C27-EmptyState-v01.png` | v01 | 336 × 64 | APROVADO (15/11/2026, 14:10) |
 | C28 | ErrorState | `COMP-C28-ErrorState-v01.png` | v01 | 336 × 188 | PENDENTE |
@@ -477,6 +480,34 @@ O MetricCard tem **duas versões**: sem sublegenda (C15) e com sublegenda (C15.1
 | --- | --- |
 | Conteúdo | círculo de ícone (48 px; o ícone varia por situação, por isso a imagem genérica traz o círculo vazio), título, descrição centralizada em até três linhas e botão primário de largura total do diálogo. Textos são **placeholders**. |
 | Dimensões | 312 × 308 px, raio 16 px; botão 264 × 48; a altura varia com o conteúdo |
+
+**C25.1 — DialogConfirm (variante do C25)**
+
+| Item | Valor |
+| --- | --- |
+| Conteúdo | círculo de ícone (48 px; o ícone varia por situação, por isso a imagem genérica traz o círculo vazio), título em Inter SemiBold 20 px (TEXT), mensagem principal em Inter Regular 16 px (TEXT) em até duas linhas e mensagem complementar em Inter Regular 16 px (TEXT-2) em até três linhas, todos centralizados; botão de texto `CANCELAR` (cor Primary `#004A99`) à esquerda e botão primário `CONFIRMAR` à direita, ambos com 120 × 48 px e 24 px de espaço entre eles. Textos são **placeholders**. |
+| Dimensões | 312 × 372 px, raio 16 px, fundo do diálogo (SURFACE `#FFFFFF`); margem lateral de 24 px; altura varia com o conteúdo |
+| Uso | diálogos de confirmação com duas ações: M00.4 (L898), M00.5, M06.1, M12.1, M16.3 e M17.6 |
+| Não validado | variante criada por decisão do responsável (16/11/2026); o catálogo só define o C25; altura de 372 px; largura de 120 px dos botões e espaço de 24 px; posição do texto do `CANCELAR`; cor do botão de confirmação (Primary; na M00.4 o `ALTERAR` usa a cor de erro); truncamento de textos longos |
+
+**C25.2 — DialogOk (variante do C25)**
+
+| Item | Valor |
+| --- | --- |
+| Conteúdo | círculo de ícone (48 px; o ícone varia por situação, por isso a imagem genérica traz o círculo vazio), título em Inter SemiBold 20 px (TEXT), mensagem principal em Inter Regular 16 px (TEXT) em até duas linhas e mensagem complementar em Inter Regular 16 px (TEXT-2) em até três linhas, todos centralizados; botão primário `OK` de largura total (264 × 48 px). Textos são **placeholders**. |
+| Dimensões | 312 × 372 px, raio 16 px, fundo do diálogo (SURFACE `#FFFFFF`); margem lateral de 24 px; altura varia com o conteúdo |
+| Uso | diálogos informativos com uma ação: E00.7 (L1020), E17.8 e o aviso de acesso não autorizado da M17.6 |
+| Não validado | variante criada por decisão do responsável (16/11/2026); altura de 372 px; truncamento de textos longos |
+
+**C25.3 — DialogTimed (variante do C25)**
+
+| Item | Valor |
+| --- | --- |
+| Conteúdo | círculo de ícone (48 px; o ícone varia por situação, por isso a imagem genérica traz o círculo vazio), título em Inter SemiBold 20 px (TEXT), mensagem principal em Inter Regular 16 px (TEXT) em até duas linhas e mensagem complementar em Inter Regular 16 px (TEXT-2) em até três linhas, todos centralizados; sem botões. Textos são **placeholders**. |
+| Dimensões | 312 × 310 px, raio 16 px, fundo do diálogo (SURFACE `#FFFFFF`); altura varia com o conteúdo |
+| Comportamento | fecha sozinho após um tempo definido; o **tempo X não foi definido** pelo responsável e não consta no Documento Mestre |
+| Uso | aviso transitório sem ação, como o "Sucesso" da seção 21 (L4800); a imagem não mostra o tempo, que é comportamento |
+| Não validado | variante criada por decisão do responsável (16/11/2026); duração do fechamento (NÃO DEFINIDA); fechamento ao tocar fora; indicador visual de tempo (não há); acessibilidade de aviso que fecha sozinho; altura de 310 px; truncamento de textos longos |
 
 **C26 — BottomSheet**
 
@@ -865,6 +896,9 @@ Registra **todas as versões criadas**, vigentes ou não. A versão em uso é a 
 | 15/11/2026 | C19.1 | v01 | `COMP-C19.1-OrderCardByClient-v01.png` | `9d61a31bea3b788548f23661dadfacdb7d005220140d09d2fa5f76fc9c6890aa` | VIGENTE | Versão inicial |
 | 15/11/2026 | C19.2 | v01 | `COMP-C19.2-OrderCardByCustomer-v01.png` | `66bae8d1f03ed87b93b93cf6e9860af6da03d652ed3c4842af18cbb03f9cf55c` | VIGENTE | Versão inicial |
 | 15/11/2026 | C20.1 | v01 | `COMP-C20.1-VisitHistoryItem-v01.png` | `94f72bb421d079477256b1318b3e333d0a2a6ec31174271635fc1b560e0e91fd` | VIGENTE | Versão inicial |
+| 16/11/2026 | C25.1 | v01 | `COMP-C25.1-DialogConfirm-v01.png` | `793384153e22c92f5a6cf086f1fc1766282beb38d3c6c814e789f8c76336f0d2` | VIGENTE | Versão inicial |
+| 16/11/2026 | C25.2 | v01 | `COMP-C25.2-DialogOk-v01.png` | `673a1785e30059734ad4083adadeb5007f315b024a264857f7bd07b06bed9006` | VIGENTE | Versão inicial |
+| 16/11/2026 | C25.3 | v01 | `COMP-C25.3-DialogTimed-v01.png` | `1fd4177c75a57f0a91b82ee23c6aaebe1d36f2e9b2c27a9139259cd9d4fe97c1` | VIGENTE | Versão inicial |
 
 Situação: `VIGENTE`, `SUBSTITUÍDA por vNN` ou `RETIRADA (motivo)`.
 
@@ -934,6 +968,9 @@ Situação: `VIGENTE`, `SUBSTITUÍDA por vNN` ou `RETIRADA (motivo)`.
 | C23 | Stepper | Existe | ✅ |
 | C24 | StatusTimeline | Existe | ✅ |
 | C25 | Dialog | Existe | ✅ |
+| C25.1 | DialogConfirm (variante do C25) | Existe | ✅ |
+| C25.2 | DialogOk (variante do C25) | Existe | ✅ |
+| C25.3 | DialogTimed (variante do C25) | Existe | ✅ |
 | C26 | BottomSheet | Existe | ✅ |
 | C27 | EmptyState | Existe | ✅ |
 | C28 | ErrorState | Existe | ✅ |
