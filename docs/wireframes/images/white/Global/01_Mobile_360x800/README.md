@@ -47,8 +47,8 @@ GLOBAL-[NomeDoEstado]-[versão].png
 | --- | --- | --- | --- | --- |
 | Carregando | `GLOBAL-Carregando-v01.png` | v01 | 336 × 128 | APROVADO (15/11/2026, 21:30) |
 | Lista vazia | `GLOBAL-ListaVazia-v01.png` | v01 | 336 × 260 | APROVADO (15/11/2026, 21:40) |
-| Erro | — | — | — | Nenhuma imagem criada até esta data |
-| Sem conexão | — | — | — | Nenhuma imagem criada até esta data |
+| Erro | `GLOBAL-Erro-v01.png` | v01 | 336 × 224 | APROVADO (16/11/2026, 09:11) |
+| Sem conexão | `GLOBAL-SemConexao-v01.png` | v01 | 336 × 84 | APROVADO (16/11/2026, 09:17) |
 | Sessão expirada ou inválida | — | — | — | Nenhuma imagem criada até esta data |
 | Acesso não autorizado | — | — | — | Nenhuma imagem criada até esta data |
 | Salvando | — | — | — | Nenhuma imagem criada até esta data |
@@ -83,15 +83,19 @@ GLOBAL-[NomeDoEstado]-[versão].png
 
 | Item | Valor |
 | --- | --- |
-| Conteúdo | ícone de alerta (`⚠`), texto `Não foi possível carregar os dados` e botão `TENTAR NOVAMENTE` |
-| Não validado | dimensões, token de cor por elemento e ícone Material Outlined do símbolo |
+| Conteúdo | círculo de fundo de 48 px em SURFACE-ALT `#EAEAEA` com o ícone `warning` (alerta) de 24 px em Error `#991B1B`, centralizado; mensagem `Não foi possível carregar os dados` centralizada em Inter Regular 16 px (`WF-BODY`), TEXT `#1A1A1A`; botão primário `TENTAR NOVAMENTE` de 288 × 48 px, raio 12 px, fundo Primary `#004A99`, rótulo em Inter Medium 16 px (`WF-ACTION-TEXT`), On Primary `#FFFFFF` |
+| Dimensões | 336 × 224 px, raio 16 px, fundo SURFACE `#FFFFFF`; círculo com o topo a 32 px, mensagem (linha de 24 px) a 104 px e botão a 152 px do topo, com 24 px de margem lateral e 24 px abaixo do botão |
+| Referência | círculo de ícone de 48 px em SURFACE-ALT sobre SURFACE, margens, espaçamentos e botão: Lista vazia aprovada (white), C25 Dialog (white) e E00.7; ícone de alerta em Error e mensagem em Inter Regular 16 px: C28 ErrorState (white); textos: seção 21 do Documento Mestre |
+| Não validado | a escolha do ícone `warning` para o símbolo `⚠` (a correspondência dos ícones de estado com a família Material Icons Outlined não está verificada e a T02 registra a tabela de ícones de estado como pendente); o fundo SURFACE do bloco (o Carregando usa SURFACE-ALT como o C29); o destino do botão `TENTAR NOVAMENTE`, que a seção 21 não define (repetir a consulta que falhou é a leitura do rótulo, não regra documentada); a mensagem sem título e descrição separados, como na seção 21 |
 
 **Sem conexão**
 
 | Item | Valor |
 | --- | --- |
-| Conteúdo | `⚠ Você está offline` e o texto `Algumas informações podem estar desatualizadas.` |
-| Não validado | dimensões, token de cor por elemento e ícone Material Outlined do símbolo |
+| Conteúdo | banner sem botão: ícone `wifi_off` de 24 px em Warning (texto/ícone) `#AC4F01`, título `Você está offline` em Inter SemiBold 14 px (`WF-SECTION`) e descrição `Algumas informações podem estar desatualizadas.` em Inter Regular 14 px, ambos em TEXT `#1A1A1A`, alinhados à esquerda a 52 px da borda, em linhas de 20 px |
+| Dimensões | 336 × 84 px, raio 16 px, borda de 1 px em Warning `#AC4F01`; fundo derivado: Warning a 15% de opacidade sobre SURFACE `#FFFFFF` (`#F3E5D9`); ícone com a caixa de 24 px a 16 px da borda esquerda e a 12 px do topo; linhas de base do texto a 27, 47 e 67 px do topo |
+| Referência | layout do banner offline aprovado da T02 (`T02-01-02_v01_estado-offline.png`, caixa `[12,153,336,84]`), do qual esta imagem foi isolada; textos: seção 21 do Documento Mestre; fundo derivado: `REGRAS-TECNICAS.md` §6.3 e DIF-09 do Controle da T02; cores: `REGRAS-TECNICAS.md` §6.5 |
+| Não validado | a cor Warning difere da T02 white: a T02 usa `#7C4A03` (D-12, DM §20.1, "vale somente para o T02") com fundo `#EBE4D9`, e esta imagem usa o token `#AC4F01` da §6.5, com fundo derivado `#F3E5D9`; o contraste do ícone e da borda sobre o fundo derivado é 4,39:1 e o do texto é 14,11:1 (calculados, não medidos); o fundo derivado continua lacuna do §6.3 (PEND-01 da T02), aprovada só para a T02 (D-24); a equivalência dos nomes de ícone com a família Material Icons Outlined não está verificada; a seção 21 mostra `⚠` no início do texto e a T02 usa `wifi_off` |
 
 **Sessão expirada ou inválida**
 
@@ -154,6 +158,8 @@ Registra **todas as versões criadas**, vigentes ou não. A versão em uso é a 
 | --- | --- | --- | --- | --- | --- | --- |
 | 15/11/2026 | Carregando | v01 | `GLOBAL-Carregando-v01.png` | `446cf705af2f922d80132e96d26501e423bac93e9ebf5d27cb464816df8079c2` | VIGENTE | Versão inicial |
 | 15/11/2026 | Lista vazia | v01 | `GLOBAL-ListaVazia-v01.png` | `2701ea32fc321b8c63e0a594944043a9328e04ce93ff1e862442fec0ccddbcad` | VIGENTE | Versão inicial |
+| 16/11/2026 | Erro | v01 | `GLOBAL-Erro-v01.png` | `5377d2abf6ace8179fbc14ea9516ea9a8ed70bed467e15f1fbfa4dd03483f099` | VIGENTE | Versão inicial |
+| 16/11/2026 | Sem conexão | v01 | `GLOBAL-SemConexao-v01.png` | `5bd91f697395680b7a0fe18d2c3ca75f558a814a26bdaa0fab7572f28bf39c89` | VIGENTE | Versão inicial |
 
 Situação: `VIGENTE`, `SUBSTITUÍDA por vNN` ou `RETIRADA (motivo)`.
 
@@ -186,8 +192,8 @@ Situação: `VIGENTE`, `SUBSTITUÍDA por vNN` ou `RETIRADA (motivo)`.
 | --- | --- | --- | --- |
 | Carregando | Existe | `GLOBAL-Carregando-v01.png`; também aparece na T02: `T02-01-01_v01_estado-carregando.png` | ✅ |
 | Lista vazia | Existe | `GLOBAL-ListaVazia-v01.png`; também aparece na T02: `T02-01-01_v01_estado-vazio.png` | ✅ |
-| Erro | Parcial | T02: `T02-01-01_v01_estado-erro.png` | ⬜ |
-| Sem conexão | Parcial | T02: `T02-01-02_v01_estado-offline.png` e `T02-02-02_v01_estado-offline.png` | ⬜ |
+| Erro | Existe | `GLOBAL-Erro-v01.png`; também aparece na T02: `T02-01-01_v01_estado-erro.png` | ✅ |
+| Sem conexão | Existe | `GLOBAL-SemConexao-v01.png`; também aparece na T02: `T02-01-02_v01_estado-offline.png` e `T02-02-02_v01_estado-offline.png` | ✅ |
 | Sessão expirada ou inválida | Montar | nenhuma tela aprovada | ⬜ |
 | Acesso não autorizado | Montar | nenhuma tela aprovada | ⬜ |
 | Salvando | Montar | nenhuma tela aprovada | ⬜ |
