@@ -51,8 +51,11 @@ GLOBAL-[NomeDoEstado]-[versão].png
 | Sem conexão | `GLOBAL-SemConexao-v01.png` | v01 | 336 × 84 | APROVADO (16/11/2026, 09:17) |
 | Sessão expirada ou inválida | `GLOBAL-SessaoExpirada-v01.png` | v01 | 336 × 260 | APROVADO (16/11/2026, 09:24) |
 | Acesso não autorizado | `GLOBAL-AcessoNaoAutorizado-v01.png` | v01 | 336 × 248 | APROVADO (16/11/2026, 09:27) |
-| Salvando | — | — | — | Nenhuma imagem criada até esta data |
-| Sucesso | — | — | — | Nenhuma imagem criada até esta data |
+| Salvando | `GLOBAL-Salvando-v01.png` | v01 | 336 × 128 | APROVADO (16/11/2026, 09:31) |
+| Sucesso | `GLOBAL-Sucesso-v01.png` | v01 | 336 × 156 | APROVADO (16/11/2026, 09:46) |
+| Sucesso atualizado | `GLOBAL-SucessoAtualizado-v01.png` | v01 | 336 × 156 | APROVADO (16/11/2026, 09:46) |
+| Sucesso excluído | `GLOBAL-SucessoExcluido-v01.png` | v01 | 336 × 156 | APROVADO (16/11/2026, 09:46) |
+| Confirmação de exclusão | `GLOBAL-ConfirmarExclusao-v01.png` | v01 | 312 × 256 | APROVADO (16/11/2026, 09:46) |
 
 ### 3.1. Especificação
 
@@ -122,13 +125,50 @@ GLOBAL-[NomeDoEstado]-[versão].png
 
 | Item | Valor |
 | --- | --- |
-| Conteúdo | indicador de carregamento (`◌`) e o texto `Salvando...` |
-| Não validado | dimensões, token de cor por elemento e ícone Material Outlined do símbolo |
+| Conteúdo | logomarca SaOr centralizada (64 px de altura, proporção original) e, abaixo dela, o texto `Salvando...` (Inter Regular 16 px, TEXT `#1A1A1A`), centralizado; o conjunto é centralizado verticalmente |
+| Dimensões | 336 × 128 px, raio 16 px, fundo SURFACE-ALT `#EAEAEA`; espaçamento de 8 px entre a logomarca e o texto |
+| Logomarca | arquivo oficial `assets/logo/saor-logo-SSO-para_fundos_claros.png` (SHA-256 `dd4082946acfce2d25ccf2b154949ec3df8c1d36fe2a8cfa406e4054949cf419`), variante para fundos claros; sem inversão de cores nem filtros |
+| Referência | mesma composição do Carregando aprovado (white), que segue o C29 LoadingState (white); texto: seção 21 do Documento Mestre, que usa o mesmo símbolo `◌` do Carregando |
+| Não validado | a escolha de repetir a logomarca do Carregando para o Salvando (a seção 21 usa o mesmo `◌` nos dois estados e não define a imagem); a imagem é estática e não distingue Salvando de Carregando além do texto; tamanho e cor do texto (o C29 usa Inter Regular 14 px em TEXT-2 para `Aguarde...`); o catálogo de identidade visual não define tamanho mínimo nem área de proteção da logomarca; decisão do responsável |
 
 **Sucesso**
 
 | Item | Valor |
 | --- | --- |
+| Conteúdo | círculo de fundo de 48 px em SURFACE-ALT `#EAEAEA` com o ícone `check` (confirmação) de 24 px em Success `#166534`, centralizado; texto `Registro salvo` em Inter SemiBold 20 px (`WF-TITLE`), TEXT `#1A1A1A`, centralizado |
+| Dimensões | 336 × 156 px, raio 16 px, fundo SURFACE `#FFFFFF`; círculo com o topo a 32 px e texto (linha de 28 px) a 104 px do topo, com 24 px abaixo do texto |
+| Referência | composição, medidas e espaçamentos: Lista vazia aprovada (white), C25 Dialog (white) e E00.7; texto: seção 21 do Documento Mestre; cor Success: REGRAS-TECNICAS §6.5 |
+| Não validado | a escolha do ícone `check` para o símbolo `✓` (a correspondência dos ícones de estado com a família Material Icons Outlined não está verificada e a T02 registra a tabela de ícones de estado como pendente); o uso do círculo de fundo e da cor Success no ícone (a seção 21 mostra apenas `✓`); o estilo do texto (a seção 21 não define tamanho nem peso); o fundo SURFACE do bloco (o Carregando usa SURFACE-ALT como o C29); se o estado é bloco de página ou janela modal, que a seção 21 não define; decisão do responsável |
+
+**Sucesso atualizado**
+
+| Item | Valor |
+| --- | --- |
+| Conteúdo | variação do Sucesso: mesmo círculo de fundo de 48 px em SURFACE-ALT `#EAEAEA` e ícone `check` de 24 px em Success `#166534`; texto `Registro atualizado` em Inter SemiBold 20 px (`WF-TITLE`), TEXT `#1A1A1A` |
+| Dimensões | 336 × 156 px, raio 16 px, fundo SURFACE `#FFFFFF`; mesmas medidas do Sucesso |
+| Referência | Sucesso (white) |
+| Não validado | o texto `Registro atualizado`, que não consta na seção 21 do Documento Mestre (solicitado pelo responsável); demais itens, os mesmos do Sucesso |
+
+**Sucesso excluído**
+
+| Item | Valor |
+| --- | --- |
+| Conteúdo | variação do Sucesso: mesmo círculo de fundo de 48 px em SURFACE-ALT `#EAEAEA` e ícone `check` de 24 px em Success `#166534`; texto `Registro excluído` em Inter SemiBold 20 px (`WF-TITLE`), TEXT `#1A1A1A` |
+| Dimensões | 336 × 156 px, raio 16 px, fundo SURFACE `#FFFFFF`; mesmas medidas do Sucesso |
+| Referência | Sucesso (white) |
+| Não validado | o texto `Registro excluído`, que não consta na seção 21 do Documento Mestre (solicitado pelo responsável); o ícone `check` para uma exclusão; demais itens, os mesmos do Sucesso |
+
+**Confirmação de exclusão**
+
+| Item | Valor |
+| --- | --- |
+| Conteúdo | círculo de fundo de 48 px em tom translúcido de Error sobre SURFACE (`#F2E1E1`) com o ícone `error_outline` (advertência) de 24 px em Error `#991B1B`; título em duas linhas, `Deseja excluir` / `este registro?`, em Inter SemiBold 20 px (`WF-TITLE`), TEXT `#1A1A1A`, centralizado; ações no fim da linha, como no M00.5: `CANCELAR` como rótulo sem superfície em Primary `#004A99` e botão preenchido `EXCLUIR` de 140 × 48 px, raio 12 px, fundo Error `#991B1B`, rótulo em On Primary `#FFFFFF`; rótulos em Inter Medium 16 px (`WF-ACTION-TEXT`) |
+| Dimensões | 312 × 256 px (largura do C25 Dialog e do M00.5), raio 16 px, fundo SURFACE `#FFFFFF`; círculo com o topo a 32 px, título (duas linhas de 28 px) a 104 px e ações a 184 px do topo, com 24 px de margem lateral e 24 px abaixo das ações |
+| Destino | `CANCELAR` fecha a janela sem excluir; `EXCLUIR` executa a exclusão e leva ao Sucesso excluído |
+| Referência | M00.5 Restaurar configuração (white): círculo de ícone, ações no fim da linha, `CANCELAR` sem superfície e botão destrutivo preenchido em Error; C25 Dialog (largura 312, margem 24, raio 16); versão black aprovada |
+| Não validado | o estado não consta na seção 21 do Documento Mestre (solicitado pelo responsável); o tom do círculo (derivado por mistura de Error sobre SURFACE, sem token próprio); a cor On Primary no rótulo sobre Error (a REGRAS-TECNICAS não define "On Error"); a quebra do título em duas linhas; os destinos descritos; a escolha do ícone `error_outline`; se é janela modal com escurecimento do fundo, que a imagem não desenha |
+
+--- | --- |
 | Conteúdo | ícone de confirmação (`✓`) e o texto `Registro salvo` |
 | Não validado | dimensões, token de cor por elemento e ícone Material Outlined do símbolo |
 
@@ -166,6 +206,11 @@ Registra **todas as versões criadas**, vigentes ou não. A versão em uso é a 
 | 16/11/2026 | Sem conexão | v01 | `GLOBAL-SemConexao-v01.png` | `5bd91f697395680b7a0fe18d2c3ca75f558a814a26bdaa0fab7572f28bf39c89` | VIGENTE | Versão inicial |
 | 16/11/2026 | Sessão expirada ou inválida | v01 | `GLOBAL-SessaoExpirada-v01.png` | `b14c4a246a4fccc4f7246fd1db7e97feeb4466b302b41d4c0779393952fef5ad` | VIGENTE | Versão inicial |
 | 16/11/2026 | Acesso não autorizado | v01 | `GLOBAL-AcessoNaoAutorizado-v01.png` | `992797d3143f9a1fa399b7665e9fe5e2a66919746aaaffe8ddb8913afd10633c` | VIGENTE | Versão inicial |
+| 16/11/2026 | Salvando | v01 | `GLOBAL-Salvando-v01.png` | `b0a8a70ced01af2672b83a0ba5b0933ab83c270b9d044d08ffb837b51af41360` | VIGENTE | Versão inicial |
+| 16/11/2026 | Sucesso | v01 | `GLOBAL-Sucesso-v01.png` | `716f927c9676856deba628bb2c025c65985bf4af51ffa4404d613d2bceae2932` | VIGENTE | Versão inicial |
+| 16/11/2026 | Sucesso atualizado | v01 | `GLOBAL-SucessoAtualizado-v01.png` | `590160e54d8102aa81bdb224e8237abfaa9e504122da2e5ee5118a4c5523499b` | VIGENTE | Versão inicial |
+| 16/11/2026 | Sucesso excluído | v01 | `GLOBAL-SucessoExcluido-v01.png` | `fd8e3303909625fe5fe6ea26770b7cf5867c733b9dccf8bc8bbce06b67c5330e` | VIGENTE | Versão inicial |
+| 16/11/2026 | Confirmação de exclusão | v01 | `GLOBAL-ConfirmarExclusao-v01.png` | `459787c5db279b6f1f7fcab004c19e688d679d17683c53bf7022dcd8ad4e2c7a` | VIGENTE | Versão inicial |
 
 Situação: `VIGENTE`, `SUBSTITUÍDA por vNN` ou `RETIRADA (motivo)`.
 
@@ -202,8 +247,11 @@ Situação: `VIGENTE`, `SUBSTITUÍDA por vNN` ou `RETIRADA (motivo)`.
 | Sem conexão | Existe | `GLOBAL-SemConexao-v01.png`; também aparece na T02: `T02-01-02_v01_estado-offline.png` e `T02-02-02_v01_estado-offline.png` | ✅ |
 | Sessão expirada ou inválida | Existe | `GLOBAL-SessaoExpirada-v01.png` | ✅ |
 | Acesso não autorizado | Existe | `GLOBAL-AcessoNaoAutorizado-v01.png` | ✅ |
-| Salvando | Montar | nenhuma tela aprovada | ⬜ |
-| Sucesso | Montar | nenhuma tela aprovada | ⬜ |
+| Salvando | Existe | `GLOBAL-Salvando-v01.png` | ✅ |
+| Sucesso | Existe | `GLOBAL-Sucesso-v01.png` | ✅ |
+| Sucesso atualizado | Existe | `GLOBAL-SucessoAtualizado-v01.png` | ✅ |
+| Sucesso excluído | Existe | `GLOBAL-SucessoExcluido-v01.png` | ✅ |
+| Confirmação de exclusão | Existe | `GLOBAL-ConfirmarExclusao-v01.png` | ✅ |
 
 ---
 
