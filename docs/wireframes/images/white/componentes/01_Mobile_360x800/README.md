@@ -99,7 +99,7 @@ COMP-[ID]-[NomeDoComponente]-[versão].png
 | C25.3 | DialogTimed (variante do C25) | `COMP-C25.3-DialogTimed-v01.png` | v01 | 312 × 310 | APROVADO (16/11/2026, 10:01) |
 | C26 | BottomSheet | `COMP-C26-BottomSheet-v01.png` | v01 | 360 × 280 | APROVADO (15/11/2026, 19:10) |
 | C27 | EmptyState | `COMP-C27-EmptyState-v01.png` | v01 | 336 × 64 | APROVADO (15/11/2026, 14:10) |
-| C28 | ErrorState | `COMP-C28-ErrorState-v01.png` | v01 | 336 × 188 | PENDENTE |
+| C28 | ErrorState | `COMP-C28-ErrorState-v01.png` | v01 | 336 × 188 | APROVADO (16/11/2026, 10:32) |
 | C29 | LoadingState | `COMP-C29-LoadingState-v01.png` | v01 | 336 × 128 | APROVADO (15/11/2026, 14:10) |
 | C29.1 | LoadingStateCard (variante do C29) | `COMP-C29.1-LoadingStateCard-v01.png` | v01 | 164 × 88 | APROVADO (15/11/2026, 14:10) |
 | C30 | SyncStatus | `COMP-C30-SyncStatus-v01.png` | v01 | 336 × 67 | APROVADO (15/11/2026, 12:08) |
@@ -113,9 +113,9 @@ COMP-[ID]-[NomeDoComponente]-[versão].png
 | C33.1 | AddressCardSummary (variante do C33) | `COMP-C33.1-AddressCardSummary-v01.png` | v01 | 336 × 92 | APROVADO (15/11/2026, 20:16) |
 | C33.2 | AddressCardDetail (variante do C33) | `COMP-C33.2-AddressCardDetail-v01.png` | v01 | 336 × 232 | APROVADO (15/11/2026, 20:16) |
 | C33.3 | AddressMap (variante do C33) | `COMP-C33.3-AddressMap-v01.png` | v01 | 336 × 200 | APROVADO (15/11/2026, 20:16) |
-| C34 | ContactCard | `COMP-C34-ContactCard-v01.png` | v01 | 336 × 112 | PENDENTE |
-| C34.1 | ContactCardDetail (variante do C34) | `COMP-C34.1-ContactCardDetail-v01.png` | v01 | 336 × 176 | PENDENTE |
-| C34.2 | ProfileHeader (variante do C34) | `COMP-C34.2-ProfileHeader-v01.png` | v01 | 336 × 136 | PENDENTE |
+| C34 | ContactCard | `COMP-C34-ContactCard-v01.png` | v01 | 336 × 112 | APROVADO (16/11/2026, 10:32) |
+| C34.1 | ContactCardDetail (variante do C34) | `COMP-C34.1-ContactCardDetail-v01.png` | v01 | 336 × 176 | APROVADO (16/11/2026, 10:32) |
+| C34.2 | ProfileHeader (variante do C34) | `COMP-C34.2-ProfileHeader-v01.png` | v01 | 336 × 136 | APROVADO (16/11/2026, 10:32) |
 | C35 | ThemeSelector | `COMP-C35-ThemeSelector-v01.png` | v01 | 336 × 56 | APROVADO (15/11/2026, 13:41) |
 | C36 | ThemePreview | `COMP-C36-ThemePreview-v01.png` | v01 | 336 × 290 | APROVADO (15/11/2026, 13:41) |
 | C37 | ConnectionStatus | `COMP-C37-ConnectionStatus-v01.png` | v01 | 336 × 56 | APROVADO (15/11/2026, 13:41) |

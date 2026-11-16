@@ -99,7 +99,7 @@ COMP-[ID]-[NomeDoComponente]-[versão].png
 | C25.3 | DialogTimed (variante do C25) | `COMP-C25.3-DialogTimed-v01.png` | v01 | 312 × 310 | APROVADO (16/11/2026, 09:58) |
 | C26 | BottomSheet | `COMP-C26-BottomSheet-v01.png` | v01 | 360 × 280 | APROVADO (15/11/2026, 19:07) |
 | C27 | EmptyState | `COMP-C27-EmptyState-v01.png` | v01 | 336 × 64 | APROVADO (15/11/2026, 14:10) |
-| C28 | ErrorState | `COMP-C28-ErrorState-v01.png` | v01 | 336 × 188 | PENDENTE |
+| C28 | ErrorState | `COMP-C28-ErrorState-v01.png` | v01 | 336 × 188 | APROVADO (16/11/2026, 10:32) |
 | C29 | LoadingState | `COMP-C29-LoadingState-v01.png` | v01 | 336 × 128 | APROVADO (15/11/2026, 13:57) |
 | C29.1 | LoadingStateCard (variante do C29) | `COMP-C29.1-LoadingStateCard-v01.png` | v01 | 164 × 88 | APROVADO (15/11/2026, 13:57) |
 | C30 | SyncStatus | `COMP-C30-SyncStatus-v01.png` | v01 | 336 × 67 | APROVADO (15/11/2026, 11:52) |
