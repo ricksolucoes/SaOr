@@ -49,8 +49,8 @@ GLOBAL-[NomeDoEstado]-[versão].png
 | Lista vazia | `GLOBAL-ListaVazia-v01.png` | v01 | 336 × 260 | APROVADO (15/11/2026, 21:38) |
 | Erro | `GLOBAL-Erro-v01.png` | v01 | 336 × 224 | APROVADO (16/11/2026, 09:09) |
 | Sem conexão | `GLOBAL-SemConexao-v01.png` | v01 | 336 × 84 | APROVADO (16/11/2026, 09:15) |
-| Sessão expirada ou inválida | — | — | — | Nenhuma imagem criada até esta data |
-| Acesso não autorizado | — | — | — | Nenhuma imagem criada até esta data |
+| Sessão expirada ou inválida | `GLOBAL-SessaoExpirada-v01.png` | v01 | 336 × 260 | APROVADO (16/11/2026, 09:20) |
+| Acesso não autorizado | `GLOBAL-AcessoNaoAutorizado-v01.png` | v01 | 336 × 248 | APROVADO (16/11/2026, 09:26) |
 | Salvando | — | — | — | Nenhuma imagem criada até esta data |
 | Sucesso | — | — | — | Nenhuma imagem criada até esta data |
 
@@ -101,18 +101,22 @@ GLOBAL-[NomeDoEstado]-[versão].png
 
 | Item | Valor |
 | --- | --- |
-| Conteúdo | ícone de alerta, `Sua sessão expirou.`, `Entre novamente para continuar.` e botão `IR PARA LOGIN` |
+| Conteúdo | círculo de fundo de 48 px em SURFACE-ALT `#2A2A2A` com o ícone `warning` (alerta) de 24 px em Warning (texto/ícone) `#FDE68A`, centralizado; título `Sua sessão expirou.` em Inter SemiBold 20 px (`WF-TITLE`), TEXT `#F2F2F2`; descrição `Entre novamente para continuar.` em Inter Regular 16 px (`WF-BODY`), TEXT-2 `#C2C2C2`; botão primário `IR PARA LOGIN` de 288 × 48 px, raio 12 px, fundo Primary `#8ABEFF`, rótulo em Inter Medium 16 px (`WF-ACTION-TEXT`), On Primary `#0F1115` |
+| Dimensões | 336 × 260 px, raio 16 px, fundo SURFACE `#1E1E1E`; círculo com o topo a 32 px, título (linha de 28 px) a 104 px, descrição (linha de 24 px) a 140 px e botão a 188 px do topo, com 24 px de margem lateral e 24 px abaixo do botão |
 | Destino | `IR PARA LOGIN` → T01 |
 | Comportamento | a operação protegida é interrompida e o usuário é informado antes do retorno ao login; `Lembrar-me` não elimina essa regra; dados locais já preservados para sincronização não são descartados exclusivamente pela expiração da sessão |
-| Não validado | dimensões, token de cor por elemento e ícone Material Outlined do símbolo |
+| Referência | composição, medidas e espaçamentos: Lista vazia aprovada (black), C25 Dialog (black) e E00.7; textos e destino: seção 21 do Documento Mestre |
+| Não validado | a cor Warning do ícone (a seção 21 mostra `⚠` e não indica a cor; o Erro usa Error, o aviso do banner Sem conexão usa Warning); a escolha do ícone `warning` para o símbolo `⚠` (a correspondência dos ícones de estado com a família Material Icons Outlined não está verificada e a T02 registra a tabela de ícones de estado como pendente); o fundo SURFACE do bloco (o Carregando usa SURFACE-ALT como o C29); se o estado é bloco de página ou janela modal, que a seção 21 não define |
 
 **Acesso não autorizado**
 
 | Item | Valor |
 | --- | --- |
-| Conteúdo | ícone de alerta, `Você não possui autorização para executar esta ação.` e botão `OK` |
+| Conteúdo | círculo de fundo de 48 px em SURFACE-ALT `#2A2A2A` com o ícone `warning` (alerta) de 24 px em Warning (texto/ícone) `#FDE68A`, centralizado; mensagem `Você não possui autorização para executar esta ação.` centralizada, em duas linhas (`Você não possui autorização para` / `executar esta ação.`), em Inter Regular 16 px (`WF-BODY`), TEXT `#F2F2F2`; botão primário `OK` de 288 × 48 px, raio 12 px, fundo Primary `#8ABEFF`, rótulo em Inter Medium 16 px (`WF-ACTION-TEXT`), On Primary `#0F1115` |
+| Dimensões | 336 × 248 px, raio 16 px, fundo SURFACE `#1E1E1E`; círculo com o topo a 32 px, mensagem (duas linhas de 24 px) a 104 px e botão a 176 px do topo, com 24 px de margem lateral e 24 px abaixo do botão |
 | Comportamento | restrição já conhecida: a ação permanece indisponível com explicação textual; negativa durante a operação: a interface atual é preservada e informa que o usuário não possui autorização; a aplicação não simula sucesso nem perde dados de edição |
-| Não validado | dimensões, token de cor por elemento e ícone Material Outlined do símbolo |
+| Referência | composição, medidas e espaçamentos: Erro aprovado (black), Lista vazia aprovada (black), C25 Dialog (black) e E00.7; textos e botão: seção 21 do Documento Mestre |
+| Não validado | a cor Warning do ícone (a seção 21 mostra `⚠` e não indica a cor; o Erro usa Error e a Sessão expirada usa Warning); a escolha do ícone `warning` para o símbolo `⚠` (a correspondência dos ícones de estado com a família Material Icons Outlined não está verificada e a T02 registra a tabela de ícones de estado como pendente); o fundo SURFACE do bloco (o Carregando usa SURFACE-ALT como o C29); o destino do botão `OK`, que a seção 21 não define (a leitura do rótulo é fechar o aviso); se o estado é bloco de página ou janela modal, que a seção 21 não define; o bloco mostra a mensagem negada durante a operação, e a variante de ação indisponível com explicação textual não tem imagem |
 
 **Salvando**
 
@@ -160,6 +164,8 @@ Registra **todas as versões criadas**, vigentes ou não. A versão em uso é a 
 | 15/11/2026 | Lista vazia | v01 | `GLOBAL-ListaVazia-v01.png` | `d27bbb4ea98d1bfba1e668bd12c52cff11b4b67acffcf7a9642894c44b8922f6` | VIGENTE | Versão inicial |
 | 16/11/2026 | Erro | v01 | `GLOBAL-Erro-v01.png` | `657cebe7ef7f706c2c6a8e6771e52ded1327305ac8f7bd95dfb8f65ec779af9c` | VIGENTE | Versão inicial |
 | 16/11/2026 | Sem conexão | v01 | `GLOBAL-SemConexao-v01.png` | `598d832e90044dd1996252213c201b9f27ca20280875527738c8bb86d1797e7a` | VIGENTE | Versão inicial |
+| 16/11/2026 | Sessão expirada ou inválida | v01 | `GLOBAL-SessaoExpirada-v01.png` | `d558f4033e8a6c14344d4c98805d8c025c60c2fbb11c5b11fd6d2a4c742109c2` | VIGENTE | Versão inicial |
+| 16/11/2026 | Acesso não autorizado | v01 | `GLOBAL-AcessoNaoAutorizado-v01.png` | `91e410c6793f986e959109f068ef873114ca6663d11b4e1a4eb386fbc2e6d7c3` | VIGENTE | Versão inicial |
 
 Situação: `VIGENTE`, `SUBSTITUÍDA por vNN` ou `RETIRADA (motivo)`.
 
@@ -194,8 +200,8 @@ Situação: `VIGENTE`, `SUBSTITUÍDA por vNN` ou `RETIRADA (motivo)`.
 | Lista vazia | Existe | `GLOBAL-ListaVazia-v01.png`; também aparece na T02: `T02-01-01_v01_estado-vazio.png` | ✅ |
 | Erro | Existe | `GLOBAL-Erro-v01.png`; também aparece na T02: `T02-01-01_v01_estado-erro.png` | ✅ |
 | Sem conexão | Existe | `GLOBAL-SemConexao-v01.png`; também aparece na T02: `T02-01-02_v01_estado-offline.png` e `T02-02-02_v01_estado-offline.png` | ✅ |
-| Sessão expirada ou inválida | Montar | nenhuma tela aprovada | ⬜ |
-| Acesso não autorizado | Montar | nenhuma tela aprovada | ⬜ |
+| Sessão expirada ou inválida | Existe | `GLOBAL-SessaoExpirada-v01.png` | ✅ |
+| Acesso não autorizado | Existe | `GLOBAL-AcessoNaoAutorizado-v01.png` | ✅ |
 | Salvando | Montar | nenhuma tela aprovada | ⬜ |
 | Sucesso | Montar | nenhuma tela aprovada | ⬜ |
 
