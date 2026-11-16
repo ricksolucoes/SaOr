@@ -96,7 +96,7 @@ COMP-[ID]-[NomeDoComponente]-[versão].png
 | C25 | Dialog | `COMP-C25-Dialog-v01.png` | v01 | 312 × 308 | APROVADO (15/11/2026, 12:08) |
 | C26 | BottomSheet | `COMP-C26-BottomSheet-v01.png` | v01 | 360 × 280 | APROVADO (15/11/2026, 19:10) |
 | C27 | EmptyState | `COMP-C27-EmptyState-v01.png` | v01 | 336 × 64 | APROVADO (15/11/2026, 14:10) |
-| C28 | ErrorState | `COMP-C28-ErrorState-v01.png` | v01 | 336 × 188 | APROVADO (15/11/2026, 14:10) |
+| C28 | ErrorState | `COMP-C28-ErrorState-v01.png` | v01 | 336 × 188 | PENDENTE |
 | C29 | LoadingState | `COMP-C29-LoadingState-v01.png` | v01 | 336 × 128 | APROVADO (15/11/2026, 14:10) |
 | C29.1 | LoadingStateCard (variante do C29) | `COMP-C29.1-LoadingStateCard-v01.png` | v01 | 164 × 88 | APROVADO (15/11/2026, 14:10) |
 | C30 | SyncStatus | `COMP-C30-SyncStatus-v01.png` | v01 | 336 × 67 | APROVADO (15/11/2026, 12:08) |
@@ -500,9 +500,10 @@ O MetricCard tem **duas versões**: sem sublegenda (C15) e com sublegenda (C15.1
 
 | Item | Valor |
 | --- | --- |
-| Conteúdo | ícone centralizado de 36 px (o tracejado é **placeholder**), mensagem centralizada em Inter Regular 16 px e botão primário de 304 × 48 px, raio 12 px, com rótulo ("Mensagem de erro" e "RÓTULO" são **placeholders**) |
+| Conteúdo | ícone centralizado de 36 px sobre um círculo de 56 px em SURFACE `#FFFFFF` (o tracejado é **placeholder**), mensagem centralizada em Inter Regular 16 px e botão primário de 304 × 48 px, raio 12 px, com rótulo ("Mensagem de erro" e "RÓTULO" são **placeholders**) |
 | Dimensões | 336 × 188 px, raio 16 px, fundo SURFACE-ALT |
 | Estados | o ícone e a cor do ícone mudam conforme o tipo de erro; a v01 usa placeholder neutro (ACTION `#333333`). Para erro de carregamento de dados, o ícone é de alerta no token Error `#991B1B`. |
+| Não validado | diâmetro de 56 px e cor do círculo do ícone (decisão do responsável em 15/11/2026, 21:46; o círculo do C25 é de 48 px) |
 
 **C29 — LoadingState**
 
@@ -855,7 +856,7 @@ Registra **todas as versões criadas**, vigentes ou não. A versão em uso é a 
 | 15/11/2026 | C43.2 | v01 | `COMP-C43.2-SettingsItemDestructive-v01.png` | `309f7182e431288ad026bd1c5195f1dc7f4c5d4ab5efa1f77c556c72226e263d` | VIGENTE | Versão inicial |
 | 15/11/2026 | C44 | v01 | `COMP-C44-ConnectionBadge-v01.png` | `d724b68dd3f6980ca15c261a039d32aa506572f248846cf766d0127cc168c283` | VIGENTE | Versão inicial |
 | 15/11/2026 | C27 | v01 | `COMP-C27-EmptyState-v01.png` | `40075176de8274da45cdeeef6dd6716c4b724ae9cf259e402ef0e651849f1518` | VIGENTE | Versão inicial |
-| 15/11/2026 | C28 | v01 | `COMP-C28-ErrorState-v01.png` | `be8a07d69454f233d310fc54ea729b3ea082a8083d35354550d3e836a45597b6` | VIGENTE | Versão inicial |
+| 15/11/2026 | C28 | v01 | `COMP-C28-ErrorState-v01.png` | `56498ff041c3266ed87b02d6c8b0a0a1a02299eb1e8e20016e917a2828840414` | VIGENTE | Versão inicial; reemitida em 15/11/2026, 21:46 com fundo circular no ícone, em v01 e sem v02, por decisão do responsável |
 | 15/11/2026 | C29 | v01 | `COMP-C29-LoadingState-v01.png` | `2d5262c5927c98dcfdc18270e2b23c9b45ddf6f76de1a4b0665fd315db0b132a` | VIGENTE | Versão inicial |
 | 15/11/2026 | C29.1 | v01 | `COMP-C29.1-LoadingStateCard-v01.png` | `1e0dbb48dc0a88f89f8fae4267eaee18fb4178dcb04471c64c3f458ff1bdee08` | VIGENTE | Versão inicial |
 | 15/11/2026 | C34 | v01 | `COMP-C34-ContactCard-v01.png` | `8137c337d3d40ac16277a12d6e63f27d99118e450ceff1679e2c98139b4bb9e7` | VIGENTE | Versão inicial |
